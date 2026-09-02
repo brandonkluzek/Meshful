@@ -1,0 +1,3315 @@
+{
+  "id": "academic-reviewed-v1:calculus-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Calculus I",
+  "subject": "Mathematics",
+  "domain": "Mathematics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "calculus-i.ci-m0-average-rate-of-change",
+      "canonical_deck_id": "calculus-i",
+      "term": "Average rate of change",
+      "prompt": "Define Average rate of change. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The output change divided by input change over a nonzero interval, equal to the corresponding secant slope.",
+      "required_concepts": [
+        "The output change divided by input change over a nonzero interval, equal to the corresponding secant slope."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dividing output change by an absolute final input value instead of the nonzero input difference."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-notation-and-evaluation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-difference-quotient",
+      "canonical_deck_id": "calculus-i",
+      "term": "Difference quotient",
+      "prompt": "Define Difference quotient. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The secant-slope expression [f(a+h)-f(a)]/h for h nonzero whose limit may define f'(a).",
+      "required_concepts": [
+        "The secant-slope expression [f(a+h)-f(a)]/h for h nonzero whose limit may define f'(a)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Substituting h=0 before cancelling the factor h."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-notation-and-evaluation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-function-as-a-mapping",
+      "canonical_deck_id": "calculus-i",
+      "term": "Function as a mapping",
+      "prompt": "Define Function as a mapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A rule assigning each allowed input exactly one output while preserving the declared domain, codomain, and image.",
+      "required_concepts": [
+        "A rule assigning each allowed input exactly one output while preserving the declared domain, codomain, and image."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a displayed formula as defined for every real number."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-function-composition",
+      "canonical_deck_id": "calculus-i",
+      "term": "Function composition",
+      "prompt": "Define Function composition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mapping x -> f(g(x)) with a domain requiring x in dom(g) and g(x) in dom(f).",
+      "required_concepts": [
+        "The mapping x -> f(g(x)) with a domain requiring x in dom(g) and g(x) in dom(f)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Intersecting the written domains without checking that g(x) lands in dom(f)."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-domain"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-function-domain",
+      "canonical_deck_id": "calculus-i",
+      "term": "Function domain",
+      "prompt": "Define Function domain. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For a function f:A to B, the domain is the declared input set A; it may be a strict subset of the natural domain on which a displayed formula is defined.",
+      "required_concepts": [
+        "The domain of f:A to B is the declared input set A.",
+        "A formula's natural domain can be larger than the declared domain."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only the logarithm or only the square root."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-as-a-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-function-image",
+      "canonical_deck_id": "calculus-i",
+      "term": "Function image",
+      "prompt": "Define Function image. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The set of outputs actually attained from the declared domain rather than the stated codomain.",
+      "required_concepts": [
+        "The set of outputs actually attained from the declared domain rather than the stated codomain."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming the image consists only of endpoint outputs without analyzing values attained in the interior of the declared domain."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-domain"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-function-notation-and-evaluation",
+      "canonical_deck_id": "calculus-i",
+      "term": "Function notation and evaluation",
+      "prompt": "Define Function notation and evaluation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** substitution into the complete defining rule with parentheses and domain checks preserved.",
+      "required_concepts": [
+        "substitution into the complete defining rule with parentheses and domain checks preserved."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing x by a+h in only one occurrence."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-as-a-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-function-transformation",
+      "canonical_deck_id": "calculus-i",
+      "term": "Function transformation",
+      "prompt": "Define Function transformation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The controlled horizontal or vertical shift, scale, or reflection of a base graph.",
+      "required_concepts": [
+        "The controlled horizontal or vertical shift, scale, or reflection of a base graph."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the transformation y=f(x-c) a left shift of the base graph when c>0 under the usual horizontal-translation convention."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-graph-function-correspondence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-graph-function-correspondence",
+      "canonical_deck_id": "calculus-i",
+      "term": "Graph-function correspondence",
+      "prompt": "Define Graph-function correspondence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The equivalence between an input-output pair f(a)=b and the graph point (a,b).",
+      "required_concepts": [
+        "The equivalence between an input-output pair f(a)=b and the graph point (a,b)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Swapping input and output when converting f(a)=b into its graph point (a,b)."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-as-a-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-piecewise-function-specification",
+      "canonical_deck_id": "calculus-i",
+      "term": "piecewise-defined function",
+      "prompt": "Define piecewise-defined function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A piecewise-defined function uses different formulas on declared subsets of its domain, with each input assigned according to the condition attached to the applicable formula.",
+      "required_concepts": [
+        "A piecewise-defined function uses different formulas on declared subsets of its domain.",
+        "Each input is assigned according to the condition attached to the applicable formula."
+      ],
+      "accepted_variants": [
+        "piecewise function"
+      ],
+      "major_error_concepts": [
+        "Using a formula at a boundary point without checking whether its condition includes that point."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-domain"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "piecewise function"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-quantity-and-units",
+      "canonical_deck_id": "calculus-i",
+      "term": "quantity and units",
+      "prompt": "Define quantity and units.",
+      "definition": "**Definition.** The variable meaning, admissible values, and dimensional unit that constrain algebraic calculus operations.",
+      "required_concepts": [
+        "The variable meaning, admissible values, and dimensional unit that constrain algebraic calculus operations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dropping units and later adding quantities with incompatible dimensions."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-average-rate-of-change"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m0-restricted-inverse-function",
+      "canonical_deck_id": "calculus-i",
+      "term": "Restricted inverse function",
+      "prompt": "Define Restricted inverse function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The inverse obtained only after restricting a non-one-to-one rule to an interval where each output has one input.",
+      "required_concepts": [
+        "The inverse obtained only after restricting a non-one-to-one rule to an interval where each output has one input."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing plus-or-minus sqrt(y) as a function inverse."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-image"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-continuity-at-a-point",
+      "canonical_deck_id": "calculus-i",
+      "term": "Continuity at a point",
+      "prompt": "Define Continuity at a point. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The conjunction that f(a) is defined, lim x->a f(x) exists, and that limit equals f(a).",
+      "required_concepts": [
+        "The conjunction that f(a) is defined, lim x->a f(x) exists, and that limit equals f(a)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only that f(1) is defined."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-finite-two-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-discontinuity-classification",
+      "canonical_deck_id": "calculus-i",
+      "term": "Common elementary discontinuity types",
+      "prompt": "Define Common elementary discontinuity types. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Common point discontinuities include removable, jump, infinite or unbounded, and oscillatory behavior; the list is a practical classification rather than an exhaustive taxonomy in arbitrary spaces.",
+      "required_concepts": [
+        "Includes removable and jump discontinuities.",
+        "Includes infinite or unbounded and oscillatory discontinuities.",
+        "The list is qualified rather than universally exhaustive."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every missing point a vertical asymptote."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-continuity-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-epsilon-delta-definition-of-a-limit",
+      "canonical_deck_id": "calculus-i",
+      "term": "epsilon-delta definition of a limit",
+      "prompt": "Define epsilon-delta definition of a limit.",
+      "definition": "**Definition.** for every positive output tolerance epsilon there exists a positive input tolerance delta making 0<abs(x-a)<delta imply abs(f(x)-L)<epsilon.",
+      "required_concepts": [
+        "for every positive output tolerance epsilon there exists a positive input tolerance delta making 0<abs(x-a)<delta imply abs(f(x)-L)<epsilon."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Choosing epsilon after seeing x, which reverses the quantifier order."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-finite-two-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-extreme-value-theorem-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Extreme Value Theorem: role",
+      "prompt": "What is Extreme Value Theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It guarantees that a continuous objective on a closed bounded interval has actual global extrema, so an optimization argument may search for values rather than merely an unattained supremum or infimum; it gives neither the locations nor uniqueness of those extrema.",
+      "required_concepts": [
+        "It guarantees that a continuous objective on a closed bounded interval has actual global extrema, so an optimization argument may search for values rather than merely an unattained supremum or infimum",
+        "it gives neither the locations nor uniqueness of those extrema."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using boundedness of the written endpoint values as a substitute for a closed interval."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-extreme-value-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-extreme-value-theorem",
+      "canonical_deck_id": "calculus-i",
+      "term": "Extreme Value Theorem",
+      "prompt": "State Extreme Value Theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** A continuous real function on a closed bounded interval attains both an absolute maximum and minimum.",
+      "required_concepts": [
+        "The function is real-valued and continuous on a closed bounded interval [a,b].",
+        "The function attains an absolute maximum at some point of [a,b].",
+        "The function attains an absolute minimum at some point of [a,b]."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using boundedness of the written endpoint values as a substitute for a closed interval."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-continuity-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "canonical_deck_id": "calculus-i",
+      "term": "Finite two-sided function limit",
+      "prompt": "Define Finite two-sided function limit. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The single finite value approached by f(x) as x approaches a from both sides, independent of f(a).",
+      "required_concepts": [
+        "The single finite value approached by f(x) as x approaches a from both sides, independent of f(a)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Substituting first, obtaining 0/0, and calling 0/0 the limit."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-notation-and-evaluation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-infinite-function-limit",
+      "canonical_deck_id": "calculus-i",
+      "term": "Infinite function limit",
+      "prompt": "Define Infinite function limit. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** unbounded magnitude with a declared sign as x approaches a, describing behavior rather than a real output value.",
+      "required_concepts": [
+        "unbounded magnitude with a declared sign as x approaches a, describing behavior rather than a real output value."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing f(0)=infinity."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-one-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-intermediate-value-theorem-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Intermediate Value Theorem: role",
+      "prompt": "What is Intermediate Value Theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It proves existence of an input attaining an intermediate output, most often a root after an endpoint sign change; it does not locate the input or prove that it is unique.",
+      "required_concepts": [
+        "It proves existence of an input attaining an intermediate output, most often a root after an endpoint sign change",
+        "it does not locate the input or prove that it is unique."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming uniqueness from IVT alone."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-intermediate-value-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-intermediate-value-theorem",
+      "canonical_deck_id": "calculus-i",
+      "term": "Intermediate Value Theorem",
+      "prompt": "State Intermediate Value Theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** A continuous function on [a,b] takes every value between f(a) and f(b).",
+      "required_concepts": [
+        "The function f is continuous on the closed interval [a,b].",
+        "For every value L between f(a) and f(b), there is a point c in [a,b] such that f(c)=L."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming uniqueness from IVT alone."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-continuity-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-limit-at-infinity",
+      "canonical_deck_id": "calculus-i",
+      "term": "Limit at infinity",
+      "prompt": "Define Limit at infinity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The limiting behavior of f(x) as the input grows without bound, used to identify long-run levels or divergence.",
+      "required_concepts": [
+        "The limiting behavior of f(x) as the input grows without bound, used to identify long-run levels or divergence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Substituting infinity as though it were a real number."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-finite-two-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-limit-laws-and-hypotheses",
+      "canonical_deck_id": "calculus-i",
+      "term": "limit laws and hypotheses",
+      "prompt": "Define limit laws and hypotheses.",
+      "definition": "**Definition.** The algebra of limits applied only when component limits exist and quotient denominators have nonzero limiting value.",
+      "required_concepts": [
+        "The algebra of limits applied only when component limits exist and quotient denominators have nonzero limiting value."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the quotient law when the denominator limit is zero."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-finite-two-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-one-sided-function-limit",
+      "canonical_deck_id": "calculus-i",
+      "term": "One-sided function limit",
+      "prompt": "Define One-sided function limit. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The value approached under the additional restriction x<a or x>a.",
+      "required_concepts": [
+        "The value approached under the additional restriction x<a or x>a."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Equating a point value f(a) with one-sided limits without establishing the appropriate one-sided limiting behavior or continuity."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-finite-two-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-squeeze-theorem-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Squeeze theorem: role",
+      "prompt": "What is Squeeze theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It transfers a limit from two simpler bounding functions to a trapped target whose direct limit is difficult to evaluate; both bounds must apply near the point and converge to the same value.",
+      "required_concepts": [
+        "It transfers a limit from two simpler bounding functions to a trapped target whose direct limit is difficult to evaluate",
+        "both bounds must apply near the point and converge to the same value."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding a target limit merely from boundedness, without lower and upper bounds that apply near the point and converge to the same value."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-squeeze-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-squeeze-theorem",
+      "canonical_deck_id": "calculus-i",
+      "term": "Squeeze theorem",
+      "prompt": "State Squeeze theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** If g(x)<=f(x)<=h(x) for all x sufficiently near a, possibly excluding a, and lim g(x)=lim h(x)=L as x approaches a, then lim f(x)=L.",
+      "required_concepts": [
+        "The eventual inequalities g(x)<=f(x)<=h(x) hold in a punctured neighborhood of a.",
+        "The lower and upper functions have the same limit L as x approaches a.",
+        "The trapped function f has limit L as x approaches a."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding a target limit merely from boundedness, without lower and upper bounds that apply near the point and converge to the same value."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-limit-laws-and-hypotheses"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m1-two-sided-limit-nonexistence",
+      "canonical_deck_id": "calculus-i",
+      "term": "Two-sided limit nonexistence",
+      "prompt": "Define Two-sided limit nonexistence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The conclusion that no common finite or extended value satisfies both directions, with an explicit separating mechanism.",
+      "required_concepts": [
+        "The conclusion that no common finite or extended value satisfies both directions, with an explicit separating mechanism."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Averaging distinct one-sided limits and reporting that average as the two-sided limit."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-one-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-derivative-at-a-point",
+      "canonical_deck_id": "calculus-i",
+      "term": "Derivative at a point",
+      "prompt": "Define Derivative at a point. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The limit of the difference quotient giving instantaneous output change per input change at one point.",
+      "required_concepts": [
+        "The limit of the difference quotient giving instantaneous output change per input change at one point."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Substituting h=0 before simplifying the quotient."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-finite-two-sided-function-limit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-derivative-function",
+      "canonical_deck_id": "calculus-i",
+      "term": "Derivative function",
+      "prompt": "Define Derivative function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The function assigning each input where it exists the derivative computed from a moving difference quotient.",
+      "required_concepts": [
+        "The function assigning each input where it exists the derivative computed from a moving difference quotient."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Computing only f'(a) at one point and calling it the derivative function."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-differentiability-implies-continuity-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Differentiability implies continuity: role",
+      "prompt": "What is Differentiability implies continuity used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The theorem licenses continuity at a point from a finite derivative there, but it cannot be reversed to infer differentiability from continuity.",
+      "required_concepts": [
+        "A finite derivative supplies continuity at the same point.",
+        "The converse fails, for example at a cusp."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using continuity alone to claim that a derivative exists."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-differentiability-implies-continuity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-differentiability-implies-continuity",
+      "canonical_deck_id": "calculus-i",
+      "term": "Differentiability implies continuity",
+      "prompt": "State the differentiability-implies-continuity theorem at a point, including its hypothesis, conclusion, and nonconverse.",
+      "definition": "**Theorem statement.** If f is differentiable at a, then f is continuous at a; continuity at a need not imply differentiability there.",
+      "required_concepts": [
+        "Differentiability of f at a implies continuity of f at a.",
+        "Continuity at a does not imply differentiability at a."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming continuity guarantees differentiability."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-continuity-at-a-point",
+        "calculus-i.ci-m2-derivative-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-exponential-and-logarithmic-derivatives",
+      "canonical_deck_id": "calculus-i",
+      "term": "Exponential and logarithmic derivatives",
+      "prompt": "State the derivatives of e^x, a^x, ln x, and log_a x, with their real-domain restrictions.",
+      "definition": "For real x, d(e^x)/dx=e^x and d(a^x)/dx=a^x ln(a) for a>0. For x>0, d(ln x)/dx=1/x and d(log_a x)/dx=1/(x ln a), where a>0 and a is not 1. More generally d(ln|x|)/dx=1/x for x not zero.",
+      "required_concepts": [
+        "The derivatives of e^x and a^x are e^x and a^x ln a.",
+        "The derivatives of ln x and log_a x are 1/x and 1/(x ln a).",
+        "State the positive-argument and valid-base restrictions for real logarithms."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "The derivative of 2^x is 2^x, and the derivative of log_2 x is 1/x."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-scalar-single-variable-chain-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-inverse-trigonometric-derivatives",
+      "canonical_deck_id": "calculus-i",
+      "term": "Inverse-trigonometric derivatives",
+      "prompt": "State the principal-branch derivatives of arcsin x, arccos x, and arctan x, including where the formulas apply.",
+      "definition": "For the standard principal branches, (arcsin x)'=1/sqrt(1-x^2) and (arccos x)'=-1/sqrt(1-x^2) for |x|<1; (arctan x)'=1/(1+x^2) for every real x. Arcsin and arccos are defined at ±1 but do not have finite ordinary derivatives there.",
+      "required_concepts": [
+        "Arcsine has derivative 1/sqrt(1-x^2) for |x|<1.",
+        "Arccosine has the negative of that derivative on the same interval.",
+        "Arctangent has derivative 1/(1+x^2) on the real line."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "The derivatives of arcsin and arccos are both 1/sqrt(1-x^2), including at x=1."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-restricted-inverse-function",
+        "calculus-i.ci-m2-scalar-single-variable-chain-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-nondifferentiability-mechanism",
+      "canonical_deck_id": "calculus-i",
+      "term": "Nondifferentiability mechanism",
+      "prompt": "Define Nondifferentiability mechanism. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A corner, cusp, vertical tangent, discontinuity, or oscillatory quotient that prevents a finite common derivative.",
+      "required_concepts": [
+        "A corner, cusp, vertical tangent, discontinuity, or oscillatory quotient that prevents a finite common derivative."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every nondifferentiable point a discontinuity."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-one-sided-derivative"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-one-sided-derivative",
+      "canonical_deck_id": "calculus-i",
+      "term": "One-sided derivative",
+      "prompt": "Define One-sided derivative. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A difference-quotient limit restricted to increments from one side, needed at domain boundaries or corners.",
+      "required_concepts": [
+        "A difference-quotient limit restricted to increments from one side, needed at domain boundaries or corners."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Averaging unequal left and right difference-quotient limits to manufacture an ordinary two-sided derivative."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-power-and-linearity-rules",
+      "canonical_deck_id": "calculus-i",
+      "term": "Power and linearity rules",
+      "prompt": "State the constant, power, and linearity rules for differentiation and note the power rule's domain restriction.",
+      "definition": "The derivative of a constant is zero. For a constant exponent p, d(x^p)/dx=p x^(p-1) wherever the real power is differentiable (in particular x>0 for arbitrary real p). If f and g are differentiable and a,b are constants, (af+bg)'=af'+bg'. Polynomial powers with nonnegative integer p extend to all real x with their usual derivatives.",
+      "required_concepts": [
+        "A constant differentiates to zero.",
+        "The power rule is p x^(p-1) on a valid differentiability domain.",
+        "Differentiation preserves constant linear combinations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "The derivative of x^p is x^(p-1), and the derivative of a nonzero constant is that constant."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-product-rule",
+      "canonical_deck_id": "calculus-i",
+      "term": "Product rule",
+      "prompt": "Define Product rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The derivative identity (fg)'=f'g+fg' rather than the product of derivatives.",
+      "required_concepts": [
+        "The derivative identity (fg)'=f'g+fg' rather than the product of derivatives."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing (fg)' by f'g', or systematically omitting one nonzero term from f'g+fg'."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-power-and-linearity-rules"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-quotient-rule",
+      "canonical_deck_id": "calculus-i",
+      "term": "Quotient rule",
+      "prompt": "Define Quotient rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The derivative identity (f/g)'=(f'g-fg')/g^2 at points where g is nonzero.",
+      "required_concepts": [
+        "The derivative identity (f/g)'=(f'g-fg')/g^2 at points where g is nonzero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using denominator g rather than g squared or losing the subtraction order."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-product-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "canonical_deck_id": "calculus-i",
+      "term": "Scalar single-variable chain rule",
+      "prompt": "Define Scalar single-variable chain rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The derivative of a scalar one-variable composition as the outer derivative evaluated at the inner function times the inner derivative.",
+      "required_concepts": [
+        "The derivative of a scalar one-variable composition as the outer derivative evaluated at the inner function times the inner derivative."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming (f composed with g)' equals f'(g(x)) for arbitrary differentiable g without the inner derivative factor g'(x)."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-composition",
+        "calculus-i.ci-m2-power-and-linearity-rules"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m2-trigonometric-derivative-family",
+      "canonical_deck_id": "calculus-i",
+      "term": "Trigonometric derivative family",
+      "prompt": "State the six basic trigonometric derivatives for radian input and their domain convention.",
+      "definition": "With angles in radians: (sin x)'=cos x, (cos x)'=-sin x, (tan x)'=sec^2 x, (cot x)'=-csc^2 x, (sec x)'=sec x tan x, and (csc x)'=-csc x cot x. Each formula applies where the original function is defined; other angle units require the chain-rule conversion factor.",
+      "required_concepts": [
+        "Give the six stated radian-based derivatives with their correct signs.",
+        "Exclude zeros of any denominator in the original function.",
+        "The standard formulas assume radian input."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "With degree input, the derivative of cos x is sin x and tan x is differentiable where cos x=0."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-scalar-single-variable-chain-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-absolute-and-relative-approximation-error",
+      "canonical_deck_id": "calculus-i",
+      "term": "Absolute and relative approximation error",
+      "prompt": "Define Absolute and relative approximation error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The magnitude of estimate minus truth and that magnitude scaled by a declared nonzero reference.",
+      "required_concepts": [
+        "The magnitude of estimate minus truth and that magnitude scaled by a declared nonzero reference."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting signed error as absolute error or dividing by the approximation without declaring that convention."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m3-linearization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-differential-estimate",
+      "canonical_deck_id": "calculus-i",
+      "term": "Differential estimate",
+      "prompt": "Define Differential estimate. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The first-order change dy=f'(x)dx used to estimate a small output change while retaining its local character.",
+      "required_concepts": [
+        "The first-order change dy=f'(x)dx used to estimate a small output change while retaining its local character."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling dy the exact finite change without comparison to Delta y."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m3-linearization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-exponential-growth-decay-rate-law",
+      "canonical_deck_id": "calculus-i",
+      "term": "Exponential growth-decay rate law",
+      "prompt": "Define Exponential growth-decay rate law. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The model y'=ky with solution behavior characterized by the signed proportional rate k.",
+      "required_concepts": [
+        "The model y'=ky with solution behavior characterized by the signed proportional rate k."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring a continuous proportional rate k from a multiplicative change alone without its elapsed time and the exponential-law relation."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-exponential-and-logarithmic-derivatives"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-implicit-derivative",
+      "canonical_deck_id": "calculus-i",
+      "term": "Implicit derivative",
+      "prompt": "Define Implicit derivative. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The derivative obtained by differentiating a relation while treating the dependent variable as a function and checking the point and denominator.",
+      "required_concepts": [
+        "The derivative obtained by differentiating a relation while treating the dependent variable as a function and checking the point and denominator."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a point that fails the defining relation, or dividing by a solved-for derivative coefficient that is actually zero at the point."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-scalar-single-variable-chain-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-inverse-function-derivative",
+      "canonical_deck_id": "calculus-i",
+      "term": "Inverse-function derivative",
+      "prompt": "Define Inverse-function derivative. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The local reciprocal derivative formula (f^{-1})'(b)=1/f'(a) when b=f(a) and f'(a) is nonzero.",
+      "required_concepts": [
+        "The local reciprocal derivative formula (f^{-1})'(b)=1/f'(a) when b=f(a) and f'(a) is nonzero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Evaluating the reciprocal derivative at the inverse input b instead of the corresponding preimage a=f^{-1}(b), without checking that distinction."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-restricted-inverse-function",
+        "calculus-i.ci-m2-derivative-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-linearization",
+      "canonical_deck_id": "calculus-i",
+      "term": "Linearization",
+      "prompt": "Define Linearization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The tangent-line approximation L(x)=f(a)+f'(a)(x-a) intended near a.",
+      "required_concepts": [
+        "The tangent-line approximation L(x)=f(a)+f'(a)(x-a) intended near a."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the tangent-line approximation as an exact identity for an arbitrary nonlinear function away from the base point."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m3-tangent-line-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-local-validity-boundary",
+      "canonical_deck_id": "calculus-i",
+      "term": "Local-validity boundary",
+      "prompt": "Define Local-validity boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The neighborhood and regularity evidence limiting how far a tangent or differential approximation may be trusted.",
+      "required_concepts": [
+        "The neighborhood and regularity evidence limiting how far a tangent or differential approximation may be trusted."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming an affine formula derived locally inherits the original function's global validity."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-domain",
+        "calculus-i.ci-m3-linearization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-logarithmic-differentiation",
+      "canonical_deck_id": "calculus-i",
+      "term": "Logarithmic differentiation",
+      "prompt": "Define Logarithmic differentiation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The method of taking logarithms to turn variable powers or products into differentiable sums under valid sign/domain conditions.",
+      "required_concepts": [
+        "The method of taking logarithms to turn variable powers or products into differentiable sums under valid sign/domain conditions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Taking ln of a nonpositive expression without a domain argument."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-exponential-and-logarithmic-derivatives"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-position-velocity-acceleration-chain",
+      "canonical_deck_id": "calculus-i",
+      "term": "Position velocity acceleration chain",
+      "prompt": "Define Position velocity acceleration chain. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** successive time derivatives connecting position, velocity, and acceleration with signed units.",
+      "required_concepts": [
+        "successive time derivatives connecting position, velocity, and acceleration with signed units."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling speed and velocity identical when velocity can be negative."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-quantity-and-units",
+        "calculus-i.ci-m2-derivative-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-related-rates-dependency-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Related-rates dependency model",
+      "prompt": "Define Related-rates dependency model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An equation among time-dependent quantities differentiated before inserting an instant's measurements.",
+      "required_concepts": [
+        "An equation among time-dependent quantities differentiated before inserting an instant's measurements."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing a time-varying quantity by its instantaneous numeric value before differentiation and incorrectly erasing its time derivative."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-quantity-and-units",
+        "calculus-i.ci-m3-implicit-derivative"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m3-tangent-line-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Tangent-line model",
+      "prompt": "Define Tangent-line model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The affine function using a point and derivative to match value and first-order change locally.",
+      "required_concepts": [
+        "The affine function using a point and derivative to match value and first-order change locally."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the function value f(a) as the tangent slope in place of the derivative f prime(a), without justification that they coincide in the particular case."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-asymptotes-and-limiting-behavior",
+      "canonical_deck_id": "calculus-i",
+      "term": "asymptotes and limiting behavior",
+      "prompt": "Define asymptotes and limiting behavior.",
+      "definition": "**Definition.** A vertical, horizontal, or slant line supported by the corresponding one-sided or infinite limiting behavior.",
+      "required_concepts": [
+        "A vertical, horizontal, or slant line supported by the corresponding one-sided or infinite limiting behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every denominator zero a vertical asymptote without checking cancellation."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-infinite-function-limit",
+        "calculus-i.ci-m1-limit-at-infinity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-closed-interval-extrema-method",
+      "canonical_deck_id": "calculus-i",
+      "term": "Closed-interval extrema method",
+      "prompt": "Define Closed-interval extrema method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** evaluation of all interior critical candidates and both endpoints to identify absolute extrema on a closed interval.",
+      "required_concepts": [
+        "evaluation of all interior critical candidates and both endpoints to identify absolute extrema on a closed interval."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only derivative-zero points and omitting endpoints."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-extreme-value-theorem",
+        "calculus-i.ci-m4-critical-number"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-concavity-from-second-derivative",
+      "canonical_deck_id": "calculus-i",
+      "term": "Concavity from second derivative",
+      "prompt": "Define Concavity from second derivative. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The upward or downward bending inferred from the sign of f'' on intervals where it exists.",
+      "required_concepts": [
+        "The upward or downward bending inferred from the sign of f'' on intervals where it exists."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling f''(0)=0 an interval of zero concavity."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-critical-number",
+      "canonical_deck_id": "calculus-i",
+      "term": "Critical number",
+      "prompt": "Define Critical number. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An interior domain point where f'=0 or f' does not exist, serving as a candidate rather than proof of an extremum.",
+      "required_concepts": [
+        "An interior domain point where f'=0 or f' does not exist, serving as a candidate rather than proof of an extremum."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Discarding points where f' is undefined even though f is defined."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-nondifferentiability-mechanism"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-derivative-sign-monotonicity",
+      "canonical_deck_id": "calculus-i",
+      "term": "Derivative-sign monotonicity",
+      "prompt": "Define Derivative-sign monotonicity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The inference that a positive derivative gives increase and a negative derivative gives decrease on an interval.",
+      "required_concepts": [
+        "The inference that a positive derivative gives increase and a negative derivative gives decrease on an interval."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Testing signs only at the critical points where the derivative is zero."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m4-critical-number"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-first-derivative-extremum-test",
+      "canonical_deck_id": "calculus-i",
+      "term": "First-derivative extremum test",
+      "prompt": "State the first-derivative sign test for local maxima and minima, including the condition at the candidate point.",
+      "definition": "Let f be continuous at c and differentiable on both sides near c. A change of f' from positive to negative gives a strict local maximum at c; a change from negative to positive gives a strict local minimum. If f' keeps one strict sign across c, c is not a local extremum. A zero derivative alone is inconclusive.",
+      "required_concepts": [
+        "Positive-to-negative derivative gives a local maximum.",
+        "Negative-to-positive derivative gives a local minimum.",
+        "Require continuity at the candidate and the stated signs on nearby intervals."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "A positive-to-negative derivative sign change gives a local minimum even if f is discontinuous at c."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m4-derivative-sign-monotonicity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-inflection-point-evidence",
+      "canonical_deck_id": "calculus-i",
+      "term": "Inflection-point evidence",
+      "prompt": "Define Inflection-point evidence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A domain point across which concavity changes, not merely a zero or undefined second derivative.",
+      "required_concepts": [
+        "A domain point across which concavity changes, not merely a zero or undefined second derivative."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using f''(0)=0 as sufficient proof."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m4-concavity-from-second-derivative"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-lhopital-rule-and-hypotheses",
+      "canonical_deck_id": "calculus-i",
+      "term": "L'Hopital's rule and hypotheses",
+      "prompt": "State a sufficient one-sided version of L'Hopital's rule, including the indeterminate form and regularity hypotheses.",
+      "definition": "For a one-sided limit x→a, let f and g be differentiable on a punctured one-sided interval, with g(x) and g'(x) nonzero there. Suppose f/g has the indeterminate form 0/0 or infinity/infinity, and lim f'(x)/g'(x)=L exists as a finite or extended real value. Then lim f(x)/g(x)=L. The corresponding two-sided conclusion requires the same conclusion from both sides; analogous tail statements hold at infinity. The rule is sufficient, not necessary.",
+      "required_concepts": [
+        "Require differentiability and a nonzero denominator derivative on the relevant punctured interval.",
+        "Require a 0/0 or infinity/infinity indeterminate form.",
+        "The derivative quotient must have a limit L; then the original quotient has that limit."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Differentiate numerator and denominator to replace any quotient limit, even when the original form is 1/0."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-limit-laws-and-hypotheses",
+        "calculus-i.ci-m2-derivative-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-mean-value-theorem-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Mean Value Theorem: role",
+      "prompt": "What is Mean Value Theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It converts endpoint-average change into an attained instantaneous rate, supporting monotonicity, error, and comparison arguments; it requires its continuity and differentiability hypotheses and does not identify a unique interior point.",
+      "required_concepts": [
+        "It converts endpoint-average change into an attained instantaneous rate, supporting monotonicity, error, and comparison arguments",
+        "it requires its continuity and differentiability hypotheses and does not identify a unique interior point."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming MVT identifies a unique c in every function."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m4-mean-value-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-mean-value-theorem",
+      "canonical_deck_id": "calculus-i",
+      "term": "Mean Value Theorem",
+      "prompt": "State Mean Value Theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** The equality f'(c)=[f(b)-f(a)]/(b-a) at some interior c under closed-interval continuity and open-interval differentiability.",
+      "required_concepts": [
+        "The function f is continuous on the closed interval [a,b].",
+        "The function f is differentiable on the open interval (a,b).",
+        "There is a point c in (a,b) such that f'(c)=[f(b)-f(a)]/(b-a)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming MVT identifies a unique c in every function."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-average-rate-of-change",
+        "calculus-i.ci-m4-rolle-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-newton-iteration",
+      "canonical_deck_id": "calculus-i",
+      "term": "Newton iteration",
+      "prompt": "Define Newton iteration. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The tangent-based update x_{n+1}=x_n-f(x_n)/f'(x_n) with domain, derivative, stopping, and failure checks.",
+      "required_concepts": [
+        "The tangent-based update x_{n+1}=x_n-f(x_n)/f'(x_n) with domain, derivative, stopping, and failure checks."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting an iterate as a certified root without residual or error evidence."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m3-tangent-line-model",
+        "calculus-i.ci-m4-optimization-problem-formulation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-optimization-problem-formulation",
+      "canonical_deck_id": "calculus-i",
+      "term": "optimization problem formulation",
+      "prompt": "Define optimization problem formulation.",
+      "definition": "**Definition.** The objective, constraints, feasible domain, units, boundary cases, and decision criterion established before differentiation.",
+      "required_concepts": [
+        "The objective, constraints, feasible domain, units, boundary cases, and decision criterion established before differentiation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Differentiating two unconstrained variables without using the perimeter constraint."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-quantity-and-units",
+        "calculus-i.ci-m4-closed-interval-extrema-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-rolle-theorem-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Rolle theorem: role",
+      "prompt": "What is Rolle theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It detects at least one interior stationary point when a differentiable curve returns to the same endpoint value and serves as the equal-endpoint case behind the Mean Value Theorem; it does not locate or make that point unique.",
+      "required_concepts": [
+        "It detects at least one interior stationary point when a differentiable curve returns to the same endpoint value and serves as the equal-endpoint case behind the Mean Value Theorem",
+        "it does not locate or make that point unique."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using an endpoint as the guaranteed interior point."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m4-rolle-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-rolle-theorem",
+      "canonical_deck_id": "calculus-i",
+      "term": "Rolle theorem",
+      "prompt": "State Rolle theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** The guarantee of an interior horizontal tangent for a function continuous on [a,b], differentiable on (a,b), and equal at the endpoints.",
+      "required_concepts": [
+        "Continuity on [a,b], differentiability on (a,b), and equal endpoint values are the hypotheses.",
+        "Those hypotheses guarantee an interior point c in (a,b) with f'(c)=0."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using an endpoint as the guaranteed interior point."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-continuity-at-a-point",
+        "calculus-i.ci-m2-derivative-at-a-point"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m4-second-derivative-extremum-test",
+      "canonical_deck_id": "calculus-i",
+      "term": "Second-derivative extremum test",
+      "prompt": "State the second-derivative test at a stationary point, including the zero case.",
+      "definition": "If f is twice differentiable near c and f'(c)=0, then f''(c)>0 gives a strict local minimum and f''(c)<0 gives a strict local maximum. If f''(c)=0, this test is inconclusive: a minimum, maximum, or neither can occur.",
+      "required_concepts": [
+        "Require a stationary point f'(c)=0 and the stated differentiability.",
+        "Positive second derivative means minimum; negative means maximum.",
+        "Zero second derivative is inconclusive."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "At a stationary point a positive second derivative gives a maximum, and zero proves there is no extremum."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m4-critical-number",
+        "calculus-i.ci-m4-concavity-from-second-derivative"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-definite-integral",
+      "canonical_deck_id": "calculus-i",
+      "term": "Definite integral",
+      "prompt": "Define Definite integral. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The unique limiting signed accumulation represented by Riemann sums when that limit exists independently of admissible sample choices.",
+      "required_concepts": [
+        "The unique limiting signed accumulation represented by Riemann sums when that limit exists independently of admissible sample choices."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the integral symbol as requiring an antiderivative before it has been defined."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-general-riemann-sum"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-first-course-integrability-criterion",
+      "canonical_deck_id": "calculus-i",
+      "term": "First-course integrability criterion",
+      "prompt": "Define First-course integrability criterion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A sufficient bounded-interval condition such as continuity or piecewise continuity that licenses the Riemann integral in this course.",
+      "required_concepts": [
+        "A sufficient bounded-interval condition such as continuity or piecewise continuity that licenses the Riemann integral in this course."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every unbounded function on an open interval has an ordinary Riemann integral."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m1-continuity-at-a-point",
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-general-riemann-sum",
+      "canonical_deck_id": "calculus-i",
+      "term": "General Riemann sum",
+      "prompt": "Define General Riemann sum. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The sum of f(x_i*) Delta x_i over a partition, interpreted through a limit as mesh tends to zero.",
+      "required_concepts": [
+        "The sum of f(x_i*) Delta x_i over a partition, interpreted through a limit as mesh tends to zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dropping unequal subinterval widths."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-partition-mesh",
+        "calculus-i.ci-m5-sample-point-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-integral-additivity",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integral additivity",
+      "prompt": "Define Integral additivity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The identity integral_a^c f plus integral_c^b f equals integral_a^b f under compatible integrability.",
+      "required_concepts": [
+        "The identity integral_a^c f plus integral_c^b f equals integral_a^b f under compatible integrability."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing signed subinterval integrals by their magnitudes when applying integral additivity."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-integral-average-value",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integral average value",
+      "prompt": "Define Integral average value. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The constant height f_avg=(1/(b-a)) integral_a^b f giving the same signed accumulation on a nonzero interval.",
+      "required_concepts": [
+        "The constant height f_avg=(1/(b-a)) integral_a^b f giving the same signed accumulation on a nonzero interval."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dividing by b rather than b-a."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-integral-comparison-bound",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integral comparison bound",
+      "prompt": "Define Integral comparison bound. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The consequence m<=f<=M on [a,b] implies m(b-a)<=integral f<=M(b-a) for a<b.",
+      "required_concepts": [
+        "The consequence m<=f<=M on [a,b] implies m(b-a)<=integral f<=M(b-a) for a<b."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating an inequality bound as an exact integral value without equality conditions; a valid loose bound is not itself an error."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-integral-linearity",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integral linearity",
+      "prompt": "Define Integral linearity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The preservation of scalar multiplication and addition by the definite-integral operator.",
+      "required_concepts": [
+        "The preservation of scalar multiplication and addition by the definite-integral operator."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Multiplying bounds by the coefficients."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-integral-orientation",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integral orientation",
+      "prompt": "Define Integral orientation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The convention reversing bounds negates the integral and identical bounds give zero.",
+      "required_concepts": [
+        "The convention reversing bounds negates the integral and identical bounds give zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating reversed bounds as absolute area."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-integral-symmetry",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integral symmetry",
+      "prompt": "Define Integral symmetry. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The cancellation or doubling rules for odd or even integrands on symmetric intervals.",
+      "required_concepts": [
+        "The cancellation or doubling rules for odd or even integrands on symmetric intervals."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the odd rule on a nonsymmetric interval."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-integral-additivity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-interval-partition",
+      "canonical_deck_id": "calculus-i",
+      "term": "Interval partition",
+      "prompt": "Define Interval partition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An ordered finite subdivision a=x0<x1<...<xn=b used to organize local contributions.",
+      "required_concepts": [
+        "An ordered finite subdivision a=x0<x1<...<xn=b used to organize local contributions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Listing four points and thereby creating only three subintervals."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-domain"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-left-and-right-riemann-sums",
+      "canonical_deck_id": "calculus-i",
+      "term": "Left and right Riemann sums",
+      "prompt": "Define Left and right Riemann sums. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** rectangular accumulation using left or right subinterval endpoints with widths retained.",
+      "required_concepts": [
+        "rectangular accumulation using left or right subinterval endpoints with widths retained."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Averaging endpoint heights before declaring a left or right sum."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-sample-point-rule",
+        "calculus-i.ci-m5-sigma-notation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-midpoint-riemann-sum",
+      "canonical_deck_id": "calculus-i",
+      "term": "Midpoint Riemann sum",
+      "prompt": "Define Midpoint Riemann sum. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** rectangular accumulation using each subinterval midpoint as the sample point.",
+      "required_concepts": [
+        "rectangular accumulation using each subinterval midpoint as the sample point."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the midpoint of the whole interval for both rectangles."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-sample-point-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-partition-mesh",
+      "canonical_deck_id": "calculus-i",
+      "term": "Partition mesh",
+      "prompt": "Define Partition mesh. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The largest subinterval width, whose approach to zero expresses uniform refinement control.",
+      "required_concepts": [
+        "The largest subinterval width, whose approach to zero expresses uniform refinement control."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the average width instead of the largest width."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-interval-partition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-sample-point-rule",
+      "canonical_deck_id": "calculus-i",
+      "term": "Sample-point rule",
+      "prompt": "Define Sample-point rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The declared choice of one point in each subinterval at which the integrand is sampled.",
+      "required_concepts": [
+        "The declared choice of one point in each subinterval at which the integrand is sampled."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Selecting subinterval left endpoints while claiming to apply its right-endpoint sample-point rule, or sampling outside the assigned subinterval."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-interval-partition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-sigma-notation",
+      "canonical_deck_id": "calculus-i",
+      "term": "Sigma notation",
+      "prompt": "Define Sigma notation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The compressed representation of an indexed finite sum with explicit start, end, and summand.",
+      "required_concepts": [
+        "The compressed representation of an indexed finite sum with explicit start, end, and summand."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Omitting the index bounds and leaving the number of terms ambiguous."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-interval-partition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m5-signed-accumulation-versus-geometric-area",
+      "canonical_deck_id": "calculus-i",
+      "term": "Signed accumulation versus geometric area",
+      "prompt": "Distinguish Signed accumulation versus geometric area.",
+      "definition": "**Definition.** The integral's positive-above and negative-below contributions versus the nonnegative area obtained by absolute value or sign splitting.",
+      "required_concepts": [
+        "Signed accumulation integrates f, so contributions above the axis are positive and contributions below the axis are negative.",
+        "Geometric area is nonnegative and is obtained by integrating abs(f) or by splitting at sign changes.",
+        "Signed accumulation permits cancellation between opposite signs, whereas geometric area does not."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling cancellation zero evidence that no geometric region exists."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-general-riemann-sum"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m5",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-accumulation-function",
+      "canonical_deck_id": "calculus-i",
+      "term": "Accumulation function",
+      "prompt": "Define Accumulation function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The variable-upper-bound function A(x)=integral_a^x f(t)dt recording net accumulation from a fixed base.",
+      "required_concepts": [
+        "The variable-upper-bound function A(x)=integral_a^x f(t)dt recording net accumulation from a fixed base."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Confusing dummy integration variable t with upper-limit variable x during differentiation."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-antiderivative-family",
+      "canonical_deck_id": "calculus-i",
+      "term": "Antiderivative family",
+      "prompt": "Define Antiderivative family. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** all antiderivatives on an interval differing by an arbitrary constant.",
+      "required_concepts": [
+        "all antiderivatives on an interval differing by an arbitrary constant."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Omitting C in an indefinite-integration result."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-antiderivative"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-antiderivative",
+      "canonical_deck_id": "calculus-i",
+      "term": "Antiderivative",
+      "prompt": "Define Antiderivative. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A function F satisfying F'=f on a declared interval.",
+      "required_concepts": [
+        "A function F satisfying F'=f on a declared interval."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking by integrating again rather than differentiating F."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-definite-substitution-with-bounds",
+      "canonical_deck_id": "calculus-i",
+      "term": "Definite substitution with bounds",
+      "prompt": "Define Definite substitution with bounds. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A change of variable in which both integrand/differential and limits are converted to the new variable.",
+      "required_concepts": [
+        "A change of variable in which both integrand/differential and limits are converted to the new variable."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using u-bounds and then substituting x into the antiderivative."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-ftc-part-ii-evaluation",
+        "calculus-i.ci-m6-indefinite-substitution"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-displacement-versus-total-distance",
+      "canonical_deck_id": "calculus-i",
+      "term": "Displacement versus total distance",
+      "prompt": "Distinguish Displacement versus total distance.",
+      "definition": "**Definition.** The integral of signed velocity versus the integral of speed or a sign-split sum.",
+      "required_concepts": [
+        "Displacement is the signed net change given by the integral of velocity.",
+        "Total distance is the nonnegative accumulation given by the integral of speed abs(v), equivalently by sign splitting.",
+        "Opposite-direction motion cancels in displacement but still contributes positively to total distance."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Taking the absolute value of total displacement and calling it total distance."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-signed-accumulation-versus-geometric-area",
+        "calculus-i.ci-m6-net-change-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-ftc-part-i",
+      "canonical_deck_id": "calculus-i",
+      "term": "FTC Part I",
+      "prompt": "Define FTC Part I. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** for continuous f, the accumulation function A(x)=integral_a^x f(t)dt satisfies A'(x)=f(x).",
+      "required_concepts": [
+        "for continuous f, the accumulation function A(x)=integral_a^x f(t)dt satisfies A'(x)=f(x)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Evaluating the integral first and then forgetting the theorem's continuity setting."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-derivative-function",
+        "calculus-i.ci-m6-accumulation-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-ftc-part-ii-evaluation",
+      "canonical_deck_id": "calculus-i",
+      "term": "FTC Part II evaluation",
+      "prompt": "Define FTC Part II evaluation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** for continuous f with antiderivative F, integral_a^b f=F(b)-F(a).",
+      "required_concepts": [
+        "for continuous f with antiderivative F, integral_a^b f=F(b)-F(a)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Computing F(a)-F(b)."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-definite-integral",
+        "calculus-i.ci-m6-antiderivative"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-indefinite-substitution",
+      "canonical_deck_id": "calculus-i",
+      "term": "Indefinite substitution",
+      "prompt": "Define Indefinite substitution. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The reverse-chain-rule change of variable that transforms integrand and differential consistently.",
+      "required_concepts": [
+        "The reverse-chain-rule change of variable that transforms integrand and differential consistently."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing x^2 to u but leaving dx unchanged."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+        "calculus-i.ci-m6-antiderivative-family"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-initial-value-constant-selection",
+      "canonical_deck_id": "calculus-i",
+      "term": "Initial-value constant selection",
+      "prompt": "Define Initial-value constant selection. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The use of one condition to select a unique member of an antiderivative family.",
+      "required_concepts": [
+        "The use of one condition to select a unique member of an antiderivative family."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Substituting the initial condition into y' instead of y."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-antiderivative-family"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-integration-verification-by-differentiation",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integration verification by differentiation",
+      "prompt": "Define Integration verification by differentiation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The independent check that a proposed antiderivative differentiates to the original integrand on the stated domain.",
+      "required_concepts": [
+        "The independent check that a proposed antiderivative differentiates to the original integrand on the stated domain."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing ln x as the only real antiderivative on negative x."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-function-domain",
+        "calculus-i.ci-m6-antiderivative-family"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-net-change-theorem-role",
+      "canonical_deck_id": "calculus-i",
+      "term": "Net Change Theorem: role",
+      "prompt": "What is Net Change Theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It converts an accumulated rate over an interval into the signed change of an antiderivative, linking definite integrals to physical change; it does not by itself give total variation, final amount, or a rate-valued answer.",
+      "required_concepts": [
+        "It converts an accumulated rate over an interval into the signed change of an antiderivative, linking definite integrals to physical change",
+        "it does not by itself give total variation, final amount, or a rate-valued answer."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting 6 liters/hour after integrating over time."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-net-change-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-net-change-theorem",
+      "canonical_deck_id": "calculus-i",
+      "term": "Net Change Theorem",
+      "prompt": "State Net Change Theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** If F is differentiable on [a,b] and F' is integrable there, for example continuous, then integral_a^b F'(x) dx=F(b)-F(a).",
+      "required_concepts": [
+        "F is differentiable on [a,b] and F' is integrable there.",
+        "The integral of F' from a to b equals F(b)-F(a)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting 6 liters/hour after integrating over time."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m0-quantity-and-units",
+        "calculus-i.ci-m6-ftc-part-ii-evaluation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-two-moving-endpoint-derivative",
+      "canonical_deck_id": "calculus-i",
+      "term": "Two-moving-endpoint derivative",
+      "prompt": "State the derivative of an integral with two moving endpoints and an integrand f(t) independent of x.",
+      "definition": "If f is continuous on the relevant integration region and u,v are differentiable, then d/dx integral from u(x) to v(x) of f(t) dt = f(v(x))v'(x)-f(u(x))u'(x). The lower-endpoint contribution is subtracted. This formula assumes the integrand depends on t, not also explicitly on x.",
+      "required_concepts": [
+        "Use f(v(x))v'(x) minus f(u(x))u'(x).",
+        "Require a continuous integrand and differentiable endpoints.",
+        "This version has no explicit x dependence in the integrand."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Always add both endpoint contributions and ignore any explicit x dependence of the integrand."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-variable-limit-ftc-chain-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m6-variable-limit-ftc-chain-rule",
+      "canonical_deck_id": "calculus-i",
+      "term": "Variable-limit FTC chain rule",
+      "prompt": "State the FTC chain rule for H(x)=integral from a to g(x) of f(t) dt.",
+      "definition": "If f is continuous near g(x), g is differentiable, and H(x)=integral from a to g(x) of f(t) dt is defined, then H'(x)=f(g(x))g'(x). Evaluate the integrand at the moving endpoint and multiply by that endpoint's derivative.",
+      "required_concepts": [
+        "Evaluate f at the moving endpoint g(x).",
+        "Multiply by g'(x).",
+        "Require continuity of f and differentiability of g at the relevant points."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "The derivative of integral from a to g(x) of f(t) dt is f(x), regardless of g."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+        "calculus-i.ci-m6-ftc-part-i"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-application-average-value-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Application average-value model",
+      "prompt": "Define Application average-value model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The constant function value producing the same total accumulation over the interval.",
+      "required_concepts": [
+        "The constant function value producing the same total accumulation over the interval."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming the arithmetic mean of endpoint values always equals the integral average, without conditions or a direct verification that justifies that equality."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-integral-average-value",
+        "calculus-i.ci-m6-ftc-part-ii-evaluation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-application-sanity-check",
+      "canonical_deck_id": "calculus-i",
+      "term": "Application sanity check",
+      "prompt": "Define Application sanity check. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An independent bound, sign, unit, limiting-case, symmetry, or coarse numerical check on an evaluated calculus model.",
+      "required_concepts": [
+        "An independent bound, sign, unit, limiting-case, symmetry, or coarse numerical check on an evaluated calculus model."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Accepting exact symbolic algebra without comparing the result to geometric bounds."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-integral-comparison-bound",
+        "calculus-i.ci-m7-integration-method-selection"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-area-between-curves-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Area-between-curves model",
+      "prompt": "Define Area-between-curves model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The integral of upper-minus-lower or right-minus-left after intersections and sign order determine the bounds.",
+      "required_concepts": [
+        "The integral of upper-minus-lower or right-minus-left after intersections and sign order determine the bounds."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting negative geometric area by integrating lower minus upper, or retaining a fixed ordering across crossings without splitting or taking the appropriate absolute difference."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m5-signed-accumulation-versus-geometric-area",
+        "calculus-i.ci-m6-ftc-part-ii-evaluation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-cylindrical-shell-volume-method",
+      "canonical_deck_id": "calculus-i",
+      "term": "Cylindrical-shell volume method",
+      "prompt": "Define Cylindrical-shell volume method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** volume accumulation 2pi(radius)(height)(thickness) for slices parallel to the rotation axis.",
+      "required_concepts": [
+        "volume accumulation 2pi(radius)(height)(thickness) for slices parallel to the rotation axis."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using diameter 2x as the radius and multiplying by 2pi again."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m7-vertical-slice-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-disk-volume-method",
+      "canonical_deck_id": "calculus-i",
+      "term": "Disk volume method",
+      "prompt": "Define Disk volume method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** volume accumulation pi R(x)^2 dx when slices perpendicular to an axis are solid disks.",
+      "required_concepts": [
+        "volume accumulation pi R(x)^2 dx when slices perpendicular to an axis are solid disks."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using radius x but forgetting to square it."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m7-vertical-slice-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-horizontal-slice-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Horizontal-slice model",
+      "prompt": "Define Horizontal-slice model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A geometric accumulation using thickness dy and a cross-section described as right minus left or an area function of y.",
+      "required_concepts": [
+        "A geometric accumulation using thickness dy and a cross-section described as right minus left or an area function of y."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using top-minus-bottom with dy."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m7-area-between-curves-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-integration-method-selection",
+      "canonical_deck_id": "calculus-i",
+      "term": "Integration-method selection",
+      "prompt": "Define Integration-method selection. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The choice among signed accumulation, area, slicing, disks/washers, shells, work, mass, or average value from the modeled differential element.",
+      "required_concepts": [
+        "The choice among signed accumulation, area, slicing, disks/washers, shells, work, mass, or average value from the modeled differential element."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Choosing a named formula before fixing axis, slice direction, radius, and height."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m7-disk-volume-method",
+        "calculus-i.ci-m7-cylindrical-shell-volume-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-mass-from-density-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Mass-from-density model",
+      "prompt": "Define Mass-from-density model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The integral of linear density over position with density units multiplied by length units.",
+      "required_concepts": [
+        "The integral of linear density over position with density units multiplied by length units."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Averaging endpoint densities without justification for a nonlinear density."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-net-change-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-variable-force-work-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Variable-force work model",
+      "prompt": "Define Variable-force work model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The integral of force over displacement after expressing the force law and coordinate consistently.",
+      "required_concepts": [
+        "The integral of force over displacement after expressing the force law and coordinate consistently."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Multiplying final force ka by distance a and ignoring variation."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m6-net-change-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-vertical-slice-model",
+      "canonical_deck_id": "calculus-i",
+      "term": "Vertical-slice model",
+      "prompt": "Define Vertical-slice model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A geometric accumulation using thickness dx and a cross-section described as top minus bottom or an area function of x.",
+      "required_concepts": [
+        "A geometric accumulation using thickness dx and a cross-section described as top minus bottom or an area function of x."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing right-minus-left while still integrating in x."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m7-area-between-curves-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "calculus-i.ci-m7-washer-volume-method",
+      "canonical_deck_id": "calculus-i",
+      "term": "Washer volume method",
+      "prompt": "Define Washer volume method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** volume accumulation pi[R^2-r^2] dx or dy for cross-sections with an inner radius.",
+      "required_concepts": [
+        "volume accumulation pi[R^2-r^2] dx or dy for cross-sections with an inner radius."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using pi(R-r)^2 instead of pi(R^2-r^2)."
+      ],
+      "prerequisite_ids": [
+        "calculus-i.ci-m7-disk-volume-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "calculus-i",
+        "ci-m7",
+        "shape:definition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-average-rate-of-change",
+      "dependent_card_id": "calculus-i.ci-m0-quantity-and-units"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-average-rate-of-change",
+      "dependent_card_id": "calculus-i.ci-m4-mean-value-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-as-a-mapping",
+      "dependent_card_id": "calculus-i.ci-m0-function-domain"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-as-a-mapping",
+      "dependent_card_id": "calculus-i.ci-m0-function-notation-and-evaluation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-as-a-mapping",
+      "dependent_card_id": "calculus-i.ci-m0-graph-function-correspondence"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-composition",
+      "dependent_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-domain",
+      "dependent_card_id": "calculus-i.ci-m0-function-composition"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-domain",
+      "dependent_card_id": "calculus-i.ci-m0-function-image"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-domain",
+      "dependent_card_id": "calculus-i.ci-m0-piecewise-function-specification"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-domain",
+      "dependent_card_id": "calculus-i.ci-m3-local-validity-boundary"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-domain",
+      "dependent_card_id": "calculus-i.ci-m5-interval-partition"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-domain",
+      "dependent_card_id": "calculus-i.ci-m6-integration-verification-by-differentiation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-image",
+      "dependent_card_id": "calculus-i.ci-m0-restricted-inverse-function"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-notation-and-evaluation",
+      "dependent_card_id": "calculus-i.ci-m0-average-rate-of-change"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-notation-and-evaluation",
+      "dependent_card_id": "calculus-i.ci-m0-difference-quotient"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-function-notation-and-evaluation",
+      "dependent_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-graph-function-correspondence",
+      "dependent_card_id": "calculus-i.ci-m0-function-transformation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-quantity-and-units",
+      "dependent_card_id": "calculus-i.ci-m3-position-velocity-acceleration-chain"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-quantity-and-units",
+      "dependent_card_id": "calculus-i.ci-m3-related-rates-dependency-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-quantity-and-units",
+      "dependent_card_id": "calculus-i.ci-m4-optimization-problem-formulation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-quantity-and-units",
+      "dependent_card_id": "calculus-i.ci-m6-net-change-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-restricted-inverse-function",
+      "dependent_card_id": "calculus-i.ci-m2-inverse-trigonometric-derivatives"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m0-restricted-inverse-function",
+      "dependent_card_id": "calculus-i.ci-m3-inverse-function-derivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-continuity-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m1-discontinuity-classification"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-continuity-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m1-extreme-value-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-continuity-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m1-intermediate-value-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-continuity-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m2-differentiability-implies-continuity"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-continuity-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m4-rolle-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-continuity-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m5-first-course-integrability-criterion"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-extreme-value-theorem",
+      "dependent_card_id": "calculus-i.ci-m1-extreme-value-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-extreme-value-theorem",
+      "dependent_card_id": "calculus-i.ci-m4-closed-interval-extrema-method"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-continuity-at-a-point"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-epsilon-delta-definition-of-a-limit"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-limit-at-infinity"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-limit-laws-and-hypotheses"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-one-sided-function-limit"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-finite-two-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m2-derivative-at-a-point"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-infinite-function-limit",
+      "dependent_card_id": "calculus-i.ci-m4-asymptotes-and-limiting-behavior"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-intermediate-value-theorem",
+      "dependent_card_id": "calculus-i.ci-m1-intermediate-value-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-limit-at-infinity",
+      "dependent_card_id": "calculus-i.ci-m4-asymptotes-and-limiting-behavior"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-limit-laws-and-hypotheses",
+      "dependent_card_id": "calculus-i.ci-m1-squeeze-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-limit-laws-and-hypotheses",
+      "dependent_card_id": "calculus-i.ci-m4-lhopital-rule-and-hypotheses"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-one-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-infinite-function-limit"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-one-sided-function-limit",
+      "dependent_card_id": "calculus-i.ci-m1-two-sided-limit-nonexistence"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m1-squeeze-theorem",
+      "dependent_card_id": "calculus-i.ci-m1-squeeze-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m2-derivative-function"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m2-differentiability-implies-continuity"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m2-one-sided-derivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m3-inverse-function-derivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m3-tangent-line-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-at-a-point",
+      "dependent_card_id": "calculus-i.ci-m4-rolle-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-function",
+      "dependent_card_id": "calculus-i.ci-m2-power-and-linearity-rules"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-function",
+      "dependent_card_id": "calculus-i.ci-m3-position-velocity-acceleration-chain"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-function",
+      "dependent_card_id": "calculus-i.ci-m4-concavity-from-second-derivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-function",
+      "dependent_card_id": "calculus-i.ci-m4-lhopital-rule-and-hypotheses"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-function",
+      "dependent_card_id": "calculus-i.ci-m6-antiderivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-derivative-function",
+      "dependent_card_id": "calculus-i.ci-m6-ftc-part-i"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-differentiability-implies-continuity",
+      "dependent_card_id": "calculus-i.ci-m2-differentiability-implies-continuity-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-exponential-and-logarithmic-derivatives",
+      "dependent_card_id": "calculus-i.ci-m3-exponential-growth-decay-rate-law"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-exponential-and-logarithmic-derivatives",
+      "dependent_card_id": "calculus-i.ci-m3-logarithmic-differentiation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-nondifferentiability-mechanism",
+      "dependent_card_id": "calculus-i.ci-m4-critical-number"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-one-sided-derivative",
+      "dependent_card_id": "calculus-i.ci-m2-nondifferentiability-mechanism"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-power-and-linearity-rules",
+      "dependent_card_id": "calculus-i.ci-m2-product-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-power-and-linearity-rules",
+      "dependent_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-product-rule",
+      "dependent_card_id": "calculus-i.ci-m2-quotient-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m2-exponential-and-logarithmic-derivatives"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m2-inverse-trigonometric-derivatives"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m2-trigonometric-derivative-family"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m3-implicit-derivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m6-indefinite-substitution"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m2-scalar-single-variable-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m6-variable-limit-ftc-chain-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m3-implicit-derivative",
+      "dependent_card_id": "calculus-i.ci-m3-related-rates-dependency-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m3-linearization",
+      "dependent_card_id": "calculus-i.ci-m3-absolute-and-relative-approximation-error"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m3-linearization",
+      "dependent_card_id": "calculus-i.ci-m3-differential-estimate"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m3-linearization",
+      "dependent_card_id": "calculus-i.ci-m3-local-validity-boundary"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m3-tangent-line-model",
+      "dependent_card_id": "calculus-i.ci-m3-linearization"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m3-tangent-line-model",
+      "dependent_card_id": "calculus-i.ci-m4-newton-iteration"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-closed-interval-extrema-method",
+      "dependent_card_id": "calculus-i.ci-m4-optimization-problem-formulation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-concavity-from-second-derivative",
+      "dependent_card_id": "calculus-i.ci-m4-inflection-point-evidence"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-concavity-from-second-derivative",
+      "dependent_card_id": "calculus-i.ci-m4-second-derivative-extremum-test"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-critical-number",
+      "dependent_card_id": "calculus-i.ci-m4-closed-interval-extrema-method"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-critical-number",
+      "dependent_card_id": "calculus-i.ci-m4-derivative-sign-monotonicity"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-critical-number",
+      "dependent_card_id": "calculus-i.ci-m4-second-derivative-extremum-test"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-derivative-sign-monotonicity",
+      "dependent_card_id": "calculus-i.ci-m4-first-derivative-extremum-test"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-mean-value-theorem",
+      "dependent_card_id": "calculus-i.ci-m4-mean-value-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-optimization-problem-formulation",
+      "dependent_card_id": "calculus-i.ci-m4-newton-iteration"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-rolle-theorem",
+      "dependent_card_id": "calculus-i.ci-m4-mean-value-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m4-rolle-theorem",
+      "dependent_card_id": "calculus-i.ci-m4-rolle-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m5-first-course-integrability-criterion"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m5-integral-additivity"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m5-integral-average-value"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m5-integral-comparison-bound"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m5-integral-linearity"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m5-integral-orientation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m6-accumulation-function"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-definite-integral",
+      "dependent_card_id": "calculus-i.ci-m6-ftc-part-ii-evaluation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-general-riemann-sum",
+      "dependent_card_id": "calculus-i.ci-m5-definite-integral"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-general-riemann-sum",
+      "dependent_card_id": "calculus-i.ci-m5-signed-accumulation-versus-geometric-area"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-integral-additivity",
+      "dependent_card_id": "calculus-i.ci-m5-integral-symmetry"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-integral-average-value",
+      "dependent_card_id": "calculus-i.ci-m7-application-average-value-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-integral-comparison-bound",
+      "dependent_card_id": "calculus-i.ci-m7-application-sanity-check"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-interval-partition",
+      "dependent_card_id": "calculus-i.ci-m5-partition-mesh"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-interval-partition",
+      "dependent_card_id": "calculus-i.ci-m5-sample-point-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-interval-partition",
+      "dependent_card_id": "calculus-i.ci-m5-sigma-notation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-partition-mesh",
+      "dependent_card_id": "calculus-i.ci-m5-general-riemann-sum"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-sample-point-rule",
+      "dependent_card_id": "calculus-i.ci-m5-general-riemann-sum"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-sample-point-rule",
+      "dependent_card_id": "calculus-i.ci-m5-left-and-right-riemann-sums"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-sample-point-rule",
+      "dependent_card_id": "calculus-i.ci-m5-midpoint-riemann-sum"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-sigma-notation",
+      "dependent_card_id": "calculus-i.ci-m5-left-and-right-riemann-sums"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-signed-accumulation-versus-geometric-area",
+      "dependent_card_id": "calculus-i.ci-m6-displacement-versus-total-distance"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m5-signed-accumulation-versus-geometric-area",
+      "dependent_card_id": "calculus-i.ci-m7-area-between-curves-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-accumulation-function",
+      "dependent_card_id": "calculus-i.ci-m6-ftc-part-i"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-antiderivative",
+      "dependent_card_id": "calculus-i.ci-m6-antiderivative-family"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-antiderivative",
+      "dependent_card_id": "calculus-i.ci-m6-ftc-part-ii-evaluation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-antiderivative-family",
+      "dependent_card_id": "calculus-i.ci-m6-indefinite-substitution"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-antiderivative-family",
+      "dependent_card_id": "calculus-i.ci-m6-initial-value-constant-selection"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-antiderivative-family",
+      "dependent_card_id": "calculus-i.ci-m6-integration-verification-by-differentiation"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-ftc-part-i",
+      "dependent_card_id": "calculus-i.ci-m6-variable-limit-ftc-chain-rule"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-ftc-part-ii-evaluation",
+      "dependent_card_id": "calculus-i.ci-m6-definite-substitution-with-bounds"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-ftc-part-ii-evaluation",
+      "dependent_card_id": "calculus-i.ci-m6-net-change-theorem"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-ftc-part-ii-evaluation",
+      "dependent_card_id": "calculus-i.ci-m7-application-average-value-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-ftc-part-ii-evaluation",
+      "dependent_card_id": "calculus-i.ci-m7-area-between-curves-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-indefinite-substitution",
+      "dependent_card_id": "calculus-i.ci-m6-definite-substitution-with-bounds"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-net-change-theorem",
+      "dependent_card_id": "calculus-i.ci-m6-displacement-versus-total-distance"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-net-change-theorem",
+      "dependent_card_id": "calculus-i.ci-m6-net-change-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-net-change-theorem",
+      "dependent_card_id": "calculus-i.ci-m7-mass-from-density-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-net-change-theorem",
+      "dependent_card_id": "calculus-i.ci-m7-variable-force-work-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m6-variable-limit-ftc-chain-rule",
+      "dependent_card_id": "calculus-i.ci-m6-two-moving-endpoint-derivative"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-area-between-curves-model",
+      "dependent_card_id": "calculus-i.ci-m7-horizontal-slice-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-area-between-curves-model",
+      "dependent_card_id": "calculus-i.ci-m7-vertical-slice-model"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-cylindrical-shell-volume-method",
+      "dependent_card_id": "calculus-i.ci-m7-integration-method-selection"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-disk-volume-method",
+      "dependent_card_id": "calculus-i.ci-m7-integration-method-selection"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-disk-volume-method",
+      "dependent_card_id": "calculus-i.ci-m7-washer-volume-method"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-integration-method-selection",
+      "dependent_card_id": "calculus-i.ci-m7-application-sanity-check"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-vertical-slice-model",
+      "dependent_card_id": "calculus-i.ci-m7-cylindrical-shell-volume-method"
+    },
+    {
+      "prerequisite_card_id": "calculus-i.ci-m7-vertical-slice-model",
+      "dependent_card_id": "calculus-i.ci-m7-disk-volume-method"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Calculus I.",
+  "level": "College",
+  "tags": [
+    "mathematics"
+  ]
+}

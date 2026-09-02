@@ -1,0 +1,3574 @@
+{
+  "id": "academic-reviewed-v1:discrete-mathematics",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Discrete Mathematics",
+  "subject": "Mathematics",
+  "domain": "Mathematics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "discrete-mathematics.alteration-method",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "alteration method",
+      "prompt": "Define alteration method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The alteration method samples an object and then makes bounded repairs, controlling the expected final objective by the random defects removed or corrected.",
+      "required_concepts": [
+        "The alteration method samples an object and then makes bounded repairs, controlling the expected final objective by the random defects removed or corrected."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Performing repairs without bounding their loss and then treating the original expectation as a guarantee for the altered object."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-linearity-of-expectation",
+        "discrete-mathematics.random-construction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.asymptotic-equivalence-class",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Big-O, big-Omega, and big-Theta",
+      "prompt": "How do big-O, big-Omega, and big-Theta differ?",
+      "definition": "**Definition.** For eventually nonnegative functions f and g, f=O(g) when f(n)<=C g(n) eventually for some C>0; f=Omega(g) when f(n)>=c g(n) eventually for some c>0; and f=Theta(g) when both bounds hold. Only mutual Theta comparison gives the usual asymptotic growth equivalence relation.",
+      "required_concepts": [
+        "f=O(g) means f(n)<=C g(n) eventually for some C>0.",
+        "f=Omega(g) means f(n)>=c g(n) eventually for some c>0.",
+        "f=Theta(g) means both one-sided bounds hold.",
+        "Big-Theta, not one-sided big-O or big-Omega, gives the usual growth equivalence relation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling one-sided big-O or big-Omega comparison an equivalence class, or dropping the eventual quantifier and positive constants."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.bijection-principle",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "bijection principle",
+      "prompt": "Define bijection principle. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** If there is a bijection between two finite sets, then they have the same cardinality, so either set may be counted by counting the other.",
+      "required_concepts": [
+        "If there is a bijection between two finite sets, then they have the same cardinality, so either set may be counted by counting the other."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a mapping that is not both injective and surjective as a counting bijection."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m3-bijective-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.binary-relation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite binary relation representation",
+      "prompt": "Define finite binary relation representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite binary relation from A to B can be represented extensionally as its subset of A cross B, for example by a Boolean matrix or a directed incidence diagram; a relation on A uses A cross A.",
+      "required_concepts": [
+        "The relation is represented as a subset of A cross B, or equivalently by finite incidence data with carriers A and B declared.",
+        "A relation on A uses A cross A."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a finite relation's matrix or diagram as untyped data without declaring its row and column carrier sets."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m5-binary-relation-as-ordered-pair-set"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.binomial-coefficient",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "binomial coefficient",
+      "prompt": "Define binomial coefficient. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The binomial coefficient C(n,k)=n!/(k!(n-k)!) counts k-element subsets of an n-element set for 0<=k<=n.",
+      "required_concepts": [
+        "The binomial coefficient C(n,k)=n!/(k!(n-k)!) counts k-element subsets of an n-element set for 0<=k<=n."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the factorial formula outside its declared integer range without an extension convention."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.combination"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.binomial-theorem-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "binomial theorem: role",
+      "prompt": "What is binomial theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The binomial theorem identifies binomial coefficients as coefficients of a commutative two-term power and supplies identities by comparison or specialization; the usual formula does not directly apply to noncommuting factors.",
+      "required_concepts": [
+        "It identifies binomial coefficients as the coefficients of a power of a two-term sum.",
+        "Algebraic comparison or specialization can yield counting identities.",
+        "Its usual form assumes the two terms commute."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the theorem as a method for arbitrary noncommuting factors without qualification."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.binomial-theorem-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.binomial-theorem-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "binomial theorem: statement",
+      "prompt": "State binomial theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For every nonnegative integer n, (x+y)^n=sum_{k=0}^n C(n,k)x^{n-k}y^k in any commutative ring where these expressions are defined.",
+      "required_concepts": [
+        "For every nonnegative integer n, (x+y)^n=sum_{k=0}^n C(n,k)x^{n-k}y^k in any commutative ring where these expressions are defined."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing every coefficient as one, or using exponents whose sum is not n."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.binomial-coefficient"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.bipartite-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "bipartite graph",
+      "prompt": "Define bipartite graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A graph is bipartite when its vertices can be partitioned into two sets so every edge has one endpoint in each set.",
+      "required_concepts": [
+        "A graph is bipartite when its vertices can be partitioned into two sets so every edge has one endpoint in each set."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a graph is bipartite merely because it has two visibly dense regions."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.boolean-lattice",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Boolean lattice",
+      "prompt": "Define Boolean lattice. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Boolean lattice B_n is the power set of an n-element set ordered by inclusion, with meet intersection and join union.",
+      "required_concepts": [
+        "The Boolean lattice B_n is the power set of an n-element set ordered by inclusion, with meet intersection and join union."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming an arbitrary finite lattice is a Boolean lattice B_n."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.lattice"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.bridge",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "bridge",
+      "prompt": "Define bridge. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A bridge is an edge whose deletion increases the number of connected components.",
+      "required_concepts": [
+        "A bridge is an edge whose deletion increases the number of connected components."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every edge in a spanning tree a bridge of the original graph."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.connected-component"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.characteristic-polynomial",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "characteristic polynomial of a recurrence",
+      "prompt": "Define characteristic polynomial of a recurrence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For a constant-coefficient homogeneous recurrence, the characteristic polynomial is obtained by substituting a trial solution r^n and collecting the resulting polynomial equation in r.",
+      "required_concepts": [
+        "The recurrence is linear, homogeneous, and has constant coefficients.",
+        "Substituting the trial sequence r^n produces the polynomial equation whose left-hand side defines the characteristic polynomial."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a characteristic polynomial for a variable-coefficient recurrence without justification."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.homogeneous-linear-recurrence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.chromatic-number",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "chromatic number",
+      "prompt": "Define chromatic number. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The chromatic number chi(G) is the minimum number of colors in a proper vertex coloring of G.",
+      "required_concepts": [
+        "The chromatic number chi(G) is the minimum number of colors in a proper vertex coloring of G."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting the number of colors in one coloring as the chromatic number without proving minimality."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.vertex-coloring"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.clique",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "clique",
+      "prompt": "Define clique. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A clique is a vertex subset whose distinct vertices are pairwise adjacent.",
+      "required_concepts": [
+        "A clique is a vertex subset whose distinct vertices are pairwise adjacent."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a high-density subgraph a clique despite a missing pairwise edge."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.coefficient-extraction",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "coefficient extraction",
+      "prompt": "In a formal power series A(x), what does [x^n]A(x) denote?",
+      "definition": "**Definition.** The notation [x^n]A(x) denotes the coefficient of x^n in a formal power series A(x).",
+      "required_concepts": [
+        "The notation [x^n]A(x) denotes the coefficient of x^n in a formal power series A(x)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Substituting a numerical x when the task is to extract a formal coefficient."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.ordinary-generating-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:notation"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.combination",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "combination",
+      "prompt": "Define combination. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A k-combination of an n-element set is an unordered k-element subset, for integers 0<=k<=n.",
+      "required_concepts": [
+        "A k-combination is an unordered k-element subset of an n-element set.",
+        "The parameters satisfy integers 0<=k<=n."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting different orders of the same subset as distinct combinations."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.combinations-with-repetition",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "combinations with repetition",
+      "prompt": "Define combinations with repetition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For n>=1 types and r>=0 selections, the number of size-r multisets is binom(n+r-1,r).",
+      "required_concepts": [
+        "The objects are size-r multisets chosen from n>=1 types, with r>=0.",
+        "Their number is binom(n+r-1,r)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using binom(n+r-1,r) for ordered sequences rather than size-r multisets from n types."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.binomial-coefficient"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.combinatorial-invariant",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "combinatorial invariant",
+      "prompt": "Define combinatorial invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A combinatorial invariant is a quantity or property unchanged by the allowed transformations of a discrete object.",
+      "required_concepts": [
+        "A combinatorial invariant is a quantity or property unchanged by the allowed transformations of a discrete object."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a quantity invariant after checking only one transformation instance."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.connected-component",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "connected component",
+      "prompt": "Define connected component. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In an undirected graph, a connected component is a maximal connected subgraph, equivalently an equivalence class of vertices under path reachability.",
+      "required_concepts": [
+        "A connected component is a maximal connected subgraph, equivalently an equivalence class under reachability by paths."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a connected subgraph a component when it is properly contained in a larger connected subgraph."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.subgraph",
+        "discrete-mathematics.connected-graph",
+        "mathematical-proof-and-foundations.fm-m5-equivalence-class"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.connected-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "connected graph",
+      "prompt": "Define connected graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An undirected graph is connected when every pair of vertices is joined by a path.",
+      "required_concepts": [
+        "An undirected graph is connected when every pair of vertices is joined by a path."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring connectedness from every vertex having positive degree."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.walk-trail-path"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.counterexample",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite-structure counterexample",
+      "prompt": "What does a finite-structure counterexample refute, and what makes a finite search exhaustive?",
+      "definition": "**Definition.** A finite-structure counterexample is one admissible assignment or object in the declared finite universe for which an imported universal claim fails; exhaustive finite search is sound only when it covers that whole universe.",
+      "required_concepts": [
+        "The witness is admissible in the declared finite universe and makes the universal predicate false.",
+        "Finite search certifies absence or discovery only when it exhausts that declared universe."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Offering an object outside the declared finite universe, or calling a partial search exhaustive."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.universal-quantifier",
+        "mathematical-proof-and-foundations.fm-m1-universal-disproof-by-counterexample"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:counterexample"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.cover-relation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "cover relation in a poset",
+      "prompt": "Define cover relation in a poset. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In a poset, y covers x when x<y and no z satisfies x<z<y.",
+      "required_concepts": [
+        "In a poset, y covers x when x<y and no z satisfies x<z<y."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming y covers x even though some z satisfies x<z<y."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.poset"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.cycle",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "cycle",
+      "prompt": "Define cycle. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In a simple undirected graph, a cycle is a closed walk of length at least three whose vertices are distinct except for the common start and end.",
+      "required_concepts": [
+        "The walk is closed and has length at least three.",
+        "No vertex repeats except the common start and end."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any closed walk a cycle despite repeated internal vertices."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.walk-trail-path"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.derangement-formula-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "derangement formula: role",
+      "prompt": "What is derangement formula: role used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The formula is the standard inclusion-exclusion count for avoiding all fixed-point events; it does not assume those events are independent.",
+      "required_concepts": [
+        "The formula is the standard inclusion-exclusion count for avoiding all fixed-point events",
+        "it does not assume those events are independent."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Deriving the formula by multiplying fixed-point avoidance probabilities as if those events were independent."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.derangement-formula-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.derangement-formula-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "derangement formula: statement",
+      "prompt": "State derangement formula: statement, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** The number D_n of derangements of n objects is n! sum_{j=0}^n (-1)^j/j!, equivalently the nearest integer to n!/e for n>=1.",
+      "required_concepts": [
+        "The number D_n of derangements of n objects is n! sum_{j=0}^n (-1)^j/j!, equivalently the nearest integer to n!/e for n>=1."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dropping the alternating signs or the j! denominator, or using the nearest-integer form outside n>=1."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.inclusion-exclusion-statement",
+        "discrete-mathematics.derangement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.derangement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "derangement",
+      "prompt": "Define derangement. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A derangement is a permutation with no fixed point.",
+      "required_concepts": [
+        "A derangement is a permutation with no fixed point."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a permutation a derangement when even one element remains in its original position."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.permutation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.directed-acyclic-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "directed acyclic graph",
+      "prompt": "Define directed acyclic graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A directed acyclic graph (DAG) is a directed graph with no directed cycle.",
+      "required_concepts": [
+        "A directed acyclic graph (DAG) is a directed graph with no directed cycle."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating absence of an undirected cycle as the definition, or overlooking a consistently oriented directed cycle."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.directed-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.directed-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "directed graph",
+      "prompt": "Define directed graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A directed graph has vertices and ordered-pair edges, so adjacency has a direction.",
+      "required_concepts": [
+        "A directed graph has vertices and ordered-pair edges, so adjacency has a direction."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing ordered edge pairs by unordered pairs and thereby erasing edge direction."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.distributive-lattice",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "distributive lattice",
+      "prompt": "Define distributive lattice. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A distributive lattice is a lattice whose meet distributes over join and whose join distributes over meet.",
+      "required_concepts": [
+        "A distributive lattice is a lattice whose meet distributes over join and whose join distributes over meet."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every lattice is distributive merely because joins and meets exist."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.lattice"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.divide-and-conquer-recurrence",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "divide-and-conquer recurrence",
+      "prompt": "Define divide-and-conquer recurrence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A divide-and-conquer recurrence models cost as the combined cost of recursive subproblems plus nonrecursive work, commonly T(n)=aT(n/b)+f(n).",
+      "required_concepts": [
+        "A divide-and-conquer recurrence models cost as the combined cost of recursive subproblems plus nonrecursive work, commonly T(n)=aT(n/b)+f(n)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing a recurrence that ignores subproblem count, size, or combine work."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.recurrence-relation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.double-counting",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "double counting",
+      "prompt": "Define double counting. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Double counting proves an identity by counting the same finite set of incidences or configurations in two different ways.",
+      "required_concepts": [
+        "Double counting proves an identity by counting the same finite set of incidences or configurations in two different ways."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting two different underlying sets and equating the totals without a common carrier or bijection."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.bijection-principle"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.euler-criterion-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Euler trail and circuit criterion: role",
+      "prompt": "What is Euler trail and circuit criterion used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The Euler criterion reduces an edge-covering traversal question to path connectivity among nonzero-degree vertices and degree parity; it says nothing about Hamilton paths or cycles, which ask to visit every vertex.",
+      "required_concepts": [
+        "The criterion reduces edge-covering traversal existence to path connectivity among nonzero-degree vertices and degree parity.",
+        "It says nothing about Hamilton paths or cycles, which concern visiting every vertex rather than using every edge."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming the criterion characterizes Hamilton cycles."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.euler-criterion-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.euler-criterion-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Euler trail and circuit criterion: statement",
+      "prompt": "State Euler trail and circuit criterion, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** A finite undirected graph has an Euler circuit exactly when every two vertices of nonzero degree are joined by a path and every vertex has even degree. It has an open Euler trail exactly when every two vertices of nonzero degree are joined by a path and exactly two vertices have odd degree.",
+      "required_concepts": [
+        "The graph is finite and undirected.",
+        "An Euler circuit exists exactly when every two nonzero-degree vertices are joined by a path and every vertex has even degree.",
+        "An open Euler trail exists exactly when every two nonzero-degree vertices are joined by a path and exactly two vertices have odd degree."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying only the degree-parity test when the nonisolated vertices lie in different components, or treating edge coverage as vertex coverage."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.vertex-degree",
+        "discrete-mathematics.euler-trail-and-circuit",
+        "discrete-mathematics.connected-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.euler-planar-formula-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Euler's planar formula: role",
+      "prompt": "What is Euler's planar formula: role used for, and what is its main limitation?",
+      "definition": "**Theorem role.** Euler's formula links local edge-face incidence to a global invariant and yields necessary nonplanarity bounds; satisfying a derived bound is not sufficient for planarity.",
+      "required_concepts": [
+        "Euler's formula links local edge-face incidence to a global invariant and yields necessary nonplanarity bounds",
+        "satisfying a derived bound is not sufficient for planarity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a necessary edge bound derived from Euler's formula as a sufficient characterization of planarity."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.euler-planar-formula-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.euler-planar-formula-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Euler's planar formula: statement",
+      "prompt": "State Euler's planar formula: statement, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For a connected finite planar graph with a fixed planar embedding, V-E+F=2, where F includes the outer face.",
+      "required_concepts": [
+        "For a connected finite planar graph with a fixed planar embedding, V-E+F=2, where F includes the outer face."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using V-E+F=2 for a disconnected drawing without the component correction, or failing to count the outer face."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.connected-graph",
+        "discrete-mathematics.planar-graph",
+        "discrete-mathematics.face-of-planar-embedding"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.euler-trail-and-circuit",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Euler trail and Euler circuit",
+      "prompt": "How do an Euler trail and an Euler circuit differ?",
+      "definition": "**Definition.** In a finite undirected graph, an Euler trail is a trail that contains every edge exactly once, and an Euler circuit is an Euler trail whose initial and final vertices are the same.",
+      "required_concepts": [
+        "The ambient graph is finite and undirected.",
+        "An Euler trail contains every edge exactly once.",
+        "An Euler circuit is an Euler trail with the same initial and final vertex."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a vertex-covering Hamilton traversal Eulerian, allowing an edge to repeat, or calling an open Euler trail a circuit."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.walk-trail-path"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.existential-quantifier",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "existential quantification over a finite structure",
+      "prompt": "Define existential quantification over a finite structure. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For a declared finite domain D, there exists x in D such that P(x) asserts that at least one member of D satisfies P and may be certified by one admissible witness.",
+      "required_concepts": [
+        "The quantifier asserts that at least one member of the declared finite domain satisfies P.",
+        "One admissible member satisfying P is a witness."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating an existential witness as though it must be unique."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m0-existential-quantification"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.expectation-existence-principle-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "expectation existence principle: role",
+      "prompt": "What is expectation existence principle used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It turns an average-value calculation into an existence proof for at least one finite combinatorial object meeting the average threshold, which is the basic probabilistic-method move; it supplies no concentration or typicality claim.",
+      "required_concepts": [
+        "It turns an average-value calculation into an existence proof for at least one finite combinatorial object meeting the average threshold, which is the basic probabilistic-method move",
+        "it supplies no concentration or typicality claim."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding every outcome is close to the expectation."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.expectation-existence-principle"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.expectation-existence-principle",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "expectation existence principle",
+      "prompt": "State expectation existence principle, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** If a real-valued statistic on a finite random object has expectation mu, then at least one outcome has value at least mu and at least one has value at most mu.",
+      "required_concepts": [
+        "Hypotheses: If a real-valued statistic on a finite random object has expectation mu.",
+        "Conclusion: at least one outcome has value at least mu and at least one has value at most mu."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding every outcome is close to the expectation."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-expectation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.exponential-generating-function",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "exponential generating function",
+      "prompt": "Define exponential generating function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The exponential generating function of (a_n) is sum_{n>=0} a_n x^n/n!, a normalization suited to many labeled combinatorial constructions.",
+      "required_concepts": [
+        "The exponential generating function of (a_n) is sum_{n>=0} a_n x^n/n!, a normalization suited to many labeled combinatorial constructions."
+      ],
+      "accepted_variants": [
+        "EGF"
+      ],
+      "major_error_concepts": [
+        "Confusing its coefficients with those of the ordinary generating function by omitting n!."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.ordinary-generating-function"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "EGF"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.face-of-planar-embedding",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "face of a planar embedding",
+      "prompt": "Define face of a planar embedding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A face is a connected component of the plane after removing the drawing, including the unbounded outer face.",
+      "required_concepts": [
+        "A face is a connected component of the plane after removing the drawing, including the unbounded outer face."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting only bounded regions and excluding the unbounded component, or defining faces without a fixed embedding."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.planar-embedding"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-expectation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Finite expectation",
+      "prompt": "Define Finite expectation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For a real-valued random variable X on a finite probability space, E[X]=sum_{omega in Omega} X(omega)P({omega}), the probability-weighted average of its values.",
+      "required_concepts": [
+        "E[X]=sum over omega in Omega of X(omega)P({omega}).",
+        "The weights are the declared outcome probabilities and sum to one."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Averaging outcome values uniformly when the outcomes are not equiprobable, or omitting an outcome with nonzero probability."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-random-variable"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite graph",
+      "prompt": "Define finite graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** This course's base finite graph G=(V,E) has a finite vertex set V and a finite edge collection E with a declared incidence rule. In a simple graph E can be a set of vertex pairs; multigraph multiplicity requires distinct edge objects or a multiplicity function.",
+      "required_concepts": [
+        "V is finite and E is a finite edge collection with declared incidence.",
+        "A simple graph may encode edges as a set of vertex pairs.",
+        "Parallel edges require distinct edge objects or an explicit multiplicity function."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a bare set of endpoint pairs to claim two parallel edges, or leaving direction, loops, and multiplicity conventions undeclared."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-indicator-count",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Finite indicator-count representation",
+      "prompt": "Define Finite indicator-count representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For an event A in a finite probability space, 1_A(x)=1 iff x is in A (the event occurs), and 1_A(x)=0 otherwise. Thus for events A_1,...,A_m, the count N=sum_i 1_{A_i} satisfies E[N]=sum_i P(A_i), without independence.",
+      "required_concepts": [
+        "The indicator 1_{A_i} equals one when A_i occurs and zero otherwise.",
+        "N=sum_i 1_{A_i} counts the occurring events.",
+        "E[N]=sum_i P(A_i) without an independence assumption."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing the expected number of occurring events with the probability that at least one occurs, or requiring the events to be independent."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-linearity-of-expectation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-linearity-of-expectation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite linearity of expectation",
+      "prompt": "Define finite linearity of expectation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For real-valued random variables X_1,...,X_m on one finite probability space, E[sum_i X_i]=sum_i E[X_i], by rearranging finite sums and without independence.",
+      "required_concepts": [
+        "The finite family X_1,...,X_m is defined on one finite probability space.",
+        "E[sum_i X_i]=sum_i E[X_i] follows by rearranging finite sums.",
+        "No independence assumption is required."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Requiring independence for finite linearity or applying the identity to variables defined on different undeclared probability spaces."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-expectation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-probability-space",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite probability space",
+      "prompt": "Define finite probability space. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite probability space assigns nonnegative probabilities summing to one to the outcomes of a finite sample space, with event probabilities obtained by summing outcome probabilities.",
+      "required_concepts": [
+        "A finite probability space assigns nonnegative probabilities summing to one to the outcomes of a finite sample space",
+        "with event probabilities obtained by summing outcome probabilities."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming all outcomes are equally likely without that model assumption."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-random-variable",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Finite random variable",
+      "prompt": "Define Finite random variable. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** On a finite probability space (Omega,P), a real-valued random variable is a function X:Omega->R; its randomness comes from the sampled outcome, not from the function rule changing.",
+      "required_concepts": [
+        "A finite random variable is a function X:Omega->R on a finite probability space.",
+        "The sampled outcome is random; X is a fixed function of that outcome."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a random variable as an event or as a rule that changes randomly after the outcome is sampled."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-probability-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-union-bound-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Finite union bound: role",
+      "prompt": "What is the finite union bound used for, and what is its limitation?",
+      "definition": "**Theorem role.** The union bound controls the chance that at least one bad event occurs using only marginal probabilities; it can be loose when events overlap heavily.",
+      "required_concepts": [
+        "It upper-bounds the probability that at least one bad event occurs using marginal probabilities.",
+        "It may be loose when events overlap heavily."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the upper bound as the exact union probability when events overlap."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-union-bound"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.finite-union-bound",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Finite union bound",
+      "prompt": "State the finite union bound and its assumptions.",
+      "definition": "**Theorem statement.** For events A_1,...,A_m in a finite probability space, P(union_i A_i)<=sum_i P(A_i); no independence assumption is required.",
+      "required_concepts": [
+        "The event family is finite.",
+        "P(union_i A_i)<=sum_i P(A_i).",
+        "No independence assumption is required."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing the inequality by equality for overlapping events or requiring independence."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-probability-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.first-moment-method",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "first-moment method",
+      "prompt": "Define first-moment method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For a nonnegative integer-valued X, P(X>=1)<=E[X]; hence E[X]<1 implies that an outcome with X=0 exists.",
+      "required_concepts": [
+        "For a nonnegative integer-valued X, P(X>=1)<=E[X]; hence E[X]<1 implies that an outcome with X=0 exists."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring P(X=0)>0 from E[X]<1 when X can take negative or noninteger values."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-expectation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.generating-function-product",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "generating-function product",
+      "prompt": "Define generating-function product. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The coefficient of x^n in A(x)B(x) is the convolution sum sum_{k=0}^n a_k b_{n-k}, encoding paired constructions whose sizes add to n.",
+      "required_concepts": [
+        "The coefficient of x^n in A(x)B(x) is the convolution sum sum_{k=0}^n a_k b_{n-k}, encoding paired constructions whose sizes add to n."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Multiplying coefficients termwise instead of convolving them."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.product-rule",
+        "discrete-mathematics.coefficient-extraction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.graph-cut",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "graph cut",
+      "prompt": "Define graph cut. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In an undirected graph, for S subseteq V the cut delta(S) is the set of edges with exactly one endpoint in S and one in V\\S. Directed graphs require separate out-cut and in-cut conventions.",
+      "required_concepts": [
+        "For an undirected graph, delta(S) contains exactly edges with one endpoint in S and one in V\\S.",
+        "Directed graphs require distinct in-cut and out-cut conventions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling an arbitrary edge subset a cut, or using the undirected exactly-one-endpoint formula without distinguishing directed in-cuts and out-cuts."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.graph-distance",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "graph distance",
+      "prompt": "Define graph distance. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The distance between two connected vertices is the minimum number of edges in a path joining them; it is infinite or undefined by convention across components.",
+      "required_concepts": [
+        "The distance between two connected vertices is the minimum number of edges in a path joining them; it is infinite or undefined by convention across components."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the length of an arbitrary path rather than the minimum path length, or assigning a finite distance across components."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.connected-component"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.graph-isomorphism",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "graph isomorphism",
+      "prompt": "Define graph isomorphism. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A graph isomorphism from G to H is a vertex bijection phi such that an edge joins u and v in G if and only if the corresponding edge joins phi(u) and phi(v) in H, with direction, multiplicity, and labels preserved when they belong to the graph structure.",
+      "required_concepts": [
+        "The vertex map is a bijection.",
+        "Adjacency and nonadjacency are preserved in both directions, along with any declared direction, multiplicity, or labels."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a nonbijective vertex map, or preserving degree counts while failing to preserve adjacency in both directions."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.bijection-principle",
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.hall-theorem-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Hall's marriage theorem: role",
+      "prompt": "What is Hall's marriage theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** Hall's theorem characterizes when a bipartite matching saturating a designated finite left part exists and exposes deficient subsets as the obstruction; it establishes existence, not uniqueness of the matching.",
+      "required_concepts": [
+        "Hall's theorem characterizes when a bipartite matching can saturate the designated left part.",
+        "A subset with fewer neighbors than vertices is the exact obstruction, not evidence about uniqueness."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming Hall's condition produces a unique matching."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.hall-theorem-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.hall-theorem-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Hall's marriage theorem: statement",
+      "prompt": "State Hall's marriage theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** A finite bipartite graph with parts X and Y has a matching saturating X exactly when every S subseteq X satisfies |N(S)|>=|S|, where N(S)={y in Y: some x in S is adjacent to y}.",
+      "required_concepts": [
+        "The graph is finite and bipartite with declared parts X and Y.",
+        "For S subseteq X, N(S) is the set of vertices in Y adjacent to at least one x in S.",
+        "A matching saturating X exists exactly when |N(S)|>=|S| for every S subseteq X."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking the neighborhood condition only for single vertices instead of every subset of X."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.bipartite-graph",
+        "discrete-mathematics.matching"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.hamilton-path",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Hamilton path versus Hamilton cycle",
+      "prompt": "How do a Hamilton path and a Hamilton cycle differ?",
+      "definition": "**Definition.** A Hamilton path visits every vertex exactly once; a Hamilton cycle returns to its start after visiting every other vertex exactly once.",
+      "required_concepts": [
+        "A Hamilton path visits every vertex exactly once.",
+        "A Hamilton cycle is a cycle containing every vertex exactly once apart from the repeated start/end vertex."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using Euler degree conditions as a general criterion for Hamilton paths."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.cycle"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.handshaking-lemma-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "handshaking lemma: role",
+      "prompt": "What is handshaking lemma used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It changes a vertex-degree sum into an edge count and yields parity facts such as the even number of odd-degree vertices; its undirected form cannot be reused unchanged for directed degrees.",
+      "required_concepts": [
+        "It changes a vertex-degree sum into an edge count and yields parity facts such as the even number of odd-degree vertices",
+        "its undirected form cannot be reused unchanged for directed degrees."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the undirected degree identity to a directed graph without replacing it by in-degree and out-degree sums."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.handshaking-lemma-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.handshaking-lemma-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "handshaking lemma: statement",
+      "prompt": "State handshaking lemma, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For every finite undirected graph, the sum of vertex degrees equals twice the number of edges; consequently, the number of odd-degree vertices is even.",
+      "required_concepts": [
+        "For every finite undirected graph, the sum of vertex degrees equals twice the number of edges",
+        "consequently, the number of odd-degree vertices is even."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the undirected degree identity to a directed graph without replacing it by in-degree and out-degree sums."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.vertex-degree"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.hasse-diagram",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Hasse diagram",
+      "prompt": "Define Hasse diagram. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A Hasse diagram represents a finite poset by drawing cover relations upward and omitting reflexive and transitively implied edges.",
+      "required_concepts": [
+        "A Hasse diagram represents a finite poset by drawing cover relations upward and omitting reflexive and transitively implied edges."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Retaining every reflexive and transitive comparison produces a relation diagram, not the transitive-reduction convention of a Hasse diagram."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.cover-relation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.homogeneous-linear-recurrence",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "homogeneous linear recurrence",
+      "prompt": "Define homogeneous linear recurrence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A homogeneous linear recurrence has zero forcing term, so every term is a linear combination only of earlier sequence terms.",
+      "required_concepts": [
+        "A homogeneous linear recurrence has zero forcing term, so every term is a linear combination only of earlier sequence terms."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a recurrence homogeneous because its coefficients are constant while a nonzero forcing term remains."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.linear-recurrence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.homogeneous-plus-particular-decomposition",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Homogeneous-plus-particular decomposition",
+      "prompt": "How does a solution of a linear nonhomogeneous recurrence decompose into particular and homogeneous parts?",
+      "definition": "**Definition.** For a linear nonhomogeneous recurrence, fix one particular solution of that recurrence. Every solution is that fixed particular solution plus an arbitrary solution of the associated homogeneous recurrence; initial conditions then determine the homogeneous coefficients.",
+      "required_concepts": [
+        "Subtracting a particular solution leaves a solution of the associated homogeneous recurrence.",
+        "Every solution equals one particular solution plus an arbitrary homogeneous solution.",
+        "Initial conditions determine the remaining homogeneous coefficients."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating one particular solution as the full solution or forgetting to add the associated homogeneous family before imposing initial conditions."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.homogeneous-linear-recurrence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.homogeneous-recurrence-solution-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Constant-coefficient homogeneous recurrence solution: role",
+      "prompt": "What is the constant-coefficient homogeneous recurrence solution theorem used for, and what is its boundary?",
+      "definition": "**Theorem role.** The theorem converts a recurrence into a finite basis of exponential-polynomial sequences and makes repeated-root multiplicity load-bearing; it does not directly cover variable coefficients or a nonzero forcing term.",
+      "required_concepts": [
+        "It turns the recurrence into an exponential-polynomial solution basis.",
+        "Repeated roots require polynomial factors in n.",
+        "The theorem does not directly handle variable coefficients or nonzero forcing terms."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the characteristic-root basis unchanged to a variable-coefficient or nonhomogeneous recurrence."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.homogeneous-recurrence-solution-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.homogeneous-recurrence-solution-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Constant-coefficient homogeneous recurrence solution: statement",
+      "prompt": "State the characteristic-root solution theorem for a constant-coefficient homogeneous recurrence, including repeated roots.",
+      "definition": "**Theorem statement.** For a homogeneous linear recurrence of order k with constant coefficients and characteristic roots r_1,...,r_s of multiplicities m_1,...,m_s over C, every solution has the form sum_i P_i(n) r_i^n with degree P_i<m_i, and the k coefficients are uniquely determined by k consecutive initial values.",
+      "required_concepts": [
+        "The recurrence is homogeneous, linear, order k, and has constant coefficients.",
+        "A root r_i of multiplicity m_i contributes P_i(n)r_i^n with degree P_i<m_i.",
+        "The full solution is the sum of those contributions.",
+        "K consecutive initial values uniquely determine the k scalar coefficients."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using only c r^n for a repeated root of multiplicity greater than one, or omitting the initial values needed to determine the coefficients."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.characteristic-polynomial"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.inclusion-exclusion-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "principle of inclusion-exclusion: role",
+      "prompt": "What is principle of inclusion-exclusion used for, and what is its main limitation?",
+      "definition": "**Theorem role.** Inclusion-exclusion gives an exact finite-union count by alternating corrections for all nonempty intersections; the full formula may require exponentially many terms.",
+      "required_concepts": [
+        "It corrects repeated counting caused by overlapping properties.",
+        "Its standard uses include exact union counts, derangements, and finite sieve arguments.",
+        "The full n-set formula may require 2^n-1 intersection terms."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using it as an independence assumption rather than an exact finite identity."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.inclusion-exclusion-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.inclusion-exclusion-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "principle of inclusion-exclusion: statement",
+      "prompt": "State principle of inclusion-exclusion, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For finite sets A1,...,An, the size of their union is the alternating sum over all nonempty index sets I of (-1)^{|I|+1} times the size of the intersection of Ai for i in I.",
+      "required_concepts": [
+        "The family A_1,...,A_n is finite and every A_i is finite.",
+        "The union size is sum over every nonempty I subseteq {1,...,n} of (-1)^{|I|+1}|intersection_{i in I} A_i|."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding pairwise corrections but omitting higher intersections when more than two sets are present."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.sum-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.indegree-and-outdegree",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "indegree and outdegree",
+      "prompt": "How do indegree and outdegree differ, and how does a loop contribute to them?",
+      "definition": "**Definition.** In a directed graph, indegree counts incoming edges and outdegree counts outgoing edges, with loops contributing to both.",
+      "required_concepts": [
+        "Indegree counts incoming edge ends and outdegree counts outgoing edge ends.",
+        "A directed loop contributes one to both indegree and outdegree."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting every incident directed edge in both degrees, except for loops which legitimately contribute once to each."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.directed-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.independent-set",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "independent set",
+      "prompt": "Define independent set. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An independent set is a vertex subset containing no adjacent pair.",
+      "required_concepts": [
+        "An independent set is a vertex subset containing no adjacent pair."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Confusing independent sets with probabilistically independent events."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.induced-subgraph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "induced subgraph",
+      "prompt": "Define induced subgraph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The subgraph induced by a vertex subset contains exactly those original edges whose endpoints both lie in the subset.",
+      "required_concepts": [
+        "The subgraph induced by a vertex subset contains exactly those original edges whose endpoints both lie in the subset."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Selecting a vertex subset but arbitrarily dropping an original edge whose two endpoints both remain."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.subgraph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.integer-partition",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "integer partition",
+      "prompt": "Define integer partition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An integer partition of n is a multiset of positive integers whose sum is n, conventionally represented in nonincreasing order.",
+      "required_concepts": [
+        "An integer partition of n is a multiset of positive integers whose sum is n, conventionally represented in nonincreasing order."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating different orders of the same parts as different partitions."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.lattice",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "lattice",
+      "prompt": "Define lattice. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A lattice is a poset in which every pair has both a least upper bound (join) and a greatest lower bound (meet).",
+      "required_concepts": [
+        "A lattice is a poset in which every pair has both a least upper bound (join) and a greatest lower bound (meet)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every poset is a lattice, or accepting a pair with no least upper bound or no greatest lower bound."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.poset",
+        "mathematical-proof-and-foundations.fm-m5-upper-and-lower-bounds"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.linear-extension",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "linear extension",
+      "prompt": "Define linear extension. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A linear extension of a partial order is a total order on the same set that preserves every original comparison.",
+      "required_concepts": [
+        "A linear extension of a partial order is a total order on the same set that preserves every original comparison."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reversing a comparable pair from the partial order, or ordering a different ground set."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.poset",
+        "mathematical-proof-and-foundations.fm-m5-strict-and-total-order"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.linear-recurrence",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "linear recurrence",
+      "prompt": "Define linear recurrence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A linear recurrence expresses each sequence term as a linear combination of specified earlier terms plus an optional forcing term.",
+      "required_concepts": [
+        "A linear recurrence expresses each sequence term as a linear combination of specified earlier terms plus an optional forcing term."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a recurrence linear when products or nonlinear functions of earlier terms appear."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.recurrence-relation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.logical-equivalence",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite-structure logical equivalence",
+      "prompt": "Define finite-structure logical equivalence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Two claims about a declared finite structure are logically equivalent when they agree under every admissible assignment or interpretation of that structure; finite checking is sound only when it exhausts the declared possibilities.",
+      "required_concepts": [
+        "The two claims agree under every admissible assignment or interpretation of the declared finite structure.",
+        "A finite truth check establishes equivalence only when it exhausts all admissible cases."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling two finite-structure claims equivalent after checking only a few assignments rather than all admissible cases."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.proposition",
+        "mathematical-proof-and-foundations.fm-m0-logical-equivalence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.loop-invariant",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "loop invariant",
+      "prompt": "Define loop invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A loop invariant is a proposition about program state that holds before the first iteration and is preserved by every iteration; if the loop terminates, it holds on exit, but preservation alone does not prove termination.",
+      "required_concepts": [
+        "The invariant holds before the first iteration.",
+        "Every iteration preserves it.",
+        "If the loop terminates, the invariant holds on exit.",
+        "Invariant preservation alone does not prove termination."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Proving preservation without initialization, or claiming the invariant itself establishes that the loop terminates."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.proposition",
+        "discrete-mathematics.combinatorial-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m1",
+        "shape:invariant"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.lovasz-local-lemma-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "symmetric Lovasz local lemma: role",
+      "prompt": "What is symmetric Lovasz local lemma: role used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The local lemma proves simultaneous avoidance when each bad event has limited dependency, even when a union bound is too weak; it is an existence result unless paired with a constructive method.",
+      "required_concepts": [
+        "The local lemma proves simultaneous avoidance when each bad event has limited dependency, even when a union bound is too weak",
+        "it is an existence result unless paired with a constructive method."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the existential local-lemma conclusion as an efficient sampler or repair algorithm without an additional constructive result."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.lovasz-local-lemma-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.lovasz-local-lemma-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "symmetric Lovasz local lemma: statement",
+      "prompt": "State symmetric Lovasz local lemma: statement, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** Let A_i be finitely many events with P(A_i)<=p and a dependency graph of maximum degree d, so each event is independent of the joint collection of its nonneighbors. If e p(d+1)<=1, then P(intersection_i A_i^c)>0.",
+      "required_concepts": [
+        "The finitely many bad events have probabilities at most p and a dependency graph of maximum degree d.",
+        "Each event is independent of the joint collection indexed by its nonneighbors.",
+        "The numerical condition e p(d+1)<=1 implies positive probability that no bad event occurs."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using only small marginal probabilities while ignoring the dependency-graph condition, or reversing the conclusion into independence of the bad events."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-probability-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.master-theorem-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "master theorem: role",
+      "prompt": "What is master theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The Master theorem classifies balanced equal-size divide-and-conquer recurrences by comparing branching work with nonrecursive work; it does not cover arbitrary recurrences, unequal subproblem sizes, or functions falling into its case gaps.",
+      "required_concepts": [
+        "It classifies balanced equal-size divide-and-conquer recurrences by comparing branching and nonrecursive work.",
+        "It does not cover arbitrary recurrences, unequal subproblem sizes, or functions outside its three case hypotheses."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating it as a solver for arbitrary recurrences, unequal subproblem sizes, or oscillatory forcing terms."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.master-theorem-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.master-theorem-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "master theorem: statement",
+      "prompt": "State master theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** Let a>=1 and b>1 be constants, let f:N->R_{>=0}, and let T:N->R_{>=0} satisfy T(n)=aT(floor(n/b))+f(n) for all sufficiently large integers n with T(n)=Theta(1) below a fixed threshold. Put c=log_b(a). If f(n)=O(n^{c-epsilon}) for some epsilon>0, then T(n)=Theta(n^c). If f(n)=Theta(n^c log^k n) for some k>=0, then T(n)=Theta(n^c log^{k+1} n). If f(n)=Omega(n^{c+epsilon}) for some epsilon>0 and a f(floor(n/b))<=q f(n) eventually for some q<1, then T(n)=Theta(f(n)).",
+      "required_concepts": [
+        "The recurrence is T(n)=aT(floor(n/b))+f(n) for sufficiently large integers n, with constants a>=1, b>1, nonnegative f, and Theta(1) base values below a fixed threshold.",
+        "With c=log_b(a), f(n)=O(n^{c-epsilon}) for some epsilon>0 implies T(n)=Theta(n^c).",
+        "If f(n)=Theta(n^c log^k n) for k>=0, then T(n)=Theta(n^c log^{k+1} n).",
+        "If f(n)=Omega(n^{c+epsilon}) and a f(floor(n/b))<=q f(n) eventually for some q<1, then T(n)=Theta(f(n))."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the theorem without matching an admissible case or checking the regularity condition in the larger-f case."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.divide-and-conquer-recurrence",
+        "discrete-mathematics.asymptotic-equivalence-class"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m4",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.matching",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "matching",
+      "prompt": "Define matching. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A matching is a set of edges no two of which share a vertex.",
+      "required_concepts": [
+        "A matching is a set of edges no two of which share a vertex."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Allowing a vertex to be incident to two selected matching edges."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.multinomial-coefficient",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "multinomial coefficient",
+      "prompt": "Define multinomial coefficient. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For nonnegative k_1+...+k_m=n, the multinomial coefficient n!/(k_1!...k_m!) counts words or allocations with category multiplicities k_1,...,k_m.",
+      "required_concepts": [
+        "For nonnegative k_1+...+k_m=n, the multinomial coefficient n!/(k_1!...k_m!) counts words or allocations with category multiplicities k_1,...,k_m."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using n!/(k_1!...k_m!) when the nonnegative multiplicities do not sum to n."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.permutation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.ordinary-generating-function",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "ordinary generating function",
+      "prompt": "Define ordinary generating function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ordinary generating function of a sequence (a_n) is the formal power series A(x)=sum_{n>=0} a_n x^n.",
+      "required_concepts": [
+        "The ordinary generating function of a sequence (a_n) is the formal power series A(x)=sum_{n>=0} a_n x^n."
+      ],
+      "accepted_variants": [
+        "OGF"
+      ],
+      "major_error_concepts": [
+        "Treating a formal generating function as an analytically convergent function without checking convergence."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [
+        "OGF"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.perfect-matching",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "perfect matching",
+      "prompt": "Define perfect matching. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A perfect matching is a matching that covers every vertex of the graph.",
+      "required_concepts": [
+        "A perfect matching is a matching that covers every vertex of the graph."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a maximal matching perfect when it leaves vertices unmatched."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.matching"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.permutation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "permutation",
+      "prompt": "Define permutation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A permutation of an n-element set is a bijection from the set to itself; equivalently, a linear arrangement of its n distinct elements, of which there are n!.",
+      "required_concepts": [
+        "A permutation is a bijection of a set with itself, equivalently a linear arrangement of distinct elements.",
+        "An n-element set has n! permutations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using n! when repetitions or indistinguishable objects change the counting object."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.product-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.permutations-with-repetition",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "permutations of a multiset",
+      "prompt": "Define permutations of a multiset. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A multiset with n total objects and multiplicities k_1,...,k_m has n!/(k_1!...k_m!) distinct linear arrangements.",
+      "required_concepts": [
+        "A multiset with n total objects and multiplicities k_1,...,k_m has n!/(k_1!...k_m!) distinct linear arrangements."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting copies of the same repeated value as distinguishable and reporting n! arrangements."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.multinomial-coefficient"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.pigeonhole-principle-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "pigeonhole principle: role",
+      "prompt": "What is pigeonhole principle used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The pigeonhole principle proves that some box has a collision or concentration when avoidance would make total capacity too small; it need not identify which box.",
+      "required_concepts": [
+        "It proves existence by comparing the number of objects with total avoidance capacity.",
+        "It need not identify the crowded box."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming it identifies which particular box must be crowded when only existence is established."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.pigeonhole-principle-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.pigeonhole-principle-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "pigeonhole principle: statement",
+      "prompt": "State pigeonhole principle, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** If N objects are assigned to k boxes, where N is a nonnegative integer and k is a positive integer, some box receives at least ceil(N/k) objects; in particular, N>k forces a box containing at least two objects.",
+      "required_concepts": [
+        "All N objects are assigned among a positive number k of boxes.",
+        "Some box contains at least ceil(N/k) objects.",
+        "The special case N>k forces at least two objects in one box."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using floor(N/k) as the forced lower bound or omitting that every object is assigned to a box."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.sum-rule",
+        "mathematical-proof-and-foundations.fm-m6-pigeonhole-cardinal-principle"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.planar-embedding",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "planar embedding",
+      "prompt": "Define planar embedding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A planar embedding maps vertices to distinct points of the plane and edges to arcs whose interiors are pairwise disjoint and contain no nonincident vertex.",
+      "required_concepts": [
+        "Vertices map to distinct points and edges to endpoint-preserving arcs.",
+        "Edge interiors are pairwise disjoint and contain no nonincident vertex."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a drawing an embedding when two edge interiors cross or a vertex lies in a nonincident edge's interior."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.planar-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "planar graph",
+      "prompt": "Define planar graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A planar graph admits a drawing in the plane with no edge crossings except at common endpoints.",
+      "required_concepts": [
+        "A planar graph admits a drawing in the plane with no edge crossings except at common endpoints."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Declaring a graph nonplanar because one particular drawing has crossings."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.planar-embedding"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.poset",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "partially ordered set",
+      "prompt": "Define partially ordered set. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A partially ordered set is a pair (P, <=) consisting of a set and a specified partial order on it.",
+      "required_concepts": [
+        "A partially ordered set is a pair (P, <=) consisting of a set and a specified partial order on it."
+      ],
+      "accepted_variants": [
+        "poset"
+      ],
+      "major_error_concepts": [
+        "Referring to a set as ordered without identifying the relation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m5-preorder-and-partial-order"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "poset"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.probabilistic-method",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "probabilistic method",
+      "prompt": "What is the reusable proof idea behind probabilistic method?",
+      "definition": "**Definition.** The probabilistic method proves that a combinatorial object exists by defining a random object and showing the desired property has positive probability.",
+      "required_concepts": [
+        "The probabilistic method proves that a combinatorial object exists by defining a random object and showing the desired property has positive probability."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming the method samples the desired object efficiently merely because existence probability is positive."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.random-construction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:proof-idea"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.product-rule",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Combinatorial product rule",
+      "prompt": "Define Combinatorial product rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** If a construction has k successive stages and stage i offers n_i choices for every admissible history of earlier choices, then it has product_i n_i complete choice sequences.",
+      "required_concepts": [
+        "The construction has successive stages.",
+        "At stage i, every admissible earlier history has exactly n_i choices.",
+        "The number of complete choice sequences is product_i n_i."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Multiplying nominal stage counts when the number of later choices varies with the earlier history."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.proposition",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite combinatorial proposition",
+      "prompt": "Define finite combinatorial proposition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite combinatorial proposition is a closed truth-valued claim about a declared finite structure, obtained after importing the general proposition and variable-binding language from Mathematical Proof and Foundations.",
+      "required_concepts": [
+        "The claim is closed and truth-valued.",
+        "Its objects and interpretation belong to a declared finite structure."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating an open sentence about a graph or finite set as a proposition before its variables are assigned or quantified."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m0-proposition-with-truth-value"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.quantifier-order",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite-structure quantifier order",
+      "prompt": "Define finite-structure quantifier order. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In a finite structure, quantifier order controls witness dependence: forall x exists y P(x,y) may choose a different y for each x, whereas exists y forall x P(x,y) requires one y that works for every x.",
+      "required_concepts": [
+        "In forall x exists y P(x,y), the witness y may depend on x.",
+        "In exists y forall x P(x,y), one witness y must work for every x.",
+        "The two claims are not equivalent in general."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Swapping universal and existential quantifiers without changing the claim."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.universal-quantifier",
+        "discrete-mathematics.existential-quantifier"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.random-construction",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "random construction",
+      "prompt": "Define random construction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A random construction is the explicit specification of the finite object space and probability distribution to which a probabilistic existence argument is applied.",
+      "required_concepts": [
+        "Declare the finite combinatorial object space.",
+        "Declare the probability law used to sample it.",
+        "This construction supplies the model; the probabilistic method supplies the existence inference."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Saying 'choose randomly' without declaring the object space and probability law."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-probability-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.random-graph-model",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "Erdos-Renyi random graph G(n,p)",
+      "prompt": "Define Erdos-Renyi random graph G(n,p). Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In G(n,p), the vertex set has size n and each possible undirected edge is included independently with probability p.",
+      "required_concepts": [
+        "In G(n,p), the vertex set has size n and each possible undirected edge is included independently with probability p."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Confusing G(n,p) with the model having exactly a fixed number of edges."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-graph",
+        "discrete-mathematics.finite-probability-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.recurrence-relation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "recurrence relation",
+      "prompt": "Define recurrence relation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A recurrence relation constrains each term of a sequence using earlier terms, together with enough initial conditions to determine the intended sequence.",
+      "required_concepts": [
+        "A recurrence relation constrains each term of a sequence using earlier terms, together with enough initial conditions to determine the intended sequence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing a recurrence without initial conditions and claiming it defines a unique sequence."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m4-recursive-definition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.simple-graph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "simple graph",
+      "prompt": "Define simple graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A simple undirected graph has edges that are unordered pairs of distinct vertices, with no loops and no parallel edges.",
+      "required_concepts": [
+        "A simple undirected graph has edges that are unordered pairs of distinct vertices, with no loops and no parallel edges."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a graph simple while allowing a loop or repeated edge."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.simple-planar-edge-bound-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "simple planar edge bound: role",
+      "prompt": "What is simple planar edge bound: role used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The edge bound is a fast necessary test for planarity derived from minimum face length; it is not a planarity characterization.",
+      "required_concepts": [
+        "The edge bound is a fast necessary test for planarity derived from minimum face length",
+        "it is not a planarity characterization."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding that a graph is planar merely because it satisfies the edge inequality."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-planar-edge-bound-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.simple-planar-edge-bound-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "simple planar edge bound: statement",
+      "prompt": "State simple planar edge bound: statement, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** Every simple connected planar graph with V>=3 satisfies E<=3V-6; if it is also bipartite, E<=2V-4.",
+      "required_concepts": [
+        "Every simple connected planar graph with V>=3 satisfies E<=3V-6",
+        "if it is also bipartite, E<=2V-4."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying E<=3V-6 to a multigraph with two-edge faces, or applying the bipartite improvement without bipartiteness."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-graph",
+        "discrete-mathematics.bipartite-graph",
+        "discrete-mathematics.euler-planar-formula-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.spanning-tree",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "spanning tree",
+      "prompt": "Define spanning tree. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A spanning tree of a connected graph is a subgraph containing every vertex and forming a tree.",
+      "required_concepts": [
+        "A spanning tree of a connected graph is a subgraph containing every vertex and forming a tree."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a tree on only a subset of vertices spanning."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.subgraph",
+        "discrete-mathematics.tree"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.stars-and-bars-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "stars-and-bars theorem: role",
+      "prompt": "What is stars-and-bars theorem: role used for, and what is its main limitation?",
+      "definition": "**Theorem role.** Stars and bars converts indistinguishable allocations into separator positions; upper bounds or other side constraints require inclusion-exclusion or another method.",
+      "required_concepts": [
+        "Stars and bars converts indistinguishable allocations into separator positions",
+        "upper bounds or other side constraints require inclusion-exclusion or another method."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying stars and bars when objects are distinguishable or when upper bounds invalidate the unrestricted occupancy model."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.stars-and-bars-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.stars-and-bars-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "stars-and-bars theorem: statement",
+      "prompt": "State stars-and-bars theorem: statement, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For integers k>=1 and n>=0, the number of nonnegative integer solutions to x_1+...+x_k=n is binom(n+k-1,k-1); when n>=k, the number of positive integer solutions is binom(n-1,k-1).",
+      "required_concepts": [
+        "For k>=1 and n>=0, nonnegative solutions are counted by binom(n+k-1,k-1).",
+        "For n>=k, positive solutions are counted by binom(n-1,k-1)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the nonnegative-solution formula for positive parts without shifting each variable by one, or applying either formula outside its integer hypotheses."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.combinations-with-repetition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.strong-induction",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "strong-induction decomposition pattern",
+      "prompt": "What is the reusable strong-induction pattern for a discrete decomposition argument?",
+      "definition": "**Definition.** In discrete decomposition arguments, strong induction proves P(n) by reducing an object of size n to one or more strictly smaller sizes and applying the imported strong-induction hypothesis to those components.",
+      "required_concepts": [
+        "Reduce the size-n object to one or more objects of strictly smaller size.",
+        "Apply the imported strong-induction hypothesis to the smaller components.",
+        "Recombine the component conclusions to prove P(n)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the induction hypothesis to a component that is not strictly smaller makes the decomposition argument circular."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m4-strong-induction-principle"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m1",
+        "shape:proof-idea"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.subgraph",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "subgraph",
+      "prompt": "Define subgraph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For finite graphs H and G under the same graph convention, H is a subgraph of G when V(H) is a subset of V(G), E(H) is a subset of E(G), and every edge of H retains its incidence from G. A subgraph may omit vertices and edges.",
+      "required_concepts": [
+        "V(H) is a subset of V(G) and E(H) is a subset of E(G).",
+        "Every edge retained in H keeps its incidence from G.",
+        "A subgraph may omit vertices and edges and need not be induced."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling H a subgraph while adding a vertex or edge absent from G, changing an edge's incidence, or requiring every subgraph to be induced."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.sum-rule",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "sum rule",
+      "prompt": "Define sum rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** If a choice can be made from pairwise disjoint alternatives of sizes n1,...,nk, the total number of choices is n1+...+nk.",
+      "required_concepts": [
+        "If a choice can be made from pairwise disjoint alternatives of sizes n1,...,nk, the total number of choices is n1+...+nk."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding counts of overlapping alternatives without correcting the overlap."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.topological-order-existence-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "topological-order characterization: role",
+      "prompt": "What is topological-order characterization: role used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The characterization turns finite dependency feasibility into directed-cycle detection and supports source-removal induction; it applies to directed, not merely undirected, acyclicity.",
+      "required_concepts": [
+        "It turns finite dependency feasibility into directed-cycle detection.",
+        "It supports source-removal induction or a topological-sort algorithm.",
+        "The relevant obstruction is a directed cycle, not merely an undirected cycle."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating one failed ordering attempt as proof of a cycle instead of using a valid source-removal or cycle-detection argument."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.topological-order-existence-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.topological-order-existence-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "topological-order characterization: statement",
+      "prompt": "State topological-order characterization: statement, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** A finite directed graph has a topological ordering if and only if it is acyclic.",
+      "required_concepts": [
+        "A finite directed graph has a topological ordering if and only if it is acyclic."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming that a directed graph containing a directed cycle has a topological ordering, or dropping the finiteness hypothesis from this formulation."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.directed-acyclic-graph",
+        "discrete-mathematics.topological-order"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.topological-order",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "topological ordering",
+      "prompt": "Define topological ordering. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A topological ordering of a directed graph is a linear order placing every edge's tail before its head.",
+      "required_concepts": [
+        "A topological ordering of a directed graph is a linear order placing every edge's tail before its head."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Placing an edge head before its tail, or calling an ordering of only some vertices topological."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.directed-graph",
+        "mathematical-proof-and-foundations.fm-m5-strict-and-total-order"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.tree-equivalence-role",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite tree characterizations: role",
+      "prompt": "What is finite tree characterizations used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It lets a proof establish that a finite graph is a tree by verifying any suitable two of connectedness, acyclicity, and the n-minus-one edge count, and it supports switching to the unique-path characterization; one condition alone is not enough.",
+      "required_concepts": [
+        "It lets a proof establish that a finite graph is a tree by verifying any suitable two of connectedness, acyclicity, and the n-minus-one edge count, and it supports switching to the unique-path characterization",
+        "one condition alone is not enough."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the n-1 edge condition alone to conclude the graph is a tree."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.tree-equivalence-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.tree-equivalence-statement",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "finite tree characterizations: statement",
+      "prompt": "State finite tree characterizations, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For a nonempty finite undirected graph with n>=1 vertices, any two of connectedness, acyclicity, and having n-1 edges imply the third; equivalently, it is a tree exactly when every two vertices are joined by a unique path.",
+      "required_concepts": [
+        "The graph is finite, undirected, and nonempty, with n>=1 vertices.",
+        "Any two of connectedness, acyclicity, and having n-1 edges imply the third.",
+        "Equivalently, a tree has a unique path between every pair of vertices."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the n-1 edge condition alone to conclude the graph is a tree."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.tree"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.tree",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "tree",
+      "prompt": "Define tree. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A tree is a connected simple undirected graph containing no cycle.",
+      "required_concepts": [
+        "The graph is simple and undirected.",
+        "It is connected and contains no cycle."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every acyclic graph a tree rather than a forest when it is disconnected."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-graph",
+        "discrete-mathematics.cycle",
+        "discrete-mathematics.connected-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.universal-quantifier",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "universal quantification over a finite structure",
+      "prompt": "Define universal quantification over a finite structure. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For a declared finite domain D, forall x in D, P(x) asserts P(x) for every member of D and can be checked by an exhaustive traversal of D.",
+      "required_concepts": [
+        "The quantifier ranges over every member of the declared finite domain D.",
+        "Exhaustive traversal is a valid check because D is finite and fully specified."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Refuting a universal claim without producing an element in its domain for which the predicate is false."
+      ],
+      "prerequisite_ids": [
+        "mathematical-proof-and-foundations.fm-m0-universal-quantification"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.vertex-coloring",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "proper vertex coloring",
+      "prompt": "Define proper vertex coloring. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A proper vertex coloring assigns colors to vertices so adjacent vertices receive different colors.",
+      "required_concepts": [
+        "A proper vertex coloring assigns colors to vertices so adjacent vertices receive different colors."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating color labels as ordered numerical values rather than interchangeable categories."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.simple-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.vertex-degree",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "vertex degree",
+      "prompt": "Define vertex degree. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In an undirected graph, the degree of a vertex is the number of incident edge ends, counting a loop twice when loops are allowed.",
+      "required_concepts": [
+        "In an undirected graph, the degree of a vertex is the number of incident edge ends, counting a loop twice when loops are allowed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting a loop once in the undirected degree sum."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.walk-trail-path",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "walk, trail, and path",
+      "prompt": "Distinguish walk, trail, and path.",
+      "definition": "**Definition.** In an undirected graph, a walk is a vertex-edge sequence in which each edge joins its consecutive vertices; a trail is an undirected walk with no repeated edge, and a path is an undirected walk with no repeated vertex. Directed traversal is a later convention and must respect arc orientation.",
+      "required_concepts": [
+        "The card's walk, trail, and path are undirected graph notions.",
+        "An undirected walk has consecutive vertices joined by the intervening edge.",
+        "An undirected trail repeats no edge.",
+        "An undirected path repeats no vertex.",
+        "A later directed traversal must respect arc orientation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using walk, trail, and path as synonyms, losing their distinct repetition constraints, or applying the undirected incidence convention to a directed arc without respecting its orientation."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.finite-graph"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m5",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.weak-and-positive-compositions",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "weak and positive compositions",
+      "prompt": "How do weak and positive compositions differ, and how do both differ from an integer partition?",
+      "definition": "**Definition.** A weak composition of n into k parts is an ordered k-tuple of nonnegative integers summing to n, while a positive composition requires every part to be positive. Both are ordered tuples, unlike an integer partition, which is unordered.",
+      "required_concepts": [
+        "A weak composition permits zero parts.",
+        "A positive composition requires every part to be positive.",
+        "Both are ordered tuples, unlike integer partitions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating zero parts as admissible in a positive composition, or treating the ordered parts as an unordered integer partition."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.integer-partition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m2",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.well-founded-recursion",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "well-founded recursion",
+      "prompt": "Define well-founded recursion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Well-founded recursion defines an object's value from values at strictly smaller predecessors under a well-founded relation.",
+      "required_concepts": [
+        "Well-founded recursion defines an object's value from values at strictly smaller predecessors under a well-founded relation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Allowing a recursive dependency that does not decrease in the declared well-founded relation."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.well-founded-relation",
+        "mathematical-proof-and-foundations.fm-m4-recursive-definition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "discrete-mathematics.well-founded-relation",
+      "canonical_deck_id": "discrete-mathematics",
+      "term": "well-founded relation",
+      "prompt": "Define well-founded relation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A relation R on A is well-founded when every nonempty subset S of A has an R-minimal element m in S: no s in S satisfies s R m.",
+      "required_concepts": [
+        "Every nonempty subset S of A has an R-minimal element m in S.",
+        "R-minimal means that no s in S satisfies s R m."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a relation well-founded merely because it is transitive, or checking for a minimal element only in A rather than in every nonempty subset of A."
+      ],
+      "prerequisite_ids": [
+        "discrete-mathematics.binary-relation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "discrete-mathematics",
+        "dm-m1",
+        "shape:definition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "discrete-mathematics.asymptotic-equivalence-class",
+      "dependent_card_id": "discrete-mathematics.master-theorem-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.bijection-principle",
+      "dependent_card_id": "discrete-mathematics.double-counting"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.bijection-principle",
+      "dependent_card_id": "discrete-mathematics.graph-isomorphism"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.binary-relation",
+      "dependent_card_id": "discrete-mathematics.well-founded-relation"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.binomial-coefficient",
+      "dependent_card_id": "discrete-mathematics.binomial-theorem-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.binomial-coefficient",
+      "dependent_card_id": "discrete-mathematics.combinations-with-repetition"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.binomial-theorem-statement",
+      "dependent_card_id": "discrete-mathematics.binomial-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.bipartite-graph",
+      "dependent_card_id": "discrete-mathematics.hall-theorem-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.bipartite-graph",
+      "dependent_card_id": "discrete-mathematics.simple-planar-edge-bound-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.characteristic-polynomial",
+      "dependent_card_id": "discrete-mathematics.homogeneous-recurrence-solution-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.coefficient-extraction",
+      "dependent_card_id": "discrete-mathematics.generating-function-product"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.combination",
+      "dependent_card_id": "discrete-mathematics.binomial-coefficient"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.combinations-with-repetition",
+      "dependent_card_id": "discrete-mathematics.stars-and-bars-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.combinatorial-invariant",
+      "dependent_card_id": "discrete-mathematics.loop-invariant"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.connected-component",
+      "dependent_card_id": "discrete-mathematics.bridge"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.connected-component",
+      "dependent_card_id": "discrete-mathematics.graph-distance"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.connected-graph",
+      "dependent_card_id": "discrete-mathematics.connected-component"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.connected-graph",
+      "dependent_card_id": "discrete-mathematics.euler-criterion-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.connected-graph",
+      "dependent_card_id": "discrete-mathematics.euler-planar-formula-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.connected-graph",
+      "dependent_card_id": "discrete-mathematics.tree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.cover-relation",
+      "dependent_card_id": "discrete-mathematics.hasse-diagram"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.cycle",
+      "dependent_card_id": "discrete-mathematics.hamilton-path"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.cycle",
+      "dependent_card_id": "discrete-mathematics.tree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.derangement",
+      "dependent_card_id": "discrete-mathematics.derangement-formula-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.derangement-formula-statement",
+      "dependent_card_id": "discrete-mathematics.derangement-formula-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.directed-acyclic-graph",
+      "dependent_card_id": "discrete-mathematics.topological-order-existence-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.directed-graph",
+      "dependent_card_id": "discrete-mathematics.directed-acyclic-graph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.directed-graph",
+      "dependent_card_id": "discrete-mathematics.indegree-and-outdegree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.directed-graph",
+      "dependent_card_id": "discrete-mathematics.topological-order"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.divide-and-conquer-recurrence",
+      "dependent_card_id": "discrete-mathematics.master-theorem-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.euler-criterion-statement",
+      "dependent_card_id": "discrete-mathematics.euler-criterion-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.euler-planar-formula-statement",
+      "dependent_card_id": "discrete-mathematics.euler-planar-formula-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.euler-planar-formula-statement",
+      "dependent_card_id": "discrete-mathematics.simple-planar-edge-bound-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.euler-trail-and-circuit",
+      "dependent_card_id": "discrete-mathematics.euler-criterion-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.existential-quantifier",
+      "dependent_card_id": "discrete-mathematics.quantifier-order"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.expectation-existence-principle",
+      "dependent_card_id": "discrete-mathematics.expectation-existence-principle-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.face-of-planar-embedding",
+      "dependent_card_id": "discrete-mathematics.euler-planar-formula-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-expectation",
+      "dependent_card_id": "discrete-mathematics.expectation-existence-principle"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-expectation",
+      "dependent_card_id": "discrete-mathematics.finite-linearity-of-expectation"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-expectation",
+      "dependent_card_id": "discrete-mathematics.first-moment-method"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.bipartite-graph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.directed-graph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.graph-cut"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.graph-isomorphism"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.matching"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.planar-embedding"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.simple-graph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.subgraph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.vertex-degree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-graph",
+      "dependent_card_id": "discrete-mathematics.walk-trail-path"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-linearity-of-expectation",
+      "dependent_card_id": "discrete-mathematics.alteration-method"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-linearity-of-expectation",
+      "dependent_card_id": "discrete-mathematics.finite-indicator-count"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-probability-space",
+      "dependent_card_id": "discrete-mathematics.finite-random-variable"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-probability-space",
+      "dependent_card_id": "discrete-mathematics.finite-union-bound"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-probability-space",
+      "dependent_card_id": "discrete-mathematics.lovasz-local-lemma-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-probability-space",
+      "dependent_card_id": "discrete-mathematics.random-construction"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-probability-space",
+      "dependent_card_id": "discrete-mathematics.random-graph-model"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-random-variable",
+      "dependent_card_id": "discrete-mathematics.finite-expectation"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.finite-union-bound",
+      "dependent_card_id": "discrete-mathematics.finite-union-bound-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.hall-theorem-statement",
+      "dependent_card_id": "discrete-mathematics.hall-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.handshaking-lemma-statement",
+      "dependent_card_id": "discrete-mathematics.handshaking-lemma-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.homogeneous-linear-recurrence",
+      "dependent_card_id": "discrete-mathematics.characteristic-polynomial"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.homogeneous-linear-recurrence",
+      "dependent_card_id": "discrete-mathematics.homogeneous-plus-particular-decomposition"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.homogeneous-recurrence-solution-statement",
+      "dependent_card_id": "discrete-mathematics.homogeneous-recurrence-solution-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.inclusion-exclusion-statement",
+      "dependent_card_id": "discrete-mathematics.derangement-formula-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.inclusion-exclusion-statement",
+      "dependent_card_id": "discrete-mathematics.inclusion-exclusion-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.integer-partition",
+      "dependent_card_id": "discrete-mathematics.weak-and-positive-compositions"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.lattice",
+      "dependent_card_id": "discrete-mathematics.boolean-lattice"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.lattice",
+      "dependent_card_id": "discrete-mathematics.distributive-lattice"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.linear-recurrence",
+      "dependent_card_id": "discrete-mathematics.homogeneous-linear-recurrence"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.lovasz-local-lemma-statement",
+      "dependent_card_id": "discrete-mathematics.lovasz-local-lemma-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.master-theorem-statement",
+      "dependent_card_id": "discrete-mathematics.master-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.matching",
+      "dependent_card_id": "discrete-mathematics.hall-theorem-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.matching",
+      "dependent_card_id": "discrete-mathematics.perfect-matching"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.multinomial-coefficient",
+      "dependent_card_id": "discrete-mathematics.permutations-with-repetition"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.ordinary-generating-function",
+      "dependent_card_id": "discrete-mathematics.coefficient-extraction"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.ordinary-generating-function",
+      "dependent_card_id": "discrete-mathematics.exponential-generating-function"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.permutation",
+      "dependent_card_id": "discrete-mathematics.derangement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.permutation",
+      "dependent_card_id": "discrete-mathematics.multinomial-coefficient"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.pigeonhole-principle-statement",
+      "dependent_card_id": "discrete-mathematics.pigeonhole-principle-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.planar-embedding",
+      "dependent_card_id": "discrete-mathematics.face-of-planar-embedding"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.planar-embedding",
+      "dependent_card_id": "discrete-mathematics.planar-graph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.planar-graph",
+      "dependent_card_id": "discrete-mathematics.euler-planar-formula-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.poset",
+      "dependent_card_id": "discrete-mathematics.cover-relation"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.poset",
+      "dependent_card_id": "discrete-mathematics.lattice"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.poset",
+      "dependent_card_id": "discrete-mathematics.linear-extension"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.product-rule",
+      "dependent_card_id": "discrete-mathematics.generating-function-product"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.product-rule",
+      "dependent_card_id": "discrete-mathematics.permutation"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.proposition",
+      "dependent_card_id": "discrete-mathematics.logical-equivalence"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.proposition",
+      "dependent_card_id": "discrete-mathematics.loop-invariant"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.random-construction",
+      "dependent_card_id": "discrete-mathematics.alteration-method"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.random-construction",
+      "dependent_card_id": "discrete-mathematics.probabilistic-method"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.recurrence-relation",
+      "dependent_card_id": "discrete-mathematics.divide-and-conquer-recurrence"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.recurrence-relation",
+      "dependent_card_id": "discrete-mathematics.linear-recurrence"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-graph",
+      "dependent_card_id": "discrete-mathematics.clique"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-graph",
+      "dependent_card_id": "discrete-mathematics.independent-set"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-graph",
+      "dependent_card_id": "discrete-mathematics.random-graph-model"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-graph",
+      "dependent_card_id": "discrete-mathematics.simple-planar-edge-bound-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-graph",
+      "dependent_card_id": "discrete-mathematics.tree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-graph",
+      "dependent_card_id": "discrete-mathematics.vertex-coloring"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.simple-planar-edge-bound-statement",
+      "dependent_card_id": "discrete-mathematics.simple-planar-edge-bound-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.stars-and-bars-statement",
+      "dependent_card_id": "discrete-mathematics.stars-and-bars-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.subgraph",
+      "dependent_card_id": "discrete-mathematics.connected-component"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.subgraph",
+      "dependent_card_id": "discrete-mathematics.induced-subgraph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.subgraph",
+      "dependent_card_id": "discrete-mathematics.spanning-tree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.sum-rule",
+      "dependent_card_id": "discrete-mathematics.inclusion-exclusion-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.sum-rule",
+      "dependent_card_id": "discrete-mathematics.pigeonhole-principle-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.topological-order",
+      "dependent_card_id": "discrete-mathematics.topological-order-existence-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.topological-order-existence-statement",
+      "dependent_card_id": "discrete-mathematics.topological-order-existence-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.tree",
+      "dependent_card_id": "discrete-mathematics.spanning-tree"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.tree",
+      "dependent_card_id": "discrete-mathematics.tree-equivalence-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.tree-equivalence-statement",
+      "dependent_card_id": "discrete-mathematics.tree-equivalence-role"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.universal-quantifier",
+      "dependent_card_id": "discrete-mathematics.counterexample"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.universal-quantifier",
+      "dependent_card_id": "discrete-mathematics.quantifier-order"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.vertex-coloring",
+      "dependent_card_id": "discrete-mathematics.chromatic-number"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.vertex-degree",
+      "dependent_card_id": "discrete-mathematics.euler-criterion-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.vertex-degree",
+      "dependent_card_id": "discrete-mathematics.handshaking-lemma-statement"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.walk-trail-path",
+      "dependent_card_id": "discrete-mathematics.connected-graph"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.walk-trail-path",
+      "dependent_card_id": "discrete-mathematics.cycle"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.walk-trail-path",
+      "dependent_card_id": "discrete-mathematics.euler-trail-and-circuit"
+    },
+    {
+      "prerequisite_card_id": "discrete-mathematics.well-founded-relation",
+      "dependent_card_id": "discrete-mathematics.well-founded-recursion"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Discrete Mathematics.",
+  "level": "College",
+  "tags": [
+    "mathematics"
+  ]
+}

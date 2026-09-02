@@ -1,0 +1,44 @@
+{
+  "name": "meshful-sites-wrapper",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "sync:study": "node scripts/sync-study.mjs",
+    "sync:check": "node scripts/sync-study.mjs --check",
+    "predev": "npm run sync:study",
+    "dev": "vinext dev",
+    "prebuild": "npm run sync:study",
+    "build": "vinext build",
+    "start": "wrangler dev --config dist/server/wrangler.json",
+    "pretest": "npm run sync:study",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-server-dom-webpack": "19.2.8",
+    "vinext": "1.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.54.2",
+    "@cloudflare/workers-types": "5.20260901.1",
+    "@openai/sites-vite-plugin": "0.2.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.34",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vite": "8.2.2",
+    "wrangler": "4.127.1"
+  },
+  "type": "module",
+  "optionalDependencies": {
+    "lightningcss-darwin-arm64": "^1.31.1"
+  }
+}

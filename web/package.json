@@ -1,0 +1,12 @@
+{
+  "name": "meshful-webmcp",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "verify:webmcp": "node --test tests/webmcp.test.mjs tests/library-webmcp.test.mjs tests/webmcp-account-context.test.mjs"
+  }
+}

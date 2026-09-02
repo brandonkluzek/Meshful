@@ -1,0 +1,12 @@
+Meshful
+Copyright 2026 Brandon Kluzek
+
+Software is licensed under the Apache License 2.0. Owner-controlled
+documentation and brand artwork identified in LICENSES/README.md are licensed
+under CC BY 4.0. Generated public example deck content identified there is
+dedicated under CC0 1.0 Universal. The manifest-bound academic Deck Library in
+library/ is licensed under CC BY 4.0 with its release-specific attribution
+notice retained there.
+
+Third-party components retain their own terms. See THIRD_PARTY_NOTICES.md and
+the license files stored with each admitted component.

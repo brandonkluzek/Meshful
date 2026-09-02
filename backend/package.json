@@ -1,0 +1,13 @@
+{
+  "name": "meshful-learner-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:canonical": "node --test integration/canonical.test.mjs",
+    "test:accounts": "node --test integration/accounts.test.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

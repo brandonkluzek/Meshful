@@ -1,0 +1,3551 @@
+{
+  "id": "academic-reviewed-v1:mathematical-methods-for-physics-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Mathematical Methods for Physics I",
+  "subject": "Physics",
+  "domain": "Physics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "mathematical-methods-for-physics-i.draft-scalar",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Scalar",
+      "prompt": "What is Scalar? State its defining idea and essential conditions.",
+      "definition": "A scalar is a quantity represented by one value that is unchanged by rotations of the spatial coordinate basis. Its numerical value can still depend on physical units or position if it is a scalar field.",
+      "required_concepts": [
+        "Invariant under spatial basis rotations.",
+        "Units and position are separate issues."
+      ],
+      "accepted_variants": [
+        "A rotation-invariant physical quantity."
+      ],
+      "major_error_concepts": [
+        "Assuming scalar means dimensionless or spatially constant."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-vector",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Vector",
+      "prompt": "What is Vector? State its defining idea and essential conditions.",
+      "definition": "A vector is a geometric quantity whose components transform with a change of basis so the underlying quantity remains the same. In Euclidean space it can represent a directed displacement, force, or another linear-space element.",
+      "required_concepts": [
+        "Geometric quantity distinct from its basis-dependent components."
+      ],
+      "accepted_variants": [
+        "An element of a vector space with a declared basis representation."
+      ],
+      "major_error_concepts": [
+        "Treating a changed component list as necessarily a changed physical vector."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-scalar"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Vector Components",
+      "prompt": "What is Vector Components? State its defining idea and essential conditions.",
+      "definition": "Vector components are the coefficients of a vector in a chosen basis. In an orthonormal Euclidean basis, each component equals the dot product with the corresponding unit basis vector.",
+      "required_concepts": [
+        "Basis coefficients.",
+        "Dot-product extraction requires an orthonormal basis."
+      ],
+      "accepted_variants": [
+        "Coordinate representation of a vector."
+      ],
+      "major_error_concepts": [
+        "Using orthonormal component formulas unchanged for an arbitrary nonorthogonal basis."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-vector-norm",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Vector Norm",
+      "prompt": "What is Vector Norm? State its defining idea and essential conditions.",
+      "definition": "The Euclidean norm is a vector's length, equal to the square root of the sum of squared components in an orthonormal basis. It is nonnegative and unchanged by orthogonal coordinate transformations.",
+      "required_concepts": [
+        "Length from squared orthonormal components."
+      ],
+      "accepted_variants": [
+        "Euclidean magnitude."
+      ],
+      "major_error_concepts": [
+        "Adding signed components to obtain vector magnitude."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector-components"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Dot Product",
+      "prompt": "What is Dot Product? State its defining idea and essential conditions.",
+      "definition": "The Euclidean dot product is a scalar equal to the product of magnitudes times the cosine of the included angle. In an orthonormal basis it is the sum of matched component products and measures projection and orthogonality.",
+      "required_concepts": [
+        "Matched component products or magnitude-angle formula.",
+        "Scalar output."
+      ],
+      "accepted_variants": [
+        "Scalar product."
+      ],
+      "major_error_concepts": [
+        "Treating the dot product as a vector perpendicular to its inputs."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector-components",
+        "mathematical-methods-for-physics-i.draft-vector-norm"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-cross-product",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Cross Product",
+      "prompt": "What is Cross Product? State its defining idea and essential conditions.",
+      "definition": "In oriented three-dimensional Euclidean space, the cross product is perpendicular to both input vectors with magnitude equal to their parallelogram area. Its direction uses the chosen right-hand orientation and reversing input order changes its sign.",
+      "required_concepts": [
+        "Oriented perpendicular vector with area magnitude.",
+        "Antisymmetric input order."
+      ],
+      "accepted_variants": [
+        "Vector product in three dimensions."
+      ],
+      "major_error_concepts": [
+        "Assuming reversing input order leaves the cross product unchanged."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector",
+        "mathematical-methods-for-physics-i.draft-vector-norm"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-scalar-triple-product",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Scalar Triple Product",
+      "prompt": "What is Scalar Triple Product? State its defining idea and essential conditions.",
+      "definition": "The scalar triple product a dot (b cross c) gives the signed volume of the parallelepiped defined by three vectors. A zero value means the vectors are linearly dependent in three dimensions.",
+      "required_concepts": [
+        "Oriented volume.",
+        "Zero for coplanar or dependent vectors."
+      ],
+      "accepted_variants": [
+        "Three-vector determinant."
+      ],
+      "major_error_concepts": [
+        "Calling its signed value always nonnegative volume."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dot-product",
+        "mathematical-methods-for-physics-i.draft-cross-product"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-basis",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Basis",
+      "prompt": "What is Basis? State its defining idea and essential conditions.",
+      "definition": "A basis is a linearly independent set that spans a vector space, so every vector has unique coordinates in it. Orthonormality is an additional useful property, not part of the definition of every basis.",
+      "required_concepts": [
+        "Independent spanning set.",
+        "Unique coordinate expansion."
+      ],
+      "accepted_variants": [
+        "A complete independent coordinate set."
+      ],
+      "major_error_concepts": [
+        "Assuming every spanning set gives unique coordinates."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector-components"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-change-of-basis",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Change of Basis",
+      "prompt": "What is Change of Basis? State its defining idea and essential conditions.",
+      "definition": "A change of basis changes a vector's coordinate representation through the corresponding transformation matrix. The physical vector stays fixed in a passive coordinate change, unlike an active rotation of the object itself.",
+      "required_concepts": [
+        "Coordinates change while vector remains fixed in a passive change."
+      ],
+      "accepted_variants": [
+        "Coordinate transformation between bases."
+      ],
+      "major_error_concepts": [
+        "Conflating active object rotation and passive basis rotation without adjusting conventions."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-basis",
+        "mathematical-methods-for-physics-i.draft-vector-components"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-matrix",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Matrix",
+      "prompt": "What is Matrix? State its defining idea and essential conditions.",
+      "definition": "A matrix is a rectangular array representing a linear map once input and output bases are chosen. Matrix multiplication composes the represented maps in an order that generally does not commute.",
+      "required_concepts": [
+        "Basis-dependent representation of a linear map.",
+        "Composition order matters."
+      ],
+      "accepted_variants": [
+        "Array representation of linear transformation."
+      ],
+      "major_error_concepts": [
+        "Assuming AB always equals BA."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-basis",
+        "mathematical-methods-for-physics-i.draft-change-of-basis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-linear-map",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Linear Map",
+      "prompt": "What is Linear Map? State its defining idea and essential conditions.",
+      "definition": "A linear map preserves addition and scalar multiplication: L(a u+b v)=a L(u)+b L(v). It sends zero to zero; adding a fixed nonzero offset produces an affine map instead.",
+      "required_concepts": [
+        "Preserves linear combinations."
+      ],
+      "accepted_variants": [
+        "Superposition-preserving map."
+      ],
+      "major_error_concepts": [
+        "Calling a nonzero constant-offset transformation linear."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector",
+        "mathematical-methods-for-physics-i.draft-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-determinant",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Determinant",
+      "prompt": "What is Determinant? State its defining idea and essential conditions.",
+      "definition": "A square matrix's determinant is its signed volume-scaling factor in finite-dimensional coordinates. A zero determinant indicates a noninvertible linear map with dependent columns.",
+      "required_concepts": [
+        "Signed volume scale.",
+        "Zero implies singularity."
+      ],
+      "accepted_variants": [
+        "Orientation-sensitive volume multiplier."
+      ],
+      "major_error_concepts": [
+        "Treating a negative determinant as a negative physical volume rather than reversed orientation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-matrix",
+        "mathematical-methods-for-physics-i.draft-scalar-triple-product"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-matrix-inverse",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Matrix Inverse",
+      "prompt": "What is Matrix Inverse? State its defining idea and essential conditions.",
+      "definition": "An inverse matrix reverses an invertible square matrix's action, satisfying A inverse A=A A inverse=I. Such an inverse exists exactly when the columns are independent, equivalently the determinant is nonzero.",
+      "required_concepts": [
+        "Two-sided inverse for a nonsingular square matrix."
+      ],
+      "accepted_variants": [
+        "Inverse linear transformation."
+      ],
+      "major_error_concepts": [
+        "Assuming every square matrix has an inverse."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-determinant",
+        "mathematical-methods-for-physics-i.draft-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-linear-system",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Linear System",
+      "prompt": "What is Linear System? State its defining idea and essential conditions.",
+      "definition": "A linear system Ax=b asks for vectors mapped to b. It can have no solution, one solution, or many, depending on whether b lies in the range and whether the null space is nontrivial.",
+      "required_concepts": [
+        "Solve a linear-map preimage problem.",
+        "Existence and uniqueness depend on range and null space."
+      ],
+      "accepted_variants": [
+        "Simultaneous linear equations."
+      ],
+      "major_error_concepts": [
+        "Claiming equal numbers of equations and unknowns guarantee a unique solution."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-matrix",
+        "mathematical-methods-for-physics-i.draft-linear-map",
+        "mathematical-methods-for-physics-i.draft-matrix-inverse"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Eigenvalue and Eigenvector",
+      "prompt": "What is Eigenvalue and Eigenvector? State its defining idea and essential conditions.",
+      "definition": "An eigenvector is a nonzero vector v with Av=lambda v; its eigenvalue lambda gives the scaling along that invariant direction. The zero vector is excluded because it would satisfy the equation for every lambda.",
+      "required_concepts": [
+        "Nonzero invariant-direction vector.",
+        "Av=lambda v."
+      ],
+      "accepted_variants": [
+        "Characteristic vector and value."
+      ],
+      "major_error_concepts": [
+        "Accepting the zero vector as an eigenvector."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-orthogonal-matrix",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Orthogonal Matrix",
+      "prompt": "What is Orthogonal Matrix? State its defining idea and essential conditions.",
+      "definition": "An orthogonal real matrix preserves Euclidean dot products and satisfies Q transpose Q=I. Its columns form an orthonormal basis, and its determinant is plus or minus one.",
+      "required_concepts": [
+        "Preserves inner products.",
+        "Inverse equals transpose."
+      ],
+      "accepted_variants": [
+        "Orthonormal coordinate transformation."
+      ],
+      "major_error_concepts": [
+        "Assuming every orthogonal matrix is a proper rotation rather than possibly a reflection."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dot-product",
+        "mathematical-methods-for-physics-i.draft-matrix",
+        "mathematical-methods-for-physics-i.draft-matrix-inverse"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-real-symmetric-matrix",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Real Symmetric Matrix",
+      "prompt": "What is Real Symmetric Matrix? State its defining idea and essential conditions.",
+      "definition": "A real symmetric matrix equals its transpose and has real eigenvalues with an orthonormal eigenbasis. Distinct-eigenvalue eigenvectors are orthogonal, with a suitable orthonormal choice possible inside degenerate eigenspaces.",
+      "required_concepts": [
+        "Transpose symmetry and orthogonal diagonalization."
+      ],
+      "accepted_variants": [
+        "Real self-adjoint matrix."
+      ],
+      "major_error_concepts": [
+        "Assuming arbitrary nonsymmetric real matrices have the same orthogonal eigenbasis property."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+        "mathematical-methods-for-physics-i.draft-orthogonal-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-diagonalization",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Diagonalization",
+      "prompt": "What is Diagonalization? State its defining idea and essential conditions.",
+      "definition": "Diagonalization represents a linear map by a diagonal matrix in an eigenvector basis when enough independent eigenvectors exist. It can decouple linear equations, but not every matrix is diagonalizable.",
+      "required_concepts": [
+        "Eigenvector basis yields diagonal representation.",
+        "Requires enough independent eigenvectors."
+      ],
+      "accepted_variants": [
+        "Similarity transformation to diagonal form."
+      ],
+      "major_error_concepts": [
+        "Assuming repeated eigenvalues always prevent or always guarantee diagonalizability."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+        "mathematical-methods-for-physics-i.draft-change-of-basis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-complex-number",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Complex Number",
+      "prompt": "What is Complex Number? State its defining idea and essential conditions.",
+      "definition": "A complex number z=x+i y combines real and imaginary parts with i squared equal to minus one. Complex arithmetic packages two real components while preserving the algebraic rules with that defining relation.",
+      "required_concepts": [
+        "Real and imaginary parts with i squared=-1."
+      ],
+      "accepted_variants": [
+        "A number in the complex plane."
+      ],
+      "major_error_concepts": [
+        "Treating the imaginary coefficient y itself as an imaginary number i y without distinction."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-euler-s-formula",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Euler's Formula",
+      "prompt": "What is Euler's Formula? State its defining idea and essential conditions.",
+      "definition": "Euler's formula states exp(i theta)=cos theta+i sin theta for real theta. It connects complex exponentials with rotations and sinusoidal oscillations.",
+      "required_concepts": [
+        "Correct cosine-plus-i-sine identity."
+      ],
+      "accepted_variants": [
+        "Complex exponential representation of a rotation."
+      ],
+      "major_error_concepts": [
+        "Replacing i sin theta with sin theta in the formula."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-complex-number"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-complex-polar-form",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Complex Polar Form",
+      "prompt": "What is Complex Polar Form? State its defining idea and essential conditions.",
+      "definition": "The polar representation z=r exp(i theta) expresses a nonzero complex number through magnitude r and phase theta modulo two pi. At z=0 the magnitude is zero but its phase is undefined.",
+      "required_concepts": [
+        "Magnitude and phase representation.",
+        "Phase ambiguity and zero case."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assigning a unique physically determined phase to the zero complex number."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-euler-s-formula",
+        "mathematical-methods-for-physics-i.draft-complex-number"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-complex-conjugate",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Complex Conjugate",
+      "prompt": "What is Complex Conjugate? State its defining idea and essential conditions.",
+      "definition": "Complex conjugation replaces i with minus i, so the conjugate of x+i y is x-i y. The product z times its conjugate is the nonnegative squared magnitude, an operation used in complex inner products and amplitudes.",
+      "required_concepts": [
+        "Reverse imaginary part.",
+        "z conjugate times z gives squared modulus."
+      ],
+      "accepted_variants": [
+        "Reflection across the real axis in the complex plane."
+      ],
+      "major_error_concepts": [
+        "Using z squared as the magnitude squared for arbitrary complex z."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-complex-number",
+        "mathematical-methods-for-physics-i.draft-complex-polar-form"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Complex Exponential Dynamics",
+      "prompt": "What is Complex Exponential Dynamics? State its defining idea and essential conditions.",
+      "definition": "A complex exponential exp((a+i b)t) has an exponential envelope exp(a t) and an oscillatory factor of angular frequency b. Its real and imaginary parts are real oscillatory functions with that envelope.",
+      "required_concepts": [
+        "Separate growth or decay from oscillation."
+      ],
+      "accepted_variants": [
+        "Exponentially modulated sinusoid."
+      ],
+      "major_error_concepts": [
+        "Calling a nonzero real exponent only a phase change."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-euler-s-formula"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-phasor",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Phasor",
+      "prompt": "What is Phasor? State its defining idea and essential conditions.",
+      "definition": "A phasor is a complex amplitude encoding the magnitude and phase of a sinusoid at a fixed angular frequency. Physical fields are recovered with a declared real-part and time-sign convention, and phasors of different frequencies cannot simply be treated as one common-frequency amplitude.",
+      "required_concepts": [
+        "Complex amplitude for a fixed-frequency sinusoid.",
+        "Time convention must be declared."
+      ],
+      "accepted_variants": [
+        "Frequency-domain sinusoidal amplitude."
+      ],
+      "major_error_concepts": [
+        "Adding unrelated-frequency phasors as though their time factors were identical."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-complex-polar-form",
+        "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-derivative",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Derivative",
+      "prompt": "What is Derivative? State its defining idea and essential conditions.",
+      "definition": "A derivative gives the local rate of change of a function with respect to its argument. Its physical units are output units divided by input units, and a derivative approximation is meaningful only in the relevant limiting or small-step regime.",
+      "required_concepts": [
+        "Local change rate.",
+        "Units follow output per input."
+      ],
+      "accepted_variants": [
+        "Slope of the local linear approximation."
+      ],
+      "major_error_concepts": [
+        "Treating a derivative as dimensionless regardless of variables."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-taylor-expansion",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Taylor Expansion",
+      "prompt": "What is Taylor Expansion? State its defining idea and essential conditions.",
+      "definition": "A Taylor expansion represents a sufficiently differentiable function near a point using derivatives there and a controlled remainder when conditions hold. Keeping only a few terms is an approximation whose error depends on distance and smoothness.",
+      "required_concepts": [
+        "Local derivative-based polynomial plus remainder."
+      ],
+      "accepted_variants": [
+        "Local power expansion with an error term."
+      ],
+      "major_error_concepts": [
+        "Assuming every smooth function equals its infinite Taylor series everywhere."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-small-parameter",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Small Parameter",
+      "prompt": "What is Small Parameter? State its defining idea and essential conditions.",
+      "definition": "A small dimensionless parameter compares two scales and can organize an approximation. Saying a dimensional quantity is small without a reference scale is incomplete because changing units changes its number.",
+      "required_concepts": [
+        "Smallness expressed as a dimensionless scale ratio."
+      ],
+      "accepted_variants": [
+        "Expansion parameter epsilon."
+      ],
+      "major_error_concepts": [
+        "Calling a dimensional value intrinsically small without specifying what it is compared with."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-taylor-expansion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-order-of-approximation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Order of Approximation",
+      "prompt": "What is Order of Approximation? State its defining idea and essential conditions.",
+      "definition": "Writing an error as O(epsilon^n) means its magnitude is bounded by a constant times |epsilon|^n in the stated limiting regime. It indicates scaling, not that the coefficient equals one or that the expression is an exact power.",
+      "required_concepts": [
+        "Bounded-order scaling near a stated limit."
+      ],
+      "accepted_variants": [
+        "Big-O error estimate."
+      ],
+      "major_error_concepts": [
+        "Interpreting O(epsilon squared) as exactly epsilon squared for every epsilon."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-small-parameter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Partial Derivative",
+      "prompt": "What is Partial Derivative? State its defining idea and essential conditions.",
+      "definition": "A partial derivative changes one independent variable while holding the others fixed. What is held fixed is part of the definition and can change the derivative's physical meaning.",
+      "required_concepts": [
+        "Derivative with other chosen independent variables fixed."
+      ],
+      "accepted_variants": [
+        "Single-coordinate derivative of a multivariable function."
+      ],
+      "major_error_concepts": [
+        "Omitting held-fixed variables when they distinguish physically different derivatives."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-multivariable-chain-rule",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Multivariable Chain Rule",
+      "prompt": "What is Multivariable Chain Rule? State its defining idea and essential conditions.",
+      "definition": "The multivariable chain rule sums the contributions from every dependence path. For f(x(t),y(t)), df/dt=f_x dx/dt+f_y dy/dt when the needed derivatives exist.",
+      "required_concepts": [
+        "Sum derivative contributions through all dependent variables."
+      ],
+      "accepted_variants": [
+        "Derivative of a composite multivariable function."
+      ],
+      "major_error_concepts": [
+        "Differentiating only the explicitly written time dependence while ignoring changing coordinates."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-gradient",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Gradient",
+      "prompt": "What is Gradient? State its defining idea and essential conditions.",
+      "definition": "In Cartesian Euclidean coordinates, the gradient of a scalar field is the vector of its partial derivatives. Its dot product with a displacement gives the first-order field change, and it points toward steepest increase when nonzero.",
+      "required_concepts": [
+        "Vector of scalar partial derivatives.",
+        "Directional change through a dot product."
+      ],
+      "accepted_variants": [
+        "Euclidean gradient vector."
+      ],
+      "major_error_concepts": [
+        "Treating the Cartesian component formula as unchanged in every curvilinear coordinate system."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-dot-product"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-directional-derivative",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Directional Derivative",
+      "prompt": "What is Directional Derivative? State its defining idea and essential conditions.",
+      "definition": "A directional derivative in a unit direction u is the local scalar rate of change along that direction. For a differentiable scalar field it equals gradient f dot u; using a nonunit vector also scales the parameterized rate.",
+      "required_concepts": [
+        "Gradient dot unit direction for change per unit length."
+      ],
+      "accepted_variants": [
+        "Field derivative along a direction."
+      ],
+      "major_error_concepts": [
+        "Using an unnormalized direction while claiming the same per-unit-distance rate."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-gradient",
+        "mathematical-methods-for-physics-i.draft-vector-norm"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-total-differential",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Total Differential",
+      "prompt": "What is Total Differential? State its defining idea and essential conditions.",
+      "definition": "The total differential df is the linear first-order change sum of partial derivative times coordinate increment. It approximates finite changes locally and becomes exact for a linear function of the chosen coordinates.",
+      "required_concepts": [
+        "df=sum partial derivatives times coordinate differentials."
+      ],
+      "accepted_variants": [
+        "Linearized multivariable change."
+      ],
+      "major_error_concepts": [
+        "Treating the differential as the exact finite change for every nonlinear function."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-multivariable-chain-rule"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-jacobian",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Jacobian",
+      "prompt": "What is Jacobian? State its defining idea and essential conditions.",
+      "definition": "The Jacobian matrix contains the partial derivatives of a vector-valued coordinate map. For an invertible smooth change of variables, the absolute determinant gives the local volume factor, while its sign records orientation.",
+      "required_concepts": [
+        "Derivative matrix of a multivariable map.",
+        "Absolute determinant scales volume."
+      ],
+      "accepted_variants": [
+        "Coordinate transformation derivative."
+      ],
+      "major_error_concepts": [
+        "Using a signed determinant as an unsigned integration-volume factor without an orientation convention."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-determinant"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Cylindrical Coordinates",
+      "prompt": "What is Cylindrical Coordinates? State its defining idea and essential conditions.",
+      "definition": "Cylindrical coordinates use radial distance rho from an axis, azimuth phi, and axial coordinate z. In the usual convention x=rho cos phi and y=rho sin phi; the unit directions vary with azimuth.",
+      "required_concepts": [
+        "Radial, azimuthal, and axial coordinates.",
+        "Basis directions depend on position."
+      ],
+      "accepted_variants": [
+        "Axis-adapted coordinates."
+      ],
+      "major_error_concepts": [
+        "Treating radial and azimuthal basis vectors as fixed Cartesian vectors everywhere."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-complex-polar-form",
+        "mathematical-methods-for-physics-i.draft-vector-components",
+        "mathematical-methods-for-physics-i.draft-jacobian"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-spherical-coordinates",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Spherical Coordinates",
+      "prompt": "What is Spherical Coordinates? State its defining idea and essential conditions.",
+      "definition": "Spherical coordinates use radius r, polar angle theta from a chosen axis, and azimuth phi around that axis. Angle conventions differ, so formulas must state which angle is polar and where each is measured.",
+      "required_concepts": [
+        "Radius plus polar and azimuthal angles.",
+        "Explicit angle convention."
+      ],
+      "accepted_variants": [
+        "Radial-angular coordinates in three dimensions."
+      ],
+      "major_error_concepts": [
+        "Swapping polar and azimuthal angles while retaining an unchanged formula."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+        "mathematical-methods-for-physics-i.draft-vector-components"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-volume-element",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Volume Element",
+      "prompt": "What is Volume Element? State its defining idea and essential conditions.",
+      "definition": "The Euclidean volume element is dx dy dz in Cartesian coordinates, rho d rho d phi dz in standard cylindrical coordinates, and r squared sin theta dr d theta d phi in standard spherical coordinates. These factors are coordinate Jacobians.",
+      "required_concepts": [
+        "Correct cylindrical and spherical Jacobian factors."
+      ],
+      "accepted_variants": [
+        "Coordinate-dependent integration measure."
+      ],
+      "major_error_concepts": [
+        "Integrating spherical coordinates with dr dtheta dphi alone as a volume measure."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-jacobian",
+        "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+        "mathematical-methods-for-physics-i.draft-spherical-coordinates"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-vector-line-integral",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Vector Line Integral",
+      "prompt": "What is Vector Line Integral? State its defining idea and essential conditions.",
+      "definition": "A vector line integral integrates F dot dr along an oriented path, giving work when F is force. It depends on the path and orientation unless a conservative-field condition removes path dependence.",
+      "required_concepts": [
+        "Integrate tangential field component along oriented displacement."
+      ],
+      "accepted_variants": [
+        "Circulation or work line integral."
+      ],
+      "major_error_concepts": [
+        "Ignoring path orientation when computing a signed work integral."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dot-product",
+        "mathematical-methods-for-physics-i.draft-gradient"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-surface-integral",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Surface Integral",
+      "prompt": "What is Surface Integral? State its defining idea and essential conditions.",
+      "definition": "A scalar surface integral sums a scalar field over surface area using a parametrization and its area factor. For a surface r(u,v), the area element is the magnitude of r_u cross r_v times du dv.",
+      "required_concepts": [
+        "Area-weighted field integral.",
+        "Cross-product magnitude supplies parametrized area."
+      ],
+      "accepted_variants": [
+        "Integral with respect to surface area."
+      ],
+      "major_error_concepts": [
+        "Using the signed dot product of tangent vectors as the surface-area factor."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-cross-product",
+        "mathematical-methods-for-physics-i.draft-partial-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-flux",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Flux",
+      "prompt": "What is Flux? State its defining idea and essential conditions.",
+      "definition": "Flux through an oriented surface integrates F dot n over area, where n is the chosen unit normal. It measures net normal passage and changes sign when the orientation is reversed.",
+      "required_concepts": [
+        "Normal field component integrated over oriented area."
+      ],
+      "accepted_variants": [
+        "Surface flux integral."
+      ],
+      "major_error_concepts": [
+        "Integrating only field magnitude and claiming the result is signed net flux."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-surface-integral",
+        "mathematical-methods-for-physics-i.draft-dot-product"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-divergence",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Divergence",
+      "prompt": "What is Divergence? State its defining idea and essential conditions.",
+      "definition": "Divergence is a scalar measuring local outward flux density. In Cartesian coordinates it is partial F_x/partial x plus partial F_y/partial y plus partial F_z/partial z, not the sum of every cross derivative.",
+      "required_concepts": [
+        "Matched coordinate derivative sum.",
+        "Local net outward-flux interpretation."
+      ],
+      "accepted_variants": [
+        "Nabla dot F."
+      ],
+      "major_error_concepts": [
+        "Including all cross partials in the Cartesian divergence."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-curl",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Curl",
+      "prompt": "What is Curl? State its defining idea and essential conditions.",
+      "definition": "Curl is the oriented vector nabla cross F in three-dimensional Euclidean space. It measures local circulation per oriented area and uses the right-hand convention for its direction.",
+      "required_concepts": [
+        "Nabla cross F.",
+        "Local oriented circulation."
+      ],
+      "accepted_variants": [
+        "Rotational derivative of a vector field."
+      ],
+      "major_error_concepts": [
+        "Treating curl as the scalar divergence or reversing cross-product order without changing sign."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-cross-product",
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-vector-line-integral"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-laplacian",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Laplacian",
+      "prompt": "What is Laplacian? State its defining idea and essential conditions.",
+      "definition": "The scalar Laplacian is the divergence of the gradient. In Cartesian coordinates it is the sum of second derivatives with respect to each coordinate; curvilinear formulas include geometric scale factors.",
+      "required_concepts": [
+        "Divergence of gradient.",
+        "Sum of Cartesian pure second derivatives."
+      ],
+      "accepted_variants": [
+        "Nabla squared acting on a scalar."
+      ],
+      "major_error_concepts": [
+        "Adding mixed derivatives as part of the ordinary Cartesian scalar Laplacian."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-gradient",
+        "mathematical-methods-for-physics-i.draft-divergence"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-gradient-theorem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Gradient Theorem",
+      "prompt": "What is Gradient Theorem? State its defining idea and essential conditions.",
+      "definition": "The gradient theorem states that the line integral of gradient f along a path equals f at the end minus f at the start, under suitable differentiability. It explains path independence for fields with a single-valued potential.",
+      "required_concepts": [
+        "Integral of gradient equals endpoint difference."
+      ],
+      "accepted_variants": [
+        "Fundamental theorem for line integrals."
+      ],
+      "major_error_concepts": [
+        "Giving endpoint sum instead of oriented endpoint difference."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-gradient",
+        "mathematical-methods-for-physics-i.draft-vector-line-integral"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-conservative-field",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Conservative Field",
+      "prompt": "What is Conservative Field? State its defining idea and essential conditions.",
+      "definition": "A conservative field has a scalar potential giving path-independent work on its domain. A curl-free condition is locally necessary under smoothness, but global sufficiency also depends on domain topology and other assumptions.",
+      "required_concepts": [
+        "Potential and path-independent line integral.",
+        "Zero curl alone may not ensure global potential."
+      ],
+      "accepted_variants": [
+        "Potential-derived field."
+      ],
+      "major_error_concepts": [
+        "Concluding global conservativeness from zero curl on any domain regardless of holes."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-gradient-theorem",
+        "mathematical-methods-for-physics-i.draft-curl"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-green-s-theorem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Green's Theorem",
+      "prompt": "What is Green's Theorem? State its defining idea and essential conditions.",
+      "definition": "Green's theorem relates circulation around a positively oriented plane boundary to the area integral of the scalar curl inside. It requires the field's regularity on the relevant region and consistent treatment of boundary components.",
+      "required_concepts": [
+        "Planar boundary circulation equals enclosed curl integral."
+      ],
+      "accepted_variants": [
+        "Two-dimensional circulation theorem."
+      ],
+      "major_error_concepts": [
+        "Ignoring singularities inside the region while applying a smooth-field theorem."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-vector-line-integral",
+        "mathematical-methods-for-physics-i.draft-curl"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-stokes-theorem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Stokes' Theorem",
+      "prompt": "What is Stokes' Theorem? State its defining idea and essential conditions.",
+      "definition": "Stokes' theorem equates circulation around an oriented surface boundary with the flux of curl through that surface. The surface normal and boundary direction must match the right-hand orientation.",
+      "required_concepts": [
+        "Boundary line integral equals curl flux.",
+        "Compatible boundary and surface orientation."
+      ],
+      "accepted_variants": [
+        "Curl version of the boundary-integral theorem."
+      ],
+      "major_error_concepts": [
+        "Choosing boundary and surface orientations independently without changing signs."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-curl",
+        "mathematical-methods-for-physics-i.draft-flux",
+        "mathematical-methods-for-physics-i.draft-vector-line-integral"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-divergence-theorem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Divergence Theorem",
+      "prompt": "What is Divergence Theorem? State its defining idea and essential conditions.",
+      "definition": "The divergence theorem equates outward flux across a closed boundary with the volume integral of divergence inside. It assumes an appropriate region and regularity, or a justified generalized treatment of singular sources.",
+      "required_concepts": [
+        "Closed outward flux equals volume-integrated divergence."
+      ],
+      "accepted_variants": [
+        "Gauss divergence theorem."
+      ],
+      "major_error_concepts": [
+        "Applying the closed-surface formula to an open surface without its missing boundary pieces."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-divergence",
+        "mathematical-methods-for-physics-i.draft-flux",
+        "mathematical-methods-for-physics-i.draft-volume-element"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-boundary-orientation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Boundary Orientation",
+      "prompt": "What is Boundary Orientation? State its defining idea and essential conditions.",
+      "definition": "Boundary orientation specifies the sign conventions linking a region or surface to its boundary. Outward normals apply to volume boundaries, while surface-edge directions follow the right-hand rule relative to the surface normal.",
+      "required_concepts": [
+        "Consistent outward or right-hand orientation."
+      ],
+      "accepted_variants": [
+        "Induced boundary orientation."
+      ],
+      "major_error_concepts": [
+        "Using inward and outward normals interchangeably in a signed conservation equation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-stokes-theorem",
+        "mathematical-methods-for-physics-i.draft-divergence-theorem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-vector-calculus-product-rule",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Vector-Calculus Product Rule",
+      "prompt": "What is Vector-Calculus Product Rule? State its defining idea and essential conditions.",
+      "definition": "For a scalar f and vector F, divergence(f F)=gradient f dot F+f divergence F. Spatially varying scalar factors therefore cannot simply be pulled through a divergence as constants.",
+      "required_concepts": [
+        "Correct scalar-vector divergence product rule."
+      ],
+      "accepted_variants": [
+        "Leibniz rule for divergence."
+      ],
+      "major_error_concepts": [
+        "Dropping the gradient-f term when f varies in space."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-gradient",
+        "mathematical-methods-for-physics-i.draft-divergence",
+        "mathematical-methods-for-physics-i.draft-dot-product"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-divergence-of-curl",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Divergence of Curl",
+      "prompt": "What is Divergence of Curl? State its defining idea and essential conditions.",
+      "definition": "The divergence of the curl of a sufficiently smooth vector field is zero. This local identity expresses cancellation of mixed derivatives and should not be applied across singularities without a justified generalized interpretation.",
+      "required_concepts": [
+        "Divergence of curl vanishes under suitable smoothness."
+      ],
+      "accepted_variants": [
+        "Nabla dot nabla cross F=0."
+      ],
+      "major_error_concepts": [
+        "Assuming the identity licenses ignoring singular source contributions automatically."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-divergence",
+        "mathematical-methods-for-physics-i.draft-curl",
+        "mathematical-methods-for-physics-i.draft-partial-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-curl-of-gradient",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Curl of Gradient",
+      "prompt": "What is Curl of Gradient? State its defining idea and essential conditions.",
+      "definition": "The curl of the gradient of a sufficiently smooth scalar field is zero because its mixed second derivatives commute. It establishes a necessary local condition for a smooth field to be a gradient.",
+      "required_concepts": [
+        "Curl of smooth gradient vanishes."
+      ],
+      "accepted_variants": [
+        "Nabla cross nabla f=0."
+      ],
+      "major_error_concepts": [
+        "Taking the converse as globally sufficient on every domain."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-gradient",
+        "mathematical-methods-for-physics-i.draft-curl",
+        "mathematical-methods-for-physics-i.draft-conservative-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-integration-by-parts",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Integration by Parts",
+      "prompt": "What is Integration by Parts? State its defining idea and essential conditions.",
+      "definition": "Integration by parts transfers a derivative from one factor to another while retaining a boundary term: integral u dv=uv minus integral v du. Boundary conditions decide when a boundary term vanishes; it cannot be dropped automatically.",
+      "required_concepts": [
+        "Transfer derivative and retain endpoint term."
+      ],
+      "accepted_variants": [
+        "Product-rule integration identity."
+      ],
+      "major_error_concepts": [
+        "Discarding the boundary contribution without a boundary condition or limit argument."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Change of Variables in Integration",
+      "prompt": "What is Change of Variables in Integration? State its defining idea and essential conditions.",
+      "definition": "Change of variables rewrites an integral using a new coordinate and its derivative or Jacobian factor. Limits and orientation must transform consistently with the new variables.",
+      "required_concepts": [
+        "Transform integrand, measure, and limits consistently."
+      ],
+      "accepted_variants": [
+        "Integration by substitution."
+      ],
+      "major_error_concepts": [
+        "Changing variable symbols but omitting the differential scale factor."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-jacobian"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-differentiation-under-an-integral",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Differentiation Under an Integral",
+      "prompt": "What is Differentiation Under an Integral? State its defining idea and essential conditions.",
+      "definition": "Differentiating an integral with variable limits produces endpoint terms as well as an integral of explicit parameter dependence when regularity permits. Holding limits fixed when they actually change omits part of the derivative.",
+      "required_concepts": [
+        "Include moving-boundary and integrand-derivative contributions."
+      ],
+      "accepted_variants": [
+        "Leibniz integral rule."
+      ],
+      "major_error_concepts": [
+        "Differentiating only the integrand while ignoring parameter-dependent endpoints."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-multivariable-chain-rule",
+        "mathematical-methods-for-physics-i.draft-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Ordinary Differential Equation",
+      "prompt": "What is Ordinary Differential Equation? State its defining idea and essential conditions.",
+      "definition": "An ordinary differential equation relates an unknown function of one independent variable to its derivatives. A solution must satisfy both the equation and any stated domain or auxiliary conditions.",
+      "required_concepts": [
+        "One independent variable and derivatives of unknown function."
+      ],
+      "accepted_variants": [
+        "ODE."
+      ],
+      "major_error_concepts": [
+        "Calling an equation with independent time and space derivatives an ordinary differential equation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-ode-order",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "ODE Order",
+      "prompt": "What is ODE Order? State its defining idea and essential conditions.",
+      "definition": "The order of an ODE is the highest derivative appearing in it after the equation is appropriately stated. Order differs from the algebraic degree or nonlinearity of the unknown function.",
+      "required_concepts": [
+        "Highest derivative order present."
+      ],
+      "accepted_variants": [
+        "Differential order."
+      ],
+      "major_error_concepts": [
+        "Calling y prime=y squared second-order because y is squared."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-ordinary-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Linear Differential Equation",
+      "prompt": "What is Linear Differential Equation? State its defining idea and essential conditions.",
+      "definition": "A linear ODE contains the unknown and its derivatives only linearly, with coefficients depending on the independent variable. It obeys linear-operator superposition, unlike equations containing products or nonlinear functions of the unknown.",
+      "required_concepts": [
+        "Unknown and derivatives enter linearly."
+      ],
+      "accepted_variants": [
+        "A linear differential operator equals specified forcing."
+      ],
+      "major_error_concepts": [
+        "Calling y prime=y squared linear because only one derivative appears."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+        "mathematical-methods-for-physics-i.draft-linear-map"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-initial-value-problem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Initial-Value Problem",
+      "prompt": "What is Initial-Value Problem? State its defining idea and essential conditions.",
+      "definition": "An initial-value problem specifies a differential equation and solution data at one initial point. Existence and uniqueness need suitable regularity and compatibility, not merely a chosen number of initial values.",
+      "required_concepts": [
+        "Equation plus data at one point.",
+        "Regularity conditions govern well-posedness."
+      ],
+      "accepted_variants": [
+        "IVP."
+      ],
+      "major_error_concepts": [
+        "Assuming arbitrary singular equations always have unique solutions for any initial data."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+        "mathematical-methods-for-physics-i.draft-ode-order"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Boundary-Value Problem",
+      "prompt": "What is Boundary-Value Problem? State its defining idea and essential conditions.",
+      "definition": "A boundary-value problem places conditions at boundary points, often different endpoints. Depending on the equation and boundary conditions, it can have no solution, one solution, or many even when an analogous initial-value problem is regular.",
+      "required_concepts": [
+        "Conditions at boundaries rather than only one initial point."
+      ],
+      "accepted_variants": [
+        "BVP."
+      ],
+      "major_error_concepts": [
+        "Applying IVP uniqueness directly to every two-endpoint boundary problem."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-initial-value-problem",
+        "mathematical-methods-for-physics-i.draft-ordinary-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-separable-ode",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Separable ODE",
+      "prompt": "What is Separable ODE? State its defining idea and essential conditions.",
+      "definition": "A separable first-order equation can be written y prime=g(x)h(y), allowing variables to be integrated separately where division is valid. Equilibrium solutions with h(y)=0 must be considered separately if division would discard them.",
+      "required_concepts": [
+        "Separate x and y factors for integration.",
+        "Retain solutions excluded by division."
+      ],
+      "accepted_variants": [
+        "Separation of variables for a first-order ODE."
+      ],
+      "major_error_concepts": [
+        "Dividing by h(y) and concluding its zeros cannot be solutions."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+        "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-integrating-factor",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Integrating Factor",
+      "prompt": "What is Integrating Factor? State its defining idea and essential conditions.",
+      "definition": "For y prime+p(x)y=q(x), an integrating factor exp(integral p dx) turns the left side into a derivative of a product. Integrating then determines the solution up to a constant and the supplied data.",
+      "required_concepts": [
+        "Exponential integrating factor yields a product derivative."
+      ],
+      "accepted_variants": [
+        "First-order linear integrating-factor method."
+      ],
+      "major_error_concepts": [
+        "Using exp(integral q dx) as the integrating factor in the stated equation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+        "mathematical-methods-for-physics-i.draft-integration-by-parts"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Homogeneous Linear Equation",
+      "prompt": "What is Homogeneous Linear Equation? State its defining idea and essential conditions.",
+      "definition": "A homogeneous linear differential equation has zero forcing, L[y]=0. Linear combinations of its solutions remain solutions, while the constants are fixed by initial or boundary conditions.",
+      "required_concepts": [
+        "Zero forcing and solution superposition."
+      ],
+      "accepted_variants": [
+        "Homogeneous linear ODE."
+      ],
+      "major_error_concepts": [
+        "Assuming nonzero-forcing solutions can be added without changing the forcing."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+        "mathematical-methods-for-physics-i.draft-linear-map"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-particular-solution",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Particular Solution",
+      "prompt": "What is Particular Solution? State its defining idea and essential conditions.",
+      "definition": "A general solution of a nonhomogeneous linear equation is one particular solution plus the general homogeneous solution. Different particular solutions differ by a homogeneous solution when they solve the same equation.",
+      "required_concepts": [
+        "Particular plus homogeneous solution."
+      ],
+      "accepted_variants": [
+        "Complementary-plus-particular decomposition."
+      ],
+      "major_error_concepts": [
+        "Adding two particular solutions and claiming the original forcing is unchanged."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation",
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-characteristic-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Characteristic Equation",
+      "prompt": "What is Characteristic Equation? State its defining idea and essential conditions.",
+      "definition": "For a constant-coefficient linear ODE, substituting exp(r x) produces an algebraic characteristic equation for r. Its roots determine exponential building blocks and their repeated-root modifications.",
+      "required_concepts": [
+        "Exponential ansatz converts to characteristic polynomial."
+      ],
+      "accepted_variants": [
+        "Characteristic-root solution method."
+      ],
+      "major_error_concepts": [
+        "Using a constant-coefficient characteristic polynomial unchanged for arbitrary varying coefficients."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+        "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-repeated-characteristic-root",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Repeated Characteristic Root",
+      "prompt": "What is Repeated Characteristic Root? State its defining idea and essential conditions.",
+      "definition": "A repeated characteristic root r of multiplicity m contributes exp(r x), x exp(r x), through x^(m-1) exp(r x) to a constant-coefficient homogeneous ODE solution basis. Repeating the same exponential alone does not give independent solutions.",
+      "required_concepts": [
+        "Polynomial factors supply independent repeated-root solutions."
+      ],
+      "accepted_variants": [
+        "Repeated-root exponential solutions."
+      ],
+      "major_error_concepts": [
+        "Counting identical copies of exp(r x) as distinct independent solutions."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-characteristic-equation",
+        "mathematical-methods-for-physics-i.draft-basis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Harmonic Oscillator Equation",
+      "prompt": "What is Harmonic Oscillator Equation? State its defining idea and essential conditions.",
+      "definition": "The undamped harmonic oscillator obeys x double prime+omega_0 squared x=0 with omega_0 positive. Its real solutions are sinusoidal combinations and its angular frequency is omega_0.",
+      "required_concepts": [
+        "Linear restoring ODE and sinusoidal solutions."
+      ],
+      "accepted_variants": [
+        "Simple harmonic oscillator equation."
+      ],
+      "major_error_concepts": [
+        "Calling any nonlinear periodic motion exactly harmonic."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-characteristic-equation",
+        "mathematical-methods-for-physics-i.draft-euler-s-formula"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-damped-oscillator-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Damped Oscillator Equation",
+      "prompt": "State the free linearly damped oscillator equation, define its damping convention, and distinguish the three damping regimes.",
+      "definition": "For a mass-spring oscillator with linear viscous damping, m x'' + b x' + k x = 0 with m>0, k>0 and b>0. Equivalently x'' + 2 beta x' + omega_0^2 x = 0, where beta=b/(2m) and omega_0=sqrt(k/m). Underdamping has beta<omega_0, critical damping beta=omega_0, and overdamping beta>omega_0. Only the underdamped free response oscillates.",
+      "required_concepts": [
+        "A second-order restoring equation includes a positive velocity-damping term: m x'' + b x' + kx=0 or an explicitly equivalent convention.",
+        "Compare b^2 with 4mk (or beta with omega_0): smaller is underdamped, equal is critical, larger is overdamped."
+      ],
+      "accepted_variants": [
+        "x'' + gamma x' + omega_0^2 x=0 with gamma=b/m; underdamped if gamma<2omega_0, critical if equal, and overdamped if greater."
+      ],
+      "major_error_concepts": [
+        "Putting the damping term proportional to position rather than velocity.",
+        "Using a negative damping coefficient while claiming energy dissipation.",
+        "Mixing beta=b/(2m) with thresholds belonging to gamma=b/m."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation",
+        "mathematical-methods-for-physics-i.draft-characteristic-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-forced-oscillator-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Forced Oscillator Equation",
+      "prompt": "State the linearly forced oscillator equation and explain how its full solution differs from its steady response.",
+      "definition": "A standard forced linear oscillator obeys m x'' + b x' + kx=F(t), with m>0, k>0 and b>=0. Its solution is a homogeneous solution plus one particular solution for the specified drive. Initial conditions fix the homogeneous part. With stable positive damping and a bounded sinusoidal drive, that transient decays and leaves the periodic steady response; an undamped resonant drive need not have a bounded steady response.",
+      "required_concepts": [
+        "State m x'' + b x' + kx=F(t), or a correctly normalized equivalent.",
+        "The full solution contains an initial-condition-dependent homogeneous part and a particular driven part; discarding the transient requires an appropriate decaying regime."
+      ],
+      "accepted_variants": [
+        "x'' + 2beta x' + omega_0^2 x=f(t), with f=F/m; x=x_h+x_p. Positive stable damping removes x_h at late times, not at the instant forcing starts."
+      ],
+      "major_error_concepts": [
+        "Omitting the applied force while calling the equation forced.",
+        "Claiming the particular steady response alone satisfies arbitrary initial conditions.",
+        "Claiming an undamped oscillator driven at exact resonance always has bounded steady amplitude."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-damped-oscillator-equation",
+        "mathematical-methods-for-physics-i.draft-particular-solution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-resonance",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Resonance",
+      "prompt": "What is Resonance? State its defining idea and essential conditions.",
+      "definition": "Resonance is enhanced response when forcing couples strongly to a system's natural dynamics. For an ideal undamped oscillator driven exactly at its natural frequency, the resonant particular solution grows in amplitude rather than remaining bounded sinusoidal motion.",
+      "required_concepts": [
+        "Strong response near natural dynamics.",
+        "Undamped exact resonance requires a growing-envelope solution."
+      ],
+      "accepted_variants": [
+        "Resonant forcing response."
+      ],
+      "major_error_concepts": [
+        "Assuming finite damping still produces infinite steady-state amplitude."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-forced-oscillator-equation",
+        "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-coupled-linear-system",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Coupled Linear System",
+      "prompt": "What is Coupled Linear System? State its defining idea and essential conditions.",
+      "definition": "A coupled linear system uses vector variables with derivatives linked by a matrix. Eigenvectors or related transformations can decouple independent modes when the matrix structure permits.",
+      "required_concepts": [
+        "Matrix-linked dynamical variables."
+      ],
+      "accepted_variants": [
+        "Linear system of differential equations."
+      ],
+      "major_error_concepts": [
+        "Solving each component as independent while retaining nonzero coupling terms."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-linear-system",
+        "mathematical-methods-for-physics-i.draft-diagonalization",
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-normal-mode",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Normal Mode",
+      "prompt": "What is Normal Mode? State its defining idea and essential conditions.",
+      "definition": "A normal mode is a collective linear oscillation in which coordinates share one frequency and fixed relative amplitudes. For mass and stiffness matrices it arises from a generalized eigenvalue problem, not necessarily ordinary diagonalization of stiffness alone.",
+      "required_concepts": [
+        "Common frequency and fixed relative amplitudes.",
+        "Mass matrix matters in modal equations."
+      ],
+      "accepted_variants": [
+        "Independent small-oscillation mode."
+      ],
+      "major_error_concepts": [
+        "Ignoring unequal masses when identifying normal-mode frequencies."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-coupled-linear-system",
+        "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+        "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-power-series-ode-solution",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Power-Series ODE Solution",
+      "prompt": "What is Power-Series ODE Solution? State its defining idea and essential conditions.",
+      "definition": "A power-series ODE solution expands the unknown near a point and determines coefficients by substituting and matching powers. Formal recurrence alone is not a proof that the resulting series converges on an arbitrary interval.",
+      "required_concepts": [
+        "Series substitution yields coefficient recurrences.",
+        "Convergence is a separate condition."
+      ],
+      "accepted_variants": [
+        "Local series solution."
+      ],
+      "major_error_concepts": [
+        "Assuming a formal coefficient sequence guarantees a globally convergent solution."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-taylor-expansion",
+        "mathematical-methods-for-physics-i.draft-ordinary-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-fourier-series",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Fourier Series",
+      "prompt": "What is Fourier Series? State its defining idea and essential conditions.",
+      "definition": "A Fourier series expands a periodic function in integer-frequency sine and cosine terms, or equivalent complex exponentials, relative to its period. The coefficient convention and convergence sense must be stated.",
+      "required_concepts": [
+        "Periodic expansion in harmonic frequencies."
+      ],
+      "accepted_variants": [
+        "Harmonic series representation."
+      ],
+      "major_error_concepts": [
+        "Using arbitrary unrelated frequencies while claiming the usual Fourier series of a fixed period."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-euler-s-formula",
+        "mathematical-methods-for-physics-i.draft-phasor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Orthogonal Functions",
+      "prompt": "What is Orthogonal Functions? State its defining idea and essential conditions.",
+      "definition": "Functions are orthogonal under an inner product when their weighted product integral is zero over the specified domain. Orthogonality depends on the interval, weight, and conjugation convention for complex functions.",
+      "required_concepts": [
+        "Zero inner product on a specified domain and weight."
+      ],
+      "accepted_variants": [
+        "Functional orthogonality."
+      ],
+      "major_error_concepts": [
+        "Calling functions orthogonal without specifying the inner product or domain."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dot-product",
+        "mathematical-methods-for-physics-i.draft-complex-conjugate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-fourier-coefficient",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Fourier Coefficient",
+      "prompt": "What is Fourier Coefficient? State its defining idea and essential conditions.",
+      "definition": "Fourier coefficients project a function onto orthogonal harmonics with the appropriate normalization. Complex coefficients use conjugate basis functions in the inner product, with factors depending on the chosen interval and convention.",
+      "required_concepts": [
+        "Normalized orthogonal projections onto harmonics."
+      ],
+      "accepted_variants": [
+        "Harmonic projection amplitudes."
+      ],
+      "major_error_concepts": [
+        "Omitting normalization or conjugation while claiming convention-independent coefficients."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-fourier-series",
+        "mathematical-methods-for-physics-i.draft-orthogonal-functions"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-fourier-series-at-discontinuities",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Fourier Series at Discontinuities",
+      "prompt": "What is Fourier Series at Discontinuities? State its defining idea and essential conditions.",
+      "definition": "For suitable piecewise-smooth periodic functions, the Fourier series converges at a jump to the average of the left and right limits. Convergence at continuous points does not imply uniform convergence across all discontinuities.",
+      "required_concepts": [
+        "Jump limit is the average of one-sided limits under standard conditions."
+      ],
+      "accepted_variants": [
+        "Fourier midpoint convergence at a discontinuity."
+      ],
+      "major_error_concepts": [
+        "Claiming a Fourier series must converge to either chosen one-sided jump value."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-fourier-series",
+        "mathematical-methods-for-physics-i.draft-fourier-coefficient"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-parseval-relation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Parseval Relation",
+      "prompt": "What is Parseval Relation? State its defining idea and essential conditions.",
+      "definition": "Parseval's relation equates a function's squared norm to the sum of squared coefficients in a complete orthonormal expansion, with convention-dependent factors for unnormalized Fourier bases. It connects signal strength in coordinate and mode descriptions.",
+      "required_concepts": [
+        "Squared norm equals coefficient energy for orthonormal expansion."
+      ],
+      "accepted_variants": [
+        "Energy identity for Fourier coefficients."
+      ],
+      "major_error_concepts": [
+        "Applying an unnormalized coefficient sum without its basis normalization factors."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+        "mathematical-methods-for-physics-i.draft-fourier-coefficient"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-fourier-transform",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Fourier Transform",
+      "prompt": "What is Fourier Transform? State its defining idea and essential conditions.",
+      "definition": "A Fourier transform represents a suitable nonperiodic function through a continuum of frequencies. Forward and inverse sign and normalization conventions must match; derivatives become frequency multipliers under appropriate boundary or distributional assumptions.",
+      "required_concepts": [
+        "Continuous frequency representation.",
+        "Consistent transform conventions."
+      ],
+      "accepted_variants": [
+        "Continuous Fourier analysis."
+      ],
+      "major_error_concepts": [
+        "Mixing forward and inverse normalizations and assuming factors cancel automatically."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-fourier-series",
+        "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-convolution",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Convolution",
+      "prompt": "What is Convolution? State its defining idea and essential conditions.",
+      "definition": "Convolution combines two functions by integrating their product while shifting one relative to the other. For suitable functions, Fourier transformation converts convolution into multiplication with the chosen convention's normalization.",
+      "required_concepts": [
+        "Integral of shifted product.",
+        "Transforms simplify convolution."
+      ],
+      "accepted_variants": [
+        "Linear translation-invariant combination."
+      ],
+      "major_error_concepts": [
+        "Equating convolution with pointwise multiplication in the original coordinate domain."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-fourier-transform"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-dirac-delta",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Dirac Delta",
+      "prompt": "What is Dirac Delta? State its defining idea and essential conditions.",
+      "definition": "The Dirac delta is a distribution characterized by integration against test functions: integral delta(x-a)f(x) dx=f(a) when the domain includes a appropriately. It is not an ordinary finite-valued function with a usual pointwise peak.",
+      "required_concepts": [
+        "Sifting action on test functions.",
+        "Distribution rather than ordinary function."
+      ],
+      "accepted_variants": [
+        "Ideal point-source distribution."
+      ],
+      "major_error_concepts": [
+        "Treating delta(0) as an ordinary finite number sufficient to define delta."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-delta-scaling",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Delta Scaling",
+      "prompt": "What is Delta Scaling? State its defining idea and essential conditions.",
+      "definition": "For nonzero real a, delta(a x)=delta(x)/|a| as distributions. The absolute scale factor preserves the delta's unit integral under a change of variable.",
+      "required_concepts": [
+        "Inverse absolute scaling factor."
+      ],
+      "accepted_variants": [
+        "Delta rescaling identity."
+      ],
+      "major_error_concepts": [
+        "Using a signed factor 1/a for negative a in the usual scalar delta scaling."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dirac-delta",
+        "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-green-function",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Green Function",
+      "prompt": "What is Green Function? State its defining idea and essential conditions.",
+      "definition": "A Green function is the response of a specified linear operator with specified auxiliary conditions to a unit point or impulse source. Integrating it against forcing constructs solutions when the relevant solvability and boundary conditions permit.",
+      "required_concepts": [
+        "Impulse response of a linear boundary or initial-value problem.",
+        "Auxiliary conditions are part of the definition."
+      ],
+      "accepted_variants": [
+        "Kernel of a linear response operator."
+      ],
+      "major_error_concepts": [
+        "Assuming one Green function works for every boundary condition on the same differential expression."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dirac-delta",
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+        "mathematical-methods-for-physics-i.draft-boundary-value-problem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-laplace-transform",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Laplace Transform",
+      "prompt": "What is Laplace Transform? State its defining idea and essential conditions.",
+      "definition": "The one-sided Laplace transform integrates exp(-s t)f(t) from zero to infinity where it converges. It converts time derivatives into algebraic terms involving s and initial values, making it useful for linear initial-value problems.",
+      "required_concepts": [
+        "Exponential-weighted half-line transform.",
+        "Derivative transforms include initial data."
+      ],
+      "accepted_variants": [
+        "Unilateral Laplace transform."
+      ],
+      "major_error_concepts": [
+        "Dropping all initial-condition terms when transforming derivatives in an IVP."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-initial-value-problem",
+        "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-inverse-laplace-transform",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Inverse Laplace Transform",
+      "prompt": "What is Inverse Laplace Transform? State its defining idea and essential conditions.",
+      "definition": "An inverse Laplace transform recovers the time-domain function associated with a transform under its convergence and regularity assumptions. Partial fractions can separate rational transforms into familiar exponential or oscillatory terms.",
+      "required_concepts": [
+        "Recover time function with valid transform assumptions."
+      ],
+      "accepted_variants": [
+        "Laplace inversion."
+      ],
+      "major_error_concepts": [
+        "Ignoring the transform's domain or initial-value convention when interpreting a formal algebraic expression."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-laplace-transform",
+        "mathematical-methods-for-physics-i.draft-characteristic-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-step-function",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Step Function",
+      "prompt": "What is Step Function? State its defining idea and essential conditions.",
+      "definition": "The Heaviside step function switches from zero to one across a specified threshold. Its distributional derivative is a delta impulse, and a shifted step models a force or input turned on at a given time.",
+      "required_concepts": [
+        "Threshold switch.",
+        "Distributional derivative is a delta."
+      ],
+      "accepted_variants": [
+        "Unit step."
+      ],
+      "major_error_concepts": [
+        "Treating a step and an impulse as the same input."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dirac-delta",
+        "mathematical-methods-for-physics-i.draft-forced-oscillator-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Partial Differential Equation",
+      "prompt": "What is Partial Differential Equation? State its defining idea and essential conditions.",
+      "definition": "A partial differential equation relates an unknown function of multiple independent variables to its partial derivatives. Initial and boundary conditions specify a physical problem beyond the differential expression alone.",
+      "required_concepts": [
+        "Multiple independent variables and partial derivatives.",
+        "Auxiliary conditions complete the problem."
+      ],
+      "accepted_variants": [
+        "PDE."
+      ],
+      "major_error_concepts": [
+        "Assuming the PDE alone uniquely determines a field without any relevant data or boundaries."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-derivative",
+        "mathematical-methods-for-physics-i.draft-boundary-value-problem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-second-order-pde-classification",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Second-Order PDE Classification",
+      "prompt": "For a real linear PDE with principal part A u_xx + 2B u_xy + C u_yy, how is its type classified at a point where the principal part is nonzero?",
+      "definition": "For a real linear second-order PDE in two independent variables with principal part A u_xx + 2B u_xy + C u_yy, set D=B^2-AC at the point of interest. With a nonzero principal part, D<0 is elliptic, D=0 is parabolic, and D>0 is hyperbolic in this two-variable classification. Variable coefficients can make type vary with position. If the mixed derivative is written B u_xy instead, the corresponding discriminant is B^2-4AC.",
+      "required_concepts": [
+        "Under the displayed 2B mixed-derivative convention use B^2-AC: negative elliptic, zero parabolic, positive hyperbolic.",
+        "Classification is local in the highest-order coefficients and the nonzero second-order principal part must be identified."
+      ],
+      "accepted_variants": [
+        "For principal matrix [[A,B],[B,C]], positive determinant means elliptic, zero determinant with nonzero matrix parabolic, and negative determinant hyperbolic."
+      ],
+      "major_error_concepts": [
+        "Reversing the elliptic and hyperbolic discriminant signs.",
+        "Using B^2-4AC while treating B as half the mixed-derivative coefficient.",
+        "Classifying the equation solely by its application name without examining its principal part."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-separation-of-variables",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Separation of Variables",
+      "prompt": "What is Separation of Variables? State its defining idea and essential conditions.",
+      "definition": "Separation of variables seeks product solutions whose factors depend on different coordinates. It works for compatible linear equations, geometry, and boundary conditions, and a superposition of separated solutions may be needed to fit general data.",
+      "required_concepts": [
+        "Product ansatz reduces compatible PDEs to ODEs.",
+        "Superposition may fit full boundary data."
+      ],
+      "accepted_variants": [
+        "Separated-coordinate solution method."
+      ],
+      "major_error_concepts": [
+        "Assuming every arbitrary PDE and boundary geometry admit a single separated product solution."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+        "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-diffusion-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Diffusion Equation",
+      "prompt": "What is Diffusion Equation? State its defining idea and essential conditions.",
+      "definition": "The diffusion equation u_t=D Laplacian u with positive D describes smoothing of a field through spatial gradients in the standard homogeneous model. It is first-order in time and requires appropriate initial and boundary data.",
+      "required_concepts": [
+        "Time derivative proportional to Laplacian with D positive."
+      ],
+      "accepted_variants": [
+        "Heat equation."
+      ],
+      "major_error_concepts": [
+        "Replacing the first time derivative with a second and still calling it the same diffusion equation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+        "mathematical-methods-for-physics-i.draft-laplacian"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-wave-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Wave Equation",
+      "prompt": "What is Wave Equation? State its defining idea and essential conditions.",
+      "definition": "The ideal wave equation u_tt=c squared Laplacian u describes propagation with speed c in a homogeneous medium. It generally requires initial displacement and initial velocity along with boundary conditions.",
+      "required_concepts": [
+        "Second time derivative and propagation speed.",
+        "Two initial time data in the standard problem."
+      ],
+      "accepted_variants": [
+        "Linear wave equation."
+      ],
+      "major_error_concepts": [
+        "Treating it as a diffusion equation that necessarily smooths every disturbance irreversibly."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+        "mathematical-methods-for-physics-i.draft-laplacian",
+        "mathematical-methods-for-physics-i.draft-diffusion-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-laplace-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Laplace Equation",
+      "prompt": "What is Laplace Equation? State its defining idea and essential conditions.",
+      "definition": "Laplace's equation sets the Laplacian of a field to zero in a source-free region. Its solutions are harmonic functions, with the actual field selected by the domain and boundary conditions.",
+      "required_concepts": [
+        "Laplacian equals zero.",
+        "Boundary data select the solution."
+      ],
+      "accepted_variants": [
+        "Source-free potential equation."
+      ],
+      "major_error_concepts": [
+        "Assuming a harmonic function must be spatially constant just because its Laplacian vanishes."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-laplacian",
+        "mathematical-methods-for-physics-i.draft-partial-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-poisson-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Poisson Equation",
+      "prompt": "What is Poisson Equation? State its defining idea and essential conditions.",
+      "definition": "Poisson's equation sets the Laplacian of a field equal to a specified source function, with sign and constants determined by the physical convention. It extends Laplace's equation to regions containing sources.",
+      "required_concepts": [
+        "Laplacian equals specified source.",
+        "Physical sign convention must be stated."
+      ],
+      "accepted_variants": [
+        "Source-driven potential equation."
+      ],
+      "major_error_concepts": [
+        "Assuming every physical Poisson equation has the same source sign and normalization."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-laplace-equation",
+        "mathematical-methods-for-physics-i.draft-green-function"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Dirichlet Boundary Condition",
+      "prompt": "What is Dirichlet Boundary Condition? State its defining idea and essential conditions.",
+      "definition": "A Dirichlet boundary condition specifies the value of the unknown field on a boundary. It differs from specifying the field's normal derivative or flux there.",
+      "required_concepts": [
+        "Field value prescribed on boundary."
+      ],
+      "accepted_variants": [
+        "Fixed-value boundary data."
+      ],
+      "major_error_concepts": [
+        "Calling prescribed normal derivative data Dirichlet data."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+        "mathematical-methods-for-physics-i.draft-partial-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-neumann-boundary-condition",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Neumann Boundary Condition",
+      "prompt": "What is Neumann Boundary Condition? State its defining idea and essential conditions.",
+      "definition": "A Neumann boundary condition specifies the outward normal derivative of a field, or an associated flux with the constitutive factor made explicit. Pure Neumann problems can require compatibility conditions and may leave an additive constant undetermined.",
+      "required_concepts": [
+        "Normal derivative prescribed.",
+        "Compatibility and constant ambiguity can matter."
+      ],
+      "accepted_variants": [
+        "Derivative boundary data."
+      ],
+      "major_error_concepts": [
+        "Assuming every pure Neumann potential problem fixes an absolute additive constant uniquely."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition",
+        "mathematical-methods-for-physics-i.draft-flux",
+        "mathematical-methods-for-physics-i.draft-gradient"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-robin-boundary-condition",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Robin Boundary Condition",
+      "prompt": "What is Robin Boundary Condition? State its defining idea and essential conditions.",
+      "definition": "A Robin boundary condition prescribes a linear combination of field value and normal derivative on a boundary. It can model exchange with surroundings when the combination and coefficients match the physical setup.",
+      "required_concepts": [
+        "Linear combination of value and normal derivative."
+      ],
+      "accepted_variants": [
+        "Mixed value-derivative boundary condition."
+      ],
+      "major_error_concepts": [
+        "Equating Robin data with arbitrary separate independent prescriptions of both value and derivative."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition",
+        "mathematical-methods-for-physics-i.draft-neumann-boundary-condition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Differential Eigenvalue Problem",
+      "prompt": "What is Differential Eigenvalue Problem? State its defining idea and essential conditions.",
+      "definition": "A differential eigenvalue problem seeks nonzero functions satisfying L[y]=lambda w y together with homogeneous boundary conditions. The operator, weight, and boundary conditions jointly determine permitted eigenvalues and modes.",
+      "required_concepts": [
+        "Nonzero eigenfunction obeying differential equation and boundaries."
+      ],
+      "accepted_variants": [
+        "Boundary-value eigenmode problem."
+      ],
+      "major_error_concepts": [
+        "Finding eigenvalues from the differential expression while ignoring the boundary conditions."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+        "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+        "mathematical-methods-for-physics-i.draft-linear-differential-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-sturm-liouville-problem",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Sturm-Liouville Problem",
+      "prompt": "What is Sturm-Liouville Problem? State its defining idea and essential conditions.",
+      "definition": "A regular Sturm-Liouville problem is a self-adjoint second-order eigenvalue problem with appropriate positive coefficients or weight and self-adjoint boundary conditions. Its eigenvalues are real, and eigenfunctions for distinct eigenvalues are orthogonal under the weight.",
+      "required_concepts": [
+        "Self-adjoint second-order problem with suitable weight and boundaries.",
+        "Real spectrum and weighted orthogonality."
+      ],
+      "accepted_variants": [
+        "Sturm-Liouville mode problem."
+      ],
+      "major_error_concepts": [
+        "Applying its spectral conclusions to an arbitrary non-self-adjoint boundary problem without checking conditions."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem",
+        "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+        "mathematical-methods-for-physics-i.draft-real-symmetric-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-bessel-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Bessel Equation",
+      "prompt": "What is Bessel Equation? State its defining idea and essential conditions.",
+      "definition": "Bessel's equation is x squared y double prime+x y prime+(x squared-nu squared)y=0. Its solutions occur in separated radial problems with cylindrical symmetry; regularity and boundaries determine which solutions and parameters are physically suitable.",
+      "required_concepts": [
+        "Correct Bessel differential equation.",
+        "Radial boundary and regularity conditions matter."
+      ],
+      "accepted_variants": [
+        "Bessel-function radial modes."
+      ],
+      "major_error_concepts": [
+        "Keeping a singular radial solution at an included regular origin without physical justification."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-separation-of-variables",
+        "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+        "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-legendre-equation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Legendre Equation",
+      "prompt": "What is Legendre Equation? State its defining idea and essential conditions.",
+      "definition": "Legendre's equation is (1-x squared)y double prime-2x y prime+ell(ell+1)y=0. For nonnegative integer ell, the regular polynomial solutions appear in axisymmetric spherical angular problems.",
+      "required_concepts": [
+        "Correct equation and integer-degree polynomial case."
+      ],
+      "accepted_variants": [
+        "Legendre polynomial equation."
+      ],
+      "major_error_concepts": [
+        "Assuming every solution of the equation is a polynomial for arbitrary degree and boundary behavior."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-separation-of-variables",
+        "mathematical-methods-for-physics-i.draft-spherical-coordinates"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-spherical-harmonics",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Spherical Harmonics",
+      "prompt": "What is Spherical Harmonics? State its defining idea and essential conditions.",
+      "definition": "Spherical harmonics are orthogonal angular modes on the sphere and eigenfunctions of its angular Laplacian. Their degree and order label permitted angular structure, with normalization and phase conventions explicitly chosen.",
+      "required_concepts": [
+        "Angular Laplacian eigenfunctions on the sphere.",
+        "Orthogonality with spherical area measure."
+      ],
+      "accepted_variants": [
+        "Spherical angular eigenmodes."
+      ],
+      "major_error_concepts": [
+        "Treating spherical harmonics as radial functions independent of angular coordinates."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-legendre-equation",
+        "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+        "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-nondimensionalization",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Nondimensionalization",
+      "prompt": "What is Nondimensionalization? State its defining idea and essential conditions.",
+      "definition": "Nondimensionalization rescales variables by characteristic units so equations are written in dimensionless form. It exposes controlling scale ratios and reduces dependence on arbitrary unit choices.",
+      "required_concepts": [
+        "Rescale variables to reveal dimensionless groups."
+      ],
+      "accepted_variants": [
+        "Dimensionless formulation."
+      ],
+      "major_error_concepts": [
+        "Removing unit labels without actually rescaling dimensional quantities."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-small-parameter",
+        "mathematical-methods-for-physics-i.draft-volume-element"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-dimensional-analysis",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Dimensional Analysis",
+      "prompt": "What is Dimensional Analysis? State its defining idea and essential conditions.",
+      "definition": "Dimensional analysis requires terms added or equated in a physical relation to have matching dimensions. It can constrain possible formulas and identify scale groups, but usually cannot determine dimensionless constants or all functional dependence alone.",
+      "required_concepts": [
+        "Dimensional consistency constrains equations.",
+        "Not a complete derivation of coefficients or functions."
+      ],
+      "accepted_variants": [
+        "Unit-dimension reasoning."
+      ],
+      "major_error_concepts": [
+        "Claiming dimensional consistency alone proves a physical law correct."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative",
+        "mathematical-methods-for-physics-i.draft-nondimensionalization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-scaling-law",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Scaling Law",
+      "prompt": "What is Scaling Law? State its defining idea and essential conditions.",
+      "definition": "A scaling law states how one quantity changes when a controlling scale is multiplied, often as a power. The relevant regime and quantities held fixed must be identified; a scaling relation need not include the full numerical prefactor.",
+      "required_concepts": [
+        "Response to rescaling under stated fixed conditions."
+      ],
+      "accepted_variants": [
+        "Power-law scale dependence."
+      ],
+      "major_error_concepts": [
+        "Using one regime's scaling unchanged after its assumptions fail."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-dimensional-analysis",
+        "mathematical-methods-for-physics-i.draft-order-of-approximation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-asymptotic-approximation",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Asymptotic Approximation",
+      "prompt": "What is Asymptotic Approximation? State its defining idea and essential conditions.",
+      "definition": "An asymptotic approximation describes a function in a specified limiting regime with controlled relative or ordered behavior. It can be useful even when the associated infinite series does not converge at a fixed nonzero parameter.",
+      "required_concepts": [
+        "Limit-specific ordered approximation.",
+        "Asymptotic series need not converge."
+      ],
+      "accepted_variants": [
+        "Limiting expansion."
+      ],
+      "major_error_concepts": [
+        "Equating asymptotic usefulness with convergence of every term to an exact global sum."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-order-of-approximation",
+        "mathematical-methods-for-physics-i.draft-taylor-expansion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-perturbation-expansion",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Perturbation Expansion",
+      "prompt": "What is Perturbation Expansion? State its defining idea and essential conditions.",
+      "definition": "Regular perturbation expands a solution in powers of a small parameter around a limiting problem whose behavior remains compatible. Singular perturbations can change problem order or introduce new scales, so a naive uniform power series can fail.",
+      "required_concepts": [
+        "Small-parameter expansion with regular limiting behavior.",
+        "Singular limits can require different scales."
+      ],
+      "accepted_variants": [
+        "Perturbative solution expansion."
+      ],
+      "major_error_concepts": [
+        "Assuming every small coefficient permits a globally valid regular series."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-small-parameter",
+        "mathematical-methods-for-physics-i.draft-asymptotic-approximation",
+        "mathematical-methods-for-physics-i.draft-ode-order"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-dominant-balance",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Dominant Balance",
+      "prompt": "What is Dominant Balance? State its defining idea and essential conditions.",
+      "definition": "Dominant balance identifies terms of comparable leading magnitude in a chosen limit and checks that omitted terms are smaller there. It guides scale choices rather than authorizing arbitrary deletion of inconvenient terms.",
+      "required_concepts": [
+        "Balance leading terms and justify smaller remainders."
+      ],
+      "accepted_variants": [
+        "Leading-order balance."
+      ],
+      "major_error_concepts": [
+        "Discarding terms without comparing their sizes in the claimed regime."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-asymptotic-approximation",
+        "mathematical-methods-for-physics-i.draft-scaling-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-finite-difference-derivative",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Finite-Difference Derivative",
+      "prompt": "What is Finite-Difference Derivative? State its defining idea and essential conditions.",
+      "definition": "A finite-difference derivative approximates a derivative from nearby function values. Smaller steps reduce truncation error only until noise or roundoff amplification becomes important, so step size involves competing errors.",
+      "required_concepts": [
+        "Nearby-value approximation to a derivative.",
+        "Truncation and roundoff tradeoff."
+      ],
+      "accepted_variants": [
+        "Numerical differentiation."
+      ],
+      "major_error_concepts": [
+        "Assuming arbitrarily small finite-difference steps always improve accuracy."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative",
+        "mathematical-methods-for-physics-i.draft-taylor-expansion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-numerical-quadrature",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Numerical Quadrature",
+      "prompt": "What is Numerical Quadrature? State its defining idea and essential conditions.",
+      "definition": "Numerical quadrature approximates an integral by weighted function evaluations, such as trapezoidal or Simpson-type rules. Its error depends on smoothness, interval partition, and the chosen rule, not just the number of points.",
+      "required_concepts": [
+        "Weighted-sum approximation to an integral."
+      ],
+      "accepted_variants": [
+        "Numerical integration."
+      ],
+      "major_error_concepts": [
+        "Assuming the same convergence order for discontinuous and sufficiently smooth integrands without qualification."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration",
+        "mathematical-methods-for-physics-i.draft-order-of-approximation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-forward-euler-method",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Forward Euler Method",
+      "prompt": "What is Forward Euler Method? State its defining idea and essential conditions.",
+      "definition": "Forward Euler advances an ODE using y_(n+1)=y_n+h f(t_n,y_n). It uses the current slope and has first-order global accuracy under standard smoothness and stability assumptions, with step-size restrictions for many problems.",
+      "required_concepts": [
+        "Current-slope explicit step.",
+        "First-order global accuracy under conditions."
+      ],
+      "accepted_variants": [
+        "Explicit Euler method."
+      ],
+      "major_error_concepts": [
+        "Assuming a smaller local truncation error proves stability for every step size."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-initial-value-problem",
+        "mathematical-methods-for-physics-i.draft-derivative",
+        "mathematical-methods-for-physics-i.draft-order-of-approximation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-runge-kutta-method",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Runge-Kutta Method",
+      "prompt": "What is Runge-Kutta Method? State its defining idea and essential conditions.",
+      "definition": "Runge-Kutta methods combine several slope evaluations within a time step to approximate ODE evolution. Different tableaux give different orders and stability regions, so the name alone does not specify one universal accuracy level.",
+      "required_concepts": [
+        "Multiple staged slope evaluations per step."
+      ],
+      "accepted_variants": [
+        "Staged ODE integration methods."
+      ],
+      "major_error_concepts": [
+        "Assuming every Runge-Kutta method is fourth-order."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-forward-euler-method",
+        "mathematical-methods-for-physics-i.draft-initial-value-problem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-numerical-stability",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Numerical Stability",
+      "prompt": "What is Numerical Stability? State its defining idea and essential conditions.",
+      "definition": "Numerical stability concerns whether discretization and perturbation errors remain controlled under repeated computation. A method can be consistent yet unstable for a chosen step size or problem, preventing useful convergence.",
+      "required_concepts": [
+        "Control of error propagation.",
+        "Consistency alone does not guarantee stability."
+      ],
+      "accepted_variants": [
+        "Stability of a discrete approximation."
+      ],
+      "major_error_concepts": [
+        "Equating a formally accurate local formula with reliable long-time behavior for every step size."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-forward-euler-method",
+        "mathematical-methods-for-physics-i.draft-finite-difference-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-roundoff-error",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Roundoff Error",
+      "prompt": "What is Roundoff Error? State its defining idea and essential conditions.",
+      "definition": "Roundoff error comes from finite-precision representation and arithmetic. Cancellation between nearly equal numbers can magnify relative error, so algebraically equivalent formulas may behave differently numerically.",
+      "required_concepts": [
+        "Finite-precision arithmetic error.",
+        "Cancellation can amplify relative error."
+      ],
+      "accepted_variants": [
+        "Floating-point rounding error."
+      ],
+      "major_error_concepts": [
+        "Assuming all algebraically equivalent expressions have identical numerical accuracy."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-finite-difference-derivative"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-truncation-error",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Truncation Error",
+      "prompt": "What is Truncation Error? State its defining idea and essential conditions.",
+      "definition": "Truncation error results from replacing an exact operation or infinite representation with a finite approximation. It differs from roundoff and often scales with a discretization step or the number of retained terms under stated regularity.",
+      "required_concepts": [
+        "Error from finite approximation rather than finite precision."
+      ],
+      "accepted_variants": [
+        "Discretization or series-cutoff error."
+      ],
+      "major_error_concepts": [
+        "Calling every numerical error roundoff while ignoring model or approximation truncation."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-order-of-approximation",
+        "mathematical-methods-for-physics-i.draft-roundoff-error"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-root-finding",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Root Finding",
+      "prompt": "What is Root Finding? State its defining idea and essential conditions.",
+      "definition": "A root-finding problem seeks x with f(x)=0. Bracketing methods exploit a sign change for a continuous function, while Newton's method uses local derivative information and can fail from unsuitable starting points or derivative behavior.",
+      "required_concepts": [
+        "Solve a zero of a function.",
+        "Algorithm assumptions and initial information matter."
+      ],
+      "accepted_variants": [
+        "Numerical equation solving."
+      ],
+      "major_error_concepts": [
+        "Assuming Newton iteration converges to the desired root from every initial guess."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-derivative",
+        "mathematical-methods-for-physics-i.draft-numerical-stability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-least-squares",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Least Squares",
+      "prompt": "What is Least Squares? State its defining idea and essential conditions.",
+      "definition": "Least squares chooses parameters to minimize a sum of squared residuals between a model and observations or constraints. It defines an optimization criterion, not an automatic guarantee that the physical model or noise assumptions are correct.",
+      "required_concepts": [
+        "Minimize squared residuals.",
+        "Fit quality does not prove physical validity."
+      ],
+      "accepted_variants": [
+        "Quadratic residual fitting."
+      ],
+      "major_error_concepts": [
+        "Claiming the smallest residual necessarily identifies the true mechanism."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-linear-system",
+        "mathematical-methods-for-physics-i.draft-dot-product"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-weighted-complex-inner-product",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Weighted Complex Inner Product",
+      "prompt": "What is Weighted Complex Inner Product? State its defining idea and essential conditions.",
+      "definition": "A weighted complex inner product integrates or sums the conjugate of one argument times the other with a positive weight. Positive weights define geometry and orthogonality; the order of conjugation follows a declared convention.",
+      "required_concepts": [
+        "Conjugation and positive weighting define the inner product."
+      ],
+      "accepted_variants": [
+        "Weighted Hermitian inner product."
+      ],
+      "major_error_concepts": [
+        "Omitting complex conjugation while claiming a positive squared norm for arbitrary complex vectors."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-complex-conjugate",
+        "mathematical-methods-for-physics-i.draft-orthogonal-functions"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-second-rank-tensor",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Second-Rank Tensor",
+      "prompt": "What is Second-Rank Tensor? State its defining idea and essential conditions.",
+      "definition": "A second-rank tensor is a linear geometric object whose components transform with two basis factors under coordinate changes. A matrix can represent it in a chosen basis, but a generic table of numbers is not a tensor without the transformation rule.",
+      "required_concepts": [
+        "Two-index geometric transformation law.",
+        "Representation distinct from object."
+      ],
+      "accepted_variants": [
+        "Rank-two tensor such as inertia or conductivity in a suitable formulation."
+      ],
+      "major_error_concepts": [
+        "Calling every rectangular data table a tensor solely because it has two indices."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-change-of-basis",
+        "mathematical-methods-for-physics-i.draft-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-curvilinear-scale-factors",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Curvilinear Scale Factors",
+      "prompt": "What is Curvilinear Scale Factors? State its defining idea and essential conditions.",
+      "definition": "Orthogonal curvilinear coordinates have mutually perpendicular local coordinate directions with scale factors converting coordinate increments to physical distances. Gradients, divergences, and integration measures must include those geometric factors.",
+      "required_concepts": [
+        "Position-dependent orthogonal basis and scale factors."
+      ],
+      "accepted_variants": [
+        "Orthogonal non-Cartesian coordinates."
+      ],
+      "major_error_concepts": [
+        "Using Cartesian derivative formulas unchanged by merely renaming coordinates."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+        "mathematical-methods-for-physics-i.draft-spherical-coordinates",
+        "mathematical-methods-for-physics-i.draft-jacobian"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "mathematical-methods-for-physics-i.draft-coordinate-independence",
+      "canonical_deck_id": "mathematical-methods-for-physics-i",
+      "term": "Coordinate Independence",
+      "prompt": "What is Coordinate Independence? State its defining idea and essential conditions.",
+      "definition": "Coordinate independence means a physical or geometric statement describes the same quantity regardless of the chosen coordinates. Components and formulas may change, but correctly transformed predictions and invariant quantities agree.",
+      "required_concepts": [
+        "Representation changes without changing physical content."
+      ],
+      "accepted_variants": [
+        "Basis-independent physical meaning."
+      ],
+      "major_error_concepts": [
+        "Assuming coordinate independence requires identical component values in every basis."
+      ],
+      "prerequisite_ids": [
+        "mathematical-methods-for-physics-i.draft-change-of-basis",
+        "mathematical-methods-for-physics-i.draft-second-rank-tensor",
+        "mathematical-methods-for-physics-i.draft-curvilinear-scale-factors"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-asymptotic-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dominant-balance"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-asymptotic-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-perturbation-expansion"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-change-of-basis"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-repeated-characteristic-root"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-green-function"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-boundary-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-coordinate-independence"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-diagonalization"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-basis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-second-rank-tensor"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-delta-scaling"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dirac-delta"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-numerical-quadrature"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-separable-ode"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-characteristic-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-damped-oscillator-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-characteristic-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-characteristic-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-inverse-laplace-transform"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-characteristic-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-repeated-characteristic-root"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-conjugate",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-conjugate",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-weighted-complex-inner-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-characteristic-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-transform"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-laplace-transform"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-phasor"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-number",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-complex-conjugate"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-number",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-complex-polar-form"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-number",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-euler-s-formula"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-polar-form",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-complex-conjugate"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-polar-form",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-complex-polar-form",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-phasor"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-conservative-field",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curl-of-gradient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-coupled-linear-system",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-normal-mode"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cross-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curl"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cross-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-scalar-triple-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cross-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-surface-integral"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-curl",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-conservative-field"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-curl",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curl-of-gradient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-curl",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence-of-curl"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-curl",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-green-s-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-curl",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-stokes-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-curvilinear-scale-factors",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-coordinate-independence"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-bessel-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curvilinear-scale-factors"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-spherical-coordinates"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-volume-element"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-damped-oscillator-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-forced-oscillator-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-differentiation-under-an-integral"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dimensional-analysis"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-finite-difference-derivative"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-forward-euler-method"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-integration-by-parts"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-multivariable-chain-rule"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-root-finding"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-taylor-expansion"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-determinant",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-jacobian"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-determinant",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-matrix-inverse"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-diagonalization",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-coupled-linear-system"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-bessel-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-spherical-harmonics"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-sturm-liouville-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-diffusion-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-wave-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dimensional-analysis",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-scaling-law"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dirac-delta",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-delta-scaling"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dirac-delta",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-green-function"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dirac-delta",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-step-function"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-neumann-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-robin-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-divergence",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence-of-curl"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-divergence",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-divergence",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-laplacian"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-divergence",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-calculus-product-rule"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-divergence-theorem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-boundary-orientation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-flux"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-gradient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-least-squares"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-scalar-triple-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-calculus-product-rule"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-dot-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-line-integral"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-diagonalization"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-normal-mode"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-real-symmetric-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-euler-s-formula",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-complex-exponential-dynamics"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-euler-s-formula",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-complex-polar-form"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-euler-s-formula",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-series"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-euler-s-formula",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-finite-difference-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-numerical-stability"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-finite-difference-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-roundoff-error"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-flux",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-flux",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-flux",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-neumann-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-flux",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-stokes-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-forced-oscillator-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-resonance"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-forced-oscillator-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-step-function"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-forward-euler-method",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-numerical-stability"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-forward-euler-method",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-runge-kutta-method"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-fourier-coefficient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-series-at-discontinuities"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-fourier-coefficient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-parseval-relation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-fourier-series",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-coefficient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-fourier-series",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-series-at-discontinuities"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-fourier-series",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-transform"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-fourier-transform",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-convolution"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curl-of-gradient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-directional-derivative"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-gradient-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-laplacian"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-neumann-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-calculus-product-rule"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-line-integral"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-gradient-theorem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-conservative-field"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-green-function",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-poisson-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-damped-oscillator-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-normal-mode"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-harmonic-oscillator-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-resonance"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-particular-solution"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-separation-of-variables"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-initial-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-boundary-value-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-initial-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-forward-euler-method"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-initial-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-laplace-transform"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-initial-value-problem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-runge-kutta-method"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-integration-by-parts",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-integrating-factor"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-jacobian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-change-of-variables-in-integration"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-jacobian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curvilinear-scale-factors"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-jacobian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-jacobian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-volume-element"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-laplace-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-poisson-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-laplace-transform",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-inverse-laplace-transform"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-laplacian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-diffusion-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-laplacian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-laplace-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-laplacian",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-wave-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-legendre-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-spherical-harmonics"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-characteristic-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-coupled-linear-system"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-differential-eigenvalue-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-green-function"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-integrating-factor"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-particular-solution"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-map",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-homogeneous-linear-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-map",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-map",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-system"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-system",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-coupled-linear-system"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-linear-system",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-least-squares"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-determinant"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-eigenvalue-and-eigenvector"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-map"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-system"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-matrix-inverse"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-second-rank-tensor"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix-inverse",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-system"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-matrix-inverse",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-multivariable-chain-rule",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-differentiation-under-an-integral"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-multivariable-chain-rule",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-total-differential"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-neumann-boundary-condition",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-robin-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-nondimensionalization",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dimensional-analysis"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-numerical-stability",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-root-finding"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ode-order",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-initial-value-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ode-order",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-perturbation-expansion"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-order-of-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-asymptotic-approximation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-order-of-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-forward-euler-method"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-order-of-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-numerical-quadrature"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-order-of-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-scaling-law"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-order-of-approximation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-truncation-error"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-boundary-value-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-initial-value-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-differential-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-ode-order"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-power-series-ode-solution"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-ordinary-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-separable-ode"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-coefficient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-parseval-relation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-spherical-harmonics"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-sturm-liouville-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-functions",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-weighted-complex-inner-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-orthogonal-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-real-symmetric-matrix"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curl"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence-of-curl"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-gradient"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-jacobian"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-multivariable-chain-rule"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-surface-integral"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-derivative",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-total-differential"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-diffusion-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dirichlet-boundary-condition"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-laplace-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-second-order-pde-classification"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-separation-of-variables"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-partial-differential-equation",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-wave-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-particular-solution",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-forced-oscillator-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-phasor",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-fourier-series"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-real-symmetric-matrix",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-sturm-liouville-problem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-roundoff-error",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-truncation-error"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-scalar",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-scalar-triple-product",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-determinant"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-scaling-law",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dominant-balance"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-second-rank-tensor",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-coordinate-independence"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-separation-of-variables",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-bessel-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-separation-of-variables",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-legendre-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-small-parameter",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-nondimensionalization"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-small-parameter",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-order-of-approximation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-small-parameter",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-perturbation-expansion"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-spherical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curvilinear-scale-factors"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-spherical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-legendre-equation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-spherical-coordinates",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-volume-element"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-stokes-theorem",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-boundary-orientation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-surface-integral",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-flux"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-taylor-expansion",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-asymptotic-approximation"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-taylor-expansion",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-finite-difference-derivative"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-taylor-expansion",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-power-series-ode-solution"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-taylor-expansion",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-small-parameter"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-cross-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-linear-map"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-components"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-basis"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-change-of-basis"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-cylindrical-coordinates"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dot-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-spherical-coordinates"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-components",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-vector-norm"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-line-integral",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-curl"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-line-integral",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-gradient-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-line-integral",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-green-s-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-line-integral",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-stokes-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-norm",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-cross-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-norm",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-directional-derivative"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-vector-norm",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-dot-product"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-volume-element",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-divergence-theorem"
+    },
+    {
+      "prerequisite_card_id": "mathematical-methods-for-physics-i.draft-volume-element",
+      "dependent_card_id": "mathematical-methods-for-physics-i.draft-nondimensionalization"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Mathematical Methods for Physics I.",
+  "level": "College",
+  "tags": [
+    "physics"
+  ]
+}

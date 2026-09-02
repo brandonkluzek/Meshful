@@ -1,0 +1,3476 @@
+{
+  "id": "academic-reviewed-v1:biology-ii",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Biology II",
+  "subject": "Biology",
+  "domain": "Biology",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "biology-ii.draft-comparative-biology",
+      "canonical_deck_id": "biology-ii",
+      "term": "Comparative Biology",
+      "prompt": "What is Comparative Biology? State its defining idea and essential conditions.",
+      "definition": "Comparative biology studies similarities and differences among organisms to investigate function and evolutionary history. A comparison must consider shared ancestry and environment rather than treating every species as an independent replicate of the same experiment.",
+      "required_concepts": [
+        "Cross-organism comparison must account for ancestry and context."
+      ],
+      "accepted_variants": [
+        "Comparative study of organisms."
+      ],
+      "major_error_concepts": [
+        "Assuming similarity always reflects independent adaptation rather than common ancestry."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-phylogeny",
+        "biology-i.draft-biological-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-taxonomy",
+      "canonical_deck_id": "biology-ii",
+      "term": "Taxonomy",
+      "prompt": "What is Taxonomy? State its defining idea and essential conditions.",
+      "definition": "Taxonomy identifies, names, and classifies biological entities using explicit criteria. Taxonomic ranks are naming conventions rather than equal units of evolutionary time or genetic difference across every lineage.",
+      "required_concepts": [
+        "Classification and naming do not make ranks biologically equal in all groups."
+      ],
+      "accepted_variants": [
+        "Biological classification."
+      ],
+      "major_error_concepts": [
+        "Assuming every genus represents the same evolutionary age or amount of divergence."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-comparative-biology",
+        "biology-i.draft-biodiversity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-clade",
+      "canonical_deck_id": "biology-ii",
+      "term": "Clade",
+      "prompt": "What is Clade? State its defining idea and essential conditions.",
+      "definition": "A clade includes a common ancestor and all its descendants. A group that omits some descendants is not a complete clade, even if its members resemble one another in familiar visible traits.",
+      "required_concepts": [
+        "An ancestor plus all descendants forms a monophyletic group."
+      ],
+      "accepted_variants": [
+        "Monophyletic group."
+      ],
+      "major_error_concepts": [
+        "Defining any visually similar collection of species as a clade."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-phylogeny",
+        "biology-ii.draft-taxonomy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-homology",
+      "canonical_deck_id": "biology-ii",
+      "term": "Homology",
+      "prompt": "What is Homology? State its defining idea and essential conditions.",
+      "definition": "Homology is similarity attributable to shared ancestry at a specified biological level. Homologous structures can have different present functions, so identical function is not required to establish an evolutionary correspondence.",
+      "required_concepts": [
+        "Shared ancestry explains the compared feature."
+      ],
+      "accepted_variants": [
+        "Evolutionary homology."
+      ],
+      "major_error_concepts": [
+        "Defining homology solely as performing the same current task."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-comparative-biology",
+        "biology-ii.draft-clade"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-analogy",
+      "canonical_deck_id": "biology-ii",
+      "term": "Analogy",
+      "prompt": "What is Analogy? State its defining idea and essential conditions.",
+      "definition": "Analogy is similarity in function or form that does not arise from inheritance of that particular feature from the relevant common ancestor. Convergent evolution can generate analogous features, although structures can be homologous at one level and analogous at another.",
+      "required_concepts": [
+        "Independent origins can produce similar features."
+      ],
+      "accepted_variants": [
+        "Convergent similarity."
+      ],
+      "major_error_concepts": [
+        "Assuming all similarities between distant organisms imply recent common ancestry."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-homology",
+        "biology-i.draft-adaptation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-shared-derived-character",
+      "canonical_deck_id": "biology-ii",
+      "term": "Shared Derived Character",
+      "prompt": "What is Shared Derived Character? State its defining idea and essential conditions.",
+      "definition": "A shared derived character is a feature inherited from a common ancestor that distinguishes a specified lineage relative to an ancestral comparison. Derived and ancestral are relative to the group and character being considered, not rankings of superiority.",
+      "required_concepts": [
+        "A relative evolutionary novelty can support a clade."
+      ],
+      "accepted_variants": [
+        "Synapomorphy."
+      ],
+      "major_error_concepts": [
+        "Calling a derived character inherently better or more advanced."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-clade",
+        "biology-ii.draft-homology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-phylogenetic-inference",
+      "canonical_deck_id": "biology-ii",
+      "term": "Phylogenetic Inference",
+      "prompt": "What is Phylogenetic Inference? State its defining idea and essential conditions.",
+      "definition": "Phylogenetic inference uses characters or sequences and an explicit model to estimate relationships. Similarity alone may be misleading because convergence and unequal rates can occur, and uncertain branches should not be treated as established ancestry.",
+      "required_concepts": [
+        "Evidence and assumptions support an estimated branching history."
+      ],
+      "accepted_variants": [
+        "Evolutionary tree inference."
+      ],
+      "major_error_concepts": [
+        "Assuming every visually longest branch is the ancestor of all shorter branches."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-analogy",
+        "biology-ii.draft-shared-derived-character",
+        "biology-i.draft-evidence-and-revision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-species-concept",
+      "canonical_deck_id": "biology-ii",
+      "term": "Species Concept",
+      "prompt": "What is Species Concept? State its defining idea and essential conditions.",
+      "definition": "Species concepts define species using criteria such as reproductive connection, lineage history, or ecological distinction. Their usefulness varies for sexual organisms, asexual lineages, fossils, and hybridizing groups, so one operational rule is not universally sufficient.",
+      "required_concepts": [
+        "Species delimitation depends on biological context and criteria."
+      ],
+      "accepted_variants": [
+        "Biological and lineage species concepts."
+      ],
+      "major_error_concepts": [
+        "Assuming an interbreeding test can directly classify every fossil or asexual organism."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-taxonomy",
+        "biology-i.draft-speciation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-reproductive-isolation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Reproductive Isolation",
+      "prompt": "What is Reproductive Isolation? State its defining idea and essential conditions.",
+      "definition": "Reproductive isolation reduces genetic exchange through barriers acting before or after fertilization. Isolation can be partial and can evolve gradually; geographic separation itself is distinct from intrinsic mating or hybrid-fitness barriers.",
+      "required_concepts": [
+        "Prezygotic and postzygotic barriers reduce gene exchange."
+      ],
+      "accepted_variants": [
+        "Barriers to interbreeding."
+      ],
+      "major_error_concepts": [
+        "Assuming separated populations are fully reproductively isolated even when they readily interbreed after contact."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-species-concept",
+        "biology-i.draft-gene-flow",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-adaptive-radiation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Adaptive Radiation",
+      "prompt": "What is Adaptive Radiation? State its defining idea and essential conditions.",
+      "definition": "Adaptive radiation is diversification of a lineage into forms associated with different ecological opportunities or niches. It combines branching with ecological differentiation and does not mean that every descendant becomes optimally adapted to every environment.",
+      "required_concepts": [
+        "Lineage diversification accompanies ecological differentiation."
+      ],
+      "accepted_variants": [
+        "Ecological adaptive diversification."
+      ],
+      "major_error_concepts": [
+        "Calling any increase in population size an adaptive radiation."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-reproductive-isolation",
+        "biology-ii.draft-clade",
+        "biology-i.draft-adaptation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-extinction",
+      "canonical_deck_id": "biology-ii",
+      "term": "Extinction",
+      "prompt": "What is Extinction? State its defining idea and essential conditions.",
+      "definition": "Extinction is the loss of a lineage when no living members remain, while local extinction removes it from a particular area. Extinction and speciation jointly shape diversity, and absence from one sample does not alone establish global extinction.",
+      "required_concepts": [
+        "Global lineage loss differs from local disappearance or nondetection."
+      ],
+      "accepted_variants": [
+        "Global and local extinction."
+      ],
+      "major_error_concepts": [
+        "Declaring a species globally extinct solely because it was not observed at one site."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-species-concept",
+        "biology-i.draft-sample-and-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-endosymbiosis",
+      "canonical_deck_id": "biology-ii",
+      "term": "Endosymbiosis",
+      "prompt": "What is Endosymbiosis? State its defining idea and essential conditions.",
+      "definition": "Endosymbiosis involves one organism living within another and helps explain the bacterial ancestry of mitochondria and plastids. Multiple lines of cellular and genetic evidence support these origins; modern organelles nevertheless depend extensively on their host cells.",
+      "required_concepts": [
+        "Internal symbiosis and host integration explain key organelle origins."
+      ],
+      "accepted_variants": [
+        "Endosymbiotic origin of organelles."
+      ],
+      "major_error_concepts": [
+        "Claiming modern mitochondria are fully independent bacteria that need no host products."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-homology",
+        "biology-i.draft-mitochondrion",
+        "biology-i.draft-chloroplast"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-cellular-domains",
+      "canonical_deck_id": "biology-ii",
+      "term": "Cellular Domains",
+      "prompt": "What is Cellular Domains? State its defining idea and essential conditions.",
+      "definition": "Bacteria, Archaea, and Eukarya are broad cellular groupings used in introductory classification. Deep evolutionary relationships are inferred from evidence, and a rank label by itself does not establish that all named domains are equally related or equally old as separate lineages.",
+      "required_concepts": [
+        "Broad cellular groups should not be mistaken for a fully resolved evolutionary tree."
+      ],
+      "accepted_variants": [
+        "Major cellular domains."
+      ],
+      "major_error_concepts": [
+        "Claiming rank equality proves equal evolutionary distance among all three groups."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-taxonomy",
+        "biology-ii.draft-phylogenetic-inference",
+        "biology-i.draft-prokaryotic-cell",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-bacteria",
+      "canonical_deck_id": "biology-ii",
+      "term": "Bacteria",
+      "prompt": "What is Bacteria? State its defining idea and essential conditions.",
+      "definition": "Bacteria are a diverse cellular lineage with prokaryotic organization and many metabolic roles. Most are not defined by causing disease, and their ecological contributions include decomposition, primary production, and symbiosis.",
+      "required_concepts": [
+        "Bacterial diversity extends far beyond pathogens."
+      ],
+      "accepted_variants": [
+        "Bacterial domain."
+      ],
+      "major_error_concepts": [
+        "Defining all bacteria as disease-causing organisms."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-cellular-domains",
+        "biology-i.draft-trophic-mode"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-archaea",
+      "canonical_deck_id": "biology-ii",
+      "term": "Archaea",
+      "prompt": "What is Archaea? State its defining idea and essential conditions.",
+      "definition": "Archaea are a distinct cellular lineage with characteristic molecular and membrane features. Some inhabit extreme environments, but many occur in ordinary soils, waters, and host-associated settings; extremophile is not a definition of an archaeon.",
+      "required_concepts": [
+        "Archaea form a distinct lineage not restricted to extreme habitats."
+      ],
+      "accepted_variants": [
+        "Archaeal domain."
+      ],
+      "major_error_concepts": [
+        "Assuming every archaeon lives only in boiling or highly saline conditions."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-cellular-domains",
+        "biology-ii.draft-bacteria"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-eukaryotic-diversity",
+      "canonical_deck_id": "biology-ii",
+      "term": "Eukaryotic Diversity",
+      "prompt": "What is Eukaryotic Diversity? State its defining idea and essential conditions.",
+      "definition": "Eukaryotic diversity includes animals, plants, fungi, and numerous other lineages with varied cellular and ecological strategies. Unicellularity, multicellularity, and photosynthesis do not each define all eukaryotes or one universal sequence of progress.",
+      "required_concepts": [
+        "Eukaryotes span diverse forms and ecological roles."
+      ],
+      "accepted_variants": [
+        "Diversity of Eukarya."
+      ],
+      "major_error_concepts": [
+        "Claiming every eukaryote is a large multicellular organism."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-cellular-domains",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-protist",
+      "canonical_deck_id": "biology-ii",
+      "term": "Protist",
+      "prompt": "What is Protist? State its defining idea and essential conditions.",
+      "definition": "Protist is a useful informal term for many eukaryotes outside the familiar animal, plant, and fungal groupings. It does not identify one complete natural clade, and these organisms have highly diverse nutrition, structures, and life cycles.",
+      "required_concepts": [
+        "Protists are an informal diverse grouping rather than one exclusive clade."
+      ],
+      "accepted_variants": [
+        "Diverse non-animal, non-plant, non-fungal eukaryotes."
+      ],
+      "major_error_concepts": [
+        "Treating all protists as one monophyletic lineage with identical biology."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-eukaryotic-diversity",
+        "biology-ii.draft-clade"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-unicellularity-and-multicellularity",
+      "canonical_deck_id": "biology-ii",
+      "term": "Unicellularity and Multicellularity",
+      "prompt": "What is Unicellularity and Multicellularity? State its defining idea and essential conditions.",
+      "definition": "Unicellular organisms carry out life processes within one cell, while multicellular organisms coordinate multiple cells within a functioning organism. Multicellularity often permits specialization but does not make unicellular life universally simpler in behavior or chemistry.",
+      "required_concepts": [
+        "Organismal cell number and coordination distinguish these forms."
+      ],
+      "accepted_variants": [
+        "Single-celled and multicellular organization."
+      ],
+      "major_error_concepts": [
+        "Assuming unicellular organisms lack sophisticated sensing or metabolism."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-eukaryotic-diversity",
+        "biology-i.draft-cell-theory",
+        "biology-i.draft-emergent-properties"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-origins-of-multicellularity",
+      "canonical_deck_id": "biology-ii",
+      "term": "Origins of Multicellularity",
+      "prompt": "What is Origins of Multicellularity? State its defining idea and essential conditions.",
+      "definition": "Multicellularity evolved independently in several lineages through changes in adhesion, communication, and coordination. Cell specialization and reproductive organization vary, so no single modern animal-like body plan describes every multicellular origin.",
+      "required_concepts": [
+        "Independent evolutionary origins produced different coordinated multicellular systems."
+      ],
+      "accepted_variants": [
+        "Evolution of multicellularity."
+      ],
+      "major_error_concepts": [
+        "Claiming all multicellular organisms descend from one multicellular animal ancestor."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-unicellularity-and-multicellularity",
+        "biology-ii.draft-analogy",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-virus",
+      "canonical_deck_id": "biology-ii",
+      "term": "Virus",
+      "prompt": "What is Virus? State its defining idea and essential conditions.",
+      "definition": "A virus is an acellular entity with a nucleic-acid genome that relies on host-cell machinery for reproduction. Viral diversity includes different genome and structural types, and viruses are not simply very small bacterial cells.",
+      "required_concepts": [
+        "Host-dependent reproduction and an acellular genome-containing form distinguish viruses."
+      ],
+      "accepted_variants": [
+        "Acellular viral entity."
+      ],
+      "major_error_concepts": [
+        "Claiming viruses possess the same independent cellular metabolism as bacteria."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-bacteria",
+        "biology-i.draft-genome",
+        "biology-i.draft-cell-theory"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-fungi",
+      "canonical_deck_id": "biology-ii",
+      "term": "Fungi",
+      "prompt": "What is Fungi? State its defining idea and essential conditions.",
+      "definition": "Fungi are eukaryotic heterotrophs that commonly obtain nutrients by extracellular digestion and absorption. The group includes unicellular yeasts and multicellular forms, and fungi are not plants that merely lost green pigmentation.",
+      "required_concepts": [
+        "Fungal nutrition and ancestry distinguish them from plants."
+      ],
+      "accepted_variants": [
+        "Fungal kingdom."
+      ],
+      "major_error_concepts": [
+        "Defining every fungus as a photosynthetic plant."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-eukaryotic-diversity",
+        "biology-i.draft-trophic-mode"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-hypha",
+      "canonical_deck_id": "biology-ii",
+      "term": "Hypha",
+      "prompt": "What is Hypha? State its defining idea and essential conditions.",
+      "definition": "A hypha is a filamentous fungal growth structure that can explore substrates and absorb nutrients. Hyphae may be divided by septa or have more continuous cytoplasm depending on the lineage and structure.",
+      "required_concepts": [
+        "Filamentous growth supports fungal exploration and absorption."
+      ],
+      "accepted_variants": [
+        "Fungal filament."
+      ],
+      "major_error_concepts": [
+        "Assuming every hypha is a single isolated uninucleate cell."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-fungi",
+        "biology-ii.draft-unicellularity-and-multicellularity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-mycelium",
+      "canonical_deck_id": "biology-ii",
+      "term": "Mycelium",
+      "prompt": "What is Mycelium? State its defining idea and essential conditions.",
+      "definition": "A mycelium is a network of hyphae forming much of the vegetative body of many fungi. A mushroom or other fruiting structure is only one specialized part and need not represent the whole organism.",
+      "required_concepts": [
+        "A hyphal network forms the main body of many fungi."
+      ],
+      "accepted_variants": [
+        "Fungal mycelial network."
+      ],
+      "major_error_concepts": [
+        "Equating every fungus in its entirety with the visible mushroom."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-hypha"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-fungal-nutrition",
+      "canonical_deck_id": "biology-ii",
+      "term": "Fungal Nutrition",
+      "prompt": "What is Fungal Nutrition? State its defining idea and essential conditions.",
+      "definition": "Many fungi secrete enzymes into their surroundings and absorb the released small molecules. They can function as decomposers, partners, or parasites, so absorptive nutrition does not imply one fixed ecological relationship.",
+      "required_concepts": [
+        "External digestion followed by absorption supports varied fungal lifestyles."
+      ],
+      "accepted_variants": [
+        "Absorptive heterotrophy."
+      ],
+      "major_error_concepts": [
+        "Assuming fungi ordinarily engulf all food like animal digestive cells."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-fungi",
+        "biology-i.draft-enzyme",
+        "biology-ii.draft-mycelium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-fungal-reproduction",
+      "canonical_deck_id": "biology-ii",
+      "term": "Fungal Reproduction",
+      "prompt": "What is Fungal Reproduction? State its defining idea and essential conditions.",
+      "definition": "Fungal reproduction includes diverse sexual and asexual processes, often involving spores. Sexual cycles may separate cytoplasmic fusion from nuclear fusion, so the familiar animal sequence of gamete fusion and an immediately diploid body is not universal.",
+      "required_concepts": [
+        "Fungal reproductive cycles vary and can separate nuclear and cytoplasmic events."
+      ],
+      "accepted_variants": [
+        "Fungal sexual and asexual life cycles."
+      ],
+      "major_error_concepts": [
+        "Claiming every fungal spore is necessarily a product of meiosis."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-fungi",
+        "biology-i.draft-meiosis",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-symbiosis",
+      "canonical_deck_id": "biology-ii",
+      "term": "Symbiosis",
+      "prompt": "What is Symbiosis? State its defining idea and essential conditions.",
+      "definition": "Symbiosis is a close association between organisms of different species. Depending on usage and outcome, it can include mutualistic, commensal, or parasitic relationships; close association alone does not prove equal benefit to both partners.",
+      "required_concepts": [
+        "Close interspecific association can have different fitness effects."
+      ],
+      "accepted_variants": [
+        "Persistent interspecies association."
+      ],
+      "major_error_concepts": [
+        "Defining all symbioses as necessarily beneficial to both partners."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-comparative-biology",
+        "biology-i.draft-evolutionary-fitness"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-mycorrhiza",
+      "canonical_deck_id": "biology-ii",
+      "term": "Mycorrhiza",
+      "prompt": "What is Mycorrhiza? State its defining idea and essential conditions.",
+      "definition": "Mycorrhizae are associations between fungi and plant roots in which resource exchange often benefits both partners. Fungal nutrient access and plant carbon supply are important, but costs and benefits depend on environmental and partner conditions.",
+      "required_concepts": [
+        "Root-fungus associations exchange resources with context-dependent benefits."
+      ],
+      "accepted_variants": [
+        "Mycorrhizal symbiosis."
+      ],
+      "major_error_concepts": [
+        "Assuming every mycorrhizal association is equally beneficial in every soil condition."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-symbiosis",
+        "biology-ii.draft-fungal-nutrition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-lichen",
+      "canonical_deck_id": "biology-ii",
+      "term": "Lichen",
+      "prompt": "What is Lichen? State its defining idea and essential conditions.",
+      "definition": "A lichen is an organized association dominated by a fungus with one or more photosynthetic partners, often algae or cyanobacteria. Its integrated form differs from either partner alone and can include additional microbial associates.",
+      "required_concepts": [
+        "A fungal partner and photosynthetic partner form an integrated association."
+      ],
+      "accepted_variants": [
+        "Lichen symbiosis."
+      ],
+      "major_error_concepts": [
+        "Calling a lichen simply one species of photosynthetic fungus."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-symbiosis",
+        "biology-ii.draft-fungi",
+        "biology-i.draft-photosynthesis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-land-plant",
+      "canonical_deck_id": "biology-ii",
+      "term": "Land Plant",
+      "prompt": "What is Land Plant? State its defining idea and essential conditions.",
+      "definition": "Land plants are an evolutionary lineage with adaptations to terrestrial life, including protected developing embryos. Water retention, support, reproduction, and exchange posed competing challenges, and early land plants did not possess every feature of modern flowering plants.",
+      "required_concepts": [
+        "Terrestrial plant evolution involved embryo protection and multiple environmental challenges."
+      ],
+      "accepted_variants": [
+        "Embryophytes."
+      ],
+      "major_error_concepts": [
+        "Claiming all land plants have seeds, flowers, and true roots."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-eukaryotic-diversity",
+        "biology-ii.draft-shared-derived-character",
+        "biology-i.draft-adaptation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-alternation-of-generations",
+      "canonical_deck_id": "biology-ii",
+      "term": "Alternation of Generations",
+      "prompt": "What is Alternation of Generations? State its defining idea and essential conditions.",
+      "definition": "Plant alternation of generations includes multicellular haploid gametophytes and multicellular diploid sporophytes. Meiosis produces spores and fertilization produces a zygote, unlike an animal cycle in which meiosis directly produces gametes.",
+      "required_concepts": [
+        "Multicellular haploid and diploid phases alternate through meiosis and fertilization."
+      ],
+      "accepted_variants": [
+        "Gametophyte-sporophyte life cycle."
+      ],
+      "major_error_concepts": [
+        "Claiming plant meiosis universally produces sperm and eggs directly."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-land-plant",
+        "biology-i.draft-meiosis",
+        "biology-i.draft-ploidy",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-gametophyte",
+      "canonical_deck_id": "biology-ii",
+      "term": "Gametophyte",
+      "prompt": "What is Gametophyte? State its defining idea and essential conditions.",
+      "definition": "A gametophyte is the haploid multicellular phase of a plant life cycle that produces gametes by mitosis. Its size and independence vary, from prominent bodies in many bryophytes to reduced structures in seed plants.",
+      "required_concepts": [
+        "A haploid plant generation forms gametes mitotically."
+      ],
+      "accepted_variants": [
+        "Haploid gamete-producing generation."
+      ],
+      "major_error_concepts": [
+        "Claiming a haploid gametophyte must use meiosis to halve its chromosome sets again before every gamete."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-alternation-of-generations",
+        "biology-i.draft-mitosis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-sporophyte",
+      "canonical_deck_id": "biology-ii",
+      "term": "Sporophyte",
+      "prompt": "What is Sporophyte? State its defining idea and essential conditions.",
+      "definition": "A sporophyte is the diploid multicellular plant phase that produces haploid spores through meiosis. The spores can develop into gametophytes without fertilization; sporophyte dominance varies among plant lineages.",
+      "required_concepts": [
+        "A diploid generation produces spores meiotically."
+      ],
+      "accepted_variants": [
+        "Diploid spore-producing generation."
+      ],
+      "major_error_concepts": [
+        "Calling a spore a fertilized egg."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-alternation-of-generations",
+        "biology-ii.draft-gametophyte"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-bryophyte",
+      "canonical_deck_id": "biology-ii",
+      "term": "Bryophyte",
+      "prompt": "What is Bryophyte? State its defining idea and essential conditions.",
+      "definition": "Bryophytes include mosses and related nonvascular land-plant lineages with a prominent gametophyte phase. Their water relations and reproductive biology differ from seed plants, and lack of vascular tissue does not imply absence of organized structures.",
+      "required_concepts": [
+        "Nonvascular land plants commonly emphasize the gametophyte generation."
+      ],
+      "accepted_variants": [
+        "Mosses and related bryophyte groups."
+      ],
+      "major_error_concepts": [
+        "Claiming bryophytes are seed plants with miniature flowers."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-land-plant",
+        "biology-ii.draft-gametophyte",
+        "biology-ii.draft-sporophyte"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-vascular-plant",
+      "canonical_deck_id": "biology-ii",
+      "term": "Vascular Plant",
+      "prompt": "What is Vascular Plant? State its defining idea and essential conditions.",
+      "definition": "Vascular plants have specialized conducting tissues that support transport and contribute to larger terrestrial bodies. Their life cycles have a prominent sporophyte, but vascular tissue does not by itself imply seeds or flowers.",
+      "required_concepts": [
+        "Specialized transport tissues distinguish vascular plants."
+      ],
+      "accepted_variants": [
+        "Tracheophytes."
+      ],
+      "major_error_concepts": [
+        "Assuming every vascular plant produces seeds."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-land-plant",
+        "biology-ii.draft-sporophyte"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-seedless-vascular-plant",
+      "canonical_deck_id": "biology-ii",
+      "term": "Seedless Vascular Plant",
+      "prompt": "What is Seedless Vascular Plant? State its defining idea and essential conditions.",
+      "definition": "Seedless vascular plants, including ferns and related lineages, possess conducting tissues but reproduce through spores rather than seeds. Many retain water-dependent sperm movement despite having large, independent sporophytes.",
+      "required_concepts": [
+        "Vascular organization coexists with spore-based reproduction."
+      ],
+      "accepted_variants": [
+        "Ferns and other seedless vascular lineages."
+      ],
+      "major_error_concepts": [
+        "Calling fern spores tiny seeds containing a diploid embryo."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vascular-plant",
+        "biology-ii.draft-sporophyte",
+        "biology-ii.draft-gametophyte"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-seed",
+      "canonical_deck_id": "biology-ii",
+      "term": "Seed",
+      "prompt": "What is Seed? State its defining idea and essential conditions.",
+      "definition": "A seed contains a plant embryo with protective tissues and stored or accessible nourishment. It develops from an ovule after fertilization in the usual sexual cycle and differs from a single spore in structure and developmental origin.",
+      "required_concepts": [
+        "A protected embryo and supporting tissues distinguish a seed."
+      ],
+      "accepted_variants": [
+        "Embryo-containing seed."
+      ],
+      "major_error_concepts": [
+        "Equating seeds with haploid spores."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-sporophyte",
+        "biology-ii.draft-seedless-vascular-plant",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-pollen",
+      "canonical_deck_id": "biology-ii",
+      "term": "Pollen",
+      "prompt": "What is Pollen? State its defining idea and essential conditions.",
+      "definition": "Pollen contains the reduced male gametophyte of a seed plant. Its transfer and subsequent growth deliver sperm without requiring free swimming through an external water film, but pollen transfer itself is not fertilization.",
+      "required_concepts": [
+        "Pollen transports the male gametophyte and supports sperm delivery."
+      ],
+      "accepted_variants": [
+        "Pollen grain."
+      ],
+      "major_error_concepts": [
+        "Equating every pollen grain with one naked sperm cell."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-gametophyte",
+        "biology-ii.draft-seed"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-gymnosperm",
+      "canonical_deck_id": "biology-ii",
+      "term": "Gymnosperm",
+      "prompt": "What is Gymnosperm? State its defining idea and essential conditions.",
+      "definition": "Gymnosperms are seed plants whose ovules are not enclosed within an ovary. They include several lineages with varied reproductive structures and are distinguished from flowering plants by more than simply lacking colorful flowers.",
+      "required_concepts": [
+        "Unenclosed ovules distinguish gymnosperm reproduction."
+      ],
+      "accepted_variants": [
+        "Non-angiosperm seed plants."
+      ],
+      "major_error_concepts": [
+        "Claiming gymnosperms reproduce only through fern-like spores and have no seeds."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-seed",
+        "biology-ii.draft-pollen"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-angiosperm",
+      "canonical_deck_id": "biology-ii",
+      "term": "Angiosperm",
+      "prompt": "What is Angiosperm? State its defining idea and essential conditions.",
+      "definition": "Angiosperms are flowering plants with ovules enclosed in carpels and seeds typically enclosed in fruits. Their reproductive system includes double fertilization, and flowers can be small or inconspicuous rather than always showy.",
+      "required_concepts": [
+        "Flowers and enclosed ovules characterize angiosperms."
+      ],
+      "accepted_variants": [
+        "Flowering plants."
+      ],
+      "major_error_concepts": [
+        "Assuming grasses are not flowering plants because their flowers lack large colorful petals."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-seed",
+        "biology-ii.draft-gymnosperm"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-flower",
+      "canonical_deck_id": "biology-ii",
+      "term": "Flower",
+      "prompt": "What is Flower? State its defining idea and essential conditions.",
+      "definition": "A flower is a reproductive shoot of an angiosperm that can bear pollen-producing stamens and ovule-containing carpels. Flowers vary in which organs they possess, and not every individual flower has both male and female structures.",
+      "required_concepts": [
+        "A modified reproductive shoot bears specialized reproductive organs."
+      ],
+      "accepted_variants": [
+        "Angiosperm flower."
+      ],
+      "major_error_concepts": [
+        "Claiming all flowers contain complete sets of both stamens and carpels."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-angiosperm",
+        "biology-ii.draft-pollen"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-pollination",
+      "canonical_deck_id": "biology-ii",
+      "term": "Pollination",
+      "prompt": "What is Pollination? State its defining idea and essential conditions.",
+      "definition": "Pollination transfers pollen to a receptive reproductive surface, such as an angiosperm stigma. It can occur through animals, wind, or other mechanisms and precedes fertilization rather than guaranteeing that gamete fusion succeeds.",
+      "required_concepts": [
+        "Pollen transfer is distinct from fertilization."
+      ],
+      "accepted_variants": [
+        "Pollen delivery."
+      ],
+      "major_error_concepts": [
+        "Calling movement of seeds pollination."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-pollen",
+        "biology-ii.draft-flower"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-double-fertilization",
+      "canonical_deck_id": "biology-ii",
+      "term": "Double Fertilization",
+      "prompt": "What is Double Fertilization? State its defining idea and essential conditions.",
+      "definition": "In angiosperm double fertilization, one sperm fuses with the egg to form the zygote and another participates in formation of endosperm. The resulting nutritive tissue is commonly triploid, though details vary across flowering plants.",
+      "required_concepts": [
+        "Two fusion events form an embryo precursor and nutritive endosperm."
+      ],
+      "accepted_variants": [
+        "Angiosperm double fertilization."
+      ],
+      "major_error_concepts": [
+        "Claiming both sperm ordinarily fertilize the same egg to make one triploid embryo."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-angiosperm",
+        "biology-ii.draft-pollination",
+        "biology-i.draft-fertilization",
+        "biology-i.draft-ploidy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-fruit",
+      "canonical_deck_id": "biology-ii",
+      "term": "Fruit",
+      "prompt": "What is Fruit? State its defining idea and essential conditions.",
+      "definition": "A fruit develops from an angiosperm ovary, sometimes with substantial accessory tissues, and protects or aids dispersal of seeds. Botanical fruits need not be sweet or fleshy, and culinary categories do not define their developmental origin.",
+      "required_concepts": [
+        "Ovary-derived structures enclose or support seed dispersal."
+      ],
+      "accepted_variants": [
+        "Botanical fruit."
+      ],
+      "major_error_concepts": [
+        "Defining fruit solely as a sweet edible plant part."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-angiosperm",
+        "biology-ii.draft-flower",
+        "biology-ii.draft-seed"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-seed-dispersal",
+      "canonical_deck_id": "biology-ii",
+      "term": "Seed Dispersal",
+      "prompt": "What is Seed Dispersal? State its defining idea and essential conditions.",
+      "definition": "Seed dispersal moves seeds away from their source through mechanisms such as wind, water, animals, or mechanical release. Dispersal influences colonization and competition, but reaching a location does not ensure germination or establishment.",
+      "required_concepts": [
+        "Movement of seeds differs from successful recruitment."
+      ],
+      "accepted_variants": [
+        "Seed transport and dispersal."
+      ],
+      "major_error_concepts": [
+        "Assuming every dispersed seed becomes an established adult plant."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-seed",
+        "biology-ii.draft-fruit",
+        "biology-i.draft-biological-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-root",
+      "canonical_deck_id": "biology-ii",
+      "term": "Root",
+      "prompt": "What is Root? State its defining idea and essential conditions.",
+      "definition": "Roots commonly anchor plants, acquire water and minerals, and store resources. Their absorptive surfaces and associations support uptake, but not every root primarily performs storage or grows only vertically downward.",
+      "required_concepts": [
+        "Root systems combine anchorage, uptake, and variable storage roles."
+      ],
+      "accepted_variants": [
+        "Plant root system."
+      ],
+      "major_error_concepts": [
+        "Claiming roots mainly absorb preformed sugars from soil for all plant energy needs."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vascular-plant",
+        "biology-ii.draft-mycorrhiza",
+        "biology-i.draft-active-transport"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-shoot",
+      "canonical_deck_id": "biology-ii",
+      "term": "Shoot",
+      "prompt": "What is Shoot? State its defining idea and essential conditions.",
+      "definition": "A shoot system includes stems and associated leaves and reproductive structures. It supports positioning, transport, photosynthesis, and reproduction; a stem's role and location can vary, including underground forms.",
+      "required_concepts": [
+        "Stems and their associated organs form a functional shoot system."
+      ],
+      "accepted_variants": [
+        "Plant shoot system."
+      ],
+      "major_error_concepts": [
+        "Assuming every underground plant organ is necessarily a root."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vascular-plant",
+        "biology-ii.draft-flower",
+        "biology-ii.draft-root"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-meristem",
+      "canonical_deck_id": "biology-ii",
+      "term": "Meristem",
+      "prompt": "What is Meristem? State its defining idea and essential conditions.",
+      "definition": "A meristem is a region of relatively undifferentiated plant cells that sustains growth through division and subsequent differentiation. Apical and lateral meristems contribute differently to length and thickness, rather than all growth occurring uniformly throughout mature tissue.",
+      "required_concepts": [
+        "Localized dividing cell populations support continued plant growth."
+      ],
+      "accepted_variants": [
+        "Plant meristematic tissue."
+      ],
+      "major_error_concepts": [
+        "Claiming every mature plant cell divides equally to elongate the whole organism."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-root",
+        "biology-ii.draft-shoot",
+        "biology-i.draft-cell-cycle"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-xylem",
+      "canonical_deck_id": "biology-ii",
+      "term": "Xylem",
+      "prompt": "What is Xylem? State its defining idea and essential conditions.",
+      "definition": "Xylem conducts water and dissolved minerals and provides structural support. Its principal water-conducting cells are dead at functional maturity, forming connected conduits whose transport relies on physical gradients rather than each cell pumping water with ATP.",
+      "required_concepts": [
+        "Nonliving mature conduits carry water and minerals under physical driving forces."
+      ],
+      "accepted_variants": [
+        "Water-conducting vascular tissue."
+      ],
+      "major_error_concepts": [
+        "Claiming every xylem vessel element actively pumps water using its own metabolism."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vascular-plant",
+        "biology-ii.draft-root",
+        "biology-i.draft-osmosis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-phloem",
+      "canonical_deck_id": "biology-ii",
+      "term": "Phloem",
+      "prompt": "What is Phloem? State its defining idea and essential conditions.",
+      "definition": "Phloem transports organic solutes between source and sink tissues through living conductive elements and associated cells. Transport direction depends on the source-sink relationship and can differ among pathways in the same plant.",
+      "required_concepts": [
+        "Living transport tissue distributes organic resources according to source-sink relations."
+      ],
+      "accepted_variants": [
+        "Sugar-conducting vascular tissue."
+      ],
+      "major_error_concepts": [
+        "Claiming phloem always transports sugar downward in every part of a plant."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vascular-plant",
+        "biology-ii.draft-shoot",
+        "biology-i.draft-carbohydrate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-transpiration",
+      "canonical_deck_id": "biology-ii",
+      "term": "Transpiration",
+      "prompt": "What is Transpiration? State its defining idea and essential conditions.",
+      "definition": "Transpiration is water loss as vapor from plant surfaces, largely through stomata in many land plants. It links gas exchange to water transport and water stress, rather than being a process that plants can maximize without tradeoffs.",
+      "required_concepts": [
+        "Evaporative water loss couples carbon access with water costs."
+      ],
+      "accepted_variants": [
+        "Plant transpiration."
+      ],
+      "major_error_concepts": [
+        "Defining transpiration as active secretion of liquid sugar from roots."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-xylem",
+        "biology-i.draft-diffusion",
+        "biology-i.draft-water"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-stomata",
+      "canonical_deck_id": "biology-ii",
+      "term": "Stomata",
+      "prompt": "What is Stomata? State its defining idea and essential conditions.",
+      "definition": "Stomata are adjustable epidermal pores controlled by guard cells. Opening permits carbon dioxide entry but usually increases water loss, so stomatal behavior coordinates photosynthetic opportunity with water status and environmental signals.",
+      "required_concepts": [
+        "Guard-cell-regulated pores balance gas exchange and water loss."
+      ],
+      "accepted_variants": [
+        "Stomatal pores."
+      ],
+      "major_error_concepts": [
+        "Assuming fully open stomata are always optimal regardless of drought or light."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-transpiration",
+        "biology-i.draft-photosynthesis",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-cohesion-tension-mechanism",
+      "canonical_deck_id": "biology-ii",
+      "term": "Cohesion-Tension Mechanism",
+      "prompt": "What is Cohesion-Tension Mechanism? State its defining idea and essential conditions.",
+      "definition": "The cohesion-tension mechanism explains much xylem water ascent through transpiration-generated tension transmitted through cohesive water columns. Root pressure can contribute in some conditions but does not explain all water transport in tall plants.",
+      "required_concepts": [
+        "Evaporation-generated tension pulls cohesive water through xylem."
+      ],
+      "accepted_variants": [
+        "Transpiration pull."
+      ],
+      "major_error_concepts": [
+        "Claiming leaves lift water mainly by ATP-powered pumps in every xylem conduit."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-xylem",
+        "biology-ii.draft-transpiration",
+        "biology-i.draft-water"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-sugar-translocation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Sugar Translocation",
+      "prompt": "What is Sugar Translocation? State its defining idea and essential conditions.",
+      "definition": "Phloem translocation moves solutes from sources to sinks through pressure differences generated by loading and unloading. A tissue can change roles over time, so a leaf or root is not permanently a source or sink in every developmental state.",
+      "required_concepts": [
+        "Source-sink loading differences drive pressure-based solute flow."
+      ],
+      "accepted_variants": [
+        "Pressure-flow transport."
+      ],
+      "major_error_concepts": [
+        "Assuming all leaves are always sources and all roots are always sinks."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-phloem",
+        "biology-i.draft-osmosis",
+        "biology-i.draft-active-transport"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-plant-mineral-nutrition",
+      "canonical_deck_id": "biology-ii",
+      "term": "Plant Mineral Nutrition",
+      "prompt": "What is Plant Mineral Nutrition? State its defining idea and essential conditions.",
+      "definition": "Plant mineral nutrition concerns acquisition and use of essential inorganic elements for structure and metabolism. These nutrients differ from the carbon incorporated mainly from carbon dioxide; more of every mineral is not always beneficial.",
+      "required_concepts": [
+        "Essential mineral elements support function but do not replace the primary carbon source."
+      ],
+      "accepted_variants": [
+        "Mineral nutrient acquisition."
+      ],
+      "major_error_concepts": [
+        "Claiming most dry plant carbon is absorbed from soil as mineral fertilizer."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-root",
+        "biology-i.draft-calvin-cycle",
+        "biology-ii.draft-mycorrhiza"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-plant-hormone",
+      "canonical_deck_id": "biology-ii",
+      "term": "Plant Hormone",
+      "prompt": "What is Plant Hormone? State its defining idea and essential conditions.",
+      "definition": "Plant hormones are signaling molecules that coordinate growth, development, and responses at low concentrations. Effects depend on tissue, developmental state, dose, and interaction with other signals, so one hormone is not limited to one universal function.",
+      "required_concepts": [
+        "Context-dependent signals coordinate plant processes."
+      ],
+      "accepted_variants": [
+        "Phytohormones."
+      ],
+      "major_error_concepts": [
+        "Assigning every hormone exactly one effect in every tissue."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-meristem",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-tropism",
+      "canonical_deck_id": "biology-ii",
+      "term": "Tropism",
+      "prompt": "What is Tropism? State its defining idea and essential conditions.",
+      "definition": "A tropism is directional growth in relation to a directional stimulus, such as light or gravity. Differential growth produces the response; tropism differs from nondirectional movements whose orientation is not set by stimulus direction.",
+      "required_concepts": [
+        "Growth direction is related to stimulus direction."
+      ],
+      "accepted_variants": [
+        "Phototropism or gravitropism."
+      ],
+      "major_error_concepts": [
+        "Calling every plant movement a tropism regardless of directional growth."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-plant-hormone",
+        "biology-ii.draft-meristem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-photoperiodism",
+      "canonical_deck_id": "biology-ii",
+      "term": "Photoperiodism",
+      "prompt": "What is Photoperiodism? State its defining idea and essential conditions.",
+      "definition": "Photoperiodism is a biological response to the relative timing of light and dark periods, often influencing seasonal development. In many flowering responses, uninterrupted night duration is important rather than total light exposure alone.",
+      "required_concepts": [
+        "Timing of light-dark cycles can regulate development."
+      ],
+      "accepted_variants": [
+        "Day-length or night-length response."
+      ],
+      "major_error_concepts": [
+        "Assuming flowering responses depend only on the total number of photons received."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-plant-hormone",
+        "biology-ii.draft-flower"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-plant-defense",
+      "canonical_deck_id": "biology-ii",
+      "term": "Plant Defense",
+      "prompt": "What is Plant Defense? State its defining idea and essential conditions.",
+      "definition": "Plant defenses include structural barriers and constitutive or induced chemical responses against herbivores and other attackers. Defense carries costs and varies with context, rather than making every defended plant completely immune to damage.",
+      "required_concepts": [
+        "Structural and chemical responses reduce damage with tradeoffs."
+      ],
+      "accepted_variants": [
+        "Constitutive and inducible plant defense."
+      ],
+      "major_error_concepts": [
+        "Assuming defense compounds eliminate every possible attacker without any resource cost."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-plant-hormone",
+        "biology-i.draft-cell-wall",
+        "biology-i.draft-adaptation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-animal",
+      "canonical_deck_id": "biology-ii",
+      "term": "Animal",
+      "prompt": "What is Animal? State its defining idea and essential conditions.",
+      "definition": "Animals are a lineage of multicellular eukaryotic heterotrophs with characteristic development and cell interactions. Most obtain food by ingestion, and their cells lack plant-like cell walls; no single adult shape or movement pattern describes all animals.",
+      "required_concepts": [
+        "Multicellular heterotrophic ancestry and development define animals beyond appearance."
+      ],
+      "accepted_variants": [
+        "Animalia or metazoans."
+      ],
+      "major_error_concepts": [
+        "Claiming every animal must actively walk or swim as an adult."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-eukaryotic-diversity",
+        "biology-ii.draft-unicellularity-and-multicellularity",
+        "biology-i.draft-extracellular-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-animal-body-plan",
+      "canonical_deck_id": "biology-ii",
+      "term": "Animal Body Plan",
+      "prompt": "What is Animal Body Plan? State its defining idea and essential conditions.",
+      "definition": "An animal body plan describes major organizational features such as symmetry, tissue layers, cavities, and repeated regions. These features help comparison but should not be arranged as a universal ladder from inferior to superior organisms.",
+      "required_concepts": [
+        "Organizational characters support comparison without implying a progress ranking."
+      ],
+      "accepted_variants": [
+        "Animal structural organization."
+      ],
+      "major_error_concepts": [
+        "Assuming more visible body regions necessarily mean greater evolutionary success."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-ii.draft-comparative-biology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-body-symmetry",
+      "canonical_deck_id": "biology-ii",
+      "term": "Body Symmetry",
+      "prompt": "What is Body Symmetry? State its defining idea and essential conditions.",
+      "definition": "Body symmetry describes how anatomical parts correspond around an axis or plane. Bilateral and radial arrangements can relate to movement and sensing, but developmental stages or organs can show patterns different from the adult body's overall symmetry.",
+      "required_concepts": [
+        "Spatial correspondence varies by body and developmental stage."
+      ],
+      "accepted_variants": [
+        "Radial and bilateral symmetry."
+      ],
+      "major_error_concepts": [
+        "Claiming an organism's every stage and organ must share exactly the adult symmetry."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal-body-plan"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-germ-layers",
+      "canonical_deck_id": "biology-ii",
+      "term": "Germ Layers",
+      "prompt": "What is Germ Layers? State its defining idea and essential conditions.",
+      "definition": "Germ layers are embryonic cell layers that contribute to different tissues and organs. Ectoderm, endoderm, and mesoderm organize many animal developmental comparisons, but they are not equivalent to sperm and egg or fixed adult organs themselves.",
+      "required_concepts": [
+        "Embryonic layers contribute to differentiated tissue lineages."
+      ],
+      "accepted_variants": [
+        "Embryonic tissue layers."
+      ],
+      "major_error_concepts": [
+        "Confusing germ layers with reproductive gametes."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-ii.draft-animal-body-plan",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-body-cavity",
+      "canonical_deck_id": "biology-ii",
+      "term": "Body Cavity",
+      "prompt": "What is Body Cavity? State its defining idea and essential conditions.",
+      "definition": "A body cavity is an internal space whose developmental origin and lining matter for classification and function. A coelom is lined by mesoderm-derived tissue, and the digestive lumen is not simply the same space as the body cavity.",
+      "required_concepts": [
+        "Internal cavities differ by origin and tissue lining."
+      ],
+      "accepted_variants": [
+        "Coelomic organization."
+      ],
+      "major_error_concepts": [
+        "Calling the gut lumen the coelom in every animal."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-germ-layers",
+        "biology-ii.draft-animal-body-plan"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-segmentation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Segmentation",
+      "prompt": "What is Segmentation? State its defining idea and essential conditions.",
+      "definition": "Segmentation organizes parts of the body into repeated units that may become specialized. Similar-looking repetition in different lineages requires evolutionary analysis rather than automatically proving one identical origin or mechanism.",
+      "required_concepts": [
+        "Repeated body units can be modified and specialized."
+      ],
+      "accepted_variants": [
+        "Metameric organization."
+      ],
+      "major_error_concepts": [
+        "Assuming any repeated external marks establish true homologous segmentation."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal-body-plan",
+        "biology-ii.draft-homology",
+        "biology-ii.draft-analogy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-sponge",
+      "canonical_deck_id": "biology-ii",
+      "term": "Sponge",
+      "prompt": "What is Sponge? State its defining idea and essential conditions.",
+      "definition": "Sponges are animals with specialized cells and a water-flow system supporting feeding and exchange, but without the conventional organs of many other animals. Their largely sessile adults are active biological systems rather than inert plant-like structures.",
+      "required_concepts": [
+        "Cellular specialization and water flow support sponge life."
+      ],
+      "accepted_variants": [
+        "Poriferans."
+      ],
+      "major_error_concepts": [
+        "Claiming sponges are plants because adults are attached to a surface."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-ii.draft-unicellularity-and-multicellularity",
+        "biology-i.draft-diffusion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-cnidarian",
+      "canonical_deck_id": "biology-ii",
+      "term": "Cnidarian",
+      "prompt": "What is Cnidarian? State its defining idea and essential conditions.",
+      "definition": "Cnidarians are animals characterized by cnidocytes, specialized cells used in functions such as prey capture and defense. Many have radial body organization and polyp or medusa forms, but not every species includes both forms in its life cycle.",
+      "required_concepts": [
+        "Cnidocytes distinguish the lineage; body forms vary."
+      ],
+      "accepted_variants": [
+        "Jellyfish, corals, and related cnidarians."
+      ],
+      "major_error_concepts": [
+        "Claiming every cnidarian alternates obligatorily between a free medusa and a polyp."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-ii.draft-body-symmetry"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-bilaterian",
+      "canonical_deck_id": "biology-ii",
+      "term": "Bilaterian",
+      "prompt": "What is Bilaterian? State its defining idea and essential conditions.",
+      "definition": "Bilaterians form a major animal lineage associated ancestrally with bilateral organization and three germ layers. Some descendants have secondarily modified adult symmetry, so current bilateral appearance is not the only criterion for membership.",
+      "required_concepts": [
+        "Ancestral organization and lineage membership matter despite later modification."
+      ],
+      "accepted_variants": [
+        "Bilateria."
+      ],
+      "major_error_concepts": [
+        "Excluding every radially organized adult descendant from Bilateria automatically."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-body-symmetry",
+        "biology-ii.draft-germ-layers",
+        "biology-ii.draft-clade"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-protostome",
+      "canonical_deck_id": "biology-ii",
+      "term": "Protostome",
+      "prompt": "What is Protostome? State its defining idea and essential conditions.",
+      "definition": "Protostomes are a major bilaterian clade containing lineages such as arthropods, mollusks, and annelids. Developmental tendencies help characterize them, but the name's traditional mouth-first description is not an exception-free rule for every species.",
+      "required_concepts": [
+        "A phylogenetic group is not defined by one universally fixed embryological detail."
+      ],
+      "accepted_variants": [
+        "Protostomia."
+      ],
+      "major_error_concepts": [
+        "Insisting all protostomes share an identical blastopore fate and cleavage pattern."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-bilaterian",
+        "biology-ii.draft-clade"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-deuterostome",
+      "canonical_deck_id": "biology-ii",
+      "term": "Deuterostome",
+      "prompt": "What is Deuterostome? State its defining idea and essential conditions.",
+      "definition": "Deuterostomes include chordates and echinoderms among the major bilaterian lineages. Their classical developmental descriptions are useful comparative patterns, not a claim that all member species follow an identical embryonic sequence.",
+      "required_concepts": [
+        "Shared lineage encompasses diverse developmental implementations."
+      ],
+      "accepted_variants": [
+        "Deuterostomia."
+      ],
+      "major_error_concepts": [
+        "Defining deuterostome as a synonym for vertebrate."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-bilaterian",
+        "biology-ii.draft-protostome"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-mollusk",
+      "canonical_deck_id": "biology-ii",
+      "term": "Mollusk",
+      "prompt": "What is Mollusk? State its defining idea and essential conditions.",
+      "definition": "Mollusks are a diverse animal lineage commonly organized around a mantle, visceral mass, and muscular foot, with these features modified in different groups. Shells and feeding structures vary, so an external shell is not required in every mollusk.",
+      "required_concepts": [
+        "A shared body organization supports varied molluscan forms."
+      ],
+      "accepted_variants": [
+        "Mollusca."
+      ],
+      "major_error_concepts": [
+        "Claiming every mollusk has an external shell and an identical grazing apparatus."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-protostome",
+        "biology-ii.draft-animal-body-plan"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-annelid",
+      "canonical_deck_id": "biology-ii",
+      "term": "Annelid",
+      "prompt": "What is Annelid? State its defining idea and essential conditions.",
+      "definition": "Annelids are segmented animals that include many worms with repeated body organization and varied lifestyles. Segmentation supports coordinated regional function, but not every worm-shaped animal belongs to this lineage.",
+      "required_concepts": [
+        "Segmented lineage identity differs from superficial worm shape."
+      ],
+      "accepted_variants": [
+        "Segmented worms."
+      ],
+      "major_error_concepts": [
+        "Classifying all elongated legless animals as annelids."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-protostome",
+        "biology-ii.draft-segmentation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-nematode",
+      "canonical_deck_id": "biology-ii",
+      "term": "Nematode",
+      "prompt": "What is Nematode? State its defining idea and essential conditions.",
+      "definition": "Nematodes are unsegmented roundworms with a cuticle that is molted during growth. They occupy diverse free-living and associated lifestyles; parasitism is one role rather than the defining property of every nematode.",
+      "required_concepts": [
+        "Unsegmented roundworm organization includes a molted cuticle."
+      ],
+      "accepted_variants": [
+        "Roundworms."
+      ],
+      "major_error_concepts": [
+        "Claiming all nematodes are parasites or segmented annelids."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-protostome",
+        "biology-ii.draft-annelid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-arthropod",
+      "canonical_deck_id": "biology-ii",
+      "term": "Arthropod",
+      "prompt": "What is Arthropod? State its defining idea and essential conditions.",
+      "definition": "Arthropods have a jointed appendage-based body organization and an external cuticle that must be molted for growth. Their segments and appendages are specialized in diverse ways, and the group includes far more than insects alone.",
+      "required_concepts": [
+        "Jointed appendages and molting exoskeleton characterize a diverse lineage."
+      ],
+      "accepted_variants": [
+        "Arthropoda."
+      ],
+      "major_error_concepts": [
+        "Equating all arthropods with six-legged insects."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-protostome",
+        "biology-ii.draft-segmentation",
+        "biology-ii.draft-nematode"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-echinoderm",
+      "canonical_deck_id": "biology-ii",
+      "term": "Echinoderm",
+      "prompt": "What is Echinoderm? State its defining idea and essential conditions.",
+      "definition": "Echinoderms are marine deuterostomes with a water vascular system and characteristic internal skeletal elements. Many adults show five-part organization while larvae are bilateral, illustrating how symmetry can change during development.",
+      "required_concepts": [
+        "Water vascular organization and changing symmetry characterize the lineage."
+      ],
+      "accepted_variants": [
+        "Sea stars and related echinoderms."
+      ],
+      "major_error_concepts": [
+        "Claiming echinoderms cannot be bilaterian descendants because many adults are radial."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-deuterostome",
+        "biology-ii.draft-body-symmetry",
+        "biology-ii.draft-bilaterian"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-chordate",
+      "canonical_deck_id": "biology-ii",
+      "term": "Chordate",
+      "prompt": "What is Chordate? State its defining idea and essential conditions.",
+      "definition": "Chordates possess features such as a notochord and dorsal hollow nerve cord at some developmental stage, along with other characteristic structures. Membership does not require an adult vertebral column, because not all chordates are vertebrates.",
+      "required_concepts": [
+        "Shared developmental characters extend beyond vertebrate adults."
+      ],
+      "accepted_variants": [
+        "Chordata."
+      ],
+      "major_error_concepts": [
+        "Defining every chordate as an animal with adult vertebrae."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-deuterostome",
+        "biology-ii.draft-germ-layers"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-vertebrate",
+      "canonical_deck_id": "biology-ii",
+      "term": "Vertebrate",
+      "prompt": "What is Vertebrate? State its defining idea and essential conditions.",
+      "definition": "Vertebrates are a chordate lineage with a skull and a characteristic axial supporting system, with vertebral structures varying among groups. Their evolutionary diversity includes aquatic and terrestrial forms rather than one uniform body plan.",
+      "required_concepts": [
+        "A chordate subgroup combines cranial and axial specialization."
+      ],
+      "accepted_variants": [
+        "Vertebrate animals."
+      ],
+      "major_error_concepts": [
+        "Assuming every vertebrate is terrestrial or has the same limb arrangement."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-chordate",
+        "biology-ii.draft-animal-body-plan"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-fish",
+      "canonical_deck_id": "biology-ii",
+      "term": "Fish",
+      "prompt": "What is Fish? State its defining idea and essential conditions.",
+      "definition": "Fish is a common term for diverse aquatic vertebrates traditionally excluding tetrapods. Used this way it does not form a complete clade, because tetrapods descend from within the broader evolutionary diversity of bony vertebrates.",
+      "required_concepts": [
+        "Traditional fish grouping excludes some descendants and is not a complete clade."
+      ],
+      "accepted_variants": [
+        "Aquatic non-tetrapod vertebrates in ordinary usage."
+      ],
+      "major_error_concepts": [
+        "Treating all organisms called fish as one exclusive clade separate from tetrapod ancestry."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vertebrate",
+        "biology-ii.draft-clade"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-tetrapod",
+      "canonical_deck_id": "biology-ii",
+      "term": "Tetrapod",
+      "prompt": "What is Tetrapod? State its defining idea and essential conditions.",
+      "definition": "Tetrapods are a vertebrate lineage descended from ancestors with four limbs bearing digits. Some descendants reduced or lost limbs or returned to aquatic life, so current possession of four visible legs is not required for membership.",
+      "required_concepts": [
+        "Ancestral limb organization defines a lineage despite secondary changes."
+      ],
+      "accepted_variants": [
+        "Tetrapoda."
+      ],
+      "major_error_concepts": [
+        "Excluding snakes or whales solely because they lack four walking legs."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-vertebrate",
+        "biology-ii.draft-fish",
+        "biology-ii.draft-homology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-amniote",
+      "canonical_deck_id": "biology-ii",
+      "term": "Amniote",
+      "prompt": "What is Amniote? State its defining idea and essential conditions.",
+      "definition": "Amniotes are tetrapods with a developmental system including an amnion and other extraembryonic membranes. This supports reproduction beyond the ancestral amphibian pattern, but it does not require every species to lay a hard-shelled external egg.",
+      "required_concepts": [
+        "Extraembryonic membrane organization, not a universal shell, defines amniote development."
+      ],
+      "accepted_variants": [
+        "Amniotic tetrapods."
+      ],
+      "major_error_concepts": [
+        "Excluding live-bearing mammals because they do not lay shelled eggs."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-tetrapod",
+        "biology-ii.draft-germ-layers"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-mammal",
+      "canonical_deck_id": "biology-ii",
+      "term": "Mammal",
+      "prompt": "What is Mammal? State its defining idea and essential conditions.",
+      "definition": "Mammals are an amniote lineage characterized by mammary glands and hair during at least part of development, alongside other features. Reproductive modes vary, including egg laying, so live birth alone is not the defining universal trait.",
+      "required_concepts": [
+        "Mammary glands and characteristic developmental features define mammals."
+      ],
+      "accepted_variants": [
+        "Mammalia."
+      ],
+      "major_error_concepts": [
+        "Claiming all mammals give birth to live young without exceptions."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-amniote",
+        "biology-ii.draft-vertebrate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-epithelial-tissue",
+      "canonical_deck_id": "biology-ii",
+      "term": "Epithelial Tissue",
+      "prompt": "What is Epithelial Tissue? State its defining idea and essential conditions.",
+      "definition": "Epithelial tissue forms sheets that cover surfaces, line compartments, and form many glands. Cell polarity, junctions, and attachment to supporting material help establish selective barriers and directional transport rather than mere passive covering.",
+      "required_concepts": [
+        "Polarized cell sheets perform barrier, transport, and secretory roles."
+      ],
+      "accepted_variants": [
+        "Epithelium."
+      ],
+      "major_error_concepts": [
+        "Defining epithelial tissue as only the external skin surface."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-i.draft-cell-junction",
+        "biology-i.draft-extracellular-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-connective-tissue",
+      "canonical_deck_id": "biology-ii",
+      "term": "Connective Tissue",
+      "prompt": "What is Connective Tissue? State its defining idea and essential conditions.",
+      "definition": "Connective tissues support, link, store, or transport materials through combinations of cells and extracellular matrix. Matrix composition varies greatly, explaining differences among tissues such as cartilage, bone, adipose tissue, and blood.",
+      "required_concepts": [
+        "Variable cells and matrix support diverse connective functions."
+      ],
+      "accepted_variants": [
+        "Connective tissue family."
+      ],
+      "major_error_concepts": [
+        "Assuming all connective tissue is rigid or has the same matrix."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-epithelial-tissue",
+        "biology-i.draft-extracellular-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-muscle-tissue",
+      "canonical_deck_id": "biology-ii",
+      "term": "Muscle Tissue",
+      "prompt": "What is Muscle Tissue? State its defining idea and essential conditions.",
+      "definition": "Muscle tissue generates force through regulated interactions of contractile proteins. Skeletal, cardiac, and smooth muscle differ in organization and control; force production is not limited to voluntary movement of external limbs.",
+      "required_concepts": [
+        "Contractile cells generate force under different control systems."
+      ],
+      "accepted_variants": [
+        "Muscular tissue."
+      ],
+      "major_error_concepts": [
+        "Claiming every muscle contraction is voluntary."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-i.draft-protein",
+        "biology-i.draft-atp-and-energy-coupling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-nervous-tissue",
+      "canonical_deck_id": "biology-ii",
+      "term": "Nervous Tissue",
+      "prompt": "What is Nervous Tissue? State its defining idea and essential conditions.",
+      "definition": "Nervous tissue supports rapid communication through excitable neurons and supporting glial cells. Neurons receive, integrate, and transmit signals, while glia contribute actively to tissue function rather than serving only as inert packing material.",
+      "required_concepts": [
+        "Neurons and glia coordinate specialized cellular communication."
+      ],
+      "accepted_variants": [
+        "Neural tissue."
+      ],
+      "major_error_concepts": [
+        "Claiming glial cells have no functional role beyond filling space."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-exchange-surface",
+      "canonical_deck_id": "biology-ii",
+      "term": "Exchange Surface",
+      "prompt": "What is Exchange Surface? State its defining idea and essential conditions.",
+      "definition": "Exchange surfaces support transfer of substances between an organism and its surroundings or internal fluids. Large area, short diffusion distance, and maintained gradients can increase exchange, while protection and water conservation impose tradeoffs.",
+      "required_concepts": [
+        "Area, distance, and gradients shape biological exchange."
+      ],
+      "accepted_variants": [
+        "Physiological exchange interface."
+      ],
+      "major_error_concepts": [
+        "Assuming a thicker barrier always improves diffusion rate when all else is equal."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-epithelial-tissue",
+        "biology-i.draft-cell-size",
+        "biology-i.draft-diffusion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-digestive-system",
+      "canonical_deck_id": "biology-ii",
+      "term": "Digestive System",
+      "prompt": "What is Digestive System? State its defining idea and essential conditions.",
+      "definition": "A digestive system processes food into absorbable components through mechanical and chemical actions. Digestion and absorption are distinct, and different animal lineages organize them in different cavities, tracts, or cellular arrangements.",
+      "required_concepts": [
+        "Food breakdown differs from transfer of nutrients into the organism."
+      ],
+      "accepted_variants": [
+        "Animal digestive organization."
+      ],
+      "major_error_concepts": [
+        "Equating swallowing food with complete nutrient absorption."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-ii.draft-exchange-surface",
+        "biology-i.draft-enzyme",
+        "biology-i.draft-condensation-and-hydrolysis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-gas-exchange",
+      "canonical_deck_id": "biology-ii",
+      "term": "Gas Exchange",
+      "prompt": "What is Gas Exchange? State its defining idea and essential conditions.",
+      "definition": "Gas exchange moves respiratory gases across surfaces down partial-pressure gradients. Ventilation and circulation can maintain those gradients, but breathing movements alone are not the same process as cellular respiration or membrane diffusion.",
+      "required_concepts": [
+        "Gas diffusion depends on gradients supported by organismal transport."
+      ],
+      "accepted_variants": [
+        "Respiratory gas exchange."
+      ],
+      "major_error_concepts": [
+        "Equating air movement into a cavity with ATP production inside cells."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-exchange-surface",
+        "biology-i.draft-cellular-respiration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-circulation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Circulation",
+      "prompt": "What is Circulation? State its defining idea and essential conditions.",
+      "definition": "Circulation moves internal fluid to distribute substances and link exchange surfaces with tissues. Open and closed systems organize this movement differently, and a circulatory system need not carry respiratory gases in the same way in every animal.",
+      "required_concepts": [
+        "Fluid transport supports distribution with lineage-specific organization."
+      ],
+      "accepted_variants": [
+        "Internal circulatory transport."
+      ],
+      "major_error_concepts": [
+        "Assuming every animal circulatory fluid has the same respiratory pigment and gas-carrying role."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-exchange-surface",
+        "biology-ii.draft-gas-exchange",
+        "biology-ii.draft-connective-tissue"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-osmoregulation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Osmoregulation",
+      "prompt": "What is Osmoregulation? State its defining idea and essential conditions.",
+      "definition": "Osmoregulation controls water and dissolved-solute balance relative to environmental conditions. Organisms differ in how closely internal concentrations track the environment, and maintaining a difference commonly requires regulated transport and energy expenditure.",
+      "required_concepts": [
+        "Water and solute regulation depends on environment and transport."
+      ],
+      "accepted_variants": [
+        "Osmotic regulation."
+      ],
+      "major_error_concepts": [
+        "Assuming freshwater and marine animals face identical water-balance challenges."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-exchange-surface",
+        "biology-i.draft-osmosis",
+        "biology-i.draft-active-transport"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-excretion",
+      "canonical_deck_id": "biology-ii",
+      "term": "Excretion",
+      "prompt": "What is Excretion? State its defining idea and essential conditions.",
+      "definition": "Excretion removes metabolic waste and helps regulate internal composition. Nitrogenous wastes differ in toxicity, water requirements, and energetic cost, so excretion is distinct from defecating undigested food.",
+      "required_concepts": [
+        "Metabolic waste removal differs from elimination of unabsorbed food."
+      ],
+      "accepted_variants": [
+        "Physiological waste excretion."
+      ],
+      "major_error_concepts": [
+        "Defining excretion solely as the removal of undigested material from the gut."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-osmoregulation",
+        "biology-ii.draft-digestive-system",
+        "biology-i.draft-metabolism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-thermoregulation",
+      "canonical_deck_id": "biology-ii",
+      "term": "Thermoregulation",
+      "prompt": "What is Thermoregulation? State its defining idea and essential conditions.",
+      "definition": "Thermoregulation controls body temperature through behavior, physiology, or both. Ectothermy and endothermy describe major heat sources, whereas temperature constancy is a separate property; ectotherms can actively regulate by changing behavior.",
+      "required_concepts": [
+        "Heat source and temperature stability are distinct dimensions."
+      ],
+      "accepted_variants": [
+        "Body-temperature regulation."
+      ],
+      "major_error_concepts": [
+        "Claiming ectotherms cannot regulate temperature in any way."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-i.draft-homeostasis",
+        "biology-i.draft-energy-and-matter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-nervous-coordination",
+      "canonical_deck_id": "biology-ii",
+      "term": "Nervous Coordination",
+      "prompt": "What is Nervous Coordination? State its defining idea and essential conditions.",
+      "definition": "Nervous coordination integrates sensory inputs and directs responses through neural circuits. Electrical signaling within cells and chemical or electrical communication between cells support rapid control, while responses can involve both conscious and automatic processes.",
+      "required_concepts": [
+        "Neural circuits connect sensing, integration, and response."
+      ],
+      "accepted_variants": [
+        "Neural coordination."
+      ],
+      "major_error_concepts": [
+        "Assuming every neural response requires conscious decision-making."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-nervous-tissue",
+        "biology-ii.draft-muscle-tissue",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-endocrine-coordination",
+      "canonical_deck_id": "biology-ii",
+      "term": "Endocrine Coordination",
+      "prompt": "What is Endocrine Coordination? State its defining idea and essential conditions.",
+      "definition": "Endocrine coordination uses hormones released into internal transport fluids to influence responsive cells. Only cells with appropriate receptors and downstream machinery respond, and hormonal effects can vary in speed and duration rather than all being uniformly slow.",
+      "required_concepts": [
+        "Transported chemical signals act on competent target cells."
+      ],
+      "accepted_variants": [
+        "Hormonal coordination."
+      ],
+      "major_error_concepts": [
+        "Claiming a hormone affects every cell equally because it circulates throughout the body."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-circulation",
+        "biology-i.draft-cell-signaling",
+        "biology-ii.draft-nervous-coordination"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-animal-reproduction",
+      "canonical_deck_id": "biology-ii",
+      "term": "Animal Reproduction",
+      "prompt": "What is Animal Reproduction? State its defining idea and essential conditions.",
+      "definition": "Animal reproduction includes sexual and asexual strategies with different genetic and ecological consequences. Sexual reproduction combines genetic contributions through gametes, while asexual reproduction can still produce variation through mutation and other processes.",
+      "required_concepts": [
+        "Reproductive mode influences genetic transmission without eliminating all variation."
+      ],
+      "accepted_variants": [
+        "Animal reproductive strategies."
+      ],
+      "major_error_concepts": [
+        "Claiming asexual descendants can never differ genetically from their parent."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal",
+        "biology-i.draft-fertilization",
+        "biology-i.draft-mutation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-animal-development",
+      "canonical_deck_id": "biology-ii",
+      "term": "Animal Development",
+      "prompt": "What is Animal Development? State its defining idea and essential conditions.",
+      "definition": "Development transforms an initial cell or reproductive stage into an organized organism through division, differentiation, and pattern formation. Cells can adopt different fates through regulated gene activity despite sharing much of the same genetic information.",
+      "required_concepts": [
+        "Regulated cell behavior and gene expression generate organized form."
+      ],
+      "accepted_variants": [
+        "Animal developmental processes."
+      ],
+      "major_error_concepts": [
+        "Assuming every differentiated cell type requires an entirely different genome."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-germ-layers",
+        "biology-ii.draft-animal-reproduction",
+        "biology-i.draft-gene-expression-regulation",
+        "biology-i.draft-cell-cycle"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-behavior",
+      "canonical_deck_id": "biology-ii",
+      "term": "Behavior",
+      "prompt": "What is Behavior? State its defining idea and essential conditions.",
+      "definition": "Behavior consists of an organism's actions and responses, shaped by mechanisms, development, and evolutionary history. Explaining how a behavior occurs differs from explaining its evolutionary consequences, and apparent purpose is not proof of conscious intent.",
+      "required_concepts": [
+        "Mechanistic and evolutionary explanations address different aspects of behavior."
+      ],
+      "accepted_variants": [
+        "Organismal behavior."
+      ],
+      "major_error_concepts": [
+        "Assuming every adaptive-looking action requires conscious foresight."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-nervous-coordination",
+        "biology-ii.draft-animal-development",
+        "biology-i.draft-adaptation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-innate-and-learned-behavior",
+      "canonical_deck_id": "biology-ii",
+      "term": "Innate and Learned Behavior",
+      "prompt": "What is Innate and Learned Behavior? State its defining idea and essential conditions.",
+      "definition": "Innate and learned components describe different contributions to behavioral development, not two perfectly isolated categories. Genetic predispositions, experience, and environmental conditions often interact to produce the observed behavior.",
+      "required_concepts": [
+        "Inheritance and experience interact in behavioral development."
+      ],
+      "accepted_variants": [
+        "Inherited and experience-dependent behavior."
+      ],
+      "major_error_concepts": [
+        "Claiming learned behavior has no biological or genetic constraints."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-behavior",
+        "biology-i.draft-environmental-effects-on-traits"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-ecology",
+      "canonical_deck_id": "biology-ii",
+      "term": "Ecology",
+      "prompt": "What is Ecology? State its defining idea and essential conditions.",
+      "definition": "Ecology studies interactions among organisms and between organisms and their environments across scales. It includes population, community, and ecosystem questions rather than being synonymous only with conservation activism or outdoor description.",
+      "required_concepts": [
+        "Organism-environment interactions are studied at multiple scales."
+      ],
+      "accepted_variants": [
+        "Ecological science."
+      ],
+      "major_error_concepts": [
+        "Defining ecology exclusively as protecting endangered species."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-levels-of-organization",
+        "biology-ii.draft-comparative-biology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-habitat-and-niche",
+      "canonical_deck_id": "biology-ii",
+      "term": "Habitat and Niche",
+      "prompt": "What is Habitat and Niche? State its defining idea and essential conditions.",
+      "definition": "A habitat is the place or setting an organism occupies, while a niche describes its environmental requirements, resource use, and interactions. Species sharing a habitat can occupy different niches, and niche is not merely a geographic address.",
+      "required_concepts": [
+        "Place differs from ecological role and requirements."
+      ],
+      "accepted_variants": [
+        "Habitat versus ecological niche."
+      ],
+      "major_error_concepts": [
+        "Assuming two species in the same habitat necessarily use all resources identically."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-ecology",
+        "biology-i.draft-trophic-mode"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "canonical_deck_id": "biology-ii",
+      "term": "Abiotic and Biotic Factors",
+      "prompt": "What is Abiotic and Biotic Factors? State its defining idea and essential conditions.",
+      "definition": "Abiotic factors are physical and chemical environmental conditions, while biotic factors involve organisms and their effects. The two interact: organisms can alter soil chemistry, temperature exposure, or water availability, changing the environment they experience.",
+      "required_concepts": [
+        "Living interactions and physical conditions jointly shape ecological outcomes."
+      ],
+      "accepted_variants": [
+        "Biotic and abiotic environment."
+      ],
+      "major_error_concepts": [
+        "Assuming abiotic conditions cannot be modified by organisms."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-ecology",
+        "biology-ii.draft-habitat-and-niche"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-population-density",
+      "canonical_deck_id": "biology-ii",
+      "term": "Population Density",
+      "prompt": "What is Population Density? State its defining idea and essential conditions.",
+      "definition": "Population density is the number of individuals per unit area or volume, while dispersion describes their spatial arrangement. Clumped, uniform, and approximately random patterns can occur at different scales within the same population.",
+      "required_concepts": [
+        "Density and spatial pattern measure different population properties."
+      ],
+      "accepted_variants": [
+        "Population density and dispersion."
+      ],
+      "major_error_concepts": [
+        "Assuming two populations with equal density must have identical spatial arrangements."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-ecology",
+        "biology-i.draft-biological-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-exponential-population-growth",
+      "canonical_deck_id": "biology-ii",
+      "term": "Exponential Population Growth",
+      "prompt": "What is Exponential Population Growth? State its defining idea and essential conditions.",
+      "definition": "Exponential population growth occurs in a model with constant per-capita net growth rate, yielding dN/dt=rN in continuous time. It can approximate limited intervals but does not imply that real resources allow indefinite growth.",
+      "required_concepts": [
+        "Constant per-capita growth produces a rate proportional to population size."
+      ],
+      "accepted_variants": [
+        "Density-independent exponential growth model."
+      ],
+      "major_error_concepts": [
+        "Claiming exponential growth adds the same fixed number of individuals every interval."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-population-density",
+        "biology-i.draft-biological-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-logistic-population-growth",
+      "canonical_deck_id": "biology-ii",
+      "term": "Logistic Population Growth",
+      "prompt": "What is Logistic Population Growth? State its defining idea and essential conditions.",
+      "definition": "The logistic model adds density dependence through dN/dt=rN(1-N/K), reducing per-capita growth as abundance approaches K under its assumptions. It is a simplified model rather than a universal law requiring every natural population to trace a smooth S-shaped curve.",
+      "required_concepts": [
+        "Density dependence reduces modeled growth as population approaches K."
+      ],
+      "accepted_variants": [
+        "Logistic population model."
+      ],
+      "major_error_concepts": [
+        "Treating K as an unchanging biological constant in every environment."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-exponential-population-growth"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-carrying-capacity",
+      "canonical_deck_id": "biology-ii",
+      "term": "Carrying Capacity",
+      "prompt": "What is Carrying Capacity? State its defining idea and essential conditions.",
+      "definition": "Carrying capacity is the population level an environment can support under specified conditions, often represented by K in a simple model. Resource supply, interactions, and environmental change can shift it, and transient overshoot does not make the concept meaningless.",
+      "required_concepts": [
+        "Supportable population level is conditional and can vary."
+      ],
+      "accepted_variants": [
+        "Environmental carrying capacity."
+      ],
+      "major_error_concepts": [
+        "Claiming every habitat has one permanent K regardless of species or conditions."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-logistic-population-growth",
+        "biology-ii.draft-abiotic-and-biotic-factors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-life-history",
+      "canonical_deck_id": "biology-ii",
+      "term": "Life History",
+      "prompt": "What is Life History? State its defining idea and essential conditions.",
+      "definition": "Life history describes how an organism allocates resources across growth, survival, and reproduction over its lifetime. Tradeoffs constrain combinations of traits, so maximizing offspring number at one moment need not maximize lifetime reproductive contribution.",
+      "required_concepts": [
+        "Resource allocation across life stages creates reproductive and survival tradeoffs."
+      ],
+      "accepted_variants": [
+        "Life-history strategy."
+      ],
+      "major_error_concepts": [
+        "Assuming organisms can simultaneously maximize every growth and reproduction trait without cost."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-animal-reproduction",
+        "biology-i.draft-evolutionary-fitness",
+        "biology-ii.draft-abiotic-and-biotic-factors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-competition",
+      "canonical_deck_id": "biology-ii",
+      "term": "Competition",
+      "prompt": "What is Competition? State its defining idea and essential conditions.",
+      "definition": "Competition occurs when organisms reduce one another's access to limiting resources or otherwise interfere with resource use. It can occur within or between species, and sharing a resource does not establish strong competition if that resource is not limiting.",
+      "required_concepts": [
+        "Resource limitation or interference creates negative effects on competitors."
+      ],
+      "accepted_variants": [
+        "Intraspecific and interspecific competition."
+      ],
+      "major_error_concepts": [
+        "Inferring strong competition solely because two species consume the same abundant resource."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-habitat-and-niche",
+        "biology-ii.draft-carrying-capacity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-predation-and-herbivory",
+      "canonical_deck_id": "biology-ii",
+      "term": "Predation and Herbivory",
+      "prompt": "What is Predation and Herbivory? State its defining idea and essential conditions.",
+      "definition": "Predation consumes other organisms, while herbivory consumes plant or algal tissues and may not kill the entire individual. Both shape population and community interactions, with outcomes depending on defenses, behavior, and environmental context.",
+      "required_concepts": [
+        "Consumer-resource interactions differ in how they affect the consumed organism."
+      ],
+      "accepted_variants": [
+        "Predator-prey and plant-herbivore interactions."
+      ],
+      "major_error_concepts": [
+        "Assuming every act of herbivory kills the whole plant immediately."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-ecology",
+        "biology-ii.draft-plant-defense",
+        "biology-ii.draft-behavior"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-parasitism",
+      "canonical_deck_id": "biology-ii",
+      "term": "Parasitism",
+      "prompt": "What is Parasitism? State its defining idea and essential conditions.",
+      "definition": "Parasitism is an association in which one organism benefits at the expense of a host's performance or fitness. Effects vary in severity and duration; immediate host death is not a defining requirement of a parasitic relationship.",
+      "required_concepts": [
+        "A parasite benefits while imposing a cost on its host."
+      ],
+      "accepted_variants": [
+        "Host-parasite association."
+      ],
+      "major_error_concepts": [
+        "Defining parasites as organisms that always kill the host immediately."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-symbiosis",
+        "biology-i.draft-evolutionary-fitness"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-mutualism",
+      "canonical_deck_id": "biology-ii",
+      "term": "Mutualism",
+      "prompt": "What is Mutualism? State its defining idea and essential conditions.",
+      "definition": "Mutualism is an interaction in which both partners receive a benefit in a specified context. Benefits can depend on resources and conditions, and the relationship need not be obligatory or equally beneficial to each partner.",
+      "required_concepts": [
+        "Both partners benefit under the relevant conditions."
+      ],
+      "accepted_variants": [
+        "Reciprocally beneficial interaction."
+      ],
+      "major_error_concepts": [
+        "Assuming every mutualism is permanent, obligatory, and equally beneficial."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-symbiosis",
+        "biology-ii.draft-mycorrhiza",
+        "biology-ii.draft-abiotic-and-biotic-factors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-community-structure",
+      "canonical_deck_id": "biology-ii",
+      "term": "Community Structure",
+      "prompt": "What is Community Structure? State its defining idea and essential conditions.",
+      "definition": "Community structure describes the species present, their relative abundances, and their interactions in a defined area. Species richness alone cannot specify the community because evenness, identity, and interaction patterns also affect ecological behavior.",
+      "required_concepts": [
+        "Composition, abundance, and interactions jointly describe a community."
+      ],
+      "accepted_variants": [
+        "Ecological community organization."
+      ],
+      "major_error_concepts": [
+        "Assuming communities with equal species counts are ecologically identical."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-ecology",
+        "biology-ii.draft-competition",
+        "biology-ii.draft-predation-and-herbivory",
+        "biology-ii.draft-parasitism",
+        "biology-ii.draft-mutualism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-food-web",
+      "canonical_deck_id": "biology-ii",
+      "term": "Food Web",
+      "prompt": "What is Food Web? State its defining idea and essential conditions.",
+      "definition": "A food web represents feeding relationships among organisms or functional groups in an ecosystem. Omnivory and life-stage changes can place organisms in multiple feeding positions, and arrow direction must be read according to the stated convention.",
+      "required_concepts": [
+        "Networked feeding relationships extend beyond one linear chain."
+      ],
+      "accepted_variants": [
+        "Trophic interaction web."
+      ],
+      "major_error_concepts": [
+        "Assuming every species occupies exactly one fixed trophic level."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-community-structure",
+        "biology-ii.draft-predation-and-herbivory",
+        "biology-i.draft-trophic-mode"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-energy-across-trophic-levels",
+      "canonical_deck_id": "biology-ii",
+      "term": "Energy Across Trophic Levels",
+      "prompt": "What is Energy Across Trophic Levels? State its defining idea and essential conditions.",
+      "definition": "Energy available to consumers generally decreases across trophic transfers because organisms respire, lose heat, and leave material unconsumed or unassimilated. Transfer efficiency varies rather than obeying one exact universal percentage.",
+      "required_concepts": [
+        "Incomplete transfer and metabolic dissipation limit energy at higher trophic positions."
+      ],
+      "accepted_variants": [
+        "Trophic energy transfer."
+      ],
+      "major_error_concepts": [
+        "Claiming exactly ten percent of energy passes at every trophic link in every ecosystem."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-food-web",
+        "biology-i.draft-energy-and-matter",
+        "biology-i.draft-cellular-respiration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-primary-productivity",
+      "canonical_deck_id": "biology-ii",
+      "term": "Primary Productivity",
+      "prompt": "What is Primary Productivity? State its defining idea and essential conditions.",
+      "definition": "Primary productivity is the rate at which autotrophs convert inorganic carbon into organic material using an energy source. Net primary productivity subtracts producers' respiratory costs from gross production, distinguishing total fixation from material available for growth and consumers.",
+      "required_concepts": [
+        "Net production equals gross production minus producer respiration."
+      ],
+      "accepted_variants": [
+        "Gross and net primary production."
+      ],
+      "major_error_concepts": [
+        "Subtracting all consumer respiration when defining net primary productivity."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-energy-across-trophic-levels",
+        "biology-i.draft-trophic-mode",
+        "biology-i.draft-photosynthesis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-decomposition",
+      "canonical_deck_id": "biology-ii",
+      "term": "Decomposition",
+      "prompt": "What is Decomposition? State its defining idea and essential conditions.",
+      "definition": "Decomposition breaks down dead organic material and wastes through biological and physical processes. Decomposers and detritivores help recycle nutrients, but matter recycling does not mean that usable energy cycles indefinitely without new input.",
+      "required_concepts": [
+        "Breakdown returns nutrients while energy remains dissipative."
+      ],
+      "accepted_variants": [
+        "Detrital decomposition."
+      ],
+      "major_error_concepts": [
+        "Claiming decomposers recycle all energy back to producers without loss."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-fungal-nutrition",
+        "biology-ii.draft-energy-across-trophic-levels",
+        "biology-i.draft-condensation-and-hydrolysis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-carbon-cycle",
+      "canonical_deck_id": "biology-ii",
+      "term": "Carbon Cycle",
+      "prompt": "What is Carbon Cycle? State its defining idea and essential conditions.",
+      "definition": "The carbon cycle transfers carbon among organisms, atmosphere, waters, and geological reservoirs through processes such as fixation, respiration, decomposition, and exchange. Reservoir sizes and transfer rates differ, so not all carbon cycles on the same timescale.",
+      "required_concepts": [
+        "Carbon moves among reservoirs through distinct fluxes and timescales."
+      ],
+      "accepted_variants": [
+        "Biogeochemical carbon cycling."
+      ],
+      "major_error_concepts": [
+        "Assuming every carbon atom fixed by a plant returns to the atmosphere immediately."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-primary-productivity",
+        "biology-ii.draft-decomposition",
+        "biology-i.draft-cellular-respiration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-nitrogen-cycle",
+      "canonical_deck_id": "biology-ii",
+      "term": "Nitrogen Cycle",
+      "prompt": "What is Nitrogen Cycle? State its defining idea and essential conditions.",
+      "definition": "The nitrogen cycle transforms nitrogen among atmospheric, inorganic, and organic forms through processes including fixation, assimilation, nitrification, and denitrification. Most organisms cannot directly use atmospheric nitrogen gas as their sole nitrogen source without prior transformation.",
+      "required_concepts": [
+        "Biological availability depends on transformations among nitrogen forms."
+      ],
+      "accepted_variants": [
+        "Biogeochemical nitrogen cycling."
+      ],
+      "major_error_concepts": [
+        "Claiming all plants directly absorb atmospheric nitrogen gas and convert it to amino acids unaided."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-bacteria",
+        "biology-ii.draft-plant-mineral-nutrition",
+        "biology-ii.draft-decomposition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-water-cycle",
+      "canonical_deck_id": "biology-ii",
+      "term": "Water Cycle",
+      "prompt": "What is Water Cycle? State its defining idea and essential conditions.",
+      "definition": "The water cycle redistributes water through evaporation, transpiration, condensation, precipitation, and flows or storage on and below the surface. Organisms participate in these fluxes, while local supply depends on timing and pathways rather than global water quantity alone.",
+      "required_concepts": [
+        "Phase changes, transport, and storage determine water availability."
+      ],
+      "accepted_variants": [
+        "Hydrologic cycle."
+      ],
+      "major_error_concepts": [
+        "Assuming a globally conserved water total guarantees constant local freshwater access."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-transpiration",
+        "biology-ii.draft-abiotic-and-biotic-factors",
+        "biology-i.draft-water"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-ecological-succession",
+      "canonical_deck_id": "biology-ii",
+      "term": "Ecological Succession",
+      "prompt": "What is Ecological Succession? State its defining idea and essential conditions.",
+      "definition": "Ecological succession is change in community composition through time following new substrate formation or disturbance. Pathways depend on colonists, interactions, and conditions; succession need not lead to one inevitable, permanently stable climax community.",
+      "required_concepts": [
+        "Community change is contingent on history and conditions."
+      ],
+      "accepted_variants": [
+        "Primary and secondary succession."
+      ],
+      "major_error_concepts": [
+        "Claiming every disturbed ecosystem follows exactly the same sequence to one final community."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-community-structure",
+        "biology-ii.draft-seed-dispersal",
+        "biology-ii.draft-abiotic-and-biotic-factors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-disturbance",
+      "canonical_deck_id": "biology-ii",
+      "term": "Disturbance",
+      "prompt": "What is Disturbance? State its defining idea and essential conditions.",
+      "definition": "A disturbance is an event that changes biological organization or resource conditions, such as a fire, storm, or flood. Frequency, intensity, extent, and timing shape effects, and disturbance can maintain some ecological processes rather than being universally detrimental.",
+      "required_concepts": [
+        "Event characteristics and ecological context determine disturbance effects."
+      ],
+      "accepted_variants": [
+        "Ecological disturbance regime."
+      ],
+      "major_error_concepts": [
+        "Assuming all disturbance should be eliminated because it always reduces every component of diversity."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-ecological-succession",
+        "biology-ii.draft-community-structure",
+        "biology-ii.draft-abiotic-and-biotic-factors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-ii.draft-conservation-biology",
+      "canonical_deck_id": "biology-ii",
+      "term": "Conservation Biology",
+      "prompt": "What is Conservation Biology? State its defining idea and essential conditions.",
+      "definition": "Conservation biology studies threats to biodiversity and evidence-based ways to maintain or restore it. Decisions must define objectives, scales, tradeoffs, and uncertainty; protecting species counts alone does not automatically preserve genetic variation, ecological function, or evolutionary history.",
+      "required_concepts": [
+        "Conservation goals span multiple biodiversity dimensions and require context-matched evidence."
+      ],
+      "accepted_variants": [
+        "Biodiversity conservation science."
+      ],
+      "major_error_concepts": [
+        "Assuming one universal intervention maximizes every conservation objective in all ecosystems."
+      ],
+      "prerequisite_ids": [
+        "biology-ii.draft-extinction",
+        "biology-ii.draft-community-structure",
+        "biology-ii.draft-disturbance",
+        "biology-i.draft-biodiversity",
+        "biology-i.draft-evidence-and-revision"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "dependent_card_id": "biology-ii.draft-carrying-capacity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "dependent_card_id": "biology-ii.draft-disturbance"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "dependent_card_id": "biology-ii.draft-ecological-succession"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "dependent_card_id": "biology-ii.draft-life-history"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "dependent_card_id": "biology-ii.draft-mutualism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-abiotic-and-biotic-factors",
+      "dependent_card_id": "biology-ii.draft-water-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-alternation-of-generations",
+      "dependent_card_id": "biology-ii.draft-gametophyte"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-alternation-of-generations",
+      "dependent_card_id": "biology-ii.draft-sporophyte"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-amniote",
+      "dependent_card_id": "biology-ii.draft-mammal"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-analogy",
+      "dependent_card_id": "biology-ii.draft-origins-of-multicellularity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-analogy",
+      "dependent_card_id": "biology-ii.draft-phylogenetic-inference"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-analogy",
+      "dependent_card_id": "biology-ii.draft-segmentation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-angiosperm",
+      "dependent_card_id": "biology-ii.draft-double-fertilization"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-angiosperm",
+      "dependent_card_id": "biology-ii.draft-flower"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-angiosperm",
+      "dependent_card_id": "biology-ii.draft-fruit"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-animal-body-plan"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-animal-reproduction"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-cnidarian"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-digestive-system"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-epithelial-tissue"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-germ-layers"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-muscle-tissue"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-nervous-tissue"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-sponge"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal",
+      "dependent_card_id": "biology-ii.draft-thermoregulation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-body-plan",
+      "dependent_card_id": "biology-ii.draft-body-cavity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-body-plan",
+      "dependent_card_id": "biology-ii.draft-body-symmetry"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-body-plan",
+      "dependent_card_id": "biology-ii.draft-germ-layers"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-body-plan",
+      "dependent_card_id": "biology-ii.draft-mollusk"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-body-plan",
+      "dependent_card_id": "biology-ii.draft-segmentation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-body-plan",
+      "dependent_card_id": "biology-ii.draft-vertebrate"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-development",
+      "dependent_card_id": "biology-ii.draft-behavior"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-reproduction",
+      "dependent_card_id": "biology-ii.draft-animal-development"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-animal-reproduction",
+      "dependent_card_id": "biology-ii.draft-life-history"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-annelid",
+      "dependent_card_id": "biology-ii.draft-nematode"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-bacteria",
+      "dependent_card_id": "biology-ii.draft-archaea"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-bacteria",
+      "dependent_card_id": "biology-ii.draft-nitrogen-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-bacteria",
+      "dependent_card_id": "biology-ii.draft-virus"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-behavior",
+      "dependent_card_id": "biology-ii.draft-innate-and-learned-behavior"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-behavior",
+      "dependent_card_id": "biology-ii.draft-predation-and-herbivory"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-bilaterian",
+      "dependent_card_id": "biology-ii.draft-deuterostome"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-bilaterian",
+      "dependent_card_id": "biology-ii.draft-echinoderm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-bilaterian",
+      "dependent_card_id": "biology-ii.draft-protostome"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-body-symmetry",
+      "dependent_card_id": "biology-ii.draft-bilaterian"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-body-symmetry",
+      "dependent_card_id": "biology-ii.draft-cnidarian"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-body-symmetry",
+      "dependent_card_id": "biology-ii.draft-echinoderm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-carrying-capacity",
+      "dependent_card_id": "biology-ii.draft-competition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-cellular-domains",
+      "dependent_card_id": "biology-ii.draft-archaea"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-cellular-domains",
+      "dependent_card_id": "biology-ii.draft-bacteria"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-cellular-domains",
+      "dependent_card_id": "biology-ii.draft-eukaryotic-diversity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-chordate",
+      "dependent_card_id": "biology-ii.draft-vertebrate"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-circulation",
+      "dependent_card_id": "biology-ii.draft-endocrine-coordination"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-adaptive-radiation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-bilaterian"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-fish"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-homology"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-protist"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-protostome"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-clade",
+      "dependent_card_id": "biology-ii.draft-shared-derived-character"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-community-structure",
+      "dependent_card_id": "biology-ii.draft-conservation-biology"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-community-structure",
+      "dependent_card_id": "biology-ii.draft-disturbance"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-community-structure",
+      "dependent_card_id": "biology-ii.draft-ecological-succession"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-community-structure",
+      "dependent_card_id": "biology-ii.draft-food-web"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-comparative-biology",
+      "dependent_card_id": "biology-ii.draft-animal-body-plan"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-comparative-biology",
+      "dependent_card_id": "biology-ii.draft-ecology"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-comparative-biology",
+      "dependent_card_id": "biology-ii.draft-homology"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-comparative-biology",
+      "dependent_card_id": "biology-ii.draft-symbiosis"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-comparative-biology",
+      "dependent_card_id": "biology-ii.draft-taxonomy"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-competition",
+      "dependent_card_id": "biology-ii.draft-community-structure"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-connective-tissue",
+      "dependent_card_id": "biology-ii.draft-circulation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-decomposition",
+      "dependent_card_id": "biology-ii.draft-carbon-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-decomposition",
+      "dependent_card_id": "biology-ii.draft-nitrogen-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-deuterostome",
+      "dependent_card_id": "biology-ii.draft-chordate"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-deuterostome",
+      "dependent_card_id": "biology-ii.draft-echinoderm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-digestive-system",
+      "dependent_card_id": "biology-ii.draft-excretion"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-disturbance",
+      "dependent_card_id": "biology-ii.draft-conservation-biology"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-ecological-succession",
+      "dependent_card_id": "biology-ii.draft-disturbance"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-ecology",
+      "dependent_card_id": "biology-ii.draft-abiotic-and-biotic-factors"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-ecology",
+      "dependent_card_id": "biology-ii.draft-community-structure"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-ecology",
+      "dependent_card_id": "biology-ii.draft-habitat-and-niche"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-ecology",
+      "dependent_card_id": "biology-ii.draft-population-density"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-ecology",
+      "dependent_card_id": "biology-ii.draft-predation-and-herbivory"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-energy-across-trophic-levels",
+      "dependent_card_id": "biology-ii.draft-decomposition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-energy-across-trophic-levels",
+      "dependent_card_id": "biology-ii.draft-primary-productivity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-epithelial-tissue",
+      "dependent_card_id": "biology-ii.draft-connective-tissue"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-epithelial-tissue",
+      "dependent_card_id": "biology-ii.draft-exchange-surface"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-eukaryotic-diversity",
+      "dependent_card_id": "biology-ii.draft-animal"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-eukaryotic-diversity",
+      "dependent_card_id": "biology-ii.draft-fungi"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-eukaryotic-diversity",
+      "dependent_card_id": "biology-ii.draft-land-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-eukaryotic-diversity",
+      "dependent_card_id": "biology-ii.draft-protist"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-eukaryotic-diversity",
+      "dependent_card_id": "biology-ii.draft-unicellularity-and-multicellularity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-exchange-surface",
+      "dependent_card_id": "biology-ii.draft-circulation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-exchange-surface",
+      "dependent_card_id": "biology-ii.draft-digestive-system"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-exchange-surface",
+      "dependent_card_id": "biology-ii.draft-gas-exchange"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-exchange-surface",
+      "dependent_card_id": "biology-ii.draft-osmoregulation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-exponential-population-growth",
+      "dependent_card_id": "biology-ii.draft-logistic-population-growth"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-extinction",
+      "dependent_card_id": "biology-ii.draft-conservation-biology"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fish",
+      "dependent_card_id": "biology-ii.draft-tetrapod"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-flower",
+      "dependent_card_id": "biology-ii.draft-fruit"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-flower",
+      "dependent_card_id": "biology-ii.draft-photoperiodism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-flower",
+      "dependent_card_id": "biology-ii.draft-pollination"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-flower",
+      "dependent_card_id": "biology-ii.draft-shoot"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-food-web",
+      "dependent_card_id": "biology-ii.draft-energy-across-trophic-levels"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fruit",
+      "dependent_card_id": "biology-ii.draft-seed-dispersal"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fungal-nutrition",
+      "dependent_card_id": "biology-ii.draft-decomposition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fungal-nutrition",
+      "dependent_card_id": "biology-ii.draft-mycorrhiza"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fungi",
+      "dependent_card_id": "biology-ii.draft-fungal-nutrition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fungi",
+      "dependent_card_id": "biology-ii.draft-fungal-reproduction"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fungi",
+      "dependent_card_id": "biology-ii.draft-hypha"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-fungi",
+      "dependent_card_id": "biology-ii.draft-lichen"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-gametophyte",
+      "dependent_card_id": "biology-ii.draft-bryophyte"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-gametophyte",
+      "dependent_card_id": "biology-ii.draft-pollen"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-gametophyte",
+      "dependent_card_id": "biology-ii.draft-seedless-vascular-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-gametophyte",
+      "dependent_card_id": "biology-ii.draft-sporophyte"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-gas-exchange",
+      "dependent_card_id": "biology-ii.draft-circulation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-germ-layers",
+      "dependent_card_id": "biology-ii.draft-amniote"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-germ-layers",
+      "dependent_card_id": "biology-ii.draft-animal-development"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-germ-layers",
+      "dependent_card_id": "biology-ii.draft-bilaterian"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-germ-layers",
+      "dependent_card_id": "biology-ii.draft-body-cavity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-germ-layers",
+      "dependent_card_id": "biology-ii.draft-chordate"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-gymnosperm",
+      "dependent_card_id": "biology-ii.draft-angiosperm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-habitat-and-niche",
+      "dependent_card_id": "biology-ii.draft-abiotic-and-biotic-factors"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-habitat-and-niche",
+      "dependent_card_id": "biology-ii.draft-competition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-homology",
+      "dependent_card_id": "biology-ii.draft-analogy"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-homology",
+      "dependent_card_id": "biology-ii.draft-endosymbiosis"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-homology",
+      "dependent_card_id": "biology-ii.draft-segmentation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-homology",
+      "dependent_card_id": "biology-ii.draft-shared-derived-character"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-homology",
+      "dependent_card_id": "biology-ii.draft-tetrapod"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-hypha",
+      "dependent_card_id": "biology-ii.draft-mycelium"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-land-plant",
+      "dependent_card_id": "biology-ii.draft-alternation-of-generations"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-land-plant",
+      "dependent_card_id": "biology-ii.draft-bryophyte"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-land-plant",
+      "dependent_card_id": "biology-ii.draft-vascular-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-logistic-population-growth",
+      "dependent_card_id": "biology-ii.draft-carrying-capacity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-meristem",
+      "dependent_card_id": "biology-ii.draft-plant-hormone"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-meristem",
+      "dependent_card_id": "biology-ii.draft-tropism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-muscle-tissue",
+      "dependent_card_id": "biology-ii.draft-nervous-coordination"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-mutualism",
+      "dependent_card_id": "biology-ii.draft-community-structure"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-mycelium",
+      "dependent_card_id": "biology-ii.draft-fungal-nutrition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-mycorrhiza",
+      "dependent_card_id": "biology-ii.draft-mutualism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-mycorrhiza",
+      "dependent_card_id": "biology-ii.draft-plant-mineral-nutrition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-mycorrhiza",
+      "dependent_card_id": "biology-ii.draft-root"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-nematode",
+      "dependent_card_id": "biology-ii.draft-arthropod"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-nervous-coordination",
+      "dependent_card_id": "biology-ii.draft-behavior"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-nervous-coordination",
+      "dependent_card_id": "biology-ii.draft-endocrine-coordination"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-nervous-tissue",
+      "dependent_card_id": "biology-ii.draft-nervous-coordination"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-osmoregulation",
+      "dependent_card_id": "biology-ii.draft-excretion"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-parasitism",
+      "dependent_card_id": "biology-ii.draft-community-structure"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-phloem",
+      "dependent_card_id": "biology-ii.draft-sugar-translocation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-phylogenetic-inference",
+      "dependent_card_id": "biology-ii.draft-cellular-domains"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-plant-defense",
+      "dependent_card_id": "biology-ii.draft-predation-and-herbivory"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-plant-hormone",
+      "dependent_card_id": "biology-ii.draft-photoperiodism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-plant-hormone",
+      "dependent_card_id": "biology-ii.draft-plant-defense"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-plant-hormone",
+      "dependent_card_id": "biology-ii.draft-tropism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-plant-mineral-nutrition",
+      "dependent_card_id": "biology-ii.draft-nitrogen-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-pollen",
+      "dependent_card_id": "biology-ii.draft-flower"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-pollen",
+      "dependent_card_id": "biology-ii.draft-gymnosperm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-pollen",
+      "dependent_card_id": "biology-ii.draft-pollination"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-pollination",
+      "dependent_card_id": "biology-ii.draft-double-fertilization"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-population-density",
+      "dependent_card_id": "biology-ii.draft-exponential-population-growth"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-predation-and-herbivory",
+      "dependent_card_id": "biology-ii.draft-community-structure"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-predation-and-herbivory",
+      "dependent_card_id": "biology-ii.draft-food-web"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-primary-productivity",
+      "dependent_card_id": "biology-ii.draft-carbon-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-protostome",
+      "dependent_card_id": "biology-ii.draft-annelid"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-protostome",
+      "dependent_card_id": "biology-ii.draft-arthropod"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-protostome",
+      "dependent_card_id": "biology-ii.draft-deuterostome"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-protostome",
+      "dependent_card_id": "biology-ii.draft-mollusk"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-protostome",
+      "dependent_card_id": "biology-ii.draft-nematode"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-reproductive-isolation",
+      "dependent_card_id": "biology-ii.draft-adaptive-radiation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-root",
+      "dependent_card_id": "biology-ii.draft-meristem"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-root",
+      "dependent_card_id": "biology-ii.draft-plant-mineral-nutrition"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-root",
+      "dependent_card_id": "biology-ii.draft-shoot"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-root",
+      "dependent_card_id": "biology-ii.draft-xylem"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seed",
+      "dependent_card_id": "biology-ii.draft-angiosperm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seed",
+      "dependent_card_id": "biology-ii.draft-fruit"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seed",
+      "dependent_card_id": "biology-ii.draft-gymnosperm"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seed",
+      "dependent_card_id": "biology-ii.draft-pollen"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seed",
+      "dependent_card_id": "biology-ii.draft-seed-dispersal"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seed-dispersal",
+      "dependent_card_id": "biology-ii.draft-ecological-succession"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-seedless-vascular-plant",
+      "dependent_card_id": "biology-ii.draft-seed"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-segmentation",
+      "dependent_card_id": "biology-ii.draft-annelid"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-segmentation",
+      "dependent_card_id": "biology-ii.draft-arthropod"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-shared-derived-character",
+      "dependent_card_id": "biology-ii.draft-land-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-shared-derived-character",
+      "dependent_card_id": "biology-ii.draft-phylogenetic-inference"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-shoot",
+      "dependent_card_id": "biology-ii.draft-meristem"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-shoot",
+      "dependent_card_id": "biology-ii.draft-phloem"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-species-concept",
+      "dependent_card_id": "biology-ii.draft-extinction"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-species-concept",
+      "dependent_card_id": "biology-ii.draft-reproductive-isolation"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-sporophyte",
+      "dependent_card_id": "biology-ii.draft-bryophyte"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-sporophyte",
+      "dependent_card_id": "biology-ii.draft-seed"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-sporophyte",
+      "dependent_card_id": "biology-ii.draft-seedless-vascular-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-sporophyte",
+      "dependent_card_id": "biology-ii.draft-vascular-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-symbiosis",
+      "dependent_card_id": "biology-ii.draft-lichen"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-symbiosis",
+      "dependent_card_id": "biology-ii.draft-mutualism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-symbiosis",
+      "dependent_card_id": "biology-ii.draft-mycorrhiza"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-symbiosis",
+      "dependent_card_id": "biology-ii.draft-parasitism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-taxonomy",
+      "dependent_card_id": "biology-ii.draft-cellular-domains"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-taxonomy",
+      "dependent_card_id": "biology-ii.draft-clade"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-taxonomy",
+      "dependent_card_id": "biology-ii.draft-species-concept"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-tetrapod",
+      "dependent_card_id": "biology-ii.draft-amniote"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-transpiration",
+      "dependent_card_id": "biology-ii.draft-cohesion-tension-mechanism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-transpiration",
+      "dependent_card_id": "biology-ii.draft-stomata"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-transpiration",
+      "dependent_card_id": "biology-ii.draft-water-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-unicellularity-and-multicellularity",
+      "dependent_card_id": "biology-ii.draft-animal"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-unicellularity-and-multicellularity",
+      "dependent_card_id": "biology-ii.draft-hypha"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-unicellularity-and-multicellularity",
+      "dependent_card_id": "biology-ii.draft-origins-of-multicellularity"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-unicellularity-and-multicellularity",
+      "dependent_card_id": "biology-ii.draft-sponge"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vascular-plant",
+      "dependent_card_id": "biology-ii.draft-phloem"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vascular-plant",
+      "dependent_card_id": "biology-ii.draft-root"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vascular-plant",
+      "dependent_card_id": "biology-ii.draft-seedless-vascular-plant"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vascular-plant",
+      "dependent_card_id": "biology-ii.draft-shoot"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vascular-plant",
+      "dependent_card_id": "biology-ii.draft-xylem"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vertebrate",
+      "dependent_card_id": "biology-ii.draft-fish"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vertebrate",
+      "dependent_card_id": "biology-ii.draft-mammal"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-vertebrate",
+      "dependent_card_id": "biology-ii.draft-tetrapod"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-xylem",
+      "dependent_card_id": "biology-ii.draft-cohesion-tension-mechanism"
+    },
+    {
+      "prerequisite_card_id": "biology-ii.draft-xylem",
+      "dependent_card_id": "biology-ii.draft-transpiration"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Biology II.",
+  "level": "College",
+  "tags": [
+    "biology"
+  ]
+}

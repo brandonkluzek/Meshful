@@ -1,0 +1,4472 @@
+{
+  "id": "academic-reviewed-v1:linear-algebra-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Linear Algebra I",
+  "subject": "Mathematics",
+  "domain": "Mathematics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Coefficient and augmented matrices",
+      "prompt": "Define Coefficient and augmented matrices. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The separation of the linear map A from the joined elimination workspace [A augmented with b] with dimensions recorded.",
+      "required_concepts": [
+        "The separation of the linear map A from the joined elimination workspace [A augmented with b] with dimensions recorded."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the last augmented column another feature column of A."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Column picture of Ax=b",
+      "prompt": "Define Column picture of Ax=b. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The question whether b is the specified linear combination of the columns of A with coefficients x.",
+      "required_concepts": [
+        "The question whether b is the specified linear combination of the columns of A with coefficients x."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Combining rows of A with the entries of x and calling it the column picture."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-consistency-contradiction-row",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Consistency contradiction row",
+      "prompt": "Define Consistency contradiction row. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The echelon row with all zero coefficients and nonzero augmented entry c certifying that no vector satisfies every specified equation.",
+      "required_concepts": [
+        "The echelon row with all zero coefficients and nonzero augmented entry c certifying that no vector satisfies every specified equation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a zero coefficient row a free equation without inspecting its augmented entry."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-pivot-and-free-variables"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-echelon-and-reduced-echelon-forms",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Echelon and reduced-echelon forms",
+      "prompt": "Define row echelon form and reduced row echelon form, and distinguish their uniqueness.",
+      "definition": "A matrix is in row echelon form when zero rows are below nonzero rows, each successive leading nonzero entry is strictly to the right of the preceding one, and entries below each leading entry are zero. Reduced row echelon form additionally makes every leading entry 1 and makes it the only nonzero entry in its column. A fixed matrix has a unique reduced row echelon form, although its echelon forms need not be unique.",
+      "required_concepts": [
+        "State the zero-row placement and rightward pivot progression for echelon form.",
+        "Reduced form has unit pivots with zeros above and below each pivot.",
+        "Reduced form is unique for a given matrix."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "An echelon matrix is reduced whenever entries below pivots vanish, even if a pivot equals 7 and has nonzero entries above it."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-elementary-row-operations"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-elementary-row-operations",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Elementary row operations",
+      "prompt": "Define Elementary row operations. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** row swap nonzero row scaling and row replacement as reversible operations preserving a system solution set.",
+      "required_concepts": [
+        "row swap nonzero row scaling and row replacement as reversible operations preserving a system solution set."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the operation to A but not to b."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-elimination-solve-versus-explicit-inverse",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Elimination solve versus explicit inverse",
+      "prompt": "Distinguish Elimination solve versus explicit inverse.",
+      "definition": "**Definition.** Solving Ax=b by elimination or factorization targets the requested right-hand side without forming A inverse, whereas an explicit inverse is a reusable matrix defined only when A is square and nonsingular and is usually unnecessary for one solve.",
+      "required_concepts": [
+        "Elimination or factorization solves Ax=b for the requested right-hand side without forming an inverse.",
+        "An explicit inverse is a reusable matrix defined only when A is square and nonsingular.",
+        "The decisive distinction is that a solve needs the action on b, while forming the entire inverse adds a stronger object and usually unnecessary work."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing A inverse b before checking that A is square and nonsingular."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-identity-inverse-and-invertibility"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-exact-factorization-verification-versus-numerical-stability",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Exact factorization verification versus numerical stability",
+      "prompt": "Define Exact factorization verification versus numerical stability. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The exact-arithmetic check PA=LU separated from pivoting stability conditioning and backward-error questions.",
+      "required_concepts": [
+        "The exact-arithmetic check PA=LU separated from pivoting stability conditioning and backward-error questions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling exact reconstruction proof that the floating-point algorithm is stable."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-lu-and-plu-factorization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-homogeneous-systems",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Homogeneous systems",
+      "prompt": "Define Homogeneous systems. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** systems Ax=0 whose solution set is a subspace and always contains the zero vector.",
+      "required_concepts": [
+        "systems Ax=0 whose solution set is a subspace and always contains the zero vector."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Declaring a homogeneous system inconsistent."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-parametric-solution-set"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Identity inverse and invertibility",
+      "prompt": "Define Identity inverse and invertibility. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The square-matrix contract in which I preserves vectors and A inverse satisfies both products equal I exactly when A is nonsingular.",
+      "required_concepts": [
+        "The square-matrix contract in which I preserves vectors and A inverse satisfies both products equal I exactly when A is nonsingular."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Taking the reciprocal of every entry or inverting a rectangular matrix."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-consistency-contradiction-row",
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "LU and PLU factorization",
+      "prompt": "Define LU and PLU factorization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The encoding of elimination multipliers in unit lower-triangular L and the echelon factor in U with a permutation P when row exchanges are required.",
+      "required_concepts": [
+        "The encoding of elimination multipliers in unit lower-triangular L and the echelon factor in U with a permutation P when row exchanges are required."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Recording the multiplier with the wrong sign or claiming LU exists without needed permutations."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-elementary-row-operations",
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-matrix-addition-and-scalar-multiplication",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Matrix addition and scalar multiplication",
+      "prompt": "Define Matrix addition and scalar multiplication. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** entrywise operations on equal-shaped matrices preserving shape and the vector-space laws.",
+      "required_concepts": [
+        "entrywise operations on equal-shaped matrices preserving shape and the vector-space laws."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding rows to columns or adding incompatible shapes."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-shape-and-equality"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Matrix-matrix multiplication",
+      "prompt": "Define Matrix-matrix multiplication. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The composition-compatible product AB defined when columns of A equal rows of B with entries from row-column dot products.",
+      "required_concepts": [
+        "The composition-compatible product AB defined when columns of A equal rows of B with entries from row-column dot products."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring BA also exists or has the same value."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-vector-multiplication"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-matrix-shape-and-equality",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Matrix shape and equality",
+      "prompt": "Define Matrix shape and equality. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The row-by-column type of a matrix and entrywise equality only between matrices of identical shape.",
+      "required_concepts": [
+        "The row-by-column type of a matrix and entrywise equality only between matrices of identical shape."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Ignoring shape because the scalar inventory matches."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-matrix-vector-multiplication",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Matrix-vector multiplication",
+      "prompt": "Define Matrix-vector multiplication. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The output whose entries are row dot products and equivalently whose vector is the input-weighted column combination.",
+      "required_concepts": [
+        "The output whose entries are row dot products and equivalently whose vector is the input-weighted column combination."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning a scalar dot product of all entries."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+        "linear-algebra-i.la1-m0-matrix-shape-and-equality"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-parametric-solution-set",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Parametric solution set",
+      "prompt": "Define Parametric solution set. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The affine representation x=x_p+linear combinations of homogeneous null directions with each free parameter declared.",
+      "required_concepts": [
+        "The affine representation x=x_p+linear combinations of homogeneous null directions with each free parameter declared."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting only one particular solution for a system with free variables."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-pivot-and-free-variables"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-pivot-and-free-variables",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Pivot and free variables",
+      "prompt": "Define Pivot and free variables. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The partition of unknown coordinates induced by pivot columns in the coefficient portion of an echelon system.",
+      "required_concepts": [
+        "The partition of unknown coordinates induced by pivot columns in the coefficient portion of an echelon system."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the augmented column as an unknown-variable column."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-echelon-and-reduced-echelon-forms"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-row-equivalence-versus-column-space-diagnostic",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Row-equivalence versus column-space diagnostic",
+      "prompt": "Distinguish Row-equivalence versus column-space diagnostic.",
+      "definition": "**Definition.** The distinction that row operations preserve the solution set of an augmented system but can change the column space as a subset of the output coordinates.",
+      "required_concepts": [
+        "Row operations on an augmented system preserve its solution set.",
+        "Row operations can change the column space as a subset of the output coordinate space.",
+        "Pivot positions found in rref(A) identify basis columns that must be taken from the original matrix A, not from rref(A)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming the pivot columns of rref(A) are a basis for the original column space."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+        "linear-algebra-i.la1-m0-elementary-row-operations"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-row-picture-of-a-system",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Row picture of a system",
+      "prompt": "Define Row picture of a system. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The intersection-of-hyperplanes view in variable space with no-solution one-solution and many-solution cases.",
+      "required_concepts": [
+        "The intersection-of-hyperplanes view in variable space with no-solution one-solution and many-solution cases."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the two equation rows vectors in the output column space without declaring a dual viewpoint."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m0-triangular-solves-and-factorization-reuse",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Triangular solves and factorization reuse",
+      "prompt": "Define Triangular solves and factorization reuse. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The forward solve Ly=Pb followed by back solve Ux=y, reusing one factorization for multiple right-hand sides.",
+      "required_concepts": [
+        "The forward solve Ly=Pb followed by back solve Ux=y, reusing one factorization for multiple right-hand sides."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying U first because it appears nearest x in LUx."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-lu-and-plu-factorization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-affine-set-versus-linear-subspace",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Affine set versus linear subspace",
+      "prompt": "Distinguish Affine set versus linear subspace.",
+      "definition": "**Definition.** An affine set has the form x_p+W for a linear subspace W and may omit the zero vector, whereas a linear subspace contains zero and is closed under linear combinations. The affine set x_p+W is itself a subspace exactly when x_p belongs to W.",
+      "required_concepts": [
+        "An affine set has the form x_p+W and can model a nonhomogeneous solution set that does not contain zero.",
+        "A linear subspace contains the zero vector and is closed under linear combinations.",
+        "The affine set x_p+W is a linear subspace exactly when x_p belongs to W."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every solution set a nullspace."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-parametric-solution-set",
+        "linear-algebra-i.la1-m1-subspace-test"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Basis extraction from pivot columns",
+      "prompt": "Define Basis extraction from pivot columns. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The use of pivot positions from row reduction to select independent columns from the original generator matrix.",
+      "required_concepts": [
+        "The use of pivot positions from row reduction to select independent columns from the original generator matrix."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Selecting pivot columns from rref(A) as vectors in the original column space."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-row-equivalence-versus-column-space-diagnostic",
+        "linear-algebra-i.la1-m1-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-basis",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Basis",
+      "prompt": "Define Basis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An ordered family that both spans the target vector space and is linearly independent, giving unique coordinates.",
+      "required_concepts": [
+        "An ordered family that both spans the target vector space and is linearly independent, giving unique coordinates."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Proving only one of spanning or independence."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-spanning-sets-and-redundancy",
+        "linear-algebra-i.la1-m1-linear-independence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Coordinates relative to a basis",
+      "prompt": "Define Coordinates relative to a basis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The unique coefficient vector [v]_B whose basis expansion reconstructs the physical vector v.",
+      "required_concepts": [
+        "The unique coefficient vector [v]_B whose basis expansion reconstructs the physical vector v."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the physical vector entries (3,1) as coordinates in every basis."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-span-membership-by-a-system",
+        "linear-algebra-i.la1-m1-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-dependence-relation-and-redundant-generator",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Dependence relation and redundant generator",
+      "prompt": "Define Dependence relation and redundant generator. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A nonzero null vector of the generator matrix that expresses at least one generator as a combination of the others.",
+      "required_concepts": [
+        "A nonzero null vector of the generator matrix that expresses at least one generator as a combination of the others."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting determinant zero without producing a relation."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-linear-independence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-dimension-of-subspaces",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Dimension of subspaces",
+      "prompt": "Define Dimension of subspaces. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The bound 0<=dim W<=dim V for finite-dimensional W subset V with equality forcing W=V.",
+      "required_concepts": [
+        "The bound 0<=dim W<=dim V for finite-dimensional W subset V with equality forcing W=V."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring that every subset described with three coordinates has dimension 3."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-dimension"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-dimension",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Dimension",
+      "prompt": "Define Dimension. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The cardinality shared by every finite basis of a vector space, distinct from the number of generators displayed.",
+      "required_concepts": [
+        "The cardinality shared by every finite basis of a vector space, distinct from the number of generators displayed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting every vector in a spanning list."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-direct-sum-recognition",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Direct-sum recognition",
+      "prompt": "Define Direct-sum recognition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The condition V=U+W with U intersect W={0}, yielding unique decomposition into one vector from each subspace.",
+      "required_concepts": [
+        "The condition V=U+W with U intersect W={0}, yielding unique decomposition into one vector from each subspace."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any two subspaces with full sum a direct sum despite nonzero intersection."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-sum-and-intersection-of-subspaces"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-linear-combination-and-span",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Linear combination and span",
+      "prompt": "Define Linear combination and span. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The set of all finite scalar combinations of generators and therefore the smallest subspace containing them.",
+      "required_concepts": [
+        "The set of all finite scalar combinations of generators and therefore the smallest subspace containing them."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Listing only the two generators as their span."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-linear-independence",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Linear independence",
+      "prompt": "Define Linear independence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The condition that the only coefficient solution to c1v1+...+ckvk=0 is the all-zero vector.",
+      "required_concepts": [
+        "The condition that the only coefficient solution to c1v1+...+ckvk=0 is the all-zero vector."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking merely that neither vector is zero."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-homogeneous-systems",
+        "linear-algebra-i.la1-m1-linear-combination-and-span"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-non-subspace-counterexamples",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Non-subspace counterexamples",
+      "prompt": "What claim does Non-subspace counterexamples refute, and why?",
+      "definition": "**Definition.** The set S={(x,1): x is real} refutes the claim that every affine line in R2 is a linear subspace. The vector (0,1) lies in S, but the zero vector does not, and 2(0,1)=(0,2) is not in S.",
+      "required_concepts": [
+        "The false claim is that every affine line in R2 is a linear subspace.",
+        "A concrete witness is S={(x,1): x is real}.",
+        "The zero vector is not in S, so S fails a required subspace axiom.",
+        "The vector (0,1) is in S but 2(0,1)=(0,2) is not, so S also fails closure under scalar multiplication."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every line in R2 a subspace, including affine lines off the origin."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-subspace-test"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:counterexample"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-polynomial-and-matrix-vector-spaces",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Polynomial and matrix vector spaces",
+      "prompt": "Define Polynomial and matrix vector spaces. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** examples where polynomials or matrices are vectors under coefficientwise operations and dimension follows a basis.",
+      "required_concepts": [
+        "examples where polynomials or matrices are vectors under coefficientwise operations and dimension follows a basis."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling polynomial multiplication the vector-space scalar operation."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-vector-space-axioms-at-first-course-depth",
+        "linear-algebra-i.la1-m1-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-span-membership-by-a-system",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Span membership by a system",
+      "prompt": "Define Span membership by a system. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The equivalence between v lying in span{v1,...,vk} and consistency of the column system [v1 ... vk]c=v.",
+      "required_concepts": [
+        "The equivalence between v lying in span{v1,...,vk} and consistency of the column system [v1 ... vk]c=v."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing coordinates informally without solving the shared coefficient system."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+        "linear-algebra-i.la1-m1-linear-combination-and-span"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-spanning-sets-and-redundancy",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Spanning sets and redundancy",
+      "prompt": "Define Spanning sets and redundancy. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A generator family whose span equals the target space even when some generators can be removed without changing that span.",
+      "required_concepts": [
+        "A generator family whose span equals the target space even when some generators can be removed without changing that span."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any spanning set a basis regardless of dependence."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-linear-combination-and-span"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-standard-coordinates-versus-abstract-vectors",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Standard coordinates versus abstract vectors",
+      "prompt": "Distinguish Standard coordinates versus abstract vectors.",
+      "definition": "**Definition.** The distinction between an object v and its coordinate column under a specified ordered basis.",
+      "required_concepts": [
+        "An abstract vector v is an element of the vector space and does not depend on a coordinate representation.",
+        "A coordinate column [v]_B records the scalars of v relative to a specified ordered basis B.",
+        "Changing the ordered basis can change the coordinate column without changing the underlying vector."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling coordinate columns from different bases equal representations."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-subspace-test",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Subspace test",
+      "prompt": "Define Subspace test. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The zero-vector addition-closure and scalar-closure test for a subset under inherited operations.",
+      "required_concepts": [
+        "The zero-vector addition-closure and scalar-closure test for a subset under inherited operations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Testing one pair of example vectors and declaring universal closure."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-sum-and-intersection-of-subspaces",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Sum and intersection of subspaces",
+      "prompt": "Define Sum and intersection of subspaces. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The subspaces U+W={u+w} and U intersect W with dimension identity dim(U+W)=dim U+dim W-dim(U intersect W).",
+      "required_concepts": [
+        "The subspaces U+W={u+w} and U intersect W with dimension identity dim(U+W)=dim U+dim W-dim(U intersect W)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding dimensions without subtracting overlap."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-subspace-test",
+        "linear-algebra-i.la1-m1-dimension"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m1-vector-space-axioms-at-first-course-depth",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Vector-space axioms at first-course depth",
+      "prompt": "Define Vector-space axioms at first-course depth. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The closure identity inverse associativity commutativity and distributivity contract defining linear combinations over a field.",
+      "required_concepts": [
+        "The closure identity inverse associativity commutativity and distributivity contract defining linear combinations over a field."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only that vectors can be drawn as arrows."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-change-of-basis-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Change-of-basis matrix",
+      "prompt": "Define Change-of-basis matrix. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The invertible coordinate map converting one ordered basis-coordinate column to another without changing the underlying vector.",
+      "required_concepts": [
+        "The invertible coordinate map converting one ordered basis-coordinate column to another without changing the underlying vector."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying P in both directions without inversion."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+        "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-column-space",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Column space",
+      "prompt": "Define Column space. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The image of x maps to Ax and span of the original columns of an m-by-n matrix as a subspace of Rm.",
+      "required_concepts": [
+        "The image of x maps to Ax and span of the original columns of an m-by-n matrix as a subspace of Rm."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using nonzero rows of rref(A) as a column-space basis."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-composition-and-product-order",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Composition and product order",
+      "prompt": "Define Composition and product order. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rule [S composed with T]=[S][T] with the rightmost map acting first and intermediate dimensions matching.",
+      "required_concepts": [
+        "The rule [S composed with T]=[S][T] with the rightmost map acting first and intermediate dimensions matching."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Multiplying [T][S] because T is named first."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+        "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-consistency-from-column-space",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Consistency from column space",
+      "prompt": "Define Consistency from column space. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The equivalence Ax=b is consistent exactly when b lies in Col(A), with left-null compatibility y^T b=0 for all y in Null(A transpose).",
+      "required_concepts": [
+        "The equivalence Ax=b is consistent exactly when b lies in Col(A), with left-null compatibility y^T b=0 for all y in Null(A transpose)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only whether b has the right number of entries."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-left-nullspace"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "four fundamental subspaces dimension formula",
+      "prompt": "Define four fundamental subspaces dimension formula.",
+      "definition": "**Definition.** The dimensions rank n-rank rank and m-rank assigned respectively to row null column and left-null spaces.",
+      "required_concepts": [
+        "The dimensions rank n-rank rank and m-rank assigned respectively to row null column and left-null spaces."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assigning the same ambient dimension to all four spaces."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-left-nullspace",
+        "linear-algebra-i.la1-m2-nullity-and-rank-nullity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-fundamental-orthogonal-complements",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Fundamental orthogonal complements",
+      "prompt": "Define Fundamental orthogonal complements. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The relations Row(A) perpendicular-complement Null(A) in Rn and Col(A) perpendicular-complement Null(A transpose) in Rm.",
+      "required_concepts": [
+        "The relations Row(A) perpendicular-complement Null(A) in Rn and Col(A) perpendicular-complement Null(A transpose) in Rm."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming Null(A) is orthogonal to Col(A) even when they live in different ambient spaces."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-injective-and-surjective-linear-maps",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Injective and surjective linear maps",
+      "prompt": "Define Injective and surjective linear maps. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** injectivity equivalent to zero kernel and surjectivity equivalent to image equal codomain under declared spaces.",
+      "required_concepts": [
+        "injectivity equivalent to zero kernel and surjectivity equivalent to image equal codomain under declared spaces."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a map onto because every input has an output."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-rank",
+        "linear-algebra-i.la1-m2-kernel-and-image-of-a-map"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-isomorphism-and-dimension",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Isomorphism and dimension",
+      "prompt": "Define Isomorphism and dimension. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An invertible linear map whose kernel is zero and image is the entire codomain, forcing equal finite dimensions.",
+      "required_concepts": [
+        "An invertible linear map whose kernel is zero and image is the entire codomain, forcing equal finite dimensions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any injective map an isomorphism without surjectivity."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-dimension",
+        "linear-algebra-i.la1-m2-injective-and-surjective-linear-maps"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-kernel-and-image-of-a-map",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Kernel and image of a map",
+      "prompt": "Define Kernel and image of a map. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The input subspace sent to zero and the attained output subspace, corresponding to null and column spaces of a representation.",
+      "required_concepts": [
+        "The input subspace sent to zero and the attained output subspace, corresponding to null and column spaces of a representation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Putting the kernel in the codomain."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-column-space",
+        "linear-algebra-i.la1-m2-nullspace",
+        "linear-algebra-i.la1-m2-linear-transformation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-left-nullspace",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Left nullspace",
+      "prompt": "Define Left nullspace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The nullspace of A transpose as a subspace of Rm and orthogonal complement of the column space.",
+      "required_concepts": [
+        "The nullspace of A transpose as a subspace of Rm and orthogonal complement of the column space."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Solving Ax=0 rather than A transpose y=0."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-column-space",
+        "linear-algebra-i.la1-m2-nullspace"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-linear-transformation",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Linear transformation",
+      "prompt": "Define Linear transformation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A map T:V->W preserving addition and scalar multiplication with declared domain and codomain.",
+      "required_concepts": [
+        "A map T:V->W preserving addition and scalar multiplication with declared domain and codomain."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only T(0)=0, which is necessary but not sufficient."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-matrix-representation-in-arbitrary-bases",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Matrix representation in arbitrary bases",
+      "prompt": "Define Matrix representation in arbitrary bases. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The output-coordinate matrix whose jth column is [T(b_j)]_C for input basis B and output basis C.",
+      "required_concepts": [
+        "The output-coordinate matrix whose jth column is [T(b_j)]_C for input basis B and output basis C."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using physical output vectors directly when C is nonstandard."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation",
+        "linear-algebra-i.la1-m2-change-of-basis-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-nullity-and-rank-nullity",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Nullity and rank-nullity",
+      "prompt": "Define Nullity and rank-nullity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The dimension of Null(A) and identity rank(A)+nullity(A)=n for a map from Rn.",
+      "required_concepts": [
+        "The dimension of Null(A) and identity rank(A)+nullity(A)=n for a map from Rn."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Subtracting rank from the number of rows m."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-nullspace",
+        "linear-algebra-i.la1-m2-rank"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-nullspace",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Nullspace",
+      "prompt": "Define Nullspace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The solution subspace {x in Rn:Ax=0} parameterized by free variables of an m-by-n matrix.",
+      "required_concepts": [
+        "The solution subspace {x in Rn:Ax=0} parameterized by free variables of an m-by-n matrix."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning a particular solution to Ax=b instead of homogeneous directions."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-homogeneous-systems"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-rank",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Rank",
+      "prompt": "Define Rank. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The common dimension of column and row spaces equal to the number of pivots.",
+      "required_concepts": [
+        "The common dimension of column and row spaces equal to the number of pivots."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting nonzero entries or equations rather than pivots."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-column-space",
+        "linear-algebra-i.la1-m2-row-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-row-space",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Row space",
+      "prompt": "Define Row space. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The span of the rows of A as a subspace of Rn, with nonzero rref rows providing a basis.",
+      "required_concepts": [
+        "The span of the rows of A as a subspace of Rn, with nonzero rref rows providing a basis."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Placing row space in Rm because A has m rows."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-echelon-and-reduced-echelon-forms"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-similarity-as-same-operator-in-new-basis",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Similarity as same operator in new basis",
+      "prompt": "Define Similarity as same operator in new basis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The relation B=P^-1 A P for two square representations of one endomorphism under compatible coordinate conventions.",
+      "required_concepts": [
+        "The relation B=P^-1 A P for two square representations of one endomorphism under compatible coordinate conventions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling similar matrices entrywise equal or every equivalent row reduction a similarity."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-matrix-representation-in-arbitrary-bases"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Standard matrix of a transformation",
+      "prompt": "Define Standard matrix of a transformation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The matrix whose columns are images of standard input basis vectors in standard output coordinates.",
+      "required_concepts": [
+        "The matrix whose columns are images of standard input basis vectors in standard output coordinates."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing output formulas as rows without checking Ae_j."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-standard-coordinates-versus-abstract-vectors",
+        "linear-algebra-i.la1-m2-linear-transformation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-algebraic-and-geometric-multiplicity",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Algebraic and geometric multiplicity",
+      "prompt": "Define Algebraic and geometric multiplicity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** root multiplicity in the characteristic polynomial versus eigenspace dimension, with 1<=geometric<=algebraic for an eigenvalue.",
+      "required_concepts": [
+        "root multiplicity in the characteristic polynomial versus eigenspace dimension, with 1<=geometric<=algebraic for an eigenvalue."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting repeated copies of the same eigenvector as geometric multiplicity 2."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-eigenspace"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-characteristic-polynomial",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Characteristic polynomial",
+      "prompt": "Define Characteristic polynomial. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The basis-invariant polynomial det(lambda I-A) or a declared sign convention whose roots are eigenvalues.",
+      "required_concepts": [
+        "The basis-invariant polynomial det(lambda I-A) or a declared sign convention whose roots are eigenvalues."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Switching between det(A-lambda I) and det(lambda I-A) without tracking sign."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+        "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-complex-eigenvalue-boundary",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Complex eigenvalue boundary",
+      "prompt": "Define Complex eigenvalue boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The recognition that a real square matrix may have complex eigenpairs and that the declared scalar field changes the available eigenbasis.",
+      "required_concepts": [
+        "The recognition that a real square matrix may have complex eigenpairs and that the declared scalar field changes the available eigenbasis."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the matrix defective over R because complex scalars were not specified."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-characteristic-polynomial"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-defective-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Defective matrix",
+      "prompt": "Define a defective matrix over a field where its characteristic polynomial splits.",
+      "definition": "For a square matrix whose characteristic polynomial splits over the stated field, defective means it lacks an eigenvector basis: for at least one eigenvalue, geometric multiplicity is smaller than algebraic multiplicity. Equivalently it is not diagonalizable over that field. A real matrix with nonreal eigenvalues requires care: failure of the polynomial to split over R is distinct from a shortage of eigenvectors for a split eigenvalue.",
+      "required_concepts": [
+        "Declare a field over which the characteristic polynomial splits.",
+        "A defective matrix lacks a full eigenbasis.",
+        "At least one eigenvalue has geometric multiplicity below algebraic multiplicity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Every repeated eigenvalue makes a matrix defective, including the identity matrix."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-diagonalization-criterion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-determinant-and-invertibility",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Determinant and invertibility",
+      "prompt": "Define Determinant and invertibility. Include its essential conditions and distinctions.",
+      "definition": "For a square matrix A over a field, A is invertible exactly when det A is nonzero. A zero determinant establishes singularity, but does not determine the whole nullspace. Division by det A is valid when det A≠0 and invalid when det A=0.",
+      "required_concepts": [
+        "Invertibility of a square matrix is equivalent to a nonzero determinant.",
+        "Do not divide by a zero determinant.",
+        "A zero determinant alone does not specify every null vector."
+      ],
+      "accepted_variants": [
+        "For diag(2,3), det A=6≠0, so A is invertible and adj(A)/6 is a valid inverse formula. A zero determinant instead means singularity without determining the whole kernel."
+      ],
+      "major_error_concepts": [
+        "Dividing by det A when det A=0.",
+        "Claiming det A=0 determines the complete nullspace without further information."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+        "linear-algebra-i.la1-m3-determinant-row-operation-effects"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Determinant in two and three dimensions",
+      "prompt": "Define Determinant in two and three dimensions. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The scalar signed area or volume scale of a square linear map with standard 2-by-2 and cofactor formulas.",
+      "required_concepts": [
+        "The scalar signed area or volume scale of a square linear map with standard 2-by-2 and cofactor formulas."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding diagonal products without the required negative term."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-determinant-multiplicativity",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Determinant multiplicativity",
+      "prompt": "Define Determinant multiplicativity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The identity det(AB)=det(A)det(B) for square compatible matrices without requiring commutativity.",
+      "required_concepts": [
+        "The identity det(AB)=det(A)det(B) for square compatible matrices without requiring commutativity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming det(A+B)=det A+det B."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+        "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-determinant-row-operation-effects",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Determinant row-operation effects",
+      "prompt": "Define Determinant row-operation effects. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** row swapping negates determinant row scaling scales it and row replacement leaves it unchanged.",
+      "required_concepts": [
+        "row swapping negates determinant row scaling scales it and row replacement leaves it unchanged."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating every row operation as determinant-preserving because it preserves some solution information."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-elementary-row-operations",
+        "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-diagonalization-criterion",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Diagonalization criterion",
+      "prompt": "Define Diagonalization criterion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The factorization A=PDP^-1 exactly when columns of P form a basis of eigenvectors and D holds matching eigenvalues.",
+      "required_concepts": [
+        "The factorization A=PDP^-1 exactly when columns of P form a basis of eigenvectors and D holds matching eigenvalues."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Factoring the characteristic polynomial and declaring diagonalizability."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-algebraic-and-geometric-multiplicity",
+        "linear-algebra-i.la1-m3-distinct-eigenvalues-and-independence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-diagonalization-reconstruction",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Diagonalization reconstruction",
+      "prompt": "Define Diagonalization reconstruction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The direct verification AP=PD or A=PDP^-1 with eigenvector-column order matched to the diagonal.",
+      "required_concepts": [
+        "The direct verification AP=PD or A=PDP^-1 with eigenvector-column order matched to the diagonal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Sorting eigenvalues in D without sorting P columns."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+        "linear-algebra-i.la1-m3-diagonalization-criterion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-discrete-linear-dynamics",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Discrete linear dynamics",
+      "prompt": "Define Discrete linear dynamics. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The recurrence x_(k+1)=Ax_k with x_k=A^k x_0 and interpretation bound to the state convention.",
+      "required_concepts": [
+        "The recurrence x_(k+1)=Ax_k with x_k=A^k x_0 and interpretation bound to the state convention."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using eigenvalue magnitude alone without decomposing the initial state."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-powers-through-diagonalization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-distinct-eigenvalues-and-independence",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Distinct eigenvalues and independence",
+      "prompt": "Define Distinct eigenvalues and independence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The theorem that eigenvectors belonging to distinct eigenvalues are linearly independent.",
+      "required_concepts": [
+        "The theorem that eigenvectors belonging to distinct eigenvalues are linearly independent."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming eigenvectors for a repeated eigenvalue are automatically independent."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-linear-independence",
+        "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-eigenspace",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Eigenspace",
+      "prompt": "Define Eigenspace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The nullspace Null(A-lambda I) containing zero whose nonzero vectors are eigenvectors for lambda.",
+      "required_concepts": [
+        "The nullspace Null(A-lambda I) containing zero whose nonzero vectors are eigenvectors for lambda."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling only one chosen eigenvector the entire eigenspace."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-nullspace",
+        "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Eigenvalue and eigenvector",
+      "prompt": "Define Eigenvalue and eigenvector. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A scalar lambda and nonzero vector v satisfying Av=lambda v for a square endomorphism.",
+      "required_concepts": [
+        "A scalar lambda and nonzero vector v satisfying Av=lambda v for a square endomorphism."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Accepting v=0 as an eigenvector for every lambda."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-vector-multiplication"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-eigenvalue-stability-heuristic-and-qualification",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Eigenvalue stability heuristic and qualification",
+      "prompt": "Define Eigenvalue stability heuristic and qualification. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The first-course mode-by-mode growth rule for diagonalizable discrete dynamics separated from nonnormal transient numerical and nonlinear claims.",
+      "required_concepts": [
+        "The first-course mode-by-mode growth rule for diagonalizable discrete dynamics separated from nonnormal transient numerical and nonlinear claims."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming spectral radius alone describes every finite-time behavior of every matrix and perturbed system."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-discrete-linear-dynamics"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-markov-matrix-convention",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Markov matrix convention",
+      "prompt": "Define row- and column-stochastic Markov matrices and match each to its probability-vector update.",
+      "definition": "A column-stochastic transition matrix A has nonnegative entries and each column sums to 1; a column probability vector updates as p_next=A p. A row-stochastic matrix P has nonnegative entries and each row sums to 1; a row probability vector updates as pi_next=pi P. If the same row-stochastic matrix is used with column probability vectors, the update is p_next=P^T p. The convention must match the representation.",
+      "required_concepts": [
+        "Stochastic transition entries are nonnegative and the declared rows or columns sum to 1.",
+        "Match column-stochastic A to p_next=A p for column vectors.",
+        "Match row-stochastic P to pi_next=pi P, or transpose it for column vectors."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Any matrix whose entries sum to 1 is stochastic, and a row-stochastic matrix always updates a column probability vector by Pp."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-discrete-linear-dynamics"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-powers-through-diagonalization",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Powers through diagonalization",
+      "prompt": "Define Powers through diagonalization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The identity A^k=PD^kP^-1 for nonnegative integer k when a valid diagonalization is available.",
+      "required_concepts": [
+        "The identity A^k=PD^kP^-1 for nonnegative integer k when a valid diagonalization is available."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using PDP^-1 for a defective matrix."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-diagonalization-reconstruction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m3-stationary-state-and-convergence-caveat",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Stationary state and convergence caveat",
+      "prompt": "Define Stationary state and convergence caveat. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A probability vector satisfying Ap=p under the specified convention, distinct from a proof that every initial state converges to it.",
+      "required_concepts": [
+        "A probability vector satisfying Ap=p under the specified convention, distinct from a proof that every initial state converges to it."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Finding one stationary vector and asserting uniqueness and global convergence without irreducibility or aperiodicity evidence."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-markov-matrix-convention"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-cauchy-schwarz-and-triangle-inequalities",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Cauchy-Schwarz and triangle inequalities",
+      "prompt": "Define Cauchy-Schwarz and triangle inequalities. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The bounds abs(<u,v>)<=norm u norm v and norm(u+v)<=norm u+norm v underlying valid angle and distance geometry.",
+      "required_concepts": [
+        "The bounds abs(<u,v>)<=norm u norm v and norm(u+v)<=norm u+norm v underlying valid angle and distance geometry."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the inequalities as equalities for every pair."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-linear-independence",
+        "linear-algebra-i.la1-m4-distance-and-angle"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-dependent-input-gram-schmidt-diagnostic",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Dependent-input Gram-Schmidt diagnostic",
+      "prompt": "Define Dependent-input Gram-Schmidt diagnostic. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The zero residual that reveals a new input lies in the span of prior vectors and cannot produce another basis direction.",
+      "required_concepts": [
+        "The zero residual that reveals a new input lies in the span of prior vectors and cannot produce another basis direction."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dividing the zero residual by its norm."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-gram-schmidt-process"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-distance-and-angle",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Distance and angle",
+      "prompt": "Define Distance and angle. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** distance norm(u-v) and angle defined by cos theta=<u,v>/(norm u norm v) for nonzero vectors.",
+      "required_concepts": [
+        "distance norm(u-v) and angle defined by cos theta=<u,v>/(norm u norm v) for nonzero vectors."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dividing by zero to define an angle with the zero vector."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-euclidean-dot-product",
+        "linear-algebra-i.la1-m4-induced-norm"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-euclidean-dot-product",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Euclidean dot product",
+      "prompt": "Define Euclidean dot product. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The standard coordinate inner product x^T y with bilinearity symmetry and positivity.",
+      "required_concepts": [
+        "The standard coordinate inner product x^T y with bilinearity symmetry and positivity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning the entrywise product vector rather than its sum."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-real-inner-product"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-general-full-column-rank-projection-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "General full-column-rank projection matrix",
+      "prompt": "Define General full-column-rank projection matrix. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The formula P=A(A^T A)^-1 A^T when columns are independent, with an SVD or pseudoinverse interface when rank deficient.",
+      "required_concepts": [
+        "The formula P=A(A^T A)^-1 A^T when columns are independent, with an SVD or pseudoinverse interface when rank deficient."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inverting A^T A without checking column independence."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-rank",
+        "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-gram-schmidt-process",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Gram-Schmidt process",
+      "prompt": "Define Gram-Schmidt process. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The sequential subtraction of projections from independent inputs followed by normalization to build an orthonormal family spanning the same subspaces.",
+      "required_concepts": [
+        "The sequential subtraction of projections from independent inputs followed by normalization to build an orthonormal family spanning the same subspaces."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Normalizing each original vector without removing earlier components."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-linear-independence",
+        "linear-algebra-i.la1-m4-projection-onto-one-vector"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-induced-norm",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Induced norm",
+      "prompt": "Define Induced norm. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The nonnegative length norm(v)=sqrt(<v,v>) with zero length only for the zero vector.",
+      "required_concepts": [
+        "The nonnegative length norm(v)=sqrt(<v,v>) with zero length only for the zero vector."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using sqrt(<u,v>) for two different vectors as a norm."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-real-inner-product"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthogonal-complement",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonal complement",
+      "prompt": "Define Orthogonal complement. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The subspace W perpendicular={v:<v,w>=0 for all w in W} under the specified inner product.",
+      "required_concepts": [
+        "The subspace W perpendicular={v:<v,w>=0 for all w in W} under the specified inner product."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Testing orthogonality against one vector that does not span W."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m1-linear-combination-and-span",
+        "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthogonal-coordinate-energy-identity",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonal-coordinate energy identity",
+      "prompt": "Define Orthogonal-coordinate energy identity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Pythagorean or Parseval relation that squared norm equals the sum of squared orthonormal coordinates plus residual energy.",
+      "required_concepts": [
+        "The Pythagorean or Parseval relation that squared norm equals the sum of squared orthonormal coordinates plus residual energy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding unsquared norms under orthogonality."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+        "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem-role",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonal decomposition theorem: role",
+      "prompt": "What is Orthogonal decomposition theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The theorem splits any vector uniquely into a component in W and a component in W-perp, enabling orthogonal projection and least-squares residual geometry. At this course's scope, it requires a linear subspace W of a finite-dimensional inner-product space; it does not apply to an arbitrary subset or without an inner product.",
+      "required_concepts": [
+        "The theorem supplies a unique decomposition v=w+z with w in W and z in W-perp.",
+        "The decomposition underlies orthogonal projection and least-squares residual geometry.",
+        "At this course's scope, W must be a linear subspace of a finite-dimensional inner-product space; an arbitrary subset or a space without an inner product is outside the theorem's use."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the theorem without an inner product or closed finite-dimensional subspace setting."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonal decomposition theorem",
+      "prompt": "State the orthogonal decomposition theorem, including its ambient-space and subspace hypotheses and uniqueness conclusion.",
+      "definition": "**Theorem statement.** Let W be a subspace of a finite-dimensional inner-product space V. Every v in V has a unique decomposition v=w+z with w in W and z in W-perp.",
+      "required_concepts": [
+        "W is a subspace of a finite-dimensional inner-product space V.",
+        "Every v in V decomposes uniquely as v=w+z with w in W and z in W-perp."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Giving two components without verifying membership and orthogonality."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthogonal-complement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthogonal-projection-matrix-characterization",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "orthogonal projection matrix characterization",
+      "prompt": "Define orthogonal projection matrix characterization.",
+      "definition": "**Definition.** The symmetry idempotence range and residual-orthogonality checks that characterize an orthogonal projection.",
+      "required_concepts": [
+        "The symmetry idempotence range and residual-orthogonality checks that characterize an orthogonal projection."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking idempotence alone, which also permits oblique projections."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonal vectors and sets",
+      "prompt": "Define Orthogonal vectors and sets. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The zero-inner-product relation and a family whose distinct members are pairwise orthogonal.",
+      "required_concepts": [
+        "The zero-inner-product relation and a family whose distinct members are pairwise orthogonal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling disjoint coordinate support necessary for orthogonality."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-euclidean-dot-product"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthonormal sets and bases",
+      "prompt": "Define Orthonormal sets and bases. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** orthogonal families of unit vectors, automatically independent, that become bases when they span the target space.",
+      "required_concepts": [
+        "orthogonal families of unit vectors, automatically independent, that become bases when they span the target space."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling an orthogonal family orthonormal without checking lengths."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-induced-norm",
+        "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Projection matrix for orthonormal columns",
+      "prompt": "Define Projection matrix for orthonormal columns. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The matrix P=QQ^T whose range is Col(Q) and whose residual is orthogonal when Q^TQ=I.",
+      "required_concepts": [
+        "The matrix P=QQ^T whose range is Col(Q) and whose residual is orthogonal when Q^TQ=I."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using QQ^T when Q columns are not orthonormal."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+        "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Projection onto an orthonormal basis",
+      "prompt": "Define Projection onto an orthonormal basis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The sum of inner-product coefficients times orthonormal basis vectors for the target subspace.",
+      "required_concepts": [
+        "The sum of inner-product coefficients times orthonormal basis vectors for the target subspace."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Omitting normalization while using the orthonormal formula."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+        "linear-algebra-i.la1-m4-projection-onto-one-vector"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-projection-onto-one-vector",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Projection onto one vector",
+      "prompt": "Define Projection onto one vector. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The component proj_u(v)=(<v,u>/<u,u>)u for nonzero u, separated from its scalar coefficient.",
+      "required_concepts": [
+        "The component proj_u(v)=(<v,u>/<u,u>)u for nonzero u, separated from its scalar coefficient."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting the scalar coefficient as the projected vector."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-real-inner-product",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Real inner product",
+      "prompt": "Define Real inner product. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The symmetric bilinear positive-definite scalar pairing that induces length angle and orthogonality.",
+      "required_concepts": [
+        "The symmetric bilinear positive-definite scalar pairing that induces length angle and orthogonality."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking symmetry but not positive definiteness."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m4-thin-qr-factorization",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Thin QR factorization",
+      "prompt": "Define Thin QR factorization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The factorization A=QR for full-column-rank A with Q having orthonormal columns and R square upper triangular under a declared sign convention.",
+      "required_concepts": [
+        "The factorization A=QR for full-column-rank A with Q having orthonormal columns and R square upper triangular under a declared sign convention."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming the factorization is unique without fixing diagonal signs."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+        "linear-algebra-i.la1-m4-gram-schmidt-process"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-full-column-rank-uniqueness",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Full-column-rank uniqueness",
+      "prompt": "Define Full-column-rank uniqueness. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The condition rank(A)=n making A^T A positive definite and the least-squares coefficient minimizer unique.",
+      "required_concepts": [
+        "The condition rank(A)=n making A^T A positive definite and the least-squares coefficient minimizer unique."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming more rows than columns automatically gives independent columns."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-rank",
+        "linear-algebra-i.la1-m5-normal-equations"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-geometric-leverage-versus-inferential-interpretation",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Geometric leverage versus inferential interpretation",
+      "prompt": "Define Geometric leverage versus inferential interpretation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The boundary that projection-matrix diagonal geometry may describe sensitivity of fitted values but does not alone supply uncertainty causal or generalization claims.",
+      "required_concepts": [
+        "Projection-matrix diagonal geometry can describe the sensitivity of fitted values.",
+        "Geometric leverage alone does not supply uncertainty, causal, or generalization claims."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reading a large diagonal entry as proof an observation caused the outcome."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-general-full-column-rank-projection-matrix",
+        "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-inconsistent-systems-and-approximation",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Inconsistent systems and approximation",
+      "prompt": "Define Inconsistent systems and approximation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The case b not in Col(A) where no exact Ax=b exists but distance to the column space can be minimized.",
+      "required_concepts": [
+        "The case b not in Col(A) where no exact Ax=b exists but distance to the column space can be minimized."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing b to make the system solvable instead of preserving the specified data."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-consistency-from-column-space"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-least-squares-existence-and-uniqueness-decision",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Least-squares existence and uniqueness decision",
+      "prompt": "Define Least-squares existence and uniqueness decision. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ordered check of dimensions consistency rank fitted-vector uniqueness coefficient uniqueness and method choice.",
+      "required_concepts": [
+        "The ordered check of dimensions consistency rank fitted-vector uniqueness coefficient uniqueness and method choice."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Saying rank deficiency means no minimizer exists."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-full-column-rank-uniqueness",
+        "linear-algebra-i.la1-m5-rank-deficient-least-squares-family"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-least-squares-objective",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Least-squares objective",
+      "prompt": "Define Least-squares objective. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The minimization of squared Euclidean residual norm squared norm(Ax-b)^2, equivalent to norm minimization and defined even when minimizers are nonunique.",
+      "required_concepts": [
+        "The minimization of squared Euclidean residual norm squared norm(Ax-b)^2, equivalent to norm minimization and defined even when minimizers are nonunique."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Minimizing the signed sum of residuals, which can cancel."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-induced-norm",
+        "linear-algebra-i.la1-m5-inconsistent-systems-and-approximation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-mean-as-a-projection",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Mean as a projection",
+      "prompt": "Define Mean as a projection. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The least-squares constant fit whose coefficient is the arithmetic mean and whose residual entries sum to zero.",
+      "required_concepts": [
+        "The least-squares constant fit whose coefficient is the arithmetic mean and whose residual entries sum to zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the mean an exact fit when observations differ."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-residual-orthogonality",
+        "linear-algebra-i.la1-m5-one-parameter-line-fit-design-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-minimum-norm-least-squares-solution",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Minimum-norm least-squares solution",
+      "prompt": "Define Minimum-norm least-squares solution. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The unique least-squares coefficient vector orthogonal to Null(A), selected by the pseudoinverse among a rank-deficient family.",
+      "required_concepts": [
+        "The unique least-squares coefficient vector orthogonal to Null(A), selected by the pseudoinverse among a rank-deficient family."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling it the only least-squares minimizer."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-rank-deficient-least-squares-family"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-normal-equations-versus-qr-boundary",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Normal-equations versus QR boundary",
+      "prompt": "Distinguish Normal-equations versus QR boundary.",
+      "definition": "**Definition.** Normal equations solve A^T A x=A^T b and can identify the same exact-arithmetic least-squares minimizer as a QR solve, while QR uses an orthogonal factorization without forming A^T A and is generally less sensitive in floating-point computation.",
+      "required_concepts": [
+        "The normal-equations method solves A^T A x=A^T b for a least-squares minimizer.",
+        "The QR method uses an orthogonal factorization to solve the least-squares problem without forming A^T A.",
+        "The methods can agree in exact arithmetic, but their floating-point sensitivity and production suitability differ."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming QR always solves every rank-deficient production problem without pivoting or SVD."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-qr-least-squares-solve"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-normal-equations",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Normal equations",
+      "prompt": "Define Normal equations. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The stationarity equations A^T A x_hat=A^T b derived from residual orthogonality, whose solutions are least-squares minimizers.",
+      "required_concepts": [
+        "The stationarity equations A^T A x_hat=A^T b derived from residual orthogonality, whose solutions are least-squares minimizers."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Cancelling A^T or A as though rectangular matrices had ordinary inverses."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+        "linear-algebra-i.la1-m5-residual-orthogonality"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-one-parameter-line-fit-design-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "One-predictor intercept-and-slope design matrix",
+      "prompt": "What is the design matrix for a one-predictor line with an intercept and slope, and how many fitted coefficients does it contain?",
+      "definition": "**Definition.** The representation of intercept-and-slope predictions y_i≈beta0+beta1 t_i with rows (1,t_i).",
+      "required_concepts": [
+        "Predictions have the form y_i approximately beta_0+beta_1 t_i.",
+        "Each design row is (1,t_i), so the model has two fitted coefficients."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Putting observations y in the design matrix and predictors in b."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Projection interpretation of fitted values",
+      "prompt": "Define Projection interpretation of fitted values. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The fitted vector A x_hat as the unique orthogonal projection of b onto Col(A), even when coefficients may be nonunique.",
+      "required_concepts": [
+        "The fitted vector A x_hat as the unique orthogonal projection of b onto Col(A), even when coefficients may be nonunique."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling x_hat itself the projection of b when coefficient and observation spaces differ."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis",
+        "linear-algebra-i.la1-m5-least-squares-objective"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-qr-least-squares-solve",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "QR least-squares solve",
+      "prompt": "Define QR least-squares solve. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The reduction of full-column-rank least squares A=QR to the triangular system R x_hat=Q^T b without squaring the condition number in the formulation.",
+      "required_concepts": [
+        "The reduction of full-column-rank least squares A=QR to the triangular system R x_hat=Q^T b without squaring the condition number in the formulation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Solving Qx=b even though Q may be rectangular."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-thin-qr-factorization",
+        "linear-algebra-i.la1-m5-full-column-rank-uniqueness"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-rank-deficient-least-squares-family",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Rank-deficient least-squares family",
+      "prompt": "Define Rank-deficient least-squares family. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The affine family of coefficient minimizers sharing one unique fitted vector, with null(A) directions leaving Ax unchanged.",
+      "required_concepts": [
+        "The affine family of coefficient minimizers sharing one unique fitted vector, with null(A) directions leaving Ax unchanged."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling different coefficient vectors different fits when their predictions coincide."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-residual-norm-and-fitted-norm-decomposition",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Residual norm and fitted norm decomposition",
+      "prompt": "Define Residual norm and fitted norm decomposition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Pythagorean identity norm(b)^2=norm(A x_hat)^2+norm(r)^2 because fit and residual are orthogonal.",
+      "required_concepts": [
+        "The Pythagorean identity norm(b)^2=norm(A x_hat)^2+norm(r)^2 because fit and residual are orthogonal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding unsquared norms or assuming coefficients are orthogonal to residuals."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthogonal-coordinate-energy-identity",
+        "linear-algebra-i.la1-m5-residual-orthogonality"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m5-residual-orthogonality",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Residual orthogonality",
+      "prompt": "Define Residual orthogonality. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The optimality condition r=b-Ax_hat perpendicular to every column of A, equivalently A^T r=0.",
+      "required_concepts": [
+        "The optimality condition r=b-Ax_hat perpendicular to every column of A, equivalently A^T r=0."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using r=Ax-b in one step and b-Ax in another without tracking signs."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-cholesky-factorization-concept",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Cholesky factorization",
+      "prompt": "Define Cholesky factorization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The factorization A=LL^T with L lower triangular and positive diagonal for a real symmetric positive-definite matrix.",
+      "required_concepts": [
+        "The factorization A=LL^T with L lower triangular and positive diagonal for a real symmetric positive-definite matrix."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every invertible matrix has Cholesky form."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+        "linear-algebra-i.la1-m6-positive-definite-and-semidefinite"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-eigenvalue-criterion-for-symmetric-definiteness",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Eigenvalue criterion for symmetric definiteness",
+      "prompt": "Define Eigenvalue criterion for symmetric definiteness. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The equivalence for real symmetric A between all eigenvalues positive and positive definiteness, with nonnegative eigenvalues for semidefiniteness.",
+      "required_concepts": [
+        "The equivalence for real symmetric A between all eigenvalues positive and positive definiteness, with nonnegative eigenvalues for semidefiniteness."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying the criterion to a nonsymmetric matrix without examining its symmetric part."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+        "linear-algebra-i.la1-m6-positive-definite-and-semidefinite"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-full-rank-and-positive-definite-gram-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Full rank and positive-definite Gram matrix",
+      "prompt": "Define Full rank and positive-definite Gram matrix. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The equivalence A has full column rank exactly when A^TA is positive definite.",
+      "required_concepts": [
+        "The equivalence A has full column rank exactly when A^TA is positive definite."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a nonzero determinant of a rectangular A."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-nullity-and-rank-nullity",
+        "linear-algebra-i.la1-m6-gram-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-gram-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Gram matrix",
+      "prompt": "Define Gram matrix. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The symmetric positive-semidefinite matrix A^TA whose quadratic form is norm(Ax)^2 and whose nullspace equals Null(A).",
+      "required_concepts": [
+        "The symmetric positive-semidefinite matrix A^TA whose quadratic form is norm(Ax)^2 and whose nullspace equals Null(A)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming it is always positive definite even when A has dependent columns."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+        "linear-algebra-i.la1-m6-positive-definite-and-semidefinite"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-orthogonal-diagonalization-reconstruction",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonal diagonalization reconstruction",
+      "prompt": "Define Orthogonal diagonalization reconstruction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The verification Q^TQ=I and A=Q Lambda Q^T with column/eigenvalue order aligned.",
+      "required_concepts": [
+        "The verification Q^TQ=I and A=Q Lambda Q^T with column/eigenvalue order aligned."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking eigenvalues only and ignoring an incorrectly normalized Q."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-thin-qr-factorization",
+        "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-orthogonality-of-distinct-eigenspaces",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Orthogonality of distinct eigenspaces",
+      "prompt": "Define Orthogonality of distinct eigenspaces. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The consequence that eigenvectors of a symmetric matrix for distinct eigenvalues are perpendicular.",
+      "required_concepts": [
+        "The consequence that eigenvectors of a symmetric matrix for distinct eigenvalues are perpendicular."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming repeated-eigenvalue basis vectors emerge orthogonal without orthonormalizing within the eigenspace."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets",
+        "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-positive-definite-and-semidefinite",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Positive definite and semidefinite",
+      "prompt": "Define Positive definite and semidefinite. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The classifications x^TAx>0 for every nonzero x or x^TAx>=0 for every x, with negative and indefinite analogues.",
+      "required_concepts": [
+        "The classifications x^TAx>0 for every nonzero x or x^TAx>=0 for every x, with negative and indefinite analogues."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Testing only standard basis vectors and concluding positive definite."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-quadratic-form"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-positive-definite-inner-product",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Positive-definite inner product",
+      "prompt": "Define Positive-definite inner product. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The weighted inner product <x,y>_A=x^TAy defined by a real symmetric positive-definite A.",
+      "required_concepts": [
+        "The weighted inner product <x,y>_A=x^TAy defined by a real symmetric positive-definite A."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a semidefinite A and calling the resulting zero directions a norm."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-real-inner-product",
+        "linear-algebra-i.la1-m6-positive-definite-and-semidefinite"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-positive-definiteness-hypothesis-boundary",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "positive-definiteness hypothesis boundary",
+      "prompt": "Define positive-definiteness hypothesis boundary.",
+      "definition": "**Definition.** The hypothesis-first rejection of diagonal-sign determinant or eigenvalue shortcuts when symmetry square shape or field assumptions fail.",
+      "required_concepts": [
+        "The hypothesis-first rejection of diagonal-sign determinant or eigenvalue shortcuts when symmetry square shape or field assumptions fail."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying Sylvester's criterion directly to the nonsymmetric displayed matrix."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-symmetric-part-of-a-quadratic-form",
+        "linear-algebra-i.la1-m6-principal-minor-criterion-boundary"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-principal-minor-criterion-boundary",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Principal-minor criterion boundary",
+      "prompt": "Define Principal-minor criterion boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Sylvester's criterion that a real symmetric matrix is positive definite exactly when its leading principal minors are positive.",
+      "required_concepts": [
+        "Sylvester's criterion that a real symmetric matrix is positive definite exactly when its leading principal minors are positive."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using positive diagonal entries alone or applying the leading-minor test to nonsymmetric A."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+        "linear-algebra-i.la1-m6-symmetric-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-quadratic-form",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Quadratic form",
+      "prompt": "Define Quadratic form. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The scalar x^T A x whose value depends only on the symmetric part (A+A^T)/2.",
+      "required_concepts": [
+        "The scalar x^T A x whose value depends only on the symmetric part (A+A^T)/2."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating x^TAx as a vector or omitting cross-term doubling."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-matrix-vector-multiplication"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-rayleigh-quotient",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Rayleigh quotient",
+      "prompt": "Define Rayleigh quotient. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The scale-invariant scalar R_A(x)=x^TAx/(x^Tx) for nonzero x, bounded by extreme eigenvalues when A is symmetric.",
+      "required_concepts": [
+        "The scale-invariant scalar R_A(x)=x^TAx/(x^Tx) for nonzero x, bounded by extreme eigenvalues when A is symmetric."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Evaluating at x=0 or claiming the quotient is always an eigenvalue."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-induced-norm",
+        "linear-algebra-i.la1-m6-quadratic-form"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem-role",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Real symmetric spectral theorem: role",
+      "prompt": "What is Real symmetric spectral theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It turns a real symmetric matrix into orthogonal eigen-coordinates, enabling transparent powers, quadratic forms, projections, and principal directions; the orthonormal diagonalization conclusion does not extend to arbitrary real matrices.",
+      "required_concepts": [
+        "It turns a real symmetric matrix into orthogonal eigen-coordinates, enabling transparent powers, quadratic forms, projections, and principal directions",
+        "the orthonormal diagonalization conclusion does not extend to arbitrary real matrices."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every real matrix has an orthonormal eigenbasis."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Real symmetric spectral theorem",
+      "prompt": "State Real symmetric spectral theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** The theorem that a real symmetric matrix has real eigenvalues and an orthonormal eigenbasis, hence A=Q Lambda Q^T.",
+      "required_concepts": [
+        "The matrix A is real and symmetric, so A=A^T.",
+        "Every eigenvalue of A is real.",
+        "R^n has an orthonormal basis of eigenvectors of A.",
+        "Equivalently, A=Q Lambda Q^T for an orthogonal Q and a real diagonal Lambda."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every real matrix has an orthonormal eigenbasis."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m3-diagonalization-criterion",
+        "linear-algebra-i.la1-m6-symmetric-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-spectral-bounds-for-quadratic-forms",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Spectral bounds for quadratic forms",
+      "prompt": "Define Spectral bounds for quadratic forms. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The inequality lambda_min norm(x)^2<=x^TAx<=lambda_max norm(x)^2 for real symmetric A.",
+      "required_concepts": [
+        "The inequality lambda_min norm(x)^2<=x^TAx<=lambda_max norm(x)^2 for real symmetric A."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using algebraically smallest versus largest eigenvalues without symmetry or real ordering."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+        "linear-algebra-i.la1-m6-rayleigh-quotient"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-symmetric-matrix",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Symmetric matrix",
+      "prompt": "Define Symmetric matrix. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A real square matrix satisfying A^T=A, with orthogonal eigenspaces for distinct eigenvalues.",
+      "required_concepts": [
+        "A real square matrix satisfying A^T=A, with orthogonal eigenspaces for distinct eigenvalues."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only equal diagonal entries."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m6-symmetric-part-of-a-quadratic-form",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Symmetric part of a quadratic form",
+      "prompt": "Define Symmetric part of a quadratic form. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The identity x^T A x=x^T[(A+A^T)/2]x showing skew-symmetric components contribute zero.",
+      "required_concepts": [
+        "The identity x^T A x=x^T[(A+A^T)/2]x showing skew-symmetric components contribute zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling A symmetric because its quadratic form can be represented symmetrically."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-quadratic-form"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-eckart-young-error-claim",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Eckart-Young error claim",
+      "prompt": "Define Eckart-Young error claim. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The theorem that truncated SVD is a best rank-k approximation in spectral and Frobenius norms with errors sigma_(k+1) and sqrt(sum_{i>k}sigma_i^2) respectively.",
+      "required_concepts": [
+        "The theorem that truncated SVD is a best rank-k approximation in spectral and Frobenius norms with errors sigma_(k+1) and sqrt(sum_{i>k}sigma_i^2) respectively."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Stating entrywise maximum or application-loss optimality without a theorem."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-truncated-svd"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-full-thin-and-compact-svd-shapes",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Full thin and compact SVD shapes",
+      "prompt": "For an m×n matrix of rank r, give the full, economy/thin, and rank-compact SVD dimensions under explicitly stated conventions.",
+      "definition": "For A of size m×n and rank r, write A=U Sigma V*. A full SVD has U m×m, Sigma m×n, and V n×n. With q=min(m,n), an economy/thin SVD has U m×q, Sigma q×q, and V n×q, retaining zero singular values if r<q. A rank-compact SVD uses only positive singular values: U_r m×r, Sigma_r r×r, V_r n×r. In every case the dimensions multiply to m×n and the selected singular-vector columns are orthonormal. Terminology varies, so explicit shapes control the convention.",
+      "required_concepts": [
+        "Full SVD shapes are m×m, m×n, n×n.",
+        "Economy shapes use q=min(m,n), while rank-compact shapes use r.",
+        "Dimensions are stated for V, with V* used in the product; selected columns are orthonormal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "For a rank-2 matrix of shape 5×3, the rank-compact SVD must retain three singular values and use a 5×5 U."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-left-singular-vectors"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-geometric-action-of-svd",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Geometric action of SVD",
+      "prompt": "Define Geometric action of SVD. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The composition of input rotation or reflection V^T axis scaling Sigma and output rotation or embedding U.",
+      "required_concepts": [
+        "The composition of input rotation or reflection V^T axis scaling Sigma and output rotation or embedding U."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling singular values signed orientation changes."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+        "linear-algebra-i.la1-m7-svd-reconstruction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-left-singular-vectors",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Left singular vectors",
+      "prompt": "Define Left singular vectors. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** orthonormal output vectors u_i=A v_i/sigma_i for positive singular values, completed as required by the chosen SVD convention.",
+      "required_concepts": [
+        "orthonormal output vectors u_i=A v_i/sigma_i for positive singular values, completed as required by the chosen SVD convention."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dividing by a zero singular value to construct a left vector."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-right-singular-vectors"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-low-rank-compression-accounting",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Low-rank compression accounting",
+      "prompt": "Define Low-rank compression accounting. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The comparison of mn original entries with approximately k(m+n+1) singular-factor scalars, qualified by storage format and error.",
+      "required_concepts": [
+        "The comparison of mn original entries with approximately k(m+n+1) singular-factor scalars, qualified by storage format and error."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming compression whenever k is below rank without counting factor storage."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-eckart-young-error-claim"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-moore-penrose-equations",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Moore-Penrose equations",
+      "prompt": "State the four Moore-Penrose equations for a real matrix using transpose.",
+      "definition": "**Definition.** For a real matrix A, A^+ is characterized by AA^+A=A, A^+AA^+=A^+, (AA^+)^T=AA^+, and (A^+A)^T=A^+A.\n\n**Interpretation boundary.** This is the canonical real-matrix form; Linear Algebra II specializes it to linear maps and conjugate adjoints.",
+      "required_concepts": [
+        "AA^+A=A and A^+AA^+=A^+.",
+        "AA^+ and A^+A are symmetric in the real-matrix form."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only matching dimensions and calling the pseudoinverse verified."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m4-orthogonal-projection-matrix-characterization",
+        "linear-algebra-i.la1-m7-pseudoinverse-from-svd"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-numerical-rank-threshold",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Numerical rank threshold",
+      "prompt": "Define Numerical rank threshold. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The boundary that exact zero versus numerically small singular values requires scale tolerance conditioning and algorithmic error analysis outside this course.",
+      "required_concepts": [
+        "The boundary that exact zero versus numerically small singular values requires scale tolerance conditioning and algorithmic error analysis outside this course."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating machine output exactly equal to symbolic rank evidence."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m0-exact-factorization-verification-versus-numerical-stability",
+        "linear-algebra-i.la1-m7-pseudoinverse-from-svd"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-pseudoinverse-exact-solve-case",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Pseudoinverse exact-solve case",
+      "prompt": "Define Pseudoinverse exact-solve case. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** when b lies in Col(A), A^+b gives the minimum-norm exact solution among all Ax=b solutions.",
+      "required_concepts": [
+        "when b lies in Col(A), A^+b gives the minimum-norm exact solution among all Ax=b solutions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling it the unique exact solution despite a nontrivial nullspace."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-consistency-from-column-space",
+        "linear-algebra-i.la1-m7-pseudoinverse-from-svd"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-pseudoinverse-from-svd",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Pseudoinverse from SVD",
+      "prompt": "Define Pseudoinverse from SVD. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The matrix A^+=V Sigma^+ U^T formed by reciprocating positive singular values and leaving zero directions zero.",
+      "required_concepts": [
+        "The matrix A^+=V Sigma^+ U^T formed by reciprocating positive singular values and leaving zero directions zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Taking reciprocal of zero or transposing factors in the wrong order."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-svd-reconstruction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-pseudoinverse-inconsistent-case",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Pseudoinverse inconsistent case",
+      "prompt": "Define Pseudoinverse inconsistent case. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** when b is outside Col(A), A^+b gives the minimum-norm least-squares coefficient and AA^+b is the projected fitted vector.",
+      "required_concepts": [
+        "when b is outside Col(A), A^+b gives the minimum-norm least-squares coefficient and AA^+b is the projected fitted vector."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling A A^+ b equal to b despite inconsistency."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m5-minimum-norm-least-squares-solution",
+        "linear-algebra-i.la1-m7-pseudoinverse-exact-solve-case"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-rank-one-outer-product-expansion",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Rank-one outer-product expansion",
+      "prompt": "Define Rank-one outer-product expansion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The SVD sum A=sum_i sigma_i u_i v_i^T over positive singular values, exposing orthogonal rank-one components.",
+      "required_concepts": [
+        "The SVD sum A=sum_i sigma_i u_i v_i^T over positive singular values, exposing orthogonal rank-one components."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing u_i^T v_i, which is dimensionally invalid for rectangular matrices."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-svd-reconstruction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-right-singular-vectors",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Right singular vectors",
+      "prompt": "Define Right singular vectors. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** orthonormal eigenvectors v_i of A^TA satisfying A v_i=sigma_i u_i for positive singular values.",
+      "required_concepts": [
+        "orthonormal eigenvectors v_i of A^TA satisfying A v_i=sigma_i u_i for positive singular values."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using eigenvectors of AA^T as right singular vectors."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+        "linear-algebra-i.la1-m7-singular-values"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-singular-values",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Singular values",
+      "prompt": "Define Singular values. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The nonnegative square roots of eigenvalues of A^TA ordered decreasingly with count and zeros governed by dimensions and rank.",
+      "required_concepts": [
+        "The nonnegative square roots of eigenvalues of A^TA ordered decreasingly with count and zeros governed by dimensions and rank."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting signed eigenvalues of A as singular values."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m6-gram-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-svd-four-subspace-bases",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "SVD four-subspace bases",
+      "prompt": "Define SVD four-subspace bases. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The right singular-vector split into row space and nullspace and left singular-vector split into column space and left nullspace.",
+      "required_concepts": [
+        "The right singular-vector split into row space and nullspace and left singular-vector split into column space and left nullspace."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using right singular vectors as output-space column vectors."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-fundamental-orthogonal-complements",
+        "linear-algebra-i.la1-m7-svd-rank-and-nullspaces"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-svd-rank-and-nullspaces",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "SVD rank and nullspaces",
+      "prompt": "Define SVD rank and nullspaces. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The number of positive singular values equal to rank, with the remaining vectors in a complete right singular basis spanning Null(A) and the remaining vectors in a complete left singular basis spanning Null(A^T).",
+      "required_concepts": [
+        "The number of positive singular values equals rank(A).",
+        "The remaining vectors in complete right and left singular bases span Null(A) and Null(A^T), respectively."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Pairing every left-null direction with a right-null direction or equating nullities for a rectangular matrix."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula",
+        "linear-algebra-i.la1-m7-svd-reconstruction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-svd-reconstruction",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "SVD reconstruction",
+      "prompt": "Define SVD reconstruction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The factorization A=U Sigma V^T with orthonormal columns and matched singular triplets under the specified convention.",
+      "required_concepts": [
+        "The factorization A=U Sigma V^T with orthonormal columns and matched singular triplets under the specified convention."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only the singular values and ignoring wrong vector signs or ordering that break reconstruction."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-full-thin-and-compact-svd-shapes"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-svd-versus-pca-interpretation",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "SVD versus PCA interpretation",
+      "prompt": "Define SVD versus PCA interpretation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Ordinary PCA is a deterministic SVD of centered data, or an equivalent eigendecomposition of its covariance matrix; only population, latent-factor, causal, or semantic interpretations require additional statistical or domain assumptions.",
+      "required_concepts": [
+        "Ordinary PCA is the deterministic SVD of centered data, equivalently an eigendecomposition of its covariance matrix.",
+        "Population, latent-factor, causal, or semantic interpretations require assumptions beyond that matrix construction."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any right singular vector a causal or semantic latent factor."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-truncated-svd"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "linear-algebra-i.la1-m7-truncated-svd",
+      "canonical_deck_id": "linear-algebra-i",
+      "term": "Truncated SVD",
+      "prompt": "Define Truncated SVD. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rank-k approximation A_k retaining the k largest singular triplets under a declared k and ordering.",
+      "required_concepts": [
+        "The rank-k approximation A_k retaining the k largest singular triplets under a declared k and ordering."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Keeping the smallest singular value while labeling it best rank one."
+      ],
+      "prerequisite_ids": [
+        "linear-algebra-i.la1-m7-rank-one-outer-product-expansion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "linear-algebra-i",
+        "la1-m7",
+        "shape:definition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices",
+      "dependent_card_id": "linear-algebra-i.la1-m0-column-picture-of-ax-b"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices",
+      "dependent_card_id": "linear-algebra-i.la1-m0-elementary-row-operations"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-coefficient-and-augmented-matrices",
+      "dependent_card_id": "linear-algebra-i.la1-m0-row-picture-of-a-system"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+      "dependent_card_id": "linear-algebra-i.la1-m0-matrix-vector-multiplication"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+      "dependent_card_id": "linear-algebra-i.la1-m0-row-equivalence-versus-column-space-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-column-picture-of-ax-b",
+      "dependent_card_id": "linear-algebra-i.la1-m1-span-membership-by-a-system"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-consistency-contradiction-row",
+      "dependent_card_id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-echelon-and-reduced-echelon-forms",
+      "dependent_card_id": "linear-algebra-i.la1-m0-pivot-and-free-variables"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-echelon-and-reduced-echelon-forms",
+      "dependent_card_id": "linear-algebra-i.la1-m2-row-space"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-elementary-row-operations",
+      "dependent_card_id": "linear-algebra-i.la1-m0-echelon-and-reduced-echelon-forms"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-elementary-row-operations",
+      "dependent_card_id": "linear-algebra-i.la1-m0-lu-and-plu-factorization"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-elementary-row-operations",
+      "dependent_card_id": "linear-algebra-i.la1-m0-row-equivalence-versus-column-space-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-elementary-row-operations",
+      "dependent_card_id": "linear-algebra-i.la1-m3-determinant-row-operation-effects"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-exact-factorization-verification-versus-numerical-stability",
+      "dependent_card_id": "linear-algebra-i.la1-m7-numerical-rank-threshold"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-homogeneous-systems",
+      "dependent_card_id": "linear-algebra-i.la1-m1-linear-independence"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-homogeneous-systems",
+      "dependent_card_id": "linear-algebra-i.la1-m2-nullspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+      "dependent_card_id": "linear-algebra-i.la1-m0-elimination-solve-versus-explicit-inverse"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+      "dependent_card_id": "linear-algebra-i.la1-m2-change-of-basis-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+      "dependent_card_id": "linear-algebra-i.la1-m3-determinant-and-invertibility"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility",
+      "dependent_card_id": "linear-algebra-i.la1-m3-diagonalization-reconstruction"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+      "dependent_card_id": "linear-algebra-i.la1-m0-exact-factorization-verification-versus-numerical-stability"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+      "dependent_card_id": "linear-algebra-i.la1-m0-triangular-solves-and-factorization-reuse"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+      "dependent_card_id": "linear-algebra-i.la1-m4-thin-qr-factorization"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-lu-and-plu-factorization",
+      "dependent_card_id": "linear-algebra-i.la1-m6-cholesky-factorization-concept"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m0-identity-inverse-and-invertibility"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m0-lu-and-plu-factorization"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m2-composition-and-product-order"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m3-determinant-multiplicativity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m5-normal-equations"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m6-gram-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-shape-and-equality",
+      "dependent_card_id": "linear-algebra-i.la1-m0-matrix-addition-and-scalar-multiplication"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-shape-and-equality",
+      "dependent_card_id": "linear-algebra-i.la1-m0-matrix-vector-multiplication"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-vector-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m0-matrix-matrix-multiplication"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-vector-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-matrix-vector-multiplication",
+      "dependent_card_id": "linear-algebra-i.la1-m6-quadratic-form"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-parametric-solution-set",
+      "dependent_card_id": "linear-algebra-i.la1-m0-homogeneous-systems"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-parametric-solution-set",
+      "dependent_card_id": "linear-algebra-i.la1-m1-affine-set-versus-linear-subspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-pivot-and-free-variables",
+      "dependent_card_id": "linear-algebra-i.la1-m0-consistency-contradiction-row"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-pivot-and-free-variables",
+      "dependent_card_id": "linear-algebra-i.la1-m0-parametric-solution-set"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m0-row-equivalence-versus-column-space-diagnostic",
+      "dependent_card_id": "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m1-polynomial-and-matrix-vector-spaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns",
+      "dependent_card_id": "linear-algebra-i.la1-m1-dimension"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-basis-extraction-from-pivot-columns",
+      "dependent_card_id": "linear-algebra-i.la1-m2-column-space"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m1-standard-coordinates-versus-abstract-vectors"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m2-change-of-basis-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-dimension",
+      "dependent_card_id": "linear-algebra-i.la1-m1-dimension-of-subspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-dimension",
+      "dependent_card_id": "linear-algebra-i.la1-m1-sum-and-intersection-of-subspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-dimension",
+      "dependent_card_id": "linear-algebra-i.la1-m2-isomorphism-and-dimension"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-combination-and-span",
+      "dependent_card_id": "linear-algebra-i.la1-m1-linear-independence"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-combination-and-span",
+      "dependent_card_id": "linear-algebra-i.la1-m1-span-membership-by-a-system"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-combination-and-span",
+      "dependent_card_id": "linear-algebra-i.la1-m1-spanning-sets-and-redundancy"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-combination-and-span",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-complement"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-independence",
+      "dependent_card_id": "linear-algebra-i.la1-m1-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-independence",
+      "dependent_card_id": "linear-algebra-i.la1-m1-dependence-relation-and-redundant-generator"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-independence",
+      "dependent_card_id": "linear-algebra-i.la1-m3-distinct-eigenvalues-and-independence"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-independence",
+      "dependent_card_id": "linear-algebra-i.la1-m4-cauchy-schwarz-and-triangle-inequalities"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-linear-independence",
+      "dependent_card_id": "linear-algebra-i.la1-m4-gram-schmidt-process"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-span-membership-by-a-system",
+      "dependent_card_id": "linear-algebra-i.la1-m1-coordinates-relative-to-a-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-spanning-sets-and-redundancy",
+      "dependent_card_id": "linear-algebra-i.la1-m1-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-standard-coordinates-versus-abstract-vectors",
+      "dependent_card_id": "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-subspace-test",
+      "dependent_card_id": "linear-algebra-i.la1-m1-affine-set-versus-linear-subspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-subspace-test",
+      "dependent_card_id": "linear-algebra-i.la1-m1-non-subspace-counterexamples"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-subspace-test",
+      "dependent_card_id": "linear-algebra-i.la1-m1-sum-and-intersection-of-subspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-sum-and-intersection-of-subspaces",
+      "dependent_card_id": "linear-algebra-i.la1-m1-direct-sum-recognition"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m1-vector-space-axioms-at-first-course-depth",
+      "dependent_card_id": "linear-algebra-i.la1-m1-polynomial-and-matrix-vector-spaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-change-of-basis-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m2-matrix-representation-in-arbitrary-bases"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-column-space",
+      "dependent_card_id": "linear-algebra-i.la1-m2-kernel-and-image-of-a-map"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-column-space",
+      "dependent_card_id": "linear-algebra-i.la1-m2-left-nullspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-column-space",
+      "dependent_card_id": "linear-algebra-i.la1-m2-rank"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-consistency-from-column-space",
+      "dependent_card_id": "linear-algebra-i.la1-m5-inconsistent-systems-and-approximation"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-consistency-from-column-space",
+      "dependent_card_id": "linear-algebra-i.la1-m7-pseudoinverse-exact-solve-case"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula",
+      "dependent_card_id": "linear-algebra-i.la1-m2-fundamental-orthogonal-complements"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula",
+      "dependent_card_id": "linear-algebra-i.la1-m7-svd-rank-and-nullspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-fundamental-orthogonal-complements",
+      "dependent_card_id": "linear-algebra-i.la1-m7-svd-four-subspace-bases"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-injective-and-surjective-linear-maps",
+      "dependent_card_id": "linear-algebra-i.la1-m2-isomorphism-and-dimension"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-kernel-and-image-of-a-map",
+      "dependent_card_id": "linear-algebra-i.la1-m2-injective-and-surjective-linear-maps"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-left-nullspace",
+      "dependent_card_id": "linear-algebra-i.la1-m2-consistency-from-column-space"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-left-nullspace",
+      "dependent_card_id": "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-linear-transformation",
+      "dependent_card_id": "linear-algebra-i.la1-m2-kernel-and-image-of-a-map"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-linear-transformation",
+      "dependent_card_id": "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-matrix-representation-in-arbitrary-bases",
+      "dependent_card_id": "linear-algebra-i.la1-m2-similarity-as-same-operator-in-new-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-nullity-and-rank-nullity",
+      "dependent_card_id": "linear-algebra-i.la1-m2-four-fundamental-subspaces-dimension-formula"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-nullity-and-rank-nullity",
+      "dependent_card_id": "linear-algebra-i.la1-m6-full-rank-and-positive-definite-gram-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-nullspace",
+      "dependent_card_id": "linear-algebra-i.la1-m2-kernel-and-image-of-a-map"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-nullspace",
+      "dependent_card_id": "linear-algebra-i.la1-m2-left-nullspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-nullspace",
+      "dependent_card_id": "linear-algebra-i.la1-m2-nullity-and-rank-nullity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-nullspace",
+      "dependent_card_id": "linear-algebra-i.la1-m3-eigenspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-rank",
+      "dependent_card_id": "linear-algebra-i.la1-m2-injective-and-surjective-linear-maps"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-rank",
+      "dependent_card_id": "linear-algebra-i.la1-m2-nullity-and-rank-nullity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-rank",
+      "dependent_card_id": "linear-algebra-i.la1-m4-general-full-column-rank-projection-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-rank",
+      "dependent_card_id": "linear-algebra-i.la1-m5-full-column-rank-uniqueness"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-row-space",
+      "dependent_card_id": "linear-algebra-i.la1-m2-rank"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation",
+      "dependent_card_id": "linear-algebra-i.la1-m2-composition-and-product-order"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m2-standard-matrix-of-a-transformation",
+      "dependent_card_id": "linear-algebra-i.la1-m2-matrix-representation-in-arbitrary-bases"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-algebraic-and-geometric-multiplicity",
+      "dependent_card_id": "linear-algebra-i.la1-m3-diagonalization-criterion"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-characteristic-polynomial",
+      "dependent_card_id": "linear-algebra-i.la1-m3-complex-eigenvalue-boundary"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+      "dependent_card_id": "linear-algebra-i.la1-m3-characteristic-polynomial"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+      "dependent_card_id": "linear-algebra-i.la1-m3-determinant-multiplicativity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+      "dependent_card_id": "linear-algebra-i.la1-m3-determinant-row-operation-effects"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-determinant-in-two-and-three-dimensions",
+      "dependent_card_id": "linear-algebra-i.la1-m6-principal-minor-criterion-boundary"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-determinant-row-operation-effects",
+      "dependent_card_id": "linear-algebra-i.la1-m3-determinant-and-invertibility"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-diagonalization-criterion",
+      "dependent_card_id": "linear-algebra-i.la1-m3-defective-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-diagonalization-criterion",
+      "dependent_card_id": "linear-algebra-i.la1-m3-diagonalization-reconstruction"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-diagonalization-criterion",
+      "dependent_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-diagonalization-reconstruction",
+      "dependent_card_id": "linear-algebra-i.la1-m3-powers-through-diagonalization"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-discrete-linear-dynamics",
+      "dependent_card_id": "linear-algebra-i.la1-m3-eigenvalue-stability-heuristic-and-qualification"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-discrete-linear-dynamics",
+      "dependent_card_id": "linear-algebra-i.la1-m3-markov-matrix-convention"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-distinct-eigenvalues-and-independence",
+      "dependent_card_id": "linear-algebra-i.la1-m3-diagonalization-criterion"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-eigenspace",
+      "dependent_card_id": "linear-algebra-i.la1-m3-algebraic-and-geometric-multiplicity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector",
+      "dependent_card_id": "linear-algebra-i.la1-m3-characteristic-polynomial"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector",
+      "dependent_card_id": "linear-algebra-i.la1-m3-distinct-eigenvalues-and-independence"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-eigenvalue-and-eigenvector",
+      "dependent_card_id": "linear-algebra-i.la1-m3-eigenspace"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-markov-matrix-convention",
+      "dependent_card_id": "linear-algebra-i.la1-m3-stationary-state-and-convergence-caveat"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m3-powers-through-diagonalization",
+      "dependent_card_id": "linear-algebra-i.la1-m3-discrete-linear-dynamics"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-distance-and-angle",
+      "dependent_card_id": "linear-algebra-i.la1-m4-cauchy-schwarz-and-triangle-inequalities"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-euclidean-dot-product",
+      "dependent_card_id": "linear-algebra-i.la1-m4-distance-and-angle"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-euclidean-dot-product",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-general-full-column-rank-projection-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m5-geometric-leverage-versus-inferential-interpretation"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-gram-schmidt-process",
+      "dependent_card_id": "linear-algebra-i.la1-m4-dependent-input-gram-schmidt-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-gram-schmidt-process",
+      "dependent_card_id": "linear-algebra-i.la1-m4-thin-qr-factorization"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-induced-norm",
+      "dependent_card_id": "linear-algebra-i.la1-m4-distance-and-angle"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-induced-norm",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthonormal-sets-and-bases"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-induced-norm",
+      "dependent_card_id": "linear-algebra-i.la1-m5-least-squares-objective"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-induced-norm",
+      "dependent_card_id": "linear-algebra-i.la1-m6-rayleigh-quotient"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-complement",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-coordinate-energy-identity",
+      "dependent_card_id": "linear-algebra-i.la1-m5-residual-norm-and-fitted-norm-decomposition"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-coordinate-energy-identity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-decomposition-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m4-projection-onto-one-vector"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-projection-matrix-characterization",
+      "dependent_card_id": "linear-algebra-i.la1-m7-moore-penrose-equations"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-complement"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthonormal-sets-and-bases"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthogonal-vectors-and-sets",
+      "dependent_card_id": "linear-algebra-i.la1-m6-orthogonality-of-distinct-eigenspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-coordinate-energy-identity"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+      "dependent_card_id": "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-orthonormal-sets-and-bases",
+      "dependent_card_id": "linear-algebra-i.la1-m7-geometric-action-of-svd"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns",
+      "dependent_card_id": "linear-algebra-i.la1-m4-general-full-column-rank-projection-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns",
+      "dependent_card_id": "linear-algebra-i.la1-m4-orthogonal-projection-matrix-characterization"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m4-projection-matrix-for-orthonormal-columns"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis",
+      "dependent_card_id": "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-projection-onto-one-vector",
+      "dependent_card_id": "linear-algebra-i.la1-m4-gram-schmidt-process"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-projection-onto-one-vector",
+      "dependent_card_id": "linear-algebra-i.la1-m4-projection-onto-an-orthonormal-basis"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-real-inner-product",
+      "dependent_card_id": "linear-algebra-i.la1-m4-euclidean-dot-product"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-real-inner-product",
+      "dependent_card_id": "linear-algebra-i.la1-m4-induced-norm"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-real-inner-product",
+      "dependent_card_id": "linear-algebra-i.la1-m6-positive-definite-inner-product"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-thin-qr-factorization",
+      "dependent_card_id": "linear-algebra-i.la1-m5-qr-least-squares-solve"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m4-thin-qr-factorization",
+      "dependent_card_id": "linear-algebra-i.la1-m6-orthogonal-diagonalization-reconstruction"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-full-column-rank-uniqueness",
+      "dependent_card_id": "linear-algebra-i.la1-m5-least-squares-existence-and-uniqueness-decision"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-full-column-rank-uniqueness",
+      "dependent_card_id": "linear-algebra-i.la1-m5-qr-least-squares-solve"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-inconsistent-systems-and-approximation",
+      "dependent_card_id": "linear-algebra-i.la1-m5-least-squares-objective"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-least-squares-objective",
+      "dependent_card_id": "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-minimum-norm-least-squares-solution",
+      "dependent_card_id": "linear-algebra-i.la1-m7-pseudoinverse-inconsistent-case"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-normal-equations",
+      "dependent_card_id": "linear-algebra-i.la1-m5-full-column-rank-uniqueness"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-one-parameter-line-fit-design-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m5-mean-as-a-projection"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values",
+      "dependent_card_id": "linear-algebra-i.la1-m5-geometric-leverage-versus-inferential-interpretation"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values",
+      "dependent_card_id": "linear-algebra-i.la1-m5-rank-deficient-least-squares-family"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-projection-interpretation-of-fitted-values",
+      "dependent_card_id": "linear-algebra-i.la1-m5-residual-orthogonality"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-qr-least-squares-solve",
+      "dependent_card_id": "linear-algebra-i.la1-m5-normal-equations-versus-qr-boundary"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-rank-deficient-least-squares-family",
+      "dependent_card_id": "linear-algebra-i.la1-m5-least-squares-existence-and-uniqueness-decision"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-rank-deficient-least-squares-family",
+      "dependent_card_id": "linear-algebra-i.la1-m5-minimum-norm-least-squares-solution"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-residual-orthogonality",
+      "dependent_card_id": "linear-algebra-i.la1-m5-mean-as-a-projection"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-residual-orthogonality",
+      "dependent_card_id": "linear-algebra-i.la1-m5-normal-equations"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m5-residual-orthogonality",
+      "dependent_card_id": "linear-algebra-i.la1-m5-residual-norm-and-fitted-norm-decomposition"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-gram-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m6-full-rank-and-positive-definite-gram-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-gram-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m7-singular-values"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-positive-definite-and-semidefinite",
+      "dependent_card_id": "linear-algebra-i.la1-m6-cholesky-factorization-concept"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-positive-definite-and-semidefinite",
+      "dependent_card_id": "linear-algebra-i.la1-m6-eigenvalue-criterion-for-symmetric-definiteness"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-positive-definite-and-semidefinite",
+      "dependent_card_id": "linear-algebra-i.la1-m6-gram-matrix"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-positive-definite-and-semidefinite",
+      "dependent_card_id": "linear-algebra-i.la1-m6-positive-definite-inner-product"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-principal-minor-criterion-boundary",
+      "dependent_card_id": "linear-algebra-i.la1-m6-positive-definiteness-hypothesis-boundary"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-quadratic-form",
+      "dependent_card_id": "linear-algebra-i.la1-m6-positive-definite-and-semidefinite"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-quadratic-form",
+      "dependent_card_id": "linear-algebra-i.la1-m6-rayleigh-quotient"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-quadratic-form",
+      "dependent_card_id": "linear-algebra-i.la1-m6-symmetric-part-of-a-quadratic-form"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-rayleigh-quotient",
+      "dependent_card_id": "linear-algebra-i.la1-m6-spectral-bounds-for-quadratic-forms"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m6-eigenvalue-criterion-for-symmetric-definiteness"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m6-orthogonal-diagonalization-reconstruction"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m6-orthogonality-of-distinct-eigenspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem-role"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m6-spectral-bounds-for-quadratic-forms"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem",
+      "dependent_card_id": "linear-algebra-i.la1-m7-right-singular-vectors"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-symmetric-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m6-principal-minor-criterion-boundary"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-symmetric-matrix",
+      "dependent_card_id": "linear-algebra-i.la1-m6-real-symmetric-spectral-theorem"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m6-symmetric-part-of-a-quadratic-form",
+      "dependent_card_id": "linear-algebra-i.la1-m6-positive-definiteness-hypothesis-boundary"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-eckart-young-error-claim",
+      "dependent_card_id": "linear-algebra-i.la1-m7-low-rank-compression-accounting"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-full-thin-and-compact-svd-shapes",
+      "dependent_card_id": "linear-algebra-i.la1-m7-svd-reconstruction"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-left-singular-vectors",
+      "dependent_card_id": "linear-algebra-i.la1-m7-full-thin-and-compact-svd-shapes"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-pseudoinverse-exact-solve-case",
+      "dependent_card_id": "linear-algebra-i.la1-m7-pseudoinverse-inconsistent-case"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-pseudoinverse-from-svd",
+      "dependent_card_id": "linear-algebra-i.la1-m7-moore-penrose-equations"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-pseudoinverse-from-svd",
+      "dependent_card_id": "linear-algebra-i.la1-m7-numerical-rank-threshold"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-pseudoinverse-from-svd",
+      "dependent_card_id": "linear-algebra-i.la1-m7-pseudoinverse-exact-solve-case"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-rank-one-outer-product-expansion",
+      "dependent_card_id": "linear-algebra-i.la1-m7-truncated-svd"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-right-singular-vectors",
+      "dependent_card_id": "linear-algebra-i.la1-m7-left-singular-vectors"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-singular-values",
+      "dependent_card_id": "linear-algebra-i.la1-m7-right-singular-vectors"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-svd-rank-and-nullspaces",
+      "dependent_card_id": "linear-algebra-i.la1-m7-svd-four-subspace-bases"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-svd-reconstruction",
+      "dependent_card_id": "linear-algebra-i.la1-m7-geometric-action-of-svd"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-svd-reconstruction",
+      "dependent_card_id": "linear-algebra-i.la1-m7-pseudoinverse-from-svd"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-svd-reconstruction",
+      "dependent_card_id": "linear-algebra-i.la1-m7-rank-one-outer-product-expansion"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-svd-reconstruction",
+      "dependent_card_id": "linear-algebra-i.la1-m7-svd-rank-and-nullspaces"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-truncated-svd",
+      "dependent_card_id": "linear-algebra-i.la1-m7-eckart-young-error-claim"
+    },
+    {
+      "prerequisite_card_id": "linear-algebra-i.la1-m7-truncated-svd",
+      "dependent_card_id": "linear-algebra-i.la1-m7-svd-versus-pca-interpretation"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Linear Algebra I.",
+  "level": "College",
+  "tags": [
+    "mathematics"
+  ]
+}

@@ -1,0 +1,2836 @@
+{
+  "id": "academic-reviewed-v1:physics-foundations",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Physics Foundations",
+  "subject": "Physics",
+  "domain": "Physics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4949",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Inertial Frame",
+      "prompt": "What is Inertial Frame? State its defining idea and essential conditions.",
+      "definition": "An inertial frame is a reference frame in which a free particle moves with constant velocity. Frames moving at constant velocity relative to an inertial frame are also inertial in Newtonian mechanics.",
+      "required_concepts": [
+        "Force-free motion has constant velocity.",
+        "Constant-velocity translations preserve inertial character."
+      ],
+      "accepted_variants": [
+        "A frame in which Newton's first law holds."
+      ],
+      "major_error_concepts": [
+        "Calling every stationary-looking laboratory frame exactly inertial regardless of acceleration."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Position Vector",
+      "prompt": "What is Position Vector? State its defining idea and essential conditions.",
+      "definition": "A position vector points from a chosen origin to a particle's location. Its components depend on the coordinate system and can vary with time.",
+      "required_concepts": [
+        "Vector from chosen origin to particle.",
+        "Coordinates depend on the reference choice."
+      ],
+      "accepted_variants": [
+        "The vector r specifying location relative to an origin."
+      ],
+      "major_error_concepts": [
+        "Treating position as independent of the chosen origin."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Displacement",
+      "prompt": "What is Displacement? State its defining idea and essential conditions.",
+      "definition": "Displacement is the change in position vector, delta r = r_final - r_initial. It depends only on the endpoints and differs from the scalar distance traveled along a path.",
+      "required_concepts": [
+        "Final minus initial position.",
+        "Displacement is a vector and need not equal path length."
+      ],
+      "accepted_variants": [
+        "Endpoint position change."
+      ],
+      "major_error_concepts": [
+        "Identifying displacement magnitude with total distance for every trajectory."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Velocity",
+      "prompt": "What is Velocity? State its defining idea and essential conditions.",
+      "definition": "Instantaneous velocity is the time derivative of position, v = dr/dt. It points tangent to the trajectory, and its magnitude is speed.",
+      "required_concepts": [
+        "Time derivative of position.",
+        "Speed is the magnitude of velocity."
+      ],
+      "accepted_variants": [
+        "Instantaneous vector rate of change of location."
+      ],
+      "major_error_concepts": [
+        "Treating speed and velocity as identical vector quantities."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4954",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Acceleration",
+      "prompt": "What is Acceleration? State its defining idea and essential conditions.",
+      "definition": "Acceleration is the time derivative of velocity, a = dv/dt. It can arise from a change in speed, direction, or both; constant speed does not imply zero acceleration.",
+      "required_concepts": [
+        "Derivative of velocity.",
+        "Directional change also produces acceleration."
+      ],
+      "accepted_variants": [
+        "Instantaneous vector rate of velocity change."
+      ],
+      "major_error_concepts": [
+        "Claiming uniform circular motion has zero acceleration because speed is constant."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4953"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Inertial Mass",
+      "prompt": "What is Inertial Mass? State its defining idea and essential conditions.",
+      "definition": "Inertial mass measures a body's resistance to acceleration under a given net force. In Newtonian mechanics with constant mass, a = F_net/m; mass is a scalar property distinct from weight.",
+      "required_concepts": [
+        "Mass sets response to net force.",
+        "Mass differs from gravitational force or weight."
+      ],
+      "accepted_variants": [
+        "The proportionality between net force and acceleration."
+      ],
+      "major_error_concepts": [
+        "Measuring mass in newtons or treating it as location-dependent weight."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4954"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4959",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Particle Approximation",
+      "prompt": "What is Particle Approximation? State its defining idea and essential conditions.",
+      "definition": "The particle approximation treats a body's mass as concentrated at one point when its size, shape, and rotation are irrelevant to the question. It does not claim the real body is physically dimensionless.",
+      "required_concepts": [
+        "Ignore size and orientation when they do not affect the modeled motion.",
+        "Approximation depends on the question and scale."
+      ],
+      "accepted_variants": [
+        "Point-mass model."
+      ],
+      "major_error_concepts": [
+        "Using a point-particle model to determine an extended body's rotational inertia."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958",
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4960",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Center of Mass",
+      "prompt": "What is Center of Mass? State its defining idea and essential conditions.",
+      "definition": "The center of mass is the mass-weighted mean position: R = sum(m_i r_i)/M, with an integral for continuous matter. It can lie outside the material of the object.",
+      "required_concepts": [
+        "Mass-weighted average position.",
+        "Need not coincide with a material point or geometric center."
+      ],
+      "accepted_variants": [
+        "The location R defined by the first spatial mass moment divided by total mass."
+      ],
+      "major_error_concepts": [
+        "Taking an unweighted position average when masses differ."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958",
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Internal Forces",
+      "prompt": "What is Internal Forces? State its defining idea and essential conditions.",
+      "definition": "Internal forces are interactions between constituents that both belong to the chosen system. Their classification depends on the system boundary; under Newtonian action-reaction assumptions their vector sum cancels in the system's linear-momentum balance.",
+      "required_concepts": [
+        "Both interacting bodies are inside the chosen system.",
+        "System choice determines whether a force is internal."
+      ],
+      "accepted_variants": [
+        "Forces exchanged among members of the system."
+      ],
+      "major_error_concepts": [
+        "Calling a force internal solely because it acts inside the geometric outline of one body."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4959"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "canonical_deck_id": "physics-foundations",
+      "term": "External Forces",
+      "prompt": "What is External Forces? State its defining idea and essential conditions.",
+      "definition": "External forces are forces exerted on a system by objects outside its chosen boundary. Their vector sum controls the total linear momentum change of that system under ordinary Newtonian assumptions.",
+      "required_concepts": [
+        "Source lies outside the chosen system.",
+        "Classification changes when the system boundary changes."
+      ],
+      "accepted_variants": [
+        "Forces applied by the environment to the selected system."
+      ],
+      "major_error_concepts": [
+        "Including both sides of an internal action-reaction pair in the external force total."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Net Force",
+      "prompt": "What is Net Force? State its defining idea and essential conditions.",
+      "definition": "Net force is the vector sum of all forces acting on the selected body or system. Component signs and directions matter; a nonzero collection of forces can have zero resultant.",
+      "required_concepts": [
+        "Vector sum of forces.",
+        "Nonzero individual forces may cancel."
+      ],
+      "accepted_variants": [
+        "Resultant force."
+      ],
+      "major_error_concepts": [
+        "Adding force magnitudes without their directions."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4965",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Weight",
+      "prompt": "What is Weight? State its defining idea and essential conditions.",
+      "definition": "Near Earth's surface, the gravitational force on a mass is approximately m g directed downward, with g treated as locally constant. Weight in this usage means gravitational force and is distinct from a scale's normal-force reading.",
+      "required_concepts": [
+        "Near-surface gravitational force is m g downward.",
+        "Distinguish gravity from apparent weight or support force."
+      ],
+      "accepted_variants": [
+        "Weight is the local gravitational force."
+      ],
+      "major_error_concepts": [
+        "Saying gravitational force vanishes whenever a falling object is weightless on a scale."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4966",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Normal Force",
+      "prompt": "What is Normal Force? State its defining idea and essential conditions.",
+      "definition": "A normal force is the contact force component perpendicular to a contacting surface. Its magnitude is determined by the constraints and dynamics, and need not equal the body's weight.",
+      "required_concepts": [
+        "Perpendicular contact-force component.",
+        "Magnitude follows from the situation, not an automatic equality to m g."
+      ],
+      "accepted_variants": [
+        "The surface-normal reaction."
+      ],
+      "major_error_concepts": [
+        "Assuming normal force equals weight on every incline or accelerating surface."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4967",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Tension",
+      "prompt": "What is Tension? State its defining idea and essential conditions.",
+      "definition": "Tension is a pulling force transmitted along a taut string, cable, or similar connector. An ideal massless string over ideal pulleys is modeled with uniform tension along a continuous segment; real connectors can violate that simplification.",
+      "required_concepts": [
+        "Pulling force along the connector.",
+        "Uniform tension requires appropriate idealizations."
+      ],
+      "accepted_variants": [
+        "Axial pulling force carried by a taut connector."
+      ],
+      "major_error_concepts": [
+        "Making a flexible ideal string push on an attached body."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4968-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Static Friction",
+      "prompt": "What is Static Friction? State its defining idea and essential conditions.",
+      "definition": "Static friction is the tangential contact force that prevents impending relative sliding. Its magnitude adjusts as needed up to a bound, usually modeled as |f_s| <= mu_s N, rather than always equaling that maximum.",
+      "required_concepts": [
+        "Opposes impending relative slip.",
+        "Magnitude is bounded, not always at the bound."
+      ],
+      "accepted_variants": [
+        "Adaptive no-slip contact friction."
+      ],
+      "major_error_concepts": [
+        "Setting static friction equal to mu_s N in every resting configuration."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4966"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4968-split-002",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Kinetic Friction",
+      "prompt": "What is Kinetic Friction? State its defining idea and essential conditions.",
+      "definition": "Kinetic friction acts along a sliding contact and opposes relative sliding of the surfaces. A common dry-friction approximation is f_k = mu_k N; the coefficient and adequacy of the model depend on the materials and conditions.",
+      "required_concepts": [
+        "Opposes relative sliding at the contact.",
+        "mu_k N is an approximate magnitude model."
+      ],
+      "accepted_variants": [
+        "Sliding-contact friction."
+      ],
+      "major_error_concepts": [
+        "Assuming friction must oppose the center-of-mass velocity in every reference frame."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4966"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4969",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Hooke's Law",
+      "prompt": "What is Hooke's Law? State its defining idea and essential conditions.",
+      "definition": "In the Hooke-law regime, a spring exerts F = -k x along its deformation coordinate, where x is measured from equilibrium. The negative sign indicates a restoring direction; the linear law is valid only over a limited deformation range.",
+      "required_concepts": [
+        "Force proportional to displacement from equilibrium.",
+        "Restoring sign and limited linear regime."
+      ],
+      "accepted_variants": [
+        "A linear elastic restoring force."
+      ],
+      "major_error_concepts": [
+        "Using total spring length rather than extension from equilibrium as x."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4970",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Drag Force",
+      "prompt": "What is Drag Force? State its defining idea and essential conditions.",
+      "definition": "Drag is a resistive force associated with motion relative to a surrounding medium. Models such as F = -b v or F = -c |v|v apply in different flow regimes, with v taken relative to the medium.",
+      "required_concepts": [
+        "Resistance depends on relative motion through the medium.",
+        "Linear and quadratic speed models have different applicability."
+      ],
+      "accepted_variants": [
+        "A model-dependent fluid-resistance force."
+      ],
+      "major_error_concepts": [
+        "Using one universal drag formula for every speed, shape, and fluid."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4953",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4972",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Linear Momentum",
+      "prompt": "What is Linear Momentum? State its defining idea and essential conditions.",
+      "definition": "Linear momentum of a Newtonian particle is p = m v. It is a vector and the momentum of a system is the vector sum of its constituents' momenta.",
+      "required_concepts": [
+        "p equals mass times velocity.",
+        "System momentum is a vector sum."
+      ],
+      "accepted_variants": [
+        "Translational momentum."
+      ],
+      "major_error_concepts": [
+        "Equating momentum with the scalar kinetic energy."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958",
+        "physics-foundations.c1-mechanics-i-b1-cov-4953"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4973",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Impulse",
+      "prompt": "What is Impulse? State its defining idea and essential conditions.",
+      "definition": "Impulse is the time integral of a force: J = integral F dt. It is a vector with units of momentum; for constant force it equals F delta t.",
+      "required_concepts": [
+        "Time integral of force.",
+        "Direction and sign matter."
+      ],
+      "accepted_variants": [
+        "Area under a force-time curve, component by component."
+      ],
+      "major_error_concepts": [
+        "Integrating force over displacement to obtain impulse."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4964"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4974-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Translational Equilibrium",
+      "prompt": "What is Translational Equilibrium? State its defining idea and essential conditions.",
+      "definition": "Translational equilibrium means zero net external force, so the center of mass has zero acceleration. It may be at rest or moving with constant velocity.",
+      "required_concepts": [
+        "Net external force is zero.",
+        "Equilibrium does not require zero velocity."
+      ],
+      "accepted_variants": [
+        "Force balance."
+      ],
+      "major_error_concepts": [
+        "Concluding that zero net force requires the object to be stationary."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4964",
+        "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Work by a Constant Force",
+      "prompt": "What is Work by a Constant Force? State its defining idea and essential conditions.",
+      "definition": "Work by a constant force over displacement delta r is W = F dot delta r = F delta r cos theta. It measures energy transfer along the displacement and may be positive, negative, or zero.",
+      "required_concepts": [
+        "Dot product of force and displacement.",
+        "Only the displacement-parallel force component contributes."
+      ],
+      "accepted_variants": [
+        "Force component along motion times displacement."
+      ],
+      "major_error_concepts": [
+        "Using force magnitude times path length when the force is perpendicular to motion."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Work by a Variable Force",
+      "prompt": "What is Work by a Variable Force? State its defining idea and essential conditions.",
+      "definition": "Work by a spatially varying force along a path is W = integral F dot dr. The integral follows the actual path; in one dimension it is the signed area under the force-position curve.",
+      "required_concepts": [
+        "Line integral along the path.",
+        "May depend on the path for nonconservative forces."
+      ],
+      "accepted_variants": [
+        "Accumulated infinitesimal force-displacement energy transfer."
+      ],
+      "major_error_concepts": [
+        "Replacing the line integral by endpoint force times displacement without justification."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4977",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Kinetic Energy",
+      "prompt": "What is Kinetic Energy? State its defining idea and essential conditions.",
+      "definition": "The translational kinetic energy of a Newtonian particle is K = one-half m v squared. It is nonnegative and depends on the reference frame through speed.",
+      "required_concepts": [
+        "K = m v squared divided by two.",
+        "Scalar and frame-dependent."
+      ],
+      "accepted_variants": [
+        "Energy associated with particle motion in a specified frame."
+      ],
+      "major_error_concepts": [
+        "Assigning negative kinetic energy merely because velocity is negative."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958",
+        "physics-foundations.c1-mechanics-i-b1-cov-4953"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4978",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Potential Energy",
+      "prompt": "What is Potential Energy? State its defining idea and essential conditions.",
+      "definition": "A conservative force admits a potential energy U such that its work equals -delta U. Equivalently F = -gradient U where the potential is differentiable; the additive zero of U is arbitrary.",
+      "required_concepts": [
+        "Conservative work equals negative potential-energy change.",
+        "Only potential differences matter to the force."
+      ],
+      "accepted_variants": [
+        "Energy function whose negative gradient generates the conservative force."
+      ],
+      "major_error_concepts": [
+        "Using F = positive gradient U.",
+        "Assuming potential energy must always be nonnegative."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4979",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Mechanical Energy",
+      "prompt": "What is Mechanical Energy? State its defining idea and essential conditions.",
+      "definition": "Mechanical energy is the sum of kinetic and potential energies, E_mech = K + U, for the modeled system. It need not remain constant when nonconservative interactions transfer energy into other forms.",
+      "required_concepts": [
+        "Sum K + U.",
+        "Distinguish mechanical-energy conservation from total-energy conservation."
+      ],
+      "accepted_variants": [
+        "Kinetic plus conservative-interaction potential energy."
+      ],
+      "major_error_concepts": [
+        "Claiming mechanical energy is conserved in every frictional process."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4977",
+        "physics-foundations.c1-mechanics-i-b1-cov-4978"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4980",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Power",
+      "prompt": "What is Power? State its defining idea and essential conditions.",
+      "definition": "Power is the rate of energy transfer or work, P = dW/dt. For a force acting on a particle with velocity v, instantaneous mechanical power is F dot v.",
+      "required_concepts": [
+        "Energy transfer per unit time.",
+        "Force power is F dot v."
+      ],
+      "accepted_variants": [
+        "Rate of doing work."
+      ],
+      "major_error_concepts": [
+        "Confusing power with total work or energy."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001",
+        "physics-foundations.c1-mechanics-i-b1-cov-4953"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4991",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Universal Gravitation",
+      "prompt": "What is Universal Gravitation? State its defining idea and essential conditions.",
+      "definition": "Newton's universal gravitational force between point masses is attractive, has magnitude G m1 m2/r squared, and acts along the line joining them. The same exterior result applies to spherically symmetric masses treated from outside.",
+      "required_concepts": [
+        "Inverse-square attractive force proportional to both masses.",
+        "Separation is between point masses or spherical centers in the appropriate case."
+      ],
+      "accepted_variants": [
+        "Newtonian inverse-square gravity."
+      ],
+      "major_error_concepts": [
+        "Applying the exterior point-mass formula inside every extended mass distribution without modification."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4992-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Gravitational Field",
+      "prompt": "What is Gravitational Field? State its defining idea and essential conditions.",
+      "definition": "Gravitational field g at a point is gravitational force per unit test mass: g = F_grav/m. For a point source M it points toward the source with magnitude G M/r squared.",
+      "required_concepts": [
+        "Force per unit test mass.",
+        "Direction toward a positive gravitating point source."
+      ],
+      "accepted_variants": [
+        "Gravitational acceleration field."
+      ],
+      "major_error_concepts": [
+        "Including the test mass as a multiplicative factor in g."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4991"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4995",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Constant-Acceleration Kinematics",
+      "prompt": "What is Constant-Acceleration Kinematics? State its defining idea and essential conditions.",
+      "definition": "For constant acceleration, v = v0 + a t and r = r0 + v0 t + one-half a t squared. The equations apply componentwise; the scalar relation v squared = v0 squared + 2 a delta x applies to one-dimensional constant-acceleration motion.",
+      "required_concepts": [
+        "Acceleration must remain constant.",
+        "Vector relations can be resolved into components."
+      ],
+      "accepted_variants": [
+        "Uniform-acceleration kinematics."
+      ],
+      "major_error_concepts": [
+        "Applying the formulas unchanged to time-varying acceleration."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4954",
+        "physics-foundations.c1-mechanics-i-b1-cov-4953",
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4996",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Projectile Motion",
+      "prompt": "What is Projectile Motion? State its defining idea and essential conditions.",
+      "definition": "Ideal projectile motion under uniform gravity has constant horizontal velocity and vertical acceleration -g when drag is neglected and axes are chosen horizontally and upward. The components share the same elapsed time even though their accelerations differ.",
+      "required_concepts": [
+        "Horizontal acceleration zero and vertical acceleration -g.",
+        "Common time parameter and neglected drag."
+      ],
+      "accepted_variants": [
+        "Independent component equations coupled by one flight time."
+      ],
+      "major_error_concepts": [
+        "Assuming horizontal velocity vanishes at the top of the trajectory."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4995",
+        "physics-foundations.c1-mechanics-i-b1-cov-4965"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Newton's First Law",
+      "prompt": "What is Newton's First Law? State its defining idea and essential conditions.",
+      "definition": "Newton's first law states that in an inertial frame a body with zero net force remains at rest or moves with constant velocity. Sustaining constant velocity does not require a continuing nonzero resultant force.",
+      "required_concepts": [
+        "Zero net force gives constant velocity in an inertial frame."
+      ],
+      "accepted_variants": [
+        "The law of inertia."
+      ],
+      "major_error_concepts": [
+        "Claiming a moving body requires net force in its direction of travel to keep moving."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4949",
+        "physics-foundations.c1-mechanics-i-b1-cov-4964"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Newton's Second Law",
+      "prompt": "What is Newton's Second Law? State its defining idea and essential conditions.",
+      "definition": "Newton's second law relates net external force to momentum change: F_net = dp/dt in an inertial frame. For a constant-mass particle this becomes F_net = m a.",
+      "required_concepts": [
+        "Net force changes momentum.",
+        "F = m a assumes constant mass and an inertial frame."
+      ],
+      "accepted_variants": [
+        "The vector equation of translational dynamics."
+      ],
+      "major_error_concepts": [
+        "Equating one arbitrarily chosen force with m a when other forces also act."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4949",
+        "physics-foundations.c1-mechanics-i-b1-cov-4964",
+        "physics-foundations.c1-mechanics-i-b1-cov-4972",
+        "physics-foundations.c1-mechanics-i-b1-cov-4954"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-003",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Newton's Third Law",
+      "prompt": "What is Newton's Third Law? State its defining idea and essential conditions.",
+      "definition": "Newton's third law states that two interacting bodies exert equal-magnitude opposite-direction forces on each other in the elementary Newtonian setting. The pair acts on different bodies, so it does not cancel in a single body's force balance.",
+      "required_concepts": [
+        "Equal and opposite interaction forces.",
+        "They act on different bodies."
+      ],
+      "accepted_variants": [
+        "Action-reaction force pairing."
+      ],
+      "major_error_concepts": [
+        "Pairing a body's weight and its normal force as a third-law pair."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-4999",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Force Superposition",
+      "prompt": "What is Force Superposition? State its defining idea and essential conditions.",
+      "definition": "Force superposition means the net force is obtained by vector addition of all applicable interaction forces. Each contribution is resolved in a common coordinate system before combining components.",
+      "required_concepts": [
+        "Vector addition of force contributions.",
+        "Use a common coordinate system."
+      ],
+      "accepted_variants": [
+        "The resultant is the sum of individual forces."
+      ],
+      "major_error_concepts": [
+        "Adding unsigned magnitudes for forces with different directions."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4964"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5000",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Action–Reaction Pair Boundaries",
+      "prompt": "What is Action–Reaction Pair Boundaries? State its defining idea and essential conditions.",
+      "definition": "An action-reaction pair has one force on each of two interacting bodies. Both cancel when summing internal forces for the combined system, but only one belongs on each body's individual free-body diagram.",
+      "required_concepts": [
+        "One force on each body.",
+        "Cancellation depends on choosing the combined system."
+      ],
+      "accepted_variants": [
+        "Third-law pairs cannot be cancelled on one body's diagram."
+      ],
+      "major_error_concepts": [
+        "Removing an applied force from a single-body diagram because its reaction exists elsewhere."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4998-split-003"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5006",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Work–Energy Theorem",
+      "prompt": "What is Work–Energy Theorem? State its defining idea and essential conditions.",
+      "definition": "The work-energy theorem states that net work on a constant-mass particle equals its kinetic-energy change: W_net = delta K. It includes work by both conservative and nonconservative forces.",
+      "required_concepts": [
+        "Net work equals kinetic-energy change.",
+        "All force contributions to work are included."
+      ],
+      "accepted_variants": [
+        "The integrated kinetic-energy form of Newton's second law."
+      ],
+      "major_error_concepts": [
+        "Equating net work with total mechanical-energy change in every situation."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002",
+        "physics-foundations.c1-mechanics-i-b1-cov-4977",
+        "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5007",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Mechanical-Energy Conservation",
+      "prompt": "What is Mechanical-Energy Conservation? State its defining idea and essential conditions.",
+      "definition": "Mechanical energy K + U is conserved when all working interactions in the model are conservative and no unaccounted energy transfer crosses the system boundary. Kinetic and potential energy can change individually while their sum remains fixed.",
+      "required_concepts": [
+        "Conservative interactions and appropriate system boundary.",
+        "Conserved sum does not require K and U individually constant."
+      ],
+      "accepted_variants": [
+        "Delta K + delta U = 0 for the conservative system."
+      ],
+      "major_error_concepts": [
+        "Imposing mechanical-energy conservation across a dissipative collision without accounting for internal energy."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-5006",
+        "physics-foundations.c1-mechanics-i-b1-cov-4978",
+        "physics-foundations.c1-mechanics-i-b1-cov-4979"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5008",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Nonconservative Energy Accounting",
+      "prompt": "What is Nonconservative Energy Accounting? State its defining idea and essential conditions.",
+      "definition": "When nonconservative forces do work, changes in K + U must be balanced against transfers to other energy forms or across the system boundary. Friction may convert mechanical energy to internal energy without violating total-energy conservation.",
+      "required_concepts": [
+        "Mechanical-energy loss is not destruction of total energy.",
+        "Track boundary transfers and internal-energy changes consistently."
+      ],
+      "accepted_variants": [
+        "Energy bookkeeping including nonconservative work and thermal effects."
+      ],
+      "major_error_concepts": [
+        "Claiming friction violates conservation of energy."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4979",
+        "physics-foundations.c1-mechanics-i-b1-cov-5006"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5011",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Impulse–Momentum Theorem",
+      "prompt": "What is Impulse–Momentum Theorem? State its defining idea and essential conditions.",
+      "definition": "The impulse-momentum theorem states that net impulse equals the change in total linear momentum: integral F_net dt = delta p. It remains useful when the detailed time dependence of a brief force is unknown.",
+      "required_concepts": [
+        "Net impulse equals momentum change.",
+        "Vector relationship."
+      ],
+      "accepted_variants": [
+        "The time-integrated form of the momentum equation."
+      ],
+      "major_error_concepts": [
+        "Using a single contact impulse as the net impulse when other appreciable impulses act."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4973",
+        "physics-foundations.c1-mechanics-i-b1-cov-4972",
+        "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5012",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Momentum Conservation",
+      "prompt": "What is Momentum Conservation? State its defining idea and essential conditions.",
+      "definition": "For a fixed Newtonian system in an inertial frame, total linear momentum remains constant throughout an interval if the net external force is zero throughout that interval. More generally, the momentum change equals external impulse. Zero impulse over one selected interval guarantees equal initial and final momenta, not constancy at every intermediate time. Internal interactions may redistribute momentum among constituents.",
+      "required_concepts": [
+        "Zero net external force throughout the interval keeps total momentum constant for a fixed system in an inertial frame.",
+        "Zero net impulse over only the whole interval guarantees endpoint equality; individual constituents may still change momentum."
+      ],
+      "accepted_variants": [
+        "Since dP/dt = F_external,net, P is constant when the external resultant vanishes at every time; equal and opposite impulses at different times only restore the original P afterward."
+      ],
+      "major_error_concepts": [
+        "Claiming that canceling external impulses at different times imply momentum never changed in between.",
+        "Concluding each constituent's momentum is separately conserved during an isolated collision."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-5011",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-001",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Dimensional Analysis",
+      "prompt": "What is Dimensional Analysis? State its defining idea and essential conditions.",
+      "definition": "Dimensional analysis checks whether quantities combined or equated have compatible physical dimensions. It can constrain a relation's form or identify dimensionless groups, but cannot generally determine pure numerical coefficients or prove the physics correct.",
+      "required_concepts": [
+        "Dimensionally compatible terms and equations.",
+        "Dimensional consistency is necessary but not sufficient."
+      ],
+      "accepted_variants": [
+        "Reasoning with dimensions such as mass, length, and time."
+      ],
+      "major_error_concepts": [
+        "Treating a dimensionally correct equation as automatically physically true."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-002",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Scaling Arguments",
+      "prompt": "What is Scaling Arguments? State its defining idea and essential conditions.",
+      "definition": "A scaling argument estimates how an outcome changes when controlling quantities change by comparing powers, dominant terms, or dimensionless ratios. The conclusion depends on maintaining the assumed physical regime and which quantities are held fixed.",
+      "required_concepts": [
+        "Track proportional changes within stated assumptions.",
+        "Dominant balance can change between regimes."
+      ],
+      "accepted_variants": [
+        "Order-of-magnitude or power-law dependence reasoning."
+      ],
+      "major_error_concepts": [
+        "Extending one regime's power-law scaling across a change in dominant forces."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-5053-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-physical-quantity",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Physical Quantity",
+      "prompt": "What is Physical Quantity? State its defining idea and essential conditions.",
+      "definition": "A physical quantity is a measurable or model-defined property represented by a magnitude together with units when dimensional. Its meaning includes what is measured and the conditions under which it is defined.",
+      "required_concepts": [
+        "Magnitude with a physical interpretation and appropriate unit."
+      ],
+      "accepted_variants": [
+        "A quantified physical property."
+      ],
+      "major_error_concepts": [
+        "Reporting a dimensional measurement as a bare number with no unit or context."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-base-and-derived-units",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Base and Derived Units",
+      "prompt": "What is Base and Derived Units? State its defining idea and essential conditions.",
+      "definition": "Base units are selected independent reference units; derived units are combinations used for other quantities. For example, speed uses length per time and force uses mass times length per time squared.",
+      "required_concepts": [
+        "Derived units combine base units.",
+        "A chosen basis does not make derived quantities less physical."
+      ],
+      "accepted_variants": [
+        "Fundamental reference units and their algebraic combinations."
+      ],
+      "major_error_concepts": [
+        "Treating a new named derived unit as a new independent physical dimension automatically."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-si-prefix",
+      "canonical_deck_id": "physics-foundations",
+      "term": "SI Prefix",
+      "prompt": "What is SI Prefix? State its defining idea and essential conditions.",
+      "definition": "An SI prefix multiplies a unit by a defined power of ten, such as kilo for 10^3 or milli for 10^-3. The prefix is part of the unit and is raised to powers with it when units are squared or cubed.",
+      "required_concepts": [
+        "Power-of-ten unit multiplier.",
+        "Area and volume require applying the power to the prefix too."
+      ],
+      "accepted_variants": [
+        "Metric unit scaling prefix."
+      ],
+      "major_error_concepts": [
+        "Converting one square centimeter to 10^-2 square meters instead of 10^-4."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-base-and-derived-units"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-physical-dimension",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Physical Dimension",
+      "prompt": "What is Physical Dimension? State its defining idea and essential conditions.",
+      "definition": "A physical dimension identifies a quantity's type, such as length, mass, or time, independently of the particular unit chosen. Meters and feet represent the same dimension but different units.",
+      "required_concepts": [
+        "Quantity type independent of unit scale."
+      ],
+      "accepted_variants": [
+        "Dimensional category."
+      ],
+      "major_error_concepts": [
+        "Treating meters and centimeters as different dimensions."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity",
+        "physics-foundations.draft-base-and-derived-units"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-unit-conversion",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Unit Conversion",
+      "prompt": "What is Unit Conversion? State its defining idea and essential conditions.",
+      "definition": "Unit conversion multiplies by ratios of equivalent quantities equal to one, so units cancel while the physical quantity stays unchanged. Conversion factors must be oriented and powered consistently.",
+      "required_concepts": [
+        "Multiply by equivalence ratios.",
+        "Physical amount unchanged while numerical representation changes."
+      ],
+      "accepted_variants": [
+        "Dimensional conversion through cancelling unit factors."
+      ],
+      "major_error_concepts": [
+        "Changing the unit label without changing the numerical value when scales differ."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-base-and-derived-units",
+        "physics-foundations.draft-si-prefix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-order-of-magnitude",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Order of Magnitude",
+      "prompt": "What is Order of Magnitude? State its defining idea and essential conditions.",
+      "definition": "An order-of-magnitude estimate describes a quantity's scale using powers of ten rather than exact digits. Rounding conventions vary, so the intended precision of the comparison should be clear.",
+      "required_concepts": [
+        "Approximate power-of-ten scale."
+      ],
+      "accepted_variants": [
+        "A scale-level estimate."
+      ],
+      "major_error_concepts": [
+        "Treating an order-of-magnitude estimate as an exact significant-digit calculation."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-scientific-notation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-scientific-notation",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Scientific Notation",
+      "prompt": "What is Scientific Notation? State its defining idea and essential conditions.",
+      "definition": "Scientific notation writes a nonzero number as a times 10^n with integer n and coefficient magnitude between one and ten. It makes scale and significant digits easier to distinguish.",
+      "required_concepts": [
+        "Normalized coefficient times integer power of ten."
+      ],
+      "accepted_variants": [
+        "Normalized exponential decimal notation."
+      ],
+      "major_error_concepts": [
+        "Dropping the exponent when comparing numerical scales."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-significant-figures",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Significant Figures",
+      "prompt": "What is Significant Figures? State its defining idea and essential conditions.",
+      "definition": "Significant figures communicate a numerical reporting precision compatible with a measurement or calculation. They do not replace an explicit uncertainty model and do not by themselves establish accuracy.",
+      "required_concepts": [
+        "Reporting precision rather than complete error analysis."
+      ],
+      "accepted_variants": [
+        "Meaningful reported digits under a stated convention."
+      ],
+      "major_error_concepts": [
+        "Assuming more printed digits prove a more accurate measurement."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-measurement-uncertainty",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Measurement Uncertainty",
+      "prompt": "What is Measurement Uncertainty? State its defining idea and essential conditions.",
+      "definition": "Measurement uncertainty quantifies the range or distribution of values reasonably associated with a measured quantity under a stated model. It reflects limited information rather than a known signed mistake.",
+      "required_concepts": [
+        "Quantified limitation on knowledge of the measured value.",
+        "Interpretation depends on the uncertainty model."
+      ],
+      "accepted_variants": [
+        "The estimated uncertainty attached to a measurement."
+      ],
+      "major_error_concepts": [
+        "Treating uncertainty as the exact difference from an unknown true value."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-measurement-precision",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Measurement Precision",
+      "prompt": "What is Measurement Precision? State its defining idea and essential conditions.",
+      "definition": "Precision describes agreement among repeated measurements or the narrowness of their scatter under stated conditions. A precise set can still be systematically displaced from the reference value.",
+      "required_concepts": [
+        "Repeatability or low scatter.",
+        "Not identical to accuracy."
+      ],
+      "accepted_variants": [
+        "Closeness of repeated results to one another."
+      ],
+      "major_error_concepts": [
+        "Inferring absence of bias from tightly clustered measurements."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-measurement-accuracy",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Measurement Accuracy",
+      "prompt": "What is Measurement Accuracy? State its defining idea and essential conditions.",
+      "definition": "Accuracy describes closeness to a reference or true value in the relevant context. It depends on both systematic and random effects and is not established merely by fine instrument resolution.",
+      "required_concepts": [
+        "Closeness to the relevant reference value.",
+        "Different from precision or resolution."
+      ],
+      "accepted_variants": [
+        "Agreement with the target value."
+      ],
+      "major_error_concepts": [
+        "Calling a consistently biased instrument accurate because it displays many digits."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-precision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-random-error",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Random Error",
+      "prompt": "What is Random Error? State its defining idea and essential conditions.",
+      "definition": "Random error is variation that changes unpredictably across observations under the measurement model. Repetition can help estimate and reduce uncertainty in an average when independence and other assumptions hold.",
+      "required_concepts": [
+        "Observation-to-observation random variation.",
+        "Averaging benefits require assumptions."
+      ],
+      "accepted_variants": [
+        "Stochastic measurement scatter."
+      ],
+      "major_error_concepts": [
+        "Assuming averaging always removes correlated or systematic effects."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty",
+        "physics-foundations.draft-measurement-precision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-systematic-error",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Systematic Error",
+      "prompt": "What is Systematic Error? State its defining idea and essential conditions.",
+      "definition": "A systematic error is a repeatable or structured deviation associated with calibration, method, or conditions. Repeating the same biased procedure does not generally remove it.",
+      "required_concepts": [
+        "Structured bias or repeatable deviation.",
+        "Repetition alone does not correct it."
+      ],
+      "accepted_variants": [
+        "Systematic measurement bias."
+      ],
+      "major_error_concepts": [
+        "Assuming a large sample automatically eliminates a miscalibrated scale's offset."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-accuracy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-instrument-resolution",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Instrument Resolution",
+      "prompt": "What is Instrument Resolution? State its defining idea and essential conditions.",
+      "definition": "Instrument resolution is the smallest change distinguishable by the instrument's readout or response under specified conditions. It is only one contributor to overall measurement uncertainty.",
+      "required_concepts": [
+        "Smallest distinguishable increment.",
+        "Resolution is not complete uncertainty or accuracy."
+      ],
+      "accepted_variants": [
+        "Readout or response granularity."
+      ],
+      "major_error_concepts": [
+        "Using display resolution as proof of total measurement accuracy."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-uncertainty-interval",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Uncertainty Interval",
+      "prompt": "What is Uncertainty Interval? State its defining idea and essential conditions.",
+      "definition": "An uncertainty interval reports a range around an estimate with a stated interpretation, such as a coverage interval under a measurement model. Its endpoints are not automatically guaranteed absolute bounds on every possible value.",
+      "required_concepts": [
+        "Range with an explicit coverage or uncertainty meaning."
+      ],
+      "accepted_variants": [
+        "A reported measurement range with a stated confidence or coverage convention."
+      ],
+      "major_error_concepts": [
+        "Treating any plus-or-minus range as a guaranteed bound without knowing its definition."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-percent-error",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Percent Error",
+      "prompt": "What is Percent Error? State its defining idea and essential conditions.",
+      "definition": "Percent error compares a measurement with a nonzero reference using 100 times the difference divided by the reference magnitude, with signed or absolute convention specified. It differs from uncertainty when the reference is not known exactly.",
+      "required_concepts": [
+        "Reference-based relative difference times 100 percent.",
+        "State sign convention and nonzero reference."
+      ],
+      "accepted_variants": [
+        "Percentage deviation from a comparison value."
+      ],
+      "major_error_concepts": [
+        "Calling percent error the same as relative uncertainty in every experiment."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-accuracy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-relative-uncertainty",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Relative Uncertainty",
+      "prompt": "What is Relative Uncertainty? State its defining idea and essential conditions.",
+      "definition": "Relative uncertainty is an uncertainty measure divided by the magnitude of the measured estimate. It is dimensionless and can be expressed as a percentage, but is ill-conditioned when the estimate is near zero.",
+      "required_concepts": [
+        "Uncertainty relative to the value's magnitude.",
+        "Near-zero denominator is problematic."
+      ],
+      "accepted_variants": [
+        "Fractional uncertainty."
+      ],
+      "major_error_concepts": [
+        "Interpreting a huge fractional uncertainty near zero without considering the absolute scale."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty",
+        "physics-foundations.draft-dimensionless-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-uncertainty-propagation",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Uncertainty Propagation",
+      "prompt": "What is Uncertainty Propagation? State its defining idea and essential conditions.",
+      "definition": "First-order uncertainty propagation combines input uncertainties according to a derived quantity's sensitivity to them. Independent standard uncertainties commonly combine in quadrature after derivative weighting; correlations require covariance terms.",
+      "required_concepts": [
+        "Sensitivity-weighted combination.",
+        "Correlated inputs need covariance contributions."
+      ],
+      "accepted_variants": [
+        "Propagation of input uncertainty through a formula."
+      ],
+      "major_error_concepts": [
+        "Adding all input percentages regardless of the functional relationship and dependence."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty",
+        "physics-foundations.draft-random-error"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-graph-slope",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Graph Slope",
+      "prompt": "What is Graph Slope? State its defining idea and essential conditions.",
+      "definition": "A graph's secant slope is the change in vertical quantity divided by change in horizontal quantity. Its units are vertical-axis units per horizontal-axis unit, and its physical interpretation depends on what is plotted.",
+      "required_concepts": [
+        "Rise over run with corresponding units.",
+        "Meaning depends on axes."
+      ],
+      "accepted_variants": [
+        "Rate represented by a plotted slope."
+      ],
+      "major_error_concepts": [
+        "Interpreting every graph slope as speed regardless of the plotted quantities."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-area-under-a-graph",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Area under a Graph",
+      "prompt": "What is Area under a Graph? State its defining idea and essential conditions.",
+      "definition": "Signed area under a quantity-versus-variable graph accumulates the product of those quantities over the horizontal interval. For example, velocity-time area gives displacement, while force-position area gives work when the force component is appropriate.",
+      "required_concepts": [
+        "Accumulation with product units and sign.",
+        "Interpretation depends on axis variables."
+      ],
+      "accepted_variants": [
+        "Integral-like accumulated quantity from a graph."
+      ],
+      "major_error_concepts": [
+        "Calling every area under any graph displacement."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4953",
+        "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002",
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-linearized-plot",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Linearized Plot",
+      "prompt": "What is Linearized Plot? State its defining idea and essential conditions.",
+      "definition": "A linearized plot transforms variables so a proposed nonlinear relation becomes a straight-line model, such as plotting y against x squared for y=a x squared. The transformation changes error behavior and does not prove the model merely by making a line look plausible.",
+      "required_concepts": [
+        "Transform coordinates to expose a proposed linear relation.",
+        "Measurement-error interpretation changes with transformation."
+      ],
+      "accepted_variants": [
+        "Straight-line representation of a specified nonlinear model."
+      ],
+      "major_error_concepts": [
+        "Assuming visual straightness alone establishes causation or exact model validity."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-graph-slope",
+        "physics-foundations.draft-physical-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-power-law-model",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Power-Law Model",
+      "prompt": "What is Power-Law Model? State its defining idea and essential conditions.",
+      "definition": "A power-law model has form y=A x^n over a specified domain and regime. On positive data, logarithms turn it into log y=log A+n log x, so the exponent becomes a log-log slope.",
+      "required_concepts": [
+        "Power dependence with stated regime.",
+        "Log-log slope is exponent for positive quantities."
+      ],
+      "accepted_variants": [
+        "Scale-law relation."
+      ],
+      "major_error_concepts": [
+        "Applying logarithms to nonpositive values without redefining the model or domain."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-graph-slope",
+        "physics-foundations.c1-mechanics-i-b1-cov-5053-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-scalar",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Scalar",
+      "prompt": "What is Scalar? State its defining idea and essential conditions.",
+      "definition": "A scalar is a quantity described by one value that does not transform as a spatial direction vector. It may be positive, negative, or zero depending on the quantity and convention.",
+      "required_concepts": [
+        "No vector direction.",
+        "Scalar does not mean always positive."
+      ],
+      "accepted_variants": [
+        "A single-valued nondirectional quantity."
+      ],
+      "major_error_concepts": [
+        "Calling every negative quantity a vector because sign implies a direction."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-vector-components",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Vector Components",
+      "prompt": "What is Vector Components? State its defining idea and essential conditions.",
+      "definition": "Vector components are the signed coefficients of a vector along chosen coordinate basis directions. Components change when the basis changes even when the geometric vector is unchanged.",
+      "required_concepts": [
+        "Signed coordinate coefficients.",
+        "Basis-dependent representation."
+      ],
+      "accepted_variants": [
+        "The projections or basis coordinates describing a vector."
+      ],
+      "major_error_concepts": [
+        "Treating one component as the full vector magnitude in all orientations."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+        "physics-foundations.draft-coordinate-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-unit-vector",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Unit Vector",
+      "prompt": "What is Unit Vector? State its defining idea and essential conditions.",
+      "definition": "A unit vector has magnitude one and specifies a direction. Multiplying it by a signed scalar gives a vector along that direction with the corresponding magnitude and orientation.",
+      "required_concepts": [
+        "Magnitude one with directional role."
+      ],
+      "accepted_variants": [
+        "A normalized direction vector."
+      ],
+      "major_error_concepts": [
+        "Assuming unit vector means a vector measured in one particular physical unit."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-vector-components",
+        "physics-foundations.draft-scalar"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-vector-addition",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Vector Addition",
+      "prompt": "What is Vector Addition? State its defining idea and essential conditions.",
+      "definition": "Vector addition combines components in a common basis or uses the head-to-tail geometric rule. The magnitude of a sum generally differs from the sum of magnitudes.",
+      "required_concepts": [
+        "Add corresponding components in one basis.",
+        "Magnitude is not generally additive."
+      ],
+      "accepted_variants": [
+        "Geometric or componentwise vector sum."
+      ],
+      "major_error_concepts": [
+        "Adding lengths without accounting for directions."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-vector-components"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-dot-product",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Dot Product",
+      "prompt": "What is Dot Product? State its defining idea and essential conditions.",
+      "definition": "The dot product u dot v equals the sum of corresponding component products and equals |u||v|cos theta. It yields a scalar and selects the parallel contribution used in quantities such as work.",
+      "required_concepts": [
+        "Scalar product with cosine-angle dependence."
+      ],
+      "accepted_variants": [
+        "Inner or scalar product in Euclidean coordinates."
+      ],
+      "major_error_concepts": [
+        "Using sine rather than cosine for the dot-product angle relation."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-vector-components",
+        "physics-foundations.draft-scalar",
+        "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-cross-product",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Cross Product",
+      "prompt": "What is Cross Product? State its defining idea and essential conditions.",
+      "definition": "The three-dimensional cross product has magnitude |u||v|sin theta and direction perpendicular to both vectors by the right-hand rule. Reversing the operand order reverses its sign.",
+      "required_concepts": [
+        "Perpendicular vector with sine magnitude.",
+        "Order matters."
+      ],
+      "accepted_variants": [
+        "Vector product in three dimensions."
+      ],
+      "major_error_concepts": [
+        "Treating u cross v as equal to v cross u."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-vector-components",
+        "physics-foundations.draft-unit-vector"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-coordinate-system",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Coordinate System",
+      "prompt": "What is Coordinate System? State its defining idea and essential conditions.",
+      "definition": "A coordinate system assigns numbers to locations using a chosen origin and axes or other coordinate rules. Changing coordinates changes numerical descriptions without necessarily changing the physical situation.",
+      "required_concepts": [
+        "Chosen origin and coordinate convention describe positions."
+      ],
+      "accepted_variants": [
+        "A numerical location scheme."
+      ],
+      "major_error_concepts": [
+        "Confusing a coordinate relabeling with a physical motion of the object."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-reference-frame",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Reference Frame",
+      "prompt": "What is Reference Frame? State its defining idea and essential conditions.",
+      "definition": "A reference frame supplies the observer-related spatial and temporal description used to state motion. Relative velocity and acceleration must be interpreted in that frame; inertial character is an additional physical property.",
+      "required_concepts": [
+        "Observer-based description of events and motion.",
+        "Frame choice and inertial status differ."
+      ],
+      "accepted_variants": [
+        "The physical observational framework for coordinates and time."
+      ],
+      "major_error_concepts": [
+        "Assuming every coordinate system automatically represents an inertial frame."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-coordinate-system",
+        "physics-foundations.c1-mechanics-i-b1-cov-4949"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-physical-model",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Physical Model",
+      "prompt": "What is Physical Model? State its defining idea and essential conditions.",
+      "definition": "A physical model is a simplified representation connecting assumptions, variables, and relationships to predictions. Its value depends on the questions and regimes it captures, not on reproducing every detail of reality.",
+      "required_concepts": [
+        "Simplified assumption-based representation.",
+        "Scope tied to intended predictions."
+      ],
+      "accepted_variants": [
+        "A tractable representation of a physical system."
+      ],
+      "major_error_concepts": [
+        "Rejecting every idealized model merely because it omits some real-world detail."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-model-assumption",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Model Assumption",
+      "prompt": "What is Model Assumption? State its defining idea and essential conditions.",
+      "definition": "A model assumption is a condition adopted to define or simplify a calculation, such as negligible drag or constant mass. Its consequences and domain of adequacy should be explicit rather than hidden in the algebra.",
+      "required_concepts": [
+        "Condition shaping the model.",
+        "Validity depends on the use case."
+      ],
+      "accepted_variants": [
+        "An explicit modeling premise."
+      ],
+      "major_error_concepts": [
+        "Treating an approximation assumption as a universally exact physical law."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-approximation-regime",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Approximation Regime",
+      "prompt": "What is Approximation Regime? State its defining idea and essential conditions.",
+      "definition": "An approximation regime is the range of scales or conditions where neglected effects are small enough for the intended accuracy. Leaving that regime can require a different model even if the original algebra remains consistent.",
+      "required_concepts": [
+        "Conditions make omitted effects acceptably small.",
+        "Accuracy target matters."
+      ],
+      "accepted_variants": [
+        "Domain of adequacy for an approximation."
+      ],
+      "major_error_concepts": [
+        "Applying one approximation unchanged after its neglected term becomes dominant."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-model-assumption",
+        "physics-foundations.c1-mechanics-i-b1-cov-5053-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-prediction",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Prediction",
+      "prompt": "What is Prediction? State its defining idea and essential conditions.",
+      "definition": "A prediction is a consequence of a specified model and input assumptions that can be compared with observations. Agreement supports adequacy for that comparison but does not uniquely establish every assumption.",
+      "required_concepts": [
+        "Model consequence testable against observations.",
+        "Agreement does not prove model uniqueness."
+      ],
+      "accepted_variants": [
+        "An expected observable derived from a model."
+      ],
+      "major_error_concepts": [
+        "Treating one matching result as proof that no other model could explain it."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-model",
+        "physics-foundations.draft-model-assumption"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-testable-hypothesis",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Testable Hypothesis",
+      "prompt": "What is Testable Hypothesis? State its defining idea and essential conditions.",
+      "definition": "A testable hypothesis makes claims connected to possible observations that could count against it under stated conditions. A failed comparison must consider auxiliary assumptions and measurement limitations as well as the focal claim.",
+      "required_concepts": [
+        "Observable implications permit meaningful challenge.",
+        "Testing involves measurement and auxiliary assumptions."
+      ],
+      "accepted_variants": [
+        "An empirically assessable claim."
+      ],
+      "major_error_concepts": [
+        "Calling a claim empirically tested when every conceivable outcome is declared supporting."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-prediction",
+        "physics-foundations.draft-measurement-uncertainty"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-controlled-comparison",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Controlled Comparison",
+      "prompt": "What is Controlled Comparison? State its defining idea and essential conditions.",
+      "definition": "A controlled comparison isolates a proposed influence by comparing conditions while accounting for other relevant differences. Controls improve causal interpretation but do not automatically remove every confounder.",
+      "required_concepts": [
+        "Compare conditions while managing alternative explanations."
+      ],
+      "accepted_variants": [
+        "A comparison designed to isolate a factor."
+      ],
+      "major_error_concepts": [
+        "Assuming any two groups form a controlled experiment regardless of their differences."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-testable-hypothesis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-correlation-and-causation",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Correlation and Causation",
+      "prompt": "What is Correlation and Causation? State its defining idea and essential conditions.",
+      "definition": "Correlation is an observed association between quantities; causation asserts that changing one can produce change in another under a defined causal setting. Shared causes, selection, or chance can produce correlation without the proposed direct cause.",
+      "required_concepts": [
+        "Association differs from causal influence.",
+        "Alternative explanations can generate association."
+      ],
+      "accepted_variants": [
+        "Distinguishing statistical co-variation from causal effect."
+      ],
+      "major_error_concepts": [
+        "Inferring a direct causal mechanism solely from a correlated plot."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-controlled-comparison"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-system-boundary",
+      "canonical_deck_id": "physics-foundations",
+      "term": "System Boundary",
+      "prompt": "What is System Boundary? State its defining idea and essential conditions.",
+      "definition": "A system boundary specifies which objects or material belong to the system and which interactions cross into the surroundings. Internal and external force or energy classifications depend on that choice.",
+      "required_concepts": [
+        "Defines included components.",
+        "Determines internal versus external transfers."
+      ],
+      "accepted_variants": [
+        "The boundary of physical accounting."
+      ],
+      "major_error_concepts": [
+        "Changing a system boundary while keeping all force and energy terms classified as before."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-interaction-diagram",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Interaction Diagram",
+      "prompt": "What is Interaction Diagram? State its defining idea and essential conditions.",
+      "definition": "An interaction diagram identifies the objects and the physical interactions among them before equations are written. It helps separate contact and long-range interactions and supports consistent force accounting.",
+      "required_concepts": [
+        "Map objects and their interactions."
+      ],
+      "accepted_variants": [
+        "A system-level interaction map."
+      ],
+      "major_error_concepts": [
+        "Drawing velocity as an interaction force between objects."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+        "physics-foundations.draft-system-boundary"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-free-body-diagram",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Free-Body Diagram",
+      "prompt": "What is Free-Body Diagram? State its defining idea and essential conditions.",
+      "definition": "A free-body diagram shows forces acting on one selected object or system, with each force attributed to an interaction. It omits the reaction forces acting on other bodies and does not add velocity or acceleration as extra forces.",
+      "required_concepts": [
+        "Forces on the selected body only.",
+        "Do not include third-law partners acting elsewhere."
+      ],
+      "accepted_variants": [
+        "A force-isolation diagram."
+      ],
+      "major_error_concepts": [
+        "Adding an independent force of motion in the direction of velocity."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-interaction-diagram",
+        "physics-foundations.c1-mechanics-i-b1-cov-5000",
+        "physics-foundations.c1-mechanics-i-b1-cov-4964"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-small-angle-approximation",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Small-Angle Approximation",
+      "prompt": "What is Small-Angle Approximation? State its defining idea and essential conditions.",
+      "definition": "For a small angle theta measured in radians, sin theta is approximately theta and cos theta approximately 1-theta squared/2. The errors grow with angle, so small must be judged relative to the required accuracy.",
+      "required_concepts": [
+        "Radian-based approximations.",
+        "Accuracy depends on angle size."
+      ],
+      "accepted_variants": [
+        "Leading small-angle trigonometric approximation."
+      ],
+      "major_error_concepts": [
+        "Substituting degree-valued numbers directly into sin theta approximately theta."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-approximation-regime"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-density",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Density",
+      "prompt": "What is Density? State its defining idea and essential conditions.",
+      "definition": "Density is mass per unit volume, rho=m/V for a homogeneous sample or an average over the specified region. Local density can vary spatially, and its value depends on material state and conditions.",
+      "required_concepts": [
+        "Mass divided by volume.",
+        "Local or average interpretation must be specified."
+      ],
+      "accepted_variants": [
+        "Volumetric mass concentration."
+      ],
+      "major_error_concepts": [
+        "Treating equal density as proof that two samples are the same substance."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4958",
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-pressure",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Pressure",
+      "prompt": "What is Pressure? State its defining idea and essential conditions.",
+      "definition": "Pressure is normal force per unit area in the appropriate local or averaged description. Its SI unit is the pascal, equivalent to a newton per square meter, and it differs from total force.",
+      "required_concepts": [
+        "Normal force divided by area.",
+        "Distinguish pressure from force."
+      ],
+      "accepted_variants": [
+        "Normal stress or force intensity on a surface."
+      ],
+      "major_error_concepts": [
+        "Assuming the same total force always gives the same pressure regardless of contact area."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4964",
+        "physics-foundations.draft-base-and-derived-units"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-temperature-versus-heat",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Temperature versus Heat",
+      "prompt": "What is Temperature versus Heat? State its defining idea and essential conditions.",
+      "definition": "Temperature characterizes thermal state, while heat is energy transferred because of a temperature difference. Heat transfer can change temperature or drive a phase change, so the terms are not interchangeable.",
+      "required_concepts": [
+        "Thermal state versus energy transfer.",
+        "Heat need not always cause a temperature change."
+      ],
+      "accepted_variants": [
+        "Temperature is a state variable; heat is a transfer."
+      ],
+      "major_error_concepts": [
+        "Calling an object's temperature the amount of heat it contains."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-energy-transfer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-physical-field",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Physical Field",
+      "prompt": "What is Physical Field? State its defining idea and essential conditions.",
+      "definition": "A physical field assigns a quantity to each point in space and possibly time. A scalar field assigns values such as temperature, while a vector field assigns directed quantities such as gravitational acceleration.",
+      "required_concepts": [
+        "Quantity assigned throughout space or spacetime.",
+        "Scalar and vector fields differ."
+      ],
+      "accepted_variants": [
+        "A spatially distributed physical quantity."
+      ],
+      "major_error_concepts": [
+        "Assuming a field exists only where a test object has been placed."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-scalar",
+        "physics-foundations.draft-vector-components",
+        "physics-foundations.c1-mechanics-i-b1-cov-4992-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-electric-charge",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Electric Charge",
+      "prompt": "What is Electric Charge? State its defining idea and essential conditions.",
+      "definition": "Electric charge is a conserved property associated with electromagnetic interactions, occurring with positive and negative signs. Net charge is distinct from the total number of charged constituents because opposite charges can cancel.",
+      "required_concepts": [
+        "Signed conserved electromagnetic property.",
+        "Net charge sums signed contributions."
+      ],
+      "accepted_variants": [
+        "The source property for electric interactions."
+      ],
+      "major_error_concepts": [
+        "Claiming an electrically neutral object contains no charged particles."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-electric-current",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Electric Current",
+      "prompt": "What is Electric Current? State its defining idea and essential conditions.",
+      "definition": "Electric current is the rate at which net charge crosses a chosen surface, I=dQ/dt. Conventional current follows positive-charge flow, which can oppose electron drift in a metal.",
+      "required_concepts": [
+        "Charge flow per unit time.",
+        "Conventional direction distinguished from electron motion."
+      ],
+      "accepted_variants": [
+        "Net charge transport rate."
+      ],
+      "major_error_concepts": [
+        "Defining conventional current direction as electron drift in every material."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-electric-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-electric-potential-difference",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Electric Potential Difference",
+      "prompt": "What is Electric Potential Difference? State its defining idea and essential conditions.",
+      "definition": "Electric potential difference is electric potential-energy change per unit charge between locations in the electrostatic setting. It is measured in volts, or joules per coulomb, and is not itself a force.",
+      "required_concepts": [
+        "Energy difference per charge.",
+        "Distinguish potential difference from force and current."
+      ],
+      "accepted_variants": [
+        "Voltage."
+      ],
+      "major_error_concepts": [
+        "Calling voltage the amount of charge flowing per second."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-electric-charge",
+        "physics-foundations.c1-mechanics-i-b1-cov-4978",
+        "physics-foundations.draft-base-and-derived-units"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-electrical-resistance",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Electrical Resistance",
+      "prompt": "What is Electrical Resistance? State its defining idea and essential conditions.",
+      "definition": "Electrical resistance relates potential difference to current through R=V/I for a specified operating point when the ratio is meaningful. Ohmic behavior means a proportional relation with approximately constant resistance over the stated conditions.",
+      "required_concepts": [
+        "Voltage-current ratio.",
+        "Constant resistance is a model property, not universal."
+      ],
+      "accepted_variants": [
+        "Opposition to current quantified by the voltage-current relation."
+      ],
+      "major_error_concepts": [
+        "Assuming every device obeys a constant-resistance law at all voltages."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-electric-current",
+        "physics-foundations.draft-electric-potential-difference"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-wave",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Wave",
+      "prompt": "What is Wave? State its defining idea and essential conditions.",
+      "definition": "A wave is a propagating disturbance or field pattern that can transfer energy and information. Medium elements can oscillate locally without traveling alongside the pattern, and electromagnetic waves do not require a material medium.",
+      "required_concepts": [
+        "Propagation of a disturbance.",
+        "Pattern motion differs from material transport."
+      ],
+      "accepted_variants": [
+        "A traveling physical disturbance."
+      ],
+      "major_error_concepts": [
+        "Assuming all waves require a material medium or move each medium particle over the full propagation distance."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-field",
+        "physics-foundations.draft-energy-transfer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-wave-superposition",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Wave Superposition",
+      "prompt": "What is Wave Superposition? State its defining idea and essential conditions.",
+      "definition": "For a linear wave model, superposition means the total disturbance equals the sum of constituent disturbances. Interference follows from adding signed amplitudes, while energy generally does not add pointwise without cross terms.",
+      "required_concepts": [
+        "Linear sum of disturbances.",
+        "Amplitude superposition differs from naive energy addition."
+      ],
+      "accepted_variants": [
+        "Linear wave addition."
+      ],
+      "major_error_concepts": [
+        "Applying exact superposition to arbitrary strongly nonlinear waves."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-wave",
+        "physics-foundations.draft-vector-addition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-period-and-frequency",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Period and Frequency",
+      "prompt": "What is Period and Frequency? State its defining idea and essential conditions.",
+      "definition": "Period T is time per cycle and frequency f is cycles per unit time, with f=1/T. Angular frequency is omega=2 pi f and uses radians per time rather than cycles per time.",
+      "required_concepts": [
+        "Reciprocal period-frequency relation.",
+        "Angular frequency includes 2 pi."
+      ],
+      "accepted_variants": [
+        "Cycle duration and repetition rate."
+      ],
+      "major_error_concepts": [
+        "Equating angular frequency and ordinary frequency numerically without the conversion factor."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-quantity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-wave-speed-relation",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Wave-Speed Relation",
+      "prompt": "What is Wave-Speed Relation? State its defining idea and essential conditions.",
+      "definition": "For a periodic traveling wave, phase speed satisfies v=f lambda, where lambda is wavelength and f frequency. In dispersive systems, speed can depend on frequency and phase speed can differ from group speed.",
+      "required_concepts": [
+        "Speed equals frequency times wavelength for the periodic pattern.",
+        "Distinguish phase and group speed when needed."
+      ],
+      "accepted_variants": [
+        "The periodic-wave speed relation."
+      ],
+      "major_error_concepts": [
+        "Assuming all wave speeds are independent of frequency in every medium."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-wave",
+        "physics-foundations.draft-period-and-frequency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-energy-transfer",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Energy Transfer",
+      "prompt": "What is Energy Transfer? State its defining idea and essential conditions.",
+      "definition": "Energy transfer moves energy across a chosen system boundary through mechanisms such as work, heat, radiation, or transported matter. Total-energy accounting distinguishes transfer from conversion among forms inside the system.",
+      "required_concepts": [
+        "Boundary transfer versus internal transformation.",
+        "Mechanism depends on the system."
+      ],
+      "accepted_variants": [
+        "Movement of energy into or out of a system."
+      ],
+      "major_error_concepts": [
+        "Calling conversion from kinetic to internal energy destruction of energy."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-system-boundary",
+        "physics-foundations.c1-mechanics-i-b1-cov-4979",
+        "physics-foundations.c1-mechanics-i-b1-cov-5008"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-stable-equilibrium",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Stable Equilibrium",
+      "prompt": "What is Stable Equilibrium? State its defining idea and essential conditions.",
+      "definition": "A stable equilibrium is one for which sufficiently small perturbations remain near the equilibrium under the specified dynamics. Restoring tendencies often indicate stability, but damping and attraction are separate properties.",
+      "required_concepts": [
+        "Small disturbances remain small.",
+        "Stability need not imply return with decay."
+      ],
+      "accepted_variants": [
+        "An equilibrium robust to sufficiently small perturbations."
+      ],
+      "major_error_concepts": [
+        "Equating equilibrium alone with stability or requiring every stable motion to stop."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.c1-mechanics-i-b1-cov-4974-split-001",
+        "physics-foundations.c1-mechanics-i-b1-cov-4969"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-dimensionless-quantity",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Dimensionless Quantity",
+      "prompt": "What is Dimensionless Quantity? State its defining idea and essential conditions.",
+      "definition": "A dimensionless quantity has no net physical dimensions because its constituent units cancel. It can still convey physical information, as with a ratio, angle in radians, or a dimensionless control parameter.",
+      "required_concepts": [
+        "Net dimensions cancel.",
+        "Dimensionless does not mean physically meaningless."
+      ],
+      "accepted_variants": [
+        "A pure-number physical parameter."
+      ],
+      "major_error_concepts": [
+        "Assuming dimensionless quantities cannot affect a physical prediction."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-physical-dimension",
+        "physics-foundations.c1-mechanics-i-b1-cov-5053-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-measurement-versus-prediction",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Measurement versus Prediction",
+      "prompt": "What is Measurement versus Prediction? State its defining idea and essential conditions.",
+      "definition": "A measurement is an observation-based estimate with uncertainty, while a prediction follows from a model and inputs. Comparing them requires uncertainties and matching definitions; disagreement can indicate measurement, parameter, or model limitations.",
+      "required_concepts": [
+        "Observation estimate versus model consequence.",
+        "Compare like quantities with uncertainty."
+      ],
+      "accepted_variants": [
+        "Evidence-based value versus model-derived value."
+      ],
+      "major_error_concepts": [
+        "Adjusting the definition after seeing a discrepancy and calling that an independent successful prediction."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-measurement-uncertainty",
+        "physics-foundations.draft-prediction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "physics-foundations.draft-guard-digits",
+      "canonical_deck_id": "physics-foundations",
+      "term": "Guard Digits",
+      "prompt": "What is Guard Digits? State its defining idea and essential conditions.",
+      "definition": "Guard digits are extra digits retained during intermediate calculations to reduce accumulated rounding error. Final reporting should reflect justified precision rather than all digits retained internally.",
+      "required_concepts": [
+        "Keep extra internal digits; round the final result appropriately."
+      ],
+      "accepted_variants": [
+        "Intermediate precision retained to avoid premature rounding."
+      ],
+      "major_error_concepts": [
+        "Displaying every calculator digit as experimentally significant."
+      ],
+      "prerequisite_ids": [
+        "physics-foundations.draft-significant-figures"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4949",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4949",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4949",
+      "dependent_card_id": "physics-foundations.draft-reference-frame"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4959"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4960"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4995"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-001",
+      "dependent_card_id": "physics-foundations.draft-vector-components"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4969"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4952-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4954"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4970"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4972"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4977"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4980"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4995"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4953",
+      "dependent_card_id": "physics-foundations.draft-area-under-a-graph"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4954",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4954",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4995"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4954",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4959"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4960"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4965"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4972"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4977"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4991"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4958",
+      "dependent_card_id": "physics-foundations.draft-density"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4959",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-003"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5012"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-001",
+      "dependent_card_id": "physics-foundations.draft-system-boundary"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4966"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4967"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4969"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4970"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4991"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-003"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5012"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.draft-interaction-diagram"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4962-split-002",
+      "dependent_card_id": "physics-foundations.draft-system-boundary"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4973"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4974-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4999"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.draft-free-body-diagram"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4964",
+      "dependent_card_id": "physics-foundations.draft-pressure"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4965",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4996"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4966",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4968-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4966",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4968-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4969",
+      "dependent_card_id": "physics-foundations.draft-stable-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4972",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4972",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5011"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4973",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5011"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4974-split-001",
+      "dependent_card_id": "physics-foundations.draft-stable-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4980"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-001",
+      "dependent_card_id": "physics-foundations.draft-dot-product"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4978"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5006"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4976-split-002",
+      "dependent_card_id": "physics-foundations.draft-area-under-a-graph"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4977",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4979"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4977",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5006"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4978",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4979"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4978",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5007"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4978",
+      "dependent_card_id": "physics-foundations.draft-electric-potential-difference"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4979",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5007"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4979",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5008"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4979",
+      "dependent_card_id": "physics-foundations.draft-energy-transfer"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4991",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4992-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4992-split-001",
+      "dependent_card_id": "physics-foundations.draft-physical-field"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4995",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4996"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4974-split-001"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5006"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-002",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5011"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-4998-split-003",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5000"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5000",
+      "dependent_card_id": "physics-foundations.draft-free-body-diagram"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5006",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5007"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5006",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5008"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5008",
+      "dependent_card_id": "physics-foundations.draft-energy-transfer"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5011",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5012"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-001",
+      "dependent_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-002"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-001",
+      "dependent_card_id": "physics-foundations.draft-dimensionless-quantity"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-002",
+      "dependent_card_id": "physics-foundations.draft-approximation-regime"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.c1-mechanics-i-b1-cov-5053-split-002",
+      "dependent_card_id": "physics-foundations.draft-power-law-model"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-approximation-regime",
+      "dependent_card_id": "physics-foundations.draft-small-angle-approximation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-base-and-derived-units",
+      "dependent_card_id": "physics-foundations.draft-electric-potential-difference"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-base-and-derived-units",
+      "dependent_card_id": "physics-foundations.draft-physical-dimension"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-base-and-derived-units",
+      "dependent_card_id": "physics-foundations.draft-pressure"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-base-and-derived-units",
+      "dependent_card_id": "physics-foundations.draft-si-prefix"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-base-and-derived-units",
+      "dependent_card_id": "physics-foundations.draft-unit-conversion"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-controlled-comparison",
+      "dependent_card_id": "physics-foundations.draft-correlation-and-causation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-coordinate-system",
+      "dependent_card_id": "physics-foundations.draft-reference-frame"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-coordinate-system",
+      "dependent_card_id": "physics-foundations.draft-vector-components"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-dimensionless-quantity",
+      "dependent_card_id": "physics-foundations.draft-relative-uncertainty"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-electric-charge",
+      "dependent_card_id": "physics-foundations.draft-electric-current"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-electric-charge",
+      "dependent_card_id": "physics-foundations.draft-electric-potential-difference"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-electric-current",
+      "dependent_card_id": "physics-foundations.draft-electrical-resistance"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-electric-potential-difference",
+      "dependent_card_id": "physics-foundations.draft-electrical-resistance"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-energy-transfer",
+      "dependent_card_id": "physics-foundations.draft-temperature-versus-heat"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-energy-transfer",
+      "dependent_card_id": "physics-foundations.draft-wave"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-graph-slope",
+      "dependent_card_id": "physics-foundations.draft-linearized-plot"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-graph-slope",
+      "dependent_card_id": "physics-foundations.draft-power-law-model"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-interaction-diagram",
+      "dependent_card_id": "physics-foundations.draft-free-body-diagram"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-accuracy",
+      "dependent_card_id": "physics-foundations.draft-percent-error"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-accuracy",
+      "dependent_card_id": "physics-foundations.draft-systematic-error"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-precision",
+      "dependent_card_id": "physics-foundations.draft-measurement-accuracy"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-precision",
+      "dependent_card_id": "physics-foundations.draft-random-error"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-instrument-resolution"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-measurement-precision"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-measurement-versus-prediction"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-random-error"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-relative-uncertainty"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-significant-figures"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-testable-hypothesis"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-uncertainty-interval"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-measurement-uncertainty",
+      "dependent_card_id": "physics-foundations.draft-uncertainty-propagation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-model-assumption",
+      "dependent_card_id": "physics-foundations.draft-approximation-regime"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-model-assumption",
+      "dependent_card_id": "physics-foundations.draft-prediction"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-period-and-frequency",
+      "dependent_card_id": "physics-foundations.draft-wave-speed-relation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-dimension",
+      "dependent_card_id": "physics-foundations.draft-dimensionless-quantity"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-field",
+      "dependent_card_id": "physics-foundations.draft-wave"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-model",
+      "dependent_card_id": "physics-foundations.draft-linearized-plot"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-model",
+      "dependent_card_id": "physics-foundations.draft-model-assumption"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-model",
+      "dependent_card_id": "physics-foundations.draft-prediction"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-area-under-a-graph"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-base-and-derived-units"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-coordinate-system"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-density"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-electric-charge"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-graph-slope"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-measurement-uncertainty"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-period-and-frequency"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-physical-dimension"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-physical-model"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-scalar"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-physical-quantity",
+      "dependent_card_id": "physics-foundations.draft-scientific-notation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-prediction",
+      "dependent_card_id": "physics-foundations.draft-measurement-versus-prediction"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-prediction",
+      "dependent_card_id": "physics-foundations.draft-testable-hypothesis"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-random-error",
+      "dependent_card_id": "physics-foundations.draft-uncertainty-propagation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-scalar",
+      "dependent_card_id": "physics-foundations.draft-dot-product"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-scalar",
+      "dependent_card_id": "physics-foundations.draft-physical-field"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-scalar",
+      "dependent_card_id": "physics-foundations.draft-unit-vector"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-scientific-notation",
+      "dependent_card_id": "physics-foundations.draft-order-of-magnitude"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-si-prefix",
+      "dependent_card_id": "physics-foundations.draft-unit-conversion"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-significant-figures",
+      "dependent_card_id": "physics-foundations.draft-guard-digits"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-system-boundary",
+      "dependent_card_id": "physics-foundations.draft-energy-transfer"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-system-boundary",
+      "dependent_card_id": "physics-foundations.draft-interaction-diagram"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-testable-hypothesis",
+      "dependent_card_id": "physics-foundations.draft-controlled-comparison"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-unit-vector",
+      "dependent_card_id": "physics-foundations.draft-cross-product"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-vector-addition",
+      "dependent_card_id": "physics-foundations.draft-wave-superposition"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-vector-components",
+      "dependent_card_id": "physics-foundations.draft-cross-product"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-vector-components",
+      "dependent_card_id": "physics-foundations.draft-dot-product"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-vector-components",
+      "dependent_card_id": "physics-foundations.draft-physical-field"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-vector-components",
+      "dependent_card_id": "physics-foundations.draft-unit-vector"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-vector-components",
+      "dependent_card_id": "physics-foundations.draft-vector-addition"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-wave",
+      "dependent_card_id": "physics-foundations.draft-wave-speed-relation"
+    },
+    {
+      "prerequisite_card_id": "physics-foundations.draft-wave",
+      "dependent_card_id": "physics-foundations.draft-wave-superposition"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Physics Foundations.",
+  "level": "College",
+  "tags": [
+    "physics"
+  ]
+}

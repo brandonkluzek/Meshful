@@ -1,0 +1,3843 @@
+{
+  "id": "academic-reviewed-v1:organic-chemistry-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Organic Chemistry I",
+  "subject": "Chemistry",
+  "domain": "Chemistry",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "organic-chemistry-i.draft-organic-chemistry",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Chemistry",
+      "prompt": "What is Organic Chemistry? State its defining idea and essential conditions.",
+      "definition": "Organic chemistry studies the structures, properties, and transformations of carbon compounds within conventional disciplinary boundaries. Carbon's bonding versatility supports many functional groups and stereochemical arrangements; not every carbon-containing compound is treated primarily as organic chemistry.",
+      "required_concepts": [
+        "Study of carbon-based molecular structure and reactivity with conventional boundaries."
+      ],
+      "accepted_variants": [
+        "Chemistry of organic compounds."
+      ],
+      "major_error_concepts": [
+        "Defining every carbon-containing material as necessarily an organic molecule."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-bond-line-structure",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Bond Line Structure",
+      "prompt": "What is Bond Line Structure? State its defining idea and essential conditions.",
+      "definition": "A bond-line drawing represents carbon atoms at unlabeled line ends and vertices, with carbon-bound hydrogens usually inferred from valence. Heteroatoms, relevant hydrogens on them, charges, and stereochemical marks must be interpreted explicitly rather than silently treated as carbons.",
+      "required_concepts": [
+        "Unlabeled endpoints and corners represent carbon; implied hydrogens follow valence."
+      ],
+      "accepted_variants": [
+        "Skeletal or line-angle structure."
+      ],
+      "major_error_concepts": [
+        "Counting an unlabeled bend as empty space rather than a carbon atom."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-chemistry"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-constitutional-isomer",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Constitutional Isomer",
+      "prompt": "What is Constitutional Isomer? State its defining idea and essential conditions.",
+      "definition": "Constitutional isomers have the same molecular formula but different atom connectivity. They differ from conformers or stereoisomers, which preserve the bonded-atom connection pattern.",
+      "required_concepts": [
+        "Same formula, different connectivity."
+      ],
+      "accepted_variants": [
+        "Structural isomers."
+      ],
+      "major_error_concepts": [
+        "Calling two rotated drawings with identical connectivity constitutional isomers."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-line-structure"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-functional-group",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Functional Group",
+      "prompt": "What is Functional Group? State its defining idea and essential conditions.",
+      "definition": "A functional group is a recurring atom-and-bond arrangement associated with characteristic chemical behavior. The surrounding structure modifies that behavior, so identifying the group is a starting point rather than a complete prediction of every reaction.",
+      "required_concepts": [
+        "Recurring structural unit associated with characteristic reactivity."
+      ],
+      "accepted_variants": [
+        "Organic functional group."
+      ],
+      "major_error_concepts": [
+        "Assuming every molecule containing the same group has identical reaction rates and properties."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-line-structure",
+        "organic-chemistry-i.draft-constitutional-isomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-formal-charge",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Formal Charge",
+      "prompt": "What is Formal Charge? State its defining idea and essential conditions.",
+      "definition": "Formal charge assigns bonding electrons equally between bonded atoms and compares assigned electrons with the neutral atom's valence count. It is an electron-bookkeeping quantity, not the atom's measured partial charge or oxidation state.",
+      "required_concepts": [
+        "Valence count minus assigned nonbonding and half-bonding electrons."
+      ],
+      "accepted_variants": [
+        "Formal electron-count charge."
+      ],
+      "major_error_concepts": [
+        "Equating formal charge with the actual distribution of electron density."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-line-structure",
+        "general-chemistry-i.c1-general-chemistry-i-b1-cov-4480-split-002"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-resonance",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Resonance",
+      "prompt": "What is Resonance? State its defining idea and essential conditions.",
+      "definition": "Resonance contributors differ in electron placement while preserving nuclear positions and connectivity. The molecule is represented by a delocalized electronic structure, not by rapid physical switching between independently existing contributor molecules.",
+      "required_concepts": [
+        "Electron-only alternative contributors describe one delocalized structure."
+      ],
+      "accepted_variants": [
+        "Resonance hybrid."
+      ],
+      "major_error_concepts": [
+        "Moving atoms to create a resonance contributor or treating contributors as equilibrating isomers."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "general-chemistry-i.c1-general-chemistry-i-b1-cov-4480-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-octet-rule-in-organic-structures",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Octet Rule in Organic Structures",
+      "prompt": "What is Octet Rule in Organic Structures? State its defining idea and essential conditions.",
+      "definition": "The octet rule is a useful valence-shell guideline for many second-row main-group atoms. Charged, electron-deficient, and radical intermediates can have incomplete octets, while ordinary second-row carbon cannot be assigned arbitrary expanded-octet bonding in a valid Lewis structure.",
+      "required_concepts": [
+        "Second-row valence counting constrains plausible organic structures."
+      ],
+      "accepted_variants": [
+        "Octet-based Lewis-structure bookkeeping."
+      ],
+      "major_error_concepts": [
+        "Drawing neutral carbon with five ordinary two-electron bonds without addressing invalid electron count."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-carbon-hybridization",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Carbon Hybridization",
+      "prompt": "What is Carbon Hybridization? State its defining idea and essential conditions.",
+      "definition": "Hybridization is a localized orbital model combining atomic orbitals into directionally useful bonding orbitals. sp3, sp2, and sp descriptions often correspond to tetrahedral, trigonal-planar, and linear bonding arrangements, while remaining p orbitals can form pi systems.",
+      "required_concepts": [
+        "Localized orbital combinations relate to bonding geometry and available p orbitals."
+      ],
+      "accepted_variants": [
+        "sp3, sp2, or sp hybrid-orbital model."
+      ],
+      "major_error_concepts": [
+        "Treating hybridization labels as a literal observable switching event independent of molecular bonding."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-octet-rule-in-organic-structures"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-sigma-bond",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Sigma Bond",
+      "prompt": "What is Sigma Bond? State its defining idea and essential conditions.",
+      "definition": "A sigma bond has bonding overlap oriented along the internuclear axis. A single bond is ordinarily a sigma bond, while double and triple bonds each contain one sigma component plus additional pi components.",
+      "required_concepts": [
+        "Axial bonding overlap; one sigma component per bonded atom pair in ordinary multiple bonds."
+      ],
+      "accepted_variants": [
+        "Sigma bonding orbital interaction."
+      ],
+      "major_error_concepts": [
+        "Counting both components of a double bond as sigma bonds."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-carbon-hybridization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-pi-bond",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Pi Bond",
+      "prompt": "What is Pi Bond? State its defining idea and essential conditions.",
+      "definition": "A pi bond arises from lateral orbital overlap with electron density on opposite sides of the internuclear axis. Maintaining parallel overlap restricts rotation, which helps make alkene stereochemistry distinct from ordinary single-bond conformations.",
+      "required_concepts": [
+        "Sideways overlap produces pi bonding and restricts free rotation."
+      ],
+      "accepted_variants": [
+        "Pi orbital overlap."
+      ],
+      "major_error_concepts": [
+        "Assuming a double bond rotates freely while preserving the same pi overlap."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-carbon-hybridization",
+        "organic-chemistry-i.draft-sigma-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-organic-molecular-geometry",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Molecular Geometry",
+      "prompt": "What is Organic Molecular Geometry? State its defining idea and essential conditions.",
+      "definition": "Local molecular geometry describes the spatial arrangement of bonded atoms around a center. Electron-pair arrangements, multiple bonding, and lone pairs influence angles, so a hybridization label is an approximation rather than an exact prediction of every bond angle.",
+      "required_concepts": [
+        "Three-dimensional local atom arrangement with electronic influences."
+      ],
+      "accepted_variants": [
+        "Tetrahedral, trigonal-planar, or linear local geometry as appropriate."
+      ],
+      "major_error_concepts": [
+        "Assuming every angle near an sp3 center is exactly the ideal tetrahedral angle."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-carbon-hybridization",
+        "organic-chemistry-i.draft-pi-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-bond-and-molecular-polarity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Bond and Molecular Polarity",
+      "prompt": "What is Bond and Molecular Polarity? State its defining idea and essential conditions.",
+      "definition": "Bond polarity reflects unequal sharing of electron density between bonded atoms. Molecular polarity depends on the vector combination of bond dipoles and geometry, so polar bonds do not guarantee a nonzero total molecular dipole.",
+      "required_concepts": [
+        "Unequal bond electron sharing differs from whole-molecule dipole."
+      ],
+      "accepted_variants": [
+        "Polar covalent bonding."
+      ],
+      "major_error_concepts": [
+        "Assuming any molecule with a polar bond must have a net dipole."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-molecular-geometry",
+        "general-chemistry-i.c1-general-chemistry-i-b1-cov-4479-split-001"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-organic-intermolecular-forces",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Intermolecular Forces",
+      "prompt": "What is Organic Intermolecular Forces? State its defining idea and essential conditions.",
+      "definition": "Intermolecular forces include dispersion, dipole interactions, and hydrogen bonding among molecules. They influence physical properties and differ from the intramolecular covalent bonds that determine atom connectivity.",
+      "required_concepts": [
+        "Attractions between molecules influence bulk properties."
+      ],
+      "accepted_variants": [
+        "Noncovalent intermolecular interactions."
+      ],
+      "major_error_concepts": [
+        "Explaining ordinary boiling as breaking the molecule's carbon-carbon covalent skeleton."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-and-molecular-polarity",
+        "general-chemistry-ii.draft-intermolecular-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Hydrogen Bond Donor and Acceptor",
+      "prompt": "What is Hydrogen Bond Donor and Acceptor? State its defining idea and essential conditions.",
+      "definition": "Hydrogen bonding involves an appropriately polarized donor bond and a suitable acceptor electron pair. A molecule can be a donor, acceptor, both, or neither depending on structure; not every atom with a lone pair has equal acceptor ability.",
+      "required_concepts": [
+        "Specific donor-acceptor interaction depends on electronic structure."
+      ],
+      "accepted_variants": [
+        "Hydrogen-bond donation and acceptance."
+      ],
+      "major_error_concepts": [
+        "Treating every hydrogen attached to carbon as equivalent to a typical O-H hydrogen-bond donor."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-intermolecular-forces",
+        "organic-chemistry-i.draft-bond-and-molecular-polarity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-organic-solubility",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Solubility",
+      "prompt": "What is Organic Solubility? State its defining idea and essential conditions.",
+      "definition": "Solubility reflects the free-energy balance of separating solute and solvent particles and forming new interactions, including entropy. Polarity and hydrogen bonding are useful guides, but molecular size, ionization, temperature, and crystal stability also matter.",
+      "required_concepts": [
+        "Dissolution depends on the overall free-energy balance, not polarity alone."
+      ],
+      "accepted_variants": [
+        "Organic-solvent compatibility with structure-dependent qualifications."
+      ],
+      "major_error_concepts": [
+        "Using like-dissolves-like as an exception-free quantitative law."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-intermolecular-forces",
+        "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-boiling-point-and-structure",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Boiling Point and Structure",
+      "prompt": "What is Boiling Point and Structure? State its defining idea and essential conditions.",
+      "definition": "Boiling requires vapor pressure to match the external pressure. Intermolecular attractions, molecular size and shape, and pressure affect boiling points; a higher boiling point does not directly mean stronger covalent bonds within the molecule.",
+      "required_concepts": [
+        "Boiling is a pressure-dependent phase equilibrium influenced by intermolecular interactions."
+      ],
+      "accepted_variants": [
+        "Structure-property reasoning for boiling point."
+      ],
+      "major_error_concepts": [
+        "Equating higher boiling point automatically with stronger carbon-carbon bonds."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-intermolecular-forces",
+        "organic-chemistry-i.draft-organic-solubility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Bronsted Acid and Base",
+      "prompt": "What is Organic Bronsted Acid and Base? State its defining idea and essential conditions.",
+      "definition": "A Bronsted acid donates a proton and a Bronsted base accepts one, producing conjugate partners. Reaction direction depends on relative acid-base strengths in the relevant medium, not simply on which molecule visibly contains more hydrogen atoms.",
+      "required_concepts": [
+        "Proton transfer links conjugate acid-base pairs."
+      ],
+      "accepted_variants": [
+        "Bronsted-Lowry acid-base reaction."
+      ],
+      "major_error_concepts": [
+        "Calling every hydrogen-containing molecule an equally strong proton donor."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-pka",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "pKa",
+      "prompt": "What is pKa? State its defining idea and essential conditions.",
+      "definition": "pKa is minus the base-ten logarithm of an acid dissociation constant under stated conditions. Lower pKa indicates a stronger acid in a comparable solvent and convention; values from different media are not automatically directly comparable.",
+      "required_concepts": [
+        "Lower pKa means stronger acidity within comparable conditions."
+      ],
+      "accepted_variants": [
+        "Logarithmic acid-strength measure."
+      ],
+      "major_error_concepts": [
+        "Assuming a larger pKa means a stronger acid."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-bronsted-acid-and-base"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-conjugate-base-stability",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Conjugate Base Stability",
+      "prompt": "What is Conjugate Base Stability? State its defining idea and essential conditions.",
+      "definition": "Stabilizing an acid's conjugate base generally favors deprotonation within a comparable setting. Charge-bearing atom, resonance, induction, hybridization, solvation, and aromaticity can all affect stability, so no single mnemonic ranks every pair correctly.",
+      "required_concepts": [
+        "Conjugate-base stability informs relative acidity under comparable conditions."
+      ],
+      "accepted_variants": [
+        "Structural acidity analysis."
+      ],
+      "major_error_concepts": [
+        "Ranking acids only by counting resonance drawings regardless of their validity or stability."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+        "organic-chemistry-i.draft-pka",
+        "organic-chemistry-i.draft-resonance",
+        "organic-chemistry-i.draft-carbon-hybridization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-proton-transfer-equilibrium",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Proton Transfer Equilibrium",
+      "prompt": "What is Proton Transfer Equilibrium? State its defining idea and essential conditions.",
+      "definition": "For HA+B forming Aminus+BHplus, the equilibrium constant is approximately ten to the power pKa(BHplus)-pKa(HA) when the pKa values use a consistent medium and convention. Proton transfer favors the side with the weaker acid and weaker base.",
+      "required_concepts": [
+        "Consistent pKa difference predicts proton-transfer equilibrium direction and scale."
+      ],
+      "accepted_variants": [
+        "Acid-base equilibrium from conjugate-acid pKa values."
+      ],
+      "major_error_concepts": [
+        "Reversing the pKa difference so transfer is predicted toward the stronger acid."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-pka",
+        "organic-chemistry-i.draft-conjugate-base-stability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-basicity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Basicity",
+      "prompt": "What is Basicity? State its defining idea and essential conditions.",
+      "definition": "Basicity measures the thermodynamic tendency to accept a proton under specified conditions. It differs from nucleophilicity, which describes reaction rate toward an electrophilic center; sterics, solvent, and the reaction partner can separate the two trends.",
+      "required_concepts": [
+        "Equilibrium proton affinity differs from kinetic attacking ability."
+      ],
+      "accepted_variants": [
+        "Bronsted basicity under a stated solvent."
+      ],
+      "major_error_concepts": [
+        "Assuming the strongest base is necessarily the fastest nucleophile for every substrate."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-nucleophile",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Nucleophile",
+      "prompt": "What is Nucleophile? State its defining idea and essential conditions.",
+      "definition": "A nucleophile donates an electron pair to form a bond with an electrophilic center. It can be neutral or charged; electron availability, steric access, solvent, and the partner determine its reaction rate.",
+      "required_concepts": [
+        "Electron-pair donor in bond formation."
+      ],
+      "accepted_variants": [
+        "Lewis-base nucleophile."
+      ],
+      "major_error_concepts": [
+        "Assuming only negatively charged species can be nucleophiles."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "organic-chemistry-i.draft-basicity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-electrophile",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Electrophile",
+      "prompt": "What is Electrophile? State its defining idea and essential conditions.",
+      "definition": "An electrophile accepts an electron pair into a bond-forming interaction. Positive charge, polarized bonds, or accessible low-energy acceptor orbitals can confer electrophilicity, so the species need not carry an overall positive formal charge.",
+      "required_concepts": [
+        "Electron-pair acceptor in bond formation."
+      ],
+      "accepted_variants": [
+        "Lewis-acid electrophile."
+      ],
+      "major_error_concepts": [
+        "Assuming a neutral polarized carbonyl cannot be electrophilic."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "organic-chemistry-i.draft-bond-and-molecular-polarity",
+        "organic-chemistry-i.draft-nucleophile"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Curved Arrow Mechanism",
+      "prompt": "What is Curved Arrow Mechanism? State its defining idea and essential conditions.",
+      "definition": "A curved arrow in a polar mechanism starts at an electron pair or bond and ends where that pair is assigned after the step. It tracks electron movement, not atom travel; electron counts and charges must remain consistent.",
+      "required_concepts": [
+        "Arrow tail identifies electron source and head their destination."
+      ],
+      "accepted_variants": [
+        "Two-electron curved-arrow notation."
+      ],
+      "major_error_concepts": [
+        "Starting an electron-pair arrow from an electron-deficient atom with no source electrons."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-electrophile",
+        "organic-chemistry-i.draft-formal-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-homolytic-cleavage",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Homolytic Cleavage",
+      "prompt": "What is Homolytic Cleavage? State its defining idea and essential conditions.",
+      "definition": "Homolytic bond cleavage gives one bonding electron to each fragment, commonly producing radicals. Single-headed fishhook arrows represent one-electron movement, unlike the paired-electron arrows used for ordinary heterolytic steps.",
+      "required_concepts": [
+        "Bond electron pair splits one electron to each fragment."
+      ],
+      "accepted_variants": [
+        "Homolysis."
+      ],
+      "major_error_concepts": [
+        "Drawing both bonding electrons on one fragment while calling the step homolytic."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-sigma-bond",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-heterolytic-cleavage",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Heterolytic Cleavage",
+      "prompt": "What is Heterolytic Cleavage? State its defining idea and essential conditions.",
+      "definition": "Heterolytic bond cleavage assigns both bonding electrons to one fragment, often forming oppositely charged species. The favored direction depends on bonding, solvent, and stability, not on a universal rule that either fragment always retains electrons.",
+      "required_concepts": [
+        "Both bonding electrons go to the same fragment."
+      ],
+      "accepted_variants": [
+        "Heterolysis."
+      ],
+      "major_error_concepts": [
+        "Assigning one electron to each fragment while labeling the process heterolytic."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "organic-chemistry-i.draft-curved-arrow-mechanism",
+        "organic-chemistry-i.draft-homolytic-cleavage"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-bond-dissociation-energy",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Bond Dissociation Energy",
+      "prompt": "What is Bond Dissociation Energy? State its defining idea and essential conditions.",
+      "definition": "Bond dissociation energy characterizes the energy required for a specified homolytic bond cleavage, commonly in the gas phase. It helps compare radical bond-breaking energetics but is not identical to a reaction activation barrier or a solution-phase pKa.",
+      "required_concepts": [
+        "Energy for specified homolytic bond cleavage."
+      ],
+      "accepted_variants": [
+        "BDE or bond dissociation enthalpy with convention stated."
+      ],
+      "major_error_concepts": [
+        "Using a bond dissociation energy as the activation energy of every reaction involving that bond."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-homolytic-cleavage",
+        "organic-chemistry-i.draft-pka"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-reaction-thermodynamics",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Reaction Thermodynamics",
+      "prompt": "What is Reaction Thermodynamics? State its defining idea and essential conditions.",
+      "definition": "Reaction thermodynamics compares the free energies of reactants and products and determines the equilibrium tendency under specified conditions. A favorable free-energy change does not imply a fast reaction because the path may contain a high activation barrier.",
+      "required_concepts": [
+        "Free-energy difference determines equilibrium, not rate by itself."
+      ],
+      "accepted_variants": [
+        "Thermodynamic favorability."
+      ],
+      "major_error_concepts": [
+        "Equating a negative reaction free energy with immediate completion."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-proton-transfer-equilibrium",
+        "organic-chemistry-i.draft-bond-dissociation-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-reaction-kinetics",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Reaction Kinetics",
+      "prompt": "What is Reaction Kinetics? State its defining idea and essential conditions.",
+      "definition": "Chemical kinetics describes reaction rates and how they depend on concentrations, temperature, and mechanism. Rates depend on activation barriers and the operative pathway rather than only on the stability of final products.",
+      "required_concepts": [
+        "Rate and pathway dependence are distinct from equilibrium favorability."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Predicting the fastest product solely from which product is lowest in free energy."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-thermodynamics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-reaction-coordinate-diagram",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Reaction Coordinate Diagram",
+      "prompt": "What is Reaction Coordinate Diagram? State its defining idea and essential conditions.",
+      "definition": "A reaction-coordinate diagram plots a chosen energy measure along progress through a pathway. Maxima represent transition states and minima may represent reactants, intermediates, or products; the horizontal coordinate is not generally elapsed time.",
+      "required_concepts": [
+        "Energy profile maps pathway barriers and minima, not an ordinary time trace."
+      ],
+      "accepted_variants": [
+        "Reaction energy diagram."
+      ],
+      "major_error_concepts": [
+        "Reading the width between peaks as the measured duration of a mechanistic step."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-thermodynamics",
+        "organic-chemistry-i.draft-reaction-kinetics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-reaction-intermediate",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Reaction Intermediate",
+      "prompt": "What is Reaction Intermediate? State its defining idea and essential conditions.",
+      "definition": "An intermediate is a species corresponding to a local minimum on a reaction energy surface between elementary steps. It has a finite lifetime, though it may be too short-lived to isolate, and differs from a transition-state configuration at a barrier.",
+      "required_concepts": [
+        "Local energy minimum between mechanistic steps."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every drawn transition state an isolable intermediate."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-coordinate-diagram"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-transition-state",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Transition State",
+      "prompt": "What is Transition State? State its defining idea and essential conditions.",
+      "definition": "A transition state is a high-energy dividing configuration associated with crossing an elementary reaction barrier. It is not a stable species that accumulates in the same way as an intermediate, and its structure reflects partially changing bonds.",
+      "required_concepts": [
+        "Barrier-crossing configuration rather than a local-minimum species."
+      ],
+      "accepted_variants": [
+        "Activated complex in the transition-state sense."
+      ],
+      "major_error_concepts": [
+        "Placing a transition state at a stable energy minimum."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-coordinate-diagram",
+        "organic-chemistry-i.draft-reaction-intermediate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-rate-determining-step",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Rate Determining Step",
+      "prompt": "What is Rate Determining Step? State its defining idea and essential conditions.",
+      "definition": "A rate-determining step is an approximate description of a step exerting dominant control on overall rate under specified conditions. Pre-equilibria and concentrations can make observed rate laws more complicated than simply copying the molecularity of the tallest-looking diagram peak.",
+      "required_concepts": [
+        "Dominant kinetic control is conditional on the full mechanism and concentrations."
+      ],
+      "accepted_variants": [
+        "Rate-limiting step under a justified approximation."
+      ],
+      "major_error_concepts": [
+        "Assuming the highest absolute peak always directly gives the observed rate law without considering preceding equilibria."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-kinetics",
+        "organic-chemistry-i.draft-reaction-coordinate-diagram",
+        "organic-chemistry-i.draft-reaction-intermediate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-catalysis",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Catalysis",
+      "prompt": "What is Catalysis? State its defining idea and essential conditions.",
+      "definition": "A catalyst provides a pathway that changes reaction rate while being regenerated in the overall process. It does not change the equilibrium constant for the same overall reaction under the same conditions, although it can enable equilibrium to be approached faster.",
+      "required_concepts": [
+        "Regenerated participant changes kinetics without changing the same reaction's equilibrium."
+      ],
+      "accepted_variants": [
+        "Catalytic pathway."
+      ],
+      "major_error_concepts": [
+        "Claiming a catalyst makes an unchanged equilibrium intrinsically favor products more strongly."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-thermodynamics",
+        "organic-chemistry-i.draft-reaction-kinetics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkane",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkane",
+      "prompt": "What is Alkane? State its defining idea and essential conditions.",
+      "definition": "An alkane is a saturated acyclic hydrocarbon containing only carbon-carbon and carbon-hydrogen single bonds. Cycloalkanes share saturation but differ in ring connectivity and molecular-formula relationships.",
+      "required_concepts": [
+        "Saturated acyclic hydrocarbon with single bonds."
+      ],
+      "accepted_variants": [
+        "Acyclic alkane, distinguished from cycloalkane."
+      ],
+      "major_error_concepts": [
+        "Applying the acyclic formula CnH2n+2 to every cyclic saturated hydrocarbon."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-line-structure",
+        "organic-chemistry-i.draft-sigma-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkane-nomenclature",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkane Nomenclature",
+      "prompt": "What is Alkane Nomenclature? State its defining idea and essential conditions.",
+      "definition": "Systematic alkane naming identifies an appropriate parent chain, numbers it to locate substituents under the naming rules, and identifies those substituents consistently. The visually straightest drawn chain is not necessarily the required parent chain.",
+      "required_concepts": [
+        "Parent selection, numbering, and substituent identification determine the name."
+      ],
+      "accepted_variants": [
+        "Systematic substituted-alkane nomenclature."
+      ],
+      "major_error_concepts": [
+        "Choosing the parent solely from how straight a chain looks on paper."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkane",
+        "organic-chemistry-i.draft-constitutional-isomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-conformation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Conformation",
+      "prompt": "What is Conformation? State its defining idea and essential conditions.",
+      "definition": "Conformations are spatial arrangements interconverted mainly by rotation about single bonds without changing connectivity. Different conformations can have different energies, and not every formally single bond rotates freely when conjugation or ring constraints matter.",
+      "required_concepts": [
+        "Single-bond rotation changes conformation rather than constitution."
+      ],
+      "accepted_variants": [
+        "Conformers or rotamers with restrictions acknowledged."
+      ],
+      "major_error_concepts": [
+        "Calling every bond rotation a change to a constitutional isomer."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-sigma-bond",
+        "organic-chemistry-i.draft-alkane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-newman-projection",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Newman Projection",
+      "prompt": "What is Newman Projection? State its defining idea and essential conditions.",
+      "definition": "A Newman projection views a molecule along a selected bond, separating front- and back-atom substituent orientations. The viewing direction and atom assignment must be fixed before comparing staggered, eclipsed, anti, or gauche arrangements.",
+      "required_concepts": [
+        "End-on bond view distinguishes front and back substituents."
+      ],
+      "accepted_variants": [
+        "Newman conformational projection."
+      ],
+      "major_error_concepts": [
+        "Comparing two projections without accounting for a reversed viewing direction."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-conformation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-torsional-strain",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Torsional Strain",
+      "prompt": "What is Torsional Strain? State its defining idea and essential conditions.",
+      "definition": "Torsional strain is an energy penalty associated with unfavorable eclipsing interactions during rotation about a bond. It differs conceptually from angle strain and can vary with the substituents and electronic structure.",
+      "required_concepts": [
+        "Eclipsing-related rotational energy penalty."
+      ],
+      "accepted_variants": [
+        "Torsional conformational strain."
+      ],
+      "major_error_concepts": [
+        "Calling every unfavorable bond angle torsional strain."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-newman-projection",
+        "organic-chemistry-i.draft-conformation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-steric-strain",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Steric Strain",
+      "prompt": "What is Steric Strain? State its defining idea and essential conditions.",
+      "definition": "Steric strain arises when spatially crowded atoms or groups create unfavorable nonbonded interactions. Its size depends on the three-dimensional arrangement rather than only the number of substituents written in a formula.",
+      "required_concepts": [
+        "Nonbonded crowding raises conformational or structural energy."
+      ],
+      "accepted_variants": [
+        "Steric hindrance or crowding when used in the appropriate context."
+      ],
+      "major_error_concepts": [
+        "Inferring steric effects solely from a two-dimensional drawing's spacing."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-molecular-geometry",
+        "organic-chemistry-i.draft-conformation",
+        "organic-chemistry-i.draft-torsional-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-cycloalkane",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Cycloalkane",
+      "prompt": "What is Cycloalkane? State its defining idea and essential conditions.",
+      "definition": "A cycloalkane contains a saturated carbon ring. Ring closure restricts conformations and can introduce angle, torsional, or other strain, so properties cannot be inferred by treating every bond as an independent acyclic rotation.",
+      "required_concepts": [
+        "Saturated ring connectivity constrains conformation."
+      ],
+      "accepted_variants": [
+        "Cyclic saturated hydrocarbon."
+      ],
+      "major_error_concepts": [
+        "Assuming ring bonds rotate independently without affecting the rest of the ring."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkane",
+        "organic-chemistry-i.draft-conformation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-ring-strain",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Ring Strain",
+      "prompt": "What is Ring Strain? State its defining idea and essential conditions.",
+      "definition": "Ring strain combines energetic penalties from nonideal bond angles, torsional interactions, and sometimes nonbonded contacts across a ring. It depends on ring size and conformation rather than increasing uniformly with the number of ring atoms.",
+      "required_concepts": [
+        "Several geometric and nonbonded contributions determine cyclic strain."
+      ],
+      "accepted_variants": [
+        "Angle, torsional, and transannular ring-strain contributions."
+      ],
+      "major_error_concepts": [
+        "Assuming larger rings are always either more strained or less strained in one simple monotonic order."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-cycloalkane",
+        "organic-chemistry-i.draft-torsional-strain",
+        "organic-chemistry-i.draft-steric-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-cyclohexane-chair",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Cyclohexane Chair",
+      "prompt": "What is Cyclohexane Chair? State its defining idea and essential conditions.",
+      "definition": "The chair conformation of cyclohexane has near-tetrahedral bond angles and largely staggered bonds, giving low strain. It is three-dimensional, with alternating bond orientations rather than a flat hexagon.",
+      "required_concepts": [
+        "Low-strain nonplanar six-membered-ring conformation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a planar hexagon as the actual lowest-energy cyclohexane geometry."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-cycloalkane",
+        "organic-chemistry-i.draft-ring-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-axial-and-equatorial-positions",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Axial and Equatorial Positions",
+      "prompt": "What is Axial and Equatorial Positions? State its defining idea and essential conditions.",
+      "definition": "Axial bonds in a cyclohexane chair are approximately parallel to the ring's axis and alternate up and down, while equatorial bonds project roughly around the ring perimeter. Up versus down stereochemistry is a different distinction from axial versus equatorial position.",
+      "required_concepts": [
+        "Axial/equatorial positions differ from up/down orientation."
+      ],
+      "accepted_variants": [
+        "Chair substituent positions."
+      ],
+      "major_error_concepts": [
+        "Assuming every equatorial substituent points down or every axial substituent points up."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-cyclohexane-chair"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-cyclohexane-ring-flip",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Cyclohexane Ring Flip",
+      "prompt": "What is Cyclohexane Ring Flip? State its defining idea and essential conditions.",
+      "definition": "A cyclohexane ring flip exchanges axial and equatorial positions while preserving each substituent's up or down orientation. Bulky groups often favor equatorial placement because it reduces particular nonbonded interactions, but the full substitution pattern determines the preferred conformer.",
+      "required_concepts": [
+        "Ring flip exchanges positions without changing configuration."
+      ],
+      "accepted_variants": [
+        "Chair interconversion."
+      ],
+      "major_error_concepts": [
+        "Treating a ring flip as converting a cis isomer into a trans isomer."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-axial-and-equatorial-positions",
+        "organic-chemistry-i.draft-steric-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-cis-trans-ring-isomerism",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Cis Trans Ring Isomerism",
+      "prompt": "What is Cis Trans Ring Isomerism? State its defining idea and essential conditions.",
+      "definition": "For suitable ring substituents, cis means on the same ring face and trans means on opposite faces. The assignment persists through conformational changes and cannot be determined solely by whether the groups are axial or equatorial in one chair drawing.",
+      "required_concepts": [
+        "Same versus opposite ring face defines the configuration."
+      ],
+      "accepted_variants": [
+        "Cis-trans ring stereochemistry."
+      ],
+      "major_error_concepts": [
+        "Calling two equatorial substituents automatically cis without checking their up/down directions."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-axial-and-equatorial-positions",
+        "organic-chemistry-i.draft-cyclohexane-ring-flip"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-chirality",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Chirality",
+      "prompt": "What is Chirality? State its defining idea and essential conditions.",
+      "definition": "A chiral object is not superimposable on its mirror image by ordinary rotations and translations. A tetrahedral stereocenter is a common source, but chirality can arise without one and can be absent despite multiple stereocenters.",
+      "required_concepts": [
+        "Nonsuperimposability on a mirror image defines chirality."
+      ],
+      "accepted_variants": [
+        "Molecular handedness."
+      ],
+      "major_error_concepts": [
+        "Equating chirality exactly with the presence of any one drawn stereocenter in all structures."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-molecular-geometry",
+        "organic-chemistry-i.draft-cis-trans-ring-isomerism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-stereoisomer",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Stereoisomer",
+      "prompt": "What is Stereoisomer? State its defining idea and essential conditions.",
+      "definition": "Stereoisomers have identical constitution, including atom connectivity and bond multiplicities, but different three-dimensional arrangements. The broad classification includes configurational and conformational stereoisomerism. A course may focus on distinct configurations, but rapid interconversion of conformations does not put them outside the broader spatial classification; isolability depends on the barrier and observation timescale.",
+      "required_concepts": [
+        "Same atom connectivity and bond multiplicity, but a different spatial arrangement.",
+        "Do not silently restrict the generic term to isolable configurational isomers."
+      ],
+      "accepted_variants": [
+        "Stereoisomers differ in three-dimensional arrangement without changing constitution; conformers and configurational stereoisomers are distinguished within this broad category."
+      ],
+      "major_error_concepts": [
+        "Calling different atom connectivities stereoisomerism.",
+        "Claiming the broad term excludes every conformational difference solely because interconversion is rapid."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-constitutional-isomer",
+        "organic-chemistry-i.draft-conformation",
+        "organic-chemistry-i.draft-chirality"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-enantiomer",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Enantiomer",
+      "prompt": "What is Enantiomer? State its defining idea and essential conditions.",
+      "definition": "Enantiomers are nonsuperimposable mirror-image stereoisomers. They have identical many bulk properties in an achiral environment but can interact differently with chiral agents; optical-rotation sign cannot be read directly from an R or S descriptor.",
+      "required_concepts": [
+        "Nonsuperimposable mirror-image pair."
+      ],
+      "accepted_variants": [
+        "Enantiomeric pair."
+      ],
+      "major_error_concepts": [
+        "Assuming R always means positive optical rotation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-chirality",
+        "organic-chemistry-i.draft-stereoisomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-diastereomer",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Diastereomer",
+      "prompt": "What is Diastereomer? State its defining idea and essential conditions.",
+      "definition": "Diastereomers are stereoisomers that are not mirror images. They can differ in ordinary physical and chemical properties even in achiral environments, including cis-trans configurations and some molecules with multiple stereocenters.",
+      "required_concepts": [
+        "Non-mirror-image stereoisomers."
+      ],
+      "accepted_variants": [
+        "Diastereomeric relationship."
+      ],
+      "major_error_concepts": [
+        "Calling all stereoisomer pairs enantiomers."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-stereoisomer",
+        "organic-chemistry-i.draft-enantiomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-tetrahedral-stereocenter",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Tetrahedral Stereocenter",
+      "prompt": "What is Tetrahedral Stereocenter? State its defining idea and essential conditions.",
+      "definition": "A tetrahedral stereocenter commonly has four distinguishable substituent paths such that exchanging two creates a stereoisomer. Distinguishability depends on the full connected paths, not only on the first atom attached to the center.",
+      "required_concepts": [
+        "Four distinguishable substituent paths at a tetrahedral center."
+      ],
+      "accepted_variants": [
+        "Tetrahedral stereogenic center."
+      ],
+      "major_error_concepts": [
+        "Treating two carbon-starting substituents as identical without comparing their remaining structures."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-chirality",
+        "organic-chemistry-i.draft-stereoisomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-r-s-configuration",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "R S Configuration",
+      "prompt": "For an ordinary tetrahedral stereocenter, how do the basic CIP priority and viewing rules determine R or S?",
+      "definition": "Rank directly attached atoms by atomic number, larger first; for isotopes of one element, larger mass number ranks first. Break ties by comparing outward, sorted attached-atom lists at the first difference, using duplicate-atom treatment for multiple bonds. With priority 4 directed away, the 1-to-2-to-3 sense is clockwise for R and counterclockwise for S. R/S does not predict the sign of optical rotation. Advanced stereochemical tie cases require the fuller CIP rules.",
+      "required_concepts": [
+        "Use atomic number, isotope mass and first-point-of-difference comparisons rather than whole-group size or mass.",
+        "Place priority 4 away before interpreting the 1-2-3 clockwise R or counterclockwise S sequence."
+      ],
+      "accepted_variants": [
+        "For OH, ethyl, methyl and H, the order is OH > ethyl > methyl > H; view with H away before assigning the clockwise or counterclockwise descriptor."
+      ],
+      "major_error_concepts": [
+        "Ranking substituents by their total molecular mass.",
+        "Ignoring the direction of the lowest-priority substituent.",
+        "Assuming R means positive optical rotation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-tetrahedral-stereocenter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-optical-rotation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Optical Rotation",
+      "prompt": "What is Optical Rotation? State its defining idea and essential conditions.",
+      "definition": "Optical rotation is rotation of plane-polarized light by an optically active sample under specified conditions. Sign and magnitude depend on substance and conditions; rotation sign does not directly encode R/S configuration or the number of stereocenters.",
+      "required_concepts": [
+        "Measured light rotation with condition-dependent sign and magnitude."
+      ],
+      "accepted_variants": [
+        "Optical activity or specific rotation when normalized appropriately."
+      ],
+      "major_error_concepts": [
+        "Inferring absolute configuration solely from a positive rotation sign."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-enantiomer",
+        "organic-chemistry-i.draft-r-s-configuration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-racemic-mixture",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Racemic Mixture",
+      "prompt": "What is Racemic Mixture? State its defining idea and essential conditions.",
+      "definition": "A racemic mixture contains equal amounts of two enantiomers. Their optical rotations cancel under matching conditions, but the sample is a mixture of chiral molecules rather than necessarily a single achiral molecular species.",
+      "required_concepts": [
+        "Equal enantiomer mixture has cancelling optical rotation."
+      ],
+      "accepted_variants": [
+        "Racemate."
+      ],
+      "major_error_concepts": [
+        "Equating a racemate with a meso molecule."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-enantiomer",
+        "organic-chemistry-i.draft-optical-rotation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-meso-compound",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Meso Compound",
+      "prompt": "What is Meso Compound? State its defining idea and essential conditions.",
+      "definition": "A meso compound is achiral despite containing stereogenic centers because its complete structure has symmetry making it superimposable on its mirror image. It is one compound, not a fifty-fifty mixture of two enantiomers.",
+      "required_concepts": [
+        "Achiral stereocenter-containing molecule through whole-structure symmetry."
+      ],
+      "accepted_variants": [
+        "Meso stereoisomer."
+      ],
+      "major_error_concepts": [
+        "Defining meso as any racemic mixture."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-chirality",
+        "organic-chemistry-i.draft-tetrahedral-stereocenter",
+        "organic-chemistry-i.draft-racemic-mixture"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-enantiomeric-excess",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Enantiomeric Excess",
+      "prompt": "What is Enantiomeric Excess? State its defining idea and essential conditions.",
+      "definition": "Enantiomeric excess is the absolute difference between the two enantiomer amounts divided by their sum, often expressed as a percentage. It describes imbalance within an enantiomer pair and is not by itself overall chemical purity.",
+      "required_concepts": [
+        "Enantiomer imbalance normalized by the pair total."
+      ],
+      "accepted_variants": [
+        "ee=absolute(R-S)/(R+S) times one hundred percent."
+      ],
+      "major_error_concepts": [
+        "Interpreting high ee as proof the sample contains no unrelated impurities."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-enantiomer",
+        "organic-chemistry-i.draft-racemic-mixture"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-fischer-projection",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Fischer Projection",
+      "prompt": "What is Fischer Projection? State its defining idea and essential conditions.",
+      "definition": "A Fischer projection represents a specified tetrahedral arrangement with horizontal bonds pointing toward the viewer and vertical bonds away. Rotations or swaps must follow stereochemical rules; a ninety-degree page rotation generally changes the represented configuration.",
+      "required_concepts": [
+        "Horizontal forward and vertical backward projection convention."
+      ],
+      "accepted_variants": [
+        "Fischer stereochemical projection."
+      ],
+      "major_error_concepts": [
+        "Rotating a Fischer drawing ninety degrees and assuming configuration is unchanged."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-tetrahedral-stereocenter",
+        "organic-chemistry-i.draft-r-s-configuration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-stereospecific-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Stereospecific Reaction",
+      "prompt": "What is Stereospecific Reaction? State its defining idea and essential conditions.",
+      "definition": "A stereospecific reaction maps different stereoisomeric reactants to correspondingly different stereoisomeric products through its mechanism. This describes the reactant-product relationship and differs from merely forming one product stereoisomer preferentially from a given reactant.",
+      "required_concepts": [
+        "Reactant stereochemistry determines distinct product stereochemistry mechanistically."
+      ],
+      "accepted_variants": [
+        "Stereospecific transformation."
+      ],
+      "major_error_concepts": [
+        "Using stereospecific as an automatic synonym for high product selectivity."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-stereoisomer",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-stereoselective-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Stereoselective Reaction",
+      "prompt": "What is Stereoselective Reaction? State its defining idea and essential conditions.",
+      "definition": "A stereoselective reaction forms one stereoisomer preferentially among possible alternatives from a specified starting system. Selectivity can be partial and must be distinguished from the stronger mechanistic mapping described by stereospecificity.",
+      "required_concepts": [
+        "Preferential formation of a product stereoisomer."
+      ],
+      "accepted_variants": [
+        "Enantioselective or diastereoselective reaction as appropriate."
+      ],
+      "major_error_concepts": [
+        "Assuming stereoselective always means only one product is formed."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-diastereomer",
+        "organic-chemistry-i.draft-stereospecific-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-regioselectivity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Regioselectivity",
+      "prompt": "What is Regioselectivity? State its defining idea and essential conditions.",
+      "definition": "Regioselectivity is preference for bond formation or cleavage at one constitutional position among alternatives. It concerns which connectivity results, whereas stereoselectivity concerns spatial configuration for a connectivity pattern.",
+      "required_concepts": [
+        "Preference among alternative reaction positions or connectivities."
+      ],
+      "accepted_variants": [
+        "Regioselective reaction."
+      ],
+      "major_error_concepts": [
+        "Confusing a regioisomer ratio with an enantiomer ratio."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-constitutional-isomer",
+        "organic-chemistry-i.draft-stereoselective-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkyl-halide",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkyl Halide",
+      "prompt": "What is Alkyl Halide? State its defining idea and essential conditions.",
+      "definition": "An alkyl halide contains a halogen bonded to an sp3 carbon. Its substitution level and local structure affect reaction pathways; vinyl and aryl halides have different bonding environments and cannot be treated as ordinary alkyl halides in every mechanism.",
+      "required_concepts": [
+        "Halogen on an sp3 carbon with substrate-dependent reactivity."
+      ],
+      "accepted_variants": [
+        "Haloalkane."
+      ],
+      "major_error_concepts": [
+        "Applying ordinary alkyl-halide SN1 or SN2 rules unchanged to all aryl halides."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-functional-group",
+        "organic-chemistry-i.draft-carbon-hybridization",
+        "organic-chemistry-i.draft-electrophile"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-leaving-group",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Leaving Group",
+      "prompt": "What is Leaving Group? State its defining idea and essential conditions.",
+      "definition": "A leaving group departs with the electron pair from its bond in a polar substitution or elimination step. Stability of the departing species, bond properties, activation, and medium affect leaving ability; a strong base is often a poor leaving group in ordinary conditions.",
+      "required_concepts": [
+        "Departing group takes the bonding pair; stabilization influences leaving ability."
+      ],
+      "accepted_variants": [
+        "Nucleofuge in the relevant polar mechanism."
+      ],
+      "major_error_concepts": [
+        "Assuming unactivated hydroxide leaves as readily as every weakly basic anion."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-heterolytic-cleavage",
+        "organic-chemistry-i.draft-basicity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-sn2-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "SN2 Reaction",
+      "prompt": "What is SN2 Reaction? State its defining idea and essential conditions.",
+      "definition": "An SN2 reaction couples nucleophilic bond formation and leaving-group departure in one elementary substitution step. Its elementary rate depends on both substrate and nucleophile concentration, and steric crowding near the attacked carbon commonly impedes the pathway.",
+      "required_concepts": [
+        "Concerted bimolecular substitution with both reactants in the elementary rate law."
+      ],
+      "accepted_variants": [
+        "Bimolecular nucleophilic substitution."
+      ],
+      "major_error_concepts": [
+        "Drawing a freely equilibrating carbocation intermediate as part of the ordinary SN2 mechanism."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-electrophile",
+        "organic-chemistry-i.draft-curved-arrow-mechanism",
+        "organic-chemistry-i.draft-alkyl-halide",
+        "organic-chemistry-i.draft-leaving-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-sn2-inversion",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "SN2 Inversion",
+      "prompt": "What is SN2 Inversion? State its defining idea and essential conditions.",
+      "definition": "Backside attack in ordinary SN2 substitution occurs opposite the leaving group and inverts the attacked tetrahedral center's spatial arrangement. An R-to-S label change is not guaranteed because substituent priorities may also change.",
+      "required_concepts": [
+        "SN2 inverts geometry; descriptor change depends on priorities."
+      ],
+      "accepted_variants": [
+        "Walden inversion."
+      ],
+      "major_error_concepts": [
+        "Claiming inversion always means an R label becomes S regardless of priority changes."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-sn2-reaction",
+        "organic-chemistry-i.draft-r-s-configuration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-sn1-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "SN1 Reaction",
+      "prompt": "What is SN1 Reaction? State its defining idea and essential conditions.",
+      "definition": "An SN1 reaction proceeds through ionization to a carbocation-like intermediate followed by nucleophile capture in the standard mechanism. When ionization controls rate, the rate is first order in substrate, while solvent, ion pairing, and competing reactions affect product outcomes.",
+      "required_concepts": [
+        "Stepwise substitution with ionization and cation capture under the standard mechanism."
+      ],
+      "accepted_variants": [
+        "Unimolecular nucleophilic substitution."
+      ],
+      "major_error_concepts": [
+        "Assuming the nucleophile must appear in the rate-determining ionization step."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-intermediate",
+        "organic-chemistry-i.draft-rate-determining-step",
+        "organic-chemistry-i.draft-alkyl-halide",
+        "organic-chemistry-i.draft-leaving-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-carbocation-stability",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Carbocation Stability",
+      "prompt": "What is Carbocation Stability? State its defining idea and essential conditions.",
+      "definition": "A carbocation is a cationic carbon-containing species with an electron-deficient carbon center in the usual classical model. Substitution, hyperconjugation, resonance, and medium influence its stability; resonance-stabilized cases can outrank simple substitution-count rules.",
+      "required_concepts": [
+        "Electron-deficient carbon center stabilized by electronic and environmental factors."
+      ],
+      "accepted_variants": [
+        "Classical carbenium-ion intermediate where appropriate."
+      ],
+      "major_error_concepts": [
+        "Ranking carbocations solely by substitution count while ignoring allylic or benzylic resonance."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-formal-charge",
+        "organic-chemistry-i.draft-resonance",
+        "organic-chemistry-i.draft-carbon-hybridization",
+        "organic-chemistry-i.draft-sn1-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-carbocation-rearrangement",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Carbocation Rearrangement",
+      "prompt": "What is Carbocation Rearrangement? State its defining idea and essential conditions.",
+      "definition": "Carbocation rearrangements shift a neighboring bond or group with its electron pair to produce a different cationic skeleton or center. Hydride and alkyl shifts can favor a more stable cation or relieve strain, but they require a compatible mechanism and geometry.",
+      "required_concepts": [
+        "Intramolecular migration redistributes the cation and can change connectivity."
+      ],
+      "accepted_variants": [
+        "Hydride or alkyl shift."
+      ],
+      "major_error_concepts": [
+        "Adding a carbocation rearrangement to a concerted SN2 mechanism without a cation intermediate."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-carbocation-stability",
+        "organic-chemistry-i.draft-reaction-intermediate",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-e2-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "E2 Reaction",
+      "prompt": "What is E2 Reaction? State its defining idea and essential conditions.",
+      "definition": "An E2 reaction removes a beta hydrogen while a leaving group departs and a pi bond forms in one elementary step. Its rate depends on substrate and base in the basic mechanism, and stereoelectronic alignment strongly constrains which elimination can occur.",
+      "required_concepts": [
+        "Concerted bimolecular beta elimination."
+      ],
+      "accepted_variants": [
+        "E2 dehydrohalogenation or analogous elimination."
+      ],
+      "major_error_concepts": [
+        "Drawing an isolated carbocation as a required ordinary E2 intermediate."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-basicity",
+        "organic-chemistry-i.draft-leaving-group",
+        "organic-chemistry-i.draft-pi-bond",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-antiperiplanar-elimination",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Antiperiplanar Elimination",
+      "prompt": "What is Antiperiplanar Elimination? State its defining idea and essential conditions.",
+      "definition": "An antiperiplanar E2 arrangement places the breaking carbon-hydrogen and carbon-leaving-group bonds oppositely aligned in one plane. In cyclohexane chairs this often requires a trans-diaxial arrangement, making conformation relevant to product formation.",
+      "required_concepts": [
+        "Opposed coplanar bonds provide the usual E2 stereoelectronic alignment."
+      ],
+      "accepted_variants": [
+        "Anti-periplanar or trans-diaxial elimination in the appropriate ring case."
+      ],
+      "major_error_concepts": [
+        "Choosing an alkene product whose only beta hydrogen cannot reach the required geometry."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-e2-reaction",
+        "organic-chemistry-i.draft-axial-and-equatorial-positions",
+        "organic-chemistry-i.draft-cyclohexane-ring-flip"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-e1-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "E1 Reaction",
+      "prompt": "What is E1 Reaction? State its defining idea and essential conditions.",
+      "definition": "An E1 reaction first ionizes to a carbocation-like intermediate and then loses a beta proton to form an alkene. It can compete with SN1 substitution and can allow rearrangements, with product ratios depending on structure and conditions.",
+      "required_concepts": [
+        "Stepwise elimination through a cationic intermediate."
+      ],
+      "accepted_variants": [
+        "Unimolecular elimination under ionization-controlled conditions."
+      ],
+      "major_error_concepts": [
+        "Assuming E1 always follows the same concerted stereochemical constraint as E2."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-sn1-reaction",
+        "organic-chemistry-i.draft-carbocation-stability",
+        "organic-chemistry-i.draft-carbocation-rearrangement",
+        "organic-chemistry-i.draft-e2-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-zaitsev-selectivity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Zaitsev Selectivity",
+      "prompt": "What is Zaitsev Selectivity? State its defining idea and essential conditions.",
+      "definition": "Zaitsev selectivity favors the more substituted alkene in many elimination systems because of product or transition-state stabilization. It is a tendency subject to base sterics, leaving group, substrate, and stereoelectronic constraints rather than an exception-free rule.",
+      "required_concepts": [
+        "More substituted alkene often favored when the mechanism and geometry permit."
+      ],
+      "accepted_variants": [
+        "Zaitsev or Saytzeff product tendency."
+      ],
+      "major_error_concepts": [
+        "Ignoring an inaccessible elimination geometry to force the most substituted product."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-e2-reaction",
+        "organic-chemistry-i.draft-antiperiplanar-elimination",
+        "organic-chemistry-i.draft-e1-reaction",
+        "organic-chemistry-i.draft-regioselectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-hofmann-selectivity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Hofmann Selectivity",
+      "prompt": "What is Hofmann Selectivity? State its defining idea and essential conditions.",
+      "definition": "Hofmann selectivity favors a less substituted alkene in specified elimination settings, such as some bulky-base or leaving-group regimes. It must be justified from the reaction system rather than inferred from alkene substitution alone.",
+      "required_concepts": [
+        "Less substituted alkene preference under qualifying elimination conditions."
+      ],
+      "accepted_variants": [
+        "Hofmann-oriented elimination."
+      ],
+      "major_error_concepts": [
+        "Assuming all bulky substrates or all eliminations universally give the least substituted alkene."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-zaitsev-selectivity",
+        "organic-chemistry-i.draft-steric-strain",
+        "organic-chemistry-i.draft-e2-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Substrate Effects on Substitution and Elimination",
+      "prompt": "What is Substrate Effects on Substitution and Elimination? State its defining idea and essential conditions.",
+      "definition": "Substrate structure affects substitution and elimination through steric access, cation stability, beta-hydrogen availability, and geometry. Primary, secondary, and tertiary labels are useful but insufficient without resonance, ring, and functional-group context.",
+      "required_concepts": [
+        "Structure changes multiple mechanistic requirements simultaneously."
+      ],
+      "accepted_variants": [
+        "Substrate-dependent SN/E pathway analysis."
+      ],
+      "major_error_concepts": [
+        "Choosing a mechanism solely from substitution level while ignoring whether a required beta hydrogen exists."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-sn2-reaction",
+        "organic-chemistry-i.draft-sn1-reaction",
+        "organic-chemistry-i.draft-e2-reaction",
+        "organic-chemistry-i.draft-e1-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-solvent-effects-on-reactivity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Solvent Effects on Reactivity",
+      "prompt": "What is Solvent Effects on Reactivity? State its defining idea and essential conditions.",
+      "definition": "Solvents affect reaction pathways by stabilizing ions, modifying nucleophile and base solvation, and changing encounter conditions. Polar protic and polar aprotic trends are useful comparisons, but rate predictions require specifying the reacting species rather than solvent polarity alone.",
+      "required_concepts": [
+        "Solvation changes relative reactant and transition-state stabilization."
+      ],
+      "accepted_variants": [
+        "Solvent effects on polar organic reactions."
+      ],
+      "major_error_concepts": [
+        "Assuming every polar solvent affects all nucleophiles identically."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-intermolecular-forces",
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-sn2-reaction",
+        "organic-chemistry-i.draft-sn1-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-nucleophilicity-versus-basicity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Nucleophilicity versus Basicity",
+      "prompt": "What is Nucleophilicity versus Basicity? State its defining idea and essential conditions.",
+      "definition": "Nucleophilicity is kinetic reactivity toward a specified electrophile, whereas basicity is equilibrium proton-accepting tendency. Steric bulk and solvent can make a strong base a relatively ineffective substitution nucleophile in a particular reaction.",
+      "required_concepts": [
+        "Kinetic bond-forming ability differs from thermodynamic proton affinity."
+      ],
+      "accepted_variants": [
+        "Nucleophile strength versus base strength."
+      ],
+      "major_error_concepts": [
+        "Using a pKa ranking as an exact nucleophilic-rate ranking for all electrophiles and solvents."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-basicity",
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-solvent-effects-on-reactivity",
+        "organic-chemistry-i.draft-steric-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-substitution-elimination-competition",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Substitution Elimination Competition",
+      "prompt": "What is Substitution Elimination Competition? State its defining idea and essential conditions.",
+      "definition": "Competing substitution and elimination pathways must be assessed using substrate, reagent, leaving group, solvent, temperature, and accessible conformations together. A reaction can produce a mixture, so a single favored pathway should not be presented as inevitable without supporting conditions.",
+      "required_concepts": [
+        "Several conditions jointly determine SN1, SN2, E1, and E2 competition."
+      ],
+      "accepted_variants": [
+        "Mechanistic competition analysis."
+      ],
+      "major_error_concepts": [
+        "Using one memorized keyword to guarantee a unique product regardless of the full system."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination",
+        "organic-chemistry-i.draft-solvent-effects-on-reactivity",
+        "organic-chemistry-i.draft-nucleophilicity-versus-basicity",
+        "organic-chemistry-i.draft-antiperiplanar-elimination"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkene",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkene",
+      "prompt": "What is Alkene? State its defining idea and essential conditions.",
+      "definition": "An alkene contains a carbon-carbon double bond with a sigma and a pi component. Its electron-rich pi bond commonly reacts with electrophiles, while restricted rotation can produce distinct geometric configurations.",
+      "required_concepts": [
+        "Carbon-carbon double bond with characteristic pi reactivity and geometry."
+      ],
+      "accepted_variants": [
+        "Olefin functional group."
+      ],
+      "major_error_concepts": [
+        "Treating an alkene double bond as two freely rotating independent single bonds."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-pi-bond",
+        "organic-chemistry-i.draft-electrophile",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-e-z-alkene-configuration",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "E Z Alkene Configuration",
+      "prompt": "What is E Z Alkene Configuration? State its defining idea and essential conditions.",
+      "definition": "E/Z notation compares the highest-priority substituent on each alkene carbon using CIP rules: same side is Z and opposite sides E. Each carbon must have two distinguishable substituents for this descriptor to apply.",
+      "required_concepts": [
+        "CIP-priority groups define same-side Z or opposite-side E."
+      ],
+      "accepted_variants": [
+        "Alkene E/Z configuration."
+      ],
+      "major_error_concepts": [
+        "Assigning E/Z to a terminal CH2 group with two identical hydrogen substituents."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-r-s-configuration",
+        "organic-chemistry-i.draft-stereoisomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkene-hydrogenation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkene Hydrogenation",
+      "prompt": "What is Alkene Hydrogenation? State its defining idea and essential conditions.",
+      "definition": "Catalytic alkene hydrogenation adds hydrogen across the double bond, reducing it to a single bond. In the usual surface-mediated introductory model, addition is syn, while substrate geometry and catalyst environment can affect stereoselectivity.",
+      "required_concepts": [
+        "Reduction of an alkene by addition of two hydrogens; usual surface addition is syn."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming hydrogenation preserves an E/Z label on the now single carbon-carbon bond."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-catalysis",
+        "organic-chemistry-i.draft-stereoselective-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-electrophilic-alkene-addition",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Electrophilic Alkene Addition",
+      "prompt": "What is Electrophilic Alkene Addition? State its defining idea and essential conditions.",
+      "definition": "Electrophilic addition to an alkene begins with reaction of the pi system with an electron-poor partner in the specified pathway. Subsequent bond formation consumes the pi bond and can generate regio- and stereochemical outcomes determined by the intermediate or transition state.",
+      "required_concepts": [
+        "Pi-electron attack initiates a qualifying addition pathway."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Moving electron-pair arrows from the electrophile toward the electron-rich pi bond."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-electrophile",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-markovnikov-orientation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Markovnikov Orientation",
+      "prompt": "What is Markovnikov Orientation? State its defining idea and essential conditions.",
+      "definition": "Markovnikov orientation describes many unsymmetrical additions in which hydrogen attaches to the alkene carbon initially bearing more hydrogens and the other group to the more substituted carbon. The mechanistic rationale depends on the reaction, and different pathways can give opposite orientation.",
+      "required_concepts": [
+        "Specified regioselectivity tendency for qualifying additions, not a universal alkene rule."
+      ],
+      "accepted_variants": [
+        "Markovnikov addition orientation."
+      ],
+      "major_error_concepts": [
+        "Applying the orientation to every addition regardless of mechanism."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-electrophilic-alkene-addition",
+        "organic-chemistry-i.draft-regioselectivity",
+        "organic-chemistry-i.draft-carbocation-stability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkene-hydrohalogenation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkene Hydrohalogenation",
+      "prompt": "What is Alkene Hydrohalogenation? State its defining idea and essential conditions.",
+      "definition": "Ordinary ionic addition of a hydrogen halide to an unsymmetrical alkene can proceed through the more stabilized carbocation followed by halide capture. Rearrangements may occur when a cation is formed, and radical conditions can change the relevant mechanism for particular reagents.",
+      "required_concepts": [
+        "Protonation and cation capture explain the standard ionic pathway."
+      ],
+      "accepted_variants": [
+        "Ionic hydrohalogenation."
+      ],
+      "major_error_concepts": [
+        "Assuming every HX addition is concerted and incapable of rearrangement."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-electrophilic-alkene-addition",
+        "organic-chemistry-i.draft-markovnikov-orientation",
+        "organic-chemistry-i.draft-carbocation-stability",
+        "organic-chemistry-i.draft-carbocation-rearrangement"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Acid Catalyzed Alkene Hydration",
+      "prompt": "What is Acid Catalyzed Alkene Hydration? State its defining idea and essential conditions.",
+      "definition": "Acid-catalyzed alkene hydration adds water elements across a double bond through protonation, water capture, and proton transfer in the usual mechanism. Its carbocation pathway can lead to Markovnikov orientation and rearrangement, and equilibrium matters.",
+      "required_concepts": [
+        "Acid-catalyzed addition gives an alcohol through a cationic pathway under the model."
+      ],
+      "accepted_variants": [
+        "Acid-catalyzed hydration."
+      ],
+      "major_error_concepts": [
+        "Assuming this pathway is universally rearrangement-free or anti-Markovnikov."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene-hydrohalogenation",
+        "organic-chemistry-i.draft-catalysis",
+        "organic-chemistry-i.draft-carbocation-rearrangement",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-hydroboration-oxidation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Hydroboration Oxidation",
+      "prompt": "What is Hydroboration Oxidation? State its defining idea and essential conditions.",
+      "definition": "Hydroboration followed by oxidation gives an alcohol with the usual anti-Markovnikov placement and net syn addition of hydrogen and hydroxyl in the introductory alkene model. The bond-forming pathway does not involve a freely rearranging carbocation.",
+      "required_concepts": [
+        "Usual anti-Markovnikov alcohol orientation and syn addition without a free carbocation."
+      ],
+      "accepted_variants": [
+        "Hydroboration-oxidation outcome."
+      ],
+      "major_error_concepts": [
+        "Predicting ordinary carbocation rearrangements in the concerted hydroboration step."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-electrophilic-alkene-addition",
+        "organic-chemistry-i.draft-stereospecific-reaction",
+        "organic-chemistry-i.draft-regioselectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkene-halogenation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkene Halogenation",
+      "prompt": "What is Alkene Halogenation? State its defining idea and essential conditions.",
+      "definition": "Alkene halogenation commonly forms a bridged halonium intermediate followed by nucleophilic ring opening. This explains usual anti addition of two halogens rather than an unrestricted open-carbocation capture mechanism.",
+      "required_concepts": [
+        "Bridged halonium pathway commonly gives anti addition."
+      ],
+      "accepted_variants": [
+        "Vicinal dihalide formation from an alkene."
+      ],
+      "major_error_concepts": [
+        "Using a free carbocation to predict ordinary skeletal rearrangement in a standard halonium pathway."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-electrophilic-alkene-addition",
+        "organic-chemistry-i.draft-reaction-intermediate",
+        "organic-chemistry-i.draft-stereospecific-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-halohydrin-formation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Halohydrin Formation",
+      "prompt": "What is Halohydrin Formation? State its defining idea and essential conditions.",
+      "definition": "Halohydrin formation combines halogen and hydroxyl addition across an alkene through a halonium-type pathway in a suitable aqueous setting. Nucleophilic opening commonly gives anti addition with oxygen at the more substituted carbon in the unsymmetrical introductory case.",
+      "required_concepts": [
+        "Halonium opening yields an anti halogen-alcohol product with usual regioselectivity."
+      ],
+      "accepted_variants": [
+        "Halohydrin addition."
+      ],
+      "major_error_concepts": [
+        "Assuming hydroxyl and halogen necessarily add syn through an unrestricted cation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene-halogenation",
+        "organic-chemistry-i.draft-regioselectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkene-epoxidation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkene Epoxidation",
+      "prompt": "What is Alkene Epoxidation? State its defining idea and essential conditions.",
+      "definition": "Epoxidation converts an alkene into a three-membered cyclic ether by oxygen transfer. A concerted pathway preserves the relative substituent relationship of the alkene in the resulting epoxide, making starting alkene geometry important.",
+      "required_concepts": [
+        "Oxygen transfer forms an epoxide with pathway-dependent stereochemical preservation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Ignoring alkene stereochemistry while claiming a stereospecific concerted epoxidation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-stereospecific-reaction",
+        "organic-chemistry-i.draft-e-z-alkene-configuration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkene-dihydroxylation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkene Dihydroxylation",
+      "prompt": "What is Alkene Dihydroxylation? State its defining idea and essential conditions.",
+      "definition": "Dihydroxylation adds two hydroxyl groups across an alkene to form a vicinal diol. Syn addition and routes giving anti overall addition involve different mechanisms, so the stereochemical outcome must be linked to the specified transformation.",
+      "required_concepts": [
+        "Two neighboring hydroxyl groups form with mechanism-dependent relative stereochemistry."
+      ],
+      "accepted_variants": [
+        "Alkene-to-vicinal-diol conversion."
+      ],
+      "major_error_concepts": [
+        "Assuming all dihydroxylation methods give the same stereochemical relationship."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-stereoselective-reaction",
+        "organic-chemistry-i.draft-alkene-epoxidation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-oxidative-alkene-cleavage",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Oxidative Alkene Cleavage",
+      "prompt": "What is Oxidative Alkene Cleavage? State its defining idea and essential conditions.",
+      "definition": "Oxidative alkene cleavage breaks the carbon-carbon double-bond connection and forms oxygen-containing fragments. The products depend on alkene substitution and oxidation or workup conditions, so cleavage does not universally produce one carbonyl class.",
+      "required_concepts": [
+        "Double-bond scission gives condition- and substitution-dependent oxygenated fragments."
+      ],
+      "accepted_variants": [
+        "Oxidative double-bond cleavage."
+      ],
+      "major_error_concepts": [
+        "Claiming every alkene cleavage necessarily yields two ketones."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-functional-group",
+        "organic-chemistry-i.draft-regioselectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-conjugated-diene",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Conjugated Diene",
+      "prompt": "What is Conjugated Diene? State its defining idea and essential conditions.",
+      "definition": "A conjugated diene has two double bonds separated by one single bond, permitting connected p-orbital overlap in a suitable conformation. Isolated and cumulated double bonds have different connectivity and electronic behavior.",
+      "required_concepts": [
+        "Alternating double-single-double connectivity permits conjugation."
+      ],
+      "accepted_variants": [
+        "Conjugated 1,3-diene."
+      ],
+      "major_error_concepts": [
+        "Calling any molecule with two double bonds conjugated regardless of separation or orbital alignment."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-pi-bond",
+        "organic-chemistry-i.draft-resonance",
+        "organic-chemistry-i.draft-alkene"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-conjugative-stabilization",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Conjugative Stabilization",
+      "prompt": "What is Conjugative Stabilization? State its defining idea and essential conditions.",
+      "definition": "Conjugation can delocalize electrons across adjacent aligned orbitals and change stability, bond lengths, and reactivity. The effect requires orbital compatibility and cannot be inferred solely from drawing several disconnected multiple bonds in one molecule.",
+      "required_concepts": [
+        "Adjacent aligned orbitals support delocalization."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming conjugation persists unchanged when relevant orbitals are forced orthogonal."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-conjugated-diene",
+        "organic-chemistry-i.draft-resonance",
+        "organic-chemistry-i.draft-carbon-hybridization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-kinetic-and-thermodynamic-control",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Kinetic and Thermodynamic Control",
+      "prompt": "What is Kinetic and Thermodynamic Control? State its defining idea and essential conditions.",
+      "definition": "Kinetic control favors products reached through faster pathways, whereas thermodynamic control favors the lower-free-energy product distribution when sufficient reversible equilibration occurs. Temperature alone does not define control without the relevant barriers, reversibility, and timescale.",
+      "required_concepts": [
+        "Rate-selected products differ from equilibrium-selected products."
+      ],
+      "accepted_variants": [
+        "Kinetic versus thermodynamic product control."
+      ],
+      "major_error_concepts": [
+        "Assuming a hotter reaction automatically reaches thermodynamic equilibrium."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-reaction-thermodynamics",
+        "organic-chemistry-i.draft-reaction-kinetics",
+        "organic-chemistry-i.draft-conjugative-stabilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-diels-alder-reaction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Diels Alder Reaction",
+      "prompt": "What is Diels Alder Reaction? State its defining idea and essential conditions.",
+      "definition": "The Diels-Alder reaction is a cycloaddition of a conjugated diene and a dienophile that forms a six-membered ring in the standard concerted pathway. The diene needs an accessible s-cis arrangement, and reactant geometry constrains product stereochemistry.",
+      "required_concepts": [
+        "Four-pi plus two-pi cycloaddition with suitable diene conformation."
+      ],
+      "accepted_variants": [
+        "Diels-Alder [4+2] cycloaddition."
+      ],
+      "major_error_concepts": [
+        "Ignoring an inaccessible s-cis diene arrangement while predicting the ordinary reaction."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-conjugated-diene",
+        "organic-chemistry-i.draft-conformation",
+        "organic-chemistry-i.draft-stereospecific-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkyne",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkyne",
+      "prompt": "What is Alkyne? State its defining idea and essential conditions.",
+      "definition": "An alkyne contains a carbon-carbon triple bond with one sigma and two pi components. The bonded carbon centers are approximately linear, and terminal versus internal substitution changes acidity and reaction options.",
+      "required_concepts": [
+        "Triple bond with linear sp carbon centers."
+      ],
+      "accepted_variants": [
+        "Acetylene functional group."
+      ],
+      "major_error_concepts": [
+        "Assigning ordinary E/Z geometric isomers to a simple carbon-carbon triple bond."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-carbon-hybridization",
+        "organic-chemistry-i.draft-sigma-bond",
+        "organic-chemistry-i.draft-pi-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-terminal-alkyne-acidity",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Terminal Alkyne Acidity",
+      "prompt": "What is Terminal Alkyne Acidity? State its defining idea and essential conditions.",
+      "definition": "A terminal alkyne has a hydrogen attached to an sp carbon that can be removed by a sufficiently strong base under suitable conditions. Greater s character helps stabilize the acetylide conjugate base relative to corresponding sp2 or sp3 carbanions in a comparable context.",
+      "required_concepts": [
+        "Terminal sp-carbon hydrogen is relatively acidic because of conjugate-base stabilization."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a terminal alkyne is a strong aqueous acid merely because it is more acidic than an alkane."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkyne",
+        "organic-chemistry-i.draft-conjugate-base-stability",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium",
+        "organic-chemistry-i.draft-carbon-hybridization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-acetylide-anion",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Acetylide Anion",
+      "prompt": "What is Acetylide Anion? State its defining idea and essential conditions.",
+      "definition": "An acetylide anion is the conjugate base of a terminal alkyne and can act as a carbon nucleophile as well as a strong base. Carbon-carbon bond formation by substitution requires a compatible electrophile; hindered substrates can favor elimination instead.",
+      "required_concepts": [
+        "Deprotonated terminal alkyne has nucleophilic carbon and strong basicity."
+      ],
+      "accepted_variants": [
+        "Alkynide nucleophile."
+      ],
+      "major_error_concepts": [
+        "Assuming an acetylide performs clean SN2 substitution on every tertiary alkyl halide."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-terminal-alkyne-acidity",
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-sn2-reaction",
+        "organic-chemistry-i.draft-substitution-elimination-competition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkyne-reduction",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkyne Reduction",
+      "prompt": "What is Alkyne Reduction? State its defining idea and essential conditions.",
+      "definition": "Alkyne reduction can stop at an alkene or continue to an alkane depending on the pathway. Different partial-reduction mechanisms can favor different alkene geometries, so simply stating hydrogen addition does not uniquely specify the product.",
+      "required_concepts": [
+        "Extent and stereochemistry of alkyne reduction depend on the method."
+      ],
+      "accepted_variants": [
+        "Partial versus complete alkyne reduction."
+      ],
+      "major_error_concepts": [
+        "Assuming all alkyne reductions give the same cis or trans alkene."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkyne",
+        "organic-chemistry-i.draft-alkene-hydrogenation",
+        "organic-chemistry-i.draft-e-z-alkene-configuration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alkyne-hydration",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alkyne Hydration",
+      "prompt": "What is Alkyne Hydration? State its defining idea and essential conditions.",
+      "definition": "Alkyne hydration initially creates an enol that commonly tautomerizes to a carbonyl compound. Regiochemistry and final aldehyde-versus-ketone outcome depend on the alkyne substitution and the chosen hydration pathway.",
+      "required_concepts": [
+        "Water-element addition followed by enol-carbonyl tautomerization."
+      ],
+      "accepted_variants": [
+        "Alkyne-to-carbonyl hydration transformation."
+      ],
+      "major_error_concepts": [
+        "Treating the initially formed enol as necessarily the final major isolated form."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkyne",
+        "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration",
+        "organic-chemistry-i.draft-regioselectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-keto-enol-tautomerism",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Keto Enol Tautomerism",
+      "prompt": "What is Keto Enol Tautomerism? State its defining idea and essential conditions.",
+      "definition": "Keto-enol tautomers differ by a proton position and accompanying pi-bond rearrangement, so they are distinct constitutional structures in equilibrium. They are not resonance contributors, which preserve all nuclear positions.",
+      "required_concepts": [
+        "Proton transfer and bond rearrangement interconvert distinct tautomers."
+      ],
+      "accepted_variants": [
+        "Carbonyl-enol tautomerism."
+      ],
+      "major_error_concepts": [
+        "Calling keto and enol structures resonance contributors of one unchanged nuclear arrangement."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkyne-hydration",
+        "organic-chemistry-i.draft-resonance",
+        "organic-chemistry-i.draft-organic-bronsted-acid-and-base"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alcohol",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alcohol",
+      "prompt": "What is Alcohol? State its defining idea and essential conditions.",
+      "definition": "An alcohol contains a hydroxyl group bonded to a saturated carbon in the ordinary functional-group classification. Primary, secondary, and tertiary alcohols differ by the substitution at that carbon, while phenols and enols have distinct electronic settings.",
+      "required_concepts": [
+        "Hydroxyl on a saturated carbon with classification by carbon substitution."
+      ],
+      "accepted_variants": [
+        "Alkanol functional group."
+      ],
+      "major_error_concepts": [
+        "Classifying an alcohol by how many hydrogens are attached to oxygen rather than by its carbon environment."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-functional-group",
+        "organic-chemistry-i.draft-carbon-hybridization",
+        "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alcohol Acid Base Chemistry",
+      "prompt": "What is Alcohol Acid Base Chemistry? State its defining idea and essential conditions.",
+      "definition": "Alcohols can act as weak acids through O-H deprotonation and as bases through oxygen protonation. Structure and solvent influence both equilibria; an alkoxide and a protonated alcohol have very different leaving-group and nucleophilic behavior.",
+      "required_concepts": [
+        "Oxygen protonation state changes acid-base and reaction properties."
+      ],
+      "accepted_variants": [
+        "Alcohol, alkoxide, and oxonium conjugate relationships."
+      ],
+      "major_error_concepts": [
+        "Treating neutral hydroxyl and protonated water-like leaving groups as chemically identical."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alcohol",
+        "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium",
+        "organic-chemistry-i.draft-leaving-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alcohol-activation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alcohol Activation",
+      "prompt": "What is Alcohol Activation? State its defining idea and essential conditions.",
+      "definition": "Hydroxyl activation converts a poor leaving-group situation into a more favorable one through a specified protonation or derivative-forming strategy. The resulting substitution or elimination pathway still depends on substrate, reagent, and geometry.",
+      "required_concepts": [
+        "Modify hydroxyl chemistry to permit an appropriate leaving group."
+      ],
+      "accepted_variants": [
+        "Alcohol leaving-group activation."
+      ],
+      "major_error_concepts": [
+        "Assuming unactivated hydroxide departs readily from every alcohol under any condition."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alcohol-acid-base-chemistry",
+        "organic-chemistry-i.draft-leaving-group",
+        "organic-chemistry-i.draft-substitution-elimination-competition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alcohol-oxidation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alcohol Oxidation",
+      "prompt": "What is Alcohol Oxidation? State its defining idea and essential conditions.",
+      "definition": "Alcohol oxidation increases the oxidation level of the carbon bearing oxygen, with products depending on substitution and conditions. Primary alcohols can lead to aldehydes or further-oxidized products, secondary alcohols to ketones, while ordinary tertiary alcohols lack the analogous carbon-bound hydrogen.",
+      "required_concepts": [
+        "Alcohol class and conditions determine accessible oxidation products."
+      ],
+      "accepted_variants": [
+        "Primary-to-aldehyde or acid and secondary-to-ketone patterns with scope stated."
+      ],
+      "major_error_concepts": [
+        "Predicting simple tertiary alcohol-to-ketone oxidation without addressing carbon-carbon bond changes."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alcohol",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-alcohol-dehydration",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Alcohol Dehydration",
+      "prompt": "What is Alcohol Dehydration? State its defining idea and essential conditions.",
+      "definition": "Alcohol dehydration removes water elements to form an alkene under a suitable pathway. Carbocation routes can rearrange, while other pathways have different requirements; regioselectivity and stereochemistry must follow the actual mechanism.",
+      "required_concepts": [
+        "Elimination from an alcohol produces an alkene under defined activation conditions."
+      ],
+      "accepted_variants": [
+        "Alcohol-to-alkene dehydration."
+      ],
+      "major_error_concepts": [
+        "Assuming dehydration always proceeds without rearrangement or always through the same mechanism."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alcohol-activation",
+        "organic-chemistry-i.draft-e1-reaction",
+        "organic-chemistry-i.draft-e2-reaction",
+        "organic-chemistry-i.draft-zaitsev-selectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-ether",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Ether",
+      "prompt": "What is Ether? State its defining idea and essential conditions.",
+      "definition": "An ether has an oxygen atom bonded to two carbon groups, without an O-H bond. It can accept hydrogen bonds in many ordinary cases but is not an O-H hydrogen-bond donor, and its reactivity differs from an alcohol's.",
+      "required_concepts": [
+        "Carbon-oxygen-carbon functional group without an O-H bond."
+      ],
+      "accepted_variants": [
+        "Ether linkage."
+      ],
+      "major_error_concepts": [
+        "Treating an ordinary ether as an alcohol hydrogen-bond donor."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alcohol",
+        "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-williamson-ether-synthesis",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Williamson Ether Synthesis",
+      "prompt": "What is Williamson Ether Synthesis? State its defining idea and essential conditions.",
+      "definition": "The Williamson ether synthesis forms an ether by an alkoxide attacking a suitable electrophile through an SN2 pathway. Choosing which carbon side carries the leaving group matters because sterically hindered electrophiles can favor elimination instead.",
+      "required_concepts": [
+        "Alkoxide SN2 substitution forms an ether with substrate limitations."
+      ],
+      "accepted_variants": [
+        "Williamson ether formation."
+      ],
+      "major_error_concepts": [
+        "Selecting a tertiary electrophile while assuming clean ordinary SN2 ether formation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-ether",
+        "organic-chemistry-i.draft-alcohol-acid-base-chemistry",
+        "organic-chemistry-i.draft-sn2-reaction",
+        "organic-chemistry-i.draft-substitution-elimination-competition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-epoxide-ring-opening",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Epoxide Ring Opening",
+      "prompt": "What is Epoxide Ring Opening? State its defining idea and essential conditions.",
+      "definition": "Epoxide ring opening relieves three-membered-ring strain through nucleophilic attack. Basic and acid-activated pathways differ in regioselectivity tendencies, while backside attack imposes stereochemical consequences under the standard mechanisms.",
+      "required_concepts": [
+        "Strained cyclic ether opening has condition-dependent regioselectivity and inversion at the attacked center."
+      ],
+      "accepted_variants": [
+        "Nucleophilic epoxide opening."
+      ],
+      "major_error_concepts": [
+        "Assuming every opening attacks the same carbon regardless of protonation and substitution."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene-epoxidation",
+        "organic-chemistry-i.draft-ring-strain",
+        "organic-chemistry-i.draft-sn2-reaction",
+        "organic-chemistry-i.draft-alcohol-acid-base-chemistry"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-thiol",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Thiol",
+      "prompt": "What is Thiol? State its defining idea and essential conditions.",
+      "definition": "A thiol contains an S-H group attached to carbon, and its deprotonated thiolate can act as a nucleophile. Sulfur's size and polarizability make acidity and nucleophilicity trends differ from simple oxygen analogies.",
+      "required_concepts": [
+        "Sulfur analog with distinct acid-base and nucleophilic properties."
+      ],
+      "accepted_variants": [
+        "Mercaptan or thiol functional group."
+      ],
+      "major_error_concepts": [
+        "Assuming every thiol behaves identically to the corresponding alcohol."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alcohol",
+        "organic-chemistry-i.draft-basicity",
+        "organic-chemistry-i.draft-nucleophile"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-organic-radical",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Radical",
+      "prompt": "What is Organic Radical? State its defining idea and essential conditions.",
+      "definition": "A radical contains an unpaired electron and participates in one-electron reaction steps. Resonance, substitution, and orbital effects influence its stability; radical behavior differs from both carbocations and carbanions.",
+      "required_concepts": [
+        "Unpaired-electron species with distinct one-electron reactivity."
+      ],
+      "accepted_variants": [
+        "Free radical in the relevant molecular setting."
+      ],
+      "major_error_concepts": [
+        "Treating every radical as an ordinary positively charged carbocation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-homolytic-cleavage",
+        "organic-chemistry-i.draft-resonance",
+        "organic-chemistry-i.draft-carbocation-stability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-radical-chain-initiation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Radical Chain Initiation",
+      "prompt": "What is Radical Chain Initiation? State its defining idea and essential conditions.",
+      "definition": "Radical-chain initiation generates reactive radicals from a nonradical starting system through an appropriate bond-cleavage or electron-transfer event. It starts a chain but is distinct from the repeated propagation steps that produce most chain turnover.",
+      "required_concepts": [
+        "Initial radical generation begins a chain process."
+      ],
+      "accepted_variants": [
+        "Chain initiation."
+      ],
+      "major_error_concepts": [
+        "Calling every repeated product-forming chain step initiation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-radical",
+        "organic-chemistry-i.draft-homolytic-cleavage"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-radical-chain-propagation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Radical Chain Propagation",
+      "prompt": "What is Radical Chain Propagation? State its defining idea and essential conditions.",
+      "definition": "A radical propagation step consumes a radical and generates another radical while advancing the chain chemistry. A sequence of such steps can regenerate the chain carrier without each turnover requiring a new initiation event.",
+      "required_concepts": [
+        "Radical-in, radical-out steps sustain the chain."
+      ],
+      "accepted_variants": [
+        "Chain propagation."
+      ],
+      "major_error_concepts": [
+        "Drawing a propagation step that permanently removes every radical carrier."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-radical-chain-initiation",
+        "organic-chemistry-i.draft-organic-radical"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-radical-chain-termination",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Radical Chain Termination",
+      "prompt": "What is Radical Chain Termination? State its defining idea and essential conditions.",
+      "definition": "Chain termination removes radical carriers through reactions such as combination or disproportionation without regenerating the propagating radical. Its competition with initiation and propagation affects chain length and observed rate behavior.",
+      "required_concepts": [
+        "Radical carriers are consumed without sustaining the chain."
+      ],
+      "accepted_variants": [
+        "Radical termination."
+      ],
+      "major_error_concepts": [
+        "Labeling radical regeneration as chain termination."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-radical-chain-propagation",
+        "organic-chemistry-i.draft-radical-chain-initiation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-radical-halogenation",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Radical Halogenation",
+      "prompt": "What is Radical Halogenation? State its defining idea and essential conditions.",
+      "definition": "Radical alkane halogenation replaces a carbon-bound hydrogen with halogen through a chain mechanism. Site preference depends on hydrogen type, accessibility, radical stability, and reagent-specific selectivity; statistical numbers of available hydrogens also affect product proportions.",
+      "required_concepts": [
+        "Chain substitution with both site reactivity and hydrogen counts affecting products."
+      ],
+      "accepted_variants": [
+        "Radical C-H halogenation."
+      ],
+      "major_error_concepts": [
+        "Predicting product ratios from radical stability alone while ignoring the numbers of equivalent hydrogens."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-radical",
+        "organic-chemistry-i.draft-radical-chain-initiation",
+        "organic-chemistry-i.draft-radical-chain-propagation",
+        "organic-chemistry-i.draft-radical-chain-termination",
+        "organic-chemistry-i.draft-alkane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-allylic-radical",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Allylic Radical",
+      "prompt": "What is Allylic Radical? State its defining idea and essential conditions.",
+      "definition": "Allylic radicals have the radical center adjacent to a pi bond and can delocalize the unpaired electron across a conjugated system. This can affect bond strengths and substitution patterns; resonance contributors are not separately isolated radical species.",
+      "required_concepts": [
+        "Adjacent pi system delocalizes an allylic unpaired electron."
+      ],
+      "accepted_variants": [
+        "Allylic radical stabilization."
+      ],
+      "major_error_concepts": [
+        "Calling a radical separated from the double bond by an intervening saturated carbon directly allylic."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-radical",
+        "organic-chemistry-i.draft-conjugated-diene",
+        "organic-chemistry-i.draft-conjugative-stabilization",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-infrared-spectroscopy",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Infrared Spectroscopy",
+      "prompt": "What is Infrared Spectroscopy? State its defining idea and essential conditions.",
+      "definition": "Infrared spectroscopy probes molecular vibrational transitions that involve the appropriate dipole-moment change. Absorption regions help identify functional groups, but overlapping bands and sample conditions mean one peak rarely proves a complete structure.",
+      "required_concepts": [
+        "Vibrational absorption provides functional-group evidence under selection rules."
+      ],
+      "accepted_variants": [
+        "IR spectroscopy."
+      ],
+      "major_error_concepts": [
+        "Assuming every molecular vibration must produce an equally strong infrared band."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-and-molecular-polarity",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-carbonyl-infrared-stretch",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Carbonyl Infrared Stretch",
+      "prompt": "What is Carbonyl Infrared Stretch? State its defining idea and essential conditions.",
+      "definition": "A carbonyl stretch is a characteristic infrared vibration of a C=O group whose position depends on conjugation, substituents, ring strain, and functional-group class. A carbonyl-region band supports a structural feature but does not alone distinguish every carbonyl-containing isomer.",
+      "required_concepts": [
+        "C=O vibration shifts with electronic and structural context."
+      ],
+      "accepted_variants": [
+        "Infrared carbonyl absorption."
+      ],
+      "major_error_concepts": [
+        "Assigning one exact universal frequency to all carbonyl groups."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-infrared-spectroscopy",
+        "organic-chemistry-i.draft-conjugative-stabilization",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-nmr-chemical-shift",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "NMR Chemical Shift",
+      "prompt": "What is NMR Chemical Shift? State its defining idea and essential conditions.",
+      "definition": "NMR chemical shift reports a nucleus's resonance position relative to a reference on a frequency-normalized scale. Electronic shielding and molecular environment affect the shift, which is not simply the nucleus's count or a direct measure of bond length.",
+      "required_concepts": [
+        "Reference-relative resonance position reflects electronic environment."
+      ],
+      "accepted_variants": [
+        "Delta chemical shift in ppm."
+      ],
+      "major_error_concepts": [
+        "Treating chemical-shift values in ppm as scaling directly with spectrometer field strength."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-and-molecular-polarity",
+        "organic-chemistry-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-proton-nmr-integration",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Proton NMR Integration",
+      "prompt": "What is Proton NMR Integration? State its defining idea and essential conditions.",
+      "definition": "Under suitable acquisition conditions, proton NMR integration reflects relative numbers of contributing hydrogens in a signal. Exchange, overlap, relaxation, and impurities can complicate integrals, so their use requires identifying the signals being compared.",
+      "required_concepts": [
+        "Signal area can indicate relative proton count under qualifying conditions."
+      ],
+      "accepted_variants": [
+        "Proton NMR integral."
+      ],
+      "major_error_concepts": [
+        "Using peak height alone as an exact proton count in every spectrum."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-nmr-chemical-shift"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-proton-nmr-splitting",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Proton NMR Splitting",
+      "prompt": "What is Proton NMR Splitting? State its defining idea and essential conditions.",
+      "definition": "Proton NMR splitting arises from spin-spin coupling to appropriate nonequivalent nearby nuclei. The familiar n-plus-one rule applies to simple first-order coupling with n equivalent spin-half neighbors, not to every complex spectrum or exchangeable proton.",
+      "required_concepts": [
+        "Coupling pattern depends on magnetic equivalence and the first-order conditions."
+      ],
+      "accepted_variants": [
+        "Multiplicity and scalar coupling."
+      ],
+      "major_error_concepts": [
+        "Applying n-plus-one universally to all nearby atoms regardless of equivalence or coupling behavior."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-nmr-chemical-shift",
+        "organic-chemistry-i.draft-proton-nmr-integration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-i.draft-organic-structure-determination",
+      "canonical_deck_id": "organic-chemistry-i",
+      "term": "Organic Structure Determination",
+      "prompt": "What is Organic Structure Determination? State its defining idea and essential conditions.",
+      "definition": "Organic structure determination combines formula, unsaturation, functional-group evidence, NMR relationships, and other measurements into a mutually consistent structure. Multiple candidates can fit one clue, so assignments should explain all relevant evidence without inventing certainty from a single peak.",
+      "required_concepts": [
+        "Integrate independent structural constraints and acknowledge unresolved alternatives."
+      ],
+      "accepted_variants": [
+        "Spectroscopic structure elucidation."
+      ],
+      "major_error_concepts": [
+        "Declaring a unique complete molecule from one isolated absorption or chemical shift."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-constitutional-isomer",
+        "organic-chemistry-i.draft-functional-group",
+        "organic-chemistry-i.draft-infrared-spectroscopy",
+        "organic-chemistry-i.draft-carbonyl-infrared-stretch",
+        "organic-chemistry-i.draft-nmr-chemical-shift",
+        "organic-chemistry-i.draft-proton-nmr-integration",
+        "organic-chemistry-i.draft-proton-nmr-splitting"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol",
+      "dependent_card_id": "organic-chemistry-i.draft-ether"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol",
+      "dependent_card_id": "organic-chemistry-i.draft-thiol"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-activation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry",
+      "dependent_card_id": "organic-chemistry-i.draft-epoxide-ring-opening"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry",
+      "dependent_card_id": "organic-chemistry-i.draft-williamson-ether-synthesis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alcohol-activation",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-dehydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkane",
+      "dependent_card_id": "organic-chemistry-i.draft-alkane-nomenclature"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkane",
+      "dependent_card_id": "organic-chemistry-i.draft-conformation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkane",
+      "dependent_card_id": "organic-chemistry-i.draft-cycloalkane"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkane",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-dihydroxylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-epoxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugated-diene"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-e-z-alkene-configuration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-hydroboration-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene",
+      "dependent_card_id": "organic-chemistry-i.draft-oxidative-alkene-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene-epoxidation",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-dihydroxylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene-epoxidation",
+      "dependent_card_id": "organic-chemistry-i.draft-epoxide-ring-opening"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene-halogenation",
+      "dependent_card_id": "organic-chemistry-i.draft-halohydrin-formation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene-hydrogenation",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkene-hydrohalogenation",
+      "dependent_card_id": "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkyl-halide",
+      "dependent_card_id": "organic-chemistry-i.draft-sn1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkyl-halide",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkyne",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkyne",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkyne",
+      "dependent_card_id": "organic-chemistry-i.draft-terminal-alkyne-acidity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-alkyne-hydration",
+      "dependent_card_id": "organic-chemistry-i.draft-keto-enol-tautomerism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-antiperiplanar-elimination",
+      "dependent_card_id": "organic-chemistry-i.draft-substitution-elimination-competition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-antiperiplanar-elimination",
+      "dependent_card_id": "organic-chemistry-i.draft-zaitsev-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-axial-and-equatorial-positions",
+      "dependent_card_id": "organic-chemistry-i.draft-antiperiplanar-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-axial-and-equatorial-positions",
+      "dependent_card_id": "organic-chemistry-i.draft-cis-trans-ring-isomerism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-axial-and-equatorial-positions",
+      "dependent_card_id": "organic-chemistry-i.draft-cyclohexane-ring-flip"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-basicity",
+      "dependent_card_id": "organic-chemistry-i.draft-e2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-basicity",
+      "dependent_card_id": "organic-chemistry-i.draft-leaving-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-basicity",
+      "dependent_card_id": "organic-chemistry-i.draft-nucleophile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-basicity",
+      "dependent_card_id": "organic-chemistry-i.draft-nucleophilicity-versus-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-basicity",
+      "dependent_card_id": "organic-chemistry-i.draft-thiol"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-and-molecular-polarity",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-and-molecular-polarity",
+      "dependent_card_id": "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-and-molecular-polarity",
+      "dependent_card_id": "organic-chemistry-i.draft-infrared-spectroscopy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-and-molecular-polarity",
+      "dependent_card_id": "organic-chemistry-i.draft-nmr-chemical-shift"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-and-molecular-polarity",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-intermolecular-forces"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-dissociation-energy",
+      "dependent_card_id": "organic-chemistry-i.draft-reaction-thermodynamics"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-line-structure",
+      "dependent_card_id": "organic-chemistry-i.draft-alkane"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-line-structure",
+      "dependent_card_id": "organic-chemistry-i.draft-constitutional-isomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-line-structure",
+      "dependent_card_id": "organic-chemistry-i.draft-formal-charge"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-bond-line-structure",
+      "dependent_card_id": "organic-chemistry-i.draft-functional-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-rearrangement",
+      "dependent_card_id": "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-rearrangement",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrohalogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-rearrangement",
+      "dependent_card_id": "organic-chemistry-i.draft-e1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrohalogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-rearrangement"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-e1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-markovnikov-orientation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbocation-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyl-halide"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugate-base-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugative-stabilization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-molecular-geometry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-pi-bond"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-sigma-bond"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbon-hybridization",
+      "dependent_card_id": "organic-chemistry-i.draft-terminal-alkyne-acidity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-carbonyl-infrared-stretch",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-catalysis",
+      "dependent_card_id": "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-catalysis",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-chirality",
+      "dependent_card_id": "organic-chemistry-i.draft-enantiomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-chirality",
+      "dependent_card_id": "organic-chemistry-i.draft-meso-compound"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-chirality",
+      "dependent_card_id": "organic-chemistry-i.draft-stereoisomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-chirality",
+      "dependent_card_id": "organic-chemistry-i.draft-tetrahedral-stereocenter"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-cis-trans-ring-isomerism",
+      "dependent_card_id": "organic-chemistry-i.draft-chirality"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conformation",
+      "dependent_card_id": "organic-chemistry-i.draft-cycloalkane"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conformation",
+      "dependent_card_id": "organic-chemistry-i.draft-diels-alder-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conformation",
+      "dependent_card_id": "organic-chemistry-i.draft-newman-projection"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conformation",
+      "dependent_card_id": "organic-chemistry-i.draft-stereoisomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conformation",
+      "dependent_card_id": "organic-chemistry-i.draft-steric-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conformation",
+      "dependent_card_id": "organic-chemistry-i.draft-torsional-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugate-base-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugate-base-stability",
+      "dependent_card_id": "organic-chemistry-i.draft-terminal-alkyne-acidity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugated-diene",
+      "dependent_card_id": "organic-chemistry-i.draft-allylic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugated-diene",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugative-stabilization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugated-diene",
+      "dependent_card_id": "organic-chemistry-i.draft-diels-alder-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugative-stabilization",
+      "dependent_card_id": "organic-chemistry-i.draft-allylic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugative-stabilization",
+      "dependent_card_id": "organic-chemistry-i.draft-carbonyl-infrared-stretch"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-conjugative-stabilization",
+      "dependent_card_id": "organic-chemistry-i.draft-kinetic-and-thermodynamic-control"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-constitutional-isomer",
+      "dependent_card_id": "organic-chemistry-i.draft-alkane-nomenclature"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-constitutional-isomer",
+      "dependent_card_id": "organic-chemistry-i.draft-functional-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-constitutional-isomer",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-constitutional-isomer",
+      "dependent_card_id": "organic-chemistry-i.draft-regioselectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-constitutional-isomer",
+      "dependent_card_id": "organic-chemistry-i.draft-stereoisomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-rearrangement"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-e2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-heterolytic-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-homolytic-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism",
+      "dependent_card_id": "organic-chemistry-i.draft-stereospecific-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-cycloalkane",
+      "dependent_card_id": "organic-chemistry-i.draft-cyclohexane-chair"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-cycloalkane",
+      "dependent_card_id": "organic-chemistry-i.draft-ring-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-cyclohexane-chair",
+      "dependent_card_id": "organic-chemistry-i.draft-axial-and-equatorial-positions"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-cyclohexane-ring-flip",
+      "dependent_card_id": "organic-chemistry-i.draft-antiperiplanar-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-cyclohexane-ring-flip",
+      "dependent_card_id": "organic-chemistry-i.draft-cis-trans-ring-isomerism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-diastereomer",
+      "dependent_card_id": "organic-chemistry-i.draft-stereoselective-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e-z-alkene-configuration",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-epoxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e-z-alkene-configuration",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-dehydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-zaitsev-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-dehydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-antiperiplanar-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-e1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-hofmann-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-e2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-zaitsev-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophile",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophile",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyl-halide"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophile",
+      "dependent_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophile",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophile",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrohalogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition",
+      "dependent_card_id": "organic-chemistry-i.draft-hydroboration-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition",
+      "dependent_card_id": "organic-chemistry-i.draft-markovnikov-orientation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-enantiomer",
+      "dependent_card_id": "organic-chemistry-i.draft-diastereomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-enantiomer",
+      "dependent_card_id": "organic-chemistry-i.draft-enantiomeric-excess"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-enantiomer",
+      "dependent_card_id": "organic-chemistry-i.draft-optical-rotation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-enantiomer",
+      "dependent_card_id": "organic-chemistry-i.draft-racemic-mixture"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-ether",
+      "dependent_card_id": "organic-chemistry-i.draft-williamson-ether-synthesis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-heterolytic-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-nucleophile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-octet-rule-in-organic-structures"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-formal-charge",
+      "dependent_card_id": "organic-chemistry-i.draft-resonance"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyl-halide"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-carbonyl-infrared-stretch"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-ether"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-infrared-spectroscopy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-nmr-chemical-shift"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-functional-group",
+      "dependent_card_id": "organic-chemistry-i.draft-oxidative-alkene-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-heterolytic-cleavage",
+      "dependent_card_id": "organic-chemistry-i.draft-leaving-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-homolytic-cleavage",
+      "dependent_card_id": "organic-chemistry-i.draft-bond-dissociation-energy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-homolytic-cleavage",
+      "dependent_card_id": "organic-chemistry-i.draft-heterolytic-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-homolytic-cleavage",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-homolytic-cleavage",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-chain-initiation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor",
+      "dependent_card_id": "organic-chemistry-i.draft-ether"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-solubility"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-infrared-spectroscopy",
+      "dependent_card_id": "organic-chemistry-i.draft-carbonyl-infrared-stretch"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-infrared-spectroscopy",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-leaving-group",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-leaving-group",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-activation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-leaving-group",
+      "dependent_card_id": "organic-chemistry-i.draft-e2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-leaving-group",
+      "dependent_card_id": "organic-chemistry-i.draft-sn1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-leaving-group",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-markovnikov-orientation",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrohalogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-newman-projection",
+      "dependent_card_id": "organic-chemistry-i.draft-torsional-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nmr-chemical-shift",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nmr-chemical-shift",
+      "dependent_card_id": "organic-chemistry-i.draft-proton-nmr-integration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nmr-chemical-shift",
+      "dependent_card_id": "organic-chemistry-i.draft-proton-nmr-splitting"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-acetylide-anion"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-curved-arrow-mechanism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-electrophilic-alkene-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-nucleophilicity-versus-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-solvent-effects-on-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophile",
+      "dependent_card_id": "organic-chemistry-i.draft-thiol"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-nucleophilicity-versus-basicity",
+      "dependent_card_id": "organic-chemistry-i.draft-substitution-elimination-competition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-octet-rule-in-organic-structures",
+      "dependent_card_id": "organic-chemistry-i.draft-carbon-hybridization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-optical-rotation",
+      "dependent_card_id": "organic-chemistry-i.draft-racemic-mixture"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+      "dependent_card_id": "organic-chemistry-i.draft-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugate-base-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+      "dependent_card_id": "organic-chemistry-i.draft-keto-enol-tautomerism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-bronsted-acid-and-base",
+      "dependent_card_id": "organic-chemistry-i.draft-pka"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-chemistry",
+      "dependent_card_id": "organic-chemistry-i.draft-bond-line-structure"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-intermolecular-forces",
+      "dependent_card_id": "organic-chemistry-i.draft-boiling-point-and-structure"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-intermolecular-forces",
+      "dependent_card_id": "organic-chemistry-i.draft-hydrogen-bond-donor-and-acceptor"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-intermolecular-forces",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-solubility"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-intermolecular-forces",
+      "dependent_card_id": "organic-chemistry-i.draft-solvent-effects-on-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-molecular-geometry",
+      "dependent_card_id": "organic-chemistry-i.draft-bond-and-molecular-polarity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-molecular-geometry",
+      "dependent_card_id": "organic-chemistry-i.draft-chirality"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-molecular-geometry",
+      "dependent_card_id": "organic-chemistry-i.draft-steric-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-radical",
+      "dependent_card_id": "organic-chemistry-i.draft-allylic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-radical",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-chain-initiation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-radical",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-chain-propagation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-radical",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-organic-solubility",
+      "dependent_card_id": "organic-chemistry-i.draft-boiling-point-and-structure"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pi-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pi-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pi-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugated-diene"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pi-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-e2-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pi-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-molecular-geometry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pka",
+      "dependent_card_id": "organic-chemistry-i.draft-bond-dissociation-energy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pka",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugate-base-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-pka",
+      "dependent_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-nmr-integration",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-nmr-integration",
+      "dependent_card_id": "organic-chemistry-i.draft-proton-nmr-splitting"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-nmr-splitting",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium",
+      "dependent_card_id": "organic-chemistry-i.draft-acid-catalyzed-alkene-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-acid-base-chemistry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium",
+      "dependent_card_id": "organic-chemistry-i.draft-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium",
+      "dependent_card_id": "organic-chemistry-i.draft-reaction-thermodynamics"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-proton-transfer-equilibrium",
+      "dependent_card_id": "organic-chemistry-i.draft-terminal-alkyne-acidity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-r-s-configuration",
+      "dependent_card_id": "organic-chemistry-i.draft-e-z-alkene-configuration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-r-s-configuration",
+      "dependent_card_id": "organic-chemistry-i.draft-fischer-projection"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-r-s-configuration",
+      "dependent_card_id": "organic-chemistry-i.draft-optical-rotation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-r-s-configuration",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-inversion"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-racemic-mixture",
+      "dependent_card_id": "organic-chemistry-i.draft-enantiomeric-excess"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-racemic-mixture",
+      "dependent_card_id": "organic-chemistry-i.draft-meso-compound"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-radical-chain-initiation",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-chain-propagation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-radical-chain-initiation",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-chain-termination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-radical-chain-initiation",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-radical-chain-propagation",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-chain-termination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-radical-chain-propagation",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-radical-chain-termination",
+      "dependent_card_id": "organic-chemistry-i.draft-radical-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-rate-determining-step",
+      "dependent_card_id": "organic-chemistry-i.draft-sn1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-coordinate-diagram",
+      "dependent_card_id": "organic-chemistry-i.draft-rate-determining-step"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-coordinate-diagram",
+      "dependent_card_id": "organic-chemistry-i.draft-reaction-intermediate"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-coordinate-diagram",
+      "dependent_card_id": "organic-chemistry-i.draft-transition-state"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-intermediate",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-intermediate",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-rearrangement"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-intermediate",
+      "dependent_card_id": "organic-chemistry-i.draft-rate-determining-step"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-intermediate",
+      "dependent_card_id": "organic-chemistry-i.draft-sn1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-intermediate",
+      "dependent_card_id": "organic-chemistry-i.draft-transition-state"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-kinetics",
+      "dependent_card_id": "organic-chemistry-i.draft-catalysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-kinetics",
+      "dependent_card_id": "organic-chemistry-i.draft-kinetic-and-thermodynamic-control"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-kinetics",
+      "dependent_card_id": "organic-chemistry-i.draft-rate-determining-step"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-kinetics",
+      "dependent_card_id": "organic-chemistry-i.draft-reaction-coordinate-diagram"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-thermodynamics",
+      "dependent_card_id": "organic-chemistry-i.draft-catalysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-thermodynamics",
+      "dependent_card_id": "organic-chemistry-i.draft-kinetic-and-thermodynamic-control"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-thermodynamics",
+      "dependent_card_id": "organic-chemistry-i.draft-reaction-coordinate-diagram"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-reaction-thermodynamics",
+      "dependent_card_id": "organic-chemistry-i.draft-reaction-kinetics"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-regioselectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne-hydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-regioselectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-halohydrin-formation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-regioselectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-hydroboration-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-regioselectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-markovnikov-orientation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-regioselectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-oxidative-alkene-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-regioselectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-zaitsev-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-allylic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugate-base-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugated-diene"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-conjugative-stabilization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-keto-enol-tautomerism"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-octet-rule-in-organic-structures"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-resonance",
+      "dependent_card_id": "organic-chemistry-i.draft-organic-radical"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-ring-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-cyclohexane-chair"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-ring-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-epoxide-ring-opening"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sigma-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-alkane"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sigma-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-alkyne"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sigma-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-conformation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sigma-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-homolytic-cleavage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sigma-bond",
+      "dependent_card_id": "organic-chemistry-i.draft-pi-bond"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-carbocation-stability"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-e1-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-solvent-effects-on-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn1-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-acetylide-anion"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-epoxide-ring-opening"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-sn2-inversion"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-solvent-effects-on-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-sn2-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-williamson-ether-synthesis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-solvent-effects-on-reactivity",
+      "dependent_card_id": "organic-chemistry-i.draft-nucleophilicity-versus-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-solvent-effects-on-reactivity",
+      "dependent_card_id": "organic-chemistry-i.draft-substitution-elimination-competition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoisomer",
+      "dependent_card_id": "organic-chemistry-i.draft-diastereomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoisomer",
+      "dependent_card_id": "organic-chemistry-i.draft-e-z-alkene-configuration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoisomer",
+      "dependent_card_id": "organic-chemistry-i.draft-enantiomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoisomer",
+      "dependent_card_id": "organic-chemistry-i.draft-stereospecific-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoisomer",
+      "dependent_card_id": "organic-chemistry-i.draft-tetrahedral-stereocenter"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoselective-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-dihydroxylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoselective-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-hydrogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereoselective-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-regioselectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereospecific-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-epoxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereospecific-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-alkene-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereospecific-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-diels-alder-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereospecific-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-hydroboration-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-stereospecific-reaction",
+      "dependent_card_id": "organic-chemistry-i.draft-stereoselective-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-steric-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-cyclohexane-ring-flip"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-steric-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-hofmann-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-steric-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-nucleophilicity-versus-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-steric-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-ring-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-substitution-elimination-competition",
+      "dependent_card_id": "organic-chemistry-i.draft-acetylide-anion"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-substitution-elimination-competition",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-activation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-substitution-elimination-competition",
+      "dependent_card_id": "organic-chemistry-i.draft-williamson-ether-synthesis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-substrate-effects-on-substitution-and-elimination",
+      "dependent_card_id": "organic-chemistry-i.draft-substitution-elimination-competition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-terminal-alkyne-acidity",
+      "dependent_card_id": "organic-chemistry-i.draft-acetylide-anion"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-tetrahedral-stereocenter",
+      "dependent_card_id": "organic-chemistry-i.draft-fischer-projection"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-tetrahedral-stereocenter",
+      "dependent_card_id": "organic-chemistry-i.draft-meso-compound"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-tetrahedral-stereocenter",
+      "dependent_card_id": "organic-chemistry-i.draft-r-s-configuration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-torsional-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-ring-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-torsional-strain",
+      "dependent_card_id": "organic-chemistry-i.draft-steric-strain"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-zaitsev-selectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-alcohol-dehydration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-i.draft-zaitsev-selectivity",
+      "dependent_card_id": "organic-chemistry-i.draft-hofmann-selectivity"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Organic Chemistry I.",
+  "level": "College",
+  "tags": [
+    "chemistry"
+  ]
+}

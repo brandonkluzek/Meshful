@@ -1,0 +1,3758 @@
+{
+  "id": "academic-reviewed-v1:biology-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Biology I",
+  "subject": "Biology",
+  "domain": "Biology",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "biology-i.draft-biology",
+      "canonical_deck_id": "biology-i",
+      "term": "Biology",
+      "prompt": "What is Biology? State its defining idea and essential conditions.",
+      "definition": "Biology studies living systems and their processes across scales, from molecules to ecosystems. Organisms share features such as cellular organization and heredity, but no single everyday checklist settles every boundary case, including viruses.",
+      "required_concepts": [
+        "Biology investigates living systems across organizational scales."
+      ],
+      "accepted_variants": [
+        "Study of life and living processes."
+      ],
+      "major_error_concepts": [
+        "Claiming reproduction by every individual is required for that individual to be alive."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-levels-of-organization",
+      "canonical_deck_id": "biology-i",
+      "term": "Levels of Organization",
+      "prompt": "What is Levels of Organization? State its defining idea and essential conditions.",
+      "definition": "Biological organization includes molecules, cells, tissues, organs, organisms, populations, communities, and ecosystems. These are useful levels of description, not a requirement that every organism possess tissues and organs.",
+      "required_concepts": [
+        "Levels organize biological questions without requiring every level in every organism."
+      ],
+      "accepted_variants": [
+        "Hierarchy of biological organization."
+      ],
+      "major_error_concepts": [
+        "Assuming a unicellular organism must contain organs."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-emergent-properties",
+      "canonical_deck_id": "biology-i",
+      "term": "Emergent Properties",
+      "prompt": "What is Emergent Properties? State its defining idea and essential conditions.",
+      "definition": "Emergent properties arise from interactions among components in an organized system. Understanding components remains useful, but isolated-component properties may not fully predict behavior such as coordinated tissue contraction or ecosystem dynamics.",
+      "required_concepts": [
+        "Interactions generate system-level behavior."
+      ],
+      "accepted_variants": [
+        "Biological emergence."
+      ],
+      "major_error_concepts": [
+        "Defining emergence as behavior with no physical or biological basis."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-levels-of-organization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-theory",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell Theory",
+      "prompt": "What is Cell Theory? State its defining idea and essential conditions.",
+      "definition": "Cell theory states that cellular organisms consist of cells, cells are basic units of life, and present-day cells arise from existing cells. It describes cellular life without explaining the historical origin of the first cells by itself.",
+      "required_concepts": [
+        "Cells are basic living units produced from prior cells."
+      ],
+      "accepted_variants": [
+        "Foundational cell theory."
+      ],
+      "major_error_concepts": [
+        "Claiming cell theory proves that the first cells had no origin."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biology",
+        "biology-i.draft-levels-of-organization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-evolution",
+      "canonical_deck_id": "biology-i",
+      "term": "Evolution",
+      "prompt": "What is Evolution? State its defining idea and essential conditions.",
+      "definition": "Biological evolution is heritable change in populations across generations. It includes changes in variant frequencies and lineage diversification, not purposeful improvement by individual organisms during their own lifetimes.",
+      "required_concepts": [
+        "Heritable population change occurs across generations."
+      ],
+      "accepted_variants": [
+        "Descent with modification."
+      ],
+      "major_error_concepts": [
+        "Calling an individual's exercise-induced muscle growth evolutionary change."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-homeostasis",
+      "canonical_deck_id": "biology-i",
+      "term": "Homeostasis",
+      "prompt": "What is Homeostasis? State its defining idea and essential conditions.",
+      "definition": "Homeostasis maintains internal conditions within workable ranges through dynamic regulation. It is not perfect constancy: regulated variables fluctuate, operating ranges can change, and maintaining them generally requires energy and material exchange.",
+      "required_concepts": [
+        "Dynamic regulation maintains viable internal conditions."
+      ],
+      "accepted_variants": [
+        "Internal physiological regulation."
+      ],
+      "major_error_concepts": [
+        "Defining homeostasis as complete absence of change."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-emergent-properties"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-energy-and-matter",
+      "canonical_deck_id": "biology-i",
+      "term": "Energy and Matter",
+      "prompt": "What is Energy and Matter? State its defining idea and essential conditions.",
+      "definition": "Organisms transform energy and exchange matter with their surroundings. Matter can be recycled through biological and environmental processes, while usable energy flows through systems and is progressively dissipated as heat.",
+      "required_concepts": [
+        "Matter cycling differs from the directional flow of usable energy."
+      ],
+      "accepted_variants": [
+        "Biological matter and energy balance."
+      ],
+      "major_error_concepts": [
+        "Claiming organisms create energy from nothing."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biology",
+        "biology-i.draft-homeostasis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-hypothesis",
+      "canonical_deck_id": "biology-i",
+      "term": "Hypothesis",
+      "prompt": "What is Hypothesis? State its defining idea and essential conditions.",
+      "definition": "A scientific hypothesis is a proposed explanation that generates testable consequences. It must be distinguishable from alternatives through observations or experiments; a statement that accommodates every possible outcome has little explanatory testability.",
+      "required_concepts": [
+        "A proposed explanation yields potentially discriminating tests."
+      ],
+      "accepted_variants": [
+        "Testable explanatory hypothesis."
+      ],
+      "major_error_concepts": [
+        "Defining a hypothesis as an established fact that cannot be challenged."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biology"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-prediction",
+      "canonical_deck_id": "biology-i",
+      "term": "Prediction",
+      "prompt": "What is Prediction? State its defining idea and essential conditions.",
+      "definition": "A prediction states an expected observation if a hypothesis and relevant assumptions hold. Failure of a prediction can challenge the explanation, assumptions, or measurement setup, so interpretation requires examining the complete test.",
+      "required_concepts": [
+        "Predictions connect explanations to observable outcomes."
+      ],
+      "accepted_variants": [
+        "Expected test outcome."
+      ],
+      "major_error_concepts": [
+        "Treating one matching prediction as proof that no alternative explanation exists."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-hypothesis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-experiment",
+      "canonical_deck_id": "biology-i",
+      "term": "Experiment",
+      "prompt": "What is Experiment? State its defining idea and essential conditions.",
+      "definition": "An experiment deliberately changes specified conditions and measures outcomes to investigate an explanation. Good design separates the intended manipulation from alternative causes and defines what comparison can answer the question.",
+      "required_concepts": [
+        "Controlled manipulation supports a defined causal comparison."
+      ],
+      "accepted_variants": [
+        "Experimental test."
+      ],
+      "major_error_concepts": [
+        "Assuming any observation without manipulation is automatically an experiment."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-hypothesis",
+        "biology-i.draft-prediction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-control-group",
+      "canonical_deck_id": "biology-i",
+      "term": "Control Group",
+      "prompt": "What is Control Group? State its defining idea and essential conditions.",
+      "definition": "A control group or control condition provides a comparison for interpreting the experimental manipulation. Positive and negative controls serve different purposes, and an untreated group does not automatically control every procedural difference.",
+      "required_concepts": [
+        "Controls address specific alternative explanations or verify detection."
+      ],
+      "accepted_variants": [
+        "Reference experimental condition."
+      ],
+      "major_error_concepts": [
+        "Assuming any group labeled control removes all confounding."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-experiment"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-variables-and-confounding",
+      "canonical_deck_id": "biology-i",
+      "term": "Variables and Confounding",
+      "prompt": "What is Variables and Confounding? State its defining idea and essential conditions.",
+      "definition": "An independent variable is the manipulated or explanatory factor, while a dependent variable is the measured outcome. Confounding arises when another factor varies with the proposed cause and can also affect the outcome.",
+      "required_concepts": [
+        "Explanatory, outcome, and confounding variables have distinct roles."
+      ],
+      "accepted_variants": [
+        "Experimental variables."
+      ],
+      "major_error_concepts": [
+        "Calling the measured response the manipulated variable simply because it is important."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-experiment",
+        "biology-i.draft-control-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-replication",
+      "canonical_deck_id": "biology-i",
+      "term": "Replication",
+      "prompt": "What is Replication? State its defining idea and essential conditions.",
+      "definition": "Replication examines variability across independent experimental units or repeated studies. Repeated measurements of one sample improve measurement information but do not automatically provide independent biological replicates.",
+      "required_concepts": [
+        "Independent biological units differ from repeated readings of one unit."
+      ],
+      "accepted_variants": [
+        "Biological and technical replication."
+      ],
+      "major_error_concepts": [
+        "Treating ten readings of one organism as ten independent organisms."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-experiment",
+        "biology-i.draft-variables-and-confounding"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-sample-and-population",
+      "canonical_deck_id": "biology-i",
+      "term": "Sample and Population",
+      "prompt": "What is Sample and Population? State its defining idea and essential conditions.",
+      "definition": "A population is the full set of units relevant to a question, and a sample is the subset observed. Sample selection determines how safely results generalize; a large biased sample can still misrepresent the target population.",
+      "required_concepts": [
+        "Sampling connects observed units to a stated target population."
+      ],
+      "accepted_variants": [
+        "Population and sample distinction."
+      ],
+      "major_error_concepts": [
+        "Claiming sample size alone eliminates selection bias."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-replication"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-correlation-and-causation",
+      "canonical_deck_id": "biology-i",
+      "term": "Correlation and Causation",
+      "prompt": "What is Correlation and Causation? State its defining idea and essential conditions.",
+      "definition": "Correlation describes an association between variables, whereas causation means changing one contributes to changing another under specified conditions. Confounding, reverse causation, and selection can generate associations without the proposed causal relationship.",
+      "required_concepts": [
+        "Association alone does not identify causal direction or mechanism."
+      ],
+      "accepted_variants": [
+        "Association versus causation."
+      ],
+      "major_error_concepts": [
+        "Inferring causation solely from two variables moving together."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-variables-and-confounding",
+        "biology-i.draft-sample-and-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-biological-model",
+      "canonical_deck_id": "biology-i",
+      "term": "Biological Model",
+      "prompt": "What is Biological Model? State its defining idea and essential conditions.",
+      "definition": "A biological model is a simplified representation used to explain, predict, or test a system. Its assumptions and scale determine where it is useful; a model can be informative without reproducing every feature of nature.",
+      "required_concepts": [
+        "A simplified representation has a defined domain of usefulness."
+      ],
+      "accepted_variants": [
+        "Conceptual, mathematical, or experimental model."
+      ],
+      "major_error_concepts": [
+        "Declaring every simplified model useless because it omits detail."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-hypothesis",
+        "biology-i.draft-prediction",
+        "biology-i.draft-levels-of-organization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-measurement-uncertainty",
+      "canonical_deck_id": "biology-i",
+      "term": "Measurement Uncertainty",
+      "prompt": "What is Measurement Uncertainty? State its defining idea and essential conditions.",
+      "definition": "Measurement uncertainty expresses limits on how precisely or accurately a quantity is known. Repeated agreement can indicate precision while a systematic bias remains, so repeatability alone does not establish closeness to the true value.",
+      "required_concepts": [
+        "Precision and accuracy are distinct measurement properties."
+      ],
+      "accepted_variants": [
+        "Uncertainty in biological measurement."
+      ],
+      "major_error_concepts": [
+        "Equating tightly grouped biased measurements with guaranteed accuracy."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-replication"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-graph-interpretation",
+      "canonical_deck_id": "biology-i",
+      "term": "Graph Interpretation",
+      "prompt": "What is Graph Interpretation? State its defining idea and essential conditions.",
+      "definition": "Interpreting a biological graph requires checking axes, units, scale, groups, and what error bars represent. A visual difference is not automatically a causal or practically important effect, and omitted baselines or scales can distort impressions.",
+      "required_concepts": [
+        "Graph interpretation depends on labels, design, and uncertainty."
+      ],
+      "accepted_variants": [
+        "Reading biological data plots."
+      ],
+      "major_error_concepts": [
+        "Assuming every error bar is a standard deviation without a stated definition."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-variables-and-confounding",
+        "biology-i.draft-measurement-uncertainty",
+        "biology-i.draft-correlation-and-causation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-evidence-and-revision",
+      "canonical_deck_id": "biology-i",
+      "term": "Evidence and Revision",
+      "prompt": "What is Evidence and Revision? State its defining idea and essential conditions.",
+      "definition": "Scientific conclusions are revised when new evidence changes the support for explanations. Acknowledging uncertainty is compatible with strong evidence; rejecting a claim requires considering the quality and relevance of contrary observations.",
+      "required_concepts": [
+        "Conclusions track the strength and scope of evidence."
+      ],
+      "accepted_variants": [
+        "Evidence-responsive scientific reasoning."
+      ],
+      "major_error_concepts": [
+        "Assuming any unresolved detail makes all explanations equally supported."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-hypothesis",
+        "biology-i.draft-prediction",
+        "biology-i.draft-measurement-uncertainty"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-scientific-theory",
+      "canonical_deck_id": "biology-i",
+      "term": "Scientific Theory",
+      "prompt": "What is Scientific Theory? State its defining idea and essential conditions.",
+      "definition": "A scientific theory is a broad explanatory framework supported by connected evidence and successful testing. In science, theory does not mean an unsupported guess, and well-supported theories remain open to refinement.",
+      "required_concepts": [
+        "A theory organizes substantial explanatory evidence."
+      ],
+      "accepted_variants": [
+        "Evidence-supported scientific framework."
+      ],
+      "major_error_concepts": [
+        "Using merely a theory to mean no evidence exists."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-hypothesis",
+        "biology-i.draft-biological-model",
+        "biology-i.draft-evidence-and-revision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-atom",
+      "canonical_deck_id": "biology-i",
+      "term": "Atom",
+      "prompt": "What is Atom? State its defining idea and essential conditions.",
+      "definition": "An atom consists of a nucleus containing protons and usually neutrons, surrounded by electrons. Proton number identifies the element, while electron arrangement strongly influences chemical interactions relevant to biology.",
+      "required_concepts": [
+        "Proton number sets elemental identity; electrons influence bonding."
+      ],
+      "accepted_variants": [
+        "Atomic building block of matter."
+      ],
+      "major_error_concepts": [
+        "Claiming gaining an electron necessarily changes one element into another."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-energy-and-matter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-covalent-bond",
+      "canonical_deck_id": "biology-i",
+      "term": "Covalent Bond",
+      "prompt": "What is Covalent Bond? State its defining idea and essential conditions.",
+      "definition": "A covalent bond involves shared electron density between atoms. Unequal sharing can make bonds polar, affecting molecular interactions; covalent bonding is distinct from attraction between separate charged groups.",
+      "required_concepts": [
+        "Electron sharing creates covalent linkage with possible polarity."
+      ],
+      "accepted_variants": [
+        "Shared-electron chemical bond."
+      ],
+      "major_error_concepts": [
+        "Calling all covalent bonds equally nonpolar."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-atom"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-noncovalent-interactions",
+      "canonical_deck_id": "biology-i",
+      "term": "Noncovalent Interactions",
+      "prompt": "What is Noncovalent Interactions? State its defining idea and essential conditions.",
+      "definition": "Noncovalent interactions include electrostatic attractions, hydrogen bonds, and van der Waals interactions. Individually modest interactions can collectively stabilize biological structures while still permitting reversible recognition and rearrangement.",
+      "required_concepts": [
+        "Multiple reversible interactions support biological structure and binding."
+      ],
+      "accepted_variants": [
+        "Noncovalent molecular forces."
+      ],
+      "major_error_concepts": [
+        "Assuming noncovalent interactions are biologically irrelevant because they are not covalent bonds."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-atom",
+        "biology-i.draft-covalent-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-water",
+      "canonical_deck_id": "biology-i",
+      "term": "Water",
+      "prompt": "What is Water? State its defining idea and essential conditions.",
+      "definition": "Water is a polar molecule whose hydrogen bonding contributes to cohesion, thermal properties, and solvent behavior. It dissolves many ionic and polar substances well, but it is not an equally effective solvent for every material.",
+      "required_concepts": [
+        "Polarity and hydrogen bonding explain key biological water properties."
+      ],
+      "accepted_variants": [
+        "Water as a biological solvent."
+      ],
+      "major_error_concepts": [
+        "Calling water a universal solvent that dissolves all lipids equally well."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-covalent-bond",
+        "biology-i.draft-noncovalent-interactions"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-ph",
+      "canonical_deck_id": "biology-i",
+      "term": "pH",
+      "prompt": "Define pH in terms of hydrogen-ion activity. What does a one-unit increase in pH mean?",
+      "definition": "pH = -log10(a(H+)), where a(H+) is dimensionless hydrogen-ion activity. Raising pH by one unit means tenfold lower hydrogen-ion activity; lowering it by one means tenfold higher activity. Dilute-solution calculations often approximate activity by hydrogen-ion concentration relative to its standard concentration.",
+      "required_concepts": [
+        "pH is the negative base-10 logarithm of hydrogen-ion activity; a dilute-solution concentration approximation is acceptable when identified as such.",
+        "A one-unit pH increase means a tenfold decrease in hydrogen-ion activity."
+      ],
+      "accepted_variants": [
+        "The negative common logarithm of proton activity; higher pH means lower proton activity."
+      ],
+      "major_error_concepts": [
+        "Using a positive logarithm or claiming hydrogen-ion activity rises when pH rises.",
+        "Interpreting a one-unit pH change as a one-percent or onefold activity change."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-water"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-buffer",
+      "canonical_deck_id": "biology-i",
+      "term": "Buffer",
+      "prompt": "What is Buffer? State its defining idea and essential conditions.",
+      "definition": "A buffer resists pH change through a system that can absorb added acid or base over a limited range. Buffer capacity is finite and depends on composition and concentration, so buffering does not make pH impossible to change.",
+      "required_concepts": [
+        "A chemical system limits but cannot eliminate pH changes."
+      ],
+      "accepted_variants": [
+        "Acid-base buffer."
+      ],
+      "major_error_concepts": [
+        "Claiming a buffer holds pH perfectly constant regardless of added acid."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-ph"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-carbon-skeleton",
+      "canonical_deck_id": "biology-i",
+      "term": "Carbon Skeleton",
+      "prompt": "What is Carbon Skeleton? State its defining idea and essential conditions.",
+      "definition": "Carbon commonly forms four covalent bonds and can build chains, branches, and rings. This bonding versatility supports diverse biological molecules, while carbon content alone does not imply that a compound is produced only by living organisms.",
+      "required_concepts": [
+        "Carbon bonding supports varied molecular skeletons."
+      ],
+      "accepted_variants": [
+        "Carbon framework."
+      ],
+      "major_error_concepts": [
+        "Claiming all carbon-containing molecules can only be made by organisms."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-covalent-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-functional-group",
+      "canonical_deck_id": "biology-i",
+      "term": "Functional Group",
+      "prompt": "What is Functional Group? State its defining idea and essential conditions.",
+      "definition": "A functional group is a recurring arrangement of atoms that contributes characteristic chemical behavior, such as a hydroxyl, carboxyl, or amino group. The rest of the molecule and its environment modify that behavior.",
+      "required_concepts": [
+        "Recognizable atom groups contribute context-dependent reactivity and properties."
+      ],
+      "accepted_variants": [
+        "Chemical functional group."
+      ],
+      "major_error_concepts": [
+        "Assuming a functional group's behavior is completely independent of molecular context."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-carbon-skeleton",
+        "biology-i.draft-ph"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-monomer-and-polymer",
+      "canonical_deck_id": "biology-i",
+      "term": "Monomer and Polymer",
+      "prompt": "What is Monomer and Polymer? State its defining idea and essential conditions.",
+      "definition": "A monomer is a building unit that can participate in a polymer, a larger structure containing repeated linked units. Biological polymers can be heterogeneous sequences; not every large biological molecule is a true repeating-unit polymer.",
+      "required_concepts": [
+        "Linked building units form polymers with potentially varied sequences."
+      ],
+      "accepted_variants": [
+        "Monomer-polymer relationship."
+      ],
+      "major_error_concepts": [
+        "Calling every lipid a polymer of identical repeating monomers."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-carbon-skeleton",
+        "biology-i.draft-covalent-bond"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-condensation-and-hydrolysis",
+      "canonical_deck_id": "biology-i",
+      "term": "Condensation and Hydrolysis",
+      "prompt": "What is Condensation and Hydrolysis? State its defining idea and essential conditions.",
+      "definition": "Hydrolysis cleaves a linkage through reaction with water, while condensation can form a linkage with loss of a small molecule such as water. Cellular polymer synthesis commonly uses activated intermediates and cannot always be reduced to simply removing water from free monomers.",
+      "required_concepts": [
+        "Bond cleavage and formation require appropriate chemical reactions and energy context."
+      ],
+      "accepted_variants": [
+        "Hydrolytic cleavage and condensation."
+      ],
+      "major_error_concepts": [
+        "Assuming all cellular polymerization occurs spontaneously just by removing water."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-water",
+        "biology-i.draft-monomer-and-polymer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-carbohydrate",
+      "canonical_deck_id": "biology-i",
+      "term": "Carbohydrate",
+      "prompt": "What is Carbohydrate? State its defining idea and essential conditions.",
+      "definition": "Carbohydrates include simple sugars and linked sugar structures used in energy metabolism, storage, recognition, and support. Linkage structure matters: glucose-based starch and cellulose have different architectures and biological uses.",
+      "required_concepts": [
+        "Sugar-based molecules serve both metabolic and structural roles."
+      ],
+      "accepted_variants": [
+        "Saccharides."
+      ],
+      "major_error_concepts": [
+        "Defining all carbohydrates as immediately digestible energy stores."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-monomer-and-polymer",
+        "biology-i.draft-condensation-and-hydrolysis",
+        "biology-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-lipid",
+      "canonical_deck_id": "biology-i",
+      "term": "Lipid",
+      "prompt": "What is Lipid? State its defining idea and essential conditions.",
+      "definition": "Lipids are a chemically diverse group with substantial hydrophobic character, including fats, phospholipids, and sterols. Some store energy, while amphipathic members assemble into membranes; they are not all built from the same repeating monomer.",
+      "required_concepts": [
+        "Hydrophobic and amphipathic molecules have storage and membrane roles."
+      ],
+      "accepted_variants": [
+        "Biological lipid classes."
+      ],
+      "major_error_concepts": [
+        "Claiming every lipid is a triglyceride."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-water",
+        "biology-i.draft-functional-group",
+        "biology-i.draft-monomer-and-polymer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-protein",
+      "canonical_deck_id": "biology-i",
+      "term": "Protein",
+      "prompt": "What is Protein? State its defining idea and essential conditions.",
+      "definition": "Proteins are amino-acid polymers whose sequences support folding, interactions, and diverse functions. Structure depends on environment as well as sequence, and proteins include catalysts, structural components, transporters, and signals.",
+      "required_concepts": [
+        "Amino-acid sequence and folding support varied biological functions."
+      ],
+      "accepted_variants": [
+        "Functional polypeptides."
+      ],
+      "major_error_concepts": [
+        "Defining proteins solely as energy-storage molecules."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-monomer-and-polymer",
+        "biology-i.draft-noncovalent-interactions",
+        "biology-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-nucleic-acid",
+      "canonical_deck_id": "biology-i",
+      "term": "Nucleic Acid",
+      "prompt": "What is Nucleic Acid? State its defining idea and essential conditions.",
+      "definition": "Nucleic acids are nucleotide polymers, including DNA and RNA. Their sequences carry or implement biological information, and RNA can also have structural and catalytic functions rather than serving only as a temporary DNA copy.",
+      "required_concepts": [
+        "Nucleotide sequence supports information and functional RNA roles."
+      ],
+      "accepted_variants": [
+        "DNA and RNA polymers."
+      ],
+      "major_error_concepts": [
+        "Claiming all RNA must encode a protein."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-monomer-and-polymer",
+        "biology-i.draft-functional-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-atp-and-energy-coupling",
+      "canonical_deck_id": "biology-i",
+      "term": "ATP and Energy Coupling",
+      "prompt": "What is ATP and Energy Coupling? State its defining idea and essential conditions.",
+      "definition": "ATP is a nucleotide used in many coupled reactions and group transfers. Its favorable net hydrolysis can help drive cellular work when properly coupled; breaking a chemical bond alone requires energy rather than releasing energy by itself.",
+      "required_concepts": [
+        "ATP supports coupled energy transfer through complete chemical reactions."
+      ],
+      "accepted_variants": [
+        "Adenosine triphosphate energy coupling."
+      ],
+      "major_error_concepts": [
+        "Saying ATP releases energy solely because a bond is broken."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-energy-and-matter",
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-condensation-and-hydrolysis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-prokaryotic-cell",
+      "canonical_deck_id": "biology-i",
+      "term": "Prokaryotic Cell",
+      "prompt": "What is Prokaryotic Cell? State its defining idea and essential conditions.",
+      "definition": "Prokaryotic cells lack a membrane-enclosed nucleus and include Bacteria and Archaea. They contain genetic material, ribosomes, and a plasma membrane and can have substantial internal organization despite lacking the standard eukaryotic organelle system.",
+      "required_concepts": [
+        "Cells without a membrane-bound nucleus still have organized cellular machinery."
+      ],
+      "accepted_variants": [
+        "Bacterial and archaeal cellular organization."
+      ],
+      "major_error_concepts": [
+        "Claiming prokaryotes lack DNA or ribosomes."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-cell-theory",
+        "biology-i.draft-nucleic-acid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-eukaryotic-cell",
+      "canonical_deck_id": "biology-i",
+      "term": "Eukaryotic Cell",
+      "prompt": "What characterizes eukaryotic cellular organization? Explain why a specialized cell without a nucleus need not be prokaryotic.",
+      "definition": "Eukaryotic cellular organization characteristically includes a membrane-enclosed nucleus and internal membrane compartments. Some specialized cells, such as mature mammalian erythrocytes, lose their nuclei during differentiation and remain eukaryotic cells. Eukaryotes include unicellular as well as multicellular organisms.",
+      "required_concepts": [
+        "A nucleus and internal membrane compartmentation characterize eukaryotic organization.",
+        "This is not an exceptionless statement about every differentiated cell; mature mammalian red blood cells are a valid enucleated example."
+      ],
+      "accepted_variants": [
+        "Eukaryotic cells characteristically compartmentalize their DNA in a nucleus, but differentiated exceptions can lose it."
+      ],
+      "major_error_concepts": [
+        "Claiming that every eukaryotic cell must retain a nucleus at every stage.",
+        "Classifying mature mammalian red blood cells as prokaryotes because they lack nuclei.",
+        "Equating all unicellular organisms with prokaryotes."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-prokaryotic-cell",
+        "biology-i.draft-cell-theory"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-size",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell Size",
+      "prompt": "What is Cell Size? State its defining idea and essential conditions.",
+      "definition": "As a similarly shaped cell grows, volume increases faster than surface area. Exchange demands and internal transport therefore constrain size, although changes in shape, internal membranes, and transport systems can modify those constraints.",
+      "required_concepts": [
+        "Surface-area-to-volume scaling influences cellular exchange."
+      ],
+      "accepted_variants": [
+        "Cell size and exchange limits."
+      ],
+      "major_error_concepts": [
+        "Claiming doubling a cell's linear dimensions doubles its volume."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-cell-theory",
+        "biology-i.draft-energy-and-matter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-plasma-membrane",
+      "canonical_deck_id": "biology-i",
+      "term": "Plasma Membrane",
+      "prompt": "What is Plasma Membrane? State its defining idea and essential conditions.",
+      "definition": "The plasma membrane is a selective boundary formed mainly by a lipid bilayer with associated proteins. It separates cellular conditions from the surroundings while supporting controlled transport, sensing, and interactions.",
+      "required_concepts": [
+        "A dynamic lipid-protein boundary selectively regulates exchange."
+      ],
+      "accepted_variants": [
+        "Cell membrane."
+      ],
+      "major_error_concepts": [
+        "Describing the membrane as a rigid wall that blocks every substance."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-lipid",
+        "biology-i.draft-protein",
+        "biology-i.draft-water"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-nucleus",
+      "canonical_deck_id": "biology-i",
+      "term": "Nucleus",
+      "prompt": "What is Nucleus? State its defining idea and essential conditions.",
+      "definition": "The nucleus encloses most eukaryotic genetic material behind a double membrane with regulated pores. DNA organization and transcription occur there, while exchange with the cytoplasm supports gene expression and cellular coordination.",
+      "required_concepts": [
+        "A pore-containing nuclear envelope compartmentalizes genetic material."
+      ],
+      "accepted_variants": [
+        "Eukaryotic nucleus."
+      ],
+      "major_error_concepts": [
+        "Claiming the nucleus contains all DNA in every eukaryotic cell with no organellar genomes."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-eukaryotic-cell",
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-ribosome",
+      "canonical_deck_id": "biology-i",
+      "term": "Ribosome",
+      "prompt": "What is Ribosome? State its defining idea and essential conditions.",
+      "definition": "A ribosome is an RNA-protein complex that reads messenger RNA and catalyzes polypeptide synthesis. Ribosomes occur in both prokaryotic and eukaryotic cells and are not membrane-enclosed organelles.",
+      "required_concepts": [
+        "RNA-protein machinery synthesizes polypeptides from mRNA information."
+      ],
+      "accepted_variants": [
+        "Protein-synthesis ribosome."
+      ],
+      "major_error_concepts": [
+        "Claiming only eukaryotic cells possess ribosomes."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-protein",
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-prokaryotic-cell",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-endomembrane-system",
+      "canonical_deck_id": "biology-i",
+      "term": "Endomembrane System",
+      "prompt": "What is Endomembrane System? State its defining idea and essential conditions.",
+      "definition": "The endomembrane system coordinates synthesis, modification, and movement of selected cellular materials through connected or exchanging compartments. It includes the ER, Golgi, and related membranes, but not every membrane organelle belongs to this trafficking system.",
+      "required_concepts": [
+        "Coordinated membrane compartments exchange selected cargo."
+      ],
+      "accepted_variants": [
+        "Endomembrane trafficking system."
+      ],
+      "major_error_concepts": [
+        "Including mitochondria as ordinary vesicular stations of the ER-Golgi pathway."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-eukaryotic-cell",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-endoplasmic-reticulum",
+      "canonical_deck_id": "biology-i",
+      "term": "Endoplasmic Reticulum",
+      "prompt": "What is Endoplasmic Reticulum? State its defining idea and essential conditions.",
+      "definition": "The endoplasmic reticulum supports synthesis and processing of membrane and secreted proteins as well as lipid metabolism and other functions. Ribosomes on rough ER are cytosolic ribosomes engaged in directed synthesis, not a separate kind of ribosome.",
+      "required_concepts": [
+        "ER membranes support selected protein and lipid production."
+      ],
+      "accepted_variants": [
+        "Rough and smooth ER."
+      ],
+      "major_error_concepts": [
+        "Claiming all cellular proteins are synthesized inside the ER lumen."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-endomembrane-system",
+        "biology-i.draft-ribosome",
+        "biology-i.draft-lipid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-golgi-apparatus",
+      "canonical_deck_id": "biology-i",
+      "term": "Golgi Apparatus",
+      "prompt": "What is Golgi Apparatus? State its defining idea and essential conditions.",
+      "definition": "The Golgi apparatus modifies and sorts cargo arriving through the endomembrane system. Distinct regions and trafficking signals help route molecules to appropriate destinations rather than randomly releasing every cargo into the cytosol.",
+      "required_concepts": [
+        "Golgi processing and sorting direct cellular cargo."
+      ],
+      "accepted_variants": [
+        "Golgi complex."
+      ],
+      "major_error_concepts": [
+        "Defining the Golgi as the site that translates all secreted proteins."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-endomembrane-system",
+        "biology-i.draft-endoplasmic-reticulum"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-lysosome",
+      "canonical_deck_id": "biology-i",
+      "term": "Lysosome",
+      "prompt": "What is Lysosome? State its defining idea and essential conditions.",
+      "definition": "Lysosomes are acidic degradative compartments that break down delivered macromolecules using enzymes. Their membranes maintain a specialized environment and contain the digestive machinery; they do not indiscriminately digest the whole healthy cell.",
+      "required_concepts": [
+        "Membrane-enclosed acidic digestion supports recycling."
+      ],
+      "accepted_variants": [
+        "Lysosomal degradation compartment."
+      ],
+      "major_error_concepts": [
+        "Assuming lysosomal enzymes normally operate freely throughout the cytosol."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-endomembrane-system",
+        "biology-i.draft-ph",
+        "biology-i.draft-condensation-and-hydrolysis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-vacuole",
+      "canonical_deck_id": "biology-i",
+      "term": "Vacuole",
+      "prompt": "What is Vacuole? State its defining idea and essential conditions.",
+      "definition": "Vacuoles are membrane-enclosed compartments with roles that vary among organisms, including storage, digestion, water balance, and support. Large plant central vacuoles contribute to turgor, but not all vacuoles have identical contents or functions.",
+      "required_concepts": [
+        "Vacuole function depends on organism and compartment."
+      ],
+      "accepted_variants": [
+        "Cellular vacuolar compartment."
+      ],
+      "major_error_concepts": [
+        "Defining every vacuole as an empty space with no physiological role."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-eukaryotic-cell",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-mitochondrion",
+      "canonical_deck_id": "biology-i",
+      "term": "Mitochondrion",
+      "prompt": "What is Mitochondrion? State its defining idea and essential conditions.",
+      "definition": "Mitochondria support respiration and other metabolic functions using highly organized membranes and enzymes. They retain a genome but depend on many nuclear-encoded products, so they are not independently self-sufficient cells within a cell.",
+      "required_concepts": [
+        "Respiratory organelles retain partial genetic autonomy but depend on the host cell."
+      ],
+      "accepted_variants": [
+        "Mitochondrial organelle."
+      ],
+      "major_error_concepts": [
+        "Claiming only animal cells contain mitochondria."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-eukaryotic-cell",
+        "biology-i.draft-atp-and-energy-coupling",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-chloroplast",
+      "canonical_deck_id": "biology-i",
+      "term": "Chloroplast",
+      "prompt": "What is Chloroplast? State its defining idea and essential conditions.",
+      "definition": "Chloroplasts perform photosynthesis in plants and many algae using internal membranes and carbon-assimilation machinery. They retain genetic material while relying on the cell, and photosynthetic organisms also need other pathways to use and redistribute energy.",
+      "required_concepts": [
+        "Photosynthetic organelles convert light energy and assimilate carbon."
+      ],
+      "accepted_variants": [
+        "Photosynthetic plastid."
+      ],
+      "major_error_concepts": [
+        "Claiming chloroplasts eliminate all need for cellular respiration in plants."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-eukaryotic-cell",
+        "biology-i.draft-energy-and-matter",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cytoskeleton",
+      "canonical_deck_id": "biology-i",
+      "term": "Cytoskeleton",
+      "prompt": "What is Cytoskeleton? State its defining idea and essential conditions.",
+      "definition": "The cytoskeleton comprises dynamic protein assemblies that organize cell shape, internal transport, movement, and division. Its elements can assemble and disassemble, so it is not merely a fixed miniature skeleton.",
+      "required_concepts": [
+        "Dynamic protein structures organize and move cellular components."
+      ],
+      "accepted_variants": [
+        "Cellular filament system."
+      ],
+      "major_error_concepts": [
+        "Describing the cytoskeleton as permanently rigid and inactive."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-protein",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-wall",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell Wall",
+      "prompt": "What is Cell Wall? State its defining idea and essential conditions.",
+      "definition": "A cell wall is an external supportive layer present in many organisms, with composition varying across groups. Plant walls contain cellulose, while fungal and bacterial walls differ; the wall supplements rather than replaces the plasma membrane.",
+      "required_concepts": [
+        "External support varies chemically and coexists with a plasma membrane."
+      ],
+      "accepted_variants": [
+        "Cellular wall."
+      ],
+      "major_error_concepts": [
+        "Claiming all cell walls are made of cellulose."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-carbohydrate",
+        "biology-i.draft-prokaryotic-cell",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-extracellular-matrix",
+      "canonical_deck_id": "biology-i",
+      "term": "Extracellular Matrix",
+      "prompt": "What is Extracellular Matrix? State its defining idea and essential conditions.",
+      "definition": "The extracellular matrix is material secreted outside cells that supports organization, adhesion, and signaling, especially in animal tissues. Its composition and mechanical properties affect cells rather than acting only as passive filler.",
+      "required_concepts": [
+        "Secreted extracellular material provides support and biological signals."
+      ],
+      "accepted_variants": [
+        "ECM."
+      ],
+      "major_error_concepts": [
+        "Calling extracellular matrix a membrane-bound intracellular organelle."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-protein",
+        "biology-i.draft-emergent-properties",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-junction",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell Junction",
+      "prompt": "What is Cell Junction? State its defining idea and essential conditions.",
+      "definition": "Cell junctions connect cells mechanically, regulate passage between them, or permit communication. Different junction types have distinct roles, and a connection between cells is not necessarily an open passage for all molecules.",
+      "required_concepts": [
+        "Specialized cell connections support adhesion, barriers, or communication."
+      ],
+      "accepted_variants": [
+        "Intercellular junctions."
+      ],
+      "major_error_concepts": [
+        "Assuming every junction allows unrestricted cytoplasmic mixing."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-extracellular-matrix"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-diffusion",
+      "canonical_deck_id": "biology-i",
+      "term": "Diffusion",
+      "prompt": "What is Diffusion? State its defining idea and essential conditions.",
+      "definition": "Diffusion is net spreading driven by random molecular motion down a chemical potential gradient, often described as movement from higher to lower concentration under simple conditions. Equilibrium removes net flux, not molecular motion itself.",
+      "required_concepts": [
+        "Random motion creates net spreading without directed molecular intent."
+      ],
+      "accepted_variants": [
+        "Passive diffusion."
+      ],
+      "major_error_concepts": [
+        "Claiming molecules stop moving when concentrations become equal."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-water",
+        "biology-i.draft-cell-size"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-osmosis",
+      "canonical_deck_id": "biology-i",
+      "term": "Osmosis",
+      "prompt": "What is Osmosis? State its defining idea and essential conditions.",
+      "definition": "Osmosis is net water movement across a selectively permeable membrane driven by a water-potential difference. Solute concentration and pressure can both matter, so water movement cannot always be predicted from one solute concentration alone.",
+      "required_concepts": [
+        "Selective permeability and water potential determine net water movement."
+      ],
+      "accepted_variants": [
+        "Osmotic water movement."
+      ],
+      "major_error_concepts": [
+        "Defining osmosis as solute particles passing through any membrane."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-diffusion",
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-water"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-tonicity",
+      "canonical_deck_id": "biology-i",
+      "term": "Tonicity",
+      "prompt": "What is Tonicity? State its defining idea and essential conditions.",
+      "definition": "Tonicity predicts a solution's effect on cell volume based mainly on effectively nonpenetrating solutes relative to that cell. Hypertonic conditions tend to shrink cells and hypotonic conditions tend to swell them; permeability and cell walls affect the result.",
+      "required_concepts": [
+        "Effective nonpenetrating solutes determine cell-volume effects."
+      ],
+      "accepted_variants": [
+        "Hypotonic, isotonic, and hypertonic conditions."
+      ],
+      "major_error_concepts": [
+        "Equating total osmolarity with tonicity regardless of solute permeability."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-osmosis",
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-cell-wall"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-facilitated-diffusion",
+      "canonical_deck_id": "biology-i",
+      "term": "Facilitated Diffusion",
+      "prompt": "What is Facilitated Diffusion? State its defining idea and essential conditions.",
+      "definition": "Facilitated diffusion uses membrane proteins to move substances down their relevant gradients without direct energetic coupling to uphill transport. Selectivity and saturation can arise from the proteins, but protein involvement alone does not make transport active.",
+      "required_concepts": [
+        "Protein-mediated downhill movement is passive transport."
+      ],
+      "accepted_variants": [
+        "Carrier- or channel-mediated passive transport."
+      ],
+      "major_error_concepts": [
+        "Calling every protein-mediated movement ATP-driven active transport."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-diffusion",
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-protein"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-active-transport",
+      "canonical_deck_id": "biology-i",
+      "term": "Active Transport",
+      "prompt": "What is Active Transport? State its defining idea and essential conditions.",
+      "definition": "Active transport couples movement against a solute's electrochemical gradient to an energy source or another gradient. ATP-driven pumps and gradient-coupled transporters use different immediate energy sources while both require favorable overall coupling.",
+      "required_concepts": [
+        "Uphill transport is powered by a coupled favorable process."
+      ],
+      "accepted_variants": [
+        "Energy-coupled membrane transport."
+      ],
+      "major_error_concepts": [
+        "Assuming all active transporters hydrolyze ATP directly."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-facilitated-diffusion",
+        "biology-i.draft-atp-and-energy-coupling",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-vesicular-transport",
+      "canonical_deck_id": "biology-i",
+      "term": "Vesicular Transport",
+      "prompt": "What is Vesicular Transport? State its defining idea and essential conditions.",
+      "definition": "Vesicular transport moves selected material through membrane budding and fusion. Endocytosis brings material into membrane-bound compartments, while exocytosis releases cargo or adds membrane; these differ from passage through a transport-protein channel.",
+      "required_concepts": [
+        "Membrane vesicles move cargo through budding and fusion."
+      ],
+      "accepted_variants": [
+        "Endocytosis and exocytosis."
+      ],
+      "major_error_concepts": [
+        "Equating engulfment in a vesicle with direct diffusion through the lipid bilayer."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-endomembrane-system",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-signaling",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell Signaling",
+      "prompt": "What is Cell Signaling? State its defining idea and essential conditions.",
+      "definition": "Cell signaling links detection of a signal to a cellular response through receptors and downstream events. The same signal can cause different responses in different cells because receptor expression and intracellular machinery differ.",
+      "required_concepts": [
+        "Receptor and cellular context determine the response to an input."
+      ],
+      "accepted_variants": [
+        "Cell communication."
+      ],
+      "major_error_concepts": [
+        "Assuming every cell responds identically to the same external signal."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-protein",
+        "biology-i.draft-homeostasis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-negative-feedback",
+      "canonical_deck_id": "biology-i",
+      "term": "Negative Feedback",
+      "prompt": "What is Negative Feedback? State its defining idea and essential conditions.",
+      "definition": "Negative feedback occurs when a response reduces the deviation or initiating influence that produced it. It can stabilize a regulated variable, but delayed or excessive responses can still produce oscillation or instability.",
+      "required_concepts": [
+        "Feedback opposes the initiating change in a regulated system."
+      ],
+      "accepted_variants": [
+        "Stabilizing feedback regulation."
+      ],
+      "major_error_concepts": [
+        "Defining negative feedback as any harmful biological response."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-homeostasis",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-metabolism",
+      "canonical_deck_id": "biology-i",
+      "term": "Metabolism",
+      "prompt": "What is Metabolism? State its defining idea and essential conditions.",
+      "definition": "Metabolism is the network of chemical reactions in a biological system. Catabolic processes break down materials and anabolic processes build them, with energy and molecular intermediates linking the two rather than making them isolated activities.",
+      "required_concepts": [
+        "Linked breakdown and synthesis reactions constitute metabolism."
+      ],
+      "accepted_variants": [
+        "Cellular metabolic network."
+      ],
+      "major_error_concepts": [
+        "Defining metabolism solely as digestion outside cells."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-energy-and-matter",
+        "biology-i.draft-condensation-and-hydrolysis",
+        "biology-i.draft-atp-and-energy-coupling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-enzyme",
+      "canonical_deck_id": "biology-i",
+      "term": "Enzyme",
+      "prompt": "What is Enzyme? State its defining idea and essential conditions.",
+      "definition": "An enzyme is a biological catalyst, usually a protein but sometimes RNA, that accelerates a reaction by lowering its activation barrier. It does not change the equilibrium constant of the same reaction or make an unfavorable uncoupled reaction favorable.",
+      "required_concepts": [
+        "Catalysis changes reaction rate without changing reaction equilibrium."
+      ],
+      "accepted_variants": [
+        "Biological catalyst."
+      ],
+      "major_error_concepts": [
+        "Claiming an enzyme creates energy or changes the reaction equilibrium simply by catalysis."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-protein",
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-metabolism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-enzyme-specificity",
+      "canonical_deck_id": "biology-i",
+      "term": "Enzyme Specificity",
+      "prompt": "What is Enzyme Specificity? State its defining idea and essential conditions.",
+      "definition": "Enzyme specificity reflects the fit and interactions between a catalytic site and its substrates or transition states. Specificity is often selective rather than absolutely exclusive, and conditions can alter observed substrate preferences.",
+      "required_concepts": [
+        "Active-site interactions determine selective catalysis."
+      ],
+      "accepted_variants": [
+        "Substrate specificity."
+      ],
+      "major_error_concepts": [
+        "Assuming every enzyme acts on exactly one molecule under every condition."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-enzyme",
+        "biology-i.draft-noncovalent-interactions"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-enzyme-regulation",
+      "canonical_deck_id": "biology-i",
+      "term": "Enzyme Regulation",
+      "prompt": "What is Enzyme Regulation? State its defining idea and essential conditions.",
+      "definition": "Enzyme activity can change through substrate availability, inhibitors, allosteric effects, or chemical modification. Temperature and pH also affect activity, but increasing either does not indefinitely increase reaction rate in a functioning biological system.",
+      "required_concepts": [
+        "Activity depends on molecular regulation and environmental conditions."
+      ],
+      "accepted_variants": [
+        "Regulation of enzyme function."
+      ],
+      "major_error_concepts": [
+        "Claiming higher temperature always increases enzyme activity without loss of structure."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-enzyme",
+        "biology-i.draft-enzyme-specificity",
+        "biology-i.draft-ph",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-free-energy",
+      "canonical_deck_id": "biology-i",
+      "term": "Free Energy",
+      "prompt": "What is Free Energy? State its defining idea and essential conditions.",
+      "definition": "Free-energy change indicates a process's thermodynamic tendency under stated conditions. A negative change favors forward progress but does not guarantee a rapid reaction; coupling can make an overall process favorable when one component alone is unfavorable.",
+      "required_concepts": [
+        "Energetic favorability differs from speed and can depend on coupling."
+      ],
+      "accepted_variants": [
+        "Gibbs free-energy change."
+      ],
+      "major_error_concepts": [
+        "Equating spontaneous with instantaneous."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-atp-and-energy-coupling",
+        "biology-i.draft-enzyme",
+        "biology-i.draft-energy-and-matter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-redox-reaction",
+      "canonical_deck_id": "biology-i",
+      "term": "Redox Reaction",
+      "prompt": "What is Redox Reaction? State its defining idea and essential conditions.",
+      "definition": "Oxidation loses electrons and reduction gains them, with the two coupled in a redox reaction. Biological carriers such as NADplus and NADH transfer reducing equivalents between reactions rather than producing electrons from nothing.",
+      "required_concepts": [
+        "Coupled electron transfer links oxidation with reduction."
+      ],
+      "accepted_variants": [
+        "Oxidation-reduction chemistry."
+      ],
+      "major_error_concepts": [
+        "Calling electron gain oxidation."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-atom",
+        "biology-i.draft-metabolism",
+        "biology-i.draft-free-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-glycolysis",
+      "canonical_deck_id": "biology-i",
+      "term": "Glycolysis",
+      "prompt": "For the standard glucose-to-pyruvate glycolytic pathway, state its location, net products per glucose, and whether it directly consumes oxygen.",
+      "definition": "Standard glycolysis converts one glucose to two pyruvate in the cytosol. It forms four ATP while consuming two, for a net gain of two ATP, and reduces two NAD+ to two NADH. Oxygen is not a reactant of glycolysis itself; continued flux requires regeneration of NAD+.",
+      "required_concepts": [
+        "The standard pathway yields two pyruvate, two NADH, and net two ATP per glucose.",
+        "Four ATP formed minus two invested must not be confused with a net yield of four.",
+        "The pathway is cytosolic and does not directly consume oxygen."
+      ],
+      "accepted_variants": [
+        "Cytosolic glucose breakdown produces 2 pyruvate, 2 NADH and 2 net ATP without O2 as a glycolytic reactant."
+      ],
+      "major_error_concepts": [
+        "Giving four as the standard net ATP yield, or another incorrect standard stoichiometric yield.",
+        "Claiming glycolysis takes place only inside mitochondria or directly requires oxygen."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-carbohydrate",
+        "biology-i.draft-atp-and-energy-coupling",
+        "biology-i.draft-redox-reaction",
+        "biology-i.draft-metabolism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-fermentation",
+      "canonical_deck_id": "biology-i",
+      "term": "Fermentation",
+      "prompt": "What is Fermentation? State its defining idea and essential conditions.",
+      "definition": "Fermentation regenerates electron carriers using organic acceptors without a respiratory electron-transport chain. Familiar examples allow glycolysis to continue when respiratory carrier regeneration is unavailable, but they do not add the ATP yield of oxidative phosphorylation.",
+      "required_concepts": [
+        "Organic electron-acceptor reactions sustain redox balance without respiration."
+      ],
+      "accepted_variants": [
+        "Fermentative metabolism."
+      ],
+      "major_error_concepts": [
+        "Treating fermentation as identical to every form of anaerobic respiration."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-glycolysis",
+        "biology-i.draft-redox-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cellular-respiration",
+      "canonical_deck_id": "biology-i",
+      "term": "Cellular Respiration",
+      "prompt": "What is Cellular Respiration? State its defining idea and essential conditions.",
+      "definition": "Cellular respiration uses an electron-transport system and a terminal electron acceptor to conserve energy from fuel oxidation. Aerobic respiration uses oxygen; some microbes use other acceptors, so respiration is broader than breathing or oxygen use alone.",
+      "required_concepts": [
+        "Respiratory electron transfer conserves energy using a terminal acceptor."
+      ],
+      "accepted_variants": [
+        "Respiratory metabolism."
+      ],
+      "major_error_concepts": [
+        "Defining cellular respiration as only movement of air into lungs."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-redox-reaction",
+        "biology-i.draft-glycolysis",
+        "biology-i.draft-fermentation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-citric-acid-cycle",
+      "canonical_deck_id": "biology-i",
+      "term": "Citric Acid Cycle",
+      "prompt": "What is Citric Acid Cycle? State its defining idea and essential conditions.",
+      "definition": "The citric acid cycle oxidizes acetyl-derived carbon and regenerates its starting acceptor while producing reduced carriers and a small direct triphosphate yield. Its intermediates also feed biosynthesis, requiring replenishment when withdrawn.",
+      "required_concepts": [
+        "A regenerative metabolic cycle produces carriers and biosynthetic intermediates."
+      ],
+      "accepted_variants": [
+        "Krebs cycle or TCA cycle."
+      ],
+      "major_error_concepts": [
+        "Claiming the cycle directly makes most respiratory ATP without electron transport."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-cellular-respiration",
+        "biology-i.draft-redox-reaction",
+        "biology-i.draft-metabolism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-electron-transport-chain",
+      "canonical_deck_id": "biology-i",
+      "term": "Electron Transport Chain",
+      "prompt": "What is Electron Transport Chain? State its defining idea and essential conditions.",
+      "definition": "An electron transport chain passes electrons through redox carriers and can couple selected transfers to ion movement across a membrane. Different chains and entry routes differ; not every carrier pumps ions or directly synthesizes ATP.",
+      "required_concepts": [
+        "Sequential redox transfer supports membrane-gradient formation."
+      ],
+      "accepted_variants": [
+        "Respiratory electron-transfer chain."
+      ],
+      "major_error_concepts": [
+        "Assuming each carrier independently makes ATP by direct phosphorylation."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-cellular-respiration",
+        "biology-i.draft-redox-reaction",
+        "biology-i.draft-active-transport",
+        "biology-i.draft-plasma-membrane"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-chemiosmosis",
+      "canonical_deck_id": "biology-i",
+      "term": "Chemiosmosis",
+      "prompt": "What is Chemiosmosis? State its defining idea and essential conditions.",
+      "definition": "Chemiosmosis couples movement of ions down an electrochemical gradient to cellular work, including ATP synthesis. ATP synthase links ion flow with ATP formation, separating the gradient-building reactions from the ATP-forming machinery.",
+      "required_concepts": [
+        "Stored ion-gradient energy powers coupled work."
+      ],
+      "accepted_variants": [
+        "Chemiosmotic coupling."
+      ],
+      "major_error_concepts": [
+        "Claiming electrons themselves flow through ATP synthase to become ATP."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-electron-transport-chain",
+        "biology-i.draft-atp-and-energy-coupling",
+        "biology-i.draft-active-transport"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-photosynthesis",
+      "canonical_deck_id": "biology-i",
+      "term": "Photosynthesis",
+      "prompt": "What is Photosynthesis? State its defining idea and essential conditions.",
+      "definition": "Photosynthesis uses light energy to drive chemical transformations that support carbon assimilation. In oxygenic photosynthesis, water supplies electrons and oxygen is released, while carbon dioxide supplies carbon for organic molecules.",
+      "required_concepts": [
+        "Light-driven chemistry supports carbon assimilation; released oxygen comes from water."
+      ],
+      "accepted_variants": [
+        "Photosynthetic energy conversion."
+      ],
+      "major_error_concepts": [
+        "Claiming photosynthetic oxygen is produced by splitting carbon dioxide."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-chloroplast",
+        "biology-i.draft-energy-and-matter",
+        "biology-i.draft-redox-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-light-reactions",
+      "canonical_deck_id": "biology-i",
+      "term": "Light Reactions",
+      "prompt": "What is Light Reactions? State its defining idea and essential conditions.",
+      "definition": "Light reactions use photosystems and electron-transfer machinery to convert absorbed light into chemical energy carriers. Oxygenic systems can split water and generate ATP and NADPH, which support later carbon-assimilation reactions.",
+      "required_concepts": [
+        "Photosystem-driven electron flow produces usable carriers."
+      ],
+      "accepted_variants": [
+        "Light-dependent photosynthetic reactions."
+      ],
+      "major_error_concepts": [
+        "Calling the Calvin cycle the step where chlorophyll directly absorbs every required photon."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-photosynthesis",
+        "biology-i.draft-electron-transport-chain",
+        "biology-i.draft-chemiosmosis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-calvin-cycle",
+      "canonical_deck_id": "biology-i",
+      "term": "Calvin Cycle",
+      "prompt": "What is Calvin Cycle? State its defining idea and essential conditions.",
+      "definition": "The Calvin cycle uses ATP and NADPH to assimilate carbon dioxide and regenerate its carbon acceptor. Its net products can support carbohydrate synthesis; light-independent does not mean the cycle normally operates without energy supplied by photosynthetic processes.",
+      "required_concepts": [
+        "Energy-consuming carbon fixation regenerates its acceptor."
+      ],
+      "accepted_variants": [
+        "Calvin-Benson cycle."
+      ],
+      "major_error_concepts": [
+        "Claiming the cycle produces sugar from carbon dioxide without an energy input."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-light-reactions",
+        "biology-i.draft-photosynthesis",
+        "biology-i.draft-carbohydrate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-photorespiration",
+      "canonical_deck_id": "biology-i",
+      "term": "Photorespiration",
+      "prompt": "What is Photorespiration? State its defining idea and essential conditions.",
+      "definition": "Photorespiration begins when Rubisco reacts with oxygen rather than carbon dioxide, producing a compound that requires recovery reactions. This process consumes resources and can reduce net carbon gain, with effects depending on environmental conditions.",
+      "required_concepts": [
+        "Rubisco oxygenation initiates a resource-consuming recovery pathway."
+      ],
+      "accepted_variants": [
+        "Photosynthetic carbon-oxidation pathway."
+      ],
+      "major_error_concepts": [
+        "Equating photorespiration with ordinary mitochondrial ATP-producing respiration."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-calvin-cycle",
+        "biology-i.draft-cellular-respiration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-trophic-mode",
+      "canonical_deck_id": "biology-i",
+      "term": "Trophic Mode",
+      "prompt": "What is Trophic Mode? State its defining idea and essential conditions.",
+      "definition": "Trophic modes describe energy and carbon sources separately. Phototrophs obtain energy from light, chemotrophs from chemical reactions, autotrophs use inorganic carbon, and heterotrophs use organic carbon; the labels describe different axes.",
+      "required_concepts": [
+        "Energy-source and carbon-source classifications are distinct."
+      ],
+      "accepted_variants": [
+        "Nutritional modes."
+      ],
+      "major_error_concepts": [
+        "Assuming every organism using light must obtain all its carbon from carbon dioxide."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-photosynthesis",
+        "biology-i.draft-metabolism",
+        "biology-i.draft-energy-and-matter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-chromosome",
+      "canonical_deck_id": "biology-i",
+      "term": "Chromosome",
+      "prompt": "What is Chromosome? State its defining idea and essential conditions.",
+      "definition": "A chromosome is an organized DNA-containing structure that carries genetic information. Chromosome number refers to defined chromosome units, and replication creates sister chromatids without automatically doubling chromosome-set number.",
+      "required_concepts": [
+        "Organized DNA units persist through copying and segregation."
+      ],
+      "accepted_variants": [
+        "Chromosomal DNA organization."
+      ],
+      "major_error_concepts": [
+        "Assuming DNA replication immediately doubles a diploid cell's ploidy."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-nucleus"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-chromatin",
+      "canonical_deck_id": "biology-i",
+      "term": "Chromatin",
+      "prompt": "What is Chromatin? State its defining idea and essential conditions.",
+      "definition": "Chromatin is DNA associated with proteins and other organizing components in a chromosome. Its packing and modifications affect access and function, and a condensed chromosome is a state of chromatin rather than a different genetic substance.",
+      "required_concepts": [
+        "DNA-protein organization influences accessibility and structure."
+      ],
+      "accepted_variants": [
+        "Chromosomal chromatin."
+      ],
+      "major_error_concepts": [
+        "Defining chromatin as protein with no DNA."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-chromosome",
+        "biology-i.draft-protein"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-gene",
+      "canonical_deck_id": "biology-i",
+      "term": "Gene",
+      "prompt": "What is Gene? State its defining idea and essential conditions.",
+      "definition": "A gene is a genomic sequence contributing to a functional product, such as an RNA or protein, within its regulatory context. Not every gene encodes a protein, and processing can allow one gene to yield multiple products.",
+      "required_concepts": [
+        "A genetic sequence contributes to a functional RNA or protein product."
+      ],
+      "accepted_variants": [
+        "Functional hereditary sequence unit."
+      ],
+      "major_error_concepts": [
+        "Claiming every gene corresponds to exactly one protein in every context."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-chromosome"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-genome",
+      "canonical_deck_id": "biology-i",
+      "term": "Genome",
+      "prompt": "What is Genome? State its defining idea and essential conditions.",
+      "definition": "A genome is the complete genetic material within a stated biological scope. It includes coding and noncoding sequences, and the scope should distinguish nuclear and organellar genetic material where relevant.",
+      "required_concepts": [
+        "Complete genetic material includes noncoding as well as coding sequences."
+      ],
+      "accepted_variants": [
+        "Genomic complement."
+      ],
+      "major_error_concepts": [
+        "Equating the genome solely with protein-coding genes."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-gene",
+        "biology-i.draft-chromosome",
+        "biology-i.draft-mitochondrion",
+        "biology-i.draft-chloroplast"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-dna-replication",
+      "canonical_deck_id": "biology-i",
+      "term": "DNA Replication",
+      "prompt": "What is DNA Replication? State its defining idea and essential conditions.",
+      "definition": "DNA replication copies DNA using complementary base pairing and polymerase-mediated strand synthesis. Each new double-stranded molecule ordinarily contains one parental and one newly synthesized strand, a pattern called semiconservative replication.",
+      "required_concepts": [
+        "Complementary copying retains one old strand in each daughter duplex."
+      ],
+      "accepted_variants": [
+        "Semiconservative DNA copying."
+      ],
+      "major_error_concepts": [
+        "Claiming one daughter DNA molecule is entirely old and the other entirely new under semiconservative replication."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-chromosome"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-transcription",
+      "canonical_deck_id": "biology-i",
+      "term": "Transcription",
+      "prompt": "What is Transcription? State its defining idea and essential conditions.",
+      "definition": "Transcription synthesizes RNA using a DNA template. The RNA grows in the 5-prime-to-3-prime direction and may function directly or undergo processing; transcription is not the production of a polypeptide.",
+      "required_concepts": [
+        "Template-directed RNA synthesis differs from translation."
+      ],
+      "accepted_variants": [
+        "RNA transcription."
+      ],
+      "major_error_concepts": [
+        "Defining transcription as decoding RNA into amino acids."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-gene",
+        "biology-i.draft-nucleic-acid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-rna-processing",
+      "canonical_deck_id": "biology-i",
+      "term": "RNA Processing",
+      "prompt": "What is RNA Processing? State its defining idea and essential conditions.",
+      "definition": "RNA processing modifies or matures an RNA transcript before or during its functional use. Many eukaryotic messenger RNAs undergo capping, splicing, and polyadenylation, but these exact processing steps are not universal for every RNA molecule.",
+      "required_concepts": [
+        "Transcript maturation is RNA- and organism-dependent."
+      ],
+      "accepted_variants": [
+        "Post-transcriptional RNA processing."
+      ],
+      "major_error_concepts": [
+        "Claiming every RNA receives the same cap, tail, and splicing pattern."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-transcription",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-genetic-code",
+      "canonical_deck_id": "biology-i",
+      "term": "Genetic Code",
+      "prompt": "What is Genetic Code? State its defining idea and essential conditions.",
+      "definition": "The genetic code maps messenger-RNA codons to amino acids or termination signals during translation. It is redundant because multiple codons can specify one amino acid, but a codon is not usually ambiguous within the same decoding context.",
+      "required_concepts": [
+        "Triplet codons specify amino acids or stops with redundancy."
+      ],
+      "accepted_variants": [
+        "Codon-to-amino-acid code."
+      ],
+      "major_error_concepts": [
+        "Assuming redundant means each codon normally specifies several amino acids at once."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-nucleic-acid",
+        "biology-i.draft-protein",
+        "biology-i.draft-transcription"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-translation",
+      "canonical_deck_id": "biology-i",
+      "term": "Translation",
+      "prompt": "What is Translation? State its defining idea and essential conditions.",
+      "definition": "Translation uses ribosomes and charged transfer RNAs to decode messenger RNA into a polypeptide. RNA is read 5-prime to 3-prime while the protein grows from its amino end toward its carboxyl end.",
+      "required_concepts": [
+        "Ribosomes decode mRNA using tRNAs to assemble protein."
+      ],
+      "accepted_variants": [
+        "Ribosomal protein synthesis."
+      ],
+      "major_error_concepts": [
+        "Claiming translation copies a protein sequence back into DNA."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-ribosome",
+        "biology-i.draft-genetic-code",
+        "biology-i.draft-protein",
+        "biology-i.draft-atp-and-energy-coupling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-gene-expression-regulation",
+      "canonical_deck_id": "biology-i",
+      "term": "Gene Expression Regulation",
+      "prompt": "What is Gene Expression Regulation? State its defining idea and essential conditions.",
+      "definition": "Gene expression regulation changes when, where, or how much functional gene product is made or used. Control can act on transcription, RNA processing and stability, translation, or protein activity, so identical genomes can support different cell functions.",
+      "required_concepts": [
+        "Multiple control layers produce context-specific gene activity."
+      ],
+      "accepted_variants": [
+        "Regulated gene expression."
+      ],
+      "major_error_concepts": [
+        "Assuming different cell types must always have different gene inventories."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-transcription",
+        "biology-i.draft-rna-processing",
+        "biology-i.draft-translation",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-mutation",
+      "canonical_deck_id": "biology-i",
+      "term": "Mutation",
+      "prompt": "What is Mutation? State its defining idea and essential conditions.",
+      "definition": "A mutation is a change in genetic sequence relative to a prior state or reference. Effects can be neutral, harmful, or beneficial depending on context; mutations are not generally produced because an organism needs a particular adaptive outcome.",
+      "required_concepts": [
+        "Sequence changes create variants with context-dependent effects."
+      ],
+      "accepted_variants": [
+        "Genetic sequence mutation."
+      ],
+      "major_error_concepts": [
+        "Claiming every mutation is harmful or directed toward the organism's current needs."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-dna-replication",
+        "biology-i.draft-gene",
+        "biology-i.draft-evolution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-cycle",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell Cycle",
+      "prompt": "What is Cell Cycle? State its defining idea and essential conditions.",
+      "definition": "The cell cycle coordinates growth, DNA replication, and division. Eukaryotic interphase includes G1, S, and G2, while M phase includes nuclear division and usually cytokinesis; cells can also exit active cycling.",
+      "required_concepts": [
+        "Ordered phases coordinate genome copying with cell division."
+      ],
+      "accepted_variants": [
+        "Eukaryotic cell-division cycle."
+      ],
+      "major_error_concepts": [
+        "Claiming DNA replication normally occurs during mitotic chromosome separation."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-dna-replication",
+        "biology-i.draft-eukaryotic-cell"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-mitosis",
+      "canonical_deck_id": "biology-i",
+      "term": "Mitosis",
+      "prompt": "What is Mitosis? State its defining idea and essential conditions.",
+      "definition": "Mitosis separates duplicated eukaryotic chromosomes into daughter nuclei, ordinarily preserving chromosome-set number. It is nuclear division rather than the entire cell cycle, and it is not the reduction division that produces haploid products from diploid cells.",
+      "required_concepts": [
+        "Duplicated chromosomes segregate while ploidy is generally preserved."
+      ],
+      "accepted_variants": [
+        "Mitotic nuclear division."
+      ],
+      "major_error_concepts": [
+        "Defining mitosis as halving chromosome-set number."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-cell-cycle",
+        "biology-i.draft-chromosome",
+        "biology-i.draft-cytoskeleton"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cytokinesis",
+      "canonical_deck_id": "biology-i",
+      "term": "Cytokinesis",
+      "prompt": "What is Cytokinesis? State its defining idea and essential conditions.",
+      "definition": "Cytokinesis partitions the cytoplasm to form separate daughter cells. Mechanisms differ, including a cleavage furrow in many animal cells and cell-plate formation in plant cells; nuclear division and cytoplasmic division are distinct events.",
+      "required_concepts": [
+        "Cytoplasmic partitioning completes cell separation."
+      ],
+      "accepted_variants": [
+        "Cell cleavage or cell-plate formation."
+      ],
+      "major_error_concepts": [
+        "Treating cytokinesis as the copying of DNA."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-mitosis",
+        "biology-i.draft-plasma-membrane",
+        "biology-i.draft-cell-wall"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-cell-cycle-checkpoint",
+      "canonical_deck_id": "biology-i",
+      "term": "Cell-Cycle Checkpoint",
+      "prompt": "What is Cell-Cycle Checkpoint? State its defining idea and essential conditions.",
+      "definition": "Cell-cycle checkpoints regulate progression when conditions such as DNA integrity or chromosome attachment are inadequate. They reduce errors but do not guarantee perfection, and checkpoint failure can permit inappropriate proliferation or unstable genomes.",
+      "required_concepts": [
+        "Regulatory checks condition progression on key cellular states."
+      ],
+      "accepted_variants": [
+        "Cell-cycle surveillance."
+      ],
+      "major_error_concepts": [
+        "Claiming checkpoints make mutation or chromosome errors impossible."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-cell-cycle",
+        "biology-i.draft-mutation",
+        "biology-i.draft-mitosis",
+        "biology-i.draft-cell-signaling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-meiosis",
+      "canonical_deck_id": "biology-i",
+      "term": "Meiosis",
+      "prompt": "What is meiosis? State the replication/division pattern and what normally separates in meiosis I versus meiosis II.",
+      "definition": "Meiosis consists of one DNA replication followed by two divisions that reduce chromosome-set number. Homologous chromosomes separate in meiosis I and sister chromatids usually separate in meiosis II, generating products used in sexual life cycles.",
+      "required_concepts": [
+        "One DNA replication is followed by two divisions that reduce chromosome-set number.",
+        "Homologous chromosomes separate in meiosis I; sister chromatids normally separate in meiosis II."
+      ],
+      "accepted_variants": [
+        "A reductional homolog-segregation division followed by an equational sister-chromatid division, after one replication."
+      ],
+      "major_error_concepts": [
+        "Claiming DNA replicates again between meiosis I and meiosis II.",
+        "Reversing homolog separation in meiosis I and sister-chromatid separation in meiosis II."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-mitosis",
+        "biology-i.draft-homologous-chromosomes"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-ploidy",
+      "canonical_deck_id": "biology-i",
+      "term": "Ploidy",
+      "prompt": "What is Ploidy? State its defining idea and essential conditions.",
+      "definition": "Ploidy describes the number of complete chromosome sets in a cell. Haploid cells have one set and diploid cells two; the amount of DNA can change during replication without changing ploidy.",
+      "required_concepts": [
+        "Chromosome-set number differs from replicated DNA quantity."
+      ],
+      "accepted_variants": [
+        "Haploid and diploid state."
+      ],
+      "major_error_concepts": [
+        "Calling a replicated diploid cell tetraploid merely because each chromosome has two chromatids."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-chromosome",
+        "biology-i.draft-dna-replication"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-homologous-chromosomes",
+      "canonical_deck_id": "biology-i",
+      "term": "Homologous Chromosomes",
+      "prompt": "What is Homologous Chromosomes? State its defining idea and essential conditions.",
+      "definition": "Homologous chromosomes carry corresponding genetic loci and typically come from different parents in a diploid organism. They can contain different alleles; sister chromatids instead arise from copying one chromosome.",
+      "required_concepts": [
+        "Homologs correspond by loci but are not necessarily identical copies."
+      ],
+      "accepted_variants": [
+        "Homologous chromosome pair."
+      ],
+      "major_error_concepts": [
+        "Equating maternal and paternal homologs with the sister chromatids produced by replication."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-chromosome",
+        "biology-i.draft-dna-replication",
+        "biology-i.draft-ploidy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-crossing-over",
+      "canonical_deck_id": "biology-i",
+      "term": "Crossing Over",
+      "prompt": "What is Crossing Over? State its defining idea and essential conditions.",
+      "definition": "Crossing over exchanges corresponding DNA segments between nonsister chromatids of homologous chromosomes during meiotic prophase I. It can create new allele combinations while also contributing to chromosome behavior in meiosis.",
+      "required_concepts": [
+        "Nonsister homologous chromatids exchange corresponding segments."
+      ],
+      "accepted_variants": [
+        "Meiotic recombination."
+      ],
+      "major_error_concepts": [
+        "Defining ordinary crossing over as exchange only between sister chromatids."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-meiosis",
+        "biology-i.draft-homologous-chromosomes"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-fertilization",
+      "canonical_deck_id": "biology-i",
+      "term": "Fertilization",
+      "prompt": "What is Fertilization? State its defining idea and essential conditions.",
+      "definition": "Fertilization combines gametes and their genetic contributions to form a zygote. In a typical diploid sexual life cycle, fusion of haploid gametes restores diploidy, although sexual life cycles vary across organisms.",
+      "required_concepts": [
+        "Gamete fusion combines genetic material and often restores diploidy."
+      ],
+      "accepted_variants": [
+        "Syngamy."
+      ],
+      "major_error_concepts": [
+        "Claiming fertilization itself is a type of meiosis."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-meiosis",
+        "biology-i.draft-ploidy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-allele",
+      "canonical_deck_id": "biology-i",
+      "term": "Allele",
+      "prompt": "What is Allele? State its defining idea and essential conditions.",
+      "definition": "An allele is a sequence variant at a particular genetic locus. A diploid individual ordinarily has two copies at an autosomal locus, but a population can contain many different alleles of that locus.",
+      "required_concepts": [
+        "A locus can have multiple sequence variants in a population."
+      ],
+      "accepted_variants": [
+        "Genetic variant at a locus."
+      ],
+      "major_error_concepts": [
+        "Claiming only two alleles can exist in an entire species because individuals are diploid."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-gene",
+        "biology-i.draft-homologous-chromosomes",
+        "biology-i.draft-mutation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-genotype-and-phenotype",
+      "canonical_deck_id": "biology-i",
+      "term": "Genotype and Phenotype",
+      "prompt": "What is Genotype and Phenotype? State its defining idea and essential conditions.",
+      "definition": "Genotype describes an individual's alleles at specified loci, while phenotype describes measurable traits. Phenotype reflects genotype, environment, development, and their interactions rather than a universally one-to-one gene-to-trait mapping.",
+      "required_concepts": [
+        "Allele composition and expressed traits are distinct."
+      ],
+      "accepted_variants": [
+        "Genetic constitution versus observable trait."
+      ],
+      "major_error_concepts": [
+        "Claiming identical genotypes must produce identical phenotypes under every environment."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-allele",
+        "biology-i.draft-gene-expression-regulation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-dominance",
+      "canonical_deck_id": "biology-i",
+      "term": "Dominance",
+      "prompt": "What is Dominance? State its defining idea and essential conditions.",
+      "definition": "Dominance describes the phenotype of a heterozygote relative to specified homozygotes for a particular trait. It does not imply that the dominant allele is common, stronger, healthier, or evolutionarily favored.",
+      "required_concepts": [
+        "Dominance is a heterozygote phenotype relationship."
+      ],
+      "accepted_variants": [
+        "Dominant and recessive allele relationship."
+      ],
+      "major_error_concepts": [
+        "Equating dominant with more frequent or automatically beneficial."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-genotype-and-phenotype",
+        "biology-i.draft-allele"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-law-of-segregation",
+      "canonical_deck_id": "biology-i",
+      "term": "Law of Segregation",
+      "prompt": "What is Law of Segregation? State its defining idea and essential conditions.",
+      "definition": "The law of segregation states that two alleles at a diploid locus separate during gamete formation, so a gamete ordinarily receives one. Equal transmission is expected under ordinary segregation, absent processes such as segregation distortion.",
+      "required_concepts": [
+        "Allele copies separate into gametes."
+      ],
+      "accepted_variants": [
+        "Mendel's segregation principle."
+      ],
+      "major_error_concepts": [
+        "Claiming each ordinary haploid gamete receives both parental alleles at the same autosomal locus."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-meiosis",
+        "biology-i.draft-allele",
+        "biology-i.draft-homologous-chromosomes"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-independent-assortment",
+      "canonical_deck_id": "biology-i",
+      "term": "Independent Assortment",
+      "prompt": "What is Independent Assortment? State its defining idea and essential conditions.",
+      "definition": "Independent assortment describes the independent segregation of allele pairs at unlinked loci in ordinary Mendelian crosses. Closely linked loci can violate the simple independence expectation, so the rule does not apply indiscriminately to every gene pair.",
+      "required_concepts": [
+        "Unlinked loci segregate independently under stated assumptions."
+      ],
+      "accepted_variants": [
+        "Mendel's independent assortment principle."
+      ],
+      "major_error_concepts": [
+        "Assuming all loci on the same chromosome always assort independently."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-law-of-segregation",
+        "biology-i.draft-crossing-over"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-punnett-square",
+      "canonical_deck_id": "biology-i",
+      "term": "Punnett Square",
+      "prompt": "What is Punnett Square? State its defining idea and essential conditions.",
+      "definition": "A Punnett square enumerates possible gamete combinations to predict offspring genotype probabilities under specified inheritance assumptions. Its ratios are probabilities across offspring, not a promise that every small family matches the exact ratio.",
+      "required_concepts": [
+        "Gamete combinations yield model-based offspring probabilities."
+      ],
+      "accepted_variants": [
+        "Genetic cross probability grid."
+      ],
+      "major_error_concepts": [
+        "Claiming four offspring must contain exactly one member of each equally likely grid cell."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-law-of-segregation",
+        "biology-i.draft-independent-assortment",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-testcross",
+      "canonical_deck_id": "biology-i",
+      "term": "Testcross",
+      "prompt": "What is Testcross? State its defining idea and essential conditions.",
+      "definition": "A testcross mates an individual of uncertain genotype with an appropriate homozygous recessive individual to infer the unknown genotype from offspring. Interpretation depends on the inheritance model and sample size, not merely one offspring in every case.",
+      "required_concepts": [
+        "An informative recessive cross reveals allele contributions."
+      ],
+      "accepted_variants": [
+        "Mendelian test cross."
+      ],
+      "major_error_concepts": [
+        "Claiming any cross between two dominant-phenotype individuals is a testcross."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-dominance",
+        "biology-i.draft-punnett-square"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-incomplete-dominance",
+      "canonical_deck_id": "biology-i",
+      "term": "Incomplete Dominance",
+      "prompt": "What is Incomplete Dominance? State its defining idea and essential conditions.",
+      "definition": "Incomplete dominance occurs when the heterozygote phenotype is intermediate between the relevant homozygote phenotypes. Alleles remain discrete hereditary variants and segregate; an intermediate phenotype does not mean alleles permanently blend together.",
+      "required_concepts": [
+        "An intermediate heterozygote phenotype does not erase allele identity."
+      ],
+      "accepted_variants": [
+        "Partial dominance."
+      ],
+      "major_error_concepts": [
+        "Claiming incomplete dominance permanently mixes two alleles into one new allele."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-dominance",
+        "biology-i.draft-law-of-segregation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-codominance",
+      "canonical_deck_id": "biology-i",
+      "term": "Codominance",
+      "prompt": "What is Codominance? State its defining idea and essential conditions.",
+      "definition": "Codominance occurs when distinguishable contributions of both alleles are expressed in a heterozygote for the measured trait. It differs from an intermediate phenotype and depends on what phenotype is being observed.",
+      "required_concepts": [
+        "Both allelic contributions are detectably expressed."
+      ],
+      "accepted_variants": [
+        "Codominant expression."
+      ],
+      "major_error_concepts": [
+        "Equating codominance with one allele completely masking the other."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-dominance",
+        "biology-i.draft-incomplete-dominance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-polygenic-trait",
+      "canonical_deck_id": "biology-i",
+      "term": "Polygenic Trait",
+      "prompt": "What is Polygenic Trait? State its defining idea and essential conditions.",
+      "definition": "A polygenic trait is influenced by multiple loci, often together with environmental factors. Continuous variation can result, but many contributing genes do not guarantee a simple additive model or exclude major-effect variants.",
+      "required_concepts": [
+        "Multiple loci contribute to a trait."
+      ],
+      "accepted_variants": [
+        "Multigenic trait."
+      ],
+      "major_error_concepts": [
+        "Defining polygenic inheritance as one gene controlling several unrelated traits."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-genotype-and-phenotype",
+        "biology-i.draft-independent-assortment"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-environmental-effects-on-traits",
+      "canonical_deck_id": "biology-i",
+      "term": "Environmental Effects on Traits",
+      "prompt": "What is Environmental Effects on Traits? State its defining idea and essential conditions.",
+      "definition": "Environmental effects alter phenotype through conditions such as resources, temperature, or experience. Genotype-by-environment interaction means the effect of a genotype differs across environments, so genetic influence does not imply fixed outcomes.",
+      "required_concepts": [
+        "Phenotypic expression depends on environmental context and interactions."
+      ],
+      "accepted_variants": [
+        "Environmental contribution to phenotype."
+      ],
+      "major_error_concepts": [
+        "Assuming a genetically influenced trait cannot respond to environmental change."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-genotype-and-phenotype",
+        "biology-i.draft-polygenic-trait"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-genetic-linkage",
+      "canonical_deck_id": "biology-i",
+      "term": "Genetic Linkage",
+      "prompt": "What is Genetic Linkage? State its defining idea and essential conditions.",
+      "definition": "Genetic linkage is the tendency of loci on the same chromosome to be inherited together more often than under independent assortment. Recombination can separate linked alleles, with observed association depending partly on distance and recombination patterns.",
+      "required_concepts": [
+        "Shared chromosome location can create nonindependent inheritance."
+      ],
+      "accepted_variants": [
+        "Linked loci."
+      ],
+      "major_error_concepts": [
+        "Claiming linked genes can never be separated by recombination."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-homologous-chromosomes",
+        "biology-i.draft-crossing-over",
+        "biology-i.draft-independent-assortment"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-sex-linked-inheritance",
+      "canonical_deck_id": "biology-i",
+      "term": "Sex-Linked Inheritance",
+      "prompt": "What is Sex-Linked Inheritance? State its defining idea and essential conditions.",
+      "definition": "Sex-linked inheritance involves loci on sex chromosomes and depends on the organism's chromosome system. Differences in copy number and transmission can produce patterns unlike autosomal inheritance; sex-linked does not mean a trait occurs exclusively in one sex.",
+      "required_concepts": [
+        "Sex-chromosome location shapes transmission patterns."
+      ],
+      "accepted_variants": [
+        "X-linked or Y-linked inheritance in the appropriate system."
+      ],
+      "major_error_concepts": [
+        "Calling every trait more common in one sex sex-linked without locus evidence."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-ploidy",
+        "biology-i.draft-allele",
+        "biology-i.draft-law-of-segregation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-biological-population",
+      "canonical_deck_id": "biology-i",
+      "term": "Biological Population",
+      "prompt": "What is Biological Population? State its defining idea and essential conditions.",
+      "definition": "A biological population is a group of organisms of the same species in a defined area or reproductive context. Its boundaries depend on the question, and a population is not the same as a community containing multiple species.",
+      "required_concepts": [
+        "Same-species organisms form a defined ecological or reproductive population."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining a population as every species in an ecosystem combined."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-evolution",
+        "biology-i.draft-sample-and-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-biological-variation",
+      "canonical_deck_id": "biology-i",
+      "term": "Biological Variation",
+      "prompt": "What is Biological Variation? State its defining idea and essential conditions.",
+      "definition": "Biological variation consists of differences among organisms, including genetic and environmentally influenced differences. Evolution by natural selection requires relevant heritable variation, not merely any observed difference between individuals.",
+      "required_concepts": [
+        "Observed differences and heritable differences are not identical."
+      ],
+      "accepted_variants": [
+        "Phenotypic and genetic variation."
+      ],
+      "major_error_concepts": [
+        "Assuming every environmentally produced difference is inherited genetically."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-genotype-and-phenotype",
+        "biology-i.draft-environmental-effects-on-traits",
+        "biology-i.draft-biological-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-natural-selection",
+      "canonical_deck_id": "biology-i",
+      "term": "Natural Selection",
+      "prompt": "What is Natural Selection? State its defining idea and essential conditions.",
+      "definition": "Natural selection changes representation of heritable variants through differences in survival and reproductive contribution in a given environment. It acts on existing variation and does not require organisms to consciously choose or anticipate beneficial traits.",
+      "required_concepts": [
+        "Heritable variation and differential reproduction produce selection."
+      ],
+      "accepted_variants": [
+        "Selection on heritable traits."
+      ],
+      "major_error_concepts": [
+        "Claiming need alone directs organisms to acquire the mutations that selection requires."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-evolution",
+        "biology-i.draft-biological-variation",
+        "biology-i.draft-biological-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-evolutionary-fitness",
+      "canonical_deck_id": "biology-i",
+      "term": "Evolutionary Fitness",
+      "prompt": "What is Evolutionary Fitness? State its defining idea and essential conditions.",
+      "definition": "Evolutionary fitness is reproductive contribution to later generations relative to alternatives in a stated context. Survival can contribute to fitness but is not identical to it, and physical strength alone is not a general measure.",
+      "required_concepts": [
+        "Relative reproductive contribution defines evolutionary fitness."
+      ],
+      "accepted_variants": [
+        "Reproductive success in evolutionary context."
+      ],
+      "major_error_concepts": [
+        "Defining fitness solely as strength or lifespan."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-natural-selection"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-adaptation",
+      "canonical_deck_id": "biology-i",
+      "term": "Adaptation",
+      "prompt": "What is Adaptation? State its defining idea and essential conditions.",
+      "definition": "An adaptation is a heritable feature shaped by selection for a function in a particular context, or the evolutionary process producing such fit. Not every useful trait is an adaptation for its current use, and adaptation differs from individual acclimation.",
+      "required_concepts": [
+        "Selection history and context distinguish adaptation from immediate adjustment."
+      ],
+      "accepted_variants": [
+        "Evolutionary adaptation."
+      ],
+      "major_error_concepts": [
+        "Calling every temporary physiological adjustment a genetically evolved adaptation."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-natural-selection",
+        "biology-i.draft-evolutionary-fitness",
+        "biology-i.draft-environmental-effects-on-traits"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-genetic-drift",
+      "canonical_deck_id": "biology-i",
+      "term": "Genetic Drift",
+      "prompt": "What is Genetic Drift? State its defining idea and essential conditions.",
+      "definition": "Genetic drift is change in allele frequencies through random sampling of reproductive contributions. It can fix or lose variants independently of their advantage and generally has stronger relative effects in small populations.",
+      "required_concepts": [
+        "Chance sampling changes variant frequencies."
+      ],
+      "accepted_variants": [
+        "Random genetic drift."
+      ],
+      "major_error_concepts": [
+        "Defining drift as selection that always favors harmful alleles."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-allele",
+        "biology-i.draft-biological-population",
+        "biology-i.draft-evolutionary-fitness"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-gene-flow",
+      "canonical_deck_id": "biology-i",
+      "term": "Gene Flow",
+      "prompt": "What is Gene Flow? State its defining idea and essential conditions.",
+      "definition": "Gene flow transfers genetic variants among populations through migrants or gametes that contribute to reproduction. Movement alone is insufficient if no genetic contribution occurs, and flow can alter or reduce differentiation between populations.",
+      "required_concepts": [
+        "Reproductive genetic transfer connects populations."
+      ],
+      "accepted_variants": [
+        "Migration-mediated allele flow."
+      ],
+      "major_error_concepts": [
+        "Counting every temporary animal movement as gene flow even without breeding."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biological-population",
+        "biology-i.draft-allele",
+        "biology-i.draft-fertilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-speciation",
+      "canonical_deck_id": "biology-i",
+      "term": "Speciation",
+      "prompt": "What is Speciation? State its defining idea and essential conditions.",
+      "definition": "Speciation produces independently evolving lineages through processes that reduce effective genetic exchange and establish divergence. Geographic separation can contribute but is not always required, and species criteria vary among biological contexts.",
+      "required_concepts": [
+        "Lineage divergence and reduced exchange underlie many speciation processes."
+      ],
+      "accepted_variants": [
+        "Origin of distinct evolutionary lineages."
+      ],
+      "major_error_concepts": [
+        "Claiming every geographic separation instantly creates a new species."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-evolution",
+        "biology-i.draft-gene-flow",
+        "biology-i.draft-natural-selection"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-phylogeny",
+      "canonical_deck_id": "biology-i",
+      "term": "Phylogeny",
+      "prompt": "What is Phylogeny? State its defining idea and essential conditions.",
+      "definition": "A phylogeny is a hypothesis of evolutionary relationships among lineages. Branching patterns represent common ancestry, and rotating branches around a node does not change those relationships; tip order is not a ranking from primitive to advanced.",
+      "required_concepts": [
+        "Branching ancestry, not left-to-right tip order, defines relationships."
+      ],
+      "accepted_variants": [
+        "Evolutionary tree."
+      ],
+      "major_error_concepts": [
+        "Reading a phylogeny as a ladder of inevitable progress."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-evolution",
+        "biology-i.draft-speciation",
+        "biology-i.draft-biological-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "biology-i.draft-biodiversity",
+      "canonical_deck_id": "biology-i",
+      "term": "Biodiversity",
+      "prompt": "What is Biodiversity? State its defining idea and essential conditions.",
+      "definition": "Biodiversity includes variation within species, among species, and across ecological systems. Species counts capture only one component, and differences in abundance, evolutionary history, and ecological function also matter to biological interpretation.",
+      "required_concepts": [
+        "Diversity spans genetic, species, and ecosystem levels."
+      ],
+      "accepted_variants": [
+        "Biological diversity."
+      ],
+      "major_error_concepts": [
+        "Equating all biodiversity exclusively with the number of named species."
+      ],
+      "prerequisite_ids": [
+        "biology-i.draft-biological-variation",
+        "biology-i.draft-phylogeny",
+        "biology-i.draft-levels-of-organization"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "biology-i.draft-active-transport",
+      "dependent_card_id": "biology-i.draft-chemiosmosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-active-transport",
+      "dependent_card_id": "biology-i.draft-electron-transport-chain"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-allele",
+      "dependent_card_id": "biology-i.draft-dominance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-allele",
+      "dependent_card_id": "biology-i.draft-gene-flow"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-allele",
+      "dependent_card_id": "biology-i.draft-genetic-drift"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-allele",
+      "dependent_card_id": "biology-i.draft-genotype-and-phenotype"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-allele",
+      "dependent_card_id": "biology-i.draft-law-of-segregation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-allele",
+      "dependent_card_id": "biology-i.draft-sex-linked-inheritance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atom",
+      "dependent_card_id": "biology-i.draft-covalent-bond"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atom",
+      "dependent_card_id": "biology-i.draft-noncovalent-interactions"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atom",
+      "dependent_card_id": "biology-i.draft-redox-reaction"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-active-transport"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-chemiosmosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-free-energy"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-glycolysis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-metabolism"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-mitochondrion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-atp-and-energy-coupling",
+      "dependent_card_id": "biology-i.draft-translation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-model",
+      "dependent_card_id": "biology-i.draft-phylogeny"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-model",
+      "dependent_card_id": "biology-i.draft-scientific-theory"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-population",
+      "dependent_card_id": "biology-i.draft-biological-variation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-population",
+      "dependent_card_id": "biology-i.draft-gene-flow"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-population",
+      "dependent_card_id": "biology-i.draft-genetic-drift"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-population",
+      "dependent_card_id": "biology-i.draft-natural-selection"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-variation",
+      "dependent_card_id": "biology-i.draft-biodiversity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biological-variation",
+      "dependent_card_id": "biology-i.draft-natural-selection"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biology",
+      "dependent_card_id": "biology-i.draft-cell-theory"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biology",
+      "dependent_card_id": "biology-i.draft-energy-and-matter"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biology",
+      "dependent_card_id": "biology-i.draft-evolution"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biology",
+      "dependent_card_id": "biology-i.draft-hypothesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-biology",
+      "dependent_card_id": "biology-i.draft-levels-of-organization"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-calvin-cycle",
+      "dependent_card_id": "biology-i.draft-photorespiration"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-carbohydrate",
+      "dependent_card_id": "biology-i.draft-calvin-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-carbohydrate",
+      "dependent_card_id": "biology-i.draft-cell-wall"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-carbohydrate",
+      "dependent_card_id": "biology-i.draft-glycolysis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-carbon-skeleton",
+      "dependent_card_id": "biology-i.draft-functional-group"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-carbon-skeleton",
+      "dependent_card_id": "biology-i.draft-monomer-and-polymer"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-cycle",
+      "dependent_card_id": "biology-i.draft-cell-cycle-checkpoint"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-cycle",
+      "dependent_card_id": "biology-i.draft-mitosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-signaling",
+      "dependent_card_id": "biology-i.draft-cell-cycle-checkpoint"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-signaling",
+      "dependent_card_id": "biology-i.draft-enzyme-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-signaling",
+      "dependent_card_id": "biology-i.draft-gene-expression-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-signaling",
+      "dependent_card_id": "biology-i.draft-negative-feedback"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-size",
+      "dependent_card_id": "biology-i.draft-diffusion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-theory",
+      "dependent_card_id": "biology-i.draft-cell-size"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-theory",
+      "dependent_card_id": "biology-i.draft-eukaryotic-cell"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-theory",
+      "dependent_card_id": "biology-i.draft-prokaryotic-cell"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-wall",
+      "dependent_card_id": "biology-i.draft-cytokinesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cell-wall",
+      "dependent_card_id": "biology-i.draft-tonicity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cellular-respiration",
+      "dependent_card_id": "biology-i.draft-citric-acid-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cellular-respiration",
+      "dependent_card_id": "biology-i.draft-electron-transport-chain"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cellular-respiration",
+      "dependent_card_id": "biology-i.draft-photorespiration"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chemiosmosis",
+      "dependent_card_id": "biology-i.draft-light-reactions"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chloroplast",
+      "dependent_card_id": "biology-i.draft-genome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chloroplast",
+      "dependent_card_id": "biology-i.draft-photosynthesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-chromatin"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-dna-replication"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-gene"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-genome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-homologous-chromosomes"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-mitosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-chromosome",
+      "dependent_card_id": "biology-i.draft-ploidy"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-condensation-and-hydrolysis",
+      "dependent_card_id": "biology-i.draft-atp-and-energy-coupling"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-condensation-and-hydrolysis",
+      "dependent_card_id": "biology-i.draft-carbohydrate"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-condensation-and-hydrolysis",
+      "dependent_card_id": "biology-i.draft-lysosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-condensation-and-hydrolysis",
+      "dependent_card_id": "biology-i.draft-metabolism"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-control-group",
+      "dependent_card_id": "biology-i.draft-variables-and-confounding"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-correlation-and-causation",
+      "dependent_card_id": "biology-i.draft-graph-interpretation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-covalent-bond",
+      "dependent_card_id": "biology-i.draft-carbon-skeleton"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-covalent-bond",
+      "dependent_card_id": "biology-i.draft-monomer-and-polymer"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-covalent-bond",
+      "dependent_card_id": "biology-i.draft-noncovalent-interactions"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-covalent-bond",
+      "dependent_card_id": "biology-i.draft-water"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-crossing-over",
+      "dependent_card_id": "biology-i.draft-genetic-linkage"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-crossing-over",
+      "dependent_card_id": "biology-i.draft-independent-assortment"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-cytoskeleton",
+      "dependent_card_id": "biology-i.draft-mitosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-diffusion",
+      "dependent_card_id": "biology-i.draft-facilitated-diffusion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-diffusion",
+      "dependent_card_id": "biology-i.draft-osmosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dna-replication",
+      "dependent_card_id": "biology-i.draft-cell-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dna-replication",
+      "dependent_card_id": "biology-i.draft-homologous-chromosomes"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dna-replication",
+      "dependent_card_id": "biology-i.draft-mutation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dna-replication",
+      "dependent_card_id": "biology-i.draft-ploidy"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dominance",
+      "dependent_card_id": "biology-i.draft-codominance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dominance",
+      "dependent_card_id": "biology-i.draft-incomplete-dominance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-dominance",
+      "dependent_card_id": "biology-i.draft-testcross"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-electron-transport-chain",
+      "dependent_card_id": "biology-i.draft-chemiosmosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-electron-transport-chain",
+      "dependent_card_id": "biology-i.draft-light-reactions"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-emergent-properties",
+      "dependent_card_id": "biology-i.draft-extracellular-matrix"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-emergent-properties",
+      "dependent_card_id": "biology-i.draft-homeostasis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-endomembrane-system",
+      "dependent_card_id": "biology-i.draft-endoplasmic-reticulum"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-endomembrane-system",
+      "dependent_card_id": "biology-i.draft-golgi-apparatus"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-endomembrane-system",
+      "dependent_card_id": "biology-i.draft-lysosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-endomembrane-system",
+      "dependent_card_id": "biology-i.draft-vesicular-transport"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-endoplasmic-reticulum",
+      "dependent_card_id": "biology-i.draft-golgi-apparatus"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-atom"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-atp-and-energy-coupling"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-cell-size"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-chloroplast"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-free-energy"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-metabolism"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-photosynthesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-energy-and-matter",
+      "dependent_card_id": "biology-i.draft-trophic-mode"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-environmental-effects-on-traits",
+      "dependent_card_id": "biology-i.draft-adaptation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-environmental-effects-on-traits",
+      "dependent_card_id": "biology-i.draft-biological-variation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-enzyme",
+      "dependent_card_id": "biology-i.draft-enzyme-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-enzyme",
+      "dependent_card_id": "biology-i.draft-enzyme-specificity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-enzyme",
+      "dependent_card_id": "biology-i.draft-free-energy"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-enzyme-specificity",
+      "dependent_card_id": "biology-i.draft-enzyme-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-cell-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-cell-wall"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-chloroplast"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-cytoskeleton"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-endomembrane-system"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-mitochondrion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-nucleus"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-ribosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-rna-processing"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-eukaryotic-cell",
+      "dependent_card_id": "biology-i.draft-vacuole"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evidence-and-revision",
+      "dependent_card_id": "biology-i.draft-scientific-theory"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolution",
+      "dependent_card_id": "biology-i.draft-biological-population"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolution",
+      "dependent_card_id": "biology-i.draft-mutation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolution",
+      "dependent_card_id": "biology-i.draft-natural-selection"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolution",
+      "dependent_card_id": "biology-i.draft-phylogeny"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolution",
+      "dependent_card_id": "biology-i.draft-speciation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolutionary-fitness",
+      "dependent_card_id": "biology-i.draft-adaptation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-evolutionary-fitness",
+      "dependent_card_id": "biology-i.draft-genetic-drift"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-experiment",
+      "dependent_card_id": "biology-i.draft-control-group"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-experiment",
+      "dependent_card_id": "biology-i.draft-replication"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-experiment",
+      "dependent_card_id": "biology-i.draft-variables-and-confounding"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-extracellular-matrix",
+      "dependent_card_id": "biology-i.draft-cell-junction"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-facilitated-diffusion",
+      "dependent_card_id": "biology-i.draft-active-transport"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-fermentation",
+      "dependent_card_id": "biology-i.draft-cellular-respiration"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-fertilization",
+      "dependent_card_id": "biology-i.draft-gene-flow"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-fertilization",
+      "dependent_card_id": "biology-i.draft-punnett-square"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-free-energy",
+      "dependent_card_id": "biology-i.draft-redox-reaction"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-functional-group",
+      "dependent_card_id": "biology-i.draft-carbohydrate"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-functional-group",
+      "dependent_card_id": "biology-i.draft-lipid"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-functional-group",
+      "dependent_card_id": "biology-i.draft-nucleic-acid"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-functional-group",
+      "dependent_card_id": "biology-i.draft-protein"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-gene",
+      "dependent_card_id": "biology-i.draft-allele"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-gene",
+      "dependent_card_id": "biology-i.draft-genome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-gene",
+      "dependent_card_id": "biology-i.draft-mutation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-gene",
+      "dependent_card_id": "biology-i.draft-transcription"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-gene-expression-regulation",
+      "dependent_card_id": "biology-i.draft-genotype-and-phenotype"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-gene-flow",
+      "dependent_card_id": "biology-i.draft-speciation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-genetic-code",
+      "dependent_card_id": "biology-i.draft-translation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-genotype-and-phenotype",
+      "dependent_card_id": "biology-i.draft-biological-variation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-genotype-and-phenotype",
+      "dependent_card_id": "biology-i.draft-dominance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-genotype-and-phenotype",
+      "dependent_card_id": "biology-i.draft-environmental-effects-on-traits"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-genotype-and-phenotype",
+      "dependent_card_id": "biology-i.draft-polygenic-trait"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-glycolysis",
+      "dependent_card_id": "biology-i.draft-cellular-respiration"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-glycolysis",
+      "dependent_card_id": "biology-i.draft-fermentation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homeostasis",
+      "dependent_card_id": "biology-i.draft-cell-signaling"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homeostasis",
+      "dependent_card_id": "biology-i.draft-energy-and-matter"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homeostasis",
+      "dependent_card_id": "biology-i.draft-negative-feedback"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homologous-chromosomes",
+      "dependent_card_id": "biology-i.draft-allele"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homologous-chromosomes",
+      "dependent_card_id": "biology-i.draft-crossing-over"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homologous-chromosomes",
+      "dependent_card_id": "biology-i.draft-genetic-linkage"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homologous-chromosomes",
+      "dependent_card_id": "biology-i.draft-law-of-segregation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-homologous-chromosomes",
+      "dependent_card_id": "biology-i.draft-meiosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-hypothesis",
+      "dependent_card_id": "biology-i.draft-biological-model"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-hypothesis",
+      "dependent_card_id": "biology-i.draft-evidence-and-revision"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-hypothesis",
+      "dependent_card_id": "biology-i.draft-experiment"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-hypothesis",
+      "dependent_card_id": "biology-i.draft-prediction"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-hypothesis",
+      "dependent_card_id": "biology-i.draft-scientific-theory"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-incomplete-dominance",
+      "dependent_card_id": "biology-i.draft-codominance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-independent-assortment",
+      "dependent_card_id": "biology-i.draft-genetic-linkage"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-independent-assortment",
+      "dependent_card_id": "biology-i.draft-polygenic-trait"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-independent-assortment",
+      "dependent_card_id": "biology-i.draft-punnett-square"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-law-of-segregation",
+      "dependent_card_id": "biology-i.draft-incomplete-dominance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-law-of-segregation",
+      "dependent_card_id": "biology-i.draft-independent-assortment"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-law-of-segregation",
+      "dependent_card_id": "biology-i.draft-punnett-square"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-law-of-segregation",
+      "dependent_card_id": "biology-i.draft-sex-linked-inheritance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-levels-of-organization",
+      "dependent_card_id": "biology-i.draft-biodiversity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-levels-of-organization",
+      "dependent_card_id": "biology-i.draft-biological-model"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-levels-of-organization",
+      "dependent_card_id": "biology-i.draft-cell-theory"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-levels-of-organization",
+      "dependent_card_id": "biology-i.draft-emergent-properties"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-light-reactions",
+      "dependent_card_id": "biology-i.draft-calvin-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-lipid",
+      "dependent_card_id": "biology-i.draft-endoplasmic-reticulum"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-lipid",
+      "dependent_card_id": "biology-i.draft-plasma-membrane"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-measurement-uncertainty",
+      "dependent_card_id": "biology-i.draft-evidence-and-revision"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-measurement-uncertainty",
+      "dependent_card_id": "biology-i.draft-graph-interpretation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-meiosis",
+      "dependent_card_id": "biology-i.draft-crossing-over"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-meiosis",
+      "dependent_card_id": "biology-i.draft-fertilization"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-meiosis",
+      "dependent_card_id": "biology-i.draft-law-of-segregation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-metabolism",
+      "dependent_card_id": "biology-i.draft-citric-acid-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-metabolism",
+      "dependent_card_id": "biology-i.draft-enzyme"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-metabolism",
+      "dependent_card_id": "biology-i.draft-glycolysis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-metabolism",
+      "dependent_card_id": "biology-i.draft-redox-reaction"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-metabolism",
+      "dependent_card_id": "biology-i.draft-trophic-mode"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-mitochondrion",
+      "dependent_card_id": "biology-i.draft-genome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-mitosis",
+      "dependent_card_id": "biology-i.draft-cell-cycle-checkpoint"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-mitosis",
+      "dependent_card_id": "biology-i.draft-cytokinesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-mitosis",
+      "dependent_card_id": "biology-i.draft-meiosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-monomer-and-polymer",
+      "dependent_card_id": "biology-i.draft-carbohydrate"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-monomer-and-polymer",
+      "dependent_card_id": "biology-i.draft-condensation-and-hydrolysis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-monomer-and-polymer",
+      "dependent_card_id": "biology-i.draft-lipid"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-monomer-and-polymer",
+      "dependent_card_id": "biology-i.draft-nucleic-acid"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-monomer-and-polymer",
+      "dependent_card_id": "biology-i.draft-protein"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-mutation",
+      "dependent_card_id": "biology-i.draft-allele"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-mutation",
+      "dependent_card_id": "biology-i.draft-cell-cycle-checkpoint"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-natural-selection",
+      "dependent_card_id": "biology-i.draft-adaptation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-natural-selection",
+      "dependent_card_id": "biology-i.draft-evolutionary-fitness"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-natural-selection",
+      "dependent_card_id": "biology-i.draft-speciation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-noncovalent-interactions",
+      "dependent_card_id": "biology-i.draft-enzyme-specificity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-noncovalent-interactions",
+      "dependent_card_id": "biology-i.draft-protein"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-noncovalent-interactions",
+      "dependent_card_id": "biology-i.draft-water"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-atp-and-energy-coupling"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-chromosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-dna-replication"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-enzyme"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-gene"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-genetic-code"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-nucleus"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-prokaryotic-cell"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-ribosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleic-acid",
+      "dependent_card_id": "biology-i.draft-transcription"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-nucleus",
+      "dependent_card_id": "biology-i.draft-chromosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-osmosis",
+      "dependent_card_id": "biology-i.draft-tonicity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ph",
+      "dependent_card_id": "biology-i.draft-buffer"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ph",
+      "dependent_card_id": "biology-i.draft-enzyme-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ph",
+      "dependent_card_id": "biology-i.draft-functional-group"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ph",
+      "dependent_card_id": "biology-i.draft-lysosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-photosynthesis",
+      "dependent_card_id": "biology-i.draft-calvin-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-photosynthesis",
+      "dependent_card_id": "biology-i.draft-light-reactions"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-photosynthesis",
+      "dependent_card_id": "biology-i.draft-trophic-mode"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-phylogeny",
+      "dependent_card_id": "biology-i.draft-biodiversity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-active-transport"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-cell-junction"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-cell-signaling"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-cell-wall"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-chloroplast"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-cytokinesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-electron-transport-chain"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-endomembrane-system"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-extracellular-matrix"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-facilitated-diffusion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-mitochondrion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-nucleus"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-osmosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-tonicity"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-vacuole"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-plasma-membrane",
+      "dependent_card_id": "biology-i.draft-vesicular-transport"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ploidy",
+      "dependent_card_id": "biology-i.draft-fertilization"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ploidy",
+      "dependent_card_id": "biology-i.draft-homologous-chromosomes"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ploidy",
+      "dependent_card_id": "biology-i.draft-sex-linked-inheritance"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-polygenic-trait",
+      "dependent_card_id": "biology-i.draft-environmental-effects-on-traits"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-prediction",
+      "dependent_card_id": "biology-i.draft-biological-model"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-prediction",
+      "dependent_card_id": "biology-i.draft-evidence-and-revision"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-prediction",
+      "dependent_card_id": "biology-i.draft-experiment"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-prokaryotic-cell",
+      "dependent_card_id": "biology-i.draft-cell-wall"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-prokaryotic-cell",
+      "dependent_card_id": "biology-i.draft-eukaryotic-cell"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-prokaryotic-cell",
+      "dependent_card_id": "biology-i.draft-ribosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-cell-signaling"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-chromatin"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-cytoskeleton"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-enzyme"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-extracellular-matrix"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-facilitated-diffusion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-genetic-code"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-plasma-membrane"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-ribosome"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-protein",
+      "dependent_card_id": "biology-i.draft-translation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-punnett-square",
+      "dependent_card_id": "biology-i.draft-testcross"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-redox-reaction",
+      "dependent_card_id": "biology-i.draft-cellular-respiration"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-redox-reaction",
+      "dependent_card_id": "biology-i.draft-citric-acid-cycle"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-redox-reaction",
+      "dependent_card_id": "biology-i.draft-electron-transport-chain"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-redox-reaction",
+      "dependent_card_id": "biology-i.draft-fermentation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-redox-reaction",
+      "dependent_card_id": "biology-i.draft-glycolysis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-redox-reaction",
+      "dependent_card_id": "biology-i.draft-photosynthesis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-replication",
+      "dependent_card_id": "biology-i.draft-measurement-uncertainty"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-replication",
+      "dependent_card_id": "biology-i.draft-sample-and-population"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ribosome",
+      "dependent_card_id": "biology-i.draft-endoplasmic-reticulum"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-ribosome",
+      "dependent_card_id": "biology-i.draft-translation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-rna-processing",
+      "dependent_card_id": "biology-i.draft-gene-expression-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-sample-and-population",
+      "dependent_card_id": "biology-i.draft-biological-population"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-sample-and-population",
+      "dependent_card_id": "biology-i.draft-correlation-and-causation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-speciation",
+      "dependent_card_id": "biology-i.draft-phylogeny"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-transcription",
+      "dependent_card_id": "biology-i.draft-gene-expression-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-transcription",
+      "dependent_card_id": "biology-i.draft-genetic-code"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-transcription",
+      "dependent_card_id": "biology-i.draft-rna-processing"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-translation",
+      "dependent_card_id": "biology-i.draft-gene-expression-regulation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-variables-and-confounding",
+      "dependent_card_id": "biology-i.draft-correlation-and-causation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-variables-and-confounding",
+      "dependent_card_id": "biology-i.draft-graph-interpretation"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-variables-and-confounding",
+      "dependent_card_id": "biology-i.draft-replication"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-water",
+      "dependent_card_id": "biology-i.draft-condensation-and-hydrolysis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-water",
+      "dependent_card_id": "biology-i.draft-diffusion"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-water",
+      "dependent_card_id": "biology-i.draft-lipid"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-water",
+      "dependent_card_id": "biology-i.draft-osmosis"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-water",
+      "dependent_card_id": "biology-i.draft-ph"
+    },
+    {
+      "prerequisite_card_id": "biology-i.draft-water",
+      "dependent_card_id": "biology-i.draft-plasma-membrane"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Biology I.",
+  "level": "College",
+  "tags": [
+    "biology"
+  ]
+}

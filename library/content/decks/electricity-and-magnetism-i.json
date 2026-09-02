@@ -1,0 +1,3828 @@
+{
+  "id": "academic-reviewed-v1:electricity-and-magnetism-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Electricity and Magnetism I",
+  "subject": "Physics",
+  "domain": "Physics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-charge",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Charge",
+      "prompt": "What is Electric Charge? State its defining idea and essential conditions.",
+      "definition": "Electric charge is a signed property of matter that determines electromagnetic interaction. Positive and negative charges can cancel in a net total, while zero net charge does not imply absence of charged constituents.",
+      "required_concepts": [
+        "Signed electromagnetic source property.",
+        "Neutrality concerns net charge."
+      ],
+      "accepted_variants": [
+        "Positive or negative electric charge."
+      ],
+      "major_error_concepts": [
+        "Assuming an electrically neutral object contains no charged particles."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-charge-conservation",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Charge Conservation",
+      "prompt": "What is Charge Conservation? State its defining idea and essential conditions.",
+      "definition": "Charge conservation means the net electric charge of an isolated system remains constant. Charge can move across a system boundary or be redistributed internally, but the accounting must include all participating charges.",
+      "required_concepts": [
+        "Isolated-system net charge is conserved."
+      ],
+      "accepted_variants": [
+        "Conservation of net electric charge."
+      ],
+      "major_error_concepts": [
+        "Calling redistribution of charge creation of net charge."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-charge-quantization",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Charge Quantization",
+      "prompt": "What is Charge Quantization? State its defining idea and essential conditions.",
+      "definition": "In ordinary matter, net charge changes through transfers of particles carrying discrete charges, commonly integer multiples of the elementary charge e for isolated everyday objects. Continuous charge densities are useful macroscopic approximations to this discrete structure.",
+      "required_concepts": [
+        "Discrete elementary charge transfers underlie macroscopic charge.",
+        "Density approximation does not remove microscopic discreteness."
+      ],
+      "accepted_variants": [
+        "Charge quantization in ordinary macroscopic matter."
+      ],
+      "major_error_concepts": [
+        "Interpreting a continuous density model as proof that individual electrons carry arbitrary fractions of e."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-conductor",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Conductor",
+      "prompt": "What is Conductor? State its defining idea and essential conditions.",
+      "definition": "A conductor contains charges able to move over macroscopic distances in response to an electric field. Their redistribution can reach electrostatic equilibrium, but conductivity does not mean that every current-carrying conductor has zero internal field.",
+      "required_concepts": [
+        "Mobile charge carriers.",
+        "Electrostatic and current-carrying conditions differ."
+      ],
+      "accepted_variants": [
+        "Electrically conducting material."
+      ],
+      "major_error_concepts": [
+        "Claiming electric field must vanish inside every resistive wire carrying steady current."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-insulator",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Insulator",
+      "prompt": "What is Insulator? State its defining idea and essential conditions.",
+      "definition": "An insulator strongly limits long-range charge transport under the stated conditions. Its bound charges can still shift or orient locally, so an insulator can polarize and respond to electric fields.",
+      "required_concepts": [
+        "Limited macroscopic charge mobility.",
+        "Local polarization remains possible."
+      ],
+      "accepted_variants": [
+        "Dielectric insulator."
+      ],
+      "major_error_concepts": [
+        "Assuming an insulator cannot respond electrically because charges cannot flow freely across it."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-conductor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electrostatic-induction",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electrostatic Induction",
+      "prompt": "What is Electrostatic Induction? State its defining idea and essential conditions.",
+      "definition": "Electrostatic induction redistributes mobile charge in a conductor in response to nearby charge without requiring direct contact. Net charge transfer requires a conducting path or another transfer mechanism; redistribution alone preserves the conductor's total charge.",
+      "required_concepts": [
+        "Nearby charge induces redistribution.",
+        "Redistribution alone does not change net charge."
+      ],
+      "accepted_variants": [
+        "Induced charge separation."
+      ],
+      "major_error_concepts": [
+        "Assuming every induced charge separation automatically changes total charge."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-conductor",
+        "electricity-and-magnetism-i.draft-charge-conservation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-coulomb-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Coulomb Law",
+      "prompt": "What is Coulomb Law? State its defining idea and essential conditions.",
+      "definition": "Coulomb's law gives the electrostatic force between point charges in vacuum as magnitude |q_1 q_2|/(4pi epsilon_0 r squared). It acts along their separation, repelling equal signs and attracting opposite signs; extended distributions require superposition.",
+      "required_concepts": [
+        "Inverse-square point-charge force with sign-dependent attraction or repulsion."
+      ],
+      "accepted_variants": [
+        "Vacuum electrostatic point-charge law."
+      ],
+      "major_error_concepts": [
+        "Using the distance between arbitrary centers for any extended charge distribution without symmetry or approximation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-superposition",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Superposition",
+      "prompt": "What is Electric Superposition? State its defining idea and essential conditions.",
+      "definition": "Electric-force superposition means the total force on a test charge is the vector sum of forces from the source charges in the classical model. Magnitudes alone cannot generally be added because directions matter.",
+      "required_concepts": [
+        "Vector sum of individual contributions."
+      ],
+      "accepted_variants": [
+        "Linear electrostatic force addition."
+      ],
+      "major_error_concepts": [
+        "Adding force magnitudes without accounting for directions."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-coulomb-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Field",
+      "prompt": "What is Electric Field? State its defining idea and essential conditions.",
+      "definition": "The electric field is force per unit positive test charge, E=F/q, with the test charge small enough not to alter the source configuration in the defining limit. Field direction is the force direction for positive charge.",
+      "required_concepts": [
+        "Force per unit positive test charge.",
+        "Source disturbance excluded in definition."
+      ],
+      "accepted_variants": [
+        "Electric force field."
+      ],
+      "major_error_concepts": [
+        "Defining field direction using the force on a negative charge without reversing it."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-superposition",
+        "electricity-and-magnetism-i.draft-electric-charge"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-point-charge-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Point-Charge Field",
+      "prompt": "What is Point-Charge Field? State its defining idea and essential conditions.",
+      "definition": "A point charge q at the origin produces E=q r_hat/(4pi epsilon_0 r squared) away from the source point. The sign sets inward or outward direction, and the formula is singular at the idealized point charge.",
+      "required_concepts": [
+        "Radial inverse-square field with source-charge sign."
+      ],
+      "accepted_variants": [
+        "Coulomb electric field."
+      ],
+      "major_error_concepts": [
+        "Assigning a finite self-field at the point charge using the ordinary r=0 formula."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-field",
+        "electricity-and-magnetism-i.draft-coulomb-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-continuous-charge-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Continuous Charge Field",
+      "prompt": "What is Continuous Charge Field? State its defining idea and essential conditions.",
+      "definition": "A continuous charge distribution produces a field found by integrating point-charge contributions over source locations. The displacement vector runs from each source element to the observation point, not the reverse.",
+      "required_concepts": [
+        "Integrate vector contributions from source elements.",
+        "Source-to-observer displacement convention."
+      ],
+      "accepted_variants": [
+        "Coulomb field integral."
+      ],
+      "major_error_concepts": [
+        "Using one constant source distance across an extended distribution without justification."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-point-charge-field",
+        "electricity-and-magnetism-i.draft-electric-superposition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-linear-charge-density",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Linear Charge Density",
+      "prompt": "What is Linear Charge Density? State its defining idea and essential conditions.",
+      "definition": "Linear charge density lambda is charge per unit source length, giving dq=lambda dl. It can vary along the line and has units of charge divided by length.",
+      "required_concepts": [
+        "Charge per length with dq=lambda dl."
+      ],
+      "accepted_variants": [
+        "Line charge density."
+      ],
+      "major_error_concepts": [
+        "Using line density as charge per surface area."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-continuous-charge-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-surface-charge-density",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Surface Charge Density",
+      "prompt": "What is Surface Charge Density? State its defining idea and essential conditions.",
+      "definition": "Surface charge density sigma is charge per unit area, giving dq=sigma dA. It describes charge concentrated on a surface and may vary with position, especially near edges or curved conductor regions.",
+      "required_concepts": [
+        "Charge per area with dq=sigma dA."
+      ],
+      "accepted_variants": [
+        "Surface charge distribution."
+      ],
+      "major_error_concepts": [
+        "Assuming every conductor surface must have uniform charge density regardless of shape."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-continuous-charge-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-volume-charge-density",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Volume Charge Density",
+      "prompt": "What is Volume Charge Density? State its defining idea and essential conditions.",
+      "definition": "Volume charge density rho is charge per unit volume, giving dq=rho dV. Integrating it over a region gives net enclosed volume charge, with separate surface or point contributions included when present.",
+      "required_concepts": [
+        "Charge per volume and volume integration."
+      ],
+      "accepted_variants": [
+        "Bulk charge density."
+      ],
+      "major_error_concepts": [
+        "Ignoring surface-charge contributions while claiming a volume-density integral contains every possible source."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-continuous-charge-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-field-lines",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Field Lines",
+      "prompt": "What is Electric Field Lines? State its defining idea and essential conditions.",
+      "definition": "Electric field lines are curves tangent to the electric field at each point, oriented as a positive charge's force direction. Their plotted density can illustrate strength, but the lines are a visualization rather than physical trajectories a charge must follow.",
+      "required_concepts": [
+        "Tangent-direction representation of the field.",
+        "Not generally particle trajectories."
+      ],
+      "accepted_variants": [
+        "Electric field-line diagram."
+      ],
+      "major_error_concepts": [
+        "Assuming an inertial charged particle must move exactly along a field line regardless of its velocity."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-flux",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Flux",
+      "prompt": "What is Electric Flux? State its defining idea and essential conditions.",
+      "definition": "Electric flux through an oriented surface is the integral of E dot n dA. It counts the normal field contribution with sign and can vanish despite a nonzero field tangent to the surface or canceling contributions.",
+      "required_concepts": [
+        "Oriented normal field integral."
+      ],
+      "accepted_variants": [
+        "Electric surface flux."
+      ],
+      "major_error_concepts": [
+        "Concluding zero net flux implies zero electric field everywhere on the surface."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-field",
+        "mathematical-methods-for-physics-i.draft-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-gauss-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Gauss Law",
+      "prompt": "What is Gauss Law? State its defining idea and essential conditions.",
+      "definition": "Gauss's law states that electric flux through a closed surface equals enclosed net charge divided by epsilon_0 in vacuum, with all charge included. External charges can affect the field on the surface but contribute zero net enclosed-source flux.",
+      "required_concepts": [
+        "Closed electric flux equals Q_enclosed/epsilon_0.",
+        "External sources can still affect local field."
+      ],
+      "accepted_variants": [
+        "Integral electric Gauss law."
+      ],
+      "major_error_concepts": [
+        "Assuming the electric field on a Gaussian surface depends only on enclosed charge in every geometry."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-flux",
+        "electricity-and-magnetism-i.draft-charge-conservation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Gaussian Surface and Symmetry",
+      "prompt": "What is Gaussian Surface and Symmetry? State its defining idea and essential conditions.",
+      "definition": "A Gaussian surface is an imaginary closed integration surface used in Gauss's law. Symmetry must justify extracting a constant field magnitude or eliminating components; the law itself holds without that simplifying symmetry.",
+      "required_concepts": [
+        "Imaginary closed flux surface.",
+        "Symmetry is needed for easy field extraction, not for the law's validity."
+      ],
+      "accepted_variants": [
+        "Flux integration surface."
+      ],
+      "major_error_concepts": [
+        "Solving E times area=Q/epsilon_0 for an arbitrary surface with nonuniform field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-gauss-law",
+        "electricity-and-magnetism-i.draft-electric-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-spherical-charge-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Spherical Charge Field",
+      "prompt": "What is Spherical Charge Field? State its defining idea and essential conditions.",
+      "definition": "A spherically symmetric charge distribution has a radial field with magnitude determined by enclosed charge at each radius: E_r=Q_enclosed(r)/(4pi epsilon_0 r squared). Exterior behavior matches a point charge, while interior behavior depends on the distribution.",
+      "required_concepts": [
+        "Radial field from enclosed charge at radius r."
+      ],
+      "accepted_variants": [
+        "Spherical Gauss-law field."
+      ],
+      "major_error_concepts": [
+        "Using total charge instead of enclosed charge inside every spherical distribution."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+        "electricity-and-magnetism-i.draft-volume-charge-density",
+        "electricity-and-magnetism-i.draft-point-charge-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-infinite-sheet-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Infinite Sheet Field",
+      "prompt": "What is Infinite Sheet Field? State its defining idea and essential conditions.",
+      "definition": "An ideal infinite uniformly charged sheet in vacuum produces field magnitude |sigma|/(2epsilon_0) on each side, directed away for positive charge. A conductor-surface field formula can differ because the conditions on the opposite side differ.",
+      "required_concepts": [
+        "Infinite isolated sheet field sigma/(2epsilon_0).",
+        "Distinguish sheet model from conductor boundary."
+      ],
+      "accepted_variants": [
+        "Planar sheet field."
+      ],
+      "major_error_concepts": [
+        "Using sigma/epsilon_0 for an isolated nonconducting sheet without another field contribution."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+        "electricity-and-magnetism-i.draft-surface-charge-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-infinite-line-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Infinite Line Field",
+      "prompt": "What is Infinite Line Field? State its defining idea and essential conditions.",
+      "definition": "An ideal infinite straight line of charge has radial cylindrical field E_r=lambda/(2pi epsilon_0 r). The result follows from translational and rotational symmetry and is an approximation for long finite lines away from their ends.",
+      "required_concepts": [
+        "Cylindrical inverse-distance line field."
+      ],
+      "accepted_variants": [
+        "Infinite line-charge field."
+      ],
+      "major_error_concepts": [
+        "Using the point-charge inverse-square law for the field of an infinite uniform line."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+        "electricity-and-magnetism-i.draft-linear-charge-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-potential",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Potential",
+      "prompt": "What is Electric Potential? State its defining idea and essential conditions.",
+      "definition": "Electric potential in electrostatics is potential energy per unit charge relative to a chosen reference. It is a scalar, and only differences affect the work on a charge when the reference is shifted uniformly.",
+      "required_concepts": [
+        "Potential energy per charge with reference freedom."
+      ],
+      "accepted_variants": [
+        "Electrostatic scalar potential V."
+      ],
+      "major_error_concepts": [
+        "Confusing potential, measured in energy per charge, with electric field, measured in force per charge."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-potential-difference",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Potential Difference",
+      "prompt": "What is Potential Difference? State its defining idea and essential conditions.",
+      "definition": "For an electrostatic field, V(b)-V(a)=-integral from a to b of E dot dl. The field points toward decreasing potential, and path independence requires the electrostatic conservative-field conditions on the relevant domain.",
+      "required_concepts": [
+        "Potential difference is negative line integral of field."
+      ],
+      "accepted_variants": [
+        "Voltage difference from electrostatic work."
+      ],
+      "major_error_concepts": [
+        "Using a positive field integral for V_final-V_initial without changing convention."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-potential",
+        "mathematical-methods-for-physics-i.draft-vector-line-integral"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-point-charge-potential",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Point-Charge Potential",
+      "prompt": "What is Point-Charge Potential? State its defining idea and essential conditions.",
+      "definition": "With potential zero at infinity, a point charge produces V=q/(4pi epsilon_0 r). Unlike the field magnitude, the potential scales inversely with distance and retains the sign of the charge.",
+      "required_concepts": [
+        "Signed inverse-distance point potential."
+      ],
+      "accepted_variants": [
+        "Coulomb scalar potential."
+      ],
+      "major_error_concepts": [
+        "Using inverse-square distance for point-charge potential."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-potential",
+        "electricity-and-magnetism-i.draft-point-charge-field",
+        "electricity-and-magnetism-i.draft-potential-difference"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-potential-superposition",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Potential Superposition",
+      "prompt": "What is Potential Superposition? State its defining idea and essential conditions.",
+      "definition": "Electrostatic potentials from multiple sources add as scalars when a consistent reference is used. A continuous distribution gives V=integral dq/(4pi epsilon_0 R) where that reference and integral are meaningful.",
+      "required_concepts": [
+        "Scalar sum with consistent reference."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding potential magnitudes while discarding charge signs."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-point-charge-potential",
+        "electricity-and-magnetism-i.draft-continuous-charge-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-field-potential-relation",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Field-Potential Relation",
+      "prompt": "What is Field-Potential Relation? State its defining idea and essential conditions.",
+      "definition": "An electrostatic field is E=-gradient V. Its components are negative spatial derivatives of potential, and a constant potential region has zero field where the differentiability assumptions hold.",
+      "required_concepts": [
+        "Electric field is negative potential gradient."
+      ],
+      "accepted_variants": [
+        "Field from scalar potential."
+      ],
+      "major_error_concepts": [
+        "Taking the field to be V divided by distance in every nonuniform geometry instead of a derivative."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-potential-difference",
+        "mathematical-methods-for-physics-i.draft-gradient"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-equipotential",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Equipotential",
+      "prompt": "What is Equipotential? State its defining idea and essential conditions.",
+      "definition": "An equipotential is a set of points with equal electric potential. In electrostatics the field is normal to a smooth equipotential where nonzero, and moving a charge along it changes no electrostatic potential energy.",
+      "required_concepts": [
+        "Constant-potential set and zero tangential field."
+      ],
+      "accepted_variants": [
+        "Equipotential surface."
+      ],
+      "major_error_concepts": [
+        "Claiming zero work along an equipotential means the normal electric field must also vanish."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-field-potential-relation",
+        "electricity-and-magnetism-i.draft-electric-potential"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electrostatic-potential-energy",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electrostatic Potential Energy",
+      "prompt": "What is Electrostatic Potential Energy? State its defining idea and essential conditions.",
+      "definition": "For point charges assembled electrostatically, interaction energy is the sum over distinct pairs of q_i q_j/(4pi epsilon_0 r_ij). Counting each pair once avoids double counting and excludes the divergent ideal point self-energies.",
+      "required_concepts": [
+        "Pairwise interaction energy counted once."
+      ],
+      "accepted_variants": [
+        "Electrostatic assembly energy."
+      ],
+      "major_error_concepts": [
+        "Summing every ordered pair without the compensating one-half factor."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-point-charge-potential",
+        "electricity-and-magnetism-i.draft-potential-superposition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-dipole",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Dipole",
+      "prompt": "What is Electric Dipole? State its defining idea and essential conditions.",
+      "definition": "An electric dipole consists of equal opposite charges separated by a displacement, with dipole moment p=q d directed from negative to positive charge. The ideal dipole approximation describes distances much larger than the separation.",
+      "required_concepts": [
+        "Moment points negative to positive.",
+        "Far-distance dipole approximation."
+      ],
+      "accepted_variants": [
+        "Electric dipole moment."
+      ],
+      "major_error_concepts": [
+        "Defining dipole moment from positive to negative without changing sign conventions."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-charge",
+        "electricity-and-magnetism-i.draft-point-charge-potential"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-dipole-far-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Dipole Far Field",
+      "prompt": "What is Dipole Far Field? State its defining idea and essential conditions.",
+      "definition": "Far from a localized ideal electric dipole, potential scales as 1/r squared and electric field as 1/r cubed, with angular dependence. Zero net charge removes the monopole term but does not make the distant field identically zero.",
+      "required_concepts": [
+        "Dipole far-field scaling with angular dependence."
+      ],
+      "accepted_variants": [
+        "Leading dipole field."
+      ],
+      "major_error_concepts": [
+        "Assuming equal opposite source charges cancel the field at every observation point."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-dipole",
+        "electricity-and-magnetism-i.draft-field-potential-relation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-dipole-torque",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Dipole Torque",
+      "prompt": "What is Electric Dipole Torque? State its defining idea and essential conditions.",
+      "definition": "A dipole in a uniform external electric field experiences torque tau=p cross E. The net force is zero in the ideal uniform-field case, while a nonuniform field can also exert a net force.",
+      "required_concepts": [
+        "Dipole alignment torque p cross E.",
+        "Uniform-field net force distinction."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a dipole must have a nonzero net force in every uniform electric field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-dipole",
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-dipole-energy",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Dipole Energy",
+      "prompt": "What is Electric Dipole Energy? State its defining idea and essential conditions.",
+      "definition": "A permanent electric dipole in a prescribed uniform external field has orientation energy U=-p dot E up to a constant. Alignment lowers energy; induced dipoles require care because the moment itself depends on the field.",
+      "required_concepts": [
+        "Orientation energy minus p dot E for a fixed dipole."
+      ],
+      "accepted_variants": [
+        "Dipole-field interaction energy."
+      ],
+      "major_error_concepts": [
+        "Using the permanent fixed-dipole formula without accounting for the work of inducing a changing moment."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-dipole-torque",
+        "electricity-and-magnetism-i.draft-electrostatic-potential-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Conductor Electrostatic Equilibrium",
+      "prompt": "What is Conductor Electrostatic Equilibrium? State its defining idea and essential conditions.",
+      "definition": "Inside the material of an ideal conductor in electrostatic equilibrium, the electric field vanishes and potential is constant on each connected conductor. This equilibrium condition does not describe resistive conductors sustaining a current.",
+      "required_concepts": [
+        "Zero internal electrostatic field and constant connected-conductor potential."
+      ],
+      "accepted_variants": [
+        "Electrostatic conductor equilibrium."
+      ],
+      "major_error_concepts": [
+        "Applying zero internal field to every steady resistive current situation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-conductor",
+        "electricity-and-magnetism-i.draft-field-potential-relation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-conductor-surface-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Conductor Surface Field",
+      "prompt": "What is Conductor Surface Field? State its defining idea and essential conditions.",
+      "definition": "Just outside a conductor in electrostatic equilibrium in vacuum, the normal field is sigma/epsilon_0 and the tangential field is zero. The normal is chosen outward from the conductor, so signed sigma determines field direction.",
+      "required_concepts": [
+        "Normal conductor field sigma/epsilon_0 with zero tangential field."
+      ],
+      "accepted_variants": [
+        "Electrostatic conductor boundary field."
+      ],
+      "major_error_concepts": [
+        "Using the isolated-sheet half-field formula at a conductor boundary without accounting for its zero interior field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+        "electricity-and-magnetism-i.draft-gauss-law",
+        "electricity-and-magnetism-i.draft-surface-charge-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-conducting-cavity",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Conducting Cavity",
+      "prompt": "What is Conducting Cavity? State its defining idea and essential conditions.",
+      "definition": "A closed cavity in a conductor at electrostatic equilibrium shields its interior from external electrostatic fields when no charge is inside the cavity. Charges placed inside induce surface charge and generally create a cavity field, so the empty-cavity condition matters.",
+      "required_concepts": [
+        "Empty closed conducting cavity is externally electrostatically shielded.",
+        "Internal charges change the conclusion."
+      ],
+      "accepted_variants": [
+        "Electrostatic cavity shielding."
+      ],
+      "major_error_concepts": [
+        "Claiming the field must vanish inside a cavity even when it contains a charge."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+        "electricity-and-magnetism-i.draft-conductor-surface-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-grounding",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Grounding",
+      "prompt": "What is Grounding? State its defining idea and essential conditions.",
+      "definition": "Grounding connects a conductor to a charge reservoir that fixes a chosen reference potential through charge exchange. Grounded means specified potential, not necessarily zero net charge on the object.",
+      "required_concepts": [
+        "Charge exchange fixes reference potential.",
+        "Grounded does not imply neutral."
+      ],
+      "accepted_variants": [
+        "Connection to a potential reservoir."
+      ],
+      "major_error_concepts": [
+        "Equating zero potential with zero total charge in every geometry."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+        "electricity-and-magnetism-i.draft-electric-potential",
+        "electricity-and-magnetism-i.draft-electrostatic-induction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-capacitance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Capacitance",
+      "prompt": "What is Capacitance? State its defining idea and essential conditions.",
+      "definition": "Capacitance relates separated charge magnitude to potential difference, C=Q/Delta V for a linear two-conductor capacitor. It depends on geometry and dielectric environment rather than on charge alone in the ideal linear model.",
+      "required_concepts": [
+        "Charge-to-voltage ratio for stated capacitor."
+      ],
+      "accepted_variants": [
+        "Electrical charge-storage coefficient."
+      ],
+      "major_error_concepts": [
+        "Assuming doubling Q at unchanged geometry necessarily doubles C rather than voltage."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-potential",
+        "electricity-and-magnetism-i.draft-electrostatic-potential-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-parallel-plate-capacitance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Parallel-Plate Capacitance",
+      "prompt": "What is Parallel-Plate Capacitance? State its defining idea and essential conditions.",
+      "definition": "An ideal vacuum parallel-plate capacitor has C=epsilon_0 A/d when plate separation is small compared with lateral dimensions and fringe effects are neglected. Charge accumulates with opposite signs on the facing conductors.",
+      "required_concepts": [
+        "Parallel-plate capacitance epsilon_0 A/d.",
+        "Neglect fringing under appropriate geometry."
+      ],
+      "accepted_variants": [
+        "Ideal plate capacitor."
+      ],
+      "major_error_concepts": [
+        "Using the formula unchanged when edge effects dominate the geometry."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitance",
+        "electricity-and-magnetism-i.draft-infinite-sheet-field",
+        "electricity-and-magnetism-i.draft-conductor-surface-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-series-capacitors",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Series Capacitors",
+      "prompt": "What is Series Capacitors? State its defining idea and essential conditions.",
+      "definition": "Ideal capacitors in series carry equal-magnitude incremental stored charge when intermediate nodes have the usual neutral initial condition. Their voltage differences add, giving 1/C_eq=sum 1/C_i for the standard series combination.",
+      "required_concepts": [
+        "Reciprocal capacitances add in series.",
+        "Intermediate-node charge assumptions stated."
+      ],
+      "accepted_variants": [
+        "Series capacitor equivalent."
+      ],
+      "major_error_concepts": [
+        "Adding capacitances directly for a simple series connection."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-parallel-capacitors",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Parallel Capacitors",
+      "prompt": "What is Parallel Capacitors? State its defining idea and essential conditions.",
+      "definition": "Capacitors in parallel share the same voltage across their terminals, while stored charges add. Their equivalent capacitance is the sum of the individual capacitances in the linear ideal model.",
+      "required_concepts": [
+        "Common voltage and additive capacitance."
+      ],
+      "accepted_variants": [
+        "Parallel capacitor equivalent."
+      ],
+      "major_error_concepts": [
+        "Assuming parallel capacitors must carry equal charges when their capacitances differ."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitance",
+        "electricity-and-magnetism-i.draft-series-capacitors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-capacitor-energy",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Capacitor Energy",
+      "prompt": "What is Capacitor Energy? State its defining idea and essential conditions.",
+      "definition": "The energy stored in a linear capacitor is U=one-half C V squared=Q squared/(2C)=one-half QV. Changes in capacitance require distinguishing fixed charge from fixed voltage because an attached source can exchange energy.",
+      "required_concepts": [
+        "Correct equivalent capacitor energy expressions.",
+        "Boundary condition on charge or voltage matters."
+      ],
+      "accepted_variants": [
+        "Capacitor electrostatic energy."
+      ],
+      "major_error_concepts": [
+        "Using QV without the one-half factor for energy stored by charging a linear capacitor from zero."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitance",
+        "electricity-and-magnetism-i.draft-electrostatic-potential-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-energy-density",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Energy Density",
+      "prompt": "What is Electric Energy Density? State its defining idea and essential conditions.",
+      "definition": "In vacuum the electric-field energy density is u_E=one-half epsilon_0 E squared. Integrating it over space gives field energy where finite; ideal point-charge self-energies require separate care.",
+      "required_concepts": [
+        "Vacuum electric energy per volume proportional to E squared."
+      ],
+      "accepted_variants": [
+        "Electrostatic field energy density."
+      ],
+      "major_error_concepts": [
+        "Using a volume energy density as total energy without integrating or multiplying by volume."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitor-energy",
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-dielectric-permittivity",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Dielectric Permittivity",
+      "prompt": "What is Dielectric Permittivity? State its defining idea and essential conditions.",
+      "definition": "A linear isotropic dielectric has permittivity epsilon relating its macroscopic response to electric fields under the model. Filling an ideal plate capacitor increases capacitance by the relative permittivity, but field changes depend on whether charge or voltage is fixed.",
+      "required_concepts": [
+        "Permittivity characterizes linear dielectric response.",
+        "Fixed-charge and fixed-voltage cases differ."
+      ],
+      "accepted_variants": [
+        "Dielectric medium."
+      ],
+      "major_error_concepts": [
+        "Claiming inserting a dielectric always reduces voltage even when an ideal source holds voltage fixed."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-insulator",
+        "electricity-and-magnetism-i.draft-parallel-plate-capacitance",
+        "electricity-and-magnetism-i.draft-capacitor-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-polarization",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Polarization",
+      "prompt": "What is Polarization? State its defining idea and essential conditions.",
+      "definition": "Polarization P is electric dipole moment per unit volume in a material. It describes the collective displacement or alignment of bound charges, rather than necessarily a transport current of free charges across the material.",
+      "required_concepts": [
+        "Dipole moment density."
+      ],
+      "accepted_variants": [
+        "Macroscopic electric polarization."
+      ],
+      "major_error_concepts": [
+        "Equating polarization with free charges continuously flowing through an ideal insulator."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-dipole",
+        "electricity-and-magnetism-i.draft-dielectric-permittivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-bound-charge",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Bound Charge",
+      "prompt": "What is Bound Charge? State its defining idea and essential conditions.",
+      "definition": "Polarization creates bound volume charge rho_b=-divergence P and surface charge sigma_b=P dot n at a material boundary under the standard macroscopic description. Uniform polarization can have no bulk bound charge while still producing surface charge.",
+      "required_concepts": [
+        "Bound volume and surface charge from polarization.",
+        "Uniform P can create surface charge."
+      ],
+      "accepted_variants": [
+        "Polarization charge."
+      ],
+      "major_error_concepts": [
+        "Assuming zero divergence of P implies no bound charge anywhere, including boundaries."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-polarization",
+        "electricity-and-magnetism-i.draft-surface-charge-density",
+        "electricity-and-magnetism-i.draft-volume-charge-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-displacement",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Displacement",
+      "prompt": "What is Electric Displacement? State its defining idea and essential conditions.",
+      "definition": "Electric displacement is D=epsilon_0 E+P in macroscopic SI electromagnetism. In a linear isotropic medium D=epsilon E, but the general definition does not assume that simple constitutive law.",
+      "required_concepts": [
+        "D combines vacuum field and polarization."
+      ],
+      "accepted_variants": [
+        "Electric displacement field."
+      ],
+      "major_error_concepts": [
+        "Assuming D=epsilon E with one scalar epsilon for every material and response regime."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-polarization",
+        "electricity-and-magnetism-i.draft-dielectric-permittivity",
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-gauss-law-for-displacement",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Gauss Law for Displacement",
+      "prompt": "What is Gauss Law for Displacement? State its defining idea and essential conditions.",
+      "definition": "The macroscopic Gauss law for D gives closed displacement flux equal to enclosed free charge. Bound-charge effects are included through P in D, so replacing free charge with all charge double-counts the polarization contribution.",
+      "required_concepts": [
+        "Closed D flux equals free enclosed charge."
+      ],
+      "accepted_variants": [
+        "Displacement-field Gauss law."
+      ],
+      "major_error_concepts": [
+        "Using total free-plus-bound charge on the right while retaining the definition D=epsilon_0 E+P."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-displacement",
+        "electricity-and-magnetism-i.draft-bound-charge",
+        "electricity-and-magnetism-i.draft-gauss-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-boundary-conditions",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Boundary Conditions",
+      "prompt": "What is Electric Boundary Conditions? State its defining idea and essential conditions.",
+      "definition": "Across an electrostatic interface, tangential E is continuous, while the jump in normal E equals total surface charge divided by epsilon_0. Equivalently the normal jump in D tracks free surface charge in the macroscopic description, with a consistent normal convention.",
+      "required_concepts": [
+        "Tangential E continuity and normal jump tied to surface charge."
+      ],
+      "accepted_variants": [
+        "Electrostatic interface conditions."
+      ],
+      "major_error_concepts": [
+        "Requiring the normal E component to be continuous across an arbitrary charged surface."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-gauss-law-for-displacement",
+        "electricity-and-magnetism-i.draft-conductor-surface-field",
+        "electricity-and-magnetism-i.draft-field-potential-relation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-current",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric Current",
+      "prompt": "What is Electric Current? State its defining idea and essential conditions.",
+      "definition": "Electric current is the rate of signed charge crossing a specified surface, I=dQ/dt. Conventional current follows positive-charge flow, opposite the drift direction of electrons in an ordinary metal.",
+      "required_concepts": [
+        "Charge flow rate and conventional positive direction."
+      ],
+      "accepted_variants": [
+        "Electrical current."
+      ],
+      "major_error_concepts": [
+        "Assuming electron drift and conventional current necessarily have the same direction."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-charge-conservation",
+        "electricity-and-magnetism-i.draft-conductor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-current-density",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Current Density",
+      "prompt": "What is Current Density? State its defining idea and essential conditions.",
+      "definition": "Current density J is local charge flow per area as a vector, with current through a surface I=integral J dot n dA. For one carrier species in a simple drift model, J=n q v_d.",
+      "required_concepts": [
+        "Vector charge flux density.",
+        "Surface integral gives current."
+      ],
+      "accepted_variants": [
+        "Electric current density."
+      ],
+      "major_error_concepts": [
+        "Multiplying current density magnitude by arbitrary area without considering orientation or nonuniformity."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-current",
+        "electricity-and-magnetism-i.draft-electric-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-charge-continuity-equation",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Charge Continuity Equation",
+      "prompt": "What is Charge Continuity Equation? State its defining idea and essential conditions.",
+      "definition": "Local charge conservation is partial rho/partial t+divergence J=0. Net outward current reduces charge stored inside a region, linking local densities to whole-system charge accounting.",
+      "required_concepts": [
+        "Continuity equation with opposite storage and outflow changes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming nonzero divergence of J is impossible even while local charge is accumulating."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-current-density",
+        "electricity-and-magnetism-i.draft-volume-charge-density",
+        "electricity-and-magnetism-i.draft-charge-conservation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-drift-velocity",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Drift Velocity",
+      "prompt": "What is Drift Velocity? State its defining idea and essential conditions.",
+      "definition": "Drift velocity is the average carrier motion associated with an applied field, distinct from rapid random microscopic motion. Electrical signals and energy transfer through a circuit need not travel at the slow carrier drift speed.",
+      "required_concepts": [
+        "Average directed carrier velocity.",
+        "Not the same as signal propagation speed."
+      ],
+      "accepted_variants": [
+        "Charge-carrier drift."
+      ],
+      "major_error_concepts": [
+        "Assuming a lamp waits for one electron to drift all the way from the source before responding."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-current-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-local-ohm-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Local Ohm Law",
+      "prompt": "What is Local Ohm Law? State its defining idea and essential conditions.",
+      "definition": "For an ohmic isotropic material in its applicable regime, J=sigma_c E, where sigma_c is conductivity. This proportional constitutive relation can depend on temperature and conditions and is not a universal law for every device.",
+      "required_concepts": [
+        "Local linear conductivity relation in a stated regime."
+      ],
+      "accepted_variants": [
+        "Microscopic Ohm law."
+      ],
+      "major_error_concepts": [
+        "Assuming all materials and devices have a constant field-independent conductivity."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-current-density",
+        "electricity-and-magnetism-i.draft-electric-field",
+        "electricity-and-magnetism-i.draft-conductor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-resistance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Resistance",
+      "prompt": "What is Resistance? State its defining idea and essential conditions.",
+      "definition": "Resistance relates terminal voltage to current as V=IR for an ohmic element under stated conditions. It is a circuit property distinct from material resistivity and can depend on geometry and temperature.",
+      "required_concepts": [
+        "Terminal voltage-current proportionality for an ohmic element."
+      ],
+      "accepted_variants": [
+        "Electrical resistance."
+      ],
+      "major_error_concepts": [
+        "Treating every nonlinear device as having one constant resistance for all voltages."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-local-ohm-law",
+        "electricity-and-magnetism-i.draft-electric-current"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-resistivity",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Resistivity",
+      "prompt": "What is Resistivity? State its defining idea and essential conditions.",
+      "definition": "For a uniform ohmic wire of length L and cross-sectional area A, R=rho_e L/A, where rho_e is electrical resistivity. Resistivity is inverse conductivity in the scalar model and must not be confused with charge or mass density.",
+      "required_concepts": [
+        "Resistance from resistivity times length divided by area."
+      ],
+      "accepted_variants": [
+        "Material resistivity relation."
+      ],
+      "major_error_concepts": [
+        "Using charge density in place of electrical resistivity because both are sometimes denoted rho."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-resistance",
+        "electricity-and-magnetism-i.draft-local-ohm-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-series-resistors",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Series Resistors",
+      "prompt": "What is Series Resistors? State its defining idea and essential conditions.",
+      "definition": "Ideal resistors in series carry the same current, and their voltage drops add. Their equivalent resistance is the sum of the individual resistances when no extra branch changes the current path.",
+      "required_concepts": [
+        "Common series current and additive resistances."
+      ],
+      "accepted_variants": [
+        "Series resistance equivalent."
+      ],
+      "major_error_concepts": [
+        "Assuming series components have equal voltage drops despite different resistances."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-resistance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-parallel-resistors",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Parallel Resistors",
+      "prompt": "What is Parallel Resistors? State its defining idea and essential conditions.",
+      "definition": "Ideal resistors in parallel share a terminal voltage, while currents add. Their equivalent conductance is the sum of conductances, or 1/R_eq=sum 1/R_i for positive resistances.",
+      "required_concepts": [
+        "Common voltage and reciprocal resistance addition."
+      ],
+      "accepted_variants": [
+        "Parallel resistance equivalent."
+      ],
+      "major_error_concepts": [
+        "Adding resistances directly for a simple parallel network."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-resistance",
+        "electricity-and-magnetism-i.draft-series-resistors"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-resistive-power",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Resistive Power",
+      "prompt": "What is Resistive Power? State its defining idea and essential conditions.",
+      "definition": "An ohmic resistor dissipates power P=IV=I squared R=V squared/R. These forms assume the passive sign convention and the stated ohmic relation; dissipated energy accumulates over time.",
+      "required_concepts": [
+        "Equivalent resistor power formulas.",
+        "Power differs from energy."
+      ],
+      "accepted_variants": [
+        "Joule heating rate."
+      ],
+      "major_error_concepts": [
+        "Reporting I squared R as energy without a time interval or integration."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-resistance",
+        "electricity-and-magnetism-i.draft-electric-current"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electromotive-force",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electromotive Force",
+      "prompt": "What is Electromotive Force? State its defining idea and essential conditions.",
+      "definition": "Electromotive force is energy supplied per unit charge around a source or circuit-driving process. Despite its name it has units of voltage, and it need not equal the terminal voltage of a loaded nonideal source.",
+      "required_concepts": [
+        "Energy supplied per charge, not mechanical force."
+      ],
+      "accepted_variants": [
+        "EMF."
+      ],
+      "major_error_concepts": [
+        "Giving EMF units of newtons or equating it automatically with every loaded terminal voltage."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-potential",
+        "electricity-and-magnetism-i.draft-electric-current"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-internal-resistance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Internal Resistance",
+      "prompt": "What is Internal Resistance? State its defining idea and essential conditions.",
+      "definition": "A simple source model combines an ideal EMF with internal resistance. While delivering current in that model, terminal voltage is EMF minus the internal resistive drop; charging or reversed current changes the signed relation.",
+      "required_concepts": [
+        "Source internal drop changes loaded terminal voltage."
+      ],
+      "accepted_variants": [
+        "Battery internal-resistance model."
+      ],
+      "major_error_concepts": [
+        "Assuming terminal voltage always equals EMF regardless of current or internal resistance."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electromotive-force",
+        "electricity-and-magnetism-i.draft-resistance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-kirchhoff-current-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Kirchhoff Current Law",
+      "prompt": "What is Kirchhoff Current Law? State its defining idea and essential conditions.",
+      "definition": "Kirchhoff's current law states that currents entering and leaving a circuit node balance when charge accumulation there is negligible. More generally their imbalance equals the node's charge accumulation rate.",
+      "required_concepts": [
+        "Node current balance with storage assumption."
+      ],
+      "accepted_variants": [
+        "Junction rule."
+      ],
+      "major_error_concepts": [
+        "Using exact zero current sum while excluding a node's significant charge-storage term."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-charge-continuity-equation",
+        "electricity-and-magnetism-i.draft-electric-current"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-kirchhoff-voltage-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Kirchhoff Voltage Law",
+      "prompt": "What is Kirchhoff Voltage Law? State its defining idea and essential conditions.",
+      "definition": "Kirchhoff's voltage law balances voltage rises and drops around a lumped loop under an appropriate quasistatic circuit description. Time-varying linked magnetic flux must be included through induced EMF rather than ignored as though the electric field were everywhere conservative.",
+      "required_concepts": [
+        "Loop voltage accounting with induction handled explicitly."
+      ],
+      "accepted_variants": [
+        "Loop rule."
+      ],
+      "major_error_concepts": [
+        "Applying zero electrostatic circulation around a changing magnetic flux without an induced term."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-potential-difference",
+        "electricity-and-magnetism-i.draft-electromotive-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-rc-circuit",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "RC Circuit",
+      "prompt": "What is RC Circuit? State its defining idea and essential conditions.",
+      "definition": "An RC circuit combines resistive dissipation with capacitor charge storage. Its transient follows a first-order equation because capacitor current is C dV_C/dt for constant capacitance.",
+      "required_concepts": [
+        "Resistor-capacitor first-order storage dynamics."
+      ],
+      "accepted_variants": [
+        "Resistive-capacitive circuit."
+      ],
+      "major_error_concepts": [
+        "Assuming capacitor voltage can jump instantly under a finite current and fixed finite capacitance."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitance",
+        "electricity-and-magnetism-i.draft-resistance",
+        "electricity-and-magnetism-i.draft-electric-current"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-rc-time-constant",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "RC Time Constant",
+      "prompt": "What is RC Time Constant? State its defining idea and essential conditions.",
+      "definition": "The time constant of a simple single-mode RC circuit is tau=R C for the resistance seen by the capacitor in the stated configuration. It sets exponential relaxation, not the exact finite time at which the transient becomes mathematically zero.",
+      "required_concepts": [
+        "RC exponential timescale."
+      ],
+      "accepted_variants": [
+        "Capacitive relaxation time."
+      ],
+      "major_error_concepts": [
+        "Claiming the exponential transient is exactly zero after one time constant."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-rc-circuit"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-capacitor-charging",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Capacitor Charging",
+      "prompt": "What is Capacitor Charging? State its defining idea and essential conditions.",
+      "definition": "An initially uncharged capacitor connected to a constant ideal voltage through resistance approaches that voltage as V_C=V_source(1-exp(-t/RC)). Its charging current starts largest and decays under the simple circuit assumptions.",
+      "required_concepts": [
+        "Exponential approach to source voltage from zero initial charge."
+      ],
+      "accepted_variants": [
+        "RC charging transient."
+      ],
+      "major_error_concepts": [
+        "Using the zero-initial-charge formula unchanged for an arbitrary precharged capacitor."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-rc-time-constant",
+        "electricity-and-magnetism-i.draft-internal-resistance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-capacitor-discharging",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Capacitor Discharging",
+      "prompt": "What is Capacitor Discharging? State its defining idea and essential conditions.",
+      "definition": "A capacitor discharging through a resistor has V_C(t)=V_0 exp(-t/RC) in the ideal simple loop. Its stored energy decays with the square of the voltage and is dissipated in the resistor when no other energy path is included.",
+      "required_concepts": [
+        "Exponential voltage decay and resistive energy transfer."
+      ],
+      "accepted_variants": [
+        "RC discharge transient."
+      ],
+      "major_error_concepts": [
+        "Using the voltage decay factor unchanged for stored energy without squaring it."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-rc-time-constant",
+        "electricity-and-magnetism-i.draft-capacitor-energy",
+        "electricity-and-magnetism-i.draft-resistive-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Field",
+      "prompt": "What is Magnetic Field? State its defining idea and essential conditions.",
+      "definition": "A magnetic field B is the vector field entering the velocity-dependent magnetic force q v cross B. Its direction is not defined as the force direction on a stationary charge, which experiences no magnetic force from B alone.",
+      "required_concepts": [
+        "Field determining velocity-cross-field force."
+      ],
+      "accepted_variants": [
+        "Magnetic flux density."
+      ],
+      "major_error_concepts": [
+        "Defining B as force per charge on a stationary test charge."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-lorentz-force",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Lorentz Force",
+      "prompt": "What is Lorentz Force? State its defining idea and essential conditions.",
+      "definition": "The Lorentz force on a point charge is F=q(E+v cross B) in the classical model. The magnetic contribution changes sign with charge and depends on velocity relative to the chosen inertial frame.",
+      "required_concepts": [
+        "Electric plus velocity-cross-magnetic contributions."
+      ],
+      "accepted_variants": [
+        "Electromagnetic force law."
+      ],
+      "major_error_concepts": [
+        "Using v dot B as the magnetic force vector."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-field",
+        "electricity-and-magnetism-i.draft-electric-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-force-and-work",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Force and Work",
+      "prompt": "What is Magnetic Force and Work? State its defining idea and essential conditions.",
+      "definition": "The magnetic force on a point charge is perpendicular to its instantaneous velocity, so its direct power F_B dot v is zero. Magnetic interactions can still accompany energy transfer through electric fields, constraints, or other system components.",
+      "required_concepts": [
+        "Magnetic part does no direct work on a point charge."
+      ],
+      "accepted_variants": [
+        "Zero instantaneous magnetic-force power."
+      ],
+      "major_error_concepts": [
+        "Concluding no energy exchange can occur anywhere in a system that contains a magnetic field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-lorentz-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-uniform-magnetic-circular-motion",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Uniform Magnetic Circular Motion",
+      "prompt": "What is Uniform Magnetic Circular Motion? State its defining idea and essential conditions.",
+      "definition": "A charged particle moving perpendicular to a uniform magnetic field follows a circular path in the nonrelativistic ideal case, with radius m v/(|q|B). Its angular frequency magnitude is |q|B/m and the charge sign controls the rotation direction.",
+      "required_concepts": [
+        "Circular radius and cyclotron frequency under perpendicular uniform-field assumptions."
+      ],
+      "accepted_variants": [
+        "Cyclotron motion."
+      ],
+      "major_error_concepts": [
+        "Using the signed charge to produce a negative physical radius."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-lorentz-force",
+        "electricity-and-magnetism-i.draft-magnetic-force-and-work"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-helical-magnetic-motion",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Helical Magnetic Motion",
+      "prompt": "What is Helical Magnetic Motion? State its defining idea and essential conditions.",
+      "definition": "In a uniform magnetic field with no electric field, a particle's parallel velocity stays constant while its perpendicular velocity rotates. Their combination gives a helical trajectory unless one component vanishes.",
+      "required_concepts": [
+        "Parallel uniform motion plus perpendicular circular motion."
+      ],
+      "accepted_variants": [
+        "Helical charged-particle orbit."
+      ],
+      "major_error_concepts": [
+        "Assuming the magnetic force changes the parallel speed in this ideal uniform-field case."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-uniform-magnetic-circular-motion",
+        "electricity-and-magnetism-i.draft-lorentz-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-force-on-a-wire",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Force on a Wire",
+      "prompt": "What is Magnetic Force on a Wire? State its defining idea and essential conditions.",
+      "definition": "The magnetic force on a thin current element is dF=I dl cross B for the appropriate steady-current model. For a straight segment in uniform B it becomes I L cross B, where L follows conventional current.",
+      "required_concepts": [
+        "Current-direction cross-product force."
+      ],
+      "accepted_variants": [
+        "Force on a current-carrying wire."
+      ],
+      "major_error_concepts": [
+        "Ignoring the angle between wire current and magnetic field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-current",
+        "electricity-and-magnetism-i.draft-lorentz-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-current-loop-torque",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Current-Loop Torque",
+      "prompt": "What is Current-Loop Torque? State its defining idea and essential conditions.",
+      "definition": "A planar current loop in a uniform magnetic field experiences torque tau=mu cross B, where mu=I A n follows the right-hand current convention. Its net force is zero in a uniform field, though torque may be nonzero.",
+      "required_concepts": [
+        "Loop torque from magnetic moment cross field."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming zero net force rules out a torque on a loop."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-force-on-a-wire",
+        "electricity-and-magnetism-i.draft-magnetic-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-dipole-moment",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Dipole Moment",
+      "prompt": "What is Magnetic Dipole Moment? State its defining idea and essential conditions.",
+      "definition": "The magnetic dipole moment of a small planar current loop is mu=I A n. In a prescribed external field its orientation energy is U=-mu dot B for a fixed moment, with force possible in nonuniform fields.",
+      "required_concepts": [
+        "Current-area moment and fixed-moment orientation energy."
+      ],
+      "accepted_variants": [
+        "Magnetic moment of a loop."
+      ],
+      "major_error_concepts": [
+        "Defining loop magnetic moment without specifying the current orientation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-current-loop-torque"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-biot-savart-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Biot-Savart Law",
+      "prompt": "What is Biot-Savart Law? State its defining idea and essential conditions.",
+      "definition": "The Biot-Savart law gives the magnetostatic field contribution dB=(mu_0/4pi)I dl cross R_hat/R squared for a thin steady current. The source-to-observer vector and cross-product order determine its direction.",
+      "required_concepts": [
+        "Steady-current field integral with dl cross source-observer direction."
+      ],
+      "accepted_variants": [
+        "Magnetostatic current-element field law."
+      ],
+      "major_error_concepts": [
+        "Applying the steady-current formula as an exact instantaneous law for arbitrary rapidly changing sources."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-current",
+        "electricity-and-magnetism-i.draft-magnetic-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-long-wire-magnetic-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Long-Wire Magnetic Field",
+      "prompt": "What is Long-Wire Magnetic Field? State its defining idea and essential conditions.",
+      "definition": "An ideal infinite straight wire carrying steady current has magnetic field magnitude mu_0 I/(2pi r) circling the wire. The direction follows the right-hand rule relative to conventional current.",
+      "required_concepts": [
+        "Circular inverse-distance field around a long straight current."
+      ],
+      "accepted_variants": [
+        "Straight-wire magnetic field."
+      ],
+      "major_error_concepts": [
+        "Pointing the field radially away from the wire as if it were an electric line-charge field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-biot-savart-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-circular-loop-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Circular-Loop Field",
+      "prompt": "What is Circular-Loop Field? State its defining idea and essential conditions.",
+      "definition": "At the center of a circular thin loop of radius R carrying steady current I, the magnetic field magnitude is mu_0 I/(2R). The field points along the loop's normal according to the current's right-hand orientation.",
+      "required_concepts": [
+        "Center-of-loop field and normal direction."
+      ],
+      "accepted_variants": [
+        "Circular-current center field."
+      ],
+      "major_error_concepts": [
+        "Applying the center-field formula unchanged at every off-axis location."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-biot-savart-law",
+        "electricity-and-magnetism-i.draft-current-loop-torque"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-ampere-circuital-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Ampere Circuital Law",
+      "prompt": "What is Ampere Circuital Law? State its defining idea and essential conditions.",
+      "definition": "In magnetostatics, the circulation of B around a closed curve equals mu_0 times the signed steady current through a spanning surface. Symmetry is needed to extract a simple field value from the circulation integral.",
+      "required_concepts": [
+        "Closed B circulation equals mu_0 enclosed steady current."
+      ],
+      "accepted_variants": [
+        "Magnetostatic Ampere law."
+      ],
+      "major_error_concepts": [
+        "Assuming a constant B magnitude along any chosen loop without a symmetry argument."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-biot-savart-law",
+        "electricity-and-magnetism-i.draft-current-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-solenoid-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Solenoid Field",
+      "prompt": "What is Solenoid Field? State its defining idea and essential conditions.",
+      "definition": "Inside an ideal long solenoid in vacuum, the field is approximately uniform with magnitude mu_0 n I, where n is turns per unit length. End effects and external fields are neglected in the long-solenoid approximation.",
+      "required_concepts": [
+        "Long-solenoid field mu_0 n I.",
+        "End effects excluded."
+      ],
+      "accepted_variants": [
+        "Ideal solenoid field."
+      ],
+      "major_error_concepts": [
+        "Using total turn count in place of turns per length without dividing by length."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-ampere-circuital-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-toroid-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Toroid Field",
+      "prompt": "What is Toroid Field? State its defining idea and essential conditions.",
+      "definition": "An ideal tightly wound toroid with N turns has an approximately azimuthal interior field B=mu_0 N I/(2pi r) in vacuum. It is not exactly constant across a thick toroidal cross section because the radius varies.",
+      "required_concepts": [
+        "Toroid field inversely proportional to azimuthal radius."
+      ],
+      "accepted_variants": [
+        "Toroidal winding magnetic field."
+      ],
+      "major_error_concepts": [
+        "Assuming the ideal field is uniform across arbitrary radial thickness."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-ampere-circuital-law",
+        "electricity-and-magnetism-i.draft-solenoid-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-no-magnetic-monopoles",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "No Magnetic Monopoles",
+      "prompt": "What is No Magnetic Monopoles? State its defining idea and essential conditions.",
+      "definition": "Classical electromagnetism without magnetic monopoles assigns zero net magnetic flux through every closed surface. Magnetic field lines have no isolated source or sink in this model, unlike electric field lines from charge.",
+      "required_concepts": [
+        "Zero closed magnetic flux under the no-monopole law."
+      ],
+      "accepted_variants": [
+        "Absence of isolated magnetic poles in the classical model."
+      ],
+      "major_error_concepts": [
+        "Claiming zero net magnetic flux means B must be zero everywhere on a closed surface."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-field",
+        "electricity-and-magnetism-i.draft-electric-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-limits-of-magnetostatic-ampere-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Limits of Magnetostatic Ampere Law",
+      "prompt": "What is Limits of Magnetostatic Ampere Law? State its defining idea and essential conditions.",
+      "definition": "The magnetostatic Ampere law alone is incomplete for changing electric fields. Maxwell's additional electric-flux term makes the circulation relation compatible with charge conservation, including charging-capacitor situations.",
+      "required_concepts": [
+        "Time-varying electric field requires displacement contribution."
+      ],
+      "accepted_variants": [
+        "Dynamic correction to Ampere law."
+      ],
+      "major_error_concepts": [
+        "Applying a conduction-current-only loop law to every changing-field configuration."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-ampere-circuital-law",
+        "electricity-and-magnetism-i.draft-charge-continuity-equation",
+        "electricity-and-magnetism-i.draft-capacitor-charging"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-flux",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Flux",
+      "prompt": "What is Magnetic Flux? State its defining idea and essential conditions.",
+      "definition": "Magnetic flux is Phi_B=integral B dot n dA through a specified oriented surface. It can change because the field, area, or orientation changes, and it is not simply B times area unless the geometry supports that simplification.",
+      "required_concepts": [
+        "Oriented normal magnetic-field integral."
+      ],
+      "accepted_variants": [
+        "Magnetic surface flux."
+      ],
+      "major_error_concepts": [
+        "Ignoring orientation or nonuniformity when replacing flux by B A."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-field",
+        "electricity-and-magnetism-i.draft-electric-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Faraday Induction Law",
+      "prompt": "What is Faraday Induction Law? State its defining idea and essential conditions.",
+      "definition": "Faraday's induction law relates the oriented EMF around a circuit to the negative rate of change of linked magnetic flux, with the moving-circuit interpretation handled consistently. A changing flux can arise from changing B or moving geometry.",
+      "required_concepts": [
+        "Induced EMF equals negative flux-change rate.",
+        "Orientation and circuit motion matter."
+      ],
+      "accepted_variants": [
+        "Electromagnetic induction law."
+      ],
+      "major_error_concepts": [
+        "Restricting induction to changing field magnitude while ignoring changing area or orientation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-flux",
+        "electricity-and-magnetism-i.draft-electromotive-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-lenz-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Lenz Law",
+      "prompt": "What is Lenz Law? State its defining idea and essential conditions.",
+      "definition": "Lenz's law gives the direction of induced response: it opposes the change in magnetic flux that produces it under the passive circuit interpretation. It opposes a change, not necessarily the original field itself.",
+      "required_concepts": [
+        "Induction opposes the producing flux change."
+      ],
+      "accepted_variants": [
+        "Direction rule for passive induction."
+      ],
+      "major_error_concepts": [
+        "Claiming induced fields always oppose the existing B even when that existing field is decreasing."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-faraday-induction-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-motional-emf",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Motional EMF",
+      "prompt": "What is Motional EMF? State its defining idea and essential conditions.",
+      "definition": "Motional EMF arises when charges in a moving conductor experience q v cross B. Around a moving circuit, the relevant force-per-charge integral includes both electric and motion-induced magnetic terms with the chosen circuit velocity.",
+      "required_concepts": [
+        "Conductor motion produces magnetic force per charge."
+      ],
+      "accepted_variants": [
+        "Motion-induced electromotive force."
+      ],
+      "major_error_concepts": [
+        "Attributing all motional EMF to a changing B at a fixed location when B can be steady."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-lorentz-force",
+        "electricity-and-magnetism-i.draft-faraday-induction-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-moving-rod-emf",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Moving-Rod EMF",
+      "prompt": "What is Moving-Rod EMF? State its defining idea and essential conditions.",
+      "definition": "A straight rod of length l moving perpendicular to both its length and a uniform magnetic field has ideal motional EMF magnitude B l v. More general orientation requires the integral of (v cross B) dot dl rather than this simple product.",
+      "required_concepts": [
+        "Blv under mutually perpendicular geometry."
+      ],
+      "accepted_variants": [
+        "Sliding-rod EMF."
+      ],
+      "major_error_concepts": [
+        "Using Blv unchanged when the rod moves parallel to B."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-motional-emf"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-induced-electric-field",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Induced Electric Field",
+      "prompt": "What is Induced Electric Field? State its defining idea and essential conditions.",
+      "definition": "A time-varying magnetic flux produces an electric field with nonzero closed-loop circulation. Such a field cannot be described globally by a single electrostatic scalar potential alone, even though generalized potentials can describe it.",
+      "required_concepts": [
+        "Induced electric circulation differs from electrostatics."
+      ],
+      "accepted_variants": [
+        "Nonconservative induced electric field."
+      ],
+      "major_error_concepts": [
+        "Assuming E always equals minus a time-independent scalar gradient in every electromagnetic situation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-faraday-induction-law",
+        "electricity-and-magnetism-i.draft-potential-difference",
+        "electricity-and-magnetism-i.draft-field-potential-relation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-self-inductance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Self-Inductance",
+      "prompt": "What is Self-Inductance? State its defining idea and essential conditions.",
+      "definition": "Self-inductance relates a circuit's own current to its linked magnetic flux in a linear fixed-geometry model, lambda_flux=L I. The resulting induced EMF opposes current change; nonlinear magnetic materials can make a constant L inadequate.",
+      "required_concepts": [
+        "Current-to-flux-linkage coefficient for a linear circuit."
+      ],
+      "accepted_variants": [
+        "Circuit self-inductance."
+      ],
+      "major_error_concepts": [
+        "Confusing total flux linkage with flux through one turn when many turns link the same flux."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-flux",
+        "electricity-and-magnetism-i.draft-faraday-induction-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-inductor-voltage",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Inductor Voltage",
+      "prompt": "What is Inductor Voltage? State its defining idea and essential conditions.",
+      "definition": "For an ideal linear inductor under the passive terminal convention, v_L=L dI/dt. The induced source EMF is oppositely signed in Faraday's convention, so terminal voltage and induced EMF labels must be kept consistent.",
+      "required_concepts": [
+        "Passive inductor voltage equals L times current rate."
+      ],
+      "accepted_variants": [
+        "Inductor voltage-current relation."
+      ],
+      "major_error_concepts": [
+        "Confusing passive terminal voltage with the negative self-induced EMF without specifying orientation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-self-inductance",
+        "electricity-and-magnetism-i.draft-faraday-induction-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-inductor-energy",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Inductor Energy",
+      "prompt": "What is Inductor Energy? State its defining idea and essential conditions.",
+      "definition": "A linear inductor stores magnetic energy U=one-half L I squared. Its ideal current cannot jump under a finite applied voltage, because that would require an impulsive current derivative.",
+      "required_concepts": [
+        "Magnetic stored energy and continuous-current implication."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using LI as energy or assuming arbitrary instantaneous current jumps with bounded voltage."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-inductor-voltage"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-energy-density",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Energy Density",
+      "prompt": "What is Magnetic Energy Density? State its defining idea and essential conditions.",
+      "definition": "In vacuum the magnetic-field energy density is u_B=B squared/(2mu_0). Energy-density formulas in materials require the appropriate constitutive and reversibility assumptions rather than blindly replacing constants in every nonlinear medium.",
+      "required_concepts": [
+        "Vacuum magnetic energy per volume."
+      ],
+      "accepted_variants": [
+        "Magnetic field energy density."
+      ],
+      "major_error_concepts": [
+        "Applying the linear vacuum energy formula unchanged to every hysteretic material without accounting for material response."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-inductor-energy",
+        "electricity-and-magnetism-i.draft-magnetic-field"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-mutual-inductance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Mutual Inductance",
+      "prompt": "What is Mutual Inductance? State its defining idea and essential conditions.",
+      "definition": "Mutual inductance relates current in one circuit to flux linkage in another under a linear fixed-geometry model. A changing source current induces a voltage in the other circuit, with sign determined by winding orientation and reference directions.",
+      "required_concepts": [
+        "Cross-circuit current-to-flux-linkage coupling."
+      ],
+      "accepted_variants": [
+        "Mutual inductive coupling."
+      ],
+      "major_error_concepts": [
+        "Assuming the induced voltage has a universal sign independent of winding orientation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-self-inductance",
+        "electricity-and-magnetism-i.draft-faraday-induction-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-rl-transient",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "RL Transient",
+      "prompt": "What is RL Transient? State its defining idea and essential conditions.",
+      "definition": "A simple series RL circuit has current relaxation time tau=L/R. After a DC source step, current approaches its steady value exponentially because inductance resists rapid current change while resistance dissipates energy.",
+      "required_concepts": [
+        "RL timescale L/R and exponential current response."
+      ],
+      "accepted_variants": [
+        "Resistive-inductive transient."
+      ],
+      "major_error_concepts": [
+        "Using RC as the time constant of a circuit containing only R and L."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-inductor-voltage",
+        "electricity-and-magnetism-i.draft-resistance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-lc-oscillation",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "LC Oscillation",
+      "prompt": "What is LC Oscillation? State its defining idea and essential conditions.",
+      "definition": "An ideal lossless LC circuit exchanges energy between capacitor electric storage and inductor magnetic storage. Its natural angular frequency is 1/sqrt(LC), with amplitude fixed by initial energy in the ideal model.",
+      "required_concepts": [
+        "Electric-magnetic energy exchange with omega_0=1/sqrt(LC)."
+      ],
+      "accepted_variants": [
+        "LC oscillator."
+      ],
+      "major_error_concepts": [
+        "Assuming a lossless LC oscillator decays despite having no modeled loss path."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitor-energy",
+        "electricity-and-magnetism-i.draft-inductor-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-rlc-circuit",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "RLC Circuit",
+      "prompt": "What is RLC Circuit? State its defining idea and essential conditions.",
+      "definition": "A series RLC circuit combines oscillatory storage with resistive damping. Its charge equation has L q double prime+R q prime+q/C equal to the source voltage, linking circuit behavior to a forced damped oscillator.",
+      "required_concepts": [
+        "Second-order charge equation with inductive, resistive, and capacitive terms."
+      ],
+      "accepted_variants": [
+        "Damped electrical oscillator."
+      ],
+      "major_error_concepts": [
+        "Assigning the resistance term to q rather than q prime in the stated series charge equation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-lc-oscillation",
+        "electricity-and-magnetism-i.draft-resistive-power",
+        "electricity-and-magnetism-i.draft-inductor-voltage"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-sinusoidal-alternating-current",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Sinusoidal Alternating Current",
+      "prompt": "What is Sinusoidal Alternating Current? State its defining idea and essential conditions.",
+      "definition": "Sinusoidal alternating current changes sign periodically and is described by amplitude, angular frequency, and phase. The sinusoidal steady-state model excludes switching transients and does not cover every nonsinusoidal AC waveform with one phasor.",
+      "required_concepts": [
+        "Periodic signed sinusoid with amplitude, frequency, and phase."
+      ],
+      "accepted_variants": [
+        "Sinusoidal AC."
+      ],
+      "major_error_concepts": [
+        "Assuming any alternating waveform has the same single-frequency phasor representation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-current",
+        "electricity-and-magnetism-i.draft-rlc-circuit"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-rms-current-and-voltage",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "RMS Current and Voltage",
+      "prompt": "What is RMS Current and Voltage? State its defining idea and essential conditions.",
+      "definition": "The RMS value is the square root of the time average of the squared signal. For a sinusoid it equals peak magnitude divided by sqrt(2), making resistor average power I_rms squared R in steady conditions.",
+      "required_concepts": [
+        "Root-mean-square definition and sinusoidal peak conversion."
+      ],
+      "accepted_variants": [
+        "Effective AC magnitude."
+      ],
+      "major_error_concepts": [
+        "Using peak divided by two rather than square root of two for a sinusoidal RMS value."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-sinusoidal-alternating-current",
+        "electricity-and-magnetism-i.draft-resistive-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-circuit-phasor",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Circuit Phasor",
+      "prompt": "What is Circuit Phasor? State its defining idea and essential conditions.",
+      "definition": "An AC phasor is a complex amplitude representing a sinusoidal variable at a fixed frequency under a stated time convention. Circuit equations then use complex algebra while the physical signal is recovered as the corresponding real oscillation.",
+      "required_concepts": [
+        "Fixed-frequency complex amplitude with consistent convention."
+      ],
+      "accepted_variants": [
+        "Sinusoidal circuit phasor."
+      ],
+      "major_error_concepts": [
+        "Combining different frequencies in one phasor equation as though they shared the same time factor."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-sinusoidal-alternating-current",
+        "mathematical-methods-for-physics-i.draft-phasor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-inductive-reactance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Inductive Reactance",
+      "prompt": "What is Inductive Reactance? State its defining idea and essential conditions.",
+      "definition": "Inductive reactance magnitude is X_L=omega L. For an ideal inductor under the usual sinusoidal convention, voltage leads current by a quarter cycle, and reactance grows with frequency.",
+      "required_concepts": [
+        "Reactance omega L and voltage lead."
+      ],
+      "accepted_variants": [
+        "Inductor AC opposition."
+      ],
+      "major_error_concepts": [
+        "Claiming an ideal inductor's reactance decreases as frequency rises."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-inductor-voltage",
+        "electricity-and-magnetism-i.draft-circuit-phasor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-capacitive-reactance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Capacitive Reactance",
+      "prompt": "What is Capacitive Reactance? State its defining idea and essential conditions.",
+      "definition": "Capacitive reactance magnitude is X_C=1/(omega C). For an ideal capacitor, current leads voltage by a quarter cycle, and reactance decreases with increasing frequency.",
+      "required_concepts": [
+        "Reactance inverse to omega C and current lead."
+      ],
+      "accepted_variants": [
+        "Capacitor AC opposition."
+      ],
+      "major_error_concepts": [
+        "Treating a capacitor as a steady DC short after its ideal charging transient has ended."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitance",
+        "electricity-and-magnetism-i.draft-circuit-phasor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-impedance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Impedance",
+      "prompt": "What is Impedance? State its defining idea and essential conditions.",
+      "definition": "Impedance is the complex phasor ratio Z=V/I at a stated frequency. Its real part describes resistive behavior in a passive simple element, while its imaginary part represents reactive phase response under the chosen convention.",
+      "required_concepts": [
+        "Complex voltage-to-current ratio.",
+        "Phase information retained."
+      ],
+      "accepted_variants": [
+        "Complex AC impedance."
+      ],
+      "major_error_concepts": [
+        "Adding reactance magnitudes as ordinary positive resistances while ignoring phase."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-circuit-phasor",
+        "electricity-and-magnetism-i.draft-inductive-reactance",
+        "electricity-and-magnetism-i.draft-capacitive-reactance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-series-rlc-impedance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Series RLC Impedance",
+      "prompt": "What is Series RLC Impedance? State its defining idea and essential conditions.",
+      "definition": "For a series RLC circuit using exp(i omega t), Z=R+i(omega L-1/(omega C)). The impedance magnitude is sqrt(R squared+(omega L-1/(omega C)) squared), so opposite reactances can cancel.",
+      "required_concepts": [
+        "Series resistive and signed reactive sum."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding inductive and capacitive reactance magnitudes instead of their signed difference."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-impedance",
+        "electricity-and-magnetism-i.draft-rlc-circuit"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-series-circuit-resonance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Series Circuit Resonance",
+      "prompt": "What is Series Circuit Resonance? State its defining idea and essential conditions.",
+      "definition": "In the ideal series RLC steady-state model, impedance is purely resistive at omega=1/sqrt(LC). Current then peaks for fixed source-voltage amplitude and constant R, though other circuit observables or topologies can have different resonance peaks.",
+      "required_concepts": [
+        "Series reactance cancellation at LC frequency.",
+        "Resonance observable and topology specified."
+      ],
+      "accepted_variants": [
+        "Series electrical resonance."
+      ],
+      "major_error_concepts": [
+        "Assuming every circuit voltage and current peaks at the same frequency in all topologies."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-series-rlc-impedance",
+        "electricity-and-magnetism-i.draft-lc-oscillation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-ac-power-factor",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "AC Power Factor",
+      "prompt": "What is AC Power Factor? State its defining idea and essential conditions.",
+      "definition": "Average sinusoidal power is V_rms I_rms cos phi, where phi is the phase difference between voltage and current. The power factor cos phi distinguishes real energy transfer from reactive storage exchange in the simple sinusoidal case.",
+      "required_concepts": [
+        "Average power includes voltage-current phase factor."
+      ],
+      "accepted_variants": [
+        "Real AC power and power factor."
+      ],
+      "major_error_concepts": [
+        "Equating V_rms I_rms with real average power for arbitrary reactive phase."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-rms-current-and-voltage",
+        "electricity-and-magnetism-i.draft-impedance",
+        "electricity-and-magnetism-i.draft-resistive-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-ideal-transformer",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Ideal Transformer",
+      "prompt": "What is Ideal Transformer? State its defining idea and essential conditions.",
+      "definition": "An ideal transformer couples changing magnetic flux between windings, giving voltage ratio equal to turn ratio under its assumptions. With lossless transfer, current magnitudes scale inversely, and the ideal ratio does not imply voltage transformation from an unchanging DC flux.",
+      "required_concepts": [
+        "Turn-ratio voltage and inverse current relation in ideal AC coupling."
+      ],
+      "accepted_variants": [
+        "Ideal mutual-induction transformer."
+      ],
+      "major_error_concepts": [
+        "Assuming an ideal transformer continuously transforms a steady DC voltage after all flux changes stop."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-mutual-inductance",
+        "electricity-and-magnetism-i.draft-faraday-induction-law",
+        "electricity-and-magnetism-i.draft-ac-power-factor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-eddy-currents",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Eddy Currents",
+      "prompt": "What is Eddy Currents? State its defining idea and essential conditions.",
+      "definition": "Eddy currents are circulating currents induced within extended conductors by changing magnetic flux or motion through appropriate field patterns. Their magnetic effects oppose the producing change, while resistance can dissipate mechanical or field-supplied energy as heat.",
+      "required_concepts": [
+        "Induced bulk current loops with Lenz-law response."
+      ],
+      "accepted_variants": [
+        "Circulating induction currents."
+      ],
+      "major_error_concepts": [
+        "Assuming eddy-current heating creates energy without a driving source."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-faraday-induction-law",
+        "electricity-and-magnetism-i.draft-lenz-law",
+        "electricity-and-magnetism-i.draft-resistive-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-displacement-current",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Displacement Current",
+      "prompt": "What is Displacement Current? State its defining idea and essential conditions.",
+      "definition": "In vacuum Maxwell's displacement-current term is epsilon_0 times the time derivative of electric flux in the integral Ampere-Maxwell law. It contributes even where conduction charge does not cross the surface, as between ideal capacitor plates.",
+      "required_concepts": [
+        "Electric-flux change supplies Ampere-Maxwell contribution."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Interpreting displacement current as requiring electrons to cross the insulating capacitor gap."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-limits-of-magnetostatic-ampere-law",
+        "electricity-and-magnetism-i.draft-capacitor-charging",
+        "electricity-and-magnetism-i.draft-electric-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-local-electric-gauss-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Local Electric Gauss Law",
+      "prompt": "What is Local Electric Gauss Law? State its defining idea and essential conditions.",
+      "definition": "The differential electric Gauss law in vacuum is divergence E=rho/epsilon_0, where rho includes all charge. It is the local source form of the closed-flux law under the relevant field or distributional interpretation.",
+      "required_concepts": [
+        "Local electric divergence equals total charge density divided by epsilon_0."
+      ],
+      "accepted_variants": [
+        "Local Gauss law for E."
+      ],
+      "major_error_concepts": [
+        "Using only free charge with E while omitting bound charge without switching to D."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-gauss-law",
+        "electricity-and-magnetism-i.draft-volume-charge-density",
+        "electricity-and-magnetism-i.draft-gauss-law-for-displacement"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Local Magnetic Gauss Law",
+      "prompt": "What is Local Magnetic Gauss Law? State its defining idea and essential conditions.",
+      "definition": "The magnetic Gauss law is divergence B=0 in classical electromagnetism without monopoles. It constrains the field's local source structure and is equivalent to zero closed magnetic flux under appropriate regularity.",
+      "required_concepts": [
+        "Zero magnetic divergence."
+      ],
+      "accepted_variants": [
+        "Local absence of magnetic sources."
+      ],
+      "major_error_concepts": [
+        "Confusing zero divergence with zero curl or zero magnetic field."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-no-magnetic-monopoles",
+        "electricity-and-magnetism-i.draft-magnetic-flux"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-local-faraday-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Local Faraday Law",
+      "prompt": "What is Local Faraday Law? State its defining idea and essential conditions.",
+      "definition": "The local Faraday law is curl E=-partial B/partial t. It describes electric circulation from a changing magnetic field in fixed spatial coordinates, with the minus sign consistent with oriented induction.",
+      "required_concepts": [
+        "Electric curl equals negative magnetic time derivative."
+      ],
+      "accepted_variants": [
+        "Differential Faraday law."
+      ],
+      "major_error_concepts": [
+        "Setting curl E to zero in every time-varying electromagnetic problem."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-faraday-induction-law",
+        "electricity-and-magnetism-i.draft-induced-electric-field",
+        "mathematical-methods-for-physics-i.draft-curl"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-ampere-maxwell-law",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Ampere-Maxwell Law",
+      "prompt": "What is Ampere-Maxwell Law? State its defining idea and essential conditions.",
+      "definition": "The vacuum Ampere-Maxwell law is curl B=mu_0 J+mu_0 epsilon_0 partial E/partial t. The conduction and electric-field-change terms together make it compatible with local charge conservation.",
+      "required_concepts": [
+        "Magnetic curl includes conduction and displacement contributions."
+      ],
+      "accepted_variants": [
+        "Differential Ampere-Maxwell law."
+      ],
+      "major_error_concepts": [
+        "Omitting the electric time-derivative term in a general vacuum changing-field problem."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-displacement-current",
+        "electricity-and-magnetism-i.draft-ampere-circuital-law",
+        "electricity-and-magnetism-i.draft-charge-continuity-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electromagnetic-wave",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electromagnetic Wave",
+      "prompt": "What is Electromagnetic Wave? State its defining idea and essential conditions.",
+      "definition": "In a source-free vacuum region, Maxwell's equations imply wave equations for E and B. Time-varying electric and magnetic fields form propagating coupled solutions without requiring an ordinary material medium.",
+      "required_concepts": [
+        "Source-free Maxwell equations support coupled field waves."
+      ],
+      "accepted_variants": [
+        "Electromagnetic wave equation."
+      ],
+      "major_error_concepts": [
+        "Assuming electromagnetic waves require air or a material elastic medium."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-local-electric-gauss-law",
+        "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+        "electricity-and-magnetism-i.draft-local-faraday-law",
+        "electricity-and-magnetism-i.draft-ampere-maxwell-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electromagnetic-wave-speed",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electromagnetic Wave Speed",
+      "prompt": "What is Electromagnetic Wave Speed? State its defining idea and essential conditions.",
+      "definition": "The vacuum electromagnetic wave speed is c=1/sqrt(mu_0 epsilon_0). In simple linear media, propagation also depends on constitutive response and can be frequency-dependent, so the vacuum formula should not be applied blindly to materials.",
+      "required_concepts": [
+        "Vacuum speed from electromagnetic constants."
+      ],
+      "accepted_variants": [
+        "Vacuum light speed relation."
+      ],
+      "major_error_concepts": [
+        "Assuming every material wave travels at the vacuum speed regardless of response."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electromagnetic-wave"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electromagnetic-transversality",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electromagnetic Transversality",
+      "prompt": "What is Electromagnetic Transversality? State its defining idea and essential conditions.",
+      "definition": "For a source-free plane electromagnetic wave in vacuum, E and B are perpendicular to propagation and to each other. This transverse plane-wave statement does not characterize every near field or arbitrary superposition pointwise.",
+      "required_concepts": [
+        "Plane vacuum wave fields transverse and mutually perpendicular."
+      ],
+      "accepted_variants": [
+        "Transverse electromagnetic plane wave."
+      ],
+      "major_error_concepts": [
+        "Assuming arbitrary static or near electric and magnetic fields must always be perpendicular."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electromagnetic-wave",
+        "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+        "electricity-and-magnetism-i.draft-local-electric-gauss-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-electric-magnetic-wave-relation",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Electric-Magnetic Wave Relation",
+      "prompt": "What is Electric-Magnetic Wave Relation? State its defining idea and essential conditions.",
+      "definition": "A single traveling plane wave in vacuum has electric and magnetic magnitudes related by E=c B. The cross product E cross B points in its energy-flow direction, with relative signs fixed by the propagation orientation.",
+      "required_concepts": [
+        "E=cB for a vacuum traveling plane wave."
+      ],
+      "accepted_variants": [
+        "Vacuum plane-wave amplitude relation."
+      ],
+      "major_error_concepts": [
+        "Applying E=cB to arbitrary unrelated electrostatic and magnetostatic fields."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electromagnetic-wave-speed",
+        "electricity-and-magnetism-i.draft-electromagnetic-transversality"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-poynting-vector",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Poynting Vector",
+      "prompt": "What is Poynting Vector? State its defining idea and essential conditions.",
+      "definition": "The vacuum Poynting vector is S=(1/mu_0)E cross B and represents electromagnetic energy flux. Its time average gives intensity for a steady wave, while local energy-flow patterns can be more complex than one traveling ray.",
+      "required_concepts": [
+        "Energy flux from E cross B divided by mu_0."
+      ],
+      "accepted_variants": [
+        "Electromagnetic energy-current density."
+      ],
+      "major_error_concepts": [
+        "Treating the Poynting vector as energy per volume rather than power per area."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-electric-magnetic-wave-relation",
+        "electricity-and-magnetism-i.draft-electric-energy-density",
+        "electricity-and-magnetism-i.draft-magnetic-energy-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-poynting-theorem",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Poynting Theorem",
+      "prompt": "What is Poynting Theorem? State its defining idea and essential conditions.",
+      "definition": "Poynting's theorem balances changing electromagnetic energy density with outward field-energy flux and work on charges: partial u/partial t+divergence S=-J dot E in vacuum. It connects field energy to material energy transfer.",
+      "required_concepts": [
+        "Field storage plus flux equals negative electrical work rate."
+      ],
+      "accepted_variants": [
+        "Local electromagnetic energy conservation."
+      ],
+      "major_error_concepts": [
+        "Claiming J dot E disappears from energy accounting in a resistive conductor."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-poynting-vector",
+        "electricity-and-magnetism-i.draft-current-density",
+        "electricity-and-magnetism-i.draft-resistive-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-radiation-pressure",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Radiation Pressure",
+      "prompt": "What is Radiation Pressure? State its defining idea and essential conditions.",
+      "definition": "A wave carries momentum as well as energy. At normal incidence in vacuum, ideal absorption gives radiation pressure I/c and perfect reflection gives 2I/c under the stated steady-beam assumptions.",
+      "required_concepts": [
+        "Radiation pressure depends on absorption or reflection."
+      ],
+      "accepted_variants": [
+        "Electromagnetic momentum transfer."
+      ],
+      "major_error_concepts": [
+        "Using the same pressure for ideal absorption and ideal reflection at normal incidence."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-poynting-vector",
+        "electricity-and-magnetism-i.draft-electromagnetic-wave-speed"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-boundary-conditions",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Boundary Conditions",
+      "prompt": "What is Magnetic Boundary Conditions? State its defining idea and essential conditions.",
+      "definition": "Across an interface, the normal component of B is continuous under the no-monopole law. Tangential magnetic-field jumps are tied to surface current, with the macroscopic H formulation separating free current from material magnetization.",
+      "required_concepts": [
+        "Normal B continuity and current-related tangential jump."
+      ],
+      "accepted_variants": [
+        "Magnetic interface conditions."
+      ],
+      "major_error_concepts": [
+        "Demanding all components of B be continuous across any surface-current sheet."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+        "electricity-and-magnetism-i.draft-ampere-circuital-law",
+        "electricity-and-magnetism-i.draft-current-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetization",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetization",
+      "prompt": "What is Magnetization? State its defining idea and essential conditions.",
+      "definition": "Magnetization M is magnetic dipole moment per unit volume in a material. The macroscopic auxiliary field H is defined through B=mu_0(H+M), separating applied-current accounting from material response under standard conventions.",
+      "required_concepts": [
+        "Magnetic moment density and B-H-M relation."
+      ],
+      "accepted_variants": [
+        "Macroscopic magnetic polarization."
+      ],
+      "major_error_concepts": [
+        "Equating B and H numerically or dimensionally without the constitutive relation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetic-dipole-moment",
+        "electricity-and-magnetism-i.draft-magnetic-boundary-conditions"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-diamagnetism",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Diamagnetism",
+      "prompt": "What is Diamagnetism? State its defining idea and essential conditions.",
+      "definition": "Diamagnetic response induces magnetization opposing the applied magnetic field in the simple weak-field description. It does not require permanent magnetic dipoles aligned before the field is applied.",
+      "required_concepts": [
+        "Induced opposing magnetization."
+      ],
+      "accepted_variants": [
+        "Negative weak magnetic susceptibility response."
+      ],
+      "major_error_concepts": [
+        "Assuming diamagnetism means the material has no electromagnetic response at all."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-paramagnetism",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Paramagnetism",
+      "prompt": "What is Paramagnetism? State its defining idea and essential conditions.",
+      "definition": "Paramagnetic response tends to align available magnetic moments with an applied field, producing a positive weak-field susceptibility in the simple model. Thermal disorder competes with alignment, and the response is distinct from spontaneous ferromagnetic order.",
+      "required_concepts": [
+        "Field-favoring alignment of moments without ordinary spontaneous ferromagnetic order."
+      ],
+      "accepted_variants": [
+        "Positive weak paramagnetic response."
+      ],
+      "major_error_concepts": [
+        "Equating every positive susceptibility with permanent ferromagnetism."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-magnetization",
+        "electricity-and-magnetism-i.draft-diamagnetism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-ferromagnetism",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Ferromagnetism",
+      "prompt": "What is Ferromagnetism? State its defining idea and essential conditions.",
+      "definition": "Ferromagnetic materials can develop spontaneous magnetic order through collective interactions below an appropriate ordering temperature. Macroscopic magnetization also depends on domains and history, so a sample need not present maximal external magnetization without preparation.",
+      "required_concepts": [
+        "Collective spontaneous ordering and domain-dependent bulk response."
+      ],
+      "accepted_variants": [
+        "Ferromagnetic order."
+      ],
+      "major_error_concepts": [
+        "Assuming every ferromagnetic sample always has a single fully aligned macroscopic domain."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-paramagnetism",
+        "electricity-and-magnetism-i.draft-magnetization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-domains",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Domains",
+      "prompt": "What is Magnetic Domains? State its defining idea and essential conditions.",
+      "definition": "Magnetic domains are regions with approximately aligned magnetization within an ordered material. Changing external conditions can move domain boundaries or rotate magnetization, altering the net sample moment without requiring every microscopic moment to vanish initially.",
+      "required_concepts": [
+        "Locally aligned regions whose arrangement affects net moment."
+      ],
+      "accepted_variants": [
+        "Ferromagnetic domains."
+      ],
+      "major_error_concepts": [
+        "Interpreting zero net magnetization as proof that all local ordered moments are zero."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-ferromagnetism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-magnetic-hysteresis",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Magnetic Hysteresis",
+      "prompt": "What is Magnetic Hysteresis? State its defining idea and essential conditions.",
+      "definition": "Magnetic hysteresis means magnetization or flux response depends on the history of applied field, not just its current value. A hysteresis loop can represent remanence, coercive response, and energy dissipation over a cycle under appropriate definitions.",
+      "required_concepts": [
+        "History-dependent magnetic response."
+      ],
+      "accepted_variants": [
+        "Magnetic memory loop."
+      ],
+      "major_error_concepts": [
+        "Using one constant permeability to fully describe a hysteretic cycle."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-ferromagnetism",
+        "electricity-and-magnetism-i.draft-magnetic-domains",
+        "electricity-and-magnetism-i.draft-magnetic-energy-density"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-conduction-and-displacement-current",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Conduction and Displacement Current",
+      "prompt": "What is Conduction and Displacement Current? State its defining idea and essential conditions.",
+      "definition": "Conduction current transports charge, while displacement-current density represents time variation of the electric displacement field in macroscopic Maxwell equations. Both contribute to magnetic circulation, but they describe different mechanisms and may coexist.",
+      "required_concepts": [
+        "Charge transport versus changing displacement field."
+      ],
+      "accepted_variants": [
+        "Conduction-displacement distinction."
+      ],
+      "major_error_concepts": [
+        "Assuming displacement current necessarily deposits transported free charge across an insulating gap."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-displacement-current",
+        "electricity-and-magnetism-i.draft-current-density",
+        "electricity-and-magnetism-i.draft-electric-displacement"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-lumped-circuit-approximation",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Lumped-Circuit Approximation",
+      "prompt": "What is Lumped-Circuit Approximation? State its defining idea and essential conditions.",
+      "definition": "A lumped-circuit approximation treats component voltages and currents without resolving appreciable wave-propagation delay across the circuit. It is most appropriate when circuit dimensions are small relative to relevant wavelengths and omitted field couplings are negligible.",
+      "required_concepts": [
+        "Negligible spatial propagation delay and controlled field coupling."
+      ],
+      "accepted_variants": [
+        "Quasistatic lumped circuit model."
+      ],
+      "major_error_concepts": [
+        "Assuming circuit loop rules with ideal lumped elements fully describe arbitrary high-frequency long-wire propagation."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-kirchhoff-voltage-law",
+        "electricity-and-magnetism-i.draft-electromagnetic-wave-speed",
+        "electricity-and-magnetism-i.draft-impedance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-capacitor-charging-energy-balance",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Capacitor Charging Energy Balance",
+      "prompt": "What is Capacitor Charging Energy Balance? State its defining idea and essential conditions.",
+      "definition": "Charging an initially empty capacitor from an ideal constant voltage V through a resistor draws energy C V squared from the source, stores one-half C V squared, and dissipates the other half in the ideal simple charging process. Different driving protocols can change the dissipation.",
+      "required_concepts": [
+        "Source work splits into stored and dissipated energy for the stated process."
+      ],
+      "accepted_variants": [
+        "Energy accounting for RC charging."
+      ],
+      "major_error_concepts": [
+        "Assuming the one-half dissipation fraction is unavoidable for every possible charging protocol."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-capacitor-charging",
+        "electricity-and-magnetism-i.draft-capacitor-energy",
+        "electricity-and-magnetism-i.draft-resistive-power",
+        "electricity-and-magnetism-i.draft-electromotive-force"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "electricity-and-magnetism-i.draft-ideal-circuit-measurements",
+      "canonical_deck_id": "electricity-and-magnetism-i",
+      "term": "Ideal Circuit Measurements",
+      "prompt": "What is Ideal Circuit Measurements? State its defining idea and essential conditions.",
+      "definition": "An ideal voltmeter has infinite input resistance so it draws no current, while an ideal ammeter has zero resistance so it adds no voltage drop. Real meters can load a circuit, and their model must match the quantity being measured.",
+      "required_concepts": [
+        "Ideal nonloading voltage and current meter limits."
+      ],
+      "accepted_variants": [
+        "Ideal electrical measurement instruments."
+      ],
+      "major_error_concepts": [
+        "Assuming every real measurement leaves the circuit unchanged regardless of instrument impedance."
+      ],
+      "prerequisite_ids": [
+        "electricity-and-magnetism-i.draft-resistance",
+        "electricity-and-magnetism-i.draft-series-resistors",
+        "electricity-and-magnetism-i.draft-parallel-resistors"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ac-power-factor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ideal-transformer"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ampere-maxwell-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-limits-of-magnetostatic-ampere-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-boundary-conditions"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-solenoid-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-toroid-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ampere-maxwell-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-biot-savart-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-biot-savart-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-circular-loop-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-biot-savart-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-long-wire-magnetic-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-bound-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gauss-law-for-displacement"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitive-reactance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-capacitors"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-plate-capacitance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rc-circuit"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-series-capacitors"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitive-reactance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-impedance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-charging",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-charging-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-charging",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-displacement-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-charging",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-limits-of-magnetostatic-ampere-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-charging-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-discharging"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-dielectric-permittivity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-energy-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-capacitor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lc-oscillation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-conservation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-charge-continuity-equation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-conservation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-conservation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electrostatic-induction"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-conservation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-continuity-equation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ampere-maxwell-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-continuity-equation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-kirchhoff-current-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-charge-continuity-equation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-limits-of-magnetostatic-ampere-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-circuit-phasor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitive-reactance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-circuit-phasor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-impedance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-circuit-phasor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-inductive-reactance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electrostatic-induction"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-insulator"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-ohm-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conducting-cavity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conductor-surface-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-grounding"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor-surface-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conducting-cavity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor-surface-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-boundary-conditions"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-conductor-surface-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-plate-capacitance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-continuous-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-linear-charge-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-continuous-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-potential-superposition"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-continuous-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-surface-charge-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-continuous-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-volume-charge-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-coulomb-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-superposition"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-coulomb-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-point-charge-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ampere-circuital-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-charge-continuity-equation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conduction-and-displacement-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-drift-velocity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-ohm-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-boundary-conditions"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-poynting-theorem"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-loop-torque",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-circular-loop-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-current-loop-torque",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-dipole-moment"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-diamagnetism",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-paramagnetism"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-dielectric-permittivity",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-displacement"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-dielectric-permittivity",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-polarization"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-displacement-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ampere-maxwell-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-displacement-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conduction-and-displacement-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-charge-conservation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-charge-quantization"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conductor"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-coulomb-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-dipole"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-charge",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-biot-savart-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-current-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromotive-force"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-kirchhoff-current-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-force-on-a-wire"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rc-circuit"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-resistance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-resistive-power"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-sinusoidal-alternating-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-dipole",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-dipole-far-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-dipole",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-dipole-torque"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-dipole",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-polarization"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-dipole-torque",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-dipole-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-displacement",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conduction-and-displacement-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-displacement",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gauss-law-for-displacement"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-energy-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-poynting-vector"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-dipole-torque"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-displacement"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-energy-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-field-lines"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-flux"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-potential"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-ohm-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lorentz-force"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-point-charge-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-current-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-displacement-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-flux"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-no-magnetic-monopoles"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-magnetic-wave-relation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-poynting-vector"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromotive-force"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-equipotential"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-grounding"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-point-charge-potential"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-potential-difference"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-superposition",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-continuous-charge-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electric-superposition",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromagnetic-transversality",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-magnetic-wave-relation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-transversality"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave-speed"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave-speed",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-magnetic-wave-relation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave-speed",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lumped-circuit-approximation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave-speed",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-radiation-pressure"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromotive-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-charging-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromotive-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromotive-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-internal-resistance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electromotive-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-kirchhoff-voltage-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electrostatic-induction",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-grounding"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electrostatic-potential-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electrostatic-potential-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-electrostatic-potential-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-dipole-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-eddy-currents"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ideal-transformer"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-induced-electric-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-inductor-voltage"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lenz-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-faraday-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-motional-emf"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-mutual-inductance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-self-inductance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ferromagnetism",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-domains"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-ferromagnetism",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-hysteresis"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-field-potential-relation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conductor-electrostatic-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-field-potential-relation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-dipole-far-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-field-potential-relation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-boundary-conditions"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-field-potential-relation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-equipotential"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-field-potential-relation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-induced-electric-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conductor-surface-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gauss-law-for-displacement"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-electric-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gauss-law-for-displacement",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-boundary-conditions"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gauss-law-for-displacement",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-electric-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-infinite-line-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-infinite-sheet-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-gaussian-surface-and-symmetry",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-spherical-charge-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-impedance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ac-power-factor"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-impedance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lumped-circuit-approximation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-impedance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-series-rlc-impedance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-induced-electric-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-faraday-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductive-reactance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-impedance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lc-oscillation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductor-energy",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-energy-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductor-voltage",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-inductive-reactance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductor-voltage",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-inductor-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductor-voltage",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rl-transient"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-inductor-voltage",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rlc-circuit"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-infinite-sheet-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-plate-capacitance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-insulator",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-dielectric-permittivity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-internal-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-charging"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-kirchhoff-voltage-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lumped-circuit-approximation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lc-oscillation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rlc-circuit"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lc-oscillation",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-series-circuit-resonance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lenz-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-eddy-currents"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-limits-of-magnetostatic-ampere-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-displacement-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-linear-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-infinite-line-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-electric-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-transversality"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-electric-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-faraday-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-transversality"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electromagnetic-wave"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-magnetic-gauss-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-boundary-conditions"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-ohm-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-resistance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-local-ohm-law",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-resistivity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lorentz-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-helical-magnetic-motion"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lorentz-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-force-and-work"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lorentz-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-force-on-a-wire"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lorentz-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-motional-emf"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-lorentz-force",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-uniform-magnetic-circular-motion"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-boundary-conditions",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetization"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-dipole-moment",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetization"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-domains",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-hysteresis"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-energy-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-hysteresis"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-energy-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-poynting-vector"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-biot-savart-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-current-loop-torque"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-lorentz-force"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-energy-density"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-magnetic-flux"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-no-magnetic-monopoles"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-faraday-induction-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-magnetic-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-flux",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-self-inductance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-force-and-work",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-uniform-magnetic-circular-motion"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetic-force-on-a-wire",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-current-loop-torque"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetization",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-diamagnetism"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetization",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ferromagnetism"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-magnetization",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-paramagnetism"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-motional-emf",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-moving-rod-emf"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-mutual-inductance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ideal-transformer"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-no-magnetic-monopoles",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-magnetic-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-parallel-plate-capacitance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-dielectric-permittivity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-parallel-resistors",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ideal-circuit-measurements"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-paramagnetism",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ferromagnetism"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-point-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-continuous-charge-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-point-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-point-charge-potential"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-point-charge-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-spherical-charge-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-point-charge-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-dipole"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-point-charge-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electrostatic-potential-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-point-charge-potential",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-potential-superposition"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-polarization",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-bound-charge"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-polarization",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electric-displacement"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-potential-difference",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-field-potential-relation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-potential-difference",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-induced-electric-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-potential-difference",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-kirchhoff-voltage-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-potential-difference",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-point-charge-potential"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-potential-superposition",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-electrostatic-potential-energy"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-poynting-vector",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-poynting-theorem"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-poynting-vector",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-radiation-pressure"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-rc-circuit",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rc-time-constant"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-rc-time-constant",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-charging"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-rc-time-constant",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-discharging"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ideal-circuit-measurements"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-internal-resistance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-resistors"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rc-circuit"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-resistive-power"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-resistivity"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rl-transient"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-series-resistors"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ac-power-factor"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-charging-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-capacitor-discharging"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-eddy-currents"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-poynting-theorem"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rlc-circuit"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-resistive-power",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rms-current-and-voltage"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-rlc-circuit",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-series-rlc-impedance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-rlc-circuit",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-sinusoidal-alternating-current"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-rms-current-and-voltage",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ac-power-factor"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-self-inductance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-inductor-voltage"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-self-inductance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-mutual-inductance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-series-capacitors",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-capacitors"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-series-resistors",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-ideal-circuit-measurements"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-series-resistors",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-parallel-resistors"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-series-rlc-impedance",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-series-circuit-resonance"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-sinusoidal-alternating-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-circuit-phasor"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-sinusoidal-alternating-current",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-rms-current-and-voltage"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-solenoid-field",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-toroid-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-surface-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-bound-charge"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-surface-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-conductor-surface-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-surface-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-infinite-sheet-field"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-uniform-magnetic-circular-motion",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-helical-magnetic-motion"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-volume-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-bound-charge"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-volume-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-charge-continuity-equation"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-volume-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-local-electric-gauss-law"
+    },
+    {
+      "prerequisite_card_id": "electricity-and-magnetism-i.draft-volume-charge-density",
+      "dependent_card_id": "electricity-and-magnetism-i.draft-spherical-charge-field"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Electricity and Magnetism I.",
+  "level": "College",
+  "tags": [
+    "physics"
+  ]
+}

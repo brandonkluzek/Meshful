@@ -1,0 +1,3174 @@
+{
+  "id": "academic-reviewed-v1:numerical-analysis-and-scientific-computing",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Numerical Analysis",
+  "subject": "Mathematics",
+  "domain": "Mathematics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "numerical-analysis-and-scientific-computing.a-stability",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "A-stability",
+      "prompt": "Define A-stability. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A method is A-stable when its absolute stability region contains the entire open left half-plane, so every decaying scalar linear mode is stable for every positive step size.",
+      "required_concepts": [
+        "A method is A-stable when its absolute stability region contains the entire open left half-plane",
+        "so every decaying scalar linear mode is stable for every positive step size."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Interpreting A-stability as an accuracy guarantee for arbitrarily large steps."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.absolute-stability-region"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.absolute-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "absolute error",
+      "prompt": "Define absolute error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The absolute error of approximation x_hat to x is |x_hat-x| in the declared norm or metric.",
+      "required_concepts": [
+        "The absolute error of approximation x_hat to x is |x_hat-x| in the declared norm or metric."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing absolute errors across differently scaled quantities without considering scale."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.absolute-stability-region",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "absolute stability region",
+      "prompt": "Define absolute stability region. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The absolute stability region of a time integrator is the set of z=h lambda for which applying the method to y'=lambda y yields non-growing numerical amplification.",
+      "required_concepts": [
+        "First material clause: The absolute stability region of a time integrator is the set of z=h lambda for",
+        "Remaining material clause: which applying the method to y'=lambda y yields non-growing numerical amplification."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the stability region as independent of step size and problem eigenvalues."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.one-step-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.adaptive-quadrature",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "adaptive quadrature",
+      "prompt": "Define adaptive quadrature. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Adaptive quadrature recursively allocates evaluations to subintervals whose local error indicators exceed tolerance, concentrating work where the integrand is difficult.",
+      "required_concepts": [
+        "Adaptive quadrature recursively allocates evaluations to subintervals whose local error indicators exceed tolerance",
+        "concentrating work where the integrand is difficult."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating an error indicator as a rigorous bound without the assumptions required by the estimator."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.quadrature-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.algorithmic-stability",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical stability",
+      "prompt": "Define numerical stability. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Numerical stability describes whether an algorithm controls the propagation and amplification of rounding, approximation, and data errors relative to what the problem's conditioning permits.",
+      "required_concepts": [
+        "Numerical stability describes whether an algorithm controls the propagation and amplification of rounding",
+        "approximation, and data errors relative to what the problem's conditioning permits."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using stability as a synonym for convergence or for absence of runtime crashes."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.conditioning"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.backward-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "backward error",
+      "prompt": "Define backward error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Backward error is the smallest perturbation to the input data for which the computed result is an exact solution of the perturbed problem, measured in a declared scale.",
+      "required_concepts": [
+        "First material clause: Backward error is the smallest perturbation to the input data for which the computed",
+        "Remaining material clause: result is an exact solution of the perturbed problem, measured in a declared scale."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining backward error as running the algorithm in reverse."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.residual"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.backward-stability-role",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "backward stability: role",
+      "prompt": "What is backward stability used for, and what is its main limitation?",
+      "definition": "**Theorem role.** Backward stability separates algorithm quality from problem sensitivity: the algorithm solves a nearby problem accurately, while conditioning determines whether that nearby problem has a nearby answer.",
+      "required_concepts": [
+        "Backward stability separates algorithm quality from problem sensitivity: the algorithm solves a nearby problem accurately",
+        "while conditioning determines whether that nearby problem has a nearby answer."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a backward-error certificate as a statement that the original data were measured accurately."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.backward-stability-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.backward-stability-statement",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "backward stability: operational guarantee",
+      "prompt": "State backward stability: operational guarantee, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** An algorithm is backward stable when each computed output is the exact solution to a nearby input problem whose relative perturbation is small on the scale of working precision.",
+      "required_concepts": [
+        "First material clause: An algorithm is backward stable when each computed output is the exact solution to a nearby",
+        "Remaining material clause: input problem whose relative perturbation is small on the scale of working precision."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding that backward stability guarantees small forward error for an ill-conditioned problem."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.backward-error",
+        "numerical-analysis-and-scientific-computing.algorithmic-stability"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.catastrophic-cancellation",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "catastrophic cancellation",
+      "prompt": "Define catastrophic cancellation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Catastrophic cancellation is severe relative-information loss when subtracting nearby inexact quantities, so preexisting absolute errors dominate the small result.",
+      "required_concepts": [
+        "Catastrophic cancellation is severe relative-information loss when subtracting nearby inexact quantities",
+        "so preexisting absolute errors dominate the small result."
+      ],
+      "accepted_variants": [
+        "subtractive cancellation"
+      ],
+      "major_error_concepts": [
+        "Claiming subtraction itself creates large absolute rounding error in every cancellation case."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.unit-roundoff"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "subtractive cancellation"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.cfl-condition",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Courant-Friedrichs-Lewy condition",
+      "prompt": "Define Courant-Friedrichs-Lewy condition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A CFL condition relates time step, spatial resolution, and propagation speeds so the numerical domain of dependence contains the physical domain of dependence; it is necessary for convergence of many explicit hyperbolic schemes.",
+      "required_concepts": [
+        "A CFL condition relates time step, spatial resolution, and propagation speeds so the numerical domain of dependence contains the physical domain of dependence",
+        "it is necessary for convergence of many explicit hyperbolic schemes."
+      ],
+      "accepted_variants": [
+        "CFL condition"
+      ],
+      "major_error_concepts": [
+        "Treating one familiar CFL inequality as sufficient stability proof for every scheme."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.finite-difference-scheme"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "CFL condition"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.chebyshev-nodes",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Chebyshev interpolation nodes",
+      "prompt": "Define Chebyshev interpolation nodes. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Chebyshev-type nodes cluster near interval endpoints and control the nodal polynomial and interpolation amplification, strongly reducing the equispaced Runge effect.",
+      "required_concepts": [
+        "Chebyshev-type nodes cluster near interval endpoints and control the nodal polynomial",
+        "and interpolation amplification, strongly reducing the equispaced Runge effect."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling Chebyshev nodes uniformly spaced after a nonlinear coordinate map without noting the physical clustering."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.runge-phenomenon"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.computational-grid",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "computational grid",
+      "prompt": "Define computational grid. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A computational grid is a discrete set of spatial and possibly temporal locations, cells, or control volumes on which a continuous model is approximated, with declared geometry and resolution parameters.",
+      "required_concepts": [
+        "A computational grid is a discrete set of spatial and possibly temporal locations, cells, or control volumes on which a continuous model is approximated",
+        "with declared geometry and resolution parameters."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting a grid size without defining whether it is spacing, cell count, or local resolution."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.condition-forward-error-role",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "condition number and forward error: role",
+      "prompt": "What is condition number and forward error used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The relation explains the achievable accuracy ceiling: a stable algorithm can still lose roughly log10(kappa) decimal digits when the problem condition number kappa is large.",
+      "required_concepts": [
+        "First material clause: The relation explains the achievable accuracy ceiling: a stable algorithm can still lose",
+        "Remaining material clause: roughly log10(kappa) decimal digits when the problem condition number kappa is large."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Blaming the algorithm for all lost digits without checking the problem's condition number."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.condition-forward-error-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.condition-forward-error-statement",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "condition number and forward error: statement",
+      "prompt": "State condition number and forward error, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** To first order, relative forward error is bounded by the relative condition number times relative backward or input error, plus higher-order terms, when the local perturbation model applies.",
+      "required_concepts": [
+        "To first order, relative forward error is bounded by the relative condition number times relative backward or input error",
+        "plus higher-order terms, when the local perturbation model applies."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the first-order relation as an exact equality for arbitrary finite perturbations."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.forward-error",
+        "numerical-analysis-and-scientific-computing.backward-error",
+        "numerical-analysis-and-scientific-computing.condition-number"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.condition-number",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "condition number",
+      "prompt": "Define condition number. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A condition number is a local or global amplification factor relating suitably scaled input perturbations to solution perturbations; derivative-based relative condition numbers provide the first-order local form.",
+      "required_concepts": [
+        "A condition number is a local or global amplification factor relating suitably scaled input perturbations to solution perturbations",
+        "derivative-based relative condition numbers provide the first-order local form."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a condition number as an observed error rather than a sensitivity bound or amplification measure."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.relative-error",
+        "numerical-analysis-and-scientific-computing.conditioning"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.conditioning",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "problem conditioning",
+      "prompt": "Define problem conditioning. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Conditioning describes the sensitivity of the exact problem solution to small perturbations in its input data, independently of the algorithm used.",
+      "required_concepts": [
+        "Conditioning describes the sensitivity of the exact problem solution to small perturbations in its input data, independently of the algorithm used."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling an algorithm ill-conditioned rather than distinguishing problem conditioning from algorithm stability."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.conjugate-gradient",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "conjugate-gradient method",
+      "prompt": "Define conjugate-gradient method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Conjugate gradient solves Hermitian positive-definite systems by minimizing the quadratic energy over expanding Krylov subspaces using mutually A-conjugate directions.",
+      "required_concepts": [
+        "First material clause: Conjugate gradient solves Hermitian positive-definite systems by minimizing the",
+        "Remaining material clause: quadratic energy over expanding Krylov subspaces using mutually A-conjugate directions."
+      ],
+      "accepted_variants": [
+        "CG"
+      ],
+      "major_error_concepts": [
+        "Applying standard conjugate gradient to an arbitrary nonsymmetric or indefinite matrix."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.krylov-subspace",
+        "linear-algebra-i.la1-m6-cholesky-factorization-concept"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "CG"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.consistency",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical consistency",
+      "prompt": "Define numerical consistency. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A discretization is consistent when its discrete operator or one-step rule approaches the continuous operator on sufficiently smooth exact solutions as the mesh or step size tends to zero.",
+      "required_concepts": [
+        "First material clause: A discretization is consistent when its discrete operator or one-step rule approaches the",
+        "Remaining material clause: continuous operator on sufficiently smooth exact solutions as the mesh or step size tends to zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a method consistent because computed solutions appear stable at one resolution."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.contraction-guarantee-for-fixed-point-iteration",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Contraction guarantee for fixed-point iteration",
+      "prompt": "How should Contraction guarantee for fixed-point iteration be interpreted, and what does it not establish?",
+      "definition": "**Definition.** A verified contraction on a complete invariant region turns fixed-point iteration into a globally convergent geometric-rate solver on that region; the canonical Banach fixed-point theorem statement remains owned by Real Analysis I.",
+      "required_concepts": [
+        "A verified contraction on a complete invariant region turns fixed-point iteration into a globally convergent geometric-rate solver on that region",
+        "the canonical Banach fixed-point theorem statement remains owned by Real Analysis I."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using it to claim convergence of Newton's method without establishing a contraction region."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.contraction-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:interpretation"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.contraction-mapping",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "contraction mapping",
+      "prompt": "Define contraction mapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A contraction on a metric space maps distances down by a uniform factor q<1: d(g(x),g(y))<=q d(x,y).",
+      "required_concepts": [
+        "A contraction on a metric space maps distances down by a uniform factor q<1: d(g(x),g(y))<=q d(x,y)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a map contractive because its derivative is below one at only a single point."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.fixed-point-iteration"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.correct-rounding",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "correct rounding",
+      "prompt": "Define correct rounding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An operation is correctly rounded when its returned floating-point value equals the exact real result rounded once according to the active rounding mode.",
+      "required_concepts": [
+        "An operation is correctly rounded when its returned floating-point value equals the exact real result rounded once according to the active rounding mode."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a sequence of correctly rounded operations equals the exact composite expression rounded once."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.floating-point-system"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.cubic-spline",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "cubic spline",
+      "prompt": "Define cubic spline. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A cubic spline is a piecewise cubic function with continuous first and second derivatives at interior knots, completed by boundary conditions that determine a unique interpolant.",
+      "required_concepts": [
+        "A cubic spline is a piecewise cubic function with continuous first and second derivatives at interior knots",
+        "completed by boundary conditions that determine a unique interpolant."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Specifying interpolation at knots without boundary conditions and claiming uniqueness."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.piecewise-polynomial"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.degree-of-exactness",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "quadrature degree of exactness",
+      "prompt": "Define quadrature degree of exactness. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The degree of exactness is the largest integer d such that a quadrature rule integrates every polynomial of degree at most d exactly in exact arithmetic.",
+      "required_concepts": [
+        "The degree of exactness is the largest integer d such that a quadrature rule integrates every polynomial of degree at most d exactly in exact arithmetic."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Equating polynomial exactness with exact integration of all smooth functions."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.quadrature-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.discrete-norm",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "discrete norm",
+      "prompt": "Define discrete norm. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A discrete norm measures the size of grid functions or algebraic error vectors and must be chosen with scaling that reflects the intended continuous norm or stability statement.",
+      "required_concepts": [
+        "A discrete norm measures the size of grid functions or algebraic error vectors",
+        "and must be chosen with scaling that reflects the intended continuous norm or stability statement."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing convergence rates across grids using an unscaled norm whose meaning changes with point count."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.eigenvalue-conditioning",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "eigenvalue conditioning",
+      "prompt": "Define eigenvalue conditioning. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Eigenvalue conditioning measures how much an eigenvalue or invariant subspace can move under matrix perturbations; nonnormal matrices can have highly sensitive eigenvalues even when eigenvalues are separated.",
+      "required_concepts": [
+        "Eigenvalue conditioning measures how much an eigenvalue or invariant subspace can move under matrix perturbations",
+        "nonnormal matrices can have highly sensitive eigenvalues even when eigenvalues are separated."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using eigenvalue separation alone to assert good conditioning for a nonnormal matrix."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.condition-number",
+        "numerical-analysis-and-scientific-computing.schur-decomposition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.embedded-runge-kutta",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "embedded Runge-Kutta pair",
+      "prompt": "Define embedded Runge-Kutta pair. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An embedded Runge-Kutta pair shares stage evaluations to produce two approximations of different orders, whose difference supplies a local error estimate for adaptive step selection.",
+      "required_concepts": [
+        "An embedded Runge-Kutta pair shares stage evaluations to produce two approximations of different orders",
+        "whose difference supplies a local error estimate for adaptive step selection."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the embedded difference as an exact error bound under all conditions."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.runge-kutta-method",
+        "numerical-analysis-and-scientific-computing.local-truncation-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.explicit-euler",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "explicit Euler method",
+      "prompt": "Define explicit Euler method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Explicit Euler advances y_{n+1}=y_n+h f(t_n,y_n), using the current slope and having first-order global accuracy under standard smoothness and stability conditions.",
+      "required_concepts": [
+        "Explicit Euler advances y_{n+1}=y_n+h f(t_n,y_n), using the current slope",
+        "and having first-order global accuracy under standard smoothness and stability conditions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling explicit Euler unconditionally stable because it is consistent."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.one-step-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.finite-difference-derivative",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "finite-difference derivative",
+      "prompt": "Define finite-difference derivative. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite-difference derivative approximates a derivative by a weighted combination of nearby function values derived from interpolation or Taylor expansion.",
+      "required_concepts": [
+        "A finite-difference derivative approximates a derivative by a weighted combination of nearby function values derived from interpolation or Taylor expansion."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a smaller step size as always more accurate despite rounding and cancellation."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "finite-difference scheme",
+      "prompt": "Define finite-difference scheme. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite-difference scheme replaces derivatives in a differential equation and its boundary or initial conditions by difference operators on a grid.",
+      "required_concepts": [
+        "A finite-difference scheme replaces derivatives in a differential equation and its boundary or initial conditions by difference operators on a grid."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Analyzing only the interior stencil while ignoring boundary closure and initial data."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.finite-difference-derivative",
+        "numerical-analysis-and-scientific-computing.computational-grid"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.fixed-point-iteration",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "fixed-point iteration",
+      "prompt": "Define fixed-point iteration. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Fixed-point iteration computes x_{k+1}=g(x_k) to solve x=g(x), with convergence governed locally or globally by contractive behavior and domain invariance.",
+      "required_concepts": [
+        "Fixed-point iteration computes x_{k+1}=g(x_k) to solve x=g(x), with convergence governed locally or globally by contractive behavior and domain invariance."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every algebraically equivalent fixed-point map has the same convergence behavior."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.floating-point-nonassociativity",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "floating-point nonassociativity",
+      "prompt": "Define floating-point nonassociativity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Floating-point addition and multiplication are generally nonassociative because intermediate rounding can make fl(fl(a+b)+c) differ from fl(a+fl(b+c)).",
+      "required_concepts": [
+        "Floating-point addition and multiplication are generally nonassociative because intermediate rounding can make fl(fl(a+b)+c) differ from fl(a+fl(b+c))."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a different reduction order as a mathematical contradiction rather than a rounding-order effect."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.correct-rounding",
+        "programming-ii.py2-approximate-numeric-assertion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.floating-point-system",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "floating-point number system",
+      "prompt": "Define floating-point number system. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A floating-point system represents a finite set of signed numbers using a radix, a finite-precision significand, and a bounded exponent, together with exceptional values and rounding rules.",
+      "required_concepts": [
+        "A floating-point system represents a finite set of signed numbers using a radix",
+        "a finite-precision significand, and a bounded exponent, together with exceptional values and rounding rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating floating-point numbers as exact real numbers with merely limited display digits."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.forward-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "forward error",
+      "prompt": "Define forward error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Forward error measures the distance between a computed answer and the exact answer to the original input problem.",
+      "required_concepts": [
+        "Forward error measures the distance between a computed answer and the exact answer to the original input problem."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a small residual or small input perturbation a forward-error guarantee."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.absolute-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.gauss-seidel-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Gauss-Seidel method",
+      "prompt": "Define Gauss-Seidel method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Gauss-Seidel updates components sequentially using the newest available values, corresponding to a lower-triangular solve at each iteration.",
+      "required_concepts": [
+        "Gauss-Seidel updates components sequentially using the newest available values, corresponding to a lower-triangular solve at each iteration."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming Gauss-Seidel converges for every nonsingular matrix."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.stationary-iteration"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.gaussian-elimination",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Gaussian elimination",
+      "prompt": "Define Gaussian elimination. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Gaussian elimination applies elementary row operations to reduce a linear system to triangular form, followed by substitution, and underlies LU factorization.",
+      "required_concepts": [
+        "Gaussian elimination applies elementary row operations to reduce a linear system to triangular form, followed by substitution, and underlies LU factorization."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating elimination without pivoting as uniformly stable for arbitrary nonsingular matrices."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.gaussian-quadrature",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Gaussian quadrature",
+      "prompt": "Define Gaussian quadrature. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An n-node Gaussian quadrature rule chooses nodes and weights associated with orthogonal polynomials to integrate all polynomials through degree 2n-1 exactly for the declared weight.",
+      "required_concepts": [
+        "An n-node Gaussian quadrature rule chooses nodes",
+        "and weights associated with orthogonal polynomials to integrate all polynomials through degree 2n-1 exactly for the declared weight."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the 2n-1 exactness claim for arbitrary nodes or a mismatched weight function."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.orthogonal-polynomial",
+        "numerical-analysis-and-scientific-computing.degree-of-exactness"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.global-discretization-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "global discretization error",
+      "prompt": "Define global discretization error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Global discretization error is the difference between the numerical and exact solution at a mesh time after local errors have propagated and accumulated through preceding steps.",
+      "required_concepts": [
+        "Global discretization error is the difference between the numerical",
+        "and exact solution at a mesh time after local errors have propagated and accumulated through preceding steps."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming global order always equals local truncation order without the conventional one-power shift and stability qualification."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.local-truncation-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.gmres",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "generalized minimal residual method",
+      "prompt": "Define generalized minimal residual method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** GMRES chooses the iterate in an affine Krylov subspace that minimizes the Euclidean residual norm for a general square linear system.",
+      "required_concepts": [
+        "GMRES chooses the iterate in an affine Krylov subspace that minimizes the Euclidean residual norm for a general square linear system."
+      ],
+      "accepted_variants": [
+        "GMRES"
+      ],
+      "major_error_concepts": [
+        "Claiming unrestarted GMRES has fixed memory independent of iteration count."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.residual",
+        "numerical-analysis-and-scientific-computing.krylov-subspace"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "GMRES"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.grid-refinement-study",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "grid-refinement study",
+      "prompt": "Define grid-refinement study. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A grid-refinement study runs a consistent problem on successively finer meshes and examines error or solution differences to assess asymptotic convergence rate and discretization sensitivity.",
+      "required_concepts": [
+        "A grid-refinement study runs a consistent problem on successively finer meshes",
+        "and examines error or solution differences to assess asymptotic convergence rate and discretization sensitivity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling two nearly equal grid solutions converged without checking scale, monotonicity, or asymptotic behavior."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.order-of-accuracy",
+        "numerical-analysis-and-scientific-computing.computational-grid",
+        "numerical-analysis-and-scientific-computing.verification"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.growth-factor",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "elimination growth factor",
+      "prompt": "Define elimination growth factor. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The growth factor is the ratio of the largest magnitude generated during elimination to the largest magnitude in the original matrix and helps bound rounding-error amplification.",
+      "required_concepts": [
+        "The growth factor is the ratio of the largest magnitude generated during elimination to the largest magnitude in the original matrix",
+        "and helps bound rounding-error amplification."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Equating a matrix condition number with its elimination growth factor."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.partial-pivoting"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.householder-reflector",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Householder reflector",
+      "prompt": "Define Householder reflector. Include its essential conditions and distinctions.",
+      "definition": "For a nonzero real or complex column vector v, H=I-2vv*/(v*v) is a Householder reflector. It is Hermitian and orthogonal/unitary, sends v to -v, and fixes every vector orthogonal to v. Consequently it preserves norms. A suitable choice of v can map a target vector to a coordinate direction, with a compatible phase choice in the complex case; that mapping is not a property of arbitrary v.",
+      "required_concepts": [
+        "The defining vector v is nonzero.",
+        "State H=I-2vv*/(v*v), which preserves norms.",
+        "It negates the v direction and fixes v-perpendicular directions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Set v=0 in I-2vv*/(v*v) to obtain a valid Householder reflector that projects vectors onto a coordinate axis."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.implicit-euler",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "implicit Euler method",
+      "prompt": "Define implicit Euler method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Implicit Euler advances y_{n+1}=y_n+h f(t_{n+1},y_{n+1}), requiring a solve at each step and possessing strong stability for many stiff decay problems.",
+      "required_concepts": [
+        "Implicit Euler advances y_{n+1}=y_n+h f(t_{n+1},y_{n+1}), requiring a solve at each step and possessing strong stability for many stiff decay problems."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating implicit Euler as exact or high-order merely because it is stable."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.newton-method",
+        "numerical-analysis-and-scientific-computing.one-step-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.initial-value-problem",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "ordinary differential equation initial-value problem",
+      "prompt": "Define ordinary differential equation initial-value problem. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An ODE initial-value problem specifies y'(t)=f(t,y(t)) together with y(t0)=y0 and seeks a trajectory over a time interval under existence and uniqueness conditions.",
+      "required_concepts": [
+        "An ODE initial-value problem specifies y'(t)=f(t,y(t)) together with y(t0)=y0",
+        "and seeks a trajectory over a time interval under existence and uniqueness conditions."
+      ],
+      "accepted_variants": [
+        "IVP"
+      ],
+      "major_error_concepts": [
+        "Discussing a time integrator without declaring the differential equation and initial data it approximates."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [
+        "IVP"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.interpolation-remainder-role",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "polynomial interpolation remainder: role",
+      "prompt": "What is polynomial interpolation remainder used for, and what is its main limitation?",
+      "definition": "**Theorem role.** It turns smoothness and node placement into a pointwise interpolation-error formula, guiding accuracy analysis and node selection; the unknown intermediate derivative and nodal product must be bounded rather than treated as observed.",
+      "required_concepts": [
+        "It turns smoothness and node placement into a pointwise interpolation-error formula, guiding accuracy analysis and node selection",
+        "the unknown intermediate derivative and nodal product must be bounded rather than treated as observed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the unknown derivative point xi as fixed independently of x."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.interpolation-remainder"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.interpolation-remainder",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "polynomial interpolation remainder",
+      "prompt": "State polynomial interpolation remainder, including its hypotheses and conclusion.",
+      "definition": "Let x_0,...,x_n be distinct nodes in an interval I, let p_n be their degree-at-most-n interpolating polynomial for f, and assume f is C^(n+1) on I. For x in I there is xi between the smallest and largest of x,x_0,...,x_n such that f(x)-p_n(x)=f^(n+1)(xi) product_{j=0}^n(x-x_j)/(n+1)!. At a node both sides vanish; xi need not be the same for different x.",
+      "required_concepts": [
+        "Use n+1 distinct interpolation nodes and a degree-at-most-n interpolant.",
+        "Sufficient regularity is C^(n+1) on an interval containing nodes and x.",
+        "State the derivative-factor, factorial, and nodal-product remainder; xi may depend on x."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "The same unknown xi must work for every evaluation point x, and no smoothness beyond continuity is required."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.polynomial-interpolation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.iterative-refinement",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "iterative refinement",
+      "prompt": "Define iterative refinement. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Iterative refinement improves a linear-system solution by computing its residual, solving a correction equation, and updating the solution, often benefiting from higher-precision residual evaluation.",
+      "required_concepts": [
+        "Iterative refinement improves a linear-system solution by computing its residual, solving a correction equation",
+        "and updating the solution, often benefiting from higher-precision residual evaluation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming refinement overcomes arbitrary ill-conditioning or a catastrophically inaccurate factorization."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.condition-forward-error-statement",
+        "numerical-analysis-and-scientific-computing.lu-factorization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.jacobi-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Jacobi method",
+      "prompt": "Define Jacobi method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Jacobi method solves each linear-system component using only values from the previous iterate, corresponding to the diagonal splitting A=D+(L+U).",
+      "required_concepts": [
+        "The Jacobi method solves each linear-system component using only values from the previous iterate, corresponding to the diagonal splitting A=D+(L+U)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Updating components immediately and still calling the implementation Jacobi rather than Gauss-Seidel."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.stationary-iteration"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.krylov-subspace",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Krylov subspace",
+      "prompt": "Define Krylov subspace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The kth Krylov subspace generated by A and r0 is span{r0, Ar0, ..., A^{k-1}r0}, the search space used by many large-scale iterative solvers.",
+      "required_concepts": [
+        "The kth Krylov subspace generated by A and r0 is span{r0, Ar0, ..., A^{k-1}r0}, the search space used by many large-scale iterative solvers."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating explicit powers of A as the recommended way to build a Krylov basis."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.lagrange-basis",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Lagrange interpolation basis",
+      "prompt": "Define Lagrange interpolation basis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Lagrange basis polynomial l_j equals one at node x_j and zero at every other interpolation node, giving p(x)=sum_j y_j l_j(x).",
+      "required_concepts": [
+        "The Lagrange basis polynomial l_j equals one at node x_j and zero at every other interpolation node, giving p(x)=sum_j y_j l_j(x)."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Recomputing the mathematical basis as though its formula were numerically stable for every node set and degree."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.polynomial-interpolation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.lax-equivalence-role",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Lax equivalence theorem: role",
+      "prompt": "What is Lax equivalence theorem used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The theorem makes stability the decisive bridge between a locally correct discretization and globally convergent approximations for well-posed linear initial-value problems.",
+      "required_concepts": [
+        "The theorem makes stability the decisive bridge between a locally correct discretization",
+        "and globally convergent approximations for well-posed linear initial-value problems."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Summarizing it as consistency alone implies convergence."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.lax-equivalence-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.lax-equivalence-statement",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Lax equivalence theorem: statement",
+      "prompt": "State Lax equivalence theorem, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For a properly posed linear initial-value problem and a consistent linear finite-difference approximation, stability is equivalent to convergence in the declared norm as the grid is refined.",
+      "required_concepts": [
+        "For a properly posed linear initial-value problem",
+        "and a consistent linear finite-difference approximation, stability is equivalent to convergence in the declared norm as the grid is refined."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying Lax equivalence to nonlinear, inconsistent, or ill-posed problems without additional theory."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.consistency",
+        "numerical-analysis-and-scientific-computing.numerical-convergence",
+        "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+        "numerical-analysis-and-scientific-computing.discrete-norm"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.least-squares-approximation",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "least-squares function approximation",
+      "prompt": "Define least-squares function approximation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Least-squares approximation projects a target function onto a finite-dimensional approximation space by minimizing a declared squared norm or weighted error.",
+      "required_concepts": [
+        "Least-squares approximation projects a target function onto a finite-dimensional approximation space by minimizing a declared squared norm or weighted error."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Confusing continuous least-squares projection with interpolation at sample nodes."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.orthogonal-polynomial"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.least-squares-residual",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "least-squares residual",
+      "prompt": "Define least-squares residual. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For min_x ||Ax-b||_2, the residual r=b-Ax at a solution is orthogonal to the column space of A, subject to rank and solution conventions.",
+      "required_concepts": [
+        "For min_x ||Ax-b||_2, the residual r=b-Ax at a solution is orthogonal to the column space of A, subject to rank and solution conventions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a small least-squares residual implies the coefficient vector is well determined."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.residual",
+        "numerical-analysis-and-scientific-computing.qr-factorization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.lebesgue-constant",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Lebesgue constant",
+      "prompt": "Define Lebesgue constant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Lebesgue constant is the operator norm of interpolation from nodal data to the sup-norm polynomial and quantifies worst-case amplification of data or approximation error by the node set.",
+      "required_concepts": [
+        "The Lebesgue constant is the operator norm of interpolation from nodal data to the sup-norm polynomial",
+        "and quantifies worst-case amplification of data or approximation error by the node set."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Confusing the Lebesgue constant with the function's derivative bound in the interpolation remainder."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.conditioning",
+        "numerical-analysis-and-scientific-computing.lagrange-basis"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.linear-multistep-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "linear multistep method",
+      "prompt": "Define linear multistep method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A linear multistep method relates several previous solution and derivative values to the next value through fixed coefficients, requiring starting values and zero-stability for convergence.",
+      "required_concepts": [
+        "A linear multistep method relates several previous solution and derivative values to the next value through fixed coefficients",
+        "requiring starting values and zero-stability for convergence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Starting a multistep method with arbitrary past values and ignoring their accuracy."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.initial-value-problem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.local-truncation-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "local truncation error of a time integrator",
+      "prompt": "Define local truncation error of a time integrator. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Local truncation error is the one-step defect obtained by inserting the exact solution into the numerical update, assuming prior input to that step is exact.",
+      "required_concepts": [
+        "Local truncation error is the one-step defect obtained by inserting the exact solution into the numerical update, assuming prior input to that step is exact."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the local defect the accumulated error after many steps."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.truncation-error",
+        "numerical-analysis-and-scientific-computing.one-step-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.lu-factorization",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "LU factorization",
+      "prompt": "Define LU factorization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An LU factorization expresses a matrix, possibly after permutations, as a product of a lower triangular matrix and an upper triangular matrix for efficient repeated solves.",
+      "required_concepts": [
+        "An LU factorization expresses a matrix, possibly after permutations",
+        "as a product of a lower triangular matrix and an upper triangular matrix for efficient repeated solves."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every nonsingular matrix admits an unpivoted LU factorization."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.gaussian-elimination"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.machine-epsilon",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "machine epsilon",
+      "prompt": "Define machine epsilon. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Machine epsilon is conventionally the distance from 1 to the next larger representable number; under common binary round-to-nearest conventions it equals twice the unit roundoff.",
+      "required_concepts": [
+        "Machine epsilon is conventionally the distance from 1 to the next larger representable number",
+        "under common binary round-to-nearest conventions it equals twice the unit roundoff."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using machine epsilon and unit roundoff interchangeably without declaring the convention."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.unit-roundoff"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.manufactured-solution",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "method of manufactured solutions",
+      "prompt": "Define method of manufactured solutions. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The method of manufactured solutions selects an analytic function, substitutes it into the differential operator to derive forcing and boundary data, and tests whether the code recovers the known solution at the expected rate.",
+      "required_concepts": [
+        "The method of manufactured solutions selects an analytic function, substitutes it into the differential operator to derive forcing",
+        "and boundary data, and tests whether the code recovers the known solution at the expected rate."
+      ],
+      "accepted_variants": [
+        "MMS"
+      ],
+      "major_error_concepts": [
+        "Using a manufactured solution as evidence that the original physical forcing or constitutive model is valid."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+        "numerical-analysis-and-scientific-computing.verification"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "MMS"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.matrix-condition-number",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "matrix condition number",
+      "prompt": "Define matrix condition number. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For an invertible matrix A and subordinate norm, kappa(A)=||A|| ||A^{-1}|| measures worst-case relative solution sensitivity of Ax=b to perturbations, with details depending on which data are perturbed.",
+      "required_concepts": [
+        "For an invertible matrix A and subordinate norm, kappa(A)=||A|| ||A^{-1}|| measures worst-case relative solution sensitivity of Ax=b to perturbations",
+        "with details depending on which data are perturbed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using the determinant magnitude as a reliable substitute for the matrix condition number."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.condition-number",
+        "numerical-analysis-and-scientific-computing.singular-value-decomposition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.newton-cotes-rule",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Newton-Cotes quadrature",
+      "prompt": "Define Newton-Cotes quadrature. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A Newton-Cotes rule integrates an interpolation polynomial constructed at equally spaced nodes, yielding formulas such as trapezoidal and Simpson rules.",
+      "required_concepts": [
+        "A Newton-Cotes rule integrates an interpolation polynomial constructed at equally spaced nodes, yielding formulas such as trapezoidal and Simpson rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming high-order closed Newton-Cotes rules remain positive-weight and numerically well behaved."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.polynomial-interpolation",
+        "numerical-analysis-and-scientific-computing.quadrature-rule"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.newton-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Newton's method for nonlinear equations",
+      "prompt": "Define Newton's method for nonlinear equations. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Newton's method updates x_{k+1}=x_k-J_F(x_k)^{-1}F(x_k), using a local linearization to solve F(x)=0 and attaining local quadratic convergence under standard nonsingularity and smoothness assumptions.",
+      "required_concepts": [
+        "Newton's method updates x_{k+1}=x_k-J_F(x_k)^{-1}F(x_k), using a local linearization to solve F(x)=0",
+        "and attaining local quadratic convergence under standard nonsingularity and smoothness assumptions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming global or quadratic convergence from an arbitrary starting point."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.residual",
+        "numerical-analysis-and-scientific-computing.fixed-point-iteration"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.normal-equations-conditioning",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "normal-equations conditioning",
+      "prompt": "Define normal-equations conditioning. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Solving least squares through A*Ax=A*b squares the 2-norm condition number when A has full column rank, which can substantially magnify numerical sensitivity.",
+      "required_concepts": [
+        "Solving least squares through A*Ax=A*b squares the 2-norm condition number when A has full column rank, which can substantially magnify numerical sensitivity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming normal equations and orthogonal factorization have the same finite-precision accuracy."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.matrix-condition-number",
+        "numerical-analysis-and-scientific-computing.least-squares-residual"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.normal-number",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "normal floating-point number",
+      "prompt": "Define normal floating-point number. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A normal floating-point number uses the format's standard leading-significand convention and full available precision for its exponent range.",
+      "required_concepts": [
+        "A normal floating-point number uses the format's standard leading-significand convention and full available precision for its exponent range."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every nonzero finite floating-point number normal, thereby excluding subnormal behavior."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.floating-point-system"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.numerical-convergence",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical convergence",
+      "prompt": "Define numerical convergence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A numerical method converges when its computed approximation approaches the exact target solution in a declared norm as discretization parameters tend to their limiting values.",
+      "required_concepts": [
+        "First material clause: A numerical method converges when its computed approximation approaches the exact target",
+        "Remaining material clause: solution in a declared norm as discretization parameters tend to their limiting values."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring convergence from agreement between only two resolutions without an asymptotic or reference argument."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.absolute-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.numerical-evidence-record",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical evidence record",
+      "prompt": "Define numerical evidence record. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A numerical evidence record preserves equations, discretization, parameters, tolerances, precision, software and hardware environment, random seeds, convergence evidence, residuals, and known limitations needed to interpret or reproduce a claim.",
+      "required_concepts": [
+        "A numerical evidence record preserves equations, discretization, parameters, tolerances, precision, software and hardware environment",
+        "random seeds, convergence evidence, residuals, and known limitations needed to interpret or reproduce a claim."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Saving final plots without the computational conditions and error evidence that produced them."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.numerical-reproducibility",
+        "numerical-analysis-and-scientific-computing.verification"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.numerical-reproducibility",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical reproducibility",
+      "prompt": "Define numerical reproducibility. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Numerical reproducibility is the degree to which a computation returns equivalent or explicitly tolerated results across repeated runs, implementations, hardware, thread schedules, and environments under a declared contract.",
+      "required_concepts": [
+        "Numerical reproducibility is the degree to which a computation returns equivalent or explicitly tolerated results across repeated runs",
+        "implementations, hardware, thread schedules, and environments under a declared contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Demanding bitwise identity without declaring it, or accepting arbitrary drift under the label reproducible."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.floating-point-nonassociativity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.observed-order",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "observed order of convergence",
+      "prompt": "Define observed order of convergence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Observed order estimates the exponent relating error to resolution from multiple refinements, using a known solution or a justified self-convergence model in the asymptotic regime.",
+      "required_concepts": [
+        "Observed order estimates the exponent relating error to resolution from multiple refinements",
+        "using a known solution or a justified self-convergence model in the asymptotic regime."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating an observed order from contaminated or coarse-grid data as the method's formal order."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.grid-refinement-study"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.one-step-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "one-step time-integration method",
+      "prompt": "Define one-step time-integration method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A one-step method computes the next state from the current state, current time, step size, and evaluations internal to that step, without requiring earlier stored states.",
+      "required_concepts": [
+        "A one-step method computes the next state from the current state, current time, step size",
+        "and evaluations internal to that step, without requiring earlier stored states."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every multistage Runge-Kutta method a multistep method."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.initial-value-problem"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.one-step-order-role",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "local and global order for stable one-step methods: role",
+      "prompt": "What is local and global order for stable one-step methods used for, and what is its main limitation?",
+      "definition": "**Theorem role.** The result explains how per-step defects accumulate into global accuracy and why consistency order alone is insufficient without stability.",
+      "required_concepts": [
+        "The result explains how per-step defects accumulate into global accuracy",
+        "and why consistency order alone is insufficient without stability."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting the local error exponent as the global convergence order."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.one-step-order-statement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:theorem-role"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.one-step-order-statement",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "local and global order for stable one-step methods: statement",
+      "prompt": "State local and global order for stable one-step methods, including its hypotheses and conclusion.",
+      "definition": "**Theorem statement.** For a sufficiently smooth well-posed IVP, a stable one-step method with local truncation error O(h^{p+1}) has global error O(h^p) over a fixed time interval as the maximum step tends to zero.",
+      "required_concepts": [
+        "First material clause: For a sufficiently smooth well-posed IVP, a stable one-step method with local truncation error",
+        "Remaining material clause: O(h^{p+1}) has global error O(h^p) over a fixed time interval as the maximum step tends to zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dropping the stability, smoothness, or fixed-interval qualifications when converting local order to global order."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.algorithmic-stability",
+        "numerical-analysis-and-scientific-computing.global-discretization-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:theorem-statement"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.order-of-accuracy",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "order of accuracy",
+      "prompt": "Define order of accuracy. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A method has order p when its error scales as C h^p plus higher-order terms in the asymptotic regime under stated smoothness and stability conditions.",
+      "required_concepts": [
+        "A method has order p when its error scales as C h^p plus higher-order terms in the asymptotic regime under stated smoothness and stability conditions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Estimating an order from coarse resolutions outside the asymptotic regime and treating it as guaranteed."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.numerical-convergence",
+        "numerical-analysis-and-scientific-computing.truncation-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.orthogonal-polynomial",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "orthogonal polynomial family",
+      "prompt": "Define orthogonal polynomial family. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An orthogonal polynomial family consists of polynomials mutually orthogonal under a declared inner product or weight, supporting stable projection and recurrence structure.",
+      "required_concepts": [
+        "An orthogonal polynomial family consists of polynomials mutually orthogonal under a declared inner product or weight",
+        "supporting stable projection and recurrence structure."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling polynomials orthogonal without specifying the interval, weight, and inner product."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.overflow",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "floating-point overflow",
+      "prompt": "Define floating-point overflow. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Overflow occurs when the magnitude of a rounded result exceeds the largest finite value representable in the destination format, commonly producing an infinity or maximal finite result according to mode.",
+      "required_concepts": [
+        "Overflow occurs when the magnitude of a rounded result exceeds the largest finite value representable in the destination format",
+        "commonly producing an infinity or maximal finite result according to mode."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every infinite result overflow when it may originate from an infinite input or invalid operation."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.floating-point-system"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.partial-pivoting",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "partial pivoting",
+      "prompt": "Define partial pivoting. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Partial pivoting selects a largest-magnitude available pivot in the current column and records row exchanges, usually producing PA=LU and controlling common elimination instabilities.",
+      "required_concepts": [
+        "Partial pivoting selects a largest-magnitude available pivot in the current column",
+        "and records row exchanges, usually producing PA=LU and controlling common elimination instabilities."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming partial pivoting makes every solve forward accurate regardless of conditioning."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.lu-factorization"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.piecewise-polynomial",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "piecewise-polynomial approximation",
+      "prompt": "Define piecewise-polynomial approximation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A piecewise-polynomial approximation uses separate low-degree polynomials on subintervals with declared continuity constraints, trading global degree for local resolution.",
+      "required_concepts": [
+        "A piecewise-polynomial approximation uses separate low-degree polynomials on subintervals with declared continuity constraints",
+        "trading global degree for local resolution."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming independent subinterval polynomials automatically join continuously."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.polynomial-interpolation",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "polynomial interpolation",
+      "prompt": "Define polynomial interpolation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Given n+1 distinct nodes and data values, polynomial interpolation finds the unique polynomial of degree at most n matching all values at those nodes.",
+      "required_concepts": [
+        "Given n+1 distinct nodes and data values, polynomial interpolation finds the unique polynomial of degree at most n matching all values at those nodes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming the interpolating polynomial approximates the underlying function well between nodes merely because it matches the data."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.preconditioner",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "preconditioner",
+      "prompt": "Define preconditioner. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A preconditioner transforms a system into an equivalent one with more favorable spectral or geometric properties so an iterative solver converges faster while keeping application cost manageable.",
+      "required_concepts": [
+        "First material clause: A preconditioner transforms a system into an equivalent one with more favorable spectral or geometric",
+        "Remaining material clause: properties so an iterative solver converges faster while keeping application cost manageable."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Judging a preconditioner only by how closely it approximates A, without solve cost or transformed conditioning."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.condition-number",
+        "numerical-analysis-and-scientific-computing.krylov-subspace"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.qr-factorization",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "QR factorization",
+      "prompt": "Define QR factorization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A QR factorization expresses a matrix A as QR with Q having orthonormal columns and R upper triangular; Householder QR is a standard stable construction.",
+      "required_concepts": [
+        "A QR factorization expresses a matrix A as QR with Q having orthonormal columns and R upper triangular; Householder QR is a standard stable construction."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Forming normal equations by default and calling the result numerically equivalent to QR."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.householder-reflector"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.quadrature-error-estimator",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "quadrature error estimator",
+      "prompt": "Define quadrature error estimator. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A quadrature error estimator uses nested rules, derivative bounds, or asymptotic differences to approximate or bound integration error under declared regularity conditions.",
+      "required_concepts": [
+        "A quadrature error estimator uses nested rules, derivative bounds",
+        "or asymptotic differences to approximate or bound integration error under declared regularity conditions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting the difference between two rules as the exact integration error."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.order-of-accuracy",
+        "numerical-analysis-and-scientific-computing.adaptive-quadrature"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.quadrature-rule",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "quadrature rule",
+      "prompt": "Define quadrature rule. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A quadrature rule approximates a definite integral by a weighted sum of integrand values at selected nodes.",
+      "required_concepts": [
+        "A quadrature rule approximates a definite integral by a weighted sum of integrand values at selected nodes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a quadrature rule exact because it integrates one test function accurately."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.quasi-newton-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Quasi-Newton root-finding method",
+      "prompt": "Define Quasi-Newton root-finding method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A quasi-Newton method replaces the exact Jacobian or its inverse by iteratively updated approximations that satisfy secant information, reducing derivative or factorization cost.",
+      "required_concepts": [
+        "First material clause: A quasi-Newton method replaces the exact Jacobian or its inverse by iteratively updated",
+        "Remaining material clause: approximations that satisfy secant information, reducing derivative or factorization cost."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any derivative-free iteration quasi-Newton without a Jacobian-approximation or secant structure."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.newton-method"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.relative-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "relative error",
+      "prompt": "Define relative error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For nonzero reference x, relative error is |x_hat-x|/|x|, or the corresponding norm ratio for vector quantities.",
+      "required_concepts": [
+        "For nonzero reference x, relative error is |x_hat-x|/|x|, or the corresponding norm ratio for vector quantities."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using relative error at a zero reference without an alternative scaling convention."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.absolute-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.residual",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical residual",
+      "prompt": "Define numerical residual. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** For an approximate solution x_hat of F(x)=0, the residual is F(x_hat); it measures equation satisfaction, not directly the distance from x_hat to an exact solution.",
+      "required_concepts": [
+        "For an approximate solution x_hat of F(x)=0, the residual is F(x_hat)",
+        "it measures equation satisfaction, not directly the distance from x_hat to an exact solution."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a small residual as proof of a small forward error without conditioning information."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.richardson-extrapolation",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Richardson extrapolation",
+      "prompt": "Define Richardson extrapolation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Richardson extrapolation combines approximations at related step sizes to cancel a known leading asymptotic error term and raise the formal order.",
+      "required_concepts": [
+        "Richardson extrapolation combines approximations at related step sizes to cancel a known leading asymptotic error term and raise the formal order."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying extrapolation when the assumed error expansion or asymptotic regime has not been established."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.order-of-accuracy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.rounding-mode",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "floating-point rounding mode",
+      "prompt": "Define floating-point rounding mode. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A rounding mode specifies which representable value is chosen for an exact result between representable numbers, such as nearest-even or a directed rounding mode.",
+      "required_concepts": [
+        "A rounding mode specifies which representable value is chosen for an exact result between representable numbers",
+        "such as nearest-even or a directed rounding mode."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every platform and operation always uses round-to-nearest-even."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.correct-rounding"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.roundoff-truncation-tradeoff",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "roundoff-truncation tradeoff",
+      "prompt": "Define roundoff-truncation tradeoff. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** In numerical differentiation, decreasing step size reduces truncation error initially but increases cancellation and roundoff influence, producing an accuracy-optimal scale rather than monotone improvement.",
+      "required_concepts": [
+        "In numerical differentiation, decreasing step size reduces truncation error initially but increases cancellation",
+        "and roundoff influence, producing an accuracy-optimal scale rather than monotone improvement."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Choosing the smallest representable step as automatically optimal."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.catastrophic-cancellation",
+        "numerical-analysis-and-scientific-computing.finite-difference-derivative",
+        "numerical-analysis-and-scientific-computing.truncation-error"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.runge-kutta-method",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Runge-Kutta method",
+      "prompt": "Define Runge-Kutta method. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A Runge-Kutta method forms one step from weighted stage evaluations of the vector field, with explicit or implicit stage coupling encoded by a Butcher tableau.",
+      "required_concepts": [
+        "A Runge-Kutta method forms one step from weighted stage evaluations of the vector field, with explicit or implicit stage coupling encoded by a Butcher tableau."
+      ],
+      "accepted_variants": [
+        "RK method"
+      ],
+      "major_error_concepts": [
+        "Equating the number of stages with the order for every Runge-Kutta method."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.one-step-method"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "RK method"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.runge-phenomenon",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Runge phenomenon",
+      "prompt": "Define Runge phenomenon. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The Runge phenomenon is large endpoint oscillation that can arise for high-degree polynomial interpolation at equally spaced nodes even for a smooth function.",
+      "required_concepts": [
+        "The Runge phenomenon is large endpoint oscillation that can arise for high-degree polynomial interpolation at equally spaced nodes even for a smooth function."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Concluding that all high-degree polynomial approximation is unstable regardless of node choice or basis."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.interpolation-remainder"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.schur-decomposition",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "Schur decomposition",
+      "prompt": "Define Schur decomposition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Every complex square matrix admits A=QTQ* with Q unitary and T upper triangular, whose diagonal entries are the eigenvalues; the real form uses quasi-triangular blocks.",
+      "required_concepts": [
+        "Every complex square matrix admits A=QTQ* with Q unitary and T upper triangular, whose diagonal entries are the eigenvalues",
+        "the real form uses quasi-triangular blocks."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every matrix is unitarily diagonalizable."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.singular-value-decomposition",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "singular value decomposition",
+      "prompt": "Define singular value decomposition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The singular value decomposition writes A=U Sigma V* with orthonormal singular vectors and nonnegative singular values, exposing rank, norm, conditioning, and best low-rank structure.",
+      "required_concepts": [
+        "The singular value decomposition writes A=U Sigma V* with orthonormal singular vectors",
+        "and nonnegative singular values, exposing rank, norm, conditioning, and best low-rank structure."
+      ],
+      "accepted_variants": [
+        "SVD"
+      ],
+      "major_error_concepts": [
+        "Treating every small singular value as numerical noise without a scale or application threshold."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [
+        "SVD"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.spectral-approximation",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "spectral approximation",
+      "prompt": "Define spectral approximation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Spectral approximation represents a smooth function in a global orthogonal basis and can achieve error decay faster than any algebraic power when regularity and geometry permit.",
+      "required_concepts": [
+        "Spectral approximation represents a smooth function in a global orthogonal basis",
+        "and can achieve error decay faster than any algebraic power when regularity and geometry permit."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming spectral convergence for nonsmooth functions without regularity qualification."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.least-squares-approximation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.stationary-iteration",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "stationary linear iteration",
+      "prompt": "State the spectral-radius criterion for a stationary affine iteration to converge to one common fixed point from every starting vector.",
+      "definition": "A stationary affine iteration is x_(k+1)=Gx_k+c with a fixed matrix G and vector c. It converges to the same unique fixed point for every initial vector exactly when rho(G)<1. In that case x*=(I-G)^{-1}c and x_k-x*=G^k(x_0-x*). Mere convergence to a possibly initialization-dependent limit is weaker and does not require rho(G)<1.",
+      "required_concepts": [
+        "The iteration uses a fixed matrix and offset.",
+        "The spectral-radius equivalence concerns convergence to a common unique fixed point from every start.",
+        "The error evolves as G^k times the initial error."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "For G=I,c=0 no starting sequence converges, because rho(G)=1."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.stiffness",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "ODE stiffness",
+      "prompt": "Define ODE stiffness. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Stiffness is a problem-method interaction in which stability constraints from rapidly decaying modes force an explicit method to use steps much smaller than accuracy of the slow dynamics would require.",
+      "required_concepts": [
+        "First material clause: Stiffness is a problem-method interaction in which stability constraints from rapidly decaying modes",
+        "Remaining material clause: force an explicit method to use steps much smaller than accuracy of the slow dynamics would require."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining stiffness solely as a large derivative or rapidly changing solution."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.absolute-stability-region"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.stopping-criterion",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical stopping criterion",
+      "prompt": "Define numerical stopping criterion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A stopping criterion terminates an iteration using declared evidence such as scaled residual, step size, estimated error, stagnation, or budget, interpreted with conditioning and model scale.",
+      "required_concepts": [
+        "A stopping criterion terminates an iteration using declared evidence such as scaled residual",
+        "step size, estimated error, stagnation, or budget, interpreted with conditioning and model scale."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Stopping solely because successive iterates are close when the method may be stagnating far from a solution."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.residual",
+        "numerical-analysis-and-scientific-computing.condition-number"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.subnormal-number",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "subnormal floating-point number",
+      "prompt": "Define subnormal floating-point number. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A subnormal number fills the gap between zero and the smallest normal magnitude using reduced leading precision, enabling gradual underflow.",
+      "required_concepts": [
+        "A subnormal number fills the gap between zero and the smallest normal magnitude using reduced leading precision, enabling gradual underflow."
+      ],
+      "accepted_variants": [
+        "denormal number"
+      ],
+      "major_error_concepts": [
+        "Assuming subnormal numbers have the same relative precision as normal numbers."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.normal-number"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "denormal number"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.truncation-error",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "truncation error",
+      "prompt": "Define truncation error. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Truncation error is the discrepancy introduced by replacing an exact mathematical operator or evolution with its finite approximation before floating-point rounding is considered.",
+      "required_concepts": [
+        "First material clause: Truncation error is the discrepancy introduced by replacing an exact mathematical operator",
+        "Remaining material clause: or evolution with its finite approximation before floating-point rounding is considered."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using truncation error as a synonym for total computed error."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.consistency"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.underflow",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "floating-point underflow",
+      "prompt": "Define floating-point underflow. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Underflow concerns a tiny nonzero result whose magnitude lies below the normal range and whose rounding may lose accuracy, often entering the subnormal range or zero.",
+      "required_concepts": [
+        "Underflow concerns a tiny nonzero result whose magnitude lies below the normal range",
+        "and whose rounding may lose accuracy, often entering the subnormal range or zero."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining underflow as every computation that produces a subnormal input or output."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.subnormal-number"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.unit-roundoff",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "unit roundoff",
+      "prompt": "Define unit roundoff. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Unit roundoff u is the smallest standard bound such that rounding a real number in the normal range to nearest can be modeled as fl(x)=x(1+delta) with |delta|<=u, subject to the format model.",
+      "required_concepts": [
+        "First material clause: Unit roundoff u is the smallest standard bound such that rounding a real number in the normal",
+        "Remaining material clause: range to nearest can be modeled as fl(x)=x(1+delta) with |delta|<=u, subject to the format model."
+      ],
+      "accepted_variants": [
+        "machine unit"
+      ],
+      "major_error_concepts": [
+        "Confusing unit roundoff with the smallest positive representable number."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.floating-point-system"
+      ],
+      "source_refs": [],
+      "aliases": [
+        "machine unit"
+      ],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.validation-vs-verification",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "verification versus validation",
+      "prompt": "Distinguish verification versus validation.",
+      "definition": "**Definition.** Verification evaluates correct solution and implementation of the chosen mathematical model; validation evaluates whether that model adequately represents the target physical or empirical system for its intended use.",
+      "required_concepts": [
+        "Verification evaluates correct solution and implementation of the chosen mathematical model",
+        "validation evaluates whether that model adequately represents the target physical or empirical system for its intended use."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a grid-convergence study model validation."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.verification"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:distinction"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.verification",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "numerical verification",
+      "prompt": "Define numerical verification. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Numerical verification asks whether the equations and algorithms were solved correctly, using convergence, residual, conservation, benchmark, and implementation evidence; it differs from validating whether the model represents reality.",
+      "required_concepts": [
+        "Numerical verification asks whether the equations and algorithms were solved correctly, using convergence, residual, conservation, benchmark, and implementation evidence",
+        "it differs from validating whether the model represents reality."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using agreement with experimental data as the sole evidence that the numerical code solves its equations correctly."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.residual",
+        "numerical-analysis-and-scientific-computing.numerical-convergence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.von-neumann-stability",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "von Neumann stability analysis",
+      "prompt": "Define von Neumann stability analysis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Von Neumann analysis studies amplification of Fourier modes for linear constant-coefficient difference schemes, giving stability information under assumptions such as periodic or translation-invariant interiors.",
+      "required_concepts": [
+        "Von Neumann analysis studies amplification of Fourier modes for linear constant-coefficient difference schemes",
+        "giving stability information under assumptions such as periodic or translation-invariant interiors."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating Fourier stability as a complete proof for arbitrary variable coefficients and boundary conditions."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.absolute-stability-region",
+        "numerical-analysis-and-scientific-computing.finite-difference-scheme"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "numerical-analysis-and-scientific-computing.well-conditioned-problem",
+      "canonical_deck_id": "numerical-analysis-and-scientific-computing",
+      "term": "well-conditioned problem",
+      "prompt": "Define well-conditioned problem. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A problem is well conditioned at an input when small admissible relative input perturbations necessarily produce comparably small relative output perturbations under the chosen measures.",
+      "required_concepts": [
+        "First material clause: A problem is well conditioned at an input when small admissible relative input perturbations",
+        "Remaining material clause: necessarily produce comparably small relative output perturbations under the chosen measures."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a problem well conditioned because one algorithm happened to return a plausible answer."
+      ],
+      "prerequisite_ids": [
+        "numerical-analysis-and-scientific-computing.condition-number"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "numerical-analysis-and-scientific-computing",
+        "nas-m1",
+        "shape:definition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.absolute-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.forward-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.absolute-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.numerical-convergence"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.absolute-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.relative-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.absolute-stability-region",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.a-stability"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.absolute-stability-region",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.stiffness"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.absolute-stability-region",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.von-neumann-stability"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.adaptive-quadrature",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.quadrature-error-estimator"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.algorithmic-stability",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.backward-stability-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.algorithmic-stability",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.one-step-order-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.backward-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.backward-stability-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.backward-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.condition-forward-error-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.backward-stability-statement",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.backward-stability-role"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.catastrophic-cancellation",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.roundoff-truncation-tradeoff"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.computational-grid",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.finite-difference-scheme"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.computational-grid",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.grid-refinement-study"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-forward-error-statement",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.condition-forward-error-role"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-forward-error-statement",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.iterative-refinement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.condition-forward-error-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.eigenvalue-conditioning"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.matrix-condition-number"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.preconditioner"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.stopping-criterion"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.well-conditioned-problem"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.conditioning",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.algorithmic-stability"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.conditioning",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.condition-number"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.conditioning",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lebesgue-constant"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.consistency",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lax-equivalence-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.consistency",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.truncation-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.contraction-mapping",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.contraction-guarantee-for-fixed-point-iteration"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.correct-rounding",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.floating-point-nonassociativity"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.correct-rounding",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.rounding-mode"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.degree-of-exactness",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.gaussian-quadrature"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.discrete-norm",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lax-equivalence-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.finite-difference-derivative",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.finite-difference-scheme"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.finite-difference-derivative",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.roundoff-truncation-tradeoff"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.cfl-condition"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lax-equivalence-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.manufactured-solution"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.finite-difference-scheme",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.von-neumann-stability"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.fixed-point-iteration",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.contraction-mapping"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.fixed-point-iteration",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.newton-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.floating-point-nonassociativity",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.numerical-reproducibility"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.floating-point-system",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.correct-rounding"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.floating-point-system",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.normal-number"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.floating-point-system",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.overflow"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.floating-point-system",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.unit-roundoff"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.forward-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.condition-forward-error-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.gaussian-elimination",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lu-factorization"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.global-discretization-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.one-step-order-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.grid-refinement-study",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.observed-order"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.householder-reflector",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.qr-factorization"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.initial-value-problem",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.linear-multistep-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.initial-value-problem",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.one-step-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.interpolation-remainder",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.interpolation-remainder-role"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.interpolation-remainder",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.runge-phenomenon"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.krylov-subspace",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.conjugate-gradient"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.krylov-subspace",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.gmres"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.krylov-subspace",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.preconditioner"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.lagrange-basis",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lebesgue-constant"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.lax-equivalence-statement",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lax-equivalence-role"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.least-squares-approximation",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.spectral-approximation"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.least-squares-residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.normal-equations-conditioning"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.local-truncation-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.embedded-runge-kutta"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.local-truncation-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.global-discretization-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.lu-factorization",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.iterative-refinement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.lu-factorization",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.partial-pivoting"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.matrix-condition-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.normal-equations-conditioning"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.newton-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.implicit-euler"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.newton-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.quasi-newton-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.normal-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.subnormal-number"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.numerical-convergence",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lax-equivalence-statement"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.numerical-convergence",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.order-of-accuracy"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.numerical-convergence",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.verification"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.numerical-reproducibility",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.numerical-evidence-record"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.one-step-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.absolute-stability-region"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.one-step-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.explicit-euler"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.one-step-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.implicit-euler"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.one-step-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.local-truncation-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.one-step-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.runge-kutta-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.one-step-order-statement",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.one-step-order-role"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.order-of-accuracy",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.grid-refinement-study"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.order-of-accuracy",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.quadrature-error-estimator"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.order-of-accuracy",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.richardson-extrapolation"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.orthogonal-polynomial",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.gaussian-quadrature"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.orthogonal-polynomial",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.least-squares-approximation"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.partial-pivoting",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.growth-factor"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.piecewise-polynomial",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.cubic-spline"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.polynomial-interpolation",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.interpolation-remainder"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.polynomial-interpolation",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.lagrange-basis"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.polynomial-interpolation",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.newton-cotes-rule"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.qr-factorization",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.least-squares-residual"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.quadrature-rule",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.adaptive-quadrature"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.quadrature-rule",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.degree-of-exactness"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.quadrature-rule",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.newton-cotes-rule"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.relative-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.condition-number"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.backward-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.gmres"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.least-squares-residual"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.newton-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.stopping-criterion"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.residual",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.verification"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.runge-kutta-method",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.embedded-runge-kutta"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.runge-phenomenon",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.chebyshev-nodes"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.schur-decomposition",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.eigenvalue-conditioning"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.singular-value-decomposition",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.matrix-condition-number"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.stationary-iteration",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.gauss-seidel-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.stationary-iteration",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.jacobi-method"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.subnormal-number",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.underflow"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.truncation-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.local-truncation-error"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.truncation-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.order-of-accuracy"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.truncation-error",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.roundoff-truncation-tradeoff"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.unit-roundoff",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.catastrophic-cancellation"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.unit-roundoff",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.machine-epsilon"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.verification",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.grid-refinement-study"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.verification",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.manufactured-solution"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.verification",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.numerical-evidence-record"
+    },
+    {
+      "prerequisite_card_id": "numerical-analysis-and-scientific-computing.verification",
+      "dependent_card_id": "numerical-analysis-and-scientific-computing.validation-vs-verification"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Numerical Analysis.",
+  "level": "College",
+  "tags": [
+    "mathematics"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "format": "meshful-website-library-releases.v1",
+  "active": "2026-09-02.public-sanitized-72.v2",
+  "audience": "public",
+  "publicReleaseApproved": true,
+  "releases": [
+    {
+      "version": "2026-09-02.public-sanitized-72.v2",
+      "delivery": "artifact",
+      "browser_artifact_contract": "meshful-library-runtime-artifact.v1",
+      "path": "library/2026-09-02.public-sanitized-72.v2/a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1.json",
+      "sha256": "a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1",
+      "bytes": 12033408,
+      "constructorDigest": "sha256:d24dd2be1b5c03a367defeeb13746701b61c990c9575c110b8e854ba365cbca6",
+      "catalogDigest": "sha256:a7ef2efa1d6133879ab8daf6068ff88a17abc23be1590d39932cea82b0ec8642",
+      "dependencyGraphDigest": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0",
+      "sourceManifestSha256": "599cfb3977a8e95d60c3e0980ff2b3d4b110b121a8e6a62f46518f882d272a55",
+      "runtime": {
+        "indexPath": "library-runtime/2026-09-02.public-sanitized-72.v2/index.json",
+        "indexSha256": "9638252b82ec483c97e7d40ddee9278aa892db9cc541e47b73c9c7f088efe5a7",
+        "preparedConstructorDigest": "sha256:579338ef3aae223d7a1c2900bfc69bd70d55f94dc8cd472a7882bcee1c883295",
+        "normalizationVersion": "canonical-library-card-identity.v1",
+        "criterionDerivationVersion": "store-normalizeRubricItems-ordinal.v1",
+        "resolutionBudget": {
+          "max_decks": 42,
+          "max_cards": 5500,
+          "max_raw_chunk_bytes": 7000000
+        }
+      },
+      "counts": {
+        "decks": 72,
+        "cards": 9988,
+        "prerequisite_edges": 17712,
+        "external_prerequisite_edges": 770,
+        "internal_prerequisite_edges": 16942
+      },
+      "crossListings": {
+        "academic-reviewed-v1:biochemistry": [
+          "Biology"
+        ]
+      }
+    }
+  ]
+}

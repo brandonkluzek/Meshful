@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.vinext/
+.cache/
+out/
+dist/
+.wrangler/
+outputs/
+work/
+public/study/
+.env*
+*.log
+.DS_Store

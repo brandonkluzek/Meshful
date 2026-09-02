@@ -1,0 +1,3721 @@
+{
+  "id": "academic-reviewed-v1:econometrics-i",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Econometrics I",
+  "subject": "Economics",
+  "domain": "Economics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "econometrics-i.draft-econometrics",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Econometrics",
+      "prompt": "What is Econometrics? State its defining idea and essential conditions.",
+      "definition": "Econometrics uses statistical models and economic reasoning to estimate relationships, test restrictions, predict outcomes, or identify causal effects. These tasks require different assumptions; accurate prediction alone does not establish a causal mechanism.",
+      "required_concepts": [
+        "Statistical analysis of economic relationships with task-specific assumptions."
+      ],
+      "accepted_variants": [
+        "Empirical economic modeling and inference."
+      ],
+      "major_error_concepts": [
+        "Equating predictive accuracy with causal identification."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-economic-data",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Economic Data",
+      "prompt": "What is Economic Data? State its defining idea and essential conditions.",
+      "definition": "An economic dataset records variables for defined observational units and periods under a measurement process. Units, timing, coverage, revisions, and missingness determine what its values represent before any model is estimated.",
+      "required_concepts": [
+        "Defined observations and measurement process."
+      ],
+      "accepted_variants": [
+        "Structured economic observations with metadata."
+      ],
+      "major_error_concepts": [
+        "Assuming a column label alone establishes a variable's meaning or comparability."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-econometrics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-unit-of-observation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Unit of Observation",
+      "prompt": "What is Unit of Observation? State its defining idea and essential conditions.",
+      "definition": "The unit of observation is the entity or entity-period represented by one record, such as a person, firm, or country-year. It can differ from the unit of treatment assignment or statistical independence, which matters for inference.",
+      "required_concepts": [
+        "Entity represented by a record; not necessarily the independent unit."
+      ],
+      "accepted_variants": [
+        "Observational unit or record granularity."
+      ],
+      "major_error_concepts": [
+        "Treating repeated records for one person as independent people."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-economic-data"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-cross-sectional-data",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Cross Sectional Data",
+      "prompt": "What is Cross Sectional Data? State its defining idea and essential conditions.",
+      "definition": "Cross-sectional data observe many units at one date or over a common reference period. Their dependence structure can still include households, firms, regions, or networks, so a cross section is not automatically an independent random sample.",
+      "required_concepts": [
+        "Multiple units observed over a common time reference."
+      ],
+      "accepted_variants": [
+        "Single-wave cross section."
+      ],
+      "major_error_concepts": [
+        "Inferring independence solely from cross-sectional format."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-economic-data",
+        "econometrics-i.draft-unit-of-observation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-time-series-data",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Time Series Data",
+      "prompt": "What is Time Series Data? State its defining idea and essential conditions.",
+      "definition": "Time-series data observe variables in time order for a defined unit or aggregate. Trends, seasonality, serial dependence, and changing definitions can affect estimation, so time ordering is substantive rather than merely a display choice.",
+      "required_concepts": [
+        "Ordered observations across dates with potentially dependent dynamics."
+      ],
+      "accepted_variants": [
+        "Temporal economic observations."
+      ],
+      "major_error_concepts": [
+        "Randomly permuting dates without changing the analysis of a dynamic model."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-economic-data",
+        "econometrics-i.draft-unit-of-observation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-panel-data",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Panel Data",
+      "prompt": "What is Panel Data? State its defining idea and essential conditions.",
+      "definition": "Panel data follow the same units over multiple periods. They combine within-unit and between-unit variation; repeated independent cross sections do not become a panel merely because the same variables are collected each year.",
+      "required_concepts": [
+        "Repeated observations of identifiable units across time."
+      ],
+      "accepted_variants": [
+        "Longitudinal data."
+      ],
+      "major_error_concepts": [
+        "Calling unrelated yearly samples an individual-level panel."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-cross-sectional-data",
+        "econometrics-i.draft-time-series-data"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-target-population",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Target Population",
+      "prompt": "What is Target Population? State its defining idea and essential conditions.",
+      "definition": "A population is the defined set of units or probability-generating process targeted by an analysis. The observed sample and the population to which conclusions are generalized may differ, requiring an explicit sampling or transport argument.",
+      "required_concepts": [
+        "Target units or process must be distinguished from the observed sample."
+      ],
+      "accepted_variants": [
+        "Target population or superpopulation with interpretation stated."
+      ],
+      "major_error_concepts": [
+        "Assuming the available sample automatically represents all possible populations."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-economic-data",
+        "econometrics-i.draft-unit-of-observation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-iid-sampling",
+      "canonical_deck_id": "econometrics-i",
+      "term": "IID Sampling",
+      "prompt": "What is IID Sampling? State its defining idea and essential conditions.",
+      "definition": "An independent identically distributed sample has observations drawn independently from the same distribution. This is a modeling assumption, not guaranteed by large size or randomized treatment, and it can fail with clustering or time dependence.",
+      "required_concepts": [
+        "Independence and common distribution are separate required properties."
+      ],
+      "accepted_variants": [
+        "IID random sample."
+      ],
+      "major_error_concepts": [
+        "Treating randomized treatment as proof that all outcome observations are independent."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-target-population"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-sampling-frame",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Sampling Frame",
+      "prompt": "What is Sampling Frame? State its defining idea and essential conditions.",
+      "definition": "A sampling frame is the operational list or selection mechanism used to draw units. Undercoverage, duplicate entries, and ineligible records can make it differ from the target population even before nonresponse occurs.",
+      "required_concepts": [
+        "Operational selection frame can differ from the target population."
+      ],
+      "accepted_variants": [
+        "List or mechanism defining units reachable for sampling."
+      ],
+      "major_error_concepts": [
+        "Assuming frame coverage is perfect because selection within the frame was random."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-target-population",
+        "econometrics-i.draft-iid-sampling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-parameter-and-estimator",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Parameter and Estimator",
+      "prompt": "What is Parameter and Estimator? State its defining idea and essential conditions.",
+      "definition": "A parameter describes a population or model feature, while an estimator is a rule applied to random data and an estimate is its realized value. The estimator has a sampling distribution; a computed number is one realization.",
+      "required_concepts": [
+        "Population target, estimation rule, and realized value are distinct."
+      ],
+      "accepted_variants": [
+        "Parameter versus statistic versus estimate."
+      ],
+      "major_error_concepts": [
+        "Calling the realized estimate the unknown population parameter by definition."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-target-population",
+        "econometrics-i.draft-iid-sampling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-estimand",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Estimand",
+      "prompt": "What is Estimand? State its defining idea and essential conditions.",
+      "definition": "An estimand is the precise quantity the study aims to learn, including population, outcome, contrast, and horizon. It should be defined before selecting an estimator because different methods can target different effects even when they use the same data.",
+      "required_concepts": [
+        "Explicit target quantity with population and contrast specified."
+      ],
+      "accepted_variants": [
+        "Target functional or causal contrast."
+      ],
+      "major_error_concepts": [
+        "Defining the target only as whatever coefficient software happens to return."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-parameter-and-estimator"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-identification",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Identification",
+      "prompt": "What is Identification? State its defining idea and essential conditions.",
+      "definition": "Identification asks whether the observable distribution and maintained assumptions determine the target quantity. A unique numerical regression result does not prove that a causal effect or structural parameter is identified.",
+      "required_concepts": [
+        "Data distribution plus assumptions must determine the target."
+      ],
+      "accepted_variants": [
+        "Observational distinguishability of parameter values."
+      ],
+      "major_error_concepts": [
+        "Treating optimizer convergence as evidence of causal identification."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-parameter-and-estimator",
+        "econometrics-i.draft-estimand"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-counterfactual",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Counterfactual",
+      "prompt": "What is Counterfactual? State its defining idea and essential conditions.",
+      "definition": "A counterfactual is an outcome under an alternative condition or intervention to the one realized. Causal inference requires a justified way to learn about such unobserved alternatives, not simply a comparison of any two observed groups.",
+      "required_concepts": [
+        "Outcome under an unrealized alternative condition."
+      ],
+      "accepted_variants": [
+        "Potential outcome under another treatment state."
+      ],
+      "major_error_concepts": [
+        "Assuming an observed comparison group automatically supplies the correct counterfactual."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-estimand",
+        "econometrics-i.draft-identification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-association-and-causation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Association and Causation",
+      "prompt": "What is Association and Causation? State its defining idea and essential conditions.",
+      "definition": "Association describes how observed variables vary together, while causation concerns changes in an outcome produced by changing a treatment or condition. Confounding, selection, and reverse causality can create association without the corresponding intervention effect.",
+      "required_concepts": [
+        "Observed comovement differs from an intervention effect."
+      ],
+      "accepted_variants": [
+        "Correlation versus causal effect."
+      ],
+      "major_error_concepts": [
+        "Interpreting any statistically significant association as causal."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-counterfactual"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-potential-outcomes",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Potential Outcomes",
+      "prompt": "What is Potential Outcomes? State its defining idea and essential conditions.",
+      "definition": "Potential outcomes Y(1) and Y(0) represent an individual's outcome under treatment and control. The realized outcome equals the potential outcome under the received treatment, so both alternatives are generally not observed for the same unit at the same time.",
+      "required_concepts": [
+        "Treatment-specific outcomes with only one normally observed per unit."
+      ],
+      "accepted_variants": [
+        "Potential-outcomes framework."
+      ],
+      "major_error_concepts": [
+        "Assuming both individual potential outcomes are directly observed in an ordinary experiment."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-counterfactual"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-average-treatment-effect",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Average Treatment Effect",
+      "prompt": "What is Average Treatment Effect? State its defining idea and essential conditions.",
+      "definition": "The average treatment effect is E[Y(1)-Y(0)] for a stated population. It differs from an effect among treated units or among compliers when effects vary across people or treatment assignment types.",
+      "required_concepts": [
+        "Population average of individual potential-outcome differences."
+      ],
+      "accepted_variants": [
+        "ATE with the target population explicit."
+      ],
+      "major_error_concepts": [
+        "Equating ATE and every subgroup treatment effect without homogeneity assumptions."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-potential-outcomes",
+        "econometrics-i.draft-estimand"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-selection-bias",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Selection Bias",
+      "prompt": "What is Selection Bias? State its defining idea and essential conditions.",
+      "definition": "Selection bias arises when compared groups differ in outcome-relevant ways beyond the treatment contrast. For example, untreated potential outcomes may differ between those choosing treatment and those not choosing it, invalidating a naive outcome difference as a causal effect.",
+      "required_concepts": [
+        "Group selection can make the comparison counterfactual inappropriate."
+      ],
+      "accepted_variants": [
+        "Confounding through noncomparable treated and untreated units."
+      ],
+      "major_error_concepts": [
+        "Assuming a larger sample automatically removes systematic selection bias."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-potential-outcomes",
+        "econometrics-i.draft-average-treatment-effect",
+        "econometrics-i.draft-association-and-causation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-random-assignment",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Random Assignment",
+      "prompt": "What is Random Assignment? State its defining idea and essential conditions.",
+      "definition": "Random assignment allocates treatment using a known chance mechanism, making assignment independent of potential outcomes under the design. It supports internal causal comparisons but does not by itself guarantee compliance, complete follow-up, or representativeness of the study population.",
+      "required_concepts": [
+        "Chance assignment supplies treatment comparability under the design."
+      ],
+      "accepted_variants": [
+        "Randomized treatment allocation."
+      ],
+      "major_error_concepts": [
+        "Equating random assignment with random sampling from all intended users."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-potential-outcomes",
+        "econometrics-i.draft-selection-bias",
+        "econometrics-i.draft-iid-sampling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-stable-unit-treatment-value-assumption",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Stable Unit Treatment Value Assumption",
+      "prompt": "What is Stable Unit Treatment Value Assumption? State its defining idea and essential conditions.",
+      "definition": "The stable-unit-treatment-value assumption combines no relevant interference across units with well-defined treatment versions. If peers' treatment or unrecorded versions affect outcomes, potential outcomes indexed only by one's own binary treatment are insufficient.",
+      "required_concepts": [
+        "No relevant cross-unit interference and no hidden treatment versions."
+      ],
+      "accepted_variants": [
+        "SUTVA components stated explicitly."
+      ],
+      "major_error_concepts": [
+        "Assuming a binary treatment label always captures every relevant exposure."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-potential-outcomes"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-exogeneity",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Exogeneity",
+      "prompt": "What is Exogeneity? State its defining idea and essential conditions.",
+      "definition": "Exogeneity is a specified relationship between regressors or assignment and unobserved outcome determinants, such as E[u|X]=0. Different models use different versions, so an exogeneity claim must state the conditioning information and timing.",
+      "required_concepts": [
+        "Explicit orthogonality or conditional-mean restriction involving unobservables."
+      ],
+      "accepted_variants": [
+        "Conditional mean exogeneity when E[u|X]=0 is intended."
+      ],
+      "major_error_concepts": [
+        "Calling a variable exogenous solely because it is measured before estimation."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-identification",
+        "econometrics-i.draft-association-and-causation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-random-variable",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Random Variable",
+      "prompt": "What is Random Variable? State its defining idea and essential conditions.",
+      "definition": "A random variable maps uncertain outcomes to numerical values, with a probability distribution describing possible realizations. Economic variables can be discrete, continuous, or mixed; their distribution and existence of moments affect statistical methods.",
+      "required_concepts": [
+        "Numerical function of uncertainty with a defined distribution."
+      ],
+      "accepted_variants": [
+        "Random quantity governed by a probability law."
+      ],
+      "major_error_concepts": [
+        "Assuming every economic variable has a continuous normal distribution."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-conditional-expectation-function",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Conditional Expectation Function",
+      "prompt": "What is Conditional Expectation Function? State its defining idea and essential conditions.",
+      "definition": "The conditional expectation E[Y|X] is the mean of Y conditional on information in X. It is a function of X and need not be linear; the residual Y-E[Y|X] has conditional mean zero by construction.",
+      "required_concepts": [
+        "Conditional mean function; associated residual has zero conditional mean."
+      ],
+      "accepted_variants": [
+        "CEF; best mean-square predictor with suitable second moments."
+      ],
+      "major_error_concepts": [
+        "Assuming conditional expectations are necessarily straight lines."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-random-variable"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-law-of-iterated-expectations",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Law of Iterated Expectations",
+      "prompt": "What is Law of Iterated Expectations? State its defining idea and essential conditions.",
+      "definition": "The law of iterated expectations gives E[E[Y|X]]=E[Y] when the expectations exist. More generally, conditioning an expectation again on a coarser nested information set recovers the expectation using that coarser information.",
+      "required_concepts": [
+        "Averaging conditional means yields the unconditional mean."
+      ],
+      "accepted_variants": [
+        "Tower property under nested information."
+      ],
+      "major_error_concepts": [
+        "Using the law with unrelated non-nested conditioning sets without justification."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-conditional-expectation-function"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-variance",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Variance",
+      "prompt": "What is Variance? State its defining idea and essential conditions.",
+      "definition": "Variance is the expected squared deviation from a variable's mean when that moment exists. Conditional variance measures dispersion within a specified information set and can vary with regressors even when the conditional mean is correctly modeled.",
+      "required_concepts": [
+        "Expected squared deviation; conditional variance may depend on X."
+      ],
+      "accepted_variants": [
+        "Var(Y)=E[(Y-EY)^2]."
+      ],
+      "major_error_concepts": [
+        "Equating zero conditional mean error with constant conditional variance."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-random-variable",
+        "econometrics-i.draft-conditional-expectation-function"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-covariance",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Covariance",
+      "prompt": "What is Covariance? State its defining idea and essential conditions.",
+      "definition": "Covariance is E[(X-EX)(Y-EY)] when the required moments exist. Zero covariance means no linear comovement in this sense, not independence or absence of nonlinear dependence.",
+      "required_concepts": [
+        "Centered cross-product expectation measuring linear comovement."
+      ],
+      "accepted_variants": [
+        "Cov(X,Y)=E[XY]-EX*EY."
+      ],
+      "major_error_concepts": [
+        "Inferring independence solely from zero covariance."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-variance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-correlation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Correlation",
+      "prompt": "What is Correlation? State its defining idea and essential conditions.",
+      "definition": "Correlation normalizes covariance by the product of positive standard deviations and lies between minus one and one. It is unit-free but does not establish causality and can miss nonlinear relationships.",
+      "required_concepts": [
+        "Standardized covariance with nonzero finite variances."
+      ],
+      "accepted_variants": [
+        "Pearson correlation."
+      ],
+      "major_error_concepts": [
+        "Interpreting correlation zero as proof that no relationship exists."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-covariance",
+        "econometrics-i.draft-variance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-law-of-large-numbers",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Law of Large Numbers",
+      "prompt": "State an IID law of large numbers for a sample mean, including its moment condition and conclusion.",
+      "definition": "If X1,X2,... are IID and E|X1| is finite, their sample mean converges in probability to mu=E[X1]. This version does not require a finite variance. It concerns sampling fluctuation around the generating population mean, not removal of selection or measurement bias.",
+      "required_concepts": [
+        "IID observations with a finite absolute first moment and common mean mu.",
+        "The sample mean converges in probability to mu as sample size grows; the observations themselves need not converge."
+      ],
+      "accepted_variants": [
+        "Under IID integrability, the sample average converges almost surely, and hence in probability, to the common expectation.",
+        "The IID finite-variance weak law is a valid sufficient-condition version: sample averages converge in probability to their common mean."
+      ],
+      "major_error_concepts": [
+        "Claiming IID sampling alone gives convergence to a mean when the mean does not exist, as for a Cauchy distribution.",
+        "Claiming more observations remove systematic population-selection bias."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-iid-sampling",
+        "econometrics-i.draft-random-variable"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-central-limit-theorem",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Central Limit Theorem",
+      "prompt": "State the IID finite-variance central limit theorem for a sample mean, including its normalization.",
+      "definition": "For IID observations with mean mu and finite nonzero variance sigma squared, sqrt(n)*(Xbar_n-mu)/sigma converges in distribution to a standard normal random variable. The raw observations do not become normal, and neither infinite-variance nor arbitrary dependent samples satisfy this version automatically.",
+      "required_concepts": [
+        "IID sampling with finite mean and variance satisfying 0<sigma squared<infinity.",
+        "The centered sample mean is multiplied by sqrt(n) and divided by sigma; the resulting distribution converges to N(0,1)."
+      ],
+      "accepted_variants": [
+        "sqrt(n)*(Xbar_n-mu) converges in distribution to N(0,sigma squared) for IID observations with finite positive variance."
+      ],
+      "major_error_concepts": [
+        "Claiming the raw observations become normal as more are sampled.",
+        "Omitting the square-root-n scaling or asserting this version for IID Cauchy data."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-variance",
+        "econometrics-i.draft-law-of-large-numbers"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-sampling-distribution",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Sampling Distribution",
+      "prompt": "What is Sampling Distribution? State its defining idea and essential conditions.",
+      "definition": "An estimator's sampling distribution describes how the estimator varies across repeated samples from the specified design or process. It is distinct from the distribution of individual observations in the single dataset.",
+      "required_concepts": [
+        "Distribution of an estimation rule over repeated samples."
+      ],
+      "accepted_variants": [
+        "Repeated-sampling distribution of a statistic."
+      ],
+      "major_error_concepts": [
+        "Using raw outcome variability as if it were the estimator's sampling variability."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-parameter-and-estimator",
+        "econometrics-i.draft-iid-sampling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-standard-error",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Standard Error",
+      "prompt": "What is Standard Error? State its defining idea and essential conditions.",
+      "definition": "A standard error estimates the standard deviation of an estimator's sampling distribution. Its formula must match the model and dependence structure; it is not the standard deviation of the outcome variable itself.",
+      "required_concepts": [
+        "Estimated sampling standard deviation of an estimator."
+      ],
+      "accepted_variants": [
+        "SE; uncertainty scale of the estimate under the stated design."
+      ],
+      "major_error_concepts": [
+        "Substituting outcome standard deviation for the coefficient standard error."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-sampling-distribution",
+        "econometrics-i.draft-variance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-estimator-bias",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Estimator Bias",
+      "prompt": "What is Estimator Bias? State its defining idea and essential conditions.",
+      "definition": "An estimator's bias is its expectation minus the target parameter under the specified sampling process. Unbiasedness is a repeated-sampling mean property and does not guarantee small error in a particular sample.",
+      "required_concepts": [
+        "E[estimator] minus target parameter."
+      ],
+      "accepted_variants": [
+        "Finite-sample expectation bias."
+      ],
+      "major_error_concepts": [
+        "Assuming an unbiased estimate must equal the true value in every sample."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-parameter-and-estimator",
+        "econometrics-i.draft-sampling-distribution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-consistency",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Consistency",
+      "prompt": "What is Consistency? State its defining idea and essential conditions.",
+      "definition": "Consistency means an estimator converges in probability to its target as the relevant sample size grows under stated conditions. An estimator can be biased in finite samples yet consistent, or precise around the wrong limit when identification fails.",
+      "required_concepts": [
+        "Convergence in probability to the intended target."
+      ],
+      "accepted_variants": [
+        "Large-sample correctness under the maintained assumptions."
+      ],
+      "major_error_concepts": [
+        "Equating smaller standard errors with consistency for the causal target."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-law-of-large-numbers",
+        "econometrics-i.draft-estimator-bias",
+        "econometrics-i.draft-identification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-estimator-efficiency",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Estimator Efficiency",
+      "prompt": "What is Estimator Efficiency? State its defining idea and essential conditions.",
+      "definition": "Efficiency compares sampling variance or another loss among estimators in a stated class under specified assumptions. An efficient estimator within one class need not be unbiased, robust, or best under a different loss or data process.",
+      "required_concepts": [
+        "Relative performance within a defined estimator class and assumptions."
+      ],
+      "accepted_variants": [
+        "Minimum variance within the qualifying comparison class."
+      ],
+      "major_error_concepts": [
+        "Calling an estimator universally best without specifying the class or criterion."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-standard-error",
+        "econometrics-i.draft-estimator-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-mean-squared-error",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Mean Squared Error",
+      "prompt": "What is Mean Squared Error? State its defining idea and essential conditions.",
+      "definition": "Mean squared error equals expected squared estimation error. When finite, it decomposes into estimator variance plus squared bias, so reducing variance can be worthwhile even if some bias is introduced, depending on the target and loss.",
+      "required_concepts": [
+        "MSE=variance plus squared bias."
+      ],
+      "accepted_variants": [
+        "Expected squared error around the target."
+      ],
+      "major_error_concepts": [
+        "Equating minimum MSE with zero bias in every setting."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-estimator-bias",
+        "econometrics-i.draft-estimator-efficiency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-confidence-interval",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Confidence Interval",
+      "prompt": "What is Confidence Interval? State its defining idea and essential conditions.",
+      "definition": "A frequentist confidence interval is produced by a procedure with specified repeated-sampling coverage under its assumptions. After observing the data, the fixed unknown parameter is either inside the realized interval or not; coverage is a property of the procedure.",
+      "required_concepts": [
+        "Repeated-sampling coverage of an interval procedure."
+      ],
+      "accepted_variants": [
+        "A 95 percent procedure covers the fixed target in 95 percent of repeated samples under the model."
+      ],
+      "major_error_concepts": [
+        "Interpreting coverage as the posterior probability of the fixed parameter without a Bayesian model."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-sampling-distribution",
+        "econometrics-i.draft-standard-error"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-null-hypothesis",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Null Hypothesis",
+      "prompt": "What is Null Hypothesis? State its defining idea and essential conditions.",
+      "definition": "A null hypothesis specifies a restriction tested against an alternative, such as a regression coefficient being zero. Failure to reject means the data did not cross the chosen rejection threshold; it does not prove the null or practical equivalence.",
+      "required_concepts": [
+        "Tested restriction contrasted with a stated alternative."
+      ],
+      "accepted_variants": [
+        "H0 and H1 with direction specified."
+      ],
+      "major_error_concepts": [
+        "Calling non-rejection proof that the effect is exactly zero."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-parameter-and-estimator",
+        "econometrics-i.draft-sampling-distribution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-p-value",
+      "canonical_deck_id": "econometrics-i",
+      "term": "P Value",
+      "prompt": "What is P Value? State its defining idea and essential conditions.",
+      "definition": "A p-value is the probability under the null model of a test statistic at least as extreme as the observed statistic according to the test's rule. It is not the probability the null is true or the probability the finding arose by chance in an unrestricted sense.",
+      "required_concepts": [
+        "Null-tail probability for the specified extremeness rule."
+      ],
+      "accepted_variants": [
+        "Observed significance level under the maintained null distribution."
+      ],
+      "major_error_concepts": [
+        "Interpreting p as the posterior probability that H0 is true."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-null-hypothesis",
+        "econometrics-i.draft-sampling-distribution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-test-size-and-power",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Test Size and Power",
+      "prompt": "What is Test Size and Power? State its defining idea and essential conditions.",
+      "definition": "Test size is the probability of rejecting a true null, or its supremum over a composite null. Power is the rejection probability under a specified alternative and depends on effect size, noise, sample design, and the test procedure.",
+      "required_concepts": [
+        "False-positive control versus sensitivity at a stated alternative."
+      ],
+      "accepted_variants": [
+        "Type I error rate and one minus Type II error at an alternative."
+      ],
+      "major_error_concepts": [
+        "Reporting power without specifying an alternative effect and design."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-null-hypothesis",
+        "econometrics-i.draft-p-value"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-multiple-testing",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Multiple Testing",
+      "prompt": "What is Multiple Testing? State its defining idea and essential conditions.",
+      "definition": "Multiple testing considers the error consequences of examining several hypotheses. Familywise-error and false-discovery-rate procedures target different quantities; selecting only favorable tests without accounting for the search can invalidate ordinary interpretations.",
+      "required_concepts": [
+        "Inference must account for the set of hypotheses and its intended error control."
+      ],
+      "accepted_variants": [
+        "Multiplicity control with familywise or false-discovery target specified."
+      ],
+      "major_error_concepts": [
+        "Applying a per-test threshold and claiming identical familywise false-positive control."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-p-value",
+        "econometrics-i.draft-test-size-and-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-economic-and-statistical-significance",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Economic and Statistical Significance",
+      "prompt": "What is Economic and Statistical Significance? State its defining idea and essential conditions.",
+      "definition": "Statistical significance concerns compatibility with a null under a testing procedure, whereas economic significance concerns the magnitude and practical implications of an effect. Large samples can detect tiny effects, and imprecise estimates can remain compatible with economically large effects.",
+      "required_concepts": [
+        "Evidence against a null differs from substantive effect magnitude."
+      ],
+      "accepted_variants": [
+        "Precision and economic importance assessed separately."
+      ],
+      "major_error_concepts": [
+        "Equating a small p-value with a large or useful effect."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-confidence-interval",
+        "econometrics-i.draft-p-value"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-simple-linear-regression",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Simple Linear Regression",
+      "prompt": "What is Simple Linear Regression? State its defining idea and essential conditions.",
+      "definition": "A simple linear regression writes Y=beta0+beta1*X+u. It can represent a linear conditional mean or a best linear approximation, but these interpretations and a causal interpretation require different restrictions on u and X.",
+      "required_concepts": [
+        "One-regressor linear model with explicit error and interpretation."
+      ],
+      "accepted_variants": [
+        "SLR with intercept and slope."
+      ],
+      "major_error_concepts": [
+        "Assuming the equation alone proves a causal effect of X."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-conditional-expectation-function",
+        "econometrics-i.draft-exogeneity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-error",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression Error",
+      "prompt": "What is Regression Error? State its defining idea and essential conditions.",
+      "definition": "A regression error is the unobserved difference between the outcome and the population model component. A residual is computed after fitting coefficients to a sample; sample orthogonality of residuals does not imply population exogeneity of errors.",
+      "required_concepts": [
+        "Population unobservable differs from fitted sample residual."
+      ],
+      "accepted_variants": [
+        "Disturbance u versus estimated residual uHat."
+      ],
+      "major_error_concepts": [
+        "Using OLS residual orthogonality as a test that regressors are exogenous."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-simple-linear-regression"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-ordinary-least-squares",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Ordinary Least Squares",
+      "prompt": "What is Ordinary Least Squares? State its defining idea and essential conditions.",
+      "definition": "Ordinary least squares chooses coefficients to minimize the sum of squared residuals. The criterion defines an estimator whether or not the model is causal; statistical properties depend on sampling, rank, and error assumptions.",
+      "required_concepts": [
+        "Minimize the sum of squared observed-minus-fitted outcomes."
+      ],
+      "accepted_variants": [
+        "OLS least-squares criterion."
+      ],
+      "major_error_concepts": [
+        "Claiming minimization alone establishes unbiased causal estimation."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-simple-linear-regression",
+        "econometrics-i.draft-regression-error"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-fitted-value",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Fitted Value",
+      "prompt": "What is Fitted Value? State its defining idea and essential conditions.",
+      "definition": "A fitted value is the model prediction for an observed regressor vector using estimated coefficients. It is a sample-based approximation to the relevant conditional mean or linear projection, not necessarily a person's counterfactual under intervention.",
+      "required_concepts": [
+        "Estimated model value at the specified covariates."
+      ],
+      "accepted_variants": [
+        "YHat=X betaHat in matrix form."
+      ],
+      "major_error_concepts": [
+        "Treating every fitted value as an identified treatment counterfactual."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ordinary-least-squares",
+        "econometrics-i.draft-counterfactual"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-ols-residual",
+      "canonical_deck_id": "econometrics-i",
+      "term": "OLS Residual",
+      "prompt": "What is OLS Residual? State its defining idea and essential conditions.",
+      "definition": "A residual is the observed outcome minus its fitted value. With an intercept, OLS residuals sum to zero by construction, but this algebraic fact does not show that errors are independent, homoskedastic, or exogenous.",
+      "required_concepts": [
+        "Observed minus fitted; OLS algebra is not an error-assumption test."
+      ],
+      "accepted_variants": [
+        "Estimated disturbance."
+      ],
+      "major_error_concepts": [
+        "Inferring model validity because the sample mean residual is zero."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-error",
+        "econometrics-i.draft-fitted-value"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-ols-normal-equations",
+      "canonical_deck_id": "econometrics-i",
+      "term": "OLS Normal Equations",
+      "prompt": "What is OLS Normal Equations? State its defining idea and essential conditions.",
+      "definition": "OLS normal equations set the regressor-residual cross-products to zero, Xprime*(Y-X betaHat)=0. If X has full column rank, they give betaHat=(Xprime X)^(-1)Xprime Y; these are sample optimization conditions.",
+      "required_concepts": [
+        "Regressors are orthogonal to fitted residuals at the least-squares optimum."
+      ],
+      "accepted_variants": [
+        "First-order least-squares equations."
+      ],
+      "major_error_concepts": [
+        "Reading sample normal equations as proof of E[u|X]=0."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ordinary-least-squares",
+        "econometrics-i.draft-ols-residual"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-simple-ols-slope",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Simple OLS Slope",
+      "prompt": "What is Simple OLS Slope? State its defining idea and essential conditions.",
+      "definition": "With an intercept and nonconstant X, the simple OLS slope is the sample cross-product of centered X and Y divided by the centered X sum of squares. Its sign follows sample covariance, while its causal meaning requires additional assumptions.",
+      "required_concepts": [
+        "Centered X-Y cross-product divided by centered X variation."
+      ],
+      "accepted_variants": [
+        "beta1Hat=Sxy/Sxx."
+      ],
+      "major_error_concepts": [
+        "Dividing covariance by the outcome variance instead of regressor variance."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-covariance",
+        "econometrics-i.draft-ols-normal-equations"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-ols-intercept",
+      "canonical_deck_id": "econometrics-i",
+      "term": "OLS Intercept",
+      "prompt": "What is OLS Intercept? State its defining idea and essential conditions.",
+      "definition": "The OLS intercept with one regressor is Ybar-beta1Hat*Xbar. It is the fitted outcome at X=0, which may have little substantive meaning if zero lies outside the observed or meaningful regressor range.",
+      "required_concepts": [
+        "Intercept ensures the fitted line passes through sample means."
+      ],
+      "accepted_variants": [
+        "Predicted outcome at zero regressor value with support caveat."
+      ],
+      "major_error_concepts": [
+        "Interpreting the intercept as an observed baseline when X=0 is impossible."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-simple-ols-slope",
+        "econometrics-i.draft-fitted-value"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-r-squared",
+      "canonical_deck_id": "econometrics-i",
+      "term": "R Squared",
+      "prompt": "What is R Squared? State its defining idea and essential conditions.",
+      "definition": "For an OLS fit with an intercept and nonconstant observed outcome, centered R squared is 1-SSE/SST, where SSE=sum(y_i-yhat_i)^2 and SST=sum(y_i-ybar)^2>0. It measures in-sample fit relative to a mean-only model, not causality or generalization. If SST=0, this ratio is undefined; software conventions must be identified separately.",
+      "required_concepts": [
+        "R squared is 1 minus residual squared error divided by centered total squared variation, with an intercept and SST>0 for the standard definition.",
+        "It measures in-sample fit, not causal validity or out-of-sample performance."
+      ],
+      "accepted_variants": [
+        "R2=1-SSE/SST with sums defined."
+      ],
+      "major_error_concepts": [
+        "Claiming the standard ratio is defined when every observed outcome is identical.",
+        "Treating high R squared as evidence of causal identification."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-residual",
+        "econometrics-i.draft-ols-intercept"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-without-an-intercept",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression without an Intercept",
+      "prompt": "What is Regression without an Intercept? State its defining idea and essential conditions.",
+      "definition": "A no-intercept regression constrains the fitted model through zero in the relevant coordinates. Residuals need not sum to zero, and standard centered R-squared decompositions can fail, so reported fit statistics require their convention to be stated.",
+      "required_concepts": [
+        "Omitting the constant changes the restrictions and familiar OLS identities."
+      ],
+      "accepted_variants": [
+        "Regression through the origin."
+      ],
+      "major_error_concepts": [
+        "Applying every intercept-model identity unchanged after dropping the constant."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-ols-intercept",
+        "econometrics-i.draft-r-squared"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-zero-conditional-mean",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Zero Conditional Mean",
+      "prompt": "What is Zero Conditional Mean? State its defining idea and essential conditions.",
+      "definition": "The zero conditional mean assumption E[u|X]=0 says the included regressors contain no systematic information about the population error mean. It implies suitable orthogonality conditions but is stronger than a single zero covariance condition.",
+      "required_concepts": [
+        "Conditional error mean vanishes for the included regressor information."
+      ],
+      "accepted_variants": [
+        "Conditional mean independence in the linear regression model."
+      ],
+      "major_error_concepts": [
+        "Equating Cov(X,u)=0 with full conditional mean zero in every distribution."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-exogeneity",
+        "econometrics-i.draft-conditional-expectation-function",
+        "econometrics-i.draft-covariance",
+        "econometrics-i.draft-simple-linear-regression"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-ols-unbiasedness",
+      "canonical_deck_id": "econometrics-i",
+      "term": "OLS Unbiasedness",
+      "prompt": "What is OLS Unbiasedness? State its defining idea and essential conditions.",
+      "definition": "Under a correctly specified linear model, full-rank regressors, and E[u|X]=0, OLS is conditionally unbiased: E[betaHat|X]=beta. Homoskedasticity and normal errors are not required for this unbiasedness result.",
+      "required_concepts": [
+        "Conditional mean exogeneity and rank yield unbiased OLS."
+      ],
+      "accepted_variants": [
+        "Unconditional unbiasedness follows under suitable integrability."
+      ],
+      "major_error_concepts": [
+        "Claiming normal errors or homoskedasticity are necessary for OLS unbiasedness."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-zero-conditional-mean",
+        "econometrics-i.draft-estimator-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-rank-condition",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression Rank Condition",
+      "prompt": "What is Regression Rank Condition? State its defining idea and essential conditions.",
+      "definition": "Full column rank means no included regressor is an exact linear combination of the others in the sample. It ensures unique OLS coefficients in the standard matrix formula, but does not guarantee that estimates are precise or causally identified.",
+      "required_concepts": [
+        "No exact regressor linear dependence; unique least-squares coefficient solution."
+      ],
+      "accepted_variants": [
+        "Nonsingular Xprime X."
+      ],
+      "major_error_concepts": [
+        "Equating rank with absence of high but imperfect regressor correlation."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-identification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-homoskedasticity",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Homoskedasticity",
+      "prompt": "What is Homoskedasticity? State its defining idea and essential conditions.",
+      "definition": "Homoskedasticity assumes constant conditional error variance across regressor values, Var(u|X)=sigma squared in the simple independent-error setup. It concerns dispersion, not whether the conditional error mean is zero.",
+      "required_concepts": [
+        "Conditional error variance is constant."
+      ],
+      "accepted_variants": [
+        "Equal conditional disturbance variance."
+      ],
+      "major_error_concepts": [
+        "Inferring homoskedasticity from E[u|X]=0."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-variance",
+        "econometrics-i.draft-zero-conditional-mean"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-gauss-markov-theorem",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Gauss Markov Theorem",
+      "prompt": "What is Gauss Markov Theorem? State its defining idea and essential conditions.",
+      "definition": "The Gauss-Markov theorem makes OLS the best linear unbiased estimator under the linear model, conditional mean exogeneity, full rank, and spherical errors. Best means minimum variance within the linear-unbiased class, not best among every conceivable estimator or under every loss.",
+      "required_concepts": [
+        "OLS is BLUE under the qualifying assumptions and estimator class."
+      ],
+      "accepted_variants": [
+        "Minimum covariance among linear unbiased estimators with spherical errors."
+      ],
+      "major_error_concepts": [
+        "Claiming Gauss-Markov requires normality or proves universal optimality."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-unbiasedness",
+        "econometrics-i.draft-regression-rank-condition",
+        "econometrics-i.draft-homoskedasticity",
+        "econometrics-i.draft-estimator-efficiency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-normal-error-assumption",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Normal Error Assumption",
+      "prompt": "What is Normal Error Assumption? State its defining idea and essential conditions.",
+      "definition": "Conditional normal errors, added to the classical homoskedastic independent-error linear model, give exact finite-sample t and F distributions for standard tests. Without normality, suitable large-sample approximations can still justify inference under weaker conditions.",
+      "required_concepts": [
+        "Normality supports exact classical small-sample distributions, not basic OLS unbiasedness."
+      ],
+      "accepted_variants": [
+        "Gaussian classical linear model."
+      ],
+      "major_error_concepts": [
+        "Concluding no regression inference is possible whenever outcomes are nonnormal."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-unbiasedness",
+        "econometrics-i.draft-homoskedasticity",
+        "econometrics-i.draft-central-limit-theorem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-classical-ols-variance",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Classical OLS Variance",
+      "prompt": "What is Classical OLS Variance? State its defining idea and essential conditions.",
+      "definition": "With spherical errors, the conditional covariance of OLS is sigma squared times (Xprime X)^(-1). Estimated standard errors replace sigma squared with an appropriate residual variance estimate; heteroskedasticity or dependence requires a different covariance estimator.",
+      "required_concepts": [
+        "Classical OLS covariance depends on error variance and regressor geometry."
+      ],
+      "accepted_variants": [
+        "Var(betaHat|X)=sigma2*(Xprime X)^(-1)."
+      ],
+      "major_error_concepts": [
+        "Using this covariance formula unchanged under arbitrary clustered errors."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-homoskedasticity",
+        "econometrics-i.draft-standard-error"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-t-test",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression t Test",
+      "prompt": "What is Regression t Test? State its defining idea and essential conditions.",
+      "definition": "A coefficient t statistic divides an estimate minus its hypothesized value by its standard error. Its reference distribution depends on whether exact classical assumptions or an asymptotic approximation is being used, and the test can be one- or two-sided.",
+      "required_concepts": [
+        "Standardized coefficient deviation from the null value."
+      ],
+      "accepted_variants": [
+        "t=(betaHat-betaNull)/SE(betaHat)."
+      ],
+      "major_error_concepts": [
+        "Using the estimate alone as a t statistic or ignoring the hypothesized value."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-null-hypothesis",
+        "econometrics-i.draft-normal-error-assumption",
+        "econometrics-i.draft-classical-ols-variance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-f-test",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression F Test",
+      "prompt": "What is Regression F Test? State its defining idea and essential conditions.",
+      "definition": "An F test assesses joint linear restrictions in a regression under the appropriate covariance and reference-distribution assumptions. The classical residual-sum-of-squares form relies on its model assumptions; robust joint tests require a compatible covariance calculation.",
+      "required_concepts": [
+        "Joint restrictions tested together, with correct variance assumptions."
+      ],
+      "accepted_variants": [
+        "Wald F test or classical restricted-versus-unrestricted F test as specified."
+      ],
+      "major_error_concepts": [
+        "Combining separate individual significance decisions as if identical to a joint test."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-t-test",
+        "econometrics-i.draft-classical-ols-variance",
+        "econometrics-i.draft-null-hypothesis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-joint-parameter-restrictions",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Joint Parameter Restrictions",
+      "prompt": "What is Joint Parameter Restrictions? State its defining idea and essential conditions.",
+      "definition": "A joint hypothesis imposes several parameter restrictions simultaneously, such as two slopes both being zero. Their covariance matters, so individually insignificant coefficients can still be jointly significant and vice versa depending on the question and thresholds.",
+      "required_concepts": [
+        "Multiple restrictions tested as one combined hypothesis."
+      ],
+      "accepted_variants": [
+        "Joint linear restriction R beta=r."
+      ],
+      "major_error_concepts": [
+        "Ignoring coefficient covariance when testing a combined restriction."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-f-test",
+        "econometrics-i.draft-covariance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-coefficient-confidence-interval",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Coefficient Confidence Interval",
+      "prompt": "What is Coefficient Confidence Interval? State its defining idea and essential conditions.",
+      "definition": "A regression confidence interval combines a coefficient estimate with a critical value times its standard error under the chosen inference method. Its coverage requires the associated variance and distribution assumptions and does not remove bias from an unidentified causal model.",
+      "required_concepts": [
+        "Estimate plus or minus a justified uncertainty margin."
+      ],
+      "accepted_variants": [
+        "Coefficient interval using exact or asymptotic critical values."
+      ],
+      "major_error_concepts": [
+        "Treating a narrow interval around a confounded coefficient as proof of a precise causal effect."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-confidence-interval",
+        "econometrics-i.draft-regression-t-test",
+        "econometrics-i.draft-identification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-multiple-linear-regression",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Multiple Linear Regression",
+      "prompt": "What is Multiple Linear Regression? State its defining idea and essential conditions.",
+      "definition": "Multiple linear regression relates an outcome to several regressors with coefficients entering linearly. Regressors may include transformations and interactions, so linear in parameters does not require a straight-line relationship in every original variable.",
+      "required_concepts": [
+        "Several regressors with linear coefficient entry."
+      ],
+      "accepted_variants": [
+        "Y=X beta+u with a specified design matrix."
+      ],
+      "major_error_concepts": [
+        "Excluding polynomial regressors solely because the model is called linear regression."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-simple-linear-regression",
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-regression-rank-condition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Ceteris Paribus Regression Interpretation",
+      "prompt": "What is Ceteris Paribus Regression Interpretation? State its defining idea and essential conditions.",
+      "definition": "A multiple-regression coefficient describes a change associated with one regressor holding the others fixed under the specified functional form. A causal ceteris-paribus interpretation additionally needs an appropriate identification strategy; controlling for variables can itself introduce bias.",
+      "required_concepts": [
+        "Partial association conditional on included regressors, with separate causal assumptions."
+      ],
+      "accepted_variants": [
+        "Holding-other-regressors-fixed interpretation."
+      ],
+      "major_error_concepts": [
+        "Assuming every controlled regression coefficient is automatically causal."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-association-and-causation",
+        "econometrics-i.draft-zero-conditional-mean"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-omitted-variable-bias",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Omitted Variable Bias",
+      "prompt": "What is Omitted Variable Bias? State its defining idea and essential conditions.",
+      "definition": "Omitted-variable bias arises when an excluded outcome determinant is correlated with an included regressor under the relevant linear setup. In a simple omitted-regressor case, the slope bias equals the omitted variable's outcome coefficient times its projection slope on the included regressor.",
+      "required_concepts": [
+        "Outcome relevance and regressor association jointly produce the standard bias."
+      ],
+      "accepted_variants": [
+        "OVB product formula under a specified linear model."
+      ],
+      "major_error_concepts": [
+        "Claiming omission causes bias even when the omitted factor is orthogonal to the regressor in the qualifying model."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+        "econometrics-i.draft-covariance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-irrelevant-regressor",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Irrelevant Regressor",
+      "prompt": "What is Irrelevant Regressor? State its defining idea and essential conditions.",
+      "definition": "Adding an irrelevant regressor with a true zero coefficient need not bias OLS when exogeneity and rank hold. It can reduce precision by consuming information and altering regressor variation, so including more variables is not automatically beneficial.",
+      "required_concepts": [
+        "An irrelevant control can cost precision without creating bias under classical conditions."
+      ],
+      "accepted_variants": [
+        "Overcontrol by unnecessary exogenous regressors in a linear model."
+      ],
+      "major_error_concepts": [
+        "Claiming every additional control necessarily improves coefficient precision."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-unbiasedness",
+        "econometrics-i.draft-classical-ols-variance",
+        "econometrics-i.draft-multiple-linear-regression"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-multicollinearity",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Multicollinearity",
+      "prompt": "What is Multicollinearity? State its defining idea and essential conditions.",
+      "definition": "Multicollinearity means regressors contain strongly overlapping linear variation. Perfect collinearity prevents unique coefficient estimation; high imperfect collinearity can inflate standard errors but does not itself create bias under exogeneity.",
+      "required_concepts": [
+        "Distinguish exact rank failure from high correlation and imprecision."
+      ],
+      "accepted_variants": [
+        "Regressor linear dependence or near-dependence."
+      ],
+      "major_error_concepts": [
+        "Claiming high correlation alone violates OLS unbiasedness."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-rank-condition",
+        "econometrics-i.draft-classical-ols-variance",
+        "econometrics-i.draft-multiple-linear-regression"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-frisch-waugh-lovell-theorem",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Frisch Waugh Lovell Theorem",
+      "prompt": "What is Frisch Waugh Lovell Theorem? State its defining idea and essential conditions.",
+      "definition": "The Frisch-Waugh-Lovell theorem obtains a subset of OLS coefficients by regressing the outcome residualized on other controls on the similarly residualized target regressors. Both sides must be partialled out consistently, with the original inference degrees of freedom respected.",
+      "required_concepts": [
+        "Partial regression reproduces full-model target coefficients after residualizing both sides."
+      ],
+      "accepted_variants": [
+        "FWL partialling-out theorem."
+      ],
+      "major_error_concepts": [
+        "Residualizing only the outcome and treating the result as the general theorem."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-dummy-variable",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Dummy Variable",
+      "prompt": "What is Dummy Variable? State its defining idea and essential conditions.",
+      "definition": "A dummy variable is a binary indicator for a category or condition. With an intercept and one group indicator, its coefficient is the conditional difference from the omitted reference group under the specified model.",
+      "required_concepts": [
+        "Binary coding defines a contrast against a reference category."
+      ],
+      "accepted_variants": [
+        "Indicator variable taking values zero and one."
+      ],
+      "major_error_concepts": [
+        "Interpreting the reference category as having zero actual outcome merely because its indicator is zero."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-dummy-variable-trap",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Dummy Variable Trap",
+      "prompt": "What is Dummy Variable Trap? State its defining idea and essential conditions.",
+      "definition": "Including a full set of mutually exclusive exhaustive category indicators together with an intercept creates perfect collinearity. Dropping one indicator or using an appropriate no-intercept parameterization restores identification of the chosen contrasts.",
+      "required_concepts": [
+        "Full category indicators plus a constant are linearly dependent."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the dummy trap as only a small-sample standard-error problem."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-dummy-variable",
+        "econometrics-i.draft-regression-rank-condition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-interaction",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression Interaction",
+      "prompt": "What is Regression Interaction? State its defining idea and essential conditions.",
+      "definition": "An interaction term allows the relationship between one regressor and the outcome to depend on another regressor. In Y=beta0+beta1 X+beta2 Z+beta3 XZ, the partial derivative with respect to X is beta1+beta3 Z.",
+      "required_concepts": [
+        "One regressor's partial effect varies with another through the product term."
+      ],
+      "accepted_variants": [
+        "Conditional slope interaction."
+      ],
+      "major_error_concepts": [
+        "Interpreting beta1 alone as X's effect for all Z values."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-quadratic-regression",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Quadratic Regression",
+      "prompt": "What is Quadratic Regression? State its defining idea and essential conditions.",
+      "definition": "A quadratic specification includes both X and X squared, making the marginal relationship beta1+2*beta2*X. A turning point at -beta1/(2*beta2) is meaningful only with a nonzero quadratic coefficient and appropriate support and interpretation.",
+      "required_concepts": [
+        "Quadratic marginal effect depends on X."
+      ],
+      "accepted_variants": [
+        "Second-degree polynomial regression."
+      ],
+      "major_error_concepts": [
+        "Interpreting the squared-term coefficient alone as the marginal effect."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-log-level-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Log Level Model",
+      "prompt": "What is Log Level Model? State its defining idea and essential conditions.",
+      "definition": "In log Y=alpha+beta X+u, beta is the change in conditional expected log outcome per unit X. For deterministic fitted values, a one-unit change corresponds to 100*(exp(beta)-1) percent, approximately 100*beta for small beta; level-mean interpretation needs retransformation assumptions.",
+      "required_concepts": [
+        "Level change in X shifts log Y; percentage approximation needs care."
+      ],
+      "accepted_variants": [
+        "Semi-log model with logged outcome."
+      ],
+      "major_error_concepts": [
+        "Claiming exp of the fitted log mean always equals the conditional mean of Y."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-level-log-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Level Log Model",
+      "prompt": "What is Level Log Model? State its defining idea and essential conditions.",
+      "definition": "In Y=alpha+beta log X+u, beta/100 approximates the change in Y associated with a one-percent increase in positive X. The exact fitted change for a proportional increase g is beta*log(1+g).",
+      "required_concepts": [
+        "Regressor percentage changes map to outcome-level changes."
+      ],
+      "accepted_variants": [
+        "Level-log semi-elastic specification."
+      ],
+      "major_error_concepts": [
+        "Interpreting beta as an outcome percentage change when Y is not logged."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-log-log-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Log Log Model",
+      "prompt": "What is Log Log Model? State its defining idea and essential conditions.",
+      "definition": "In log Y=alpha+beta log X+u, beta is the elasticity of the fitted log relationship: a one-percent X increase corresponds approximately to beta percent in Y. Causal and conditional level-mean elasticities require the corresponding model assumptions.",
+      "required_concepts": [
+        "Log-log slope is a percentage-to-percentage response in the specified fitted relationship."
+      ],
+      "accepted_variants": [
+        "Constant-elasticity log specification."
+      ],
+      "major_error_concepts": [
+        "Interpreting beta as an absolute unit change in unlogged Y."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-log-level-model",
+        "econometrics-i.draft-level-log-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-dummy-coefficient-in-a-log-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Dummy Coefficient in a Log Model",
+      "prompt": "What is Dummy Coefficient in a Log Model? State its defining idea and essential conditions.",
+      "definition": "For a binary regressor D in a log-outcome model, its coefficient compares fitted log outcomes at D=1 and D=0. The exponentiated fitted ratio is exp(beta), but comparing arithmetic conditional outcome means additionally requires handling the error retransformation factor.",
+      "required_concepts": [
+        "Binary log-outcome contrast uses exponentiation with retransformation caveats."
+      ],
+      "accepted_variants": [
+        "Percentage fitted contrast 100*(exp(beta)-1)."
+      ],
+      "major_error_concepts": [
+        "Treating 100*beta as an exact percentage for any coefficient size."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-dummy-variable",
+        "econometrics-i.draft-log-level-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-functional-form-specification",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Functional Form Specification",
+      "prompt": "What is Functional Form Specification? State its defining idea and essential conditions.",
+      "definition": "Functional-form specification chooses how variables enter a model, including transformations, interactions, and restrictions. A misspecified conditional mean can invalidate coefficient interpretations even if standard errors are computed correctly.",
+      "required_concepts": [
+        "Model shape determines the relationships coefficients represent."
+      ],
+      "accepted_variants": [
+        "Choice of regression transformations and terms."
+      ],
+      "major_error_concepts": [
+        "Assuming robust standard errors repair an incorrect conditional-mean model."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-regression-interaction",
+        "econometrics-i.draft-quadratic-regression",
+        "econometrics-i.draft-log-log-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-reset-specification-test",
+      "canonical_deck_id": "econometrics-i",
+      "term": "RESET Specification Test",
+      "prompt": "What is RESET Specification Test? State its defining idea and essential conditions.",
+      "definition": "A RESET-type test adds functions of fitted values or regressors to probe omitted nonlinear structure. Rejection can indicate misspecification but does not uniquely identify its source, and non-rejection does not prove the model correct.",
+      "required_concepts": [
+        "Specification test for additional functional structure with nonunique interpretation."
+      ],
+      "accepted_variants": [
+        "Ramsey RESET under its stated auxiliary-regression form."
+      ],
+      "major_error_concepts": [
+        "Treating a non-significant RESET result as proof of causal validity."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-functional-form-specification",
+        "econometrics-i.draft-regression-f-test"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-outlier",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression Outlier",
+      "prompt": "What is Regression Outlier? State its defining idea and essential conditions.",
+      "definition": "An outcome outlier has an unusually large outcome or residual relative to the modeled pattern. It may reflect a genuine rare case or a data issue, so deletion requires a substantive rule rather than whether removing it improves significance.",
+      "required_concepts": [
+        "Unusual outcome or residual requires investigation, not automatic deletion."
+      ],
+      "accepted_variants": [
+        "Response outlier distinguished from regressor leverage."
+      ],
+      "major_error_concepts": [
+        "Removing observations solely to achieve a desired p-value."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-residual",
+        "econometrics-i.draft-functional-form-specification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-leverage",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression Leverage",
+      "prompt": "What is Regression Leverage? State its defining idea and essential conditions.",
+      "definition": "Leverage measures how unusual an observation's regressor vector is in the fitted design, often through the diagonal of the hat matrix. High leverage is about X and need not imply a large residual or strong influence by itself.",
+      "required_concepts": [
+        "Unusual regressor position measured by projection leverage."
+      ],
+      "accepted_variants": [
+        "Hat-matrix diagonal h_ii."
+      ],
+      "major_error_concepts": [
+        "Defining leverage solely as a large outcome residual."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-regression-outlier"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-influential-observation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Influential Observation",
+      "prompt": "What is Influential Observation? State its defining idea and essential conditions.",
+      "definition": "An influential observation substantially changes fitted coefficients or predictions when its contribution changes or it is omitted. Influence combines aspects of leverage and residual size, so neither feature alone completely determines it.",
+      "required_concepts": [
+        "Sensitivity of estimates to an observation's contribution."
+      ],
+      "accepted_variants": [
+        "Deletion influence, such as a Cook-distance diagnostic."
+      ],
+      "major_error_concepts": [
+        "Treating every high-leverage point as necessarily highly influential."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-outlier",
+        "econometrics-i.draft-regression-leverage"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-heteroskedasticity",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Heteroskedasticity",
+      "prompt": "What is Heteroskedasticity? State its defining idea and essential conditions.",
+      "definition": "Heteroskedasticity means conditional error variance differs across observations or regressor values. With exogeneity and suitable regularity, OLS coefficients can remain unbiased or consistent while conventional homoskedastic standard errors become inappropriate.",
+      "required_concepts": [
+        "Nonconstant conditional error variance affects usual variance formulas, not automatically coefficient consistency."
+      ],
+      "accepted_variants": [
+        "Unequal disturbance variance."
+      ],
+      "major_error_concepts": [
+        "Claiming heteroskedasticity by itself always biases OLS slopes."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-homoskedasticity",
+        "econometrics-i.draft-ols-unbiasedness",
+        "econometrics-i.draft-classical-ols-variance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Heteroskedasticity Robust Standard Errors",
+      "prompt": "What is Heteroskedasticity Robust Standard Errors? State its defining idea and essential conditions.",
+      "definition": "Heteroskedasticity-robust covariance estimators allow unequal error variances under appropriate sampling and large-sample conditions. They do not generally handle arbitrary serial or cluster dependence and do not fix endogenous regressors or an unidentified causal effect.",
+      "required_concepts": [
+        "Robust variance calculation for heteroskedasticity with its dependence assumptions."
+      ],
+      "accepted_variants": [
+        "Eicker-Huber-White sandwich standard errors."
+      ],
+      "major_error_concepts": [
+        "Calling ordinary heteroskedasticity-robust errors valid for every dependence pattern."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-heteroskedasticity",
+        "econometrics-i.draft-standard-error",
+        "econometrics-i.draft-consistency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-weighted-least-squares",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Weighted Least Squares",
+      "prompt": "What is Weighted Least Squares? State its defining idea and essential conditions.",
+      "definition": "Weighted least squares minimizes a weighted sum of squared residuals. When weights correctly reflect inverse error variance and exogeneity holds, it can improve efficiency; incorrect weights or a different conditional-mean target require careful interpretation.",
+      "required_concepts": [
+        "Weighted squared-error fitting, often inverse-variance weighted for efficiency."
+      ],
+      "accepted_variants": [
+        "WLS under specified weights."
+      ],
+      "major_error_concepts": [
+        "Assuming any arbitrary weighting automatically removes bias or improves efficiency."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ordinary-least-squares",
+        "econometrics-i.draft-heteroskedasticity",
+        "econometrics-i.draft-estimator-efficiency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-cluster-robust-standard-errors",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Cluster Robust Standard Errors",
+      "prompt": "What is Cluster Robust Standard Errors? State its defining idea and essential conditions.",
+      "definition": "Cluster-robust standard errors allow dependence within defined clusters while relying on appropriate independence or weak dependence across clusters and sufficient cluster information. The clustering level should follow design and error dependence, not whichever choice yields significance.",
+      "required_concepts": [
+        "Within-cluster dependence allowed with appropriate across-cluster conditions."
+      ],
+      "accepted_variants": [
+        "Clustered sandwich covariance."
+      ],
+      "major_error_concepts": [
+        "Assuming thousands of rows guarantee reliable cluster inference with only a few independent clusters."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+        "econometrics-i.draft-unit-of-observation",
+        "econometrics-i.draft-iid-sampling"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-serial-correlation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Serial Correlation",
+      "prompt": "What is Serial Correlation? State its defining idea and essential conditions.",
+      "definition": "Serial correlation means regression errors at different dates are correlated under the model. It can invalidate conventional standard errors and, with certain dynamic regressors or exogeneity failures, also affect coefficient consistency.",
+      "required_concepts": [
+        "Temporal error dependence with consequences determined by regressor assumptions."
+      ],
+      "accepted_variants": [
+        "Autocorrelated disturbances."
+      ],
+      "major_error_concepts": [
+        "Claiming serial correlation always or never biases every regression specification."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-time-series-data",
+        "econometrics-i.draft-covariance",
+        "econometrics-i.draft-exogeneity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-hac-standard-errors",
+      "canonical_deck_id": "econometrics-i",
+      "term": "HAC Standard Errors",
+      "prompt": "What is HAC Standard Errors? State its defining idea and essential conditions.",
+      "definition": "Heteroskedasticity-and-autocorrelation-consistent covariance estimators account for specified weak temporal dependence as sample size grows. Kernel and bandwidth choices matter; HAC errors do not cure nonstationarity or endogenous regressors.",
+      "required_concepts": [
+        "Large-sample covariance robust to heteroskedasticity and qualifying serial dependence."
+      ],
+      "accepted_variants": [
+        "HAC, including Newey-West under its implementation assumptions."
+      ],
+      "major_error_concepts": [
+        "Treating HAC standard errors as a fix for a spurious levels regression."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+        "econometrics-i.draft-serial-correlation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-regression-prediction",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Regression Prediction",
+      "prompt": "What is Regression Prediction? State its defining idea and essential conditions.",
+      "definition": "Regression prediction estimates outcomes or their conditional mean at specified covariates using a fitted model. Prediction accuracy depends on the target population and future stability and does not require or establish the same assumptions as a causal intervention analysis.",
+      "required_concepts": [
+        "Forecasting under a stated target distribution differs from estimating causal effects."
+      ],
+      "accepted_variants": [
+        "Out-of-sample prediction or conditional-mean prediction with target specified."
+      ],
+      "major_error_concepts": [
+        "Assuming a good predictive variable must be a useful intervention target."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-fitted-value",
+        "econometrics-i.draft-association-and-causation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-prediction-interval",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Prediction Interval",
+      "prompt": "What is Prediction Interval? State its defining idea and essential conditions.",
+      "definition": "A prediction interval for a new individual outcome includes both parameter-estimation uncertainty and irreducible outcome noise under the model. It is generally wider than an interval for the conditional mean at the same covariates.",
+      "required_concepts": [
+        "Individual outcome uncertainty includes residual variation as well as estimation uncertainty."
+      ],
+      "accepted_variants": [
+        "Predictive interval contrasted with mean-response confidence interval."
+      ],
+      "major_error_concepts": [
+        "Using a mean confidence interval as an individual prediction interval."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-prediction",
+        "econometrics-i.draft-confidence-interval",
+        "econometrics-i.draft-classical-ols-variance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-extrapolation",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Extrapolation",
+      "prompt": "What is Extrapolation? State its defining idea and essential conditions.",
+      "definition": "Extrapolation predicts or interprets relationships outside the observed covariate support. It relies more heavily on functional-form and stability assumptions than interpolation, and a narrow model-based interval may not represent that structural uncertainty.",
+      "required_concepts": [
+        "Inference beyond observed support requires stronger shape and stability assumptions."
+      ],
+      "accepted_variants": [
+        "Out-of-support prediction."
+      ],
+      "major_error_concepts": [
+        "Treating precise extrapolated fitted values as direct evidence from observed comparable cases."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-regression-prediction",
+        "econometrics-i.draft-functional-form-specification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-overfitting",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Overfitting",
+      "prompt": "What is Overfitting? State its defining idea and essential conditions.",
+      "definition": "Overfitting occurs when a model captures sample-specific noise that does not generalize to the prediction target. Adding regressors cannot increase OLS training residual sum of squares, but can worsen performance on new data.",
+      "required_concepts": [
+        "Improved training fit can degrade generalization."
+      ],
+      "accepted_variants": [
+        "Fitting noise rather than stable predictive structure."
+      ],
+      "major_error_concepts": [
+        "Selecting complexity solely by the lowest in-sample squared error."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-ordinary-least-squares",
+        "econometrics-i.draft-r-squared",
+        "econometrics-i.draft-regression-prediction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-train-test-split",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Train Test Split",
+      "prompt": "What is Train Test Split? State its defining idea and essential conditions.",
+      "definition": "A train-test split separates fitting decisions from prediction evaluation on held-out observations. The split must respect the prediction task, such as keeping future dates after training dates or preventing the same dependent unit from leaking across sets.",
+      "required_concepts": [
+        "Separate model development from task-appropriate held-out evaluation."
+      ],
+      "accepted_variants": [
+        "Out-of-sample evaluation with temporal or group boundaries when needed."
+      ],
+      "major_error_concepts": [
+        "Randomly splitting dependent future-linked data and claiming leakage-free forecasting."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-overfitting",
+        "econometrics-i.draft-panel-data",
+        "econometrics-i.draft-time-series-data"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-missing-data",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Missing Data",
+      "prompt": "What is Missing Data? State its defining idea and essential conditions.",
+      "definition": "Missing data are unobserved values for relevant units or variables. Complete-case analysis can change the target sample or bias estimates when observation depends on outcomes or unmodeled determinants; missingness assumptions determine valid adjustments.",
+      "required_concepts": [
+        "Observation process can affect the estimation target and bias."
+      ],
+      "accepted_variants": [
+        "Missingness and complete-case selection."
+      ],
+      "major_error_concepts": [
+        "Assuming dropping incomplete records is universally unbiased."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-target-population",
+        "econometrics-i.draft-selection-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-attrition",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Attrition",
+      "prompt": "What is Attrition? State its defining idea and essential conditions.",
+      "definition": "Attrition is loss of observed units over follow-up. Differential attrition related to treatment and potential outcomes can undermine an initially randomized comparison unless an appropriate identification or bounding argument addresses the missing outcomes.",
+      "required_concepts": [
+        "Follow-up loss can break observed-group comparability."
+      ],
+      "accepted_variants": [
+        "Panel dropout or experimental follow-up loss."
+      ],
+      "major_error_concepts": [
+        "Assuming baseline randomization guarantees unbiased comparisons after selective dropout."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-missing-data",
+        "econometrics-i.draft-random-assignment",
+        "econometrics-i.draft-potential-outcomes"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-measurement-error",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Measurement Error",
+      "prompt": "What is Measurement Error? State its defining idea and essential conditions.",
+      "definition": "Classical measurement error in a simple regressor can attenuate the OLS slope toward zero when the true regressor and error satisfy the standard independence assumptions. Outcome measurement error has different consequences, and nonclassical errors need not cause attenuation.",
+      "required_concepts": [
+        "Attenuation is conditional on the simple classical regressor-error setup."
+      ],
+      "accepted_variants": [
+        "Errors-in-variables bias with assumptions stated."
+      ],
+      "major_error_concepts": [
+        "Claiming every type of measurement error biases every coefficient toward zero."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-simple-linear-regression",
+        "econometrics-i.draft-zero-conditional-mean",
+        "econometrics-i.draft-omitted-variable-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-linear-probability-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Linear Probability Model",
+      "prompt": "What is Linear Probability Model? State its defining idea and essential conditions.",
+      "definition": "A linear probability model uses a linear conditional-mean specification or approximation for a binary outcome. When p(X)=E[Y|X] is correctly specified, Var(Y|X)=p(X)*(1-p(X)), which generally varies with X but can be constant. Linear predictions can fall outside [0,1]; slope contrasts are measured in probability points rather than percent changes.",
+      "required_concepts": [
+        "Linear conditional-mean model for a binary response with probability-point coefficients.",
+        "The Bernoulli conditional variance is p(X)*(1-p(X)); it is generally, not invariably, heteroskedastic, and linear fits need not remain within [0,1]."
+      ],
+      "accepted_variants": [
+        "OLS on a zero-one outcome supplies a linear probability approximation; unequal conditional variances are common rather than logically unavoidable."
+      ],
+      "major_error_concepts": [
+        "Saying an effect of 0.1 means 0.1 percent instead of ten percentage points.",
+        "Claiming every Bernoulli regression is heteroskedastic even when p(X)=1/2 for all X."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-heteroskedasticity",
+        "econometrics-i.draft-dummy-variable"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-logit-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Logit Model",
+      "prompt": "What is Logit Model? State its defining idea and essential conditions.",
+      "definition": "A logit model maps a linear index to a probability through the logistic function. Coefficients shift log odds, not probabilities by a constant amount; probability marginal effects depend on covariates.",
+      "required_concepts": [
+        "Logistic conditional probability with log-odds coefficients."
+      ],
+      "accepted_variants": [
+        "Binary logistic regression."
+      ],
+      "major_error_concepts": [
+        "Interpreting a raw logit coefficient directly as a probability-point effect."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-linear-probability-model",
+        "econometrics-i.draft-functional-form-specification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-probit-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Probit Model",
+      "prompt": "What is Probit Model? State its defining idea and essential conditions.",
+      "definition": "A probit model specifies a binary-response probability as the standard normal cumulative distribution evaluated at a linear index. Coefficients act on that index, so probability changes depend on the index level and must be computed through the link.",
+      "required_concepts": [
+        "Normal-CDF response probability from a linear index."
+      ],
+      "accepted_variants": [
+        "Binary probit regression."
+      ],
+      "major_error_concepts": [
+        "Comparing raw probit and OLS coefficients as identical probability changes."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-linear-probability-model",
+        "econometrics-i.draft-functional-form-specification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-marginal-effect",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Marginal Effect",
+      "prompt": "What is Marginal Effect? State its defining idea and essential conditions.",
+      "definition": "A marginal effect differentiates the modeled conditional mean or probability with respect to a continuous regressor, holding the specified other variables fixed. For a discrete regressor, a finite contrast is usually appropriate; average and at-the-mean effects differ in nonlinear models.",
+      "required_concepts": [
+        "Derivative or discrete contrast on the outcome scale with averaging convention specified."
+      ],
+      "accepted_variants": [
+        "Average marginal effect or marginal effect at stated covariates."
+      ],
+      "major_error_concepts": [
+        "Equating average nonlinear effects with the effect evaluated at average covariates automatically."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-logit-model",
+        "econometrics-i.draft-probit-model",
+        "econometrics-i.draft-regression-interaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-endogeneity",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Endogeneity",
+      "prompt": "What is Endogeneity? State its defining idea and essential conditions.",
+      "definition": "Endogeneity arises when a regressor violates the error orthogonality condition needed for the target interpretation, such as correlation with unobserved outcome determinants. Causes can include omitted variables, simultaneity, measurement error, or selection.",
+      "required_concepts": [
+        "Required regressor-error orthogonality fails."
+      ],
+      "accepted_variants": [
+        "Endogenous explanatory variable under the specified structural equation."
+      ],
+      "major_error_concepts": [
+        "Defining endogeneity merely as high correlation among observed regressors."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-exogeneity",
+        "econometrics-i.draft-zero-conditional-mean",
+        "econometrics-i.draft-omitted-variable-bias",
+        "econometrics-i.draft-measurement-error"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-reverse-causality",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Reverse Causality",
+      "prompt": "What is Reverse Causality? State its defining idea and essential conditions.",
+      "definition": "Reverse causality occurs when the outcome or its determinants influence the explanatory variable, complicating a one-direction causal interpretation. Simultaneous feedback can make an observed slope mix several structural relationships rather than isolate the desired effect.",
+      "required_concepts": [
+        "Outcome-to-regressor feedback can confound the intended causal direction."
+      ],
+      "accepted_variants": [
+        "Simultaneity or reverse-direction influence."
+      ],
+      "major_error_concepts": [
+        "Resolving reverse causality merely by renaming one variable independent."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-endogeneity",
+        "econometrics-i.draft-association-and-causation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-instrumental-variable",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Instrumental Variable",
+      "prompt": "What is Instrumental Variable? State its defining idea and essential conditions.",
+      "definition": "An instrumental variable supplies variation in an endogenous regressor that is appropriately unrelated to the structural outcome error. Relevance and exogeneity or exclusion restrictions serve distinct roles, and the resulting causal estimand depends on the treatment model.",
+      "required_concepts": [
+        "Instrument shifts the regressor while satisfying the needed outcome-error restrictions."
+      ],
+      "accepted_variants": [
+        "IV identification strategy."
+      ],
+      "major_error_concepts": [
+        "Calling any variable correlated with treatment a valid instrument."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-endogeneity",
+        "econometrics-i.draft-identification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-instrument-relevance",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Instrument Relevance",
+      "prompt": "What is Instrument Relevance? State its defining idea and essential conditions.",
+      "definition": "Instrument relevance means the excluded instrument predicts the endogenous regressor after conditioning on included controls. A near-zero or poorly estimated first-stage relationship can create weak identification even if the instrument is otherwise exogenous.",
+      "required_concepts": [
+        "Conditional first-stage association supplies identifying variation."
+      ],
+      "accepted_variants": [
+        "Nonzero partial instrument-regressor relationship."
+      ],
+      "major_error_concepts": [
+        "Using unconditional correlation as sufficient evidence of relevance after all controls."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-instrumental-variable",
+        "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-instrument-exclusion-restriction",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Instrument Exclusion Restriction",
+      "prompt": "What is Instrument Exclusion Restriction? State its defining idea and essential conditions.",
+      "definition": "An exclusion restriction rules out specified direct effects of the instrument on the outcome outside the treatment channel. Instrument independence from relevant unobservables is an additional condition in many causal formulations; both require substantive justification.",
+      "required_concepts": [
+        "No prohibited direct outcome channel; distinguish exclusion from independence."
+      ],
+      "accepted_variants": [
+        "Excluded instrument affects outcomes only through the modeled treatment channel."
+      ],
+      "major_error_concepts": [
+        "Assuming a strong first stage proves the exclusion restriction."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-instrumental-variable",
+        "econometrics-i.draft-instrument-relevance",
+        "econometrics-i.draft-association-and-causation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-iv-ratio-estimator",
+      "canonical_deck_id": "econometrics-i",
+      "term": "IV Ratio Estimator",
+      "prompt": "What is IV Ratio Estimator? State its defining idea and essential conditions.",
+      "definition": "With one instrument and one endogenous regressor in a simple just-identified linear model, the population IV coefficient is Cov(Z,Y)/Cov(Z,X) when the denominator is nonzero. A causal interpretation requires the instrument assumptions and may target a local effect under heterogeneous treatment responses.",
+      "required_concepts": [
+        "Reduced-form association divided by the first-stage association."
+      ],
+      "accepted_variants": [
+        "Wald ratio for a binary instrument with appropriate mean contrasts."
+      ],
+      "major_error_concepts": [
+        "Interpreting the ratio as a universal population ATE without additional assumptions."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-instrumental-variable",
+        "econometrics-i.draft-instrument-relevance",
+        "econometrics-i.draft-instrument-exclusion-restriction",
+        "econometrics-i.draft-covariance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-two-stage-least-squares",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Two Stage Least Squares",
+      "prompt": "What is Two Stage Least Squares? State its defining idea and essential conditions.",
+      "definition": "Two-stage least squares first projects endogenous regressors on all included instruments and exogenous controls, then uses the projected regressors in the outcome equation. Correct IV standard errors must account for the estimation structure; ordinary second-stage OLS output alone is not generally sufficient.",
+      "required_concepts": [
+        "Instrument projection followed by outcome fitting with correct IV inference."
+      ],
+      "accepted_variants": [
+        "2SLS using the full instrument matrix."
+      ],
+      "major_error_concepts": [
+        "Using naive second-stage OLS standard errors as if predicted regressors were the original design."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-instrumental-variable",
+        "econometrics-i.draft-ols-normal-equations",
+        "econometrics-i.draft-instrument-relevance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-weak-instruments",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Weak Instruments",
+      "prompt": "What is Weak Instruments? State its defining idea and essential conditions.",
+      "definition": "Weak instruments provide little identifying variation for the endogenous regressor, making usual IV normal approximations and standard confidence intervals unreliable. First-stage diagnostics are informative but not a universal guarantee, and weak-instrument-robust inference may be needed.",
+      "required_concepts": [
+        "Weak first-stage identification can invalidate conventional IV inference."
+      ],
+      "accepted_variants": [
+        "Weak IV problem."
+      ],
+      "major_error_concepts": [
+        "Treating any nonzero first-stage coefficient as strong identification."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-instrument-relevance",
+        "econometrics-i.draft-two-stage-least-squares",
+        "econometrics-i.draft-central-limit-theorem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-experimental-difference-in-means",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Experimental Difference in Means",
+      "prompt": "What is Experimental Difference in Means? State its defining idea and essential conditions.",
+      "definition": "In a simple randomized experiment with complete observation and the specified assignment design, a treated-minus-control outcome mean estimates the assignment effect. Covariate adjustment can improve precision, but design, interference, and compliance determine the interpretation.",
+      "required_concepts": [
+        "Randomized group mean comparison identifies the relevant assignment effect under design assumptions."
+      ],
+      "accepted_variants": [
+        "Difference-in-means experimental estimator."
+      ],
+      "major_error_concepts": [
+        "Ignoring selective attrition because treatment was initially randomized."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-random-assignment",
+        "econometrics-i.draft-average-treatment-effect",
+        "econometrics-i.draft-stable-unit-treatment-value-assumption",
+        "econometrics-i.draft-attrition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-intention-to-treat",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Intention to Treat",
+      "prompt": "What is Intention to Treat? State its defining idea and essential conditions.",
+      "definition": "An intention-to-treat effect compares outcomes by randomized assignment regardless of treatment actually received. It preserves the assignment-based causal contrast and measures the effect of the offer or assignment policy, not automatically the effect of receipt.",
+      "required_concepts": [
+        "Assignment effect retaining original randomized groups."
+      ],
+      "accepted_variants": [
+        "ITT effect."
+      ],
+      "major_error_concepts": [
+        "Reclassifying noncompliers by received treatment while still calling the comparison ITT."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-experimental-difference-in-means",
+        "econometrics-i.draft-random-assignment"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-treatment-noncompliance",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Treatment Noncompliance",
+      "prompt": "What is Treatment Noncompliance? State its defining idea and essential conditions.",
+      "definition": "Noncompliance means received treatment differs from assigned treatment for some units. Comparing receipt groups can reintroduce selection; using assignment as an instrument requires exclusion and other assumptions to interpret a receipt effect.",
+      "required_concepts": [
+        "Assignment and receipt differ; receipt-based comparisons need additional assumptions."
+      ],
+      "accepted_variants": [
+        "Treatment take-up or adherence problem."
+      ],
+      "major_error_concepts": [
+        "Assuming received treatment remains randomized despite selective compliance."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-intention-to-treat",
+        "econometrics-i.draft-instrumental-variable",
+        "econometrics-i.draft-instrument-exclusion-restriction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-difference-in-differences",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Difference in Differences",
+      "prompt": "What is Difference in Differences? State its defining idea and essential conditions.",
+      "definition": "Difference-in-differences compares an outcome change in a treated group with the change in a comparison group. In the basic two-group two-period setting, it identifies the treated group's effect under parallel untreated trends, no anticipation, and relevant consistency assumptions.",
+      "required_concepts": [
+        "Difference of changes uses a parallel-trends counterfactual."
+      ],
+      "accepted_variants": [
+        "DiD in the canonical two-by-two design."
+      ],
+      "major_error_concepts": [
+        "Claiming any before-after treatment comparison is difference-in-differences."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-potential-outcomes",
+        "econometrics-i.draft-selection-bias",
+        "econometrics-i.draft-panel-data"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-parallel-trends",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Parallel Trends",
+      "prompt": "What is Parallel Trends? State its defining idea and essential conditions.",
+      "definition": "Parallel trends means the treated and comparison groups would have experienced the same average untreated outcome change over the relevant period. It concerns counterfactual changes rather than equal outcome levels, and observed pretrends cannot prove it for an unobserved post-treatment counterfactual.",
+      "required_concepts": [
+        "Equal counterfactual untreated changes, not equal baseline levels."
+      ],
+      "accepted_variants": [
+        "Parallel untreated outcome trends."
+      ],
+      "major_error_concepts": [
+        "Treating a non-significant pretrend test as proof of the identifying assumption."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-difference-in-differences",
+        "econometrics-i.draft-potential-outcomes"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-panel-fixed-effects",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Panel Fixed Effects",
+      "prompt": "What is Panel Fixed Effects? State its defining idea and essential conditions.",
+      "definition": "A unit fixed-effects panel model absorbs time-invariant additive differences among units and estimates slopes from within-unit variation. It does not remove time-varying confounding and needs appropriate exogeneity and dependence assumptions for the desired inference.",
+      "required_concepts": [
+        "Within-unit variation removes additive time-invariant unit effects."
+      ],
+      "accepted_variants": [
+        "Within estimator or unit-indicator regression."
+      ],
+      "major_error_concepts": [
+        "Claiming fixed effects eliminate all omitted-variable bias."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-panel-data",
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-omitted-variable-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-panel-random-effects",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Panel Random Effects",
+      "prompt": "What is Panel Random Effects? State its defining idea and essential conditions.",
+      "definition": "A random-effects panel model treats unit-specific effects as random and imposes restrictions on their association with regressors. Standard random-effects estimation can exploit between-unit variation efficiently under its assumptions but can be inconsistent when those effects correlate with regressors.",
+      "required_concepts": [
+        "Random unit effects require appropriate regressor orthogonality."
+      ],
+      "accepted_variants": [
+        "Error-components random-effects model."
+      ],
+      "major_error_concepts": [
+        "Assuming random effects are valid merely because units were randomly sampled."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-panel-fixed-effects",
+        "econometrics-i.draft-exogeneity",
+        "econometrics-i.draft-estimator-efficiency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-weak-stationarity",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Weak Stationarity",
+      "prompt": "What is Weak Stationarity? State its defining idea and essential conditions.",
+      "definition": "Weak stationarity requires finite second moments, a constant mean, and autocovariance depending only on time lag. It concerns the process distribution rather than a visually flat sample path and does not generally imply full distributional stationarity.",
+      "required_concepts": [
+        "Stable mean and lag-based covariance with finite second moments."
+      ],
+      "accepted_variants": [
+        "Covariance stationarity."
+      ],
+      "major_error_concepts": [
+        "Inferring stationarity from a single plot with no obvious trend."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-time-series-data",
+        "econometrics-i.draft-variance",
+        "econometrics-i.draft-covariance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-spurious-regression",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Spurious Regression",
+      "prompt": "What is Spurious Regression? State its defining idea and essential conditions.",
+      "definition": "A spurious regression can show strong fit and misleading significance between unrelated persistent or trending series when standard regression assumptions fail. Differencing, detrending, or cointegration analysis address different cases and must match the data-generating structure.",
+      "required_concepts": [
+        "Shared persistence or trends can create invalid apparent regression evidence."
+      ],
+      "accepted_variants": [
+        "Spurious levels relationship among unrelated nonstationary series."
+      ],
+      "major_error_concepts": [
+        "Treating high R squared in trending data as causal evidence."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-weak-stationarity",
+        "econometrics-i.draft-time-series-data",
+        "econometrics-i.draft-r-squared",
+        "econometrics-i.draft-serial-correlation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-distributed-lag-model",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Distributed Lag Model",
+      "prompt": "What is Distributed Lag Model? State its defining idea and essential conditions.",
+      "definition": "A distributed-lag model includes current and past values of an explanatory variable to represent delayed associations or effects. The sum of lag coefficients has a cumulative interpretation under the specified model, while causal interpretation still requires appropriate timing and exogeneity assumptions.",
+      "required_concepts": [
+        "Outcome depends on a specified sequence of current and lagged regressors."
+      ],
+      "accepted_variants": [
+        "Finite distributed lag with impact and cumulative coefficients distinguished."
+      ],
+      "major_error_concepts": [
+        "Assuming a lagged regressor is automatically exogenous."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-time-series-data",
+        "econometrics-i.draft-multiple-linear-regression",
+        "econometrics-i.draft-exogeneity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-seasonality-in-regression",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Seasonality in Regression",
+      "prompt": "What is Seasonality in Regression? State its defining idea and essential conditions.",
+      "definition": "Seasonality is a systematic pattern associated with recurring calendar positions. Seasonal indicators or other adjustments can account for such patterns, but seasonal adjustment is not the same as removing all trends or serial dependence.",
+      "required_concepts": [
+        "Recurring calendar-related structure with explicit adjustment method."
+      ],
+      "accepted_variants": [
+        "Seasonal effects modeled by indicators or suitable time-series components."
+      ],
+      "major_error_concepts": [
+        "Assuming seasonal adjustment makes all observations independent and stationary."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-time-series-data",
+        "econometrics-i.draft-dummy-variable",
+        "econometrics-i.draft-weak-stationarity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-reproducible-econometric-workflow",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Reproducible Econometric Workflow",
+      "prompt": "What is Reproducible Econometric Workflow? State its defining idea and essential conditions.",
+      "definition": "A reproducible empirical workflow preserves data definitions, transformation code, model specifications, and the outputs needed to recreate the reported estimates. It improves traceability but does not by itself establish that the design is causally valid or the model well specified.",
+      "required_concepts": [
+        "Traceable inputs, transformations, specifications, and outputs."
+      ],
+      "accepted_variants": [
+        "Reproducible analysis with explicit data lineage."
+      ],
+      "major_error_concepts": [
+        "Equating reproducibility with substantive correctness."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-economic-data",
+        "econometrics-i.draft-functional-form-specification",
+        "econometrics-i.draft-identification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-choosing-an-inference-structure",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Choosing an Inference Structure",
+      "prompt": "What is Choosing an Inference Structure? State its defining idea and essential conditions.",
+      "definition": "Standard-error selection should follow the sampling or assignment design and the dependence allowed by the model. Heteroskedasticity-robust, clustered, and HAC estimators protect against different failures, and none repairs a systematically biased point estimator by itself.",
+      "required_concepts": [
+        "Match covariance estimation to design and dependence, separate from identification."
+      ],
+      "accepted_variants": [
+        "Design-appropriate uncertainty estimation."
+      ],
+      "major_error_concepts": [
+        "Selecting the smallest standard error among methods as the preferred one."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+        "econometrics-i.draft-cluster-robust-standard-errors",
+        "econometrics-i.draft-hac-standard-errors",
+        "econometrics-i.draft-endogeneity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "econometrics-i.draft-causal-claim-boundary",
+      "canonical_deck_id": "econometrics-i",
+      "term": "Causal Claim Boundary",
+      "prompt": "What is Causal Claim Boundary? State its defining idea and essential conditions.",
+      "definition": "An empirical causal claim should state the estimand, source of identifying variation, maintained assumptions, and uncertainty. Precision, robustness to some specifications, and in-sample fit are different evidence from identification and external validity.",
+      "required_concepts": [
+        "Causal interpretation requires explicit target, identification assumptions, and scope."
+      ],
+      "accepted_variants": [
+        "Bounded causal conclusion with population and design limitations."
+      ],
+      "major_error_concepts": [
+        "Claiming a causal effect solely from a significant coefficient or high predictive accuracy."
+      ],
+      "prerequisite_ids": [
+        "econometrics-i.draft-estimand",
+        "econometrics-i.draft-identification",
+        "econometrics-i.draft-economic-and-statistical-significance",
+        "econometrics-i.draft-reproducible-econometric-workflow",
+        "econometrics-i.draft-choosing-an-inference-structure"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "econometrics-i.draft-association-and-causation",
+      "dependent_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-association-and-causation",
+      "dependent_card_id": "econometrics-i.draft-exogeneity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-association-and-causation",
+      "dependent_card_id": "econometrics-i.draft-instrument-exclusion-restriction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-association-and-causation",
+      "dependent_card_id": "econometrics-i.draft-regression-prediction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-association-and-causation",
+      "dependent_card_id": "econometrics-i.draft-reverse-causality"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-association-and-causation",
+      "dependent_card_id": "econometrics-i.draft-selection-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-attrition",
+      "dependent_card_id": "econometrics-i.draft-experimental-difference-in-means"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-average-treatment-effect",
+      "dependent_card_id": "econometrics-i.draft-experimental-difference-in-means"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-average-treatment-effect",
+      "dependent_card_id": "econometrics-i.draft-selection-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-central-limit-theorem",
+      "dependent_card_id": "econometrics-i.draft-normal-error-assumption"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-central-limit-theorem",
+      "dependent_card_id": "econometrics-i.draft-weak-instruments"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-dummy-variable"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-frisch-waugh-lovell-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-instrument-relevance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-level-log-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-log-level-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-omitted-variable-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-quadratic-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation",
+      "dependent_card_id": "econometrics-i.draft-regression-interaction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-choosing-an-inference-structure",
+      "dependent_card_id": "econometrics-i.draft-causal-claim-boundary"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-classical-ols-variance",
+      "dependent_card_id": "econometrics-i.draft-heteroskedasticity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-classical-ols-variance",
+      "dependent_card_id": "econometrics-i.draft-irrelevant-regressor"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-classical-ols-variance",
+      "dependent_card_id": "econometrics-i.draft-multicollinearity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-classical-ols-variance",
+      "dependent_card_id": "econometrics-i.draft-prediction-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-classical-ols-variance",
+      "dependent_card_id": "econometrics-i.draft-regression-f-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-classical-ols-variance",
+      "dependent_card_id": "econometrics-i.draft-regression-t-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-cluster-robust-standard-errors",
+      "dependent_card_id": "econometrics-i.draft-choosing-an-inference-structure"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-conditional-expectation-function",
+      "dependent_card_id": "econometrics-i.draft-law-of-iterated-expectations"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-conditional-expectation-function",
+      "dependent_card_id": "econometrics-i.draft-simple-linear-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-conditional-expectation-function",
+      "dependent_card_id": "econometrics-i.draft-variance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-conditional-expectation-function",
+      "dependent_card_id": "econometrics-i.draft-zero-conditional-mean"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-confidence-interval",
+      "dependent_card_id": "econometrics-i.draft-coefficient-confidence-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-confidence-interval",
+      "dependent_card_id": "econometrics-i.draft-economic-and-statistical-significance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-confidence-interval",
+      "dependent_card_id": "econometrics-i.draft-prediction-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-consistency",
+      "dependent_card_id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-counterfactual",
+      "dependent_card_id": "econometrics-i.draft-association-and-causation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-counterfactual",
+      "dependent_card_id": "econometrics-i.draft-fitted-value"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-counterfactual",
+      "dependent_card_id": "econometrics-i.draft-potential-outcomes"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-correlation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-iv-ratio-estimator"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-joint-parameter-restrictions"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-omitted-variable-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-serial-correlation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-simple-ols-slope"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-weak-stationarity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-covariance",
+      "dependent_card_id": "econometrics-i.draft-zero-conditional-mean"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-cross-sectional-data",
+      "dependent_card_id": "econometrics-i.draft-panel-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-difference-in-differences",
+      "dependent_card_id": "econometrics-i.draft-parallel-trends"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-dummy-variable",
+      "dependent_card_id": "econometrics-i.draft-dummy-coefficient-in-a-log-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-dummy-variable",
+      "dependent_card_id": "econometrics-i.draft-dummy-variable-trap"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-dummy-variable",
+      "dependent_card_id": "econometrics-i.draft-linear-probability-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-dummy-variable",
+      "dependent_card_id": "econometrics-i.draft-seasonality-in-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-econometrics",
+      "dependent_card_id": "econometrics-i.draft-economic-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-economic-and-statistical-significance",
+      "dependent_card_id": "econometrics-i.draft-causal-claim-boundary"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-economic-data",
+      "dependent_card_id": "econometrics-i.draft-cross-sectional-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-economic-data",
+      "dependent_card_id": "econometrics-i.draft-reproducible-econometric-workflow"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-economic-data",
+      "dependent_card_id": "econometrics-i.draft-target-population"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-economic-data",
+      "dependent_card_id": "econometrics-i.draft-time-series-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-economic-data",
+      "dependent_card_id": "econometrics-i.draft-unit-of-observation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-endogeneity",
+      "dependent_card_id": "econometrics-i.draft-choosing-an-inference-structure"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-endogeneity",
+      "dependent_card_id": "econometrics-i.draft-instrumental-variable"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-endogeneity",
+      "dependent_card_id": "econometrics-i.draft-reverse-causality"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimand",
+      "dependent_card_id": "econometrics-i.draft-average-treatment-effect"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimand",
+      "dependent_card_id": "econometrics-i.draft-causal-claim-boundary"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimand",
+      "dependent_card_id": "econometrics-i.draft-counterfactual"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimand",
+      "dependent_card_id": "econometrics-i.draft-identification"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-bias",
+      "dependent_card_id": "econometrics-i.draft-consistency"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-bias",
+      "dependent_card_id": "econometrics-i.draft-estimator-efficiency"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-bias",
+      "dependent_card_id": "econometrics-i.draft-mean-squared-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-bias",
+      "dependent_card_id": "econometrics-i.draft-ols-unbiasedness"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-efficiency",
+      "dependent_card_id": "econometrics-i.draft-gauss-markov-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-efficiency",
+      "dependent_card_id": "econometrics-i.draft-mean-squared-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-efficiency",
+      "dependent_card_id": "econometrics-i.draft-panel-random-effects"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-estimator-efficiency",
+      "dependent_card_id": "econometrics-i.draft-weighted-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-exogeneity",
+      "dependent_card_id": "econometrics-i.draft-distributed-lag-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-exogeneity",
+      "dependent_card_id": "econometrics-i.draft-endogeneity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-exogeneity",
+      "dependent_card_id": "econometrics-i.draft-panel-random-effects"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-exogeneity",
+      "dependent_card_id": "econometrics-i.draft-serial-correlation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-exogeneity",
+      "dependent_card_id": "econometrics-i.draft-simple-linear-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-exogeneity",
+      "dependent_card_id": "econometrics-i.draft-zero-conditional-mean"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-experimental-difference-in-means",
+      "dependent_card_id": "econometrics-i.draft-intention-to-treat"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-fitted-value",
+      "dependent_card_id": "econometrics-i.draft-ols-intercept"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-fitted-value",
+      "dependent_card_id": "econometrics-i.draft-ols-residual"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-fitted-value",
+      "dependent_card_id": "econometrics-i.draft-regression-prediction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-functional-form-specification",
+      "dependent_card_id": "econometrics-i.draft-extrapolation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-functional-form-specification",
+      "dependent_card_id": "econometrics-i.draft-logit-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-functional-form-specification",
+      "dependent_card_id": "econometrics-i.draft-probit-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-functional-form-specification",
+      "dependent_card_id": "econometrics-i.draft-regression-outlier"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-functional-form-specification",
+      "dependent_card_id": "econometrics-i.draft-reproducible-econometric-workflow"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-functional-form-specification",
+      "dependent_card_id": "econometrics-i.draft-reset-specification-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-hac-standard-errors",
+      "dependent_card_id": "econometrics-i.draft-choosing-an-inference-structure"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-heteroskedasticity",
+      "dependent_card_id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-heteroskedasticity",
+      "dependent_card_id": "econometrics-i.draft-linear-probability-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-heteroskedasticity",
+      "dependent_card_id": "econometrics-i.draft-weighted-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+      "dependent_card_id": "econometrics-i.draft-choosing-an-inference-structure"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+      "dependent_card_id": "econometrics-i.draft-cluster-robust-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors",
+      "dependent_card_id": "econometrics-i.draft-hac-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-homoskedasticity",
+      "dependent_card_id": "econometrics-i.draft-classical-ols-variance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-homoskedasticity",
+      "dependent_card_id": "econometrics-i.draft-gauss-markov-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-homoskedasticity",
+      "dependent_card_id": "econometrics-i.draft-heteroskedasticity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-homoskedasticity",
+      "dependent_card_id": "econometrics-i.draft-normal-error-assumption"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-causal-claim-boundary"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-coefficient-confidence-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-consistency"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-counterfactual"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-exogeneity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-instrumental-variable"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-regression-rank-condition"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-identification",
+      "dependent_card_id": "econometrics-i.draft-reproducible-econometric-workflow"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-iid-sampling",
+      "dependent_card_id": "econometrics-i.draft-cluster-robust-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-iid-sampling",
+      "dependent_card_id": "econometrics-i.draft-law-of-large-numbers"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-iid-sampling",
+      "dependent_card_id": "econometrics-i.draft-parameter-and-estimator"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-iid-sampling",
+      "dependent_card_id": "econometrics-i.draft-random-assignment"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-iid-sampling",
+      "dependent_card_id": "econometrics-i.draft-sampling-distribution"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-iid-sampling",
+      "dependent_card_id": "econometrics-i.draft-sampling-frame"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrument-exclusion-restriction",
+      "dependent_card_id": "econometrics-i.draft-iv-ratio-estimator"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrument-exclusion-restriction",
+      "dependent_card_id": "econometrics-i.draft-treatment-noncompliance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrument-relevance",
+      "dependent_card_id": "econometrics-i.draft-instrument-exclusion-restriction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrument-relevance",
+      "dependent_card_id": "econometrics-i.draft-iv-ratio-estimator"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrument-relevance",
+      "dependent_card_id": "econometrics-i.draft-two-stage-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrument-relevance",
+      "dependent_card_id": "econometrics-i.draft-weak-instruments"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrumental-variable",
+      "dependent_card_id": "econometrics-i.draft-instrument-exclusion-restriction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrumental-variable",
+      "dependent_card_id": "econometrics-i.draft-instrument-relevance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrumental-variable",
+      "dependent_card_id": "econometrics-i.draft-iv-ratio-estimator"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrumental-variable",
+      "dependent_card_id": "econometrics-i.draft-treatment-noncompliance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-instrumental-variable",
+      "dependent_card_id": "econometrics-i.draft-two-stage-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-intention-to-treat",
+      "dependent_card_id": "econometrics-i.draft-treatment-noncompliance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-law-of-large-numbers",
+      "dependent_card_id": "econometrics-i.draft-central-limit-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-law-of-large-numbers",
+      "dependent_card_id": "econometrics-i.draft-consistency"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-level-log-model",
+      "dependent_card_id": "econometrics-i.draft-log-log-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-linear-probability-model",
+      "dependent_card_id": "econometrics-i.draft-logit-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-linear-probability-model",
+      "dependent_card_id": "econometrics-i.draft-probit-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-log-level-model",
+      "dependent_card_id": "econometrics-i.draft-dummy-coefficient-in-a-log-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-log-level-model",
+      "dependent_card_id": "econometrics-i.draft-log-log-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-log-log-model",
+      "dependent_card_id": "econometrics-i.draft-functional-form-specification"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-logit-model",
+      "dependent_card_id": "econometrics-i.draft-marginal-effect"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-measurement-error",
+      "dependent_card_id": "econometrics-i.draft-endogeneity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-missing-data",
+      "dependent_card_id": "econometrics-i.draft-attrition"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-distributed-lag-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-dummy-variable"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-frisch-waugh-lovell-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-functional-form-specification"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-irrelevant-regressor"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-level-log-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-linear-probability-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-log-level-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-multicollinearity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-omitted-variable-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-panel-fixed-effects"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-quadratic-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-multiple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-regression-interaction"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-normal-error-assumption",
+      "dependent_card_id": "econometrics-i.draft-regression-t-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-null-hypothesis",
+      "dependent_card_id": "econometrics-i.draft-p-value"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-null-hypothesis",
+      "dependent_card_id": "econometrics-i.draft-regression-f-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-null-hypothesis",
+      "dependent_card_id": "econometrics-i.draft-regression-t-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-null-hypothesis",
+      "dependent_card_id": "econometrics-i.draft-test-size-and-power"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-intercept",
+      "dependent_card_id": "econometrics-i.draft-r-squared"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-intercept",
+      "dependent_card_id": "econometrics-i.draft-regression-without-an-intercept"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-classical-ols-variance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-frisch-waugh-lovell-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-multiple-linear-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-ols-unbiasedness"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-regression-leverage"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-regression-rank-condition"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-regression-without-an-intercept"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-simple-ols-slope"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-normal-equations",
+      "dependent_card_id": "econometrics-i.draft-two-stage-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-residual",
+      "dependent_card_id": "econometrics-i.draft-ols-normal-equations"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-residual",
+      "dependent_card_id": "econometrics-i.draft-r-squared"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-residual",
+      "dependent_card_id": "econometrics-i.draft-regression-outlier"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-unbiasedness",
+      "dependent_card_id": "econometrics-i.draft-gauss-markov-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-unbiasedness",
+      "dependent_card_id": "econometrics-i.draft-heteroskedasticity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-unbiasedness",
+      "dependent_card_id": "econometrics-i.draft-irrelevant-regressor"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ols-unbiasedness",
+      "dependent_card_id": "econometrics-i.draft-normal-error-assumption"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-omitted-variable-bias",
+      "dependent_card_id": "econometrics-i.draft-endogeneity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-omitted-variable-bias",
+      "dependent_card_id": "econometrics-i.draft-measurement-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-omitted-variable-bias",
+      "dependent_card_id": "econometrics-i.draft-panel-fixed-effects"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ordinary-least-squares",
+      "dependent_card_id": "econometrics-i.draft-fitted-value"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ordinary-least-squares",
+      "dependent_card_id": "econometrics-i.draft-ols-normal-equations"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ordinary-least-squares",
+      "dependent_card_id": "econometrics-i.draft-overfitting"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-ordinary-least-squares",
+      "dependent_card_id": "econometrics-i.draft-weighted-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-overfitting",
+      "dependent_card_id": "econometrics-i.draft-train-test-split"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-p-value",
+      "dependent_card_id": "econometrics-i.draft-economic-and-statistical-significance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-p-value",
+      "dependent_card_id": "econometrics-i.draft-multiple-testing"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-p-value",
+      "dependent_card_id": "econometrics-i.draft-test-size-and-power"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-panel-data",
+      "dependent_card_id": "econometrics-i.draft-difference-in-differences"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-panel-data",
+      "dependent_card_id": "econometrics-i.draft-panel-fixed-effects"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-panel-data",
+      "dependent_card_id": "econometrics-i.draft-train-test-split"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-panel-fixed-effects",
+      "dependent_card_id": "econometrics-i.draft-panel-random-effects"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-parameter-and-estimator",
+      "dependent_card_id": "econometrics-i.draft-estimand"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-parameter-and-estimator",
+      "dependent_card_id": "econometrics-i.draft-estimator-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-parameter-and-estimator",
+      "dependent_card_id": "econometrics-i.draft-identification"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-parameter-and-estimator",
+      "dependent_card_id": "econometrics-i.draft-null-hypothesis"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-parameter-and-estimator",
+      "dependent_card_id": "econometrics-i.draft-sampling-distribution"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-attrition"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-average-treatment-effect"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-difference-in-differences"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-parallel-trends"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-random-assignment"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-selection-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-potential-outcomes",
+      "dependent_card_id": "econometrics-i.draft-stable-unit-treatment-value-assumption"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-probit-model",
+      "dependent_card_id": "econometrics-i.draft-marginal-effect"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-quadratic-regression",
+      "dependent_card_id": "econometrics-i.draft-functional-form-specification"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-r-squared",
+      "dependent_card_id": "econometrics-i.draft-overfitting"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-r-squared",
+      "dependent_card_id": "econometrics-i.draft-regression-without-an-intercept"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-r-squared",
+      "dependent_card_id": "econometrics-i.draft-spurious-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-random-assignment",
+      "dependent_card_id": "econometrics-i.draft-attrition"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-random-assignment",
+      "dependent_card_id": "econometrics-i.draft-experimental-difference-in-means"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-random-assignment",
+      "dependent_card_id": "econometrics-i.draft-intention-to-treat"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-random-variable",
+      "dependent_card_id": "econometrics-i.draft-conditional-expectation-function"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-random-variable",
+      "dependent_card_id": "econometrics-i.draft-law-of-large-numbers"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-random-variable",
+      "dependent_card_id": "econometrics-i.draft-variance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-error",
+      "dependent_card_id": "econometrics-i.draft-ols-residual"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-error",
+      "dependent_card_id": "econometrics-i.draft-ordinary-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-f-test",
+      "dependent_card_id": "econometrics-i.draft-joint-parameter-restrictions"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-f-test",
+      "dependent_card_id": "econometrics-i.draft-reset-specification-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-interaction",
+      "dependent_card_id": "econometrics-i.draft-functional-form-specification"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-interaction",
+      "dependent_card_id": "econometrics-i.draft-marginal-effect"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-leverage",
+      "dependent_card_id": "econometrics-i.draft-influential-observation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-outlier",
+      "dependent_card_id": "econometrics-i.draft-influential-observation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-outlier",
+      "dependent_card_id": "econometrics-i.draft-regression-leverage"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-prediction",
+      "dependent_card_id": "econometrics-i.draft-extrapolation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-prediction",
+      "dependent_card_id": "econometrics-i.draft-overfitting"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-prediction",
+      "dependent_card_id": "econometrics-i.draft-prediction-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-rank-condition",
+      "dependent_card_id": "econometrics-i.draft-dummy-variable-trap"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-rank-condition",
+      "dependent_card_id": "econometrics-i.draft-gauss-markov-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-rank-condition",
+      "dependent_card_id": "econometrics-i.draft-multicollinearity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-rank-condition",
+      "dependent_card_id": "econometrics-i.draft-multiple-linear-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-t-test",
+      "dependent_card_id": "econometrics-i.draft-coefficient-confidence-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-regression-t-test",
+      "dependent_card_id": "econometrics-i.draft-regression-f-test"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-reproducible-econometric-workflow",
+      "dependent_card_id": "econometrics-i.draft-causal-claim-boundary"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-sampling-distribution",
+      "dependent_card_id": "econometrics-i.draft-confidence-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-sampling-distribution",
+      "dependent_card_id": "econometrics-i.draft-estimator-bias"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-sampling-distribution",
+      "dependent_card_id": "econometrics-i.draft-null-hypothesis"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-sampling-distribution",
+      "dependent_card_id": "econometrics-i.draft-p-value"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-sampling-distribution",
+      "dependent_card_id": "econometrics-i.draft-standard-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-selection-bias",
+      "dependent_card_id": "econometrics-i.draft-difference-in-differences"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-selection-bias",
+      "dependent_card_id": "econometrics-i.draft-missing-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-selection-bias",
+      "dependent_card_id": "econometrics-i.draft-random-assignment"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-serial-correlation",
+      "dependent_card_id": "econometrics-i.draft-hac-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-serial-correlation",
+      "dependent_card_id": "econometrics-i.draft-spurious-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-simple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-measurement-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-simple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-multiple-linear-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-simple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-ordinary-least-squares"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-simple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-regression-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-simple-linear-regression",
+      "dependent_card_id": "econometrics-i.draft-zero-conditional-mean"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-simple-ols-slope",
+      "dependent_card_id": "econometrics-i.draft-ols-intercept"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-stable-unit-treatment-value-assumption",
+      "dependent_card_id": "econometrics-i.draft-experimental-difference-in-means"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-standard-error",
+      "dependent_card_id": "econometrics-i.draft-classical-ols-variance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-standard-error",
+      "dependent_card_id": "econometrics-i.draft-confidence-interval"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-standard-error",
+      "dependent_card_id": "econometrics-i.draft-estimator-efficiency"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-standard-error",
+      "dependent_card_id": "econometrics-i.draft-heteroskedasticity-robust-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-target-population",
+      "dependent_card_id": "econometrics-i.draft-iid-sampling"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-target-population",
+      "dependent_card_id": "econometrics-i.draft-missing-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-target-population",
+      "dependent_card_id": "econometrics-i.draft-parameter-and-estimator"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-target-population",
+      "dependent_card_id": "econometrics-i.draft-sampling-frame"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-test-size-and-power",
+      "dependent_card_id": "econometrics-i.draft-multiple-testing"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-distributed-lag-model"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-panel-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-seasonality-in-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-serial-correlation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-spurious-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-train-test-split"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-time-series-data",
+      "dependent_card_id": "econometrics-i.draft-weak-stationarity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-two-stage-least-squares",
+      "dependent_card_id": "econometrics-i.draft-weak-instruments"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-unit-of-observation",
+      "dependent_card_id": "econometrics-i.draft-cluster-robust-standard-errors"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-unit-of-observation",
+      "dependent_card_id": "econometrics-i.draft-cross-sectional-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-unit-of-observation",
+      "dependent_card_id": "econometrics-i.draft-target-population"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-unit-of-observation",
+      "dependent_card_id": "econometrics-i.draft-time-series-data"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-variance",
+      "dependent_card_id": "econometrics-i.draft-central-limit-theorem"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-variance",
+      "dependent_card_id": "econometrics-i.draft-correlation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-variance",
+      "dependent_card_id": "econometrics-i.draft-covariance"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-variance",
+      "dependent_card_id": "econometrics-i.draft-homoskedasticity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-variance",
+      "dependent_card_id": "econometrics-i.draft-standard-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-variance",
+      "dependent_card_id": "econometrics-i.draft-weak-stationarity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-weak-stationarity",
+      "dependent_card_id": "econometrics-i.draft-seasonality-in-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-weak-stationarity",
+      "dependent_card_id": "econometrics-i.draft-spurious-regression"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-zero-conditional-mean",
+      "dependent_card_id": "econometrics-i.draft-ceteris-paribus-regression-interpretation"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-zero-conditional-mean",
+      "dependent_card_id": "econometrics-i.draft-endogeneity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-zero-conditional-mean",
+      "dependent_card_id": "econometrics-i.draft-homoskedasticity"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-zero-conditional-mean",
+      "dependent_card_id": "econometrics-i.draft-measurement-error"
+    },
+    {
+      "prerequisite_card_id": "econometrics-i.draft-zero-conditional-mean",
+      "dependent_card_id": "econometrics-i.draft-ols-unbiasedness"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Econometrics I.",
+  "level": "College",
+  "tags": [
+    "economics"
+  ]
+}

@@ -1,0 +1,16 @@
+node_modules/
+site/node_modules/
+site/public/study/
+site/.next/
+site/.vinext/
+site/.cache/
+site/dist/
+site/out/
+site/.wrangler/
+site/outputs/
+site/work/
+coverage/
+.env
+.env.*
+*.log
+.DS_Store

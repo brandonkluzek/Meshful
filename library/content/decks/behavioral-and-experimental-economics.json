@@ -1,0 +1,3411 @@
+{
+  "id": "academic-reviewed-v1:behavioral-and-experimental-economics",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Behavioral and Experimental Economics",
+  "subject": "Economics",
+  "domain": "Economics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "behavioral-and-experimental-economics.draft-behavioral-economics",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Behavioral Economics",
+      "prompt": "What is Behavioral Economics? State its defining idea and essential conditions.",
+      "definition": "Behavioral economics studies economic choices using models that incorporate psychologically informed preferences, beliefs, attention, or decision processes. It evaluates departures from specified benchmarks rather than assuming all unusual behavior is irrational or governed by one universal bias.",
+      "required_concepts": [
+        "Psychologically informed models of economically relevant choice."
+      ],
+      "accepted_variants": [
+        "Behavioral modeling of preferences, beliefs, and cognition."
+      ],
+      "major_error_concepts": [
+        "Defining the field as proof that every nonstandard choice is a mistake."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-economics",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Economics",
+      "prompt": "What is Experimental Economics? State its defining idea and essential conditions.",
+      "definition": "Experimental economics uses controlled interventions and observed choices to study economic behavior or institutions. Laboratory, field, and online designs offer different control and context; running an experiment does not by itself establish external validity or identify every underlying mechanism.",
+      "required_concepts": [
+        "Controlled variation studies economic behavior and institutions."
+      ],
+      "accepted_variants": [
+        "Economic research using designed experiments."
+      ],
+      "major_error_concepts": [
+        "Assuming experimental status alone guarantees broad generalization or a unique explanation."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-behavioral-economics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Descriptive and Normative Models",
+      "prompt": "What is Descriptive and Normative Models? State its defining idea and essential conditions.",
+      "definition": "A descriptive model predicts or explains choices, whereas a normative benchmark specifies a criterion for how choices should be evaluated. A mismatch with a descriptive benchmark does not settle welfare judgments without specifying the normative standard and relevant information.",
+      "required_concepts": [
+        "Prediction of behavior differs from evaluation by a chosen standard."
+      ],
+      "accepted_variants": [
+        "Descriptive versus normative analysis."
+      ],
+      "major_error_concepts": [
+        "Treating every prediction error as proof that a person's welfare is lower."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-behavioral-economics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-revealed-preference",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Revealed Preference",
+      "prompt": "What is Revealed Preference? State its defining idea and essential conditions.",
+      "definition": "Revealed preference infers restrictions on preferences from choices over feasible alternatives under stated assumptions. Context dependence, errors, limited attention, or changing constraints can complicate the inference from an observed choice to a stable welfare ranking.",
+      "required_concepts": [
+        "Choices reveal preference restrictions conditional on feasibility and decision assumptions."
+      ],
+      "accepted_variants": [
+        "Choice-based preference inference."
+      ],
+      "major_error_concepts": [
+        "Assuming one observed choice unconditionally reveals a stable true welfare preference."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-preference-completeness",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Preference Completeness",
+      "prompt": "What is Preference Completeness? State its defining idea and essential conditions.",
+      "definition": "Completeness requires a preference relation to rank any two alternatives in its domain, allowing indifference. Failure to make a choice under uncertainty is not by itself proof of incomplete preferences because information, effort, or decision errors can also intervene.",
+      "required_concepts": [
+        "Every pair is comparable within the preference domain."
+      ],
+      "accepted_variants": [
+        "Complete preference ordering."
+      ],
+      "major_error_concepts": [
+        "Equating completeness with strict preference for one option in every pair."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-revealed-preference"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-preference-transitivity",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Preference Transitivity",
+      "prompt": "What is Preference Transitivity? State its defining idea and essential conditions.",
+      "definition": "Transitivity requires that if A is weakly preferred to B and B to C, then A is weakly preferred to C. Observed choice cycles can challenge a stable transitive model but require care about context, measurement noise, and whether the compared options truly stayed fixed.",
+      "required_concepts": [
+        "Preference comparisons are internally consistent across linked triples."
+      ],
+      "accepted_variants": [
+        "Transitive ordering."
+      ],
+      "major_error_concepts": [
+        "Calling a change of available options automatically a transitivity violation without comparing the same alternatives."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-preference-completeness"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-context-independence",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Context Independence",
+      "prompt": "What is Context Independence? State its defining idea and essential conditions.",
+      "definition": "Context independence is a specified invariance of choice or preference to features deemed irrelevant by a benchmark, such as a purely equivalent description. Different theories impose different invariances, so it should not be conflated with every formal independence axiom.",
+      "required_concepts": [
+        "Choice invariance to a clearly specified supposedly irrelevant contextual change."
+      ],
+      "accepted_variants": [
+        "Context-invariant choice under the chosen benchmark."
+      ],
+      "major_error_concepts": [
+        "Treating all context effects as violations of the same mathematical axiom."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-revealed-preference",
+        "behavioral-and-experimental-economics.draft-preference-transitivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-bounded-rationality",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Bounded Rationality",
+      "prompt": "What is Bounded Rationality? State its defining idea and essential conditions.",
+      "definition": "Bounded rationality models decisions made with limited information, computation, attention, or time. A simplified choice rule can be adaptive under such constraints, so bounded rationality does not mean arbitrary or uniformly poor behavior.",
+      "required_concepts": [
+        "Decision-making under cognitive or informational constraints."
+      ],
+      "accepted_variants": [
+        "Resource-bounded economic choice."
+      ],
+      "major_error_concepts": [
+        "Equating bounded rationality with random choices having no systematic structure."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-behavioral-economics",
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-satisficing",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Satisficing",
+      "prompt": "What is Satisficing? State its defining idea and essential conditions.",
+      "definition": "Satisficing selects an option meeting an aspiration threshold rather than searching exhaustively for the global best. The threshold and search order matter, and the rule can be sensible when further search is costly.",
+      "required_concepts": [
+        "Choose an adequate option meeting an aspiration level."
+      ],
+      "accepted_variants": [
+        "Aspiration-based stopping or choice."
+      ],
+      "major_error_concepts": [
+        "Defining satisficing as necessarily choosing the objectively worst available option."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-bounded-rationality"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-decision-heuristic",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Decision Heuristic",
+      "prompt": "What is Decision Heuristic? State its defining idea and essential conditions.",
+      "definition": "A heuristic is a simplified decision rule that reduces information or computation requirements. Its accuracy depends on the environment and task, so a rule that fails in one constructed problem can work well in another setting.",
+      "required_concepts": [
+        "Simplified rule trades cognitive economy against task-dependent accuracy."
+      ],
+      "accepted_variants": [
+        "Rule of thumb."
+      ],
+      "major_error_concepts": [
+        "Assuming every heuristic always produces a predictable error in the same direction."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-bounded-rationality",
+        "behavioral-and-experimental-economics.draft-satisficing"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-dual-process-accounts",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Dual Process Accounts",
+      "prompt": "What is Dual Process Accounts? State its defining idea and essential conditions.",
+      "definition": "Dual-process accounts distinguish relatively automatic responses from more effortful controlled processing. They are conceptual families rather than a literal universal division into two independent brain systems, and the relation to decision quality depends on task and expertise.",
+      "required_concepts": [
+        "Automatic and deliberative processing modes distinguished without a universal quality ranking."
+      ],
+      "accepted_variants": [
+        "Fast and slow processing as an informal conceptual description."
+      ],
+      "major_error_concepts": [
+        "Claiming deliberation is always correct and automatic processing always biased."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-bounded-rationality",
+        "behavioral-and-experimental-economics.draft-decision-heuristic"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-cognitive-cost",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Cognitive Cost",
+      "prompt": "What is Cognitive Cost? State its defining idea and essential conditions.",
+      "definition": "A cognitive cost is the effort, attention, time, or opportunity cost of acquiring and processing information. Accounting for such costs changes the relevant optimization problem, so a less accurate but cheaper rule can outperform a demanding alternative under the full objective.",
+      "required_concepts": [
+        "Information processing consumes economically relevant resources."
+      ],
+      "accepted_variants": [
+        "Costly cognition or deliberation cost."
+      ],
+      "major_error_concepts": [
+        "Judging a rule optimality-free without counting its information and computation costs."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-bounded-rationality",
+        "behavioral-and-experimental-economics.draft-dual-process-accounts"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-limited-attention",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Limited Attention",
+      "prompt": "What is Limited Attention? State its defining idea and essential conditions.",
+      "definition": "Limited attention means only part of the available information influences a decision at a given time. The attended subset may depend on salience, incentives, habits, or processing costs, potentially changing choice even when all facts are technically disclosed.",
+      "required_concepts": [
+        "Available information need not all enter actual choice."
+      ],
+      "accepted_variants": [
+        "Selective attention under cognitive limits."
+      ],
+      "major_error_concepts": [
+        "Assuming disclosure guarantees equal attention to every attribute."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-cognitive-cost"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-salience",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Salience",
+      "prompt": "What is Salience? State its defining idea and essential conditions.",
+      "definition": "Salience is the degree to which an attribute stands out and attracts attention in a context. It can change the effective weight placed on information without changing objective payoffs, although the direction and size of an effect depend on the decision setting.",
+      "required_concepts": [
+        "Prominence can shift attention and decision weight."
+      ],
+      "accepted_variants": [
+        "Attention-grabbing contrast or prominence."
+      ],
+      "major_error_concepts": [
+        "Treating salience as identical to an attribute's objective economic importance."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-limited-attention"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-framing-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Framing Effect",
+      "prompt": "What is Framing Effect? State its defining idea and essential conditions.",
+      "definition": "A framing effect occurs when descriptions that are equivalent under a stated benchmark lead to different choices. Establishing equivalence requires checking that the descriptions do not also change information, beliefs, reference points, or perceived social meaning in a substantively relevant way.",
+      "required_concepts": [
+        "Benchmark-equivalent descriptions produce different choices."
+      ],
+      "accepted_variants": [
+        "Description-dependent choice."
+      ],
+      "major_error_concepts": [
+        "Calling choices a framing violation when the options' actual consequences differ."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-context-independence",
+        "behavioral-and-experimental-economics.draft-salience"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-default-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Default Effect",
+      "prompt": "What is Default Effect? State its defining idea and essential conditions.",
+      "definition": "A default is the option implemented if a person does not actively choose another. Default effects can arise through inattention, switching effort, perceived endorsement, or reference dependence; an observed default response does not uniquely identify which mechanism operated.",
+      "required_concepts": [
+        "Preselected outcome applies without active change; several mechanisms can affect uptake."
+      ],
+      "accepted_variants": [
+        "Opt-in or opt-out default arrangement with the rule stated."
+      ],
+      "major_error_concepts": [
+        "Assuming default acceptance proves the option is the person's informed welfare optimum."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-limited-attention",
+        "behavioral-and-experimental-economics.draft-framing-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-status-quo-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Status Quo Bias",
+      "prompt": "What is Status Quo Bias? State its defining idea and essential conditions.",
+      "definition": "Status quo bias describes disproportionate preference for an existing state relative to an appropriate choice benchmark. Switching costs, uncertainty, habit, and loss aversion can generate similar behavior, so a mechanism claim requires distinguishing these explanations.",
+      "required_concepts": [
+        "Excess attachment to the existing option under a defined comparison."
+      ],
+      "accepted_variants": [
+        "Status-quo preference or inertia with benchmark specified."
+      ],
+      "major_error_concepts": [
+        "Calling any choice to stay put biased while ignoring genuine switching costs."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-default-effect",
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-endowment-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Endowment Effect",
+      "prompt": "What is Endowment Effect? State its defining idea and essential conditions.",
+      "definition": "An endowment effect is a change in valuation or choice associated with owning or being assigned an object. Reference dependence is one explanation, but experience, transaction costs, information, and experimental procedures can also matter, so ownership-based differences are not automatically pure loss aversion.",
+      "required_concepts": [
+        "Ownership-associated valuation change with competing explanations acknowledged."
+      ],
+      "accepted_variants": [
+        "Endowment-dependent valuation."
+      ],
+      "major_error_concepts": [
+        "Treating any ownership premium as conclusive evidence of one psychological mechanism."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-status-quo-bias",
+        "behavioral-and-experimental-economics.draft-revealed-preference"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-willingness-to-pay-and-accept",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Willingness to Pay and Accept",
+      "prompt": "What is Willingness to Pay and Accept? State its defining idea and essential conditions.",
+      "definition": "Willingness to pay is the maximum amount offered to acquire a change; willingness to accept is the minimum compensation required to give it up or tolerate it. Income effects, substitutes, reference points, and elicitation design can make them differ without one universal interpretation.",
+      "required_concepts": [
+        "Acquisition payment and relinquishment compensation are distinct valuation concepts."
+      ],
+      "accepted_variants": [
+        "WTP versus WTA."
+      ],
+      "major_error_concepts": [
+        "Assuming any WTA-WTP gap is impossible under every standard preference model."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-endowment-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Reference Dependence",
+      "prompt": "What is Reference Dependence? State its defining idea and essential conditions.",
+      "definition": "Reference dependence evaluates outcomes relative to a benchmark such as an expectation, status quo, or target rather than only final wealth. Identifying the reference point is part of the model and cannot always be inferred from the analyst's preferred comparison.",
+      "required_concepts": [
+        "Gains and losses are defined relative to a specified reference point."
+      ],
+      "accepted_variants": [
+        "Reference-dependent preferences."
+      ],
+      "major_error_concepts": [
+        "Assuming the reference point must always equal initial wealth regardless of context."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-framing-effect",
+        "behavioral-and-experimental-economics.draft-endowment-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-loss-aversion",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Loss Aversion",
+      "prompt": "What is Loss Aversion? State its defining idea and essential conditions.",
+      "definition": "Loss aversion means losses relative to a reference point receive greater marginal weight than comparable gains in the specified value function. It differs from risk aversion, which concerns attitudes toward spread or uncertainty, and need not imply avoidance of every gamble.",
+      "required_concepts": [
+        "Asymmetric valuation of comparable reference-relative losses and gains."
+      ],
+      "accepted_variants": [
+        "Steeper value function on the loss side near the reference point."
+      ],
+      "major_error_concepts": [
+        "Equating loss aversion with concavity over all wealth outcomes."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-reference-dependence"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-diminishing-sensitivity",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Diminishing Sensitivity",
+      "prompt": "What is Diminishing Sensitivity? State its defining idea and essential conditions.",
+      "definition": "Diminishing sensitivity means a fixed outcome change has a smaller value impact when it occurs farther from the reference point. In a common prospect-theory value function this produces concavity over gains and convexity over losses, separate from the loss-gain slope asymmetry.",
+      "required_concepts": [
+        "Sensitivity decreases with distance from the reference point."
+      ],
+      "accepted_variants": [
+        "Reference-relative diminishing marginal value."
+      ],
+      "major_error_concepts": [
+        "Treating diminishing sensitivity and loss aversion as the same parameter or property."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-reference-dependence",
+        "behavioral-and-experimental-economics.draft-loss-aversion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Prospect Theory",
+      "prompt": "What is Prospect Theory? State its defining idea and essential conditions.",
+      "definition": "Prospect theory evaluates risky prospects using reference-dependent values and decision weights rather than only probability-weighted utility of final wealth. Specific original and cumulative versions differ in weighting and aggregation rules, so model claims should identify the version used.",
+      "required_concepts": [
+        "Reference-relative values combined with nonstandard decision weights."
+      ],
+      "accepted_variants": [
+        "Prospect-theoretic choice with version specified."
+      ],
+      "major_error_concepts": [
+        "Defining prospect theory as expected utility with only a different concave wealth function."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-reference-dependence",
+        "behavioral-and-experimental-economics.draft-loss-aversion",
+        "behavioral-and-experimental-economics.draft-diminishing-sensitivity",
+        "microeconomic-theory-ii.draft-expected-utility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-decision-weight",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Decision Weight",
+      "prompt": "What is Decision Weight? State its defining idea and essential conditions.",
+      "definition": "A decision weight is the influence assigned to an outcome probability or ranked probability segment in a choice model. It is not necessarily the person's stated probability belief; cumulative models derive weights from cumulative probabilities rather than transforming each outcome independently.",
+      "required_concepts": [
+        "Choice weight differs from a probability belief and depends on the weighting framework."
+      ],
+      "accepted_variants": [
+        "Prospect-theory decision weight."
+      ],
+      "major_error_concepts": [
+        "Interpreting every nonlinear decision weight as an inaccurate subjective frequency estimate."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-prospect-theory"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-probability-weighting",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Probability Weighting",
+      "prompt": "What is Probability Weighting? State its defining idea and essential conditions.",
+      "definition": "Probability weighting transforms probabilities when evaluating risky prospects. Common specifications can overweight some small probabilities and underweight some moderate or large probabilities, but exact patterns depend on parameters and the cumulative or noncumulative formulation.",
+      "required_concepts": [
+        "Nonlinear probability-to-decision-weight mapping with model-specific shape."
+      ],
+      "accepted_variants": [
+        "Probability distortion in choice weights."
+      ],
+      "major_error_concepts": [
+        "Claiming every person always overweights every unlikely event."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-decision-weight"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-certainty-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Certainty Effect",
+      "prompt": "What is Certainty Effect? State its defining idea and essential conditions.",
+      "definition": "A certainty effect is disproportionate sensitivity to a change between certainty and near certainty compared with a benchmark such as expected utility. It concerns the special role of the probability endpoint, not a claim that people always prefer certain outcomes regardless of payoff.",
+      "required_concepts": [
+        "Certainty can receive extra decision weight relative to nearby probabilities."
+      ],
+      "accepted_variants": [
+        "Disproportionate response at the certainty boundary."
+      ],
+      "major_error_concepts": [
+        "Defining the effect as universal rejection of risky options."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-probability-weighting",
+        "behavioral-and-experimental-economics.draft-prospect-theory"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-possibility-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Possibility Effect",
+      "prompt": "What is Possibility Effect? State its defining idea and essential conditions.",
+      "definition": "A possibility effect is disproportionate sensitivity to changing an impossible outcome into a small positive chance under a specified weighting benchmark. It can affect reactions to rare gains or losses, but the direction of choice also depends on outcome values and framing.",
+      "required_concepts": [
+        "Crossing from zero to a small probability can have disproportionate influence."
+      ],
+      "accepted_variants": [
+        "Special sensitivity near the zero-probability endpoint."
+      ],
+      "major_error_concepts": [
+        "Assuming every increase in a tiny probability has the same impact as creating possibility from zero."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-probability-weighting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-isolation-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Isolation Effect",
+      "prompt": "What is Isolation Effect? State its defining idea and essential conditions.",
+      "definition": "An isolation effect occurs when people simplify a choice by focusing on selected differences and disregarding shared components. Different decompositions of equivalent prospects can then yield inconsistent rankings relative to an integration benchmark.",
+      "required_concepts": [
+        "Ignoring common components can make choice depend on how alternatives are decomposed."
+      ],
+      "accepted_variants": [
+        "Isolation or cancellation-based framing effect."
+      ],
+      "major_error_concepts": [
+        "Assuming all shared-component simplification preserves rankings under every preference model."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-framing-effect",
+        "behavioral-and-experimental-economics.draft-prospect-theory"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-allais-paradox",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Allais Paradox",
+      "prompt": "What is Allais Paradox? State its defining idea and essential conditions.",
+      "definition": "The Allais paradox describes a pattern of lottery choices that violates the expected-utility independence axiom through a common-consequence comparison. It illustrates a particular inconsistency with that benchmark, not proof that all decision theories or all choices are irrational.",
+      "required_concepts": [
+        "Common-consequence choice pattern conflicts with expected-utility independence."
+      ],
+      "accepted_variants": [
+        "Allais common-consequence effect."
+      ],
+      "major_error_concepts": [
+        "Claiming the paradox is merely ordinary dislike of variance under concave expected utility."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-certainty-effect",
+        "behavioral-and-experimental-economics.draft-isolation-effect",
+        "microeconomic-theory-ii.draft-expected-utility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-ellsberg-paradox",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Ellsberg Paradox",
+      "prompt": "What is Ellsberg Paradox? State its defining idea and essential conditions.",
+      "definition": "The Ellsberg paradox describes choice patterns favoring known probabilities over ambiguous ones that can conflict with a single subjective-expected-utility probability assignment. The pattern concerns ambiguity attitudes rather than ordinary risk aversion over known lotteries alone.",
+      "required_concepts": [
+        "Ambiguity choices can violate a common subjective-probability expected-utility representation."
+      ],
+      "accepted_variants": [
+        "Known-risk versus unknown-probability urn-choice pattern."
+      ],
+      "major_error_concepts": [
+        "Explaining the paradox entirely through concave utility while retaining one consistent subjective probability measure."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-prospect-theory",
+        "microeconomic-theory-ii.draft-expected-utility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-ambiguity-aversion",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Ambiguity Aversion",
+      "prompt": "What is Ambiguity Aversion? State its defining idea and essential conditions.",
+      "definition": "Ambiguity aversion is preference against uncertain probability assessments relative to an appropriate known-risk comparison. Its modeling differs from risk aversion and may use multiple priors, second-order preferences, or other structures rather than one universally agreed representation.",
+      "required_concepts": [
+        "Attitude toward uncertain probabilities, distinct from known-risk curvature."
+      ],
+      "accepted_variants": [
+        "Aversion to ambiguity or imprecise probability beliefs."
+      ],
+      "major_error_concepts": [
+        "Equating ambiguity with a known fifty-fifty lottery."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-ellsberg-paradox"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Risk Aversion and Behavioral Alternatives",
+      "prompt": "What is Risk Aversion and Behavioral Alternatives? State its defining idea and essential conditions.",
+      "definition": "Risk aversion in expected utility corresponds to concave utility of wealth over the relevant range and preference for mean-preserving risk reductions. It does not alone imply loss aversion, ambiguity aversion, or a uniform observed response to every framed gamble.",
+      "required_concepts": [
+        "Concave expected utility favors reduced risk at a common mean."
+      ],
+      "accepted_variants": [
+        "Preference for a certain expected wealth over its risky counterpart under the model."
+      ],
+      "major_error_concepts": [
+        "Using risk aversion as a synonym for every avoidance of losses or uncertainty."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-prospect-theory",
+        "behavioral-and-experimental-economics.draft-loss-aversion",
+        "behavioral-and-experimental-economics.draft-ambiguity-aversion",
+        "microeconomic-theory-ii.draft-risk-aversion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-mental-accounting",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Mental Accounting",
+      "prompt": "What is Mental Accounting? State its defining idea and essential conditions.",
+      "definition": "Mental accounting organizes money or outcomes into separate psychological categories with category-specific evaluations or budgets. It can make economically fungible resources behave as if nonfungible, though categories can also provide useful self-control or tracking functions.",
+      "required_concepts": [
+        "Psychological accounts shape evaluation and spending across categories."
+      ],
+      "accepted_variants": [
+        "Mental budgets or segregated outcome accounts."
+      ],
+      "major_error_concepts": [
+        "Assuming separate accounting is necessarily welfare-reducing in every context."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-reference-dependence",
+        "behavioral-and-experimental-economics.draft-bounded-rationality"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-fungibility",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Fungibility",
+      "prompt": "What is Fungibility? State its defining idea and essential conditions.",
+      "definition": "Fungibility means units of the same resource are interchangeable for the relevant budget or payoff purpose. Labeling money by source does not change its arithmetic purchasing power, although preferences, legal restrictions, or mental accounts can change how it is used.",
+      "required_concepts": [
+        "Equivalent resource units are interchangeable absent relevant restrictions."
+      ],
+      "accepted_variants": [
+        "Interchangeability of money in a budget."
+      ],
+      "major_error_concepts": [
+        "Calling legally restricted funds freely interchangeable simply because all amounts use the same currency."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-mental-accounting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-sunk-cost-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Sunk Cost Effect",
+      "prompt": "What is Sunk Cost Effect? State its defining idea and essential conditions.",
+      "definition": "A sunk cost is an unrecoverable past cost that cannot be changed by the current decision. A sunk-cost effect occurs when such costs influence forward-looking choice beyond their relevance through information, constraints, or future consequences.",
+      "required_concepts": [
+        "Irrecoverable past expenditure is not an incremental future cost."
+      ],
+      "accepted_variants": [
+        "Sunk-cost sensitivity or escalation under a defined benchmark."
+      ],
+      "major_error_concepts": [
+        "Ignoring genuine future switching costs by incorrectly labeling them sunk."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+        "behavioral-and-experimental-economics.draft-mental-accounting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-narrow-bracketing",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Narrow Bracketing",
+      "prompt": "What is Narrow Bracketing? State its defining idea and essential conditions.",
+      "definition": "Narrow bracketing evaluates choices separately rather than as part of a combined portfolio or sequence. It can change risk-taking and perceived tradeoffs when integration would offset risks or reveal aggregate consequences.",
+      "required_concepts": [
+        "Evaluate individual decisions in isolation instead of jointly."
+      ],
+      "accepted_variants": [
+        "Narrow choice bracketing versus broad integration."
+      ],
+      "major_error_concepts": [
+        "Assuming separately optimal choices always maximize the value of their combined portfolio."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-mental-accounting",
+        "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-house-money-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "House Money Effect",
+      "prompt": "What is House Money Effect? State its defining idea and essential conditions.",
+      "definition": "A house-money effect is a proposed increase in willingness to take risk after prior gains under certain contexts. Mental accounting and reference points can contribute, but it is an empirical pattern to establish in the task rather than a universal rule about gamblers or investors.",
+      "required_concepts": [
+        "Prior gains can change subsequent risk-taking under a specified context."
+      ],
+      "accepted_variants": [
+        "Gain-history effect on risk choice."
+      ],
+      "major_error_concepts": [
+        "Claiming all people always become more risk seeking after a gain."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-mental-accounting",
+        "behavioral-and-experimental-economics.draft-reference-dependence",
+        "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-break-even-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Break Even Effect",
+      "prompt": "What is Break Even Effect? State its defining idea and essential conditions.",
+      "definition": "A break-even effect describes heightened appeal of an option that offers a chance to recover a prior loss and return to a reference level. Its operation depends on reference points and the option set, and it is not a general theorem that losses always increase risk taking.",
+      "required_concepts": [
+        "Recovery to a salient reference point can shape post-loss risky choices."
+      ],
+      "accepted_variants": [
+        "Break-even seeking after losses."
+      ],
+      "major_error_concepts": [
+        "Equating the effect with universal risk seeking after any loss."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-reference-dependence",
+        "behavioral-and-experimental-economics.draft-loss-aversion",
+        "behavioral-and-experimental-economics.draft-house-money-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-exponential-discounting",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Exponential Discounting",
+      "prompt": "What is Exponential Discounting? State its defining idea and essential conditions.",
+      "definition": "Exponential discounting weights utility t periods ahead by delta to the power t. With stable preferences and a common time shift, relative weights on two future dates do not change merely because both dates become closer.",
+      "required_concepts": [
+        "Constant proportional discounting across equal time intervals."
+      ],
+      "accepted_variants": [
+        "Time-separable exponential discount function."
+      ],
+      "major_error_concepts": [
+        "Defining exponential discounting as an equal absolute utility subtraction every period."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-time-consistency",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Time Consistency",
+      "prompt": "What is Time Consistency? State its defining idea and essential conditions.",
+      "definition": "Time consistency means a planned ranking over future alternatives remains unchanged as time passes when information and relevant circumstances do not change. New information can rationally change a plan without constituting the preference reversal called time inconsistency.",
+      "required_concepts": [
+        "No preference reversal from time passage alone under stable circumstances."
+      ],
+      "accepted_variants": [
+        "Dynamically consistent intertemporal preferences."
+      ],
+      "major_error_concepts": [
+        "Calling any revision after learning new facts time-inconsistent preferences."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-exponential-discounting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-hyperbolic-discounting",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Hyperbolic Discounting",
+      "prompt": "What is Hyperbolic Discounting? State its defining idea and essential conditions.",
+      "definition": "Hyperbolic discounting uses a declining discount-rate pattern, such as weight 1/(1+k*t), rather than a constant exponential rate. Relative impatience can be stronger over near-term delays, potentially generating preference reversals as dates approach.",
+      "required_concepts": [
+        "Declining discount rate can create horizon-dependent impatience."
+      ],
+      "accepted_variants": [
+        "Hyperbolic time-discount function with parameters specified."
+      ],
+      "major_error_concepts": [
+        "Assuming any positive discounting is hyperbolic or time inconsistent."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-exponential-discounting",
+        "behavioral-and-experimental-economics.draft-time-consistency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-quasi-hyperbolic-discounting",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Quasi Hyperbolic Discounting",
+      "prompt": "What is Quasi Hyperbolic Discounting? State its defining idea and essential conditions.",
+      "definition": "Quasi-hyperbolic preferences weight current utility by one and future utility at t greater than zero by beta*delta^t. A beta below one captures a special present-versus-future discount in addition to ordinary long-run exponential discounting.",
+      "required_concepts": [
+        "Beta-delta model adds a present-bias factor to future periods."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying beta repeatedly once per future period rather than once to each future stream from the current perspective."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-exponential-discounting",
+        "behavioral-and-experimental-economics.draft-hyperbolic-discounting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-present-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Present Bias",
+      "prompt": "What is Present Bias? State its defining idea and essential conditions.",
+      "definition": "Present bias gives extra weight to immediate rewards or costs relative to otherwise comparable delayed ones. High overall impatience is not by itself evidence of present bias; distinguishing them requires comparisons that isolate the special role of immediacy.",
+      "required_concepts": [
+        "Special weight on immediate consequences beyond ordinary discounting."
+      ],
+      "accepted_variants": [
+        "Present-focused intertemporal preference."
+      ],
+      "major_error_concepts": [
+        "Inferring present bias solely because someone chooses a sooner payment."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-quasi-hyperbolic-discounting",
+        "behavioral-and-experimental-economics.draft-exponential-discounting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Dynamic Preference Inconsistency",
+      "prompt": "What is Dynamic Preference Inconsistency? State its defining idea and essential conditions.",
+      "definition": "Dynamic preference inconsistency occurs when the relative ranking of a future action changes as its date arrives despite unchanged relevant information. Present-biased agents may plan to act later but reverse that plan when the cost or reward becomes immediate.",
+      "required_concepts": [
+        "Time passage changes an intended future ranking under unchanged circumstances."
+      ],
+      "accepted_variants": [
+        "Intertemporal preference reversal."
+      ],
+      "major_error_concepts": [
+        "Using an information-driven plan change as sufficient evidence of present bias."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-time-consistency",
+        "behavioral-and-experimental-economics.draft-present-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-sophisticated-present-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Sophisticated Present Bias",
+      "prompt": "What is Sophisticated Present Bias? State its defining idea and essential conditions.",
+      "definition": "A sophisticated present-biased agent anticipates future preference reversals and chooses current plans accordingly. Awareness can create demand for commitment, but it does not guarantee that the agent can eliminate all self-control costs.",
+      "required_concepts": [
+        "Correct anticipation of one's future present-biased choices."
+      ],
+      "accepted_variants": [
+        "Sophistication about dynamic inconsistency."
+      ],
+      "major_error_concepts": [
+        "Equating awareness of self-control problems with absence of those problems."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-naive-present-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Naive Present Bias",
+      "prompt": "What is Naive Present Bias? State its defining idea and essential conditions.",
+      "definition": "A naive present-biased agent fails to anticipate some or all future preference reversals. The resulting mistaken plans can produce repeated delay or underuse of commitment, while partial naivete allows intermediate beliefs about future behavior.",
+      "required_concepts": [
+        "Underprediction of future present-bias-driven reversals."
+      ],
+      "accepted_variants": [
+        "Naivete about future self-control."
+      ],
+      "major_error_concepts": [
+        "Defining naivete simply as low intelligence rather than a specific mistaken belief about future choices."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency",
+        "behavioral-and-experimental-economics.draft-sophisticated-present-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-commitment-device",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Commitment Device",
+      "prompt": "What is Commitment Device? State its defining idea and essential conditions.",
+      "definition": "A commitment device changes future feasible choices or their costs to support a currently preferred plan. Hard restrictions and softer psychological or financial devices differ, and demand for commitment depends on beliefs, preferences, flexibility needs, and available alternatives.",
+      "required_concepts": [
+        "Alter future options or incentives to sustain a present plan."
+      ],
+      "accepted_variants": [
+        "Precommitment arrangement."
+      ],
+      "major_error_concepts": [
+        "Assuming every reminder removes future choice options or constitutes a hard commitment."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-sophisticated-present-bias",
+        "behavioral-and-experimental-economics.draft-naive-present-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-temptation-and-self-control",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Temptation and Self Control",
+      "prompt": "What is Temptation and Self Control? State its defining idea and essential conditions.",
+      "definition": "Temptation preferences allow the presence of an attractive but undesired option to affect welfare or self-control costs even when it is not chosen. This differs from an ordinary model in which adding an unused option cannot reduce the value of the choice set.",
+      "required_concepts": [
+        "Unchosen tempting options can impose self-control or welfare costs."
+      ],
+      "accepted_variants": [
+        "Menu-dependent temptation and self-control."
+      ],
+      "major_error_concepts": [
+        "Assuming temptation is defined only by actually choosing the tempting option."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-commitment-device",
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-projection-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Projection Bias",
+      "prompt": "What is Projection Bias? State its defining idea and essential conditions.",
+      "definition": "Projection bias is a tendency to overproject current tastes or states onto future preferences. It can distort advance decisions when future hunger, mood, experience, or circumstances differ, but evidence must distinguish it from genuinely stable preferences or incorrect forecasts of facts.",
+      "required_concepts": [
+        "Current preferences are overused to predict future state-dependent preferences."
+      ],
+      "accepted_variants": [
+        "Misprojection of current tastes into future states."
+      ],
+      "major_error_concepts": [
+        "Calling every forecast error projection bias regardless of its source."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-present-bias",
+        "behavioral-and-experimental-economics.draft-time-consistency"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-hot-cold-empathy-gap",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Hot Cold Empathy Gap",
+      "prompt": "What is Hot Cold Empathy Gap? State its defining idea and essential conditions.",
+      "definition": "A hot-cold empathy gap is difficulty predicting preferences or behavior across affective or visceral states. It can operate in either direction between states and is related to, but not identical with, general projection bias.",
+      "required_concepts": [
+        "Cross-state difficulty anticipating motivation or preference."
+      ],
+      "accepted_variants": [
+        "State-dependent empathy gap."
+      ],
+      "major_error_concepts": [
+        "Assuming the concept refers only to literal temperature or only to judging other people."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-projection-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Forms of Overconfidence",
+      "prompt": "What is Forms of Overconfidence? State its defining idea and essential conditions.",
+      "definition": "Overconfidence is an umbrella term for several distinct belief errors, including overestimating performance, overplacing oneself relative to others, and excessive precision. These components need separate measures and can differ within the same person or task.",
+      "required_concepts": [
+        "Distinguish overestimation, overplacement, and overprecision."
+      ],
+      "accepted_variants": [
+        "Forms of miscalibrated self-assessment or certainty."
+      ],
+      "major_error_concepts": [
+        "Treating all confidence measures as interchangeable evidence of one uniform bias."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-behavioral-economics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-overprecision",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Overprecision",
+      "prompt": "What is Overprecision? State its defining idea and essential conditions.",
+      "definition": "Overprecision means beliefs or confidence intervals are too concentrated relative to the relevant uncertainty benchmark. A person can be overprecise while underestimating their average performance, so it is distinct from optimism about the level of an outcome.",
+      "required_concepts": [
+        "Excessive certainty or too-narrow uncertainty ranges."
+      ],
+      "accepted_variants": [
+        "Overconfidence in belief precision."
+      ],
+      "major_error_concepts": [
+        "Defining overprecision as simply predicting an outcome that is too high."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-forms-of-overconfidence"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-performance-overestimation",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Performance Overestimation",
+      "prompt": "What is Performance Overestimation? State its defining idea and essential conditions.",
+      "definition": "Overestimation occurs when a person's assessment of absolute performance or ability exceeds the appropriate measured benchmark. Interpretation depends on measurement quality, incentives, and whether the benchmark matches what the person was asked to predict.",
+      "required_concepts": [
+        "Absolute self-assessment exceeds the corresponding performance benchmark."
+      ],
+      "accepted_variants": [
+        "Overestimation of own performance."
+      ],
+      "major_error_concepts": [
+        "Using a prediction of relative rank as if it measured absolute overestimation."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-forms-of-overconfidence"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-overplacement",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Overplacement",
+      "prompt": "What is Overplacement? State its defining idea and essential conditions.",
+      "definition": "Overplacement occurs when people rank themselves too favorably relative to others under an appropriate comparison. It differs from absolute overestimation; task difficulty and beliefs about other people can produce different patterns for the two measures.",
+      "required_concepts": [
+        "Overly favorable relative self-ranking."
+      ],
+      "accepted_variants": [
+        "Better-than-others belief error under the measured benchmark."
+      ],
+      "major_error_concepts": [
+        "Assuming absolute and relative self-assessments must show the same bias direction."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+        "behavioral-and-experimental-economics.draft-performance-overestimation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-optimism-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Optimism Bias",
+      "prompt": "What is Optimism Bias? State its defining idea and essential conditions.",
+      "definition": "Optimism bias means expectations are more favorable than justified by the relevant information or calibrated benchmark. Favorable expectations are not automatically biased when prospects truly are good, and identifying the distortion requires specifying whose probabilities or outcomes provide the comparison.",
+      "required_concepts": [
+        "Excessively favorable expectations relative to an appropriate evidence benchmark."
+      ],
+      "accepted_variants": [
+        "Unrealistic optimism in a defined task."
+      ],
+      "major_error_concepts": [
+        "Labeling every positive forecast biased without examining its information basis."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+        "behavioral-and-experimental-economics.draft-overprecision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-confirmation-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Confirmation Bias",
+      "prompt": "What is Confirmation Bias? State its defining idea and essential conditions.",
+      "definition": "Confirmation bias is selective search, interpretation, or recall that favors an existing belief beyond an appropriate evidentiary benchmark. Prior beliefs can legitimately affect Bayesian inference, so merely updating differently from someone with a different prior is not sufficient evidence.",
+      "required_concepts": [
+        "Asymmetric evidence handling favors prior commitments beyond justified updating."
+      ],
+      "accepted_variants": [
+        "Confirmatory information processing."
+      ],
+      "major_error_concepts": [
+        "Treating all use of prior information as confirmation bias."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-limited-attention",
+        "behavioral-and-experimental-economics.draft-optimism-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-availability-heuristic",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Availability Heuristic",
+      "prompt": "What is Availability Heuristic? State its defining idea and essential conditions.",
+      "definition": "The availability heuristic estimates likelihood or importance partly from how easily relevant examples come to mind. Accessibility can reflect true frequency but also recency, vividness, or exposure, so ease of recall is not always a calibrated probability signal.",
+      "required_concepts": [
+        "Ease of recall substitutes for a fuller frequency or probability assessment."
+      ],
+      "accepted_variants": [
+        "Availability-based judgment."
+      ],
+      "major_error_concepts": [
+        "Assuming memorable examples necessarily represent common events."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-decision-heuristic",
+        "behavioral-and-experimental-economics.draft-salience"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-representativeness-heuristic",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Representativeness Heuristic",
+      "prompt": "What is Representativeness Heuristic? State its defining idea and essential conditions.",
+      "definition": "Representativeness judges category membership or probability by similarity to a prototype or pattern. It can neglect prior prevalence, sample size, or diagnostic likelihoods when resemblance is treated as a sufficient probability calculation.",
+      "required_concepts": [
+        "Similarity to a prototype guides judgment and can displace probabilistic information."
+      ],
+      "accepted_variants": [
+        "Representativeness-based inference."
+      ],
+      "major_error_concepts": [
+        "Equating resemblance alone with a correct posterior probability."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-decision-heuristic"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-base-rate-neglect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Base Rate Neglect",
+      "prompt": "What is Base Rate Neglect? State its defining idea and essential conditions.",
+      "definition": "Base-rate neglect underweights relevant prior prevalence when interpreting new evidence. A diagnostic signal's meaning depends on both its likelihood under alternative states and how common those states were before the signal.",
+      "required_concepts": [
+        "Posterior assessment underuses relevant prior prevalence."
+      ],
+      "accepted_variants": [
+        "Insufficient use of base rates in updating."
+      ],
+      "major_error_concepts": [
+        "Assuming a highly accurate signal makes prior prevalence irrelevant in every case."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-representativeness-heuristic"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Law of Small Numbers Belief",
+      "prompt": "What is Law of Small Numbers Belief? State its defining idea and essential conditions.",
+      "definition": "Belief in the law of small numbers is overexpectation that a small sample closely resembles the population distribution. It can generate overconfident inference from sparse data or mistaken expectations that short random sequences must look locally balanced.",
+      "required_concepts": [
+        "Small samples are expected to be more representative than sampling variability warrants."
+      ],
+      "accepted_variants": [
+        "Neglect of small-sample variability."
+      ],
+      "major_error_concepts": [
+        "Treating a few observations as necessarily reproducing population proportions closely."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-representativeness-heuristic",
+        "behavioral-and-experimental-economics.draft-overprecision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-gamblers-fallacy",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Gamblers Fallacy",
+      "prompt": "What is Gamblers Fallacy? State its defining idea and essential conditions.",
+      "definition": "The gambler's fallacy expects an independent random process to compensate for recent outcomes, such as believing a fair coin is more likely to reverse after a streak. The error depends on independence actually being appropriate; some processes genuinely have negative dependence.",
+      "required_concepts": [
+        "Mistaken compensation belief for independent random outcomes."
+      ],
+      "accepted_variants": [
+        "Negative recency error under an independent-process benchmark."
+      ],
+      "major_error_concepts": [
+        "Calling all expectations of reversal fallacious when the process is genuinely mean reverting."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-hot-hand-belief",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Hot Hand Belief",
+      "prompt": "What is Hot Hand Belief? State its defining idea and essential conditions.",
+      "definition": "A hot-hand belief expects success to be positively persistent after recent success. Whether it is mistaken requires a model and unbiased evidence about actual dependence, changing skill, and selection; real performance processes need not behave like independent coin tosses.",
+      "required_concepts": [
+        "Positive success persistence belief must be compared with actual process dependence."
+      ],
+      "accepted_variants": [
+        "Streak or hot-hand expectations."
+      ],
+      "major_error_concepts": [
+        "Declaring every hot-hand belief a fallacy without checking whether performance states persist."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-gamblers-fallacy",
+        "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-anchoring",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Anchoring",
+      "prompt": "What is Anchoring? State its defining idea and essential conditions.",
+      "definition": "Anchoring occurs when an initial value or reference influences a subsequent numerical judgment beyond its justified informational role. Mechanisms can include insufficient adjustment or selective retrieval, and informative starting values should not automatically be classified as irrelevant anchors.",
+      "required_concepts": [
+        "Starting value affects judgment beyond its warranted evidence contribution."
+      ],
+      "accepted_variants": [
+        "Anchoring and adjustment."
+      ],
+      "major_error_concepts": [
+        "Calling legitimate use of an informative prior estimate an anchoring error by definition."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-decision-heuristic",
+        "behavioral-and-experimental-economics.draft-confirmation-bias"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-conservative-belief-updating",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Conservative Belief Updating",
+      "prompt": "What is Conservative Belief Updating? State its defining idea and essential conditions.",
+      "definition": "Conservatism in belief updating means responding too weakly to new evidence relative to an explicit updating benchmark. It differs from rationally assigning low weight to unreliable signals, and its identification requires knowing or modeling prior beliefs and signal likelihoods.",
+      "required_concepts": [
+        "Underresponse to evidence compared with justified updating."
+      ],
+      "accepted_variants": [
+        "Insufficient Bayesian updating under the specified information structure."
+      ],
+      "major_error_concepts": [
+        "Inferring conservatism from a small update when the new signal was genuinely weak."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-confirmation-bias",
+        "behavioral-and-experimental-economics.draft-base-rate-neglect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-bayesian-belief-updating",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Bayesian Belief Updating",
+      "prompt": "What is Bayesian Belief Updating? State its defining idea and essential conditions.",
+      "definition": "Bayesian updating combines prior odds with a likelihood ratio to obtain posterior odds. It provides one coherent benchmark for learning when priors and signal models are specified; disagreement can arise from different valid information rather than an updating error.",
+      "required_concepts": [
+        "Posterior odds equal prior odds times the evidence likelihood ratio."
+      ],
+      "accepted_variants": [
+        "Bayes-rule belief revision."
+      ],
+      "major_error_concepts": [
+        "Using signal accuracy without accounting for prior odds and alternative likelihoods."
+      ],
+      "prerequisite_ids": [
+        "probability-theory-i.pt1-m1-bayes-theorem"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-hindsight-bias",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Hindsight Bias",
+      "prompt": "What is Hindsight Bias? State its defining idea and essential conditions.",
+      "definition": "Hindsight bias makes an observed outcome seem more predictable after it is known than it appeared beforehand. Assessing it requires preserving or reconstructing prior information carefully, since hindsight also provides genuinely new evidence about what occurred.",
+      "required_concepts": [
+        "Outcome knowledge distorts judgments of prior predictability."
+      ],
+      "accepted_variants": [
+        "Knew-it-all-along effect."
+      ],
+      "major_error_concepts": [
+        "Treating every posterior change after an outcome as hindsight bias."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-bayesian-belief-updating",
+        "behavioral-and-experimental-economics.draft-overprecision"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-belief-elicitation",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Belief Elicitation",
+      "prompt": "What is Belief Elicitation? State its defining idea and essential conditions.",
+      "definition": "Belief elicitation asks participants to report probabilities or expectations, often with incentives tied to accuracy. Reports can reflect comprehension, risk preferences, hedging, and response formats as well as beliefs, so the elicitation mechanism is part of the measurement model.",
+      "required_concepts": [
+        "Measure expectations using a specified reporting and incentive procedure."
+      ],
+      "accepted_variants": [
+        "Probability or expectation elicitation."
+      ],
+      "major_error_concepts": [
+        "Assuming every numerical report directly equals an undistorted subjective probability."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-bayesian-belief-updating",
+        "behavioral-and-experimental-economics.draft-forms-of-overconfidence"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-proper-scoring-rule",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Proper Scoring Rule",
+      "prompt": "What is Proper Scoring Rule? State its defining idea and essential conditions.",
+      "definition": "A proper scoring rule makes reporting one's true probability distribution maximize expected score under the relevant expectation criterion. Strict propriety gives a unique truthful optimum; converting scores into money requires attention to utility, risk attitudes, and hedging opportunities.",
+      "required_concepts": [
+        "Truthful probability reporting maximizes expected score; payment incentives need additional conditions."
+      ],
+      "accepted_variants": [
+        "Proper or strictly proper probabilistic score."
+      ],
+      "major_error_concepts": [
+        "Assuming a proper score guarantees truthful monetary reports under every risk preference."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-belief-elicitation",
+        "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-brier-loss",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Brier Loss",
+      "prompt": "What is Brier Loss? State its defining idea and essential conditions.",
+      "definition": "For a binary event with report p and outcome y in zero or one, Brier loss is (p-y) squared, with lower loss better. Its expected value is minimized at the person's true event probability under expected-loss evaluation.",
+      "required_concepts": [
+        "Squared probability error is a proper binary forecast loss."
+      ],
+      "accepted_variants": [
+        "Brier score under a clearly stated loss or reward sign convention."
+      ],
+      "major_error_concepts": [
+        "Treating a higher squared forecast error as better without reversing the payoff sign."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-proper-scoring-rule"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Incentive Compatible Elicitation",
+      "prompt": "What is Incentive Compatible Elicitation? State its defining idea and essential conditions.",
+      "definition": "An incentive-compatible elicitation procedure makes the intended truthful report or action optimal under its specified information and preference assumptions. Paying participants is not sufficient by itself; the payoff rule must align their incentives with the quantity being measured.",
+      "required_concepts": [
+        "Intended reporting behavior must be optimal under the mechanism's assumptions."
+      ],
+      "accepted_variants": [
+        "Truthful incentive alignment in an elicitation mechanism."
+      ],
+      "major_error_concepts": [
+        "Calling any positive participation payment a proof of truthful reporting."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-belief-elicitation",
+        "behavioral-and-experimental-economics.draft-proper-scoring-rule",
+        "microeconomic-theory-ii.draft-incentive-compatibility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-becker-degroot-marschak-mechanism",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Becker DeGroot Marschak Mechanism",
+      "prompt": "What is Becker DeGroot Marschak Mechanism? State its defining idea and essential conditions.",
+      "definition": "The Becker-DeGroot-Marschak procedure compares a reported buying value with an independently drawn price and trades at that drawn price when the report exceeds it. Truthful bidding follows under the standard isolated valuation and utility assumptions, not merely from participants being paid.",
+      "required_concepts": [
+        "Random independent transaction price makes truthful threshold reporting optimal under the standard assumptions."
+      ],
+      "accepted_variants": [
+        "BDM valuation mechanism with buying or selling convention specified."
+      ],
+      "major_error_concepts": [
+        "Charging the participant's own bid while calling it the standard BDM mechanism."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+        "behavioral-and-experimental-economics.draft-willingness-to-pay-and-accept"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-multiple-price-list",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Multiple Price List",
+      "prompt": "What is Multiple Price List? State its defining idea and essential conditions.",
+      "definition": "A multiple-price list elicits a series of choices between options whose relative attractiveness changes across rows. A switching point can bracket a preference parameter under the model, while multiple switches may reflect noise, misunderstanding, or preferences not captured by that simple mapping.",
+      "required_concepts": [
+        "Ordered binary choices provide intervals or restrictions on preferences under a specified model."
+      ],
+      "accepted_variants": [
+        "MPL elicitation."
+      ],
+      "major_error_concepts": [
+        "Treating every observed switching row as an exact model-free risk-aversion parameter."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+        "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Hypothetical and Incentivized Choice",
+      "prompt": "What is Hypothetical and Incentivized Choice? State its defining idea and essential conditions.",
+      "definition": "Hypothetical choices have no direct implementation consequence, whereas incentivized choices link decisions to realized outcomes under a payment rule. Incentives can improve some measurements, but neither format automatically proves truthful preferences, comprehension, or real-world generalization.",
+      "required_concepts": [
+        "Consequence-backed and hypothetical tasks differ without a universal validity guarantee."
+      ],
+      "accepted_variants": [
+        "Real versus hypothetical incentives."
+      ],
+      "major_error_concepts": [
+        "Assuming any paid choice exactly predicts behavior at every real-world stake."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+        "behavioral-and-experimental-economics.draft-experimental-economics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-random-payment-system",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Random Payment System",
+      "prompt": "What is Random Payment System? State its defining idea and essential conditions.",
+      "definition": "A random-payment system implements one or a subset of several decisions using a specified random selection rule. It aims to limit wealth and portfolio effects, but incentive compatibility depends on how participants evaluate compound lotteries and cross-task consequences.",
+      "required_concepts": [
+        "Randomly select decisions for implementation under an explicit incentive model."
+      ],
+      "accepted_variants": [
+        "Random-lottery payment mechanism."
+      ],
+      "major_error_concepts": [
+        "Assuming selecting one task always eliminates all cross-task incentive interactions for every preference theory."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+        "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice",
+        "behavioral-and-experimental-economics.draft-prospect-theory"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Control",
+      "prompt": "What is Experimental Control? State its defining idea and essential conditions.",
+      "definition": "Experimental control holds relevant features fixed or varies them systematically so treatment contrasts have a clear interpretation. Control concerns the realized design and procedures; a controlled room alone does not ensure that participants understand or experience treatments identically.",
+      "required_concepts": [
+        "Manage relevant variation to isolate the intended contrast."
+      ],
+      "accepted_variants": [
+        "Controlled treatment manipulation."
+      ],
+      "major_error_concepts": [
+        "Equating a laboratory location with complete control of every psychological mechanism."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-economics",
+        "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Randomization",
+      "prompt": "What is Experimental Randomization? State its defining idea and essential conditions.",
+      "definition": "Randomization assigns experimental conditions by a known chance mechanism. It supports comparable potential outcomes across assignment groups under the design but does not eliminate sampling error, spillovers, attrition, or ambiguity about which bundled component caused the effect.",
+      "required_concepts": [
+        "Chance assignment supplies the design-based comparison."
+      ],
+      "accepted_variants": [
+        "Random assignment of experimental treatments."
+      ],
+      "major_error_concepts": [
+        "Claiming randomization guarantees identical observed covariates or a unique treatment mechanism in every finite sample."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-control",
+        "econometrics-i.draft-random-assignment"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-between-subject-design",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Between Subject Design",
+      "prompt": "What is Between Subject Design? State its defining idea and essential conditions.",
+      "definition": "A between-subject design assigns different participants to different conditions. It avoids some exposure-order effects but uses between-person variation, so assignment, sample size, and participant heterogeneity matter for precision and interpretation.",
+      "required_concepts": [
+        "Different people experience different conditions."
+      ],
+      "accepted_variants": [
+        "Independent-groups experimental design."
+      ],
+      "major_error_concepts": [
+        "Assuming between-subject observations are independent despite group interaction or clustered assignment."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "behavioral-and-experimental-economics.draft-experimental-control"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-within-subject-design",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Within Subject Design",
+      "prompt": "What is Within Subject Design? State its defining idea and essential conditions.",
+      "definition": "A within-subject design exposes the same participant to multiple conditions. It can improve precision through within-person comparisons but introduces possible learning, demand, order, and carryover effects that need design and analysis attention.",
+      "required_concepts": [
+        "Repeated conditions for the same person create paired comparisons and dependence."
+      ],
+      "accepted_variants": [
+        "Repeated-measures design."
+      ],
+      "major_error_concepts": [
+        "Analyzing each repeated decision as if made by an unrelated independent participant."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-between-subject-design",
+        "behavioral-and-experimental-economics.draft-experimental-control"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-order-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Order Effect",
+      "prompt": "What is Order Effect? State its defining idea and essential conditions.",
+      "definition": "An order effect is a change in response caused by the position or sequence of tasks or conditions. Counterbalancing or randomized order can address specified order patterns, but it does not automatically remove all lasting treatment carryover.",
+      "required_concepts": [
+        "Task sequence itself influences measured behavior."
+      ],
+      "accepted_variants": [
+        "Sequence or position effect."
+      ],
+      "major_error_concepts": [
+        "Assuming random order proves no learning or carryover occurred."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-within-subject-design"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-treatment-carryover",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Treatment Carryover",
+      "prompt": "What is Treatment Carryover? State its defining idea and essential conditions.",
+      "definition": "Carryover occurs when exposure to an earlier condition changes responses under a later condition. Washout, separation, or a different design can reduce some forms, but learned information or changed preferences may persist beyond a simple pause.",
+      "required_concepts": [
+        "Earlier treatment affects later-condition outcomes."
+      ],
+      "accepted_variants": [
+        "Treatment carryover or residual exposure effect."
+      ],
+      "major_error_concepts": [
+        "Assuming every carryover disappears merely by adding a short break."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-within-subject-design",
+        "behavioral-and-experimental-economics.draft-order-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-blocked-randomization",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Blocked Randomization",
+      "prompt": "What is Blocked Randomization? State its defining idea and essential conditions.",
+      "definition": "Blocking randomizes treatment within groups defined by relevant pre-treatment characteristics. It can improve balance and precision, while analysis and randomization inference should respect the block structure actually used.",
+      "required_concepts": [
+        "Randomize within pre-specified strata or blocks."
+      ],
+      "accepted_variants": [
+        "Stratified assignment."
+      ],
+      "major_error_concepts": [
+        "Creating blocks from post-treatment outcomes and treating them as pre-treatment design strata."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-factorial-experiment",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Factorial Experiment",
+      "prompt": "What is Factorial Experiment? State its defining idea and essential conditions.",
+      "definition": "A factorial experiment independently varies multiple factors across treatment combinations to estimate their effects and interactions. Main-effect interpretation depends on coding and averaging, and an interaction means one factor's effect changes with another factor's level.",
+      "required_concepts": [
+        "Crossed factor combinations identify specified main effects and interactions."
+      ],
+      "accepted_variants": [
+        "Factorial treatment design."
+      ],
+      "major_error_concepts": [
+        "Assuming the effect of a factor is constant when the design reveals an interaction."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-control",
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "econometrics-i.draft-regression-interaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-cluster-assignment",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Cluster Assignment",
+      "prompt": "What is Cluster Assignment? State its defining idea and essential conditions.",
+      "definition": "Cluster assignment randomizes groups such as sessions or classrooms rather than individual people. The number and structure of independently assigned clusters drive important parts of precision, and within-cluster interactions can be part of the treatment rather than mere noise.",
+      "required_concepts": [
+        "Group-level treatment assignment requires group-aware design and inference."
+      ],
+      "accepted_variants": [
+        "Cluster-randomized economic experiment."
+      ],
+      "major_error_concepts": [
+        "Counting every decision in a session as a separate independent randomization unit."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "econometrics-ii.draft-cluster-randomized-design"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-power",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Power",
+      "prompt": "What is Experimental Power? State its defining idea and essential conditions.",
+      "definition": "Statistical power is the probability of rejecting a specified null under a stated alternative and design. It depends on effect magnitude, noise, assignment, attrition, multiplicity, and independent sample information rather than participant count alone.",
+      "required_concepts": [
+        "Detection probability for a defined alternative under the actual design."
+      ],
+      "accepted_variants": [
+        "Power at a specified effect size."
+      ],
+      "major_error_concepts": [
+        "Reporting that an experiment is adequately powered without stating the target effect or dependence structure."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "behavioral-and-experimental-economics.draft-cluster-assignment",
+        "econometrics-i.draft-test-size-and-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-minimum-detectable-effect",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Minimum Detectable Effect",
+      "prompt": "What is Minimum Detectable Effect? State its defining idea and essential conditions.",
+      "definition": "A minimum detectable effect is the smallest effect meeting a chosen power target under specified significance, noise, and design assumptions. It is a planning quantity, not proof that smaller effects do not exist or are economically unimportant.",
+      "required_concepts": [
+        "Effect threshold achieving stated statistical power under assumed design inputs."
+      ],
+      "accepted_variants": [
+        "MDE."
+      ],
+      "major_error_concepts": [
+        "Interpreting an MDE as a lower bound on the true effect."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-power"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-pre-analysis-plan",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Pre Analysis Plan",
+      "prompt": "What is Pre Analysis Plan? State its defining idea and essential conditions.",
+      "definition": "A pre-analysis plan specifies intended hypotheses, outcomes, estimands, exclusions, and analyses before the relevant results are examined. It distinguishes planned tests from later exploration but does not guarantee a good design or prohibit transparently labeled new questions.",
+      "required_concepts": [
+        "Document confirmatory analysis choices before inspecting their results."
+      ],
+      "accepted_variants": [
+        "Pre-specified empirical analysis plan."
+      ],
+      "major_error_concepts": [
+        "Treating all exploratory analyses as invalid rather than requiring clear labeling and suitable inference."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-power",
+        "econometrics-ii.draft-researcher-degrees-of-freedom"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-manipulation-check",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Manipulation Check",
+      "prompt": "What is Manipulation Check? State its defining idea and essential conditions.",
+      "definition": "A manipulation check measures whether the intended treatment difference was perceived or induced. It can inform interpretation, but conditioning the main analysis on a post-treatment check can introduce selection bias and should not be automatic.",
+      "required_concepts": [
+        "Check whether the intervention changed the intended intermediate condition."
+      ],
+      "accepted_variants": [
+        "Treatment comprehension or induction check as specified."
+      ],
+      "major_error_concepts": [
+        "Dropping treatment nonresponders based on a post-treatment check while claiming the original randomized effect."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-control",
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "econometrics-ii.draft-bad-controls"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimenter-demand",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimenter Demand",
+      "prompt": "What is Experimenter Demand? State its defining idea and essential conditions.",
+      "definition": "Experimenter demand occurs when participants infer the study's purpose or desired response and adjust behavior accordingly. It can change what an experiment measures, although the direction and strength depend on participants' beliefs and incentives rather than a universal compliance tendency.",
+      "required_concepts": [
+        "Perceived research expectations influence participant behavior."
+      ],
+      "accepted_variants": [
+        "Demand characteristics."
+      ],
+      "major_error_concepts": [
+        "Assuming all observed treatment differences are demand effects without discriminating evidence."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-control",
+        "behavioral-and-experimental-economics.draft-manipulation-check"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-deception",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Deception",
+      "prompt": "What is Experimental Deception? State its defining idea and essential conditions.",
+      "definition": "Deception involves misleading participants about relevant aspects of the study, distinct from transparently withholding information under an agreed procedure. It can affect trust, future behavior, and ethical acceptability, so any use requires the applicable oversight and a justified design rather than being treated as a neutral measurement shortcut.",
+      "required_concepts": [
+        "Misrepresentation can change trust and raises explicit ethical and design concerns."
+      ],
+      "accepted_variants": [
+        "Experimental deception with procedural distinctions stated."
+      ],
+      "major_error_concepts": [
+        "Assuming deception is harmless whenever it makes a treatment contrast easier to produce."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimenter-demand",
+        "behavioral-and-experimental-economics.draft-experimental-control"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-blinding",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Blinding",
+      "prompt": "What is Experimental Blinding? State its defining idea and essential conditions.",
+      "definition": "Blinding limits participants', implementers', or analysts' knowledge of assignment or hypotheses to reduce particular biases. Different parties can be blinded to different information; it does not necessarily remove treatment perception, inference from outcomes, or all demand effects.",
+      "required_concepts": [
+        "Restrict specified information for specified parties to reduce bias."
+      ],
+      "accepted_variants": [
+        "Masking with the blinded roles explicitly identified."
+      ],
+      "major_error_concepts": [
+        "Claiming a study is fully blinded without stating who lacked which information."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "behavioral-and-experimental-economics.draft-experimenter-demand"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-attrition",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Attrition",
+      "prompt": "What is Experimental Attrition? State its defining idea and essential conditions.",
+      "definition": "Experimental attrition is loss of outcome observation after assignment. When dropout relates to treatment and potential outcomes, the observed comparison can become selected; documentation, design prevention, and justified adjustments or bounds are needed for interpretation.",
+      "required_concepts": [
+        "Post-assignment missing outcomes can undermine observed-group comparability."
+      ],
+      "accepted_variants": [
+        "Differential follow-up loss."
+      ],
+      "major_error_concepts": [
+        "Assuming randomization removes all bias from treatment-related dropout."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "econometrics-i.draft-attrition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-intention-to-treat-analysis",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Intention to Treat Analysis",
+      "prompt": "What is Intention to Treat Analysis? State its defining idea and essential conditions.",
+      "definition": "An intention-to-treat analysis compares outcomes by assigned condition even when participants do not fully comply. It estimates the assignment effect under its design conditions, while a received-treatment effect requires additional assumptions and a different identification argument.",
+      "required_concepts": [
+        "Retain assignment groups to estimate the assignment-policy contrast."
+      ],
+      "accepted_variants": [
+        "ITT experimental comparison."
+      ],
+      "major_error_concepts": [
+        "Removing noncompliers and calling the resulting comparison intention to treat."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "behavioral-and-experimental-economics.draft-experimental-attrition",
+        "econometrics-i.draft-intention-to-treat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-spillovers",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Spillovers",
+      "prompt": "What is Experimental Spillovers? State its defining idea and essential conditions.",
+      "definition": "Experimental spillovers occur when a participant's assignment or behavior changes another participant's outcome. Group interactions, shared information, or social influence can require exposure-based effect definitions rather than treating all nominal controls as unexposed.",
+      "required_concepts": [
+        "Cross-participant effects change the relevant treatment exposure."
+      ],
+      "accepted_variants": [
+        "Interference within or across experimental groups."
+      ],
+      "major_error_concepts": [
+        "Assuming no interference solely because each participant has a separate treatment label."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-cluster-assignment",
+        "econometrics-ii.draft-treatment-spillovers"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-internal-validity",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Internal Validity",
+      "prompt": "What is Internal Validity? State its defining idea and essential conditions.",
+      "definition": "Internal validity concerns whether the study supports its intended causal conclusion for the studied units and intervention. It depends on assignment, implementation, measurement, missingness, and assumptions; it is separate from how far the result generalizes.",
+      "required_concepts": [
+        "Credibility of the within-study causal interpretation."
+      ],
+      "accepted_variants": [
+        "Internal causal validity."
+      ],
+      "major_error_concepts": [
+        "Equating a representative sample with a valid within-study causal comparison."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-randomization",
+        "behavioral-and-experimental-economics.draft-experimental-attrition",
+        "behavioral-and-experimental-economics.draft-intention-to-treat-analysis",
+        "behavioral-and-experimental-economics.draft-experimental-spillovers"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-external-validity",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "External Validity",
+      "prompt": "What is External Validity? State its defining idea and essential conditions.",
+      "definition": "External validity concerns whether findings apply to other populations, settings, stakes, interventions, or time periods. Similar labels are not enough; transport can require assumptions about effect modifiers, institutions, selection, and how the intervention is implemented.",
+      "required_concepts": [
+        "Generalization requires a justified link between study and target contexts."
+      ],
+      "accepted_variants": [
+        "Transportability or generalizability with target specified."
+      ],
+      "major_error_concepts": [
+        "Assuming one successful laboratory manipulation proves the same effect in every field setting."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-internal-validity",
+        "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-replication",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Replication",
+      "prompt": "What is Experimental Replication? State its defining idea and essential conditions.",
+      "definition": "Replication examines whether a finding recurs under a specified repetition or related design. Direct and conceptual replications address different questions, and effect sizes with uncertainty are more informative than simply comparing whether each study crosses a significance threshold.",
+      "required_concepts": [
+        "Repeat or extend a finding with the replication target and uncertainty explicit."
+      ],
+      "accepted_variants": [
+        "Direct versus conceptual replication."
+      ],
+      "major_error_concepts": [
+        "Calling two compatible estimates contradictory solely because one p-value is above a threshold."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-internal-validity",
+        "behavioral-and-experimental-economics.draft-external-validity",
+        "econometrics-i.draft-economic-and-statistical-significance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-transparent-experimental-reporting",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Transparent Experimental Reporting",
+      "prompt": "What is Transparent Experimental Reporting? State its defining idea and essential conditions.",
+      "definition": "Transparent reporting describes assignment, instructions, incentives, exclusions, missing data, outcomes, and analysis choices sufficiently to interpret the result. Sharing must respect privacy and consent; transparency does not require exposing identifiable participant records.",
+      "required_concepts": [
+        "Report design and analysis choices while preserving participant confidentiality."
+      ],
+      "accepted_variants": [
+        "Complete methods and results reporting with privacy safeguards."
+      ],
+      "major_error_concepts": [
+        "Treating public release of identifiable participant data as a necessary condition for transparency."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-pre-analysis-plan",
+        "behavioral-and-experimental-economics.draft-experimental-attrition",
+        "behavioral-and-experimental-economics.draft-experimental-replication"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-research-ethics",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Research Ethics",
+      "prompt": "What is Experimental Research Ethics? State its defining idea and essential conditions.",
+      "definition": "Ethical experimental design considers informed participation, proportional risk, withdrawal, fair treatment, privacy, and appropriate independent oversight. Incentives and scientific value do not by themselves justify coercion, undisclosed harm, or unnecessary collection of identifying information.",
+      "required_concepts": [
+        "Protect participant autonomy, welfare, and privacy throughout the design."
+      ],
+      "accepted_variants": [
+        "Participant-centered research ethics with applicable review."
+      ],
+      "major_error_concepts": [
+        "Assuming consent to one task authorizes unrelated uses of identifiable data."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-deception",
+        "behavioral-and-experimental-economics.draft-transparent-experimental-reporting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-dictator-game",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Dictator Game",
+      "prompt": "What is Dictator Game? State its defining idea and essential conditions.",
+      "definition": "In a dictator game, one participant chooses an allocation between themselves and another participant without a strategic rejection stage. Giving can reflect social preferences, norms, image, or design cues, so one allocation does not uniquely measure pure altruism.",
+      "required_concepts": [
+        "Unilateral allocation task without recipient veto."
+      ],
+      "accepted_variants": [
+        "Dictator allocation experiment."
+      ],
+      "major_error_concepts": [
+        "Interpreting every positive transfer as a mechanism-pure altruism parameter."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-economics",
+        "behavioral-and-experimental-economics.draft-experimenter-demand"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-ultimatum-game",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Ultimatum Game",
+      "prompt": "What is Ultimatum Game? State its defining idea and essential conditions.",
+      "definition": "In an ultimatum game, a proposer offers a division and a responder accepts or rejects, with rejection usually leaving both with the specified fallback payoff. Fairness, beliefs, strategic anticipation, and rejection costs can all affect behavior beyond the narrow self-interested benchmark.",
+      "required_concepts": [
+        "Offer followed by acceptance or costly rejection under stated fallback payoffs."
+      ],
+      "accepted_variants": [
+        "Ultimatum bargaining experiment."
+      ],
+      "major_error_concepts": [
+        "Treating an ultimatum offer as an unconditional gift with no strategic response."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-dictator-game"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-trust-game",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Trust Game",
+      "prompt": "What is Trust Game? State its defining idea and essential conditions.",
+      "definition": "In a trust game, a first mover transfers resources that may be multiplied before a second mover decides how much to return. Initial transfers can reflect trust, risk attitudes, altruism, or norms, and returns can reflect reciprocity or other social preferences.",
+      "required_concepts": [
+        "Sequential transfer-and-return game with multiple possible motivational channels."
+      ],
+      "accepted_variants": [
+        "Investment or trust experiment with payoff multiplier specified."
+      ],
+      "major_error_concepts": [
+        "Treating the initial transfer as a pure belief measure independent of preferences."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-dictator-game",
+        "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-public-goods-experiment",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Public Goods Experiment",
+      "prompt": "What is Public Goods Experiment? State its defining idea and essential conditions.",
+      "definition": "A public-goods experiment gives participants a choice between private retention and contribution to a shared return. A standard social-dilemma parameterization makes own marginal return below one but total group marginal return above one, creating a conflict between narrow private and joint monetary incentives.",
+      "required_concepts": [
+        "Private contribution cost trades off against a shared return with stated marginal incentives."
+      ],
+      "accepted_variants": [
+        "Voluntary-contribution public-goods game."
+      ],
+      "major_error_concepts": [
+        "Assuming every public-goods payoff parameterization creates a free-riding dilemma."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-dictator-game",
+        "microeconomic-theory-ii.draft-public-good",
+        "microeconomic-theory-ii.draft-free-riding"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-altruistic-preferences",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Altruistic Preferences",
+      "prompt": "What is Altruistic Preferences? State its defining idea and essential conditions.",
+      "definition": "Altruistic preferences place positive weight on another person's welfare or payoff, distinct from only one's own material outcome. Observed generosity can also reflect image, reciprocity, warm glow, or strategic incentives, so behavior must be interpreted relative to the design.",
+      "required_concepts": [
+        "Other-regarding utility weight is distinct from all possible motives for giving."
+      ],
+      "accepted_variants": [
+        "Concern for others' welfare."
+      ],
+      "major_error_concepts": [
+        "Defining any publicly generous act as unambiguously pure altruism."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-dictator-game",
+        "behavioral-and-experimental-economics.draft-trust-game"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-inequality-aversion",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Inequality Aversion",
+      "prompt": "What is Inequality Aversion? State its defining idea and essential conditions.",
+      "definition": "Inequality aversion penalizes payoff differences between oneself and others, often distinguishing disadvantageous and advantageous inequality. It can predict behavior unlike total-surplus maximization or pure altruism, depending on the direction and size of the inequality.",
+      "required_concepts": [
+        "Utility responds negatively to specified relative-payoff inequalities."
+      ],
+      "accepted_variants": [
+        "Inequity-aversion model with advantageous and disadvantageous terms."
+      ],
+      "major_error_concepts": [
+        "Equating inequality aversion with always maximizing everyone's total payoff."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-altruistic-preferences",
+        "behavioral-and-experimental-economics.draft-ultimatum-game"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-reciprocity",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Reciprocity",
+      "prompt": "What is Reciprocity? State its defining idea and essential conditions.",
+      "definition": "Reciprocity conditions behavior on another person's perceived kindness, intentions, or prior actions. It differs from unconditional concern for others and can motivate either reward or punishment, with beliefs about intentions affecting predictions.",
+      "required_concepts": [
+        "Respond to perceived treatment or intentions rather than only final payoff levels."
+      ],
+      "accepted_variants": [
+        "Positive and negative reciprocity."
+      ],
+      "major_error_concepts": [
+        "Treating reciprocity as identical to unconditional altruism."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-trust-game",
+        "behavioral-and-experimental-economics.draft-altruistic-preferences",
+        "behavioral-and-experimental-economics.draft-inequality-aversion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-conditional-cooperation",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Conditional Cooperation",
+      "prompt": "What is Conditional Cooperation? State its defining idea and essential conditions.",
+      "definition": "Conditional cooperation means willingness to contribute rises with others' expected or observed cooperation under the specified task. It can coexist with free riders and interact with beliefs, so aggregate contribution paths depend on both preference heterogeneity and information.",
+      "required_concepts": [
+        "Contribution is contingent on others' cooperation."
+      ],
+      "accepted_variants": [
+        "Conditionally cooperative public-good behavior."
+      ],
+      "major_error_concepts": [
+        "Assuming a conditional cooperator contributes fully regardless of others' actions."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-public-goods-experiment",
+        "behavioral-and-experimental-economics.draft-reciprocity",
+        "behavioral-and-experimental-economics.draft-belief-elicitation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-costly-punishment",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Costly Punishment",
+      "prompt": "What is Costly Punishment? State its defining idea and essential conditions.",
+      "definition": "Costly punishment lets a participant pay to reduce another's payoff or impose a sanction. It can support cooperation under some institutions but can also create retaliation or waste, so the welfare effect requires accounting for punishment costs and resulting behavior.",
+      "required_concepts": [
+        "Sanctioning costs the punisher and changes another's payoff."
+      ],
+      "accepted_variants": [
+        "Peer punishment in social dilemmas."
+      ],
+      "major_error_concepts": [
+        "Counting increased contributions as proof of higher welfare while ignoring punishment costs."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-public-goods-experiment",
+        "behavioral-and-experimental-economics.draft-reciprocity",
+        "behavioral-and-experimental-economics.draft-conditional-cooperation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-motivational-crowding-out",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Motivational Crowding Out",
+      "prompt": "What is Motivational Crowding Out? State its defining idea and essential conditions.",
+      "definition": "Motivational crowding out occurs when an external incentive reduces an intrinsic or social motive under the relevant context. The incentive's total behavioral effect can still be positive, negative, or mixed, and identifying a motive change requires more than observing one final outcome.",
+      "required_concepts": [
+        "External incentives can weaken other motives; net behavior depends on all channels."
+      ],
+      "accepted_variants": [
+        "Crowding out of intrinsic or prosocial motivation."
+      ],
+      "major_error_concepts": [
+        "Claiming any incentive necessarily lowers performance or cooperation."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-altruistic-preferences",
+        "behavioral-and-experimental-economics.draft-reciprocity",
+        "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-social-norms",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Social Norms",
+      "prompt": "What is Social Norms? State its defining idea and essential conditions.",
+      "definition": "A descriptive norm concerns what people believe others commonly do, whereas an injunctive norm concerns what they believe is approved or expected. The two can conflict and influence behavior through different belief, coordination, or social-sanction mechanisms.",
+      "required_concepts": [
+        "Common behavior differs from perceived approval or obligation."
+      ],
+      "accepted_variants": [
+        "Descriptive versus injunctive social norms."
+      ],
+      "major_error_concepts": [
+        "Assuming a frequently observed action is necessarily socially approved."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-conditional-cooperation",
+        "behavioral-and-experimental-economics.draft-reciprocity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-social-image",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Social Image",
+      "prompt": "What is Social Image? State its defining idea and essential conditions.",
+      "definition": "Social-image motives make behavior depend partly on how one expects to be perceived by others. Observability, audience, anonymity, and signal meaning can change choices even when material payoffs remain constant.",
+      "required_concepts": [
+        "Expected evaluation by an audience enters choice."
+      ],
+      "accepted_variants": [
+        "Reputational or social-image utility."
+      ],
+      "major_error_concepts": [
+        "Assuming anonymous and publicly observable giving measure identical motives without further evidence."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-altruistic-preferences",
+        "behavioral-and-experimental-economics.draft-social-norms"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-identity-and-economic-choice",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Identity and Economic Choice",
+      "prompt": "What is Identity and Economic Choice? State its defining idea and essential conditions.",
+      "definition": "Identity-based preferences connect behavior to social categories and prescriptions associated with how a person sees themselves. Identity can affect the meaning of actions and norms, but category labels alone do not determine every member's preferences or behavior.",
+      "required_concepts": [
+        "Self-concept and category-linked norms can influence utility and choice."
+      ],
+      "accepted_variants": [
+        "Identity economics with context-specific prescriptions."
+      ],
+      "major_error_concepts": [
+        "Inferring a person's preferences solely from membership in a demographic or social category."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-social-norms",
+        "behavioral-and-experimental-economics.draft-social-image"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-experimental-markets",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Experimental Markets",
+      "prompt": "What is Experimental Markets? State its defining idea and essential conditions.",
+      "definition": "An experimental market specifies trading rules, information, endowments, and incentives to study exchange and institutional outcomes. Individual biases need not translate mechanically into aggregate prices because competition, selection, arbitrage constraints, and learning affect aggregation.",
+      "required_concepts": [
+        "Market rules and interaction determine how individual choices aggregate."
+      ],
+      "accepted_variants": [
+        "Laboratory or field market experiment with the institution defined."
+      ],
+      "major_error_concepts": [
+        "Assuming an individual decision bias must appear unchanged in every market price."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-experimental-economics",
+        "behavioral-and-experimental-economics.draft-experimental-control",
+        "behavioral-and-experimental-economics.draft-social-image"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-learning-in-experiments",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Learning in Experiments",
+      "prompt": "What is Learning in Experiments? State its defining idea and essential conditions.",
+      "definition": "Learning in repeated experiments changes choices as participants gain feedback, experience, or beliefs about others. It can improve task performance or induce strategic adaptation, while repeated exposure can make later rounds answer a different question from initial unfamiliar choice.",
+      "required_concepts": [
+        "Feedback and repeated experience alter decisions and the interpretation of round effects."
+      ],
+      "accepted_variants": [
+        "Experiential or strategic learning under a specified feedback structure."
+      ],
+      "major_error_concepts": [
+        "Treating all repeated rounds as independent measurements of unchanged preferences."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-within-subject-design",
+        "behavioral-and-experimental-economics.draft-order-effect",
+        "behavioral-and-experimental-economics.draft-experimental-markets"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-nudge",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Nudge",
+      "prompt": "What is Nudge? State its defining idea and essential conditions.",
+      "definition": "A nudge changes the choice environment while preserving the relevant options and without substantially altering their material incentives under the chosen definition. Its classification does not establish effectiveness, informed acceptance, or welfare improvement; those are separate empirical and normative questions.",
+      "required_concepts": [
+        "Choice-environment intervention preserves options under the stated definition."
+      ],
+      "accepted_variants": [
+        "Noncoercive choice-context intervention with incentive boundary specified."
+      ],
+      "major_error_concepts": [
+        "Calling an intervention beneficial solely because it is labeled a nudge."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-default-effect",
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+        "behavioral-and-experimental-economics.draft-limited-attention"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-choice-architecture",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Choice Architecture",
+      "prompt": "What is Choice Architecture? State its defining idea and essential conditions.",
+      "definition": "Choice architecture is the organization of options, information, defaults, and decision procedures. Some architecture exists in any presented choice, but intentional design still requires examining transparency, agency, incentives, and heterogeneous effects rather than assuming neutrality or benefit.",
+      "required_concepts": [
+        "Arrangement of the decision environment shapes how choices are encountered."
+      ],
+      "accepted_variants": [
+        "Design of option presentation and selection procedures."
+      ],
+      "major_error_concepts": [
+        "Assuming changing presentation can never affect autonomy or distributional outcomes."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-nudge",
+        "behavioral-and-experimental-economics.draft-default-effect",
+        "behavioral-and-experimental-economics.draft-framing-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Behavioral Welfare Analysis",
+      "prompt": "What is Behavioral Welfare Analysis? State its defining idea and essential conditions.",
+      "definition": "Behavioral welfare analysis evaluates outcomes when observed choices may depend on errors, context, or self-control problems. It must justify which preferences or experiences count as the welfare benchmark and distinguish improved choice consistency from demonstrably improved welfare.",
+      "required_concepts": [
+        "Welfare benchmark requires explicit justification when choices are context- or error-dependent."
+      ],
+      "accepted_variants": [
+        "Welfare analysis beyond unqualified revealed preference."
+      ],
+      "major_error_concepts": [
+        "Declaring the analyst's preferred choice to be the person's true welfare by assumption alone."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+        "behavioral-and-experimental-economics.draft-revealed-preference",
+        "behavioral-and-experimental-economics.draft-temptation-and-self-control",
+        "behavioral-and-experimental-economics.draft-choice-architecture"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-paternalism",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Paternalism",
+      "prompt": "What is Paternalism? State its defining idea and essential conditions.",
+      "definition": "Paternalism intervenes in a person's choices on grounds of that person's own welfare rather than only effects on others. Evaluating it requires distinguishing the welfare claim, autonomy costs, information limits, and intervention mechanism; the term alone does not establish justification.",
+      "required_concepts": [
+        "Own-welfare rationale for influencing choice, with autonomy and evidence questions separate."
+      ],
+      "accepted_variants": [
+        "Paternalistic intervention as a normative classification."
+      ],
+      "major_error_concepts": [
+        "Equating every intervention addressing harm to other people with paternalism toward the actor."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis",
+        "behavioral-and-experimental-economics.draft-choice-architecture"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-sludge-and-decision-friction",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Sludge and Decision Friction",
+      "prompt": "What is Sludge and Decision Friction? State its defining idea and essential conditions.",
+      "definition": "Sludge refers to procedural or cognitive friction that makes obtaining, changing, or leaving an option more difficult. Not all friction is unjustified: some serves verification or deliberation, so analysis must specify whose costs are imposed and what purpose the friction serves.",
+      "required_concepts": [
+        "Choice-process burdens with context-dependent purpose and welfare consequences."
+      ],
+      "accepted_variants": [
+        "Administrative or decision friction."
+      ],
+      "major_error_concepts": [
+        "Assuming every extra step is harmful without considering fraud prevention, comprehension, or user control."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-cognitive-cost",
+        "behavioral-and-experimental-economics.draft-choice-architecture",
+        "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-behavioral-heterogeneity",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Behavioral Heterogeneity",
+      "prompt": "What is Behavioral Heterogeneity? State its defining idea and essential conditions.",
+      "definition": "Behavioral heterogeneity means preferences, beliefs, attention, or treatment responses vary across people and contexts. An average effect can conceal opposite or unequal individual responses, so generalization and welfare interpretation should specify the relevant distribution and target groups without stereotyping.",
+      "required_concepts": [
+        "Average behavioral responses need not describe every person or context."
+      ],
+      "accepted_variants": [
+        "Heterogeneous mechanisms and effects."
+      ],
+      "major_error_concepts": [
+        "Applying an average experimental effect as a deterministic prediction for an individual."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-external-validity",
+        "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis",
+        "econometrics-ii.draft-conditional-average-treatment-effect"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "behavioral-and-experimental-economics.draft-behavioral-mechanism-identification",
+      "canonical_deck_id": "behavioral-and-experimental-economics",
+      "term": "Behavioral Mechanism Identification",
+      "prompt": "What is Behavioral Mechanism Identification? State its defining idea and essential conditions.",
+      "definition": "Mechanism identification distinguishes the process generating an effect from the observation that an intervention changed behavior. Competing explanations require discriminating variation or additional assumptions; naming a familiar bias after seeing an outcome does not identify that bias as its cause.",
+      "required_concepts": [
+        "An identified treatment effect is not automatically an identified psychological mechanism."
+      ],
+      "accepted_variants": [
+        "Discriminating among behavioral explanations through design and assumptions."
+      ],
+      "major_error_concepts": [
+        "Labeling a default response loss aversion without ruling out attention, effort, or endorsement channels."
+      ],
+      "prerequisite_ids": [
+        "behavioral-and-experimental-economics.draft-default-effect",
+        "behavioral-and-experimental-economics.draft-manipulation-check",
+        "behavioral-and-experimental-economics.draft-internal-validity",
+        "behavioral-and-experimental-economics.draft-behavioral-heterogeneity"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-altruistic-preferences",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-inequality-aversion"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-altruistic-preferences",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-motivational-crowding-out"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-altruistic-preferences",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-reciprocity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-altruistic-preferences",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-social-image"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-ambiguity-aversion",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-base-rate-neglect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-conservative-belief-updating"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bayesian-belief-updating",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-belief-elicitation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bayesian-belief-updating",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hindsight-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-economics"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-heterogeneity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-mechanism-identification"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-heterogeneity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-paternalism"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-sludge-and-decision-friction"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-belief-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-conditional-cooperation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-belief-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-belief-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-proper-scoring-rule"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-between-subject-design",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-within-subject-design"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-cognitive-cost"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-decision-heuristic"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-dual-process-accounts"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-mental-accounting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-satisficing"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-certainty-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-allais-paradox"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-choice-architecture",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-choice-architecture",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-paternalism"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-choice-architecture",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-sludge-and-decision-friction"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-cluster-assignment",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-power"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-cluster-assignment",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-spillovers"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-cognitive-cost",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-limited-attention"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-cognitive-cost",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-sludge-and-decision-friction"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-commitment-device",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-temptation-and-self-control"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-conditional-cooperation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-costly-punishment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-conditional-cooperation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-social-norms"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-confirmation-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-anchoring"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-confirmation-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-conservative-belief-updating"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-context-independence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-framing-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-decision-heuristic",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-anchoring"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-decision-heuristic",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-availability-heuristic"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-decision-heuristic",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-dual-process-accounts"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-decision-heuristic",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-representativeness-heuristic"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-decision-weight",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-probability-weighting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-default-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-mechanism-identification"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-default-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-choice-architecture"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-default-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-nudge"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-default-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-status-quo-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-bounded-rationality"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-nudge"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-revealed-preference"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-status-quo-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-sunk-cost-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-descriptive-and-normative-models",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-temptation-and-self-control"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dictator-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-altruistic-preferences"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dictator-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-public-goods-experiment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dictator-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-trust-game"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dictator-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-ultimatum-game"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-diminishing-sensitivity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-prospect-theory"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dual-process-accounts",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-cognitive-cost"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-naive-present-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-sophisticated-present-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-ellsberg-paradox",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-ambiguity-aversion"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-endowment-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-reference-dependence"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-endowment-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-willingness-to-pay-and-accept"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-attrition",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-intention-to-treat-analysis"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-attrition",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-internal-validity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-attrition",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-transparent-experimental-reporting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-between-subject-design"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-deception"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-markets"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimenter-demand"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-factorial-experiment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-manipulation-check"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-within-subject-design"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-deception",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-research-ethics"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-dictator-game"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-control"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-markets"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-economics",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-markets",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-learning-in-experiments"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-power",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-minimum-detectable-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-power",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-pre-analysis-plan"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-between-subject-design"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-blocked-randomization"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-cluster-assignment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-attrition"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-blinding"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-power"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-factorial-experiment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-intention-to-treat-analysis"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-internal-validity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-randomization",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-manipulation-check"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-replication",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-transparent-experimental-reporting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimental-spillovers",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-internal-validity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimenter-demand",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-dictator-game"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimenter-demand",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-blinding"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-experimenter-demand",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-deception"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-exponential-discounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hyperbolic-discounting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-exponential-discounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-present-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-exponential-discounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-quasi-hyperbolic-discounting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-exponential-discounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-time-consistency"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-external-validity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-heterogeneity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-external-validity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-replication"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-belief-elicitation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-optimism-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-overplacement"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-overprecision"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-forms-of-overconfidence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-performance-overestimation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-framing-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-choice-architecture"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-framing-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-default-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-framing-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-isolation-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-framing-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-reference-dependence"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-gamblers-fallacy",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hot-hand-belief"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-house-money-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-break-even-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-hyperbolic-discounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-quasi-hyperbolic-discounting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-control"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-external-validity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-random-payment-system"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-becker-degroot-marschak-mechanism"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hypothetical-and-incentivized-choice"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-motivational-crowding-out"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-multiple-price-list"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-random-payment-system"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-inequality-aversion",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-reciprocity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-intention-to-treat-analysis",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-internal-validity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-internal-validity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-mechanism-identification"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-internal-validity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-replication"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-internal-validity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-external-validity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-isolation-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-allais-paradox"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-gamblers-fallacy"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hot-hand-belief"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-limited-attention",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-confirmation-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-limited-attention",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-default-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-limited-attention",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-nudge"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-limited-attention",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-salience"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-loss-aversion",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-break-even-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-loss-aversion",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-diminishing-sensitivity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-loss-aversion",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-prospect-theory"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-loss-aversion",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-manipulation-check",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-mechanism-identification"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-manipulation-check",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimenter-demand"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-mental-accounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-fungibility"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-mental-accounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-house-money-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-mental-accounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-narrow-bracketing"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-mental-accounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-sunk-cost-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-naive-present-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-commitment-device"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-nudge",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-choice-architecture"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-optimism-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-confirmation-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-order-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-learning-in-experiments"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-order-effect",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-treatment-carryover"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-overprecision",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hindsight-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-overprecision",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-overprecision",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-optimism-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-performance-overestimation",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-overplacement"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-pre-analysis-plan",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-transparent-experimental-reporting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-preference-completeness",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-preference-transitivity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-preference-transitivity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-context-independence"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-present-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-present-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-projection-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-probability-weighting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-certainty-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-probability-weighting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-possibility-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-projection-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hot-cold-empathy-gap"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-proper-scoring-rule",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-brier-loss"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-proper-scoring-rule",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-incentive-compatible-elicitation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-certainty-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-decision-weight"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-ellsberg-paradox"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-isolation-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-random-payment-system"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-prospect-theory",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-public-goods-experiment",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-conditional-cooperation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-public-goods-experiment",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-costly-punishment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-quasi-hyperbolic-discounting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-present-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reciprocity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-conditional-cooperation"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reciprocity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-costly-punishment"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reciprocity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-motivational-crowding-out"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reciprocity",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-social-norms"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-break-even-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-diminishing-sensitivity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-house-money-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-loss-aversion"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-mental-accounting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-reference-dependence",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-prospect-theory"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-representativeness-heuristic",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-base-rate-neglect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-representativeness-heuristic",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-law-of-small-numbers-belief"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-revealed-preference",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-revealed-preference",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-context-independence"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-revealed-preference",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-endowment-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-revealed-preference",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-preference-completeness"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-house-money-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-multiple-price-list"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-narrow-bracketing"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-proper-scoring-rule"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-risk-aversion-and-behavioral-alternatives",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-trust-game"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-salience",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-availability-heuristic"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-salience",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-framing-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-satisficing",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-decision-heuristic"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-social-image",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-markets"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-social-image",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-identity-and-economic-choice"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-social-norms",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-identity-and-economic-choice"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-social-norms",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-social-image"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-sophisticated-present-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-commitment-device"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-sophisticated-present-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-naive-present-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-status-quo-bias",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-endowment-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-temptation-and-self-control",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-behavioral-welfare-analysis"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-time-consistency",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-dynamic-preference-inconsistency"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-time-consistency",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-hyperbolic-discounting"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-time-consistency",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-projection-bias"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-transparent-experimental-reporting",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-experimental-research-ethics"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-trust-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-altruistic-preferences"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-trust-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-reciprocity"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-ultimatum-game",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-inequality-aversion"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-willingness-to-pay-and-accept",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-becker-degroot-marschak-mechanism"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-within-subject-design",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-learning-in-experiments"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-within-subject-design",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-order-effect"
+    },
+    {
+      "prerequisite_card_id": "behavioral-and-experimental-economics.draft-within-subject-design",
+      "dependent_card_id": "behavioral-and-experimental-economics.draft-treatment-carryover"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Behavioral and Experimental Economics.",
+  "level": "College",
+  "tags": [
+    "economics"
+  ]
+}

@@ -1,0 +1,1708 @@
+{
+  "schema_version": "meshful.file-manifest.v1",
+  "algorithm": "sha256",
+  "excluded_paths": [
+    "release/file-manifest.json",
+    "release/file-manifest.sha256",
+    "release/validation.json"
+  ],
+  "file_count": 339,
+  "total_bytes": 31485803,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 191,
+      "sha256": "2877b85b9f3084142d15e88b25fec9ac032e4fea748610f60b66950d0545e11f"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1341,
+      "sha256": "e786b160508e7fa0633ba1837cb1ac43dd5672aab7f06a0b82f7bb4e55614fae"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.md",
+      "bytes": 750,
+      "sha256": "e87f13179446d77393f211059ae6105da8c6e5cd2cc7a5145b2cf1d259d4a43a"
+    },
+    {
+      "path": "LICENSES/CC0-1.0.md",
+      "bytes": 970,
+      "sha256": "bbf8d6e22f3d75df64f509e38a5520f01aa6fa78ea7a0a8ceaef33f153681948"
+    },
+    {
+      "path": "LICENSES/README.md",
+      "bytes": 2053,
+      "sha256": "7a0964b23d4ad813128af59ac28683eaae5a182deb0ac889ced86263b8261ba2"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 571,
+      "sha256": "8ff373529eb2c6aa907ce55981b09cc35e4d1176373a85d84c153ad5917bd3ca"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5279,
+      "sha256": "bdd89d297dbf8e36bff82c13f0a299973bfb14444ea76b8527fea34876165ba0"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 799,
+      "sha256": "30f2f85f6735200bb86cdec8deef9abbf9cca6149f2597f0884b52c525a92930"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1003,
+      "sha256": "5fe5cd0f6ae2a32c15f8299703029167f99a5596ddf8b59bdf04392e2cb9230c"
+    },
+    {
+      "path": "accounts/.gitignore",
+      "bytes": 26,
+      "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d"
+    },
+    {
+      "path": "accounts/README.md",
+      "bytes": 3684,
+      "sha256": "691e7ad8a228982c3699db4cc26846318a15973a8b883218a3250cabe07635e3"
+    },
+    {
+      "path": "accounts/browser-state.mjs",
+      "bytes": 1986,
+      "sha256": "2fe73992600423bc3df2a9ee7a9d5055379f2615b14ea422f24bdb6e9b30de32"
+    },
+    {
+      "path": "accounts/browser-storage-records.mjs",
+      "bytes": 7788,
+      "sha256": "0f9e1cdf8c9009c2919de29c7b6298e762523d50c23e4d96ca0552658e96011f"
+    },
+    {
+      "path": "accounts/browser-storage.mjs",
+      "bytes": 11563,
+      "sha256": "7222622717397cc9ef2a8255430869ed77a2cd6dea580949ee292eee1d8a43bc"
+    },
+    {
+      "path": "accounts/checks/backend-browser-storage.mjs",
+      "bytes": 5845,
+      "sha256": "13c7fcdfe5c55b3ab1b2a0f426b6a4f6478eb20667e57f46eadefdd643cb3eb9"
+    },
+    {
+      "path": "accounts/checks/current-runtime-privacy.mjs",
+      "bytes": 6537,
+      "sha256": "e435d393dbb87fb4cada9db89e1a4bc5dce55e5debe290febc0ab911ae521fb8"
+    },
+    {
+      "path": "accounts/checks/serve-browser-fixture.mjs",
+      "bytes": 1833,
+      "sha256": "189c4cb9c727ab91d32aee7888731d714d771bd57c8e9fce58d4076a29700c75"
+    },
+    {
+      "path": "accounts/checks/verify-delivery.mjs",
+      "bytes": 2733,
+      "sha256": "c099fb26bc0e44bff299e0eec8809869d1f6979bd4d4baf16449ee938fc7e2fb"
+    },
+    {
+      "path": "accounts/core.mjs",
+      "bytes": 6592,
+      "sha256": "c08cd3844411d0648c05e098bcda293e480597cca0a0c10ee0779ba4c02795a9"
+    },
+    {
+      "path": "accounts/index.mjs",
+      "bytes": 452,
+      "sha256": "25ca4f9b3788a2a0e1daf55a29dcc2bb44eb1f3eb951fe5ba8f231f81196dac4"
+    },
+    {
+      "path": "accounts/package-lock.json",
+      "bytes": 679,
+      "sha256": "1af0c33d7540eb1f934ef6802f400f23595333daf26fceec7d42c55cfd624a7a"
+    },
+    {
+      "path": "accounts/package.json",
+      "bytes": 238,
+      "sha256": "b480c976243eedb17f60d8d949546d6ecf20c19c84ddd6c17ccc7cf9587ce1b7"
+    },
+    {
+      "path": "accounts/remote.mjs",
+      "bytes": 5061,
+      "sha256": "dfc17abcec5413e68b30a89959a6b105a0e4663f0f2555eef17689666fbbf3ba"
+    },
+    {
+      "path": "accounts/sites.mjs",
+      "bytes": 3258,
+      "sha256": "425cd07b8b28c24804ed1bf35a0c0974101d48d21d2ceed3561c302dc59521e4"
+    },
+    {
+      "path": "accounts/tests/auth.test.mjs",
+      "bytes": 33051,
+      "sha256": "c0c9a0e3f46171a155656976f9538cc086f7087864946c9ae059c329df26f9f4"
+    },
+    {
+      "path": "accounts/tests/browser-fixture.html",
+      "bytes": 1001,
+      "sha256": "645de9660cb3927335b9b7027f1fa495e5926741e445492b9f4c77e86d29b95f"
+    },
+    {
+      "path": "accounts/tests/browser-fixture.mjs",
+      "bytes": 2980,
+      "sha256": "59b759001acc9b3e6c7d31dbaefd43f05c27e5eba4cf4187c015bc69759432c2"
+    },
+    {
+      "path": "accounts/tests/browser-storage-fixtures.mjs",
+      "bytes": 7986,
+      "sha256": "711d08d1f079c8411d2b80dff796153feb9caa12b02d7264aa3adc02c653e05f"
+    },
+    {
+      "path": "accounts/tests/browser-storage.test.mjs",
+      "bytes": 22355,
+      "sha256": "184621c3ea4feecba19971ac48f4ddcecf69701d6a23d4ac7ddd3a5071ce644c"
+    },
+    {
+      "path": "accounts/tests/fixtures.mjs",
+      "bytes": 4161,
+      "sha256": "a30066e045f4f2d6b304541311003442668bd865c7e7c9518398fdae22d0daa0"
+    },
+    {
+      "path": "backend/CONTRACT.md",
+      "bytes": 13535,
+      "sha256": "f80c240a2d8c9ad627a7e9c6c9b56b1c890a719cee486dff4acc3838e602aa8a"
+    },
+    {
+      "path": "backend/README.md",
+      "bytes": 2453,
+      "sha256": "a67dd8ff7a5066fc1d9b5d670e68b619b232b4868b1704b621584367456aa3c0"
+    },
+    {
+      "path": "backend/db/schema.ts",
+      "bytes": 6390,
+      "sha256": "b891c151aedb0608348e47afa28fe59316197b103603073673991c35716ed598"
+    },
+    {
+      "path": "backend/integration/accounts.test.mjs",
+      "bytes": 9503,
+      "sha256": "670d896b36fbf30f1d1f5dbe466b5c9870f43490f2a4fc55ed8a7f2052add037"
+    },
+    {
+      "path": "backend/integration/canonical.test.mjs",
+      "bytes": 24789,
+      "sha256": "c04514118e5515dc1dafd9ca3ebef21bf72c924da98abc761c1a869d4f770231"
+    },
+    {
+      "path": "backend/migrations/0001_learner_data.sql",
+      "bytes": 5078,
+      "sha256": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2"
+    },
+    {
+      "path": "backend/package.json",
+      "bytes": 375,
+      "sha256": "4db040ff4dfc44f524a0642322b8650aeebe56f8b2be426cfffc5b2d5fb8899d"
+    },
+    {
+      "path": "backend/scripts/check.mjs",
+      "bytes": 1506,
+      "sha256": "a3ac40265c840e49681b5a5d1f0a136bcfebfe94794c76ae9ce3719361f62275"
+    },
+    {
+      "path": "backend/src/canonical-engine.mjs",
+      "bytes": 9246,
+      "sha256": "71ccc731c88ed6f56d991f5f3e065ea4ecdf3329fa17b0c7f0cd6535c3317e3c"
+    },
+    {
+      "path": "backend/src/contracts.mjs",
+      "bytes": 8636,
+      "sha256": "d0f7a76ce9b87c805a7b12d5078ba20ecb370817cfa6bfc61cab6d3750c8ac40"
+    },
+    {
+      "path": "backend/src/d1-repository.mjs",
+      "bytes": 10948,
+      "sha256": "eb6a4a99e5c66b6a628aa1877b85c7adaee6f400832db04c83c0816249fad30d"
+    },
+    {
+      "path": "backend/src/durable-client.mjs",
+      "bytes": 14051,
+      "sha256": "9ba52fe937cf8a6f0e76e20bc86749c450b168b07f89450c074611a59e0c9626"
+    },
+    {
+      "path": "backend/src/http-handler.mjs",
+      "bytes": 7254,
+      "sha256": "c512e1b5b105aeb69f6c5959a5493bb3220bd6c82f7ffed49393efd74a278cc1"
+    },
+    {
+      "path": "backend/src/index.mjs",
+      "bytes": 447,
+      "sha256": "0c836564bc73ba7122446414d001cdd3166af5ede60ce4cfabdd7b8f8df3ed0b"
+    },
+    {
+      "path": "backend/src/learner-service.mjs",
+      "bytes": 11248,
+      "sha256": "97c9f6676cb84bd009e1c5769be255ec96c849e802b72eeb7143a17114f3a6b3"
+    },
+    {
+      "path": "backend/src/local-state-validation.mjs",
+      "bytes": 5562,
+      "sha256": "bd442fc82e1e163ba8ef9577d06b3af6ee54f302c3b6fbdc00d2bd1a5e231293"
+    },
+    {
+      "path": "backend/test-support/fixtures.mjs",
+      "bytes": 3508,
+      "sha256": "20df34e633fab8457d73b272f19b7f522023798c911ebe9445ac6c056ebcda03"
+    },
+    {
+      "path": "backend/test-support/sqlite-d1.mjs",
+      "bytes": 2936,
+      "sha256": "e3b7931aa58889ee660bfa562f65d68127d6232f145e0f0f5b261a59528b326e"
+    },
+    {
+      "path": "backend/tests/client.test.mjs",
+      "bytes": 22689,
+      "sha256": "5989090c69531c7597f7b2e2450d6f6eba8c6ec608dba16f00ad252c778a69e8"
+    },
+    {
+      "path": "backend/tests/http.test.mjs",
+      "bytes": 5729,
+      "sha256": "6cb5e4235f3ef153cf525a38eeac39bebd4df767a14a82f317749b4ea8128f89"
+    },
+    {
+      "path": "backend/tests/persistence.test.mjs",
+      "bytes": 9324,
+      "sha256": "7ca6fa39d8597908324d7e77545dd983f988a6b9be736c1b5d287181e232a3d0"
+    },
+    {
+      "path": "backend/v2/CONTRACT.md",
+      "bytes": 10494,
+      "sha256": "0e0d323fc3f7045036d225650020f21788eaaf638971383a4d3b34a7dd630a82"
+    },
+    {
+      "path": "backend/v2/README.md",
+      "bytes": 1161,
+      "sha256": "b66f131e87f6a748b21911c05d5497a4a6716ebdf304c83cf23c1bf2ab724288"
+    },
+    {
+      "path": "backend/v2/db/schema.ts",
+      "bytes": 11602,
+      "sha256": "16ab4cd851a328b85bdce7b51de1d958f2aa4575f5b83a108fe2d90d661e6cc5"
+    },
+    {
+      "path": "backend/v2/integration/account-storage.test.mjs",
+      "bytes": 19131,
+      "sha256": "1475f8bc8f30d442df657827c0d12ef27493c8dd7777c36dd9eafb498a970ddb"
+    },
+    {
+      "path": "backend/v2/integration/capacity.test.mjs",
+      "bytes": 18527,
+      "sha256": "822868d6a62dbb26b557a44c6e79cba27fc8b0f107faa0a1ec877adb55d5696a"
+    },
+    {
+      "path": "backend/v2/migrations/0002_fragmented_storage.sql",
+      "bytes": 12258,
+      "sha256": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3"
+    },
+    {
+      "path": "backend/v2/package.json",
+      "bytes": 522,
+      "sha256": "543aafd74e5f207097cc2bb98328743beea38f907d123978315163ecb1849dbd"
+    },
+    {
+      "path": "backend/v2/scripts/check.mjs",
+      "bytes": 1839,
+      "sha256": "c75dfe03eca25533efc4d6fb37c7caa6299ac57bdbe2abe892eda5c4833a0e95"
+    },
+    {
+      "path": "backend/v2/src/canonical-engine.mjs",
+      "bytes": 9974,
+      "sha256": "4131d37ed8d231bf8f81d5c9e8a85297a0f07eacd0ec932ba03aea90c215bef8"
+    },
+    {
+      "path": "backend/v2/src/capacity.mjs",
+      "bytes": 3157,
+      "sha256": "1114b10abae650df3f239bf36a4cb55b26e9a0b74ae51606bed3102cf0b6854a"
+    },
+    {
+      "path": "backend/v2/src/d1-repository.mjs",
+      "bytes": 23542,
+      "sha256": "a61e896140283e04fceacc9842cf76bc82c885f9d13396c1c2081d7b7f6d2faa"
+    },
+    {
+      "path": "backend/v2/src/durable-client.mjs",
+      "bytes": 2611,
+      "sha256": "ae5b2537257727bb39ee4a9e2d1b5adfc31b662b0cac0068f2ea50aa0ae3f0d1"
+    },
+    {
+      "path": "backend/v2/src/fragment-codec.mjs",
+      "bytes": 4492,
+      "sha256": "05b6f2866f0a89848dbd0ea3466fb9a1e70f983ca0bb1ffbc5e405c300e20690"
+    },
+    {
+      "path": "backend/v2/src/http-handler.mjs",
+      "bytes": 9643,
+      "sha256": "86eabd4eee6bee2f86a5f7ac9276d3bc796b746d38a2ded4db2e151b82cd0a81"
+    },
+    {
+      "path": "backend/v2/src/index.mjs",
+      "bytes": 321,
+      "sha256": "b028b7deb4bb8fd87c44ca1b3505d8ad191bac16ead7c3a0c1b3ef35ea6faf74"
+    },
+    {
+      "path": "backend/v2/src/json-budget.mjs",
+      "bytes": 2383,
+      "sha256": "17ed54d02d4c73fd598fabe1ebabc7cff4db4c6ed0ae1d594f37190be5451161"
+    },
+    {
+      "path": "backend/v2/src/learner-service.mjs",
+      "bytes": 13498,
+      "sha256": "8c399848cb0174b75bc2b98359123d01badadb364596995113fb1599affde154"
+    },
+    {
+      "path": "backend/v2/src/request-identity.mjs",
+      "bytes": 579,
+      "sha256": "effc6cc4557c4c765ccfcf9365c085f07032742bfe49c6b0dc3df96a030133d0"
+    },
+    {
+      "path": "backend/v2/test-support/capacity-fixtures.mjs",
+      "bytes": 4678,
+      "sha256": "a2f25ea92d3ee9ecd964ac3ba6a5533a5abf73ee7eca8e6c7001842fc4d360d0"
+    },
+    {
+      "path": "backend/v2/test-support/real-runtime.mjs",
+      "bytes": 5446,
+      "sha256": "d04db77ba0dfc85f1a1b7932fdf9eb7a477409ace1237af86c6d45363c89dd72"
+    },
+    {
+      "path": "backend/v2/tests/fragment-codec.test.mjs",
+      "bytes": 3323,
+      "sha256": "a3f66edaf92957d115abebea911769ea93b871ab7f81d2640ac0ac7373f1ba9d"
+    },
+    {
+      "path": "backend/v2/tests/http.test.mjs",
+      "bytes": 3383,
+      "sha256": "25c948e4049e46b1e9b93c7a0510773b2b445bbd0f309c6014b9ea4af404d39e"
+    },
+    {
+      "path": "backend/v2/tests/json-budget.test.mjs",
+      "bytes": 1127,
+      "sha256": "dabdc39a3daa67de9c4bc7302d6dd8a3ec3c54ba898fb23ad876048cc0d22eb6"
+    },
+    {
+      "path": "backend/v2/tests/repository.test.mjs",
+      "bytes": 24849,
+      "sha256": "ef09929248349a88fea93f640697376d126daf1d4ef8420d3fced16d903b9bef"
+    },
+    {
+      "path": "docs/BRAND_ASSET_PROVENANCE.md",
+      "bytes": 888,
+      "sha256": "0b4ed346d13c480588a60b0e37f999a631f7aa290bbd39e21027ef77081bf07c"
+    },
+    {
+      "path": "docs/CHALLENGE_DELTA.md",
+      "bytes": 1534,
+      "sha256": "84c2b1382816ab7d7fe765dc6bc1597abc035a9af72bc69fc4f5b1d56b4c4f75"
+    },
+    {
+      "path": "docs/CONTENT_PROVENANCE.md",
+      "bytes": 2151,
+      "sha256": "57294126bb7a650a3cfde083fdefaf56db5a7684581496b5908ffafb29719394"
+    },
+    {
+      "path": "docs/CONTENT_RIGHTS.md",
+      "bytes": 1648,
+      "sha256": "c31b450a6fd4d2c5351a0931bf4c927625a9c761bf9f200eca1ecc0da9345ed9"
+    },
+    {
+      "path": "docs/D1_ACCOUNT_ACTIVATION.md",
+      "bytes": 853,
+      "sha256": "023ad16753608dca2937e86907933c97f278897507789679714b669e3e3fd143"
+    },
+    {
+      "path": "docs/HOSTED_ACCEPTANCE.md",
+      "bytes": 1755,
+      "sha256": "4ae62195d6c24708474fd8438da19f2e2f1396ea23b29d00f050b5fee999d68c"
+    },
+    {
+      "path": "docs/OWNER_DECISIONS.md",
+      "bytes": 1199,
+      "sha256": "d1b64ba2fa4934cd935aaf1acbdd2972dc46f208231a45b5a3457d4a474424f5"
+    },
+    {
+      "path": "docs/PUBLIC_READINESS.md",
+      "bytes": 2257,
+      "sha256": "bc5960a290cd1e9435dc3777c9c2a6cfd21e57d9593f4c36d33ff8a28e0c05ba"
+    },
+    {
+      "path": "docs/RELEASE_HANDOFF.md",
+      "bytes": 1436,
+      "sha256": "07a2d5bae583743b3f25d1506168e678046b100b5661d1e5af00865e9980520b"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "bytes": 2440,
+      "sha256": "d335ef36179b0f40369feebceb64591434620d3192e2e5df45bbaccf1505bce3"
+    },
+    {
+      "path": "docs/SOURCE_AUTHORITY.md",
+      "bytes": 3499,
+      "sha256": "f107801fbdb569bbd0589b0b794ed34b145b407a0ba8fd801227650e4859e2e4"
+    },
+    {
+      "path": "library/CONTENT-LICENSE-NOTICE.md",
+      "bytes": 912,
+      "sha256": "e32416959bf13f56cfe3fb1c73dff2ac738aaa2ae222eff9996d80fca797464d"
+    },
+    {
+      "path": "library/MANIFEST.json",
+      "bytes": 20059,
+      "sha256": "3b65e9b04c82f9d6523cad8488203156ae4b5e56ef85480f4eb46c16b5529e85"
+    },
+    {
+      "path": "library/README.md",
+      "bytes": 2849,
+      "sha256": "4cd90aaed73a13507efb43a0833008c13f61206a327e9956da5a098450520943"
+    },
+    {
+      "path": "library/content/decks/algorithms-i.json",
+      "bytes": 175350,
+      "sha256": "8bf9a3f264ea7e3c3f0067facd0de2a9c0e1cec7db279bd879af4c460650b816"
+    },
+    {
+      "path": "library/content/decks/analytical-chemistry.json",
+      "bytes": 180859,
+      "sha256": "6828cd6622d87b86811a57c9109b58ec0e128e08139bb32fa5c2c929aa01ea5a"
+    },
+    {
+      "path": "library/content/decks/applied-statistics-i.json",
+      "bytes": 117925,
+      "sha256": "bc05c083c2f5d8327a5dab581547c75ed04ec74e8487d3ba4c3e06332e271d09"
+    },
+    {
+      "path": "library/content/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "bytes": 169920,
+      "sha256": "aba3d0c5245cae3d87795d716870a9ac2252161d2fbe7cd669aa4bc3f210a4cc"
+    },
+    {
+      "path": "library/content/decks/bayesian-inference.json",
+      "bytes": 162129,
+      "sha256": "cf1de040c22877660cf9285626d8375280a4d4d0a278149565ac7bcc6f54b914"
+    },
+    {
+      "path": "library/content/decks/behavioral-and-experimental-economics.json",
+      "bytes": 183605,
+      "sha256": "3e38b0fee42e19ccef9097fde12b0f5221f742e156499e29f74cb97a7b867597"
+    },
+    {
+      "path": "library/content/decks/biochemistry.json",
+      "bytes": 202863,
+      "sha256": "d3589b4aecf3edf4d6f4658404afc7db74d7c20cb294e150cc7f0cca34f918b3"
+    },
+    {
+      "path": "library/content/decks/biology-i.json",
+      "bytes": 157154,
+      "sha256": "30e270cdbc6880ceb6a6c8afade0955e1cb60160879d71c469812dcf840075c3"
+    },
+    {
+      "path": "library/content/decks/biology-ii.json",
+      "bytes": 147079,
+      "sha256": "33bfeda9096cdf60446b6033657a34cd095fa9f9342f8c35a02ee25339d1882b"
+    },
+    {
+      "path": "library/content/decks/calculus-i.json",
+      "bytes": 131608,
+      "sha256": "d9c9e879c38d9fda1c32340190268c48322cc078c585a197cc44e1c581d294e1"
+    },
+    {
+      "path": "library/content/decks/calculus-ii.json",
+      "bytes": 134788,
+      "sha256": "666d658955b419eaaca6cd04fea1db91612b58c25dec38bf83e77d1e588332dc"
+    },
+    {
+      "path": "library/content/decks/causal-inference.json",
+      "bytes": 154087,
+      "sha256": "902d768fa0c502f7ee2c24c8dede26f597a4fbc9adc84473fbc7382f898bfeb3"
+    },
+    {
+      "path": "library/content/decks/cell-biology.json",
+      "bytes": 196112,
+      "sha256": "b4105ebe6aa1329fef22e1a0d518595f1cdf8471f5c3acd074ff20a0f039c0e5"
+    },
+    {
+      "path": "library/content/decks/chemistry-laboratory-and-measurement.json",
+      "bytes": 186423,
+      "sha256": "c897e52cbda029ac98ea194e1e8b7966ec5284e97ef87f6f7ade966300ad4792"
+    },
+    {
+      "path": "library/content/decks/college-algebra-and-precalculus.json",
+      "bytes": 168154,
+      "sha256": "e10a87c9d553ca0003da84f405df2dde4f9ecdcd26bc224eb0b11453ec0e9b16"
+    },
+    {
+      "path": "library/content/decks/computer-networks.json",
+      "bytes": 204294,
+      "sha256": "8822796ec22a06c5fc12af57194a3023a076ee3c18bcc020e16507ca691d32f5"
+    },
+    {
+      "path": "library/content/decks/computer-systems.json",
+      "bytes": 178057,
+      "sha256": "4a7fbec2335f1138d4430b92ab10403d78fb9a21d09598b33b4b8dd433f33b64"
+    },
+    {
+      "path": "library/content/decks/data-structures.json",
+      "bytes": 180335,
+      "sha256": "02626705b6694586c839a7c9da3c4383a1ff35b589a8b212832eaaa3bc9bd07b"
+    },
+    {
+      "path": "library/content/decks/data-systems.json",
+      "bytes": 173692,
+      "sha256": "d7e349c404f85176447c1665d6a32531c305b9e0804c5a82bebbcab33eba7271"
+    },
+    {
+      "path": "library/content/decks/databases-i.json",
+      "bytes": 196366,
+      "sha256": "281c52322e720a288b541b8c7c789e699838e9e820c7ba52392d98df1321b17c"
+    },
+    {
+      "path": "library/content/decks/discrete-mathematics.json",
+      "bytes": 152255,
+      "sha256": "562d95f9d8155fb3cf2e8f1b7871ec7fd5d96c6620b97683b9baac1b1b279c68"
+    },
+    {
+      "path": "library/content/decks/ecology.json",
+      "bytes": 207139,
+      "sha256": "cedab1e9d205abca40437c7b1e15e9d4ea16d21bfc449583586acf6e545830c0"
+    },
+    {
+      "path": "library/content/decks/econometrics-i.json",
+      "bytes": 172186,
+      "sha256": "6ddcd8c88cb64146c8ffdf79c880beedfede18856070aa3d351651bde226e801"
+    },
+    {
+      "path": "library/content/decks/econometrics-ii.json",
+      "bytes": 170562,
+      "sha256": "50b634eab51e5e5999a9d4229eb33cfe7dbadc14e776e01105496e4ae40d1d22"
+    },
+    {
+      "path": "library/content/decks/economic-foundations.json",
+      "bytes": 148329,
+      "sha256": "9a385248c7c418f97cff41f94ea573f522cc91cf69b9016ebc0f7f409cb0173e"
+    },
+    {
+      "path": "library/content/decks/electricity-and-magnetism-i.json",
+      "bytes": 183260,
+      "sha256": "0ad3f1df040865ce50adac6d783d829ac891c37917279551e7619066d75362c4"
+    },
+    {
+      "path": "library/content/decks/evolutionary-biology.json",
+      "bytes": 209064,
+      "sha256": "c9ff5ac433c421bf9d383e401a5cd77fab7cbc122d9e0c45d4a69091cd926a71"
+    },
+    {
+      "path": "library/content/decks/experimental-design.json",
+      "bytes": 176166,
+      "sha256": "8fa24c7ab09dbba444dd8719cdd81004d3ea841d279c00820471b420321e6a99"
+    },
+    {
+      "path": "library/content/decks/experimental-physics-and-measurement.json",
+      "bytes": 196844,
+      "sha256": "cd9c97dd1290d75ff2526b812036ee9ce2ec5facc9dc1aa32bd98214a420fb81"
+    },
+    {
+      "path": "library/content/decks/general-chemistry-i.json",
+      "bytes": 348764,
+      "sha256": "97bcf83e4cd640e66f0a6aa9fdb9440c2323a45b5a5cf9d0780456261a856dde"
+    },
+    {
+      "path": "library/content/decks/general-chemistry-ii.json",
+      "bytes": 192252,
+      "sha256": "9b60f7f5677e942cdd7ecd791eab08919e5a8583824df7e2c49d74d2f109ab81"
+    },
+    {
+      "path": "library/content/decks/genetics.json",
+      "bytes": 134705,
+      "sha256": "ee8daca8b4ddc7973735a777dba988c9bf360ef6f2d63b297ef1bc4696c61185"
+    },
+    {
+      "path": "library/content/decks/immunology.json",
+      "bytes": 210640,
+      "sha256": "55b6ed2aecd76065a32d2c2b32b221e8cf860f12d572302852d60becc93c5ad9"
+    },
+    {
+      "path": "library/content/decks/inorganic-chemistry.json",
+      "bytes": 186823,
+      "sha256": "0993af0f555e64e8e9ffa23e0b82124023c25054fc720f4bb0e016d3fdc2cf47"
+    },
+    {
+      "path": "library/content/decks/linear-algebra-i.json",
+      "bytes": 189913,
+      "sha256": "fe31749c7211e76aff007407dd0373f3e397ead152687eb43394ac5388c06642"
+    },
+    {
+      "path": "library/content/decks/linear-algebra-ii.json",
+      "bytes": 211220,
+      "sha256": "c6f94cec3287a63c082b71c7beb4392a7c737fb0eb010323d3c37af3cbd7820b"
+    },
+    {
+      "path": "library/content/decks/macroeconomic-theory-i.json",
+      "bytes": 171619,
+      "sha256": "6d2b715dd5f0c5e7d5c999b3fb929eb339c25d98885435b38514f7fbd53d1684"
+    },
+    {
+      "path": "library/content/decks/macroeconomic-theory-ii.json",
+      "bytes": 188599,
+      "sha256": "7ade9f1bb532260a9cb17dcf1e1e8e317de3da0e406e694a37659a4cf886776a"
+    },
+    {
+      "path": "library/content/decks/mathematical-methods-for-economics.json",
+      "bytes": 178315,
+      "sha256": "b6f22217906d68a1205e5216594fdc7c40182762f9135d90c23d07ec2674ca2a"
+    },
+    {
+      "path": "library/content/decks/mathematical-methods-for-physics-i.json",
+      "bytes": 175552,
+      "sha256": "213d02e11430bdcca5529626a0576aae40eb7cc1526e7eb010d653a606216da7"
+    },
+    {
+      "path": "library/content/decks/mathematical-proof-and-foundations.json",
+      "bytes": 256047,
+      "sha256": "51e000bc6f4314dd083d5889704b9d7fa0e7bcc8fb458d246056097b491e9a02"
+    },
+    {
+      "path": "library/content/decks/mathematical-statistics.json",
+      "bytes": 224081,
+      "sha256": "94c42569c2cca15e5e158ce6415f984b7ffee267e62f489d9782aa459f3ccc7d"
+    },
+    {
+      "path": "library/content/decks/mechanics-i.json",
+      "bytes": 126551,
+      "sha256": "252cd1d6af24f87aafe9cb5ab33f2090d89943a702a418f27440211e806d2d44"
+    },
+    {
+      "path": "library/content/decks/mechanics-ii.json",
+      "bytes": 175190,
+      "sha256": "ea192ef22adff4ae2b5ea35724b0fc869e66a4ebf5bbbe05faf84ee85c1e00fa"
+    },
+    {
+      "path": "library/content/decks/microbiology.json",
+      "bytes": 208918,
+      "sha256": "1c1354a9e52e3f30332927b72a8d64ae52abe485a61415e9afa3262b4df88dfa"
+    },
+    {
+      "path": "library/content/decks/microeconomic-theory-i.json",
+      "bytes": 186619,
+      "sha256": "85d75e13516d249021d6b4146f99e5db0d32a104fd3fbb9318e05d3720bc81d5"
+    },
+    {
+      "path": "library/content/decks/microeconomic-theory-ii.json",
+      "bytes": 165439,
+      "sha256": "f5b2b6a08fda3f7fa2324391d8d885db6d6042161c6a25e399485b3eebd00509"
+    },
+    {
+      "path": "library/content/decks/modern-physics.json",
+      "bytes": 177706,
+      "sha256": "008411212f2a9ec6b9ca606327620a2c61c21bc621de3efbc95735b6bac60cb7"
+    },
+    {
+      "path": "library/content/decks/molecular-biology.json",
+      "bytes": 263446,
+      "sha256": "a4e196d189fa31a018cd2e12d574ee597735200fd9cf894ab371eb49b6b9141f"
+    },
+    {
+      "path": "library/content/decks/multivariable-calculus.json",
+      "bytes": 167222,
+      "sha256": "8a00a8481f73fc6c45c5d7b96bb3454cd3cc731682de9f87f428cd35ac290bba"
+    },
+    {
+      "path": "library/content/decks/numerical-analysis-and-scientific-computing.json",
+      "bytes": 155024,
+      "sha256": "30695dad5a7c42b005fde7b8d5461d213d3baebddfbcdcecfeeeb32316bc0fc9"
+    },
+    {
+      "path": "library/content/decks/optics.json",
+      "bytes": 161999,
+      "sha256": "7ccc509801155d76cfa65f5fd70ffd5adda4430d31b007ee2ff79057ce6211eb"
+    },
+    {
+      "path": "library/content/decks/optimization-mathematics-i-convex-optimization.json",
+      "bytes": 216711,
+      "sha256": "8a4e07a353dd426dc5feeff04a650daa31ddd9358e085586091b8a2fd8e4696d"
+    },
+    {
+      "path": "library/content/decks/ordinary-differential-equations.json",
+      "bytes": 249088,
+      "sha256": "5978fe08af84cb4e0a98fb7370bc5a97985ade4ff211866ea77e786caf11af1a"
+    },
+    {
+      "path": "library/content/decks/organic-chemistry-i.json",
+      "bytes": 181368,
+      "sha256": "df9f6f2649f72c942f86a99a97fef4dd36506910b85c21b99c356c486e83b6f1"
+    },
+    {
+      "path": "library/content/decks/organic-chemistry-ii.json",
+      "bytes": 171142,
+      "sha256": "f09c011d66511313b3eb9bb153f7d1f305de928d997ba6a33a45a67207b008dd"
+    },
+    {
+      "path": "library/content/decks/organic-chemistry-laboratory.json",
+      "bytes": 181180,
+      "sha256": "d8c1d9a9b69ce7cb5f0d04ba0b2e1dae58b1c71d3d4c03824ed52ad1733b99b9"
+    },
+    {
+      "path": "library/content/decks/physics-foundations.json",
+      "bytes": 129103,
+      "sha256": "f320e903c747802204cf5c95567dc4949f77f4da73dec66fdfe2a0922bb64214"
+    },
+    {
+      "path": "library/content/decks/physiology.json",
+      "bytes": 229793,
+      "sha256": "b7f5bef3e9904a2b3b49b5355664487ca2b7c04651e1b75d85b97cda33827b7c"
+    },
+    {
+      "path": "library/content/decks/probability-theory-i.json",
+      "bytes": 197059,
+      "sha256": "1009da01a93d2f87ed405325b989db8052cd0eae9beadf2fc19551c7997a3c67"
+    },
+    {
+      "path": "library/content/decks/probability-theory-ii.json",
+      "bytes": 163461,
+      "sha256": "1edd75287c5654f44dce41a0b56c82389087ab964da8a743e8023f5324a3c608"
+    },
+    {
+      "path": "library/content/decks/programming-i.json",
+      "bytes": 662573,
+      "sha256": "491bc4f481fca186e1b83ce0d74d3f0afddf32b1b853beaa2b3f6190430b7e9e"
+    },
+    {
+      "path": "library/content/decks/programming-ii.json",
+      "bytes": 633418,
+      "sha256": "d51c7a232aaf48967b5708514c75049db4ffa04e47279052bfb50fb78ce2b2ec"
+    },
+    {
+      "path": "library/content/decks/real-analysis-i.json",
+      "bytes": 226991,
+      "sha256": "1fafcc7a768708cc013717e5155d57016e5a9151486870a86ef30a7bfe6399d6"
+    },
+    {
+      "path": "library/content/decks/sampling-and-survey-methods.json",
+      "bytes": 175211,
+      "sha256": "7ddf78143ad5383777a09be487ef45a71825e65f8585b98b4e9d352ba55b761f"
+    },
+    {
+      "path": "library/content/decks/security-engineering-i.json",
+      "bytes": 159112,
+      "sha256": "807ddd01b08cf1d47392e02cde194dbfdd407eb344867899e32503e09cba2497"
+    },
+    {
+      "path": "library/content/decks/software-architecture.json",
+      "bytes": 115177,
+      "sha256": "12be984395d429c832e952df7528542346fad6eac22446d882b7587c4c4facb9"
+    },
+    {
+      "path": "library/content/decks/software-engineering-i.json",
+      "bytes": 197957,
+      "sha256": "028c34f60aabbde33ca9baa5bb2ddead0aa6441cdc5b48e47ccd1c0540c295f2"
+    },
+    {
+      "path": "library/content/decks/software-testing-i-foundations-and-test-design.json",
+      "bytes": 423655,
+      "sha256": "44e5d30bfaede3c21f5b471eb8d1e6af14b2a0c95f6870dfafc8e6c3f9a2af02"
+    },
+    {
+      "path": "library/content/decks/thermodynamics.json",
+      "bytes": 182745,
+      "sha256": "f23b7fb7d698dfe0a07537f2ada812f309b2643617f36572055a4d0b29443d78"
+    },
+    {
+      "path": "library/content/decks/time-series-analysis.json",
+      "bytes": 160326,
+      "sha256": "6fbd6778d838aa3e5f4525474254ae8d61c3fcd49e4eb908e9520cd582f451a3"
+    },
+    {
+      "path": "library/content/decks/waves-and-oscillations.json",
+      "bytes": 166644,
+      "sha256": "c5138db9c92e9cedcc2c12fb611259600a35322886c0f7876146181de9d1b509"
+    },
+    {
+      "path": "library/public-metadata.json",
+      "bytes": 460312,
+      "sha256": "51b8ddea29042162702a4f721302435188d5e2bb6281f3ae57f6a4ab7e9ddffe"
+    },
+    {
+      "path": "package.json",
+      "bytes": 669,
+      "sha256": "a4d4126e822b04d1b2e35b76d41ce2172719aaa4e191abd1584d4c550879b860"
+    },
+    {
+      "path": "release/source-authority.json",
+      "bytes": 3521,
+      "sha256": "ff358ba97a04a3384b4d8a8afd58e6b9a9c3880eedc62c0ef46b8bfc9d136a63"
+    },
+    {
+      "path": "scripts/build-file-manifest.mjs",
+      "bytes": 1369,
+      "sha256": "1f58bec79fedd92a08a01a3a4c480b8f528ba7f0f48d77756b166f7eb44ccec7"
+    },
+    {
+      "path": "scripts/test-durable.mjs",
+      "bytes": 1122,
+      "sha256": "b625a2d035972c928045e660624ef6c745e5593efc63fed9e1e6360844eb3140"
+    },
+    {
+      "path": "scripts/verify-public-readiness.mjs",
+      "bytes": 8162,
+      "sha256": "97fa68d00c99c35f6170802b5cc5f169968b207d1c270e666cd90d8d33d368e8"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "bytes": 3241,
+      "sha256": "e085e8ed08cbae6a1f1658481634d10e6746547d77da39989fcb0ab2af7bf502"
+    },
+    {
+      "path": "scripts/verify-source-authority.mjs",
+      "bytes": 5630,
+      "sha256": "5a39fcae12c52b98c782b107060ccebb09d668ac38ac60819c90dde067a27c6f"
+    },
+    {
+      "path": "site/.gitignore",
+      "bytes": 111,
+      "sha256": "1b834319f595aea98afad8ef4832c66d34401281d3f1c198de331938bf244163"
+    },
+    {
+      "path": "site/.openai/hosting.json",
+      "bytes": 91,
+      "sha256": "9fa4f9ffe23d7066a9766cfdaa1eb705118f032bd712d0650d7bbba0acff717e"
+    },
+    {
+      "path": "site/.oxfmtrc.json",
+      "bytes": 260,
+      "sha256": "0962fdddb1840a06b5afb918ff3f2ff56bce346082651ec5c3567c01dd809f17"
+    },
+    {
+      "path": "site/.oxlintrc.json",
+      "bytes": 1591,
+      "sha256": "8b6e8a0b05a58ad99ba3a1090d699c571eaa00ed572f4727bf8eb49281ea42b9"
+    },
+    {
+      "path": "site/app/api/learner/[...path]/route.ts",
+      "bytes": 486,
+      "sha256": "fb15817d929d8536cbe35ed67982d5c699cd2f8774a2e4c51e3d41117fe06b68"
+    },
+    {
+      "path": "site/app/chatgpt-auth.ts",
+      "bytes": 2402,
+      "sha256": "9af1328b35181cc42847c41d72963abd2c4d907438f90d918955cd1bfb360387"
+    },
+    {
+      "path": "site/app/globals.css",
+      "bytes": 777,
+      "sha256": "8ae55682d187926c67feb202c5169ff484db993178002e5e215152cc69191a66"
+    },
+    {
+      "path": "site/app/layout.tsx",
+      "bytes": 1271,
+      "sha256": "0589646d697e6dc940f1a4dfd891d81e4ecc8243f567a84d9f310442a75539d5"
+    },
+    {
+      "path": "site/app/page.tsx",
+      "bytes": 6275,
+      "sha256": "1ef2a92a8026baa1e537f89978594c6b58f9bf51fa9724a266d1db487e10cfb1"
+    },
+    {
+      "path": "site/db/env.d.ts",
+      "bytes": 147,
+      "sha256": "64b383d2c27dda0440fe941cd7f3cf9d65680445bbf2555b94dc73a9be192afb"
+    },
+    {
+      "path": "site/drizzle/0001_learner_data.sql",
+      "bytes": 5078,
+      "sha256": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2"
+    },
+    {
+      "path": "site/drizzle/0002_fragmented_storage.sql",
+      "bytes": 12258,
+      "sha256": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3"
+    },
+    {
+      "path": "site/integration/account-start.js",
+      "bytes": 1191,
+      "sha256": "51a1648454e3e095bf2ff7429bb71000bfa3a09797867b5018b0c03d1fddd8d4"
+    },
+    {
+      "path": "site/integration/catalog-release.mjs",
+      "bytes": 337,
+      "sha256": "5ff70f7996f35ef20bf1fd98d0b089e1b6683a7ba19c890c0dd3ae982b5669b6"
+    },
+    {
+      "path": "site/integration/site-runtime.mjs",
+      "bytes": 2486,
+      "sha256": "a51806356e47d7befa357ea5458618f649aa7d9d7705b2db2b27f47a9a1d2450"
+    },
+    {
+      "path": "site/next-env.d.ts",
+      "bytes": 189,
+      "sha256": "a291a6b60536fec0a3b9d4ffd6d51179b463e9bc20281d7499d756813b4c07d5"
+    },
+    {
+      "path": "site/next.config.ts",
+      "bytes": 104,
+      "sha256": "d063bebef3a4878ae82f9f9547c2c9675b8b6945ab23702932dcb63a011a9fc9"
+    },
+    {
+      "path": "site/package-lock.json",
+      "bytes": 124350,
+      "sha256": "321ca0cb09d3ede958ce791270892835542dcb9aeb98c11b0a941f82aa7bc839"
+    },
+    {
+      "path": "site/package.json",
+      "bytes": 1231,
+      "sha256": "feeaf57c592a71562d5cad3907bb0d901f3064f41d0482d01d05ead95da5b997"
+    },
+    {
+      "path": "site/public/favicon.svg",
+      "bytes": 727,
+      "sha256": "1695c3a71b6ef5283cb68b5e347169ba1d7d5823cb5362bd9b92e3430f9fc307"
+    },
+    {
+      "path": "site/public/og.png",
+      "bytes": 849633,
+      "sha256": "3904cdfee2abaa6a7450ce6d8159861197fdda33f9bd0fb48d1c9ce6837849fc"
+    },
+    {
+      "path": "site/scripts/sync-study.mjs",
+      "bytes": 3158,
+      "sha256": "d959a35680c111813515ed6f8a67d93d85444cc3ad33784b8c095fe2e03259fa"
+    },
+    {
+      "path": "site/tests/wrapper.test.mjs",
+      "bytes": 3691,
+      "sha256": "805949cb233ec8d19aa687e2744899a55d51adb13ab84a9ef83d4a84f3c837d3"
+    },
+    {
+      "path": "site/tsconfig.json",
+      "bytes": 671,
+      "sha256": "81aca06cd76be09d9b65c7dff6a031c38664263b506ea792a28f36b17be25f2a"
+    },
+    {
+      "path": "site/vite.config.ts",
+      "bytes": 2008,
+      "sha256": "d78bfb9e72cdbbaddd82285c00c0f1a651f1e576955322c6c1749b6d1cf589d2"
+    },
+    {
+      "path": "tests/fixtures/deck_generation/order-relations.normalized.json",
+      "bytes": 4655,
+      "sha256": "20a6ba8fa9736888a2b4e2d656fb0dadcfe8f37d1afe7e871957bde76df4f55a"
+    },
+    {
+      "path": "web/README.md",
+      "bytes": 11471,
+      "sha256": "c5e4e75db65e554a4f1d174946c91ae15e51182fe0ef8101cc51654094ee6f43"
+    },
+    {
+      "path": "web/data/catalog.js",
+      "bytes": 7869,
+      "sha256": "75cac89c7f3235aa40bc683b490ff154a27f8a9bfd12287f834559820ab79de2"
+    },
+    {
+      "path": "web/data/library-releases.json",
+      "bytes": 1902,
+      "sha256": "20f1729c6d7f0853fc5ebd23978f211db6f6ba76a5108bdb885703d95279c5b7"
+    },
+    {
+      "path": "web/data/library/2026-09-02.public-sanitized-72.v2/a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1.json",
+      "bytes": 12033408,
+      "sha256": "a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1"
+    },
+    {
+      "path": "web/dev-server.mjs",
+      "bytes": 2038,
+      "sha256": "c7d379309cbb74d580276f443a8448ca42f60255830329ce5af7924e064cae2e"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 4859,
+      "sha256": "6e54ed5889cf7d7e5cafccd1ca1effdd17373a15df8524095196e9c26c072cbf"
+    },
+    {
+      "path": "web/integration/account-entry.js",
+      "bytes": 1718,
+      "sha256": "3ba91ae1ab5195bde7a03fa1b9eedaabcd052c1bd34493093a0297ec947b412a"
+    },
+    {
+      "path": "web/integration/learner-endpoint.mjs",
+      "bytes": 2388,
+      "sha256": "2f970b7143a34ac322fd3e3f519fbe79df41de0a7c5973a85eb64eb4b6385718"
+    },
+    {
+      "path": "web/integration/sites-route.ts",
+      "bytes": 490,
+      "sha256": "d1ea53562c039c5d2de9df7c298539bc2d4482fdec0a42f50581ad2ce99b8dab"
+    },
+    {
+      "path": "web/js/account-runtime.js",
+      "bytes": 20222,
+      "sha256": "49217272d13ecbb7d755fe02cdbab94f86fbe1b82a08d530529d4e05555990bd"
+    },
+    {
+      "path": "web/js/account-snapshot.js",
+      "bytes": 1591,
+      "sha256": "4e2cc0c7fef304c5c5469bb4d5cec5902378a211f5954345467ef58a96c407a2"
+    },
+    {
+      "path": "web/js/app.js",
+      "bytes": 77299,
+      "sha256": "907667447ec5f3ca5532a4fc40f72d7f0884b170816d64704c3b20ce4934ed99"
+    },
+    {
+      "path": "web/js/browser-workspace.js",
+      "bytes": 1868,
+      "sha256": "0833869ccc95fdc4b8cf149f798f58712b9c4f29963df902d65fdaa266f8a5e1"
+    },
+    {
+      "path": "web/js/deck-build-guide.js",
+      "bytes": 18771,
+      "sha256": "df713b00100ebbba5a3b28d4ea3da954bd61abb30351c047f8e6499112813e91"
+    },
+    {
+      "path": "web/js/definition-renderer.js",
+      "bytes": 13347,
+      "sha256": "f0445c732d71047d38c969c703a2b75629f406fb0acb5f6a7f5b90fbbf9c928c"
+    },
+    {
+      "path": "web/js/grading-guide.js",
+      "bytes": 15055,
+      "sha256": "a107ccb0da434902745d21921393d2ca59ada5b5e534e0ee1494a3c027cf3afa"
+    },
+    {
+      "path": "web/js/grading-guide.v1.2-candidate.2.js",
+      "bytes": 15997,
+      "sha256": "6e9daca994fd5fe4786f562c34c569789accbd0a25045ffd0acdf106b5bc5089"
+    },
+    {
+      "path": "web/js/grading-guide.v1.2-candidate.3.js",
+      "bytes": 16505,
+      "sha256": "e50683c32ce28c4e84b89e511c856136e9daad7dc971cbec93c805d67846b188"
+    },
+    {
+      "path": "web/js/graph-engine.js",
+      "bytes": 59859,
+      "sha256": "f3afcde08aa2c18f1b1dee34460584f682cecfb4bfae4b0e9896d58e2b611d9a"
+    },
+    {
+      "path": "web/js/graph-scope.js",
+      "bytes": 19794,
+      "sha256": "a18028bffc9acfe5f559eb914727b5ec0fe20a7c5611625186d813f8fafea221"
+    },
+    {
+      "path": "web/js/graph-view.js",
+      "bytes": 35468,
+      "sha256": "bde3a50358a963d1baafc1516201dbc8f105534ed215983fca50df2a71ae68e5"
+    },
+    {
+      "path": "web/js/library-catalog.js",
+      "bytes": 91161,
+      "sha256": "fc2458b63e813f53bd81b231084dcc756963a4ed3625fd38aee5d8ceb024ba95"
+    },
+    {
+      "path": "web/js/library-loader.js",
+      "bytes": 7173,
+      "sha256": "67f32d2cc678fc75c9b055fff68bbe9ab093dad120fb38575c2ad728665e4cfb"
+    },
+    {
+      "path": "web/js/library-view.js",
+      "bytes": 3642,
+      "sha256": "83d8e1ff59cde3b12c219d42afe780c5a660faa6e484ac444ab2474bcc480e1a"
+    },
+    {
+      "path": "web/js/local-claim-source.js",
+      "bytes": 2814,
+      "sha256": "d278ee4e00bfed541e96cd0548bf2b7e18cb78ecde883452f5b638c4bb3af93e"
+    },
+    {
+      "path": "web/js/mastery.js",
+      "bytes": 177,
+      "sha256": "1dac9e959107489fee79663375c115d135c70c921d60cf778d3bd5da229bc006"
+    },
+    {
+      "path": "web/js/start.js",
+      "bytes": 226,
+      "sha256": "841a1fd09e4926c3928dca864620b091be39d56d3b64d17984dfef3572303d9d"
+    },
+    {
+      "path": "web/js/store.js",
+      "bytes": 214698,
+      "sha256": "8cbde997ee0330f180e1aecd107425c53a7005e5e427dd58c2da9e120ec05dc6"
+    },
+    {
+      "path": "web/js/streak.js",
+      "bytes": 5359,
+      "sha256": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3"
+    },
+    {
+      "path": "web/js/view-clock.js",
+      "bytes": 2231,
+      "sha256": "792240f972c57b968fb3897664d72924ee8321720c7afd4f04220ae9955be5c0"
+    },
+    {
+      "path": "web/js/webmcp.js",
+      "bytes": 46425,
+      "sha256": "9faa86f447eddf4424b432075129f02ea7d7875eb6b2f1ea78f25181aae440df"
+    },
+    {
+      "path": "web/package.json",
+      "bytes": 354,
+      "sha256": "26554838b95e37437d4a788dc006e29ff89428b1d153dd8fa45d73243cb10bce"
+    },
+    {
+      "path": "web/scripts/build-library-release.mjs",
+      "bytes": 8348,
+      "sha256": "fb515889ba8196428f83dfdf272767c00a0c811cbfbef50ea93e7148f55b04b6"
+    },
+    {
+      "path": "web/scripts/check.mjs",
+      "bytes": 1976,
+      "sha256": "ac1503e1036bfb277d3d8079f6fbc2c5d3e6999cd6e3c3d509acea946e685db1"
+    },
+    {
+      "path": "web/styles.css",
+      "bytes": 63507,
+      "sha256": "36e7651fbc2ab686250449f685384692df4ece592140e94f49504e96ca5d6d25"
+    },
+    {
+      "path": "web/tests/account-activity.test.mjs",
+      "bytes": 11221,
+      "sha256": "11a222c768d3a819a8d28fabc1d964f55b60290ecf8c662559e038c5d5616b4c"
+    },
+    {
+      "path": "web/tests/account-app.test.mjs",
+      "bytes": 9928,
+      "sha256": "bd1655c1575a2e9fc8cc8521d46e7751ad9f31f1e171d214353da82f83ea943f"
+    },
+    {
+      "path": "web/tests/account-availability.test.mjs",
+      "bytes": 19003,
+      "sha256": "1131c4f93d0b6d2b92774aaa9c61254af7143ef492d5db26b2f1420c05d0109d"
+    },
+    {
+      "path": "web/tests/account-hydration-guards.test.mjs",
+      "bytes": 7821,
+      "sha256": "54b9965fe28d81ee701082c54e4d561e6819c4dca22df295c76e8a5fad8c4f13"
+    },
+    {
+      "path": "web/tests/account-runtime.test.mjs",
+      "bytes": 13570,
+      "sha256": "6e104a1092e4ba57e5c80ef9b8e3ea0b8a43ad8a245dcbba675acd7776ee3618"
+    },
+    {
+      "path": "web/tests/account-server.test.mjs",
+      "bytes": 1667,
+      "sha256": "3540fef16592e1540951c48b59fbca74bd3681ce1abded1a2d20e2c6acc24e0f"
+    },
+    {
+      "path": "web/tests/app-runtime.test.mjs",
+      "bytes": 15883,
+      "sha256": "2286f6fab0320290db50587ba0a4ac41dae4cad4024464708c03f664d02d840c"
+    },
+    {
+      "path": "web/tests/catalog-integration.test.mjs",
+      "bytes": 4092,
+      "sha256": "af11189d95017b0cd12dae8bbfdfa7f17e063d56ea651d8757dea8b2ece0353e"
+    },
+    {
+      "path": "web/tests/catalog-retention.test.mjs",
+      "bytes": 16488,
+      "sha256": "448de1cfe25c021104ac44894c718015a346646e3614ff15e207bb9b9b82e09d"
+    },
+    {
+      "path": "web/tests/catalog.test.mjs",
+      "bytes": 3319,
+      "sha256": "dafa5f77c7dfe6c824df64301edddc6339e866ed519363cc5df4c8658642cf6f"
+    },
+    {
+      "path": "web/tests/definition-renderer.test.mjs",
+      "bytes": 8511,
+      "sha256": "a16869a0d617556d54e48c0106a0604002f25cced1bca0cb754179f3c32f99ed"
+    },
+    {
+      "path": "web/tests/graph-engine.test.mjs",
+      "bytes": 13319,
+      "sha256": "1fdf7cfbf1b0b5bf787950b4899e894d86b81e078656e6896dfb804874689072"
+    },
+    {
+      "path": "web/tests/graph-mobile.test.mjs",
+      "bytes": 15976,
+      "sha256": "8d362c474dfe46de0ea91aacd371c2f94f08d24c2efb156ae4f36541c952ffd5"
+    },
+    {
+      "path": "web/tests/graph-scope.test.mjs",
+      "bytes": 7801,
+      "sha256": "edcb2847571ebf0a92231e96ffb2bcf962c2b4cee9cb55efe613c4a95f7ca8a0"
+    },
+    {
+      "path": "web/tests/graph-view-scope.test.mjs",
+      "bytes": 7509,
+      "sha256": "e454e01eae42810dfb17c5d3e160942200a75fdce3ddc0af9918c27ad222b540"
+    },
+    {
+      "path": "web/tests/helpers/account-fixture.mjs",
+      "bytes": 4371,
+      "sha256": "2464425f02716bee471ce086f2c2e3ede0e6bcfbed764019d1764aeaddf5be2c"
+    },
+    {
+      "path": "web/tests/helpers/activity-consumer-fixture.mjs",
+      "bytes": 3022,
+      "sha256": "5d10458fcbf6864ef664f0dcb1cfacb6dc1561c3cb2a3992596824013b24f5e6"
+    },
+    {
+      "path": "web/tests/helpers/app-harness.mjs",
+      "bytes": 9913,
+      "sha256": "8317531863610f4d6da43005c6810ec006db45bb7dc58e2f44ffd6916338cf20"
+    },
+    {
+      "path": "web/tests/helpers/library-fixture.mjs",
+      "bytes": 5648,
+      "sha256": "6e4a83c5502effe464f2fd37e6865fb292f4fe113e39769b45126bb28199180b"
+    },
+    {
+      "path": "web/tests/library-authoring.test.mjs",
+      "bytes": 11076,
+      "sha256": "ef4eafbae4aca0ba4e86ca668790ab56c527dfcd7bdbdd1718f6c509c9a1ffb1"
+    },
+    {
+      "path": "web/tests/library-candidate-contract.test.mjs",
+      "bytes": 2177,
+      "sha256": "b41c4b793f459fdf106c9d5cae3fff301be3987ba97a504fae237bb26fa53fac"
+    },
+    {
+      "path": "web/tests/library-catalog.test.mjs",
+      "bytes": 20430,
+      "sha256": "0642de0dc8933584efd9a90dd2d084674887019c01a02b8ed22384a7c28a207b"
+    },
+    {
+      "path": "web/tests/library-core.test.mjs",
+      "bytes": 9928,
+      "sha256": "5571025cf14be2257871efb9e0133fc7c813acf35b9d5d3e00e70e0b4ec85b77"
+    },
+    {
+      "path": "web/tests/library-installation.test.mjs",
+      "bytes": 22538,
+      "sha256": "a8d28a2af9dc28e9c2399f9cf40c89eaac4dfdde74e6b29716379a31cb8ac926"
+    },
+    {
+      "path": "web/tests/library-webmcp.test.mjs",
+      "bytes": 7386,
+      "sha256": "bb7c5b1fdc380b42b2c8da943e7add52b224af0c997b86789ab836bf110e2431"
+    },
+    {
+      "path": "web/tests/library-website.test.mjs",
+      "bytes": 15662,
+      "sha256": "27a8bda03095f260d79cf879d6f5de66537757494e678635574b05889632f230"
+    },
+    {
+      "path": "web/tests/mastered-demo.test.mjs",
+      "bytes": 6489,
+      "sha256": "02c3c1a00bbb281ffdd45fe0234d530c3d201d37d3ab4e3870c5419b211dedde"
+    },
+    {
+      "path": "web/tests/mastery.test.mjs",
+      "bytes": 731,
+      "sha256": "e4001458e0450f55408332938658d0b2b5ec6b38f5ef75954eb07ffa89ce346a"
+    },
+    {
+      "path": "web/tests/persistence.test.mjs",
+      "bytes": 18714,
+      "sha256": "977fea351804c7cf8ca8d2f4922ffd6b6a21ef9e18249038359ec69602d316c0"
+    },
+    {
+      "path": "web/tests/public-library-release.test.mjs",
+      "bytes": 1729,
+      "sha256": "13cd5221cc425db6cddf0709130083ae21e02f8190274fbfab4aa91587388a28"
+    },
+    {
+      "path": "web/tests/store.test.mjs",
+      "bytes": 46739,
+      "sha256": "e2c2615176b74d9d302da388766dc7f34e6037511532763781f0c88109757356"
+    },
+    {
+      "path": "web/tests/streak-store.test.mjs",
+      "bytes": 6968,
+      "sha256": "06d156ee87e9275afd0c6b1e95a73a3e2c4c429e8f965f8408c070c870b8385e"
+    },
+    {
+      "path": "web/tests/streak.test.mjs",
+      "bytes": 11212,
+      "sha256": "2ada535977224318cae839b95061de03b7a653cc00941e0b462239b81187fe2a"
+    },
+    {
+      "path": "web/tests/study-activity-history.test.mjs",
+      "bytes": 24827,
+      "sha256": "ce3373553303dd4f02af008e4770767253b0592735e0f86a312f18ebd2e4f822"
+    },
+    {
+      "path": "web/tests/study-activity-progress.test.mjs",
+      "bytes": 5897,
+      "sha256": "45463beda68d40811b370fad977bfa44af6a5cba869504bcc8b36348a93ae04b"
+    },
+    {
+      "path": "web/tests/study-activity-ui.test.mjs",
+      "bytes": 18094,
+      "sha256": "78d44ec1161d263044163e6fe05c43c3047b8bfc89bcf23b720425a28dd34d0a"
+    },
+    {
+      "path": "web/tests/study-activity.test.mjs",
+      "bytes": 18620,
+      "sha256": "d9bbcbee51cf73269fa27e16e9890ddea0bbeda6f8a00e3bda7f978b7f8c3150"
+    },
+    {
+      "path": "web/tests/study-availability-library.test.mjs",
+      "bytes": 19402,
+      "sha256": "743b85616f5426ec04f113e022b8b64b01ea4ab02162f55aa9bbcedbfd0f0f3f"
+    },
+    {
+      "path": "web/tests/study-availability-ui.test.mjs",
+      "bytes": 17652,
+      "sha256": "8819b66d066df7cf2f8cd46382e785c49cffa48204fe921bb47aa3bc2214b932"
+    },
+    {
+      "path": "web/tests/study-availability.test.mjs",
+      "bytes": 20343,
+      "sha256": "b08390f7ce0c7f357edcceedeee6eccd5743465cf7ea9c4e40c6e3ab51629c16"
+    },
+    {
+      "path": "web/tests/ui-contract.test.mjs",
+      "bytes": 10842,
+      "sha256": "789c5c4dcb64117a51667a6c6ae25e9c9a38a7302239d6800013cc5be47ad77a"
+    },
+    {
+      "path": "web/tests/view-clock.test.mjs",
+      "bytes": 3171,
+      "sha256": "1345fc35970ee20edd374688b43157d98423fd03677ac8fe447ea3b9439011af"
+    },
+    {
+      "path": "web/tests/webmcp-account-context.test.mjs",
+      "bytes": 17019,
+      "sha256": "f522130905e1a7eafaacb74769753c2555625de631b088331211e85c356b0461"
+    },
+    {
+      "path": "web/tests/webmcp.test.mjs",
+      "bytes": 87800,
+      "sha256": "3325d204118a59a4346f272445886ee7d4935d937fd8b6830e3df63ba451fd2d"
+    },
+    {
+      "path": "web/vendor/katex/LICENSE",
+      "bytes": 1107,
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    {
+      "path": "web/vendor/katex/README.md",
+      "bytes": 480,
+      "sha256": "fa3558c165080bea50975243aa95199ed24ce4732d8699db4e20a3b00aa619e5"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_AMS-Regular.ttf",
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_AMS-Regular.woff",
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Bold.ttf",
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff",
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2",
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Regular.ttf",
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff",
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2",
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Bold.ttf",
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff",
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2",
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Regular.ttf",
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff",
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2",
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Bold.ttf",
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Bold.woff",
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Bold.woff2",
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-BoldItalic.ttf",
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff",
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2",
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Italic.ttf",
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Italic.woff",
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Italic.woff2",
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Regular.ttf",
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Regular.woff",
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Main-Regular.woff2",
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Math-BoldItalic.ttf",
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff",
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2",
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Math-Italic.ttf",
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Math-Italic.woff",
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Math-Italic.woff2",
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Bold.ttf",
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff",
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2",
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Italic.ttf",
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff",
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2",
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Regular.ttf",
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff",
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2",
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Script-Regular.ttf",
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Script-Regular.woff",
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Script-Regular.woff2",
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size1-Regular.ttf",
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size1-Regular.woff",
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size1-Regular.woff2",
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size2-Regular.ttf",
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size2-Regular.woff",
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size2-Regular.woff2",
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size3-Regular.ttf",
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size3-Regular.woff",
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size3-Regular.woff2",
+      "bytes": 3624,
+      "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size4-Regular.ttf",
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size4-Regular.woff",
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Size4-Regular.woff2",
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Typewriter-Regular.ttf",
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff",
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+    },
+    {
+      "path": "web/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2",
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+    },
+    {
+      "path": "web/vendor/katex/katex.js",
+      "bytes": 601882,
+      "sha256": "9069225f8307ea43f5c98e3c4772e26572a234a8d740018724acfe57f7467cbe"
+    },
+    {
+      "path": "web/vendor/katex/katex.min.css",
+      "bytes": 24727,
+      "sha256": "180c2d77d434d7da51d6625c50a964d4fd6fdbdb9bc8796a0a016c30c49931fb"
+    }
+  ]
+}

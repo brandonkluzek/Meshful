@@ -1,0 +1,4234 @@
+{
+  "id": "academic-reviewed-v1:computer-systems",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Computer Systems",
+  "subject": "Computer Science and Software",
+  "domain": "Computer Science and Software",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "computer-systems.csys-m0-alignment-requirement",
+      "canonical_deck_id": "computer-systems",
+      "term": "Alignment requirement",
+      "prompt": "Define Alignment requirement. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The valid address-multiple constraint for an object type under the target ABI and allocation interface.",
+      "required_concepts": [
+        "The valid address-multiple constraint for an object type under the target ABI and allocation interface."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming any byte address is valid for every type."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-c-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-behavior-classification",
+      "canonical_deck_id": "computer-systems",
+      "term": "Behavior classification",
+      "prompt": "In C11, distinguish specified, implementation-defined, unspecified and undefined behavior.",
+      "definition": "In C11 terminology, specified behavior is determined by the standard for the stated case. Implementation-defined behavior allows documented implementation choices. Unspecified behavior allows a set of alternatives without requiring the implementation to document which is chosen. Undefined behavior imposes no requirements on that execution. A debugger observation does not turn an unspecified choice or undefined execution into a portable guarantee.",
+      "required_concepts": [
+        "Distinguish a standard-prescribed result, documented implementation choice, undocumented permitted alternatives, and undefined behavior with no requirements.",
+        "An observed result alone does not establish a portable language guarantee."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating undefined behavior as a guaranteed implementation-specific result.",
+        "Saying unspecified behavior requires a documented implementation choice."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-binary-and-hexadecimal-notation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Binary and hexadecimal notation",
+      "prompt": "Define Binary and hexadecimal notation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The exact positional encodings of one finite-width bit vector with leading zeros preserved when width matters.",
+      "required_concepts": [
+        "The exact positional encodings of one finite-width bit vector with leading zeros preserved when width matters."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dropping leading zeros then inferring a different sign or object size."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-bit-and-byte-identity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-bit-and-byte-identity",
+      "canonical_deck_id": "computer-systems",
+      "term": "Bit and byte identity",
+      "prompt": "Define Bit and byte identity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The distinction between a binary digit a minimum addressable byte and the implementation-defined number of bits represented by CHAR_BIT.",
+      "required_concepts": [
+        "The distinction between a binary digit a minimum addressable byte and the implementation-defined number of bits represented by CHAR_BIT."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a byte universally eight bits without naming the platform contract."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-bitwise-operation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Bitwise operation",
+      "prompt": "Define Bitwise operation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The finite-width application of AND OR XOR or complement to corresponding bits after operand conversions.",
+      "required_concepts": [
+        "The finite-width application of AND OR XOR or complement to corresponding bits after operand conversions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating logical and bitwise operators as interchangeable."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-integer-promotion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-byte-order",
+      "canonical_deck_id": "computer-systems",
+      "term": "Byte order",
+      "prompt": "Define Byte order. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The target mapping of multibyte object-representation significance to increasing byte addresses.",
+      "required_concepts": [
+        "The target mapping of multibyte object-representation significance to increasing byte addresses."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reversing bits inside each byte or universalizing one observed order."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-binary-and-hexadecimal-notation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-c-object",
+      "canonical_deck_id": "computer-systems",
+      "term": "C object",
+      "prompt": "Define C object. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A region of data storage whose type lifetime value and object representation are governed separately from the expression naming it.",
+      "required_concepts": [
+        "A region of data storage whose type lifetime value and object representation are governed separately from the expression naming it."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a variable name the storage object in every scope and lifetime context."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-floating-point-exceptional-class",
+      "canonical_deck_id": "computer-systems",
+      "term": "Floating-point exceptional class",
+      "prompt": "Define Floating-point exceptional class. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The encoding and behavior categories for signed zero subnormal infinity quiet or signaling NaN under a named format and environment.",
+      "required_concepts": [
+        "The encoding and behavior categories for signed zero subnormal infinity quiet or signaling NaN under a named format and environment."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Ordering NaN normally or treating both signed zeros as different numerical magnitudes."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-floating-point-field-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-floating-point-field-model",
+      "canonical_deck_id": "computer-systems",
+      "term": "Floating-point field model",
+      "prompt": "Define Floating-point field model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The sign exponent significand and bias interpretation of a named binary floating-point format.",
+      "required_concepts": [
+        "The sign exponent significand and bias interpretation of a named binary floating-point format."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the stored fraction as the complete significand for normal numbers."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-binary-and-hexadecimal-notation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-floating-point-rounding",
+      "canonical_deck_id": "computer-systems",
+      "term": "Floating-point rounding",
+      "prompt": "Define Floating-point rounding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mapping of an exact real result to a representable value under a named rounding mode with precision and exceptional status.",
+      "required_concepts": [
+        "The mapping of an exact real result to a representable value under a named rounding mode with precision and exceptional status."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling floating point random or decimal-digit truncation."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-floating-point-field-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-integer-conversion-rank",
+      "canonical_deck_id": "computer-systems",
+      "term": "Integer conversion rank",
+      "prompt": "Define Integer conversion rank. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The language ordering used with promotions and usual arithmetic conversions to choose operand types before an operation.",
+      "required_concepts": [
+        "The language ordering used with promotions and usual arithmetic conversions to choose operand types before an operation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Computing mathematical zero before determining converted operand types."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-unsigned-integer-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-integer-promotion",
+      "canonical_deck_id": "computer-systems",
+      "term": "Integer promotion",
+      "prompt": "Define Integer promotion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The conversion of narrower integer types before most arithmetic and comparison operations according to representable range.",
+      "required_concepts": [
+        "The conversion of narrower integer types before most arithmetic and comparison operations according to representable range."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming arithmetic always stays in the declared narrow type."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-integer-conversion-rank"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-object-representation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Object representation",
+      "prompt": "Define Object representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The bytes and padding bits representing one object's current value with type and access rules preserved.",
+      "required_concepts": [
+        "The bytes and padding bits representing one object's current value with type and access rules preserved."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing structure padding bytes as logical equality."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-c-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-shift-operation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Shift operation",
+      "prompt": "Define Shift operation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The language-qualified movement of a promoted integer bit pattern with count signedness and overflow constraints.",
+      "required_concepts": [
+        "The language-qualified movement of a promoted integer bit pattern with count signedness and overflow constraints."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Shifting by the width or applying unsigned conclusions to negative signed values."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-bitwise-operation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-signed-integer-range-and-representation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Signed integer range and representation",
+      "prompt": "Define Signed integer range and representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The implementation contract for signed values representation and range separated from language overflow rules.",
+      "required_concepts": [
+        "The implementation contract for signed values representation and range separated from language overflow rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using two's-complement hardware to define every signed C operation."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-unsigned-integer-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-storage-duration-and-lifetime",
+      "canonical_deck_id": "computer-systems",
+      "term": "Storage duration and lifetime",
+      "prompt": "Define Storage duration and lifetime. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The allocation-duration category and dynamic interval during which an object exists and may be accessed.",
+      "required_concepts": [
+        "The allocation-duration category and dynamic interval during which an object exists and may be accessed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Equating lexical scope with lifetime or stack bytes remaining with a live object."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-c-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-structure-padding",
+      "canonical_deck_id": "computer-systems",
+      "term": "Structure padding",
+      "prompt": "Define Structure padding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The unnamed bytes inserted to satisfy member alignment and array-element stride under one ABI layout.",
+      "required_concepts": [
+        "The unnamed bytes inserted to satisfy member alignment and array-element stride under one ABI layout."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Summing member sizes and calling it the structure size universally."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-alignment-requirement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m0-unsigned-integer-representation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Unsigned integer representation",
+      "prompt": "Define Unsigned integer representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The pure binary finite-width value model and modulo 2^w arithmetic for an unsigned type of width w.",
+      "required_concepts": [
+        "The pure binary finite-width value model and modulo 2^w arithmetic for an unsigned type of width w."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the wrap a hardware accident or signed overflow."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-binary-and-hexadecimal-notation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-abi-argument-passage",
+      "canonical_deck_id": "computer-systems",
+      "term": "ABI argument passage",
+      "prompt": "Define ABI argument passage. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The platform convention assigning typed arguments to registers stack slots and memory classes with alignment rules.",
+      "required_concepts": [
+        "The platform convention assigning typed arguments to registers stack slots and memory classes with alignment rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every argument is pushed right to left."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-abi-return-value",
+      "canonical_deck_id": "computer-systems",
+      "term": "ABI return value",
+      "prompt": "Define ABI return value. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The convention for returning scalar aggregate or hidden-address results with exact type classification.",
+      "required_concepts": [
+        "The convention for returning scalar aggregate or hidden-address results with exact type classification."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reading an arbitrary register because it held the value during debugging."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-abi-argument-passage"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-architectural-register",
+      "canonical_deck_id": "computer-systems",
+      "term": "Architectural register",
+      "prompt": "Define Architectural register. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ISA-visible named state component with width subregister behavior and convention role separated.",
+      "required_concepts": [
+        "The ISA-visible named state component with width subregister behavior and convention role separated."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every partial-register write preserves upper bits."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-instruction-encoding"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-callee-saved-register",
+      "canonical_deck_id": "computer-systems",
+      "term": "Callee-saved register",
+      "prompt": "Define Callee-saved register. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ABI state a callee must restore before return if it modifies it.",
+      "required_concepts": [
+        "The ABI state a callee must restore before return if it modifies it."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Restoring only the normal return path and leaking modified state on an early return."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-abi-argument-passage"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-caller-saved-register",
+      "canonical_deck_id": "computer-systems",
+      "term": "Caller-saved register",
+      "prompt": "Define Caller-saved register. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ABI state a caller must preserve across a call when its prior value remains live.",
+      "required_concepts": [
+        "The ABI state a caller must preserve across a call when its prior value remains live."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Expecting the callee to preserve every general register."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-abi-argument-passage"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-conditional-branch",
+      "canonical_deck_id": "computer-systems",
+      "term": "Conditional branch",
+      "prompt": "Define Conditional branch. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The control transfer selected from condition state or compared values with both target and fall-through addresses.",
+      "required_concepts": [
+        "The control transfer selected from condition state or compared values with both target and fall-through addresses."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using unsigned condition codes for a signed C comparison."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-machine-arithmetic-flags"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-conditional-move",
+      "canonical_deck_id": "computer-systems",
+      "term": "Conditional move",
+      "prompt": "Define Conditional move. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The data transfer selected by condition state that can avoid a branch while preserving operand evaluation and fault qualifications.",
+      "required_concepts": [
+        "The data transfer selected by condition state that can avoid a branch while preserving operand evaluation and fault qualifications."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming conditional move prevents evaluation or memory faults for every source operand."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-machine-arithmetic-flags"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-effective-address",
+      "canonical_deck_id": "computer-systems",
+      "term": "Effective address",
+      "prompt": "Define Effective address. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The arithmetic combination of base index scale displacement and instruction context used to select memory without itself dereferencing.",
+      "required_concepts": [
+        "The arithmetic combination of base index scale displacement and instruction context used to select memory without itself dereferencing."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Confusing address calculation with reading memory or C pointer legality."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-machine-operand"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-instruction-encoding",
+      "canonical_deck_id": "computer-systems",
+      "term": "Instruction encoding",
+      "prompt": "Define Instruction encoding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ISA-defined byte sequence selecting opcode operand forms widths and addressing information at one program address.",
+      "required_concepts": [
+        "The ISA-defined byte sequence selecting opcode operand forms widths and addressing information at one program address."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reading textual assembly without checking byte boundaries or ISA mode."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-loop-machine-trace",
+      "canonical_deck_id": "computer-systems",
+      "term": "Loop machine trace",
+      "prompt": "Define Loop machine trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The repeated instruction-state transition with induction update condition and termination reconstructed exactly.",
+      "required_concepts": [
+        "The repeated instruction-state transition with induction update condition and termination reconstructed exactly."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Jumping from assembly pattern to a closed-form answer without verifying the loop condition."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-conditional-branch"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-machine-arithmetic-flags",
+      "canonical_deck_id": "computer-systems",
+      "term": "Machine arithmetic flags",
+      "prompt": "Define Machine arithmetic flags. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ISA-visible condition state such as zero sign carry and overflow derived from a specific finite-width result.",
+      "required_concepts": [
+        "The ISA-visible condition state such as zero sign carry and overflow derived from a specific finite-width result."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using carry as signed overflow or ignoring operand width."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-machine-operand"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-machine-operand",
+      "canonical_deck_id": "computer-systems",
+      "term": "Machine operand",
+      "prompt": "Define Machine operand. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The immediate register or memory value consumed or produced by an instruction with size and address fixed.",
+      "required_concepts": [
+        "The immediate register or memory value consumed or produced by an instruction with size and address fixed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a memory operand the address value rather than contents at that address."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-architectural-register"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-procedure-call-instruction",
+      "canonical_deck_id": "computer-systems",
+      "term": "Procedure call instruction",
+      "prompt": "Define Procedure call instruction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The machine control transfer that records a return continuation according to ISA behavior before the callee follows ABI rules.",
+      "required_concepts": [
+        "The machine control transfer that records a return continuation according to ISA behavior before the callee follows ABI rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling call a complete stack-frame construction operation."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-procedure-return-instruction",
+      "canonical_deck_id": "computer-systems",
+      "term": "Procedure return instruction",
+      "prompt": "Define Procedure return instruction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The machine transfer to a saved continuation with stack or link-register effects under the ISA.",
+      "required_concepts": [
+        "The machine transfer to a saved continuation with stack or link-register effects under the ISA."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning to a source line while ignoring a corrupted machine continuation."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-procedure-call-instruction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-recursive-call-trace",
+      "canonical_deck_id": "computer-systems",
+      "term": "Recursive call trace",
+      "prompt": "Define Recursive call trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The nested activation and return sequence whose machine states remain distinct despite identical code addresses.",
+      "required_concepts": [
+        "The nested activation and return sequence whose machine states remain distinct despite identical code addresses."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using one shared local variable state for every recursive activation."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-stack-frame"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-stack-alignment",
+      "canonical_deck_id": "computer-systems",
+      "term": "Stack alignment",
+      "prompt": "Define Stack alignment. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ABI invariant on stack pointer alignment at call boundaries and local operations including return-address effects.",
+      "required_concepts": [
+        "The ABI invariant on stack pointer alignment at call boundaries and local operations including return-address effects."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Aligning the local array but not the actual stack pointer seen by the callee."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-abi-argument-passage"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-stack-frame",
+      "canonical_deck_id": "computer-systems",
+      "term": "Stack frame",
+      "prompt": "Define Stack frame. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The compiler-selected region and saved state supporting one activation under ABI and optimization choices rather than a universal shape.",
+      "required_concepts": [
+        "The compiler-selected region and saved state supporting one activation under ABI and optimization choices rather than a universal shape."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a frame pointer or fixed layout exists in every optimized function."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-stack-alignment"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m1-switch-dispatch",
+      "canonical_deck_id": "computer-systems",
+      "term": "Switch dispatch",
+      "prompt": "Define Switch dispatch. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The compiler-qualified translation of multiway control through comparisons or a bounds-checked jump table.",
+      "required_concepts": [
+        "The compiler-qualified translation of multiway control through comparisons or a bounds-checked jump table."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating adjacent data bytes as code or indexing without the bounds check."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m1-conditional-branch"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-array-object",
+      "canonical_deck_id": "computer-systems",
+      "term": "Array object",
+      "prompt": "Define Array object. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The contiguous fixed-count sequence of elements whose object identity extent and element type determine valid indexing.",
+      "required_concepts": [
+        "The contiguous fixed-count sequence of elements whose object identity extent and element type determine valid indexing."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling an array a pointer or assuming assignment copies it like a scalar."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-array-to-pointer-conversion",
+      "canonical_deck_id": "computer-systems",
+      "term": "Array-to-pointer conversion",
+      "prompt": "Define Array-to-pointer conversion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The context-dependent conversion of an array expression to a pointer to its first element with important exceptions.",
+      "required_concepts": [
+        "The context-dependent conversion of an array expression to a pointer to its first element with important exceptions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using sizeof on the pointer parameter and obtaining the original array size."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-array-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-bounded-copy-contract",
+      "canonical_deck_id": "computer-systems",
+      "term": "Bounded copy contract",
+      "prompt": "Define Bounded copy contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The exact source length destination capacity overlap termination and failure rules for a memory or string copy.",
+      "required_concepts": [
+        "The exact source length destination capacity overlap termination and failure rules for a memory or string copy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Choosing a function with bounded in its name without proving the correct bound."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-string-length-and-capacity",
+        "computer-systems.csys-m2-pointer-alias"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-c-string-object",
+      "canonical_deck_id": "computer-systems",
+      "term": "C string object",
+      "prompt": "Define C string object. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The character array convention containing a terminating null character within accessible capacity.",
+      "required_concepts": [
+        "The character array convention containing a terminating null character within accessible capacity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any char buffer a string without proving a terminator in bounds."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-array-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-dangling-pointer",
+      "canonical_deck_id": "computer-systems",
+      "term": "Dangling pointer",
+      "prompt": "Define Dangling pointer. Include its essential conditions and distinctions.",
+      "definition": "A dangling pointer is a pointer associated with an object whose lifetime has ended, for example after deallocation or exit from the owning automatic-storage scope. It no longer provides valid access to that former object. In C11, such a pointer value becomes indeterminate; a remembered address or a non-null test is not a lifetime guarantee. Keeping an alias does not keep the object alive.",
+      "required_concepts": [
+        "The referenced object lifetime has ended, so the old reference no longer authorizes object access.",
+        "A retained alias or apparently non-null address does not restore the object lifetime."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining dangling as merely having a null address.",
+        "Assuming an old alias keeps freed or out-of-scope storage alive."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-storage-duration-and-lifetime",
+        "computer-systems.csys-m2-pointer-value"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-double-free",
+      "canonical_deck_id": "computer-systems",
+      "term": "Double free",
+      "prompt": "Define Double free. Include its essential conditions and distinctions.",
+      "definition": "A double free attempts to deallocate an allocation that has already been deallocated, without a new valid allocation ownership contract. In C, a repeated free of that allocation is undefined behavior; free(NULL) is a permitted no-op. A later fresh allocation may reuse an address without being the same allocation identity. Nulling one alias does not repair other stale aliases.",
+      "required_concepts": [
+        "The same allocation has already been freed; distinguish allocation identity from a reusable numeric address.",
+        "free(NULL) is a no-op, and stale aliases still require correct lifetime/ownership handling."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling repeated free(NULL) a double-free violation.",
+        "Freeing through a stale alias after another alias released the allocation."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-dangling-pointer"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-effective-type-and-aliasing",
+      "canonical_deck_id": "computer-systems",
+      "term": "Effective type and aliasing",
+      "prompt": "Define Effective type and aliasing. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The language rules governing which lvalue types may access stored object representations with character-type exceptions and allocated-storage qualifications.",
+      "required_concepts": [
+        "The language rules governing which lvalue types may access stored object representations with character-type exceptions and allocated-storage qualifications."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming same size makes two pointer casts safely dereferenceable."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-pointer-alias"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-memory-leak",
+      "canonical_deck_id": "computer-systems",
+      "term": "Memory leak",
+      "prompt": "Define Memory leak. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The loss of every usable ownership path to a live resource before its required release under the program contract.",
+      "required_concepts": [
+        "The loss of every usable ownership path to a live resource before its required release under the program contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling all memory retained until process exit harmless regardless of loop or service lifetime."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-storage-duration-and-lifetime"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-null-pointer",
+      "canonical_deck_id": "computer-systems",
+      "term": "Null pointer",
+      "prompt": "Define Null pointer. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The distinguished pointer value comparing unequal to every valid object or function pointer with representation not assumed all-zero bytes universally.",
+      "required_concepts": [
+        "The distinguished pointer value comparing unequal to every valid object or function pointer with representation not assumed all-zero bytes universally."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming memset zero creates every possible pointer representation portably."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-pointer-value"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-out-of-bounds-access",
+      "canonical_deck_id": "computer-systems",
+      "term": "Out-of-bounds access",
+      "prompt": "Define Out-of-bounds access. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The attempted lvalue evaluation or memory operation outside a live object's permitted elements and one-past formation rules.",
+      "required_concepts": [
+        "The attempted lvalue evaluation or memory operation outside a live object's permitted elements and one-past formation rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Accepting the write because no immediate crash occurs."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-array-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-pointer-alias",
+      "canonical_deck_id": "computer-systems",
+      "term": "Pointer alias",
+      "prompt": "Define Pointer alias. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Pointer aliases are two expressions that may designate overlapping storage, with consequences for updates and compiler reasoning.",
+      "required_concepts": [
+        "Pointer aliases are two expressions that may designate overlapping storage, with consequences for updates and compiler reasoning."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using memcpy on overlapping regions and expecting memmove behavior."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-pointer-value"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-pointer-arithmetic",
+      "canonical_deck_id": "computer-systems",
+      "term": "Pointer arithmetic",
+      "prompt": "What are the C11 array-pointer arithmetic rules, and how do they differ from pointer equality?",
+      "definition": "For C11 array-pointer arithmetic, adding or subtracting an integer moves by elements, not raw bytes, and must stay within the same array object or its one-past position. Subtracting pointers in that array gives an element difference when representable in ptrdiff_t. A one-past pointer is not dereferenceable. Pointer equality is a separate operation that may compare valid pointers to different objects; arithmetic and relational ordering have stricter object-context rules.",
+      "required_concepts": [
+        "Pointer offsets count elements and remain inside the array or one-past; same-array pointer subtraction yields a representable element difference.",
+        "One-past may not be dereferenced; do not confuse arithmetic/relational restrictions with pointer equality."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Forming arbitrary out-of-array pointers and assuming only dereference is restricted.",
+        "Claiming equality comparison of two valid unrelated object pointers is automatically undefined."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-pointer-value"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-pointer-to-array-type",
+      "canonical_deck_id": "computer-systems",
+      "term": "Pointer-to-array type",
+      "prompt": "Define Pointer-to-array type. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The pointer whose referent is an entire fixed-shape array and whose arithmetic advances by whole rows.",
+      "required_concepts": [
+        "The pointer whose referent is an entire fixed-shape array and whose arithmetic advances by whole rows."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using int double pointer as though a contiguous 2D array were pointers to rows."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-array-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-pointer-value",
+      "canonical_deck_id": "computer-systems",
+      "term": "Pointer value",
+      "prompt": "Define Pointer value. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The typed value designating an object function one-past position or null under language rules rather than merely a numeric address.",
+      "required_concepts": [
+        "The typed value designating an object function one-past position or null under language rules rather than merely a numeric address."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating any integer equal to an address as an interchangeable valid pointer."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-string-length-and-capacity",
+      "canonical_deck_id": "computer-systems",
+      "term": "String length and capacity",
+      "prompt": "Define String length and capacity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The separate counts of characters before terminator and writable object extent governing concatenation and copy.",
+      "required_concepts": [
+        "The separate counts of characters before terminator and writable object extent governing concatenation and copy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using current length as available capacity or omitting space for terminator."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m2-c-string-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-structure-member-address",
+      "canonical_deck_id": "computer-systems",
+      "term": "Structure member address",
+      "prompt": "Define Structure member address. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The target layout mapping from structure base through member offsets and alignment to subobject addresses.",
+      "required_concepts": [
+        "The target layout mapping from structure base through member offsets and alignment to subobject addresses."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding sum of preceding member sizes and ignoring padding."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-structure-padding"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-uninitialized-read",
+      "canonical_deck_id": "computer-systems",
+      "term": "Uninitialized read",
+      "prompt": "Define Uninitialized read. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The access to an object or padding whose value has not been established with indeterminate and trap qualifications.",
+      "required_concepts": [
+        "The access to an object or padding whose value has not been established with indeterminate and trap qualifications."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming stack memory starts at zero because one run did."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-storage-duration-and-lifetime",
+        "computer-systems.csys-m0-behavior-classification"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m2-union-active-representation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Union active representation",
+      "prompt": "Define Union active representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The overlapping storage of members whose permitted read and common-initial-sequence behavior depends on the language contract.",
+      "required_concepts": [
+        "The overlapping storage of members whose permitted read and common-initial-sequence behavior depends on the language contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a union as portable type punning for arbitrary representations."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m0-object-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-binary-inspection-tool",
+      "canonical_deck_id": "computer-systems",
+      "term": "Binary inspection tool",
+      "prompt": "Define Binary inspection tool. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The targeted extraction of headers sections segments symbols relocations disassembly dependencies or mappings from an exact artifact.",
+      "required_concepts": [
+        "The targeted extraction of headers sections segments symbols relocations disassembly dependencies or mappings from an exact artifact."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Copying tool output from a different rebuild or treating demangled names as object semantics."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-object-file-section"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-dynamic-linking",
+      "canonical_deck_id": "computer-systems",
+      "term": "Dynamic linking",
+      "prompt": "Define Dynamic linking. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The link and load process leaving named dependencies and relocations for the dynamic loader or lazy resolver at execution.",
+      "required_concepts": [
+        "The link and load process leaving named dependencies and relocations for the dynamic loader or lazy resolver at execution."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming successful static link proves the runtime library will be found."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-shared-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-elf-program-segment",
+      "canonical_deck_id": "computer-systems",
+      "term": "ELF program segment",
+      "prompt": "Define ELF program segment. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The loader-oriented range mapping file bytes and zero-fill into virtual memory with permissions and alignment.",
+      "required_concepts": [
+        "The loader-oriented range mapping file bytes and zero-fill into virtual memory with permissions and alignment."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Loading each section independently or ignoring memory size beyond file size."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-object-file-section"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-executable-loader",
+      "canonical_deck_id": "computer-systems",
+      "term": "Executable loader",
+      "prompt": "Define Executable loader. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The OS and runtime mechanism validating executable format mapping segments establishing initial process state and transferring control.",
+      "required_concepts": [
+        "The OS and runtime mechanism validating executable format mapping segments establishing initial process state and transferring control."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling exec a direct jump to source main with old mappings intact."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-elf-program-segment"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-link-and-load-failure-diagnostic",
+      "canonical_deck_id": "computer-systems",
+      "term": "Linking and loading failure localization",
+      "prompt": "Define Linking and loading failure localization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The localization of missing duplicate incompatible misrelocated missearched or misloaded artifacts to compile assemble link load or runtime resolution stage.",
+      "required_concepts": [
+        "The localization of missing duplicate incompatible misrelocated missearched or misloaded artifacts to compile assemble link load or runtime resolution stage."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding libraries blindly until the error disappears and losing the causal boundary."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-undefined-symbol-reference",
+        "computer-systems.csys-m3-dynamic-linking"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-linker-script-layout",
+      "canonical_deck_id": "computer-systems",
+      "term": "Linker script layout",
+      "prompt": "Define Linker script layout. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rule set mapping input sections to output sections segments addresses symbols and memory regions.",
+      "required_concepts": [
+        "The rule set mapping input sections to output sections segments addresses symbols and memory regions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing a script symbol and assuming no ABI or loader effect."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-object-file-section"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-local-and-global-symbol",
+      "canonical_deck_id": "computer-systems",
+      "term": "Local and global symbol",
+      "prompt": "Define Local and global symbol. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The binding distinction controlling visibility and participation in cross-object resolution.",
+      "required_concepts": [
+        "The binding distinction controlling visibility and participation in cross-object resolution."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every source function name becomes a global symbol."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-symbol-table-entry"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-object-file-section",
+      "canonical_deck_id": "computer-systems",
+      "term": "Object-file section",
+      "prompt": "Define Object-file section. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The named container of code data metadata or relocation entries in the link view with flags alignment size and address role.",
+      "required_concepts": [
+        "The named container of code data metadata or relocation entries in the link view with flags alignment size and address role."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every section a runtime memory segment or assuming section names alone define semantics."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-translation-unit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-position-independent-code",
+      "canonical_deck_id": "computer-systems",
+      "term": "Position-independent code",
+      "prompt": "Define Position-independent code. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The code and data reference strategy permitting placement at varying virtual addresses using relative addressing or indirection under one ISA ABI.",
+      "required_concepts": [
+        "The code and data reference strategy permitting placement at varying virtual addresses using relative addressing or indirection under one ISA ABI."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling all compiled code position independent because virtual memory relocates pages."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-shared-object"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-relocation-entry",
+      "canonical_deck_id": "computer-systems",
+      "term": "Relocation entry",
+      "prompt": "Define Relocation entry. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The request to adjust a field at a location from symbol address addend place and relocation-type computation.",
+      "required_concepts": [
+        "The request to adjust a field at a location from symbol address addend place and relocation-type computation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing an absolute address into every relocation regardless of type or width."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-symbol-table-entry"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-runtime-symbol-resolution",
+      "canonical_deck_id": "computer-systems",
+      "term": "Runtime symbol resolution",
+      "prompt": "Define Runtime symbol resolution. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The dynamic-loader selection of a definition under dependency order visibility versioning interposition and relocation rules.",
+      "required_concepts": [
+        "The dynamic-loader selection of a definition under dependency order visibility versioning interposition and relocation rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming the nearest source file or link command always owns runtime binding."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-dynamic-linking"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-shared-object",
+      "canonical_deck_id": "computer-systems",
+      "term": "Shared object",
+      "prompt": "Define Shared object. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The position-independent or relocatable runtime-loadable artifact exporting and importing symbols under ABI and loader contracts.",
+      "required_concepts": [
+        "The position-independent or relocatable runtime-loadable artifact exporting and importing symbols under ABI and loader contracts."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a shared object as an archive whose code is copied at static link time."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-static-archive-extraction",
+      "canonical_deck_id": "computer-systems",
+      "term": "Static archive extraction",
+      "prompt": "Define Static archive extraction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The linker's search of indexed object members to satisfy unresolved references with command order and group behavior qualified.",
+      "required_concepts": [
+        "The linker's search of indexed object members to satisfy unresolved references with command order and group behavior qualified."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming archive order never matters because all files are named."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-undefined-symbol-reference"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-static-linking",
+      "canonical_deck_id": "computer-systems",
+      "term": "Static linking",
+      "prompt": "Define Static linking. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The build-time incorporation and relocation of selected code or data into an output artifact with dependencies and licensing or update tradeoffs separated.",
+      "required_concepts": [
+        "The build-time incorporation and relocation of selected code or data into an output artifact with dependencies and licensing or update tradeoffs separated."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the output dependency-free or portable across every kernel and ABI."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-static-archive-extraction",
+        "computer-systems.csys-m3-relocation-entry"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-strong-and-weak-definition",
+      "canonical_deck_id": "computer-systems",
+      "term": "Strong and weak definition",
+      "prompt": "Define Strong and weak definition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The platform link-resolution categories whose combinations choose a definition or diagnose conflict under exact rules.",
+      "required_concepts": [
+        "The platform link-resolution categories whose combinations choose a definition or diagnose conflict under exact rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling weak symbols a portable C language overload mechanism."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-symbol-table-entry"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-symbol-table-entry",
+      "canonical_deck_id": "computer-systems",
+      "term": "Symbol-table entry",
+      "prompt": "Define Symbol-table entry. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The object-format record of a name value size type binding visibility section and definition status used by tools and linker.",
+      "required_concepts": [
+        "The object-format record of a name value size type binding visibility section and definition status used by tools and linker."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating symbol value as a final runtime address before relocation and loading."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-object-file-section"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-translation-unit",
+      "canonical_deck_id": "computer-systems",
+      "term": "Translation unit",
+      "prompt": "Define Translation unit. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The preprocessed source consumed by one compilation containing declarations definitions and included tokens under one language configuration.",
+      "required_concepts": [
+        "The preprocessed source consumed by one compilation containing declarations definitions and included tokens under one language configuration."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a header as independently linked code or ignoring conditional preprocessing."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m3-undefined-symbol-reference",
+      "canonical_deck_id": "computer-systems",
+      "term": "Undefined symbol reference",
+      "prompt": "Define Undefined symbol reference. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The object reference requiring a definition from another input library or dynamic provider before the relevant link or load boundary.",
+      "required_concepts": [
+        "The object reference requiring a definition from another input library or dynamic provider before the relevant link or load boundary."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Editing source declarations and assuming that creates a definition."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-symbol-table-entry"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-benchmark-repetition",
+      "canonical_deck_id": "computer-systems",
+      "term": "Benchmark repetition",
+      "prompt": "Define Benchmark repetition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The repeated measurement plan controlling warmup order input cache state noise and summary uncertainty.",
+      "required_concepts": [
+        "The repeated measurement plan controlling warmup order input cache state noise and summary uncertainty."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Selecting the fastest run from each variant."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-elapsed-wall-time"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-cache-hit-and-miss-trace",
+      "canonical_deck_id": "computer-systems",
+      "term": "Cache hit and miss trace",
+      "prompt": "Define Cache hit and miss trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ordered access simulation updating valid tags replacement state and dirty state under exact cache policy.",
+      "required_concepts": [
+        "The ordered access simulation updating valid tags replacement state and dirty state under exact cache policy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Counting distinct addresses instead of blocks or ignoring replacement order."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-cache-set-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-cache-set-mapping",
+      "canonical_deck_id": "computer-systems",
+      "term": "Cache set mapping",
+      "prompt": "Define Cache set mapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The target mapping from block address to set index and tag under a specified cache organization.",
+      "required_concepts": [
+        "The target mapping from block address to set index and tag under a specified cache organization."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using virtual addresses when the named cache mapping requires different evidence."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-memory-block-and-cache-line"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-compulsory-capacity-and-conflict-miss",
+      "canonical_deck_id": "computer-systems",
+      "term": "Compulsory capacity and conflict miss",
+      "prompt": "Define Compulsory capacity and conflict miss. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The explanatory categories for first reference working-set overflow and set-placement interference under an idealized comparison.",
+      "required_concepts": [
+        "The explanatory categories for first reference working-set overflow and set-placement interference under an idealized comparison."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Labeling every first miss compulsory forever or every collision conflict without a trace."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-cache-hit-and-miss-trace"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-cycles-and-instructions",
+      "canonical_deck_id": "computer-systems",
+      "term": "Cycles and instructions",
+      "prompt": "Define Cycles and instructions. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The hardware-counter events for a named execution and CPU whose ratio is descriptive but workload and event accuracy must be qualified.",
+      "required_concepts": [
+        "The hardware-counter events for a named execution and CPU whose ratio is descriptive but workload and event accuracy must be qualified."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring processor design or exact bottleneck from one ratio."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-process-cpu-time"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-elapsed-wall-time",
+      "canonical_deck_id": "computer-systems",
+      "term": "Elapsed wall time",
+      "prompt": "Define Elapsed wall time. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The duration on an external clock including execution waits scheduling and interference under a stated measurement boundary.",
+      "required_concepts": [
+        "The duration on an external clock including execution waits scheduling and interference under a stated measurement boundary."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Subtracting timestamps from different clocks or one run and calling it stable latency."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-instrumentation-overhead",
+      "canonical_deck_id": "computer-systems",
+      "term": "Instrumentation overhead",
+      "prompt": "Define Instrumentation overhead. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The changed execution caused by timers counters tracing sanitizers or profilers that must be measured or bounded.",
+      "required_concepts": [
+        "The changed execution caused by timers counters tracing sanitizers or profilers that must be measured or bounded."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Ignoring probe cost because the tool reports precise numbers."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-sampling-profile"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-memory-block-and-cache-line",
+      "canonical_deck_id": "computer-systems",
+      "term": "Memory block and cache line",
+      "prompt": "Define Memory block and cache line. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The aligned transfer and storage unit whose address offset and neighboring bytes affect locality and false sharing.",
+      "required_concepts": [
+        "The aligned transfer and storage unit whose address offset and neighboring bytes affect locality and false sharing."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming language objects align with cache lines automatically."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-memory-hierarchy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-memory-hierarchy",
+      "canonical_deck_id": "computer-systems",
+      "term": "Memory hierarchy",
+      "prompt": "Define Memory hierarchy. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The layered storage system with different capacity latency bandwidth granularity persistence and sharing behavior observed by programs.",
+      "required_concepts": [
+        "The layered storage system with different capacity latency bandwidth granularity persistence and sharing behavior observed by programs."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every faster layer cache or treating hierarchy as one latency number."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-optimization-evidence",
+      "canonical_deck_id": "computer-systems",
+      "term": "Optimization evidence",
+      "prompt": "Define Optimization evidence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The causal comparison joining changed code or flags to unchanged semantics binary difference profile counters time distribution costs portability and rollback.",
+      "required_concepts": [
+        "The causal comparison joining changed code or flags to unchanged semantics binary difference profile counters time distribution costs portability and rollback."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Accepting a microbenchmark win that regresses real workload or changes numerical results."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-performance-correctness-control",
+        "computer-systems.csys-m4-cycles-and-instructions",
+        "computer-systems.csys-m4-throughput-and-latency",
+        "computer-systems.csys-m4-benchmark-repetition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-performance-correctness-control",
+      "canonical_deck_id": "computer-systems",
+      "term": "Performance correctness control",
+      "prompt": "Define Performance correctness control. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The requirement that compared executions satisfy the same specified semantics and output checks before speed is interpreted.",
+      "required_concepts": [
+        "The requirement that compared executions satisfy the same specified semantics and output checks before speed is interpreted."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting speedup without result and error-path equivalence."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-process-cpu-time",
+      "canonical_deck_id": "computer-systems",
+      "term": "Process CPU time",
+      "prompt": "Define Process CPU time. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The scheduled user and system CPU consumption attributed to a process under OS accounting and multicore qualifications.",
+      "required_concepts": [
+        "The scheduled user and system CPU consumption attributed to a process under OS accounting and multicore qualifications."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling CPU time elapsed user latency or summing across workers inconsistently."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-elapsed-wall-time"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-sampling-profile",
+      "canonical_deck_id": "computer-systems",
+      "term": "Sampling profile",
+      "prompt": "Define Sampling profile. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The statistical attribution of sampled program states to functions instructions or call paths with frequency and unwind limitations.",
+      "required_concepts": [
+        "The statistical attribution of sampled program states to functions instructions or call paths with frequency and unwind limitations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling sample percentages exact time or causality."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-spatial-locality",
+      "canonical_deck_id": "computer-systems",
+      "term": "Spatial locality",
+      "prompt": "Define Spatial locality. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The reuse of nearby addresses within transferred blocks over a relevant interval under exact access order.",
+      "required_concepts": [
+        "The reuse of nearby addresses within transferred blocks over a relevant interval under exact access order."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any array access spatially local despite large stride."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-memory-block-and-cache-line"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-stride-and-loop-order",
+      "canonical_deck_id": "computer-systems",
+      "term": "Stride and loop order",
+      "prompt": "Define Stride and loop order. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The address increment and nesting order governing block use reuse distance prefetch and vectorization opportunities.",
+      "required_concepts": [
+        "The address increment and nesting order governing block use reuse distance prefetch and vectorization opportunities."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Attributing all difference to cache without checking compiler and measurement evidence."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-spatial-locality"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-temporal-locality",
+      "canonical_deck_id": "computer-systems",
+      "term": "Temporal locality",
+      "prompt": "Define Temporal locality. Include its essential conditions and distinctions.",
+      "definition": "Temporal locality is the tendency to access the same data or instruction again within a relatively short interval in an execution trace. A cache can exploit this by retaining that content, but locality is a property of the access pattern, not a guarantee of a hit. Conflict eviction, limited capacity or invalidation may cause a miss even when recent reuse exists.",
+      "required_concepts": [
+        "Temporal locality means relatively soon reuse of the same data/instruction.",
+        "It can benefit caching but does not guarantee a hit; eviction does not erase the trace property."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining temporal locality as only reuse that successfully hits in a cache.",
+        "Inferring object reuse solely from repeated source-variable names."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-memory-hierarchy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-throughput-and-latency",
+      "canonical_deck_id": "computer-systems",
+      "term": "Throughput and latency",
+      "prompt": "Define Throughput and latency. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The completed-work rate and per-operation duration with populations concurrency percentiles and windows kept distinct.",
+      "required_concepts": [
+        "The completed-work rate and per-operation duration with populations concurrency percentiles and windows kept distinct."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Taking reciprocal of average latency under queuing and calling it throughput."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-elapsed-wall-time"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m4-working-set",
+      "canonical_deck_id": "computer-systems",
+      "term": "Working set",
+      "prompt": "Define Working set. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The blocks or pages actively referenced over a declared interval whose size and mapping affect cache and VM behavior.",
+      "required_concepts": [
+        "The blocks or pages actively referenced over a declared interval whose size and mapping affect cache and VM behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using whole-process allocation size as working set."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m4-spatial-locality",
+        "computer-systems.csys-m4-temporal-locality"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-async-signal-safe-operation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Async-signal-safe operation",
+      "prompt": "Define Async-signal-safe operation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The restricted operation class callable from a signal handler without corrupting interrupted library or shared state.",
+      "required_concepts": [
+        "The restricted operation class callable from a signal handler without corrupting interrupted library or shared state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a function thread-safe and therefore signal-safe."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-signal-disposition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-copy-on-write-fork",
+      "canonical_deck_id": "computer-systems",
+      "term": "Copy-on-write fork",
+      "prompt": "Define Copy-on-write fork. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The qualified sharing of physical pages until a write fault creates a private copy while virtual contents initially match.",
+      "required_concepts": [
+        "The qualified sharing of physical pages until a write fault creates a private copy while virtual contents initially match."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling fork free or claiming no page can be copied before either process writes."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-fork-inherited-state"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-descriptor-inheritance-across-exec",
+      "canonical_deck_id": "computer-systems",
+      "term": "Descriptor inheritance across exec",
+      "prompt": "Define Descriptor inheritance across exec. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The survival of open descriptors except those marked close-on-exec with shared open descriptions and security implications.",
+      "required_concepts": [
+        "The survival of open descriptors except those marked close-on-exec with shared open descriptions and security implications."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming exec closes all files or leaking privileged descriptors."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-exec-image-replacement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-exceptional-control-transfer",
+      "canonical_deck_id": "computer-systems",
+      "term": "Exceptional control transfer",
+      "prompt": "Define Exceptional control transfer. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The deviation from ordinary instruction succession caused by a synchronous or asynchronous event with saved state handler and return or termination behavior.",
+      "required_concepts": [
+        "The deviation from ordinary instruction succession caused by a synchronous or asynchronous event with saved state handler and return or termination behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every nonlocal transfer an exception with identical semantics."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-exec-argument-and-environment-vector",
+      "canonical_deck_id": "computer-systems",
+      "term": "Exec argument and environment vector",
+      "prompt": "Define Exec argument and environment vector. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The null-terminated arrays of strings establishing initial user program inputs under size encoding and lifetime rules.",
+      "required_concepts": [
+        "The null-terminated arrays of strings establishing initial user program inputs under size encoding and lifetime rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Passing a temporary invalid pointer or forgetting terminating null pointers."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-exec-image-replacement"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-exec-image-replacement",
+      "canonical_deck_id": "computer-systems",
+      "term": "Exec image replacement",
+      "prompt": "Define Exec image replacement. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The replacement of the calling process program image while retaining process identity and only specified attributes.",
+      "required_concepts": [
+        "The replacement of the calling process program image while retaining process identity and only specified attributes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling exec a new child process or expecting code after successful exec to run."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-process-identity-and-state"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-fault-trap-and-abort-distinction",
+      "canonical_deck_id": "computer-systems",
+      "term": "Fault trap and abort distinction",
+      "prompt": "Define Fault trap and abort distinction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The conceptual exception classes differing in cause restartability saved instruction and return behavior with architecture qualification.",
+      "required_concepts": [
+        "The conceptual exception classes differing in cause restartability saved instruction and return behavior with architecture qualification."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every synchronous exception a fatal abort."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-exceptional-control-transfer"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-fork-inherited-state",
+      "canonical_deck_id": "computer-systems",
+      "term": "Fork inherited state",
+      "prompt": "Define Fork inherited state. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The copied or shared process attributes after fork including virtual mappings descriptor table entries signal dispositions and one surviving thread under exact OS rules.",
+      "required_concepts": [
+        "The copied or shared process attributes after fork including virtual mappings descriptor table entries signal dispositions and one surviving thread under exact OS rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every resource is independently duplicated or every memory page physically copied eagerly."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-fork-return-paths"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-fork-return-paths",
+      "canonical_deck_id": "computer-systems",
+      "term": "Fork return paths",
+      "prompt": "Define Fork return paths. Include its essential conditions and distinctions.",
+      "definition": "A successful POSIX fork creates a child process and both processes continue after the call: the child receives return value 0, while the parent receives the positive child PID. On failure the parent receives -1 with errno set and no child is created. It is not two returns to one process. Logical address-space copying and implementations such as copy-on-write should not be confused with shared ownership of all memory.",
+      "required_concepts": [
+        "Success returns 0 in the child and the child PID in the parent, creating two continuations.",
+        "Failure returns -1 in the parent and creates no child; distinguish processes rather than two returns to one process."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reversing the parent and child return values.",
+        "Assuming the child also exists after fork reports failure."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-process-identity-and-state"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-interrupted-system-call-behavior",
+      "canonical_deck_id": "computer-systems",
+      "term": "Interrupted-system-call behavior",
+      "prompt": "Define Interrupted-system-call behavior. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The return restart or partial-count behavior when signal delivery interrupts a blocking interface under exact flags and operation.",
+      "required_concepts": [
+        "The return restart or partial-count behavior when signal delivery interrupts a blocking interface under exact flags and operation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Retrying blindly and duplicating or discarding transferred bytes."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-system-call-boundary"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-process-exit-status",
+      "canonical_deck_id": "computer-systems",
+      "term": "Process exit status",
+      "prompt": "Define Process exit status. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The encoded normal return or signal termination information made available to a parent with truncation and interpretation rules.",
+      "required_concepts": [
+        "The encoded normal return or signal termination information made available to a parent with truncation and interpretation rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing raw wait status directly to an exit code."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-process-identity-and-state"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-process-identity-and-state",
+      "canonical_deck_id": "computer-systems",
+      "term": "Process identity and state",
+      "prompt": "Define Process identity and state. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The OS-visible execution entity with process identifier lifecycle state credentials resources address space and threads under a snapshot.",
+      "required_concepts": [
+        "The OS-visible execution entity with process identifier lifecycle state credentials resources address space and threads under a snapshot."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a PID permanent identity after process exit and reuse."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-shell-pipeline-process-graph",
+      "canonical_deck_id": "computer-systems",
+      "term": "Shell pipeline process graph",
+      "prompt": "Define Shell pipeline process graph. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The process and descriptor topology connecting commands through pipes with fork exec duplication close discipline foreground state and failure paths.",
+      "required_concepts": [
+        "The process and descriptor topology connecting commands through pipes with fork exec duplication close discipline foreground state and failure paths."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving a pipe writer open in the parent and causing consumer EOF to never arrive."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-fork-return-paths",
+        "computer-systems.csys-m5-descriptor-inheritance-across-exec"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-signal-disposition",
+      "canonical_deck_id": "computer-systems",
+      "term": "Signal disposition",
+      "prompt": "Define Signal disposition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The process policy to default ignore or handle one signal with inheritance and exec changes stated.",
+      "required_concepts": [
+        "The process policy to default ignore or handle one signal with inheritance and exec changes stated."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming handler state survives exec unchanged."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-signal-mask-and-pending-state",
+      "canonical_deck_id": "computer-systems",
+      "term": "Signal mask and pending state",
+      "prompt": "Define Signal mask and pending state. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The per-thread blocked set and pending signal state controlling delivery timing without erasing arrival.",
+      "required_concepts": [
+        "The per-thread blocked set and pending signal state controlling delivery timing without erasing arrival."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling blocked signals lost or assuming all repeated standard signals queue separately."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-signal-disposition"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-system-call-boundary",
+      "canonical_deck_id": "computer-systems",
+      "term": "System-call boundary",
+      "prompt": "Define System-call boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The controlled user-to-kernel interface invocation with number arguments privilege transition return value errors and side effects under one OS ABI.",
+      "required_concepts": [
+        "The controlled user-to-kernel interface invocation with number arguments privilege transition return value errors and side effects under one OS ABI."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a library call name as proof of one kernel transition or complete output."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-exceptional-control-transfer"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-wait-and-reaping",
+      "canonical_deck_id": "computer-systems",
+      "term": "Wait and reaping",
+      "prompt": "Define Wait and reaping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The parent synchronization operation collecting one child state change and releasing zombie bookkeeping with exact selection and error rules.",
+      "required_concepts": [
+        "The parent synchronization operation collecting one child state change and releasing zombie bookkeeping with exact selection and error rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Waiting once and assuming every child is reaped."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-process-exit-status"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m5-zombie-process",
+      "canonical_deck_id": "computer-systems",
+      "term": "Zombie process",
+      "prompt": "Define Zombie process. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The exited but unreaped child retaining minimal status and relationship state until a parent or reaper collects it.",
+      "required_concepts": [
+        "The exited but unreaped child retaining minimal status and relationship state until a parent or reaper collects it."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a zombie a running CPU-consuming process or killing it as repair."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m5-wait-and-reaping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-allocator-free-block",
+      "canonical_deck_id": "computer-systems",
+      "term": "Allocator free block",
+      "prompt": "Define Allocator free block. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The nonallocated heap region represented in implicit explicit segregated or other structures with boundary and coalescing invariants.",
+      "required_concepts": [
+        "The nonallocated heap region represented in implicit explicit segregated or other structures with boundary and coalescing invariants."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving stale allocated status or exposing free-list pointers as user data."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-heap-allocation-block"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-allocator-throughput-and-utilization",
+      "canonical_deck_id": "computer-systems",
+      "term": "Allocator throughput and utilization",
+      "prompt": "Define Allocator throughput and utilization. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rate of completed allocation operations and peak payload-to-heap efficiency whose tradeoff requires one trace and denominator.",
+      "required_concepts": [
+        "The rate of completed allocation operations and peak payload-to-heap efficiency whose tradeoff requires one trace and denominator."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Optimizing only allocator speed while ignoring memory growth or failed requests."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-placement-policy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-block-splitting",
+      "canonical_deck_id": "computer-systems",
+      "term": "Block splitting",
+      "prompt": "Define Block splitting. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The division of an oversized free block into allocated and residual free blocks only when the remainder meets metadata and minimum-size rules.",
+      "required_concepts": [
+        "The division of an oversized free block into allocated and residual free blocks only when the remainder meets metadata and minimum-size rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Creating an unusable splinter smaller than minimum block size."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-placement-policy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-file-backed-mapping",
+      "canonical_deck_id": "computer-systems",
+      "term": "File-backed mapping",
+      "prompt": "Define File-backed mapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mapping relating virtual pages to file offsets with private or shared visibility and persistence semantics qualified.",
+      "required_concepts": [
+        "The mapping relating virtual pages to file offsets with private or shared visibility and persistence semantics qualified."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Equating memory update with durable storage commit."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-free-block-coalescing",
+      "canonical_deck_id": "computer-systems",
+      "term": "Free-block coalescing",
+      "prompt": "Define Free-block coalescing. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The merging of adjacent free blocks using boundary metadata or structure updates without crossing allocated or unmapped boundaries.",
+      "required_concepts": [
+        "The merging of adjacent free blocks using boundary metadata or structure updates without crossing allocated or unmapped boundaries."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Merging nonadjacent list neighbors or forgetting both-neighbor case."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-allocator-free-block"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-heap-allocation-block",
+      "canonical_deck_id": "computer-systems",
+      "term": "Heap allocation block",
+      "prompt": "Define Heap allocation block. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The allocator-managed contiguous region with payload alignment size and hidden metadata under one implementation contract.",
+      "required_concepts": [
+        "The allocator-managed contiguous region with payload alignment size and hidden metadata under one implementation contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming adjacent bytes or metadata belong to the program object."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-internal-and-external-fragmentation",
+      "canonical_deck_id": "computer-systems",
+      "term": "Internal and external fragmentation",
+      "prompt": "Define Internal and external fragmentation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The wasted capacity inside allocated blocks and unusable distribution among free blocks measured under exact requests and heap state.",
+      "required_concepts": [
+        "The wasted capacity inside allocated blocks and unusable distribution among free blocks measured under exact requests and heap state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling all unused bytes one fragmentation percentage."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-heap-allocation-block"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-memory-unmapping",
+      "canonical_deck_id": "computer-systems",
+      "term": "Memory unmapping",
+      "prompt": "Define Memory unmapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The removal of a virtual range and invalidation of subsequent accesses with alignment split and resource consequences.",
+      "required_concepts": [
+        "The removal of a virtual range and invalidation of subsequent accesses with alignment split and resource consequences."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling free on an mmap range or using a pointer after munmap."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-private-and-shared-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-page-fault",
+      "canonical_deck_id": "computer-systems",
+      "term": "Page fault",
+      "prompt": "Define Page fault. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The synchronous exception from a translation or permission condition whose handler may map load copy reject or terminate under OS policy.",
+      "required_concepts": [
+        "The synchronous exception from a translation or permission condition whose handler may map load copy reject or terminate under OS policy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every page fault a crash or disk access."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-page-permission"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-page-permission",
+      "canonical_deck_id": "computer-systems",
+      "term": "Page permission",
+      "prompt": "Define Page permission. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The read write execute and user or privilege access contract checked during translation with platform and mapping qualifications.",
+      "required_concepts": [
+        "The read write execute and user or privilege access contract checked during translation with platform and mapping qualifications."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling mapped memory writable because its bytes are resident."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-page-table-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-page-table-mapping",
+      "canonical_deck_id": "computer-systems",
+      "term": "Page-table mapping",
+      "prompt": "Define Page-table mapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The hierarchical or modeled translation entry binding a virtual page to frame or nonresident backing plus permissions and status bits.",
+      "required_concepts": [
+        "The hierarchical or modeled translation entry binding a virtual page to frame or nonresident backing plus permissions and status bits."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating page-table structure and bit layout as universal across architectures."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-virtual-page-and-offset"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-physical-address",
+      "canonical_deck_id": "computer-systems",
+      "term": "Physical address",
+      "prompt": "Define Physical address. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The memory-system location reached after translation under current mapping state and not normally exposed as C object identity.",
+      "required_concepts": [
+        "The memory-system location reached after translation under current mapping state and not normally exposed as C object identity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a physical frame as a stable application pointer."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-virtual-address"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-placement-policy",
+      "canonical_deck_id": "computer-systems",
+      "term": "Placement policy",
+      "prompt": "Define Placement policy. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The choice of a suitable free block such as first fit next fit best fit or segregated class with search and fragmentation tradeoffs.",
+      "required_concepts": [
+        "The choice of a suitable free block such as first fit next fit best fit or segregated class with search and fragmentation tradeoffs."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Choosing the smallest visible block while calling it first fit."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-allocator-free-block"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-private-and-shared-mapping",
+      "canonical_deck_id": "computer-systems",
+      "term": "Private and shared mapping",
+      "prompt": "Define Private and shared mapping. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mapping choice governing propagation of writes to backing and other mappings with copy-on-write behavior qualified.",
+      "required_concepts": [
+        "The mapping choice governing propagation of writes to backing and other mappings with copy-on-write behavior qualified."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling private mapping inaccessible to other processes or shared mapping automatically synchronized."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-file-backed-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-resource-ownership-transfer",
+      "canonical_deck_id": "computer-systems",
+      "term": "Resource ownership transfer",
+      "prompt": "Define Resource ownership transfer. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The explicit movement of responsibility for freeing memory unmapping ranges or closing resources across functions and failure paths.",
+      "required_concepts": [
+        "The explicit movement of responsibility for freeing memory unmapping ranges or closing resources across functions and failure paths."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using comments like caller beware without a testable lifetime contract."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-heap-allocation-block"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-translation-lookaside-buffer",
+      "canonical_deck_id": "computer-systems",
+      "term": "Translation lookaside buffer",
+      "prompt": "Define Translation lookaside buffer. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The processor translation cache whose hit and miss affect translation work while consistency and exact structure are architecture-owned.",
+      "required_concepts": [
+        "The processor translation cache whose hit and miss affect translation work while consistency and exact structure are architecture-owned."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a TLB a data cache or assuming miss means page fault."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-page-table-mapping"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-virtual-address",
+      "canonical_deck_id": "computer-systems",
+      "term": "Virtual address",
+      "prompt": "Define Virtual address. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The process-context address interpreted through mappings and translation rather than a universal physical location.",
+      "required_concepts": [
+        "The process-context address interpreted through mappings and translation rather than a universal physical location."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling equal virtual addresses the same storage across processes."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m6-virtual-page-and-offset",
+      "canonical_deck_id": "computer-systems",
+      "term": "Virtual page and offset",
+      "prompt": "Define Virtual page and offset. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The fixed-size division of a virtual address into page number and within-page offset under a named page size.",
+      "required_concepts": [
+        "The fixed-size division of a virtual address into page number and within-page offset under a named page size."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using decimal 4000 or changing page size midtrace."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m6-virtual-address"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-buffered-i-o-layer",
+      "canonical_deck_id": "computer-systems",
+      "term": "Buffered I/O layer",
+      "prompt": "Define Buffered I/O layer. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The user-space or library buffering state above descriptors with flush seek mixing and lifetime rules.",
+      "required_concepts": [
+        "The user-space or library buffering state above descriptors with flush seek mixing and lifetime rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming newline always reaches durable storage immediately."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-open-file-description"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-compiler-reordering-boundary",
+      "canonical_deck_id": "computer-systems",
+      "term": "compiler reordering boundary",
+      "prompt": "What boundary or limitation does compiler reordering boundary impose?",
+      "definition": "**Definition.** A compiler may reorder or transform operations while preserving the language's observable single-thread and memory-model requirements; source order alone does not impose cross-thread visibility.",
+      "required_concepts": [
+        "A compiler may reorder or transform operations while preserving the language's observable single-thread and memory-model requirements; source order alone does not impose cross-thread visibility."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating the source statement order as a hardware visibility guarantee between unsynchronized threads."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-happens-before-relation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:boundary"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-condition-variable-wait",
+      "canonical_deck_id": "computer-systems",
+      "term": "Condition-variable wait",
+      "prompt": "Define Condition-variable wait. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The atomic release-and-sleep then reacquire operation used with a mutex and predicate loop because wakeups do not establish the condition.",
+      "required_concepts": [
+        "The atomic release-and-sleep then reacquire operation used with a mutex and predicate loop because wakeups do not establish the condition."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using if then wait and assuming notification transfers the condition truth."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-mutex-critical-section"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-data-race",
+      "canonical_deck_id": "computer-systems",
+      "term": "Data race",
+      "prompt": "What is a data race in the C11 multithreaded memory model, and how does it differ from a logical race among atomic operations?",
+      "definition": "In the C11 multithreaded memory model, a data race consists of two conflicting actions in different threads on the same memory location, at least one a write and at least one non-atomic, where neither action happens before the other. Such a race is undefined behavior. Two properly performed relaxed atomic stores to an atomic object are not a data race merely because they lack a synchronizes-with edge, although a larger algorithm can still have a logical race.",
+      "required_concepts": [
+        "Conflicting different-thread accesses to one location include a write and at least one non-atomic action, with neither happens before the other.",
+        "C11 data races are undefined behavior; all-atomic operations can still have logical ordering bugs without a data race."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling two correctly performed relaxed atomic stores a C11 data race solely because no cross-thread happens-before edge orders them.",
+        "Treating a genuine non-atomic data race as merely an unpredictable but otherwise defined interleaving."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-thread-interleaving",
+        "computer-systems.csys-m7-happens-before-relation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-deadlock-wait-for-cycle",
+      "canonical_deck_id": "computer-systems",
+      "term": "Deadlock wait-for cycle",
+      "prompt": "Define Deadlock wait-for cycle. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The cycle of held resources and outstanding requests preventing progress under the recorded schedule.",
+      "required_concepts": [
+        "The cycle of held resources and outstanding requests preventing progress under the recorded schedule."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any long wait deadlock without a dependency cycle."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-mutex-critical-section"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-descriptor-duplication-and-redirection",
+      "canonical_deck_id": "computer-systems",
+      "term": "Descriptor duplication and redirection",
+      "prompt": "Define Descriptor duplication and redirection. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The controlled replacement of descriptor-table entries while preserving open-description sharing and close discipline.",
+      "required_concepts": [
+        "The controlled replacement of descriptor-table entries while preserving open-description sharing and close discipline."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assigning an integer variable and expecting OS redirection."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-file-descriptor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-file-descriptor",
+      "canonical_deck_id": "computer-systems",
+      "term": "File descriptor",
+      "prompt": "Define File descriptor. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The process-table integer reference to an open file description or other I/O object with lifecycle and inheritance rules.",
+      "required_concepts": [
+        "The process-table integer reference to an open file description or other I/O object with lifecycle and inheritance rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming the same integer in another process names the same open object."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-happens-before-relation",
+      "canonical_deck_id": "computer-systems",
+      "term": "happens-before relation",
+      "prompt": "Define happens-before relation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The happens-before relation is the transitive ordering induced by sequenced-before and synchronizes-with edges; conflicting non-atomic accesses not ordered by it form a data race under the language memory model.",
+      "required_concepts": [
+        "The happens-before relation is the transitive ordering induced by sequenced-before and synchronizes-with edges; conflicting non-atomic accesses not ordered by it form a data race under the language memory model."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using wall-clock order or one observed interleaving as the language-level happens-before relation."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-thread-identity-and-execution"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-mutex-critical-section",
+      "canonical_deck_id": "computer-systems",
+      "term": "Mutex critical section",
+      "prompt": "Define Mutex critical section. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ownership discipline serializing access to a protected invariant with lock lifetime and every path checked.",
+      "required_concepts": [
+        "The ownership discipline serializing access to a protected invariant with lock lifetime and every path checked."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Locking only the write to size while head changes outside protection."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-data-race"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-open-file-description",
+      "canonical_deck_id": "computer-systems",
+      "term": "Open file description",
+      "prompt": "Define Open file description. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The system-wide open state including file offset and status flags that one or more descriptors may reference.",
+      "required_concepts": [
+        "The system-wide open state including file offset and status flags that one or more descriptors may reference."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling dup a new independent file cursor."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-file-descriptor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-open-flags-and-mode",
+      "canonical_deck_id": "computer-systems",
+      "term": "Open flags and mode",
+      "prompt": "Define Open flags and mode. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The access creation status synchronization and close-on-exec choices whose combinations and errors determine the returned descriptor contract.",
+      "required_concepts": [
+        "The access creation status synchronization and close-on-exec choices whose combinations and errors determine the returned descriptor contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking existence then opening and calling it exclusive."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-pathname-lookup-boundary"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-pathname-lookup-boundary",
+      "canonical_deck_id": "computer-systems",
+      "term": "Pathname lookup boundary",
+      "prompt": "Define Pathname lookup boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The OS namespace resolution from a process context to an object or error with directories links permissions and races handed to deeper OS and security courses.",
+      "required_concepts": [
+        "The OS namespace resolution from a process context to an object or error with directories links permissions and races handed to deeper OS and security courses."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a path string as permanent file identity."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-pipe-endpoint-lifecycle",
+      "canonical_deck_id": "computer-systems",
+      "term": "Pipe endpoint lifecycle",
+      "prompt": "Define Pipe endpoint lifecycle. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The kernel byte-stream endpoints whose reader EOF and writer failure depend on every inherited open endpoint.",
+      "required_concepts": [
+        "The kernel byte-stream endpoints whose reader EOF and writer failure depend on every inherited open endpoint."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving a write end open in parent and waiting forever for EOF."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-file-descriptor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-read-result-contract",
+      "canonical_deck_id": "computer-systems",
+      "term": "Read result contract",
+      "prompt": "For POSIX-style regular-file read calls, interpret full/short, zero and error results, including a zero-byte request.",
+      "definition": "For POSIX-style regular-file reads, a nonnegative return value is the number of bytes actually read; it can be shorter than requested. For a positive request size, zero indicates the file position is at or beyond EOF at that time. A request for zero bytes can return zero without proving EOF. On error, read returns -1 with errno; process only the returned byte count and handle EINTR or would-block errors according to their contract. Other descriptor types can have additional zero-return semantics.",
+      "required_concepts": [
+        "Interpret positive/short byte counts as actual progress and -1 with errno as error, not a full-buffer guarantee.",
+        "Zero indicates EOF for the specified positive-count regular-file case, but a zero-length request returning zero is not EOF evidence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a zero-byte read result as proof the file has no more data.",
+        "Using all requested buffer bytes after only a short count was returned."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-file-descriptor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-semaphore-count",
+      "canonical_deck_id": "computer-systems",
+      "term": "Semaphore count",
+      "prompt": "Define Semaphore count. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The synchronized permit state supporting bounded resources or event counts with initial value and wait post transitions explicit.",
+      "required_concepts": [
+        "The synchronized permit state supporting bounded resources or event counts with initial value and wait post transitions explicit."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a semaphore as a mutex while allowing count above one accidentally."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-thread-interleaving"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-systems-debugging-trace",
+      "canonical_deck_id": "computer-systems",
+      "term": "Systems debugging trace",
+      "prompt": "Define Systems debugging trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The reproducible join of exact binary input process thread register stack memory syscall signal I/O and synchronization observations locating the first divergence.",
+      "required_concepts": [
+        "The reproducible join of exact binary input process thread register stack memory syscall signal I/O and synchronization observations locating the first divergence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Collecting unrelated logs until a plausible story appears."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m3-binary-inspection-tool",
+        "computer-systems.csys-m4-optimization-evidence",
+        "computer-systems.csys-m7-read-result-contract",
+        "computer-systems.csys-m7-data-race"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-thread-identity-and-execution",
+      "canonical_deck_id": "computer-systems",
+      "term": "Thread identity and execution",
+      "prompt": "Define Thread identity and execution. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The independently scheduled control flow sharing process address space and resources while retaining its own stack registers and thread-local state.",
+      "required_concepts": [
+        "The independently scheduled control flow sharing process address space and resources while retaining its own stack registers and thread-local state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling threads lightweight processes with separate address spaces."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-thread-interleaving",
+      "canonical_deck_id": "computer-systems",
+      "term": "Thread interleaving",
+      "prompt": "Define Thread interleaving. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Thread interleaving is an analysis abstraction that orders operations from multiple threads while respecting the constraints of a declared execution model; it is not a universal model of compiler transformations or weak-memory hardware executions.",
+      "required_concepts": [
+        "Thread interleaving is an analysis abstraction that orders operations from multiple threads while respecting the constraints of a declared execution model; it is not a universal model of compiler transformations or weak-memory hardware executions."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Saying simultaneous without an operation sequence."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-thread-identity-and-execution"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-thread-safe-resource-lifetime",
+      "canonical_deck_id": "computer-systems",
+      "term": "Thread-safe resource lifetime",
+      "prompt": "Define Thread-safe resource lifetime. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The protocol ensuring shared objects locks buffers descriptors and thread arguments remain live until no thread can access them.",
+      "required_concepts": [
+        "The protocol ensuring shared objects locks buffers descriptors and thread arguments remain live until no thread can access them."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning from creator while the worker still dereferences its local object."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-thread-identity-and-execution"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-weak-memory-boundary",
+      "canonical_deck_id": "computer-systems",
+      "term": "weak-memory execution boundary",
+      "prompt": "What boundary or limitation does weak-memory execution boundary impose?",
+      "definition": "**Definition.** A weak-memory model permits some executions not described by simple global interleaving while constraining reads, writes, atomics, fences, and synchronization through explicit ordering rules.",
+      "required_concepts": [
+        "A weak-memory model permits some executions not described by simple global interleaving while constraining reads, writes, atomics, fences, and synchronization through explicit ordering rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every multicore execution is one sequentially consistent merge of source-level operations."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-compiler-reordering-boundary"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:boundary"
+      ]
+    },
+    {
+      "id": "computer-systems.csys-m7-write-result-contract",
+      "canonical_deck_id": "computer-systems",
+      "term": "Write result contract",
+      "prompt": "How should POSIX-style write results be interpreted, including partial progress and zero-byte regular-file writes?",
+      "definition": "For a POSIX-style write, the nonnegative result reports bytes actually written and may be shorter than requested; -1 reports failure with errno. Advance by positive progress and retry only the unwritten suffix when the error/readiness policy permits. A zero-byte write to a regular file can succeed with return value zero and no data effect. An unexpected zero-progress result for pending data must not be treated as full success or retried in an uncontrolled busy loop. A successful write alone is not a durable-storage guarantee.",
+      "required_concepts": [
+        "Track actual bytes written, including partial results, and retry only the remaining suffix under the error/readiness policy.",
+        "A zero-byte regular-file write may validly return zero; zero progress on pending data is not complete success."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Retrying the whole original buffer after positive partial progress.",
+        "Claiming every successful write must return a positive count."
+      ],
+      "prerequisite_ids": [
+        "computer-systems.csys-m7-file-descriptor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "computer-systems",
+        "csys-m7",
+        "shape:definition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-alignment-requirement",
+      "dependent_card_id": "computer-systems.csys-m0-structure-padding"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-behavior-classification",
+      "dependent_card_id": "computer-systems.csys-m2-uninitialized-read"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-binary-and-hexadecimal-notation",
+      "dependent_card_id": "computer-systems.csys-m0-byte-order"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-binary-and-hexadecimal-notation",
+      "dependent_card_id": "computer-systems.csys-m0-floating-point-field-model"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-binary-and-hexadecimal-notation",
+      "dependent_card_id": "computer-systems.csys-m0-unsigned-integer-representation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-bit-and-byte-identity",
+      "dependent_card_id": "computer-systems.csys-m0-binary-and-hexadecimal-notation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-bitwise-operation",
+      "dependent_card_id": "computer-systems.csys-m0-shift-operation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-c-object",
+      "dependent_card_id": "computer-systems.csys-m0-alignment-requirement"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-c-object",
+      "dependent_card_id": "computer-systems.csys-m0-object-representation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-c-object",
+      "dependent_card_id": "computer-systems.csys-m0-storage-duration-and-lifetime"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-floating-point-field-model",
+      "dependent_card_id": "computer-systems.csys-m0-floating-point-exceptional-class"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-floating-point-field-model",
+      "dependent_card_id": "computer-systems.csys-m0-floating-point-rounding"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-integer-conversion-rank",
+      "dependent_card_id": "computer-systems.csys-m0-integer-promotion"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-integer-promotion",
+      "dependent_card_id": "computer-systems.csys-m0-bitwise-operation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-object-representation",
+      "dependent_card_id": "computer-systems.csys-m2-union-active-representation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-storage-duration-and-lifetime",
+      "dependent_card_id": "computer-systems.csys-m2-dangling-pointer"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-storage-duration-and-lifetime",
+      "dependent_card_id": "computer-systems.csys-m2-memory-leak"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-storage-duration-and-lifetime",
+      "dependent_card_id": "computer-systems.csys-m2-uninitialized-read"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-structure-padding",
+      "dependent_card_id": "computer-systems.csys-m2-structure-member-address"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-unsigned-integer-representation",
+      "dependent_card_id": "computer-systems.csys-m0-integer-conversion-rank"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m0-unsigned-integer-representation",
+      "dependent_card_id": "computer-systems.csys-m0-signed-integer-range-and-representation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-abi-argument-passage",
+      "dependent_card_id": "computer-systems.csys-m1-abi-return-value"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-abi-argument-passage",
+      "dependent_card_id": "computer-systems.csys-m1-callee-saved-register"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-abi-argument-passage",
+      "dependent_card_id": "computer-systems.csys-m1-caller-saved-register"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-abi-argument-passage",
+      "dependent_card_id": "computer-systems.csys-m1-stack-alignment"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-architectural-register",
+      "dependent_card_id": "computer-systems.csys-m1-machine-operand"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-conditional-branch",
+      "dependent_card_id": "computer-systems.csys-m1-loop-machine-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-conditional-branch",
+      "dependent_card_id": "computer-systems.csys-m1-switch-dispatch"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-instruction-encoding",
+      "dependent_card_id": "computer-systems.csys-m1-architectural-register"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-machine-arithmetic-flags",
+      "dependent_card_id": "computer-systems.csys-m1-conditional-branch"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-machine-arithmetic-flags",
+      "dependent_card_id": "computer-systems.csys-m1-conditional-move"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-machine-operand",
+      "dependent_card_id": "computer-systems.csys-m1-effective-address"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-machine-operand",
+      "dependent_card_id": "computer-systems.csys-m1-machine-arithmetic-flags"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-procedure-call-instruction",
+      "dependent_card_id": "computer-systems.csys-m1-procedure-return-instruction"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-stack-alignment",
+      "dependent_card_id": "computer-systems.csys-m1-stack-frame"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m1-stack-frame",
+      "dependent_card_id": "computer-systems.csys-m1-recursive-call-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-array-object",
+      "dependent_card_id": "computer-systems.csys-m2-array-to-pointer-conversion"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-array-object",
+      "dependent_card_id": "computer-systems.csys-m2-c-string-object"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-array-object",
+      "dependent_card_id": "computer-systems.csys-m2-out-of-bounds-access"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-array-object",
+      "dependent_card_id": "computer-systems.csys-m2-pointer-to-array-type"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-c-string-object",
+      "dependent_card_id": "computer-systems.csys-m2-string-length-and-capacity"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-dangling-pointer",
+      "dependent_card_id": "computer-systems.csys-m2-double-free"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-pointer-alias",
+      "dependent_card_id": "computer-systems.csys-m2-bounded-copy-contract"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-pointer-alias",
+      "dependent_card_id": "computer-systems.csys-m2-effective-type-and-aliasing"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-pointer-value",
+      "dependent_card_id": "computer-systems.csys-m2-dangling-pointer"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-pointer-value",
+      "dependent_card_id": "computer-systems.csys-m2-null-pointer"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-pointer-value",
+      "dependent_card_id": "computer-systems.csys-m2-pointer-alias"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-pointer-value",
+      "dependent_card_id": "computer-systems.csys-m2-pointer-arithmetic"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m2-string-length-and-capacity",
+      "dependent_card_id": "computer-systems.csys-m2-bounded-copy-contract"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-binary-inspection-tool",
+      "dependent_card_id": "computer-systems.csys-m7-systems-debugging-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-dynamic-linking",
+      "dependent_card_id": "computer-systems.csys-m3-link-and-load-failure-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-dynamic-linking",
+      "dependent_card_id": "computer-systems.csys-m3-runtime-symbol-resolution"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-elf-program-segment",
+      "dependent_card_id": "computer-systems.csys-m3-executable-loader"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-object-file-section",
+      "dependent_card_id": "computer-systems.csys-m3-binary-inspection-tool"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-object-file-section",
+      "dependent_card_id": "computer-systems.csys-m3-elf-program-segment"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-object-file-section",
+      "dependent_card_id": "computer-systems.csys-m3-linker-script-layout"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-object-file-section",
+      "dependent_card_id": "computer-systems.csys-m3-symbol-table-entry"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-relocation-entry",
+      "dependent_card_id": "computer-systems.csys-m3-static-linking"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-shared-object",
+      "dependent_card_id": "computer-systems.csys-m3-dynamic-linking"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-shared-object",
+      "dependent_card_id": "computer-systems.csys-m3-position-independent-code"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-static-archive-extraction",
+      "dependent_card_id": "computer-systems.csys-m3-static-linking"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-symbol-table-entry",
+      "dependent_card_id": "computer-systems.csys-m3-local-and-global-symbol"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-symbol-table-entry",
+      "dependent_card_id": "computer-systems.csys-m3-relocation-entry"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-symbol-table-entry",
+      "dependent_card_id": "computer-systems.csys-m3-strong-and-weak-definition"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-symbol-table-entry",
+      "dependent_card_id": "computer-systems.csys-m3-undefined-symbol-reference"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-translation-unit",
+      "dependent_card_id": "computer-systems.csys-m3-object-file-section"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-undefined-symbol-reference",
+      "dependent_card_id": "computer-systems.csys-m3-link-and-load-failure-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m3-undefined-symbol-reference",
+      "dependent_card_id": "computer-systems.csys-m3-static-archive-extraction"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-benchmark-repetition",
+      "dependent_card_id": "computer-systems.csys-m4-optimization-evidence"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-cache-hit-and-miss-trace",
+      "dependent_card_id": "computer-systems.csys-m4-compulsory-capacity-and-conflict-miss"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-cache-set-mapping",
+      "dependent_card_id": "computer-systems.csys-m4-cache-hit-and-miss-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-cycles-and-instructions",
+      "dependent_card_id": "computer-systems.csys-m4-optimization-evidence"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-elapsed-wall-time",
+      "dependent_card_id": "computer-systems.csys-m4-benchmark-repetition"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-elapsed-wall-time",
+      "dependent_card_id": "computer-systems.csys-m4-process-cpu-time"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-elapsed-wall-time",
+      "dependent_card_id": "computer-systems.csys-m4-throughput-and-latency"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-memory-block-and-cache-line",
+      "dependent_card_id": "computer-systems.csys-m4-cache-set-mapping"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-memory-block-and-cache-line",
+      "dependent_card_id": "computer-systems.csys-m4-spatial-locality"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-memory-hierarchy",
+      "dependent_card_id": "computer-systems.csys-m4-memory-block-and-cache-line"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-memory-hierarchy",
+      "dependent_card_id": "computer-systems.csys-m4-temporal-locality"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-optimization-evidence",
+      "dependent_card_id": "computer-systems.csys-m7-systems-debugging-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-performance-correctness-control",
+      "dependent_card_id": "computer-systems.csys-m4-optimization-evidence"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-process-cpu-time",
+      "dependent_card_id": "computer-systems.csys-m4-cycles-and-instructions"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-sampling-profile",
+      "dependent_card_id": "computer-systems.csys-m4-instrumentation-overhead"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-spatial-locality",
+      "dependent_card_id": "computer-systems.csys-m4-stride-and-loop-order"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-spatial-locality",
+      "dependent_card_id": "computer-systems.csys-m4-working-set"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-temporal-locality",
+      "dependent_card_id": "computer-systems.csys-m4-working-set"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m4-throughput-and-latency",
+      "dependent_card_id": "computer-systems.csys-m4-optimization-evidence"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-descriptor-inheritance-across-exec",
+      "dependent_card_id": "computer-systems.csys-m5-shell-pipeline-process-graph"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-exceptional-control-transfer",
+      "dependent_card_id": "computer-systems.csys-m5-fault-trap-and-abort-distinction"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-exceptional-control-transfer",
+      "dependent_card_id": "computer-systems.csys-m5-system-call-boundary"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-exec-image-replacement",
+      "dependent_card_id": "computer-systems.csys-m5-descriptor-inheritance-across-exec"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-exec-image-replacement",
+      "dependent_card_id": "computer-systems.csys-m5-exec-argument-and-environment-vector"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-fork-inherited-state",
+      "dependent_card_id": "computer-systems.csys-m5-copy-on-write-fork"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-fork-return-paths",
+      "dependent_card_id": "computer-systems.csys-m5-fork-inherited-state"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-fork-return-paths",
+      "dependent_card_id": "computer-systems.csys-m5-shell-pipeline-process-graph"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-process-exit-status",
+      "dependent_card_id": "computer-systems.csys-m5-wait-and-reaping"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-process-identity-and-state",
+      "dependent_card_id": "computer-systems.csys-m5-exec-image-replacement"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-process-identity-and-state",
+      "dependent_card_id": "computer-systems.csys-m5-fork-return-paths"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-process-identity-and-state",
+      "dependent_card_id": "computer-systems.csys-m5-process-exit-status"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-signal-disposition",
+      "dependent_card_id": "computer-systems.csys-m5-async-signal-safe-operation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-signal-disposition",
+      "dependent_card_id": "computer-systems.csys-m5-signal-mask-and-pending-state"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-system-call-boundary",
+      "dependent_card_id": "computer-systems.csys-m5-interrupted-system-call-behavior"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m5-wait-and-reaping",
+      "dependent_card_id": "computer-systems.csys-m5-zombie-process"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-allocator-free-block",
+      "dependent_card_id": "computer-systems.csys-m6-free-block-coalescing"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-allocator-free-block",
+      "dependent_card_id": "computer-systems.csys-m6-placement-policy"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-file-backed-mapping",
+      "dependent_card_id": "computer-systems.csys-m6-private-and-shared-mapping"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-heap-allocation-block",
+      "dependent_card_id": "computer-systems.csys-m6-allocator-free-block"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-heap-allocation-block",
+      "dependent_card_id": "computer-systems.csys-m6-internal-and-external-fragmentation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-heap-allocation-block",
+      "dependent_card_id": "computer-systems.csys-m6-resource-ownership-transfer"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-page-permission",
+      "dependent_card_id": "computer-systems.csys-m6-page-fault"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-page-table-mapping",
+      "dependent_card_id": "computer-systems.csys-m6-page-permission"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-page-table-mapping",
+      "dependent_card_id": "computer-systems.csys-m6-translation-lookaside-buffer"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-placement-policy",
+      "dependent_card_id": "computer-systems.csys-m6-allocator-throughput-and-utilization"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-placement-policy",
+      "dependent_card_id": "computer-systems.csys-m6-block-splitting"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-private-and-shared-mapping",
+      "dependent_card_id": "computer-systems.csys-m6-memory-unmapping"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-virtual-address",
+      "dependent_card_id": "computer-systems.csys-m6-physical-address"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-virtual-address",
+      "dependent_card_id": "computer-systems.csys-m6-virtual-page-and-offset"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m6-virtual-page-and-offset",
+      "dependent_card_id": "computer-systems.csys-m6-page-table-mapping"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-compiler-reordering-boundary",
+      "dependent_card_id": "computer-systems.csys-m7-weak-memory-boundary"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-data-race",
+      "dependent_card_id": "computer-systems.csys-m7-mutex-critical-section"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-data-race",
+      "dependent_card_id": "computer-systems.csys-m7-systems-debugging-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-file-descriptor",
+      "dependent_card_id": "computer-systems.csys-m7-descriptor-duplication-and-redirection"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-file-descriptor",
+      "dependent_card_id": "computer-systems.csys-m7-open-file-description"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-file-descriptor",
+      "dependent_card_id": "computer-systems.csys-m7-pipe-endpoint-lifecycle"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-file-descriptor",
+      "dependent_card_id": "computer-systems.csys-m7-read-result-contract"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-file-descriptor",
+      "dependent_card_id": "computer-systems.csys-m7-write-result-contract"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-happens-before-relation",
+      "dependent_card_id": "computer-systems.csys-m7-compiler-reordering-boundary"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-happens-before-relation",
+      "dependent_card_id": "computer-systems.csys-m7-data-race"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-mutex-critical-section",
+      "dependent_card_id": "computer-systems.csys-m7-condition-variable-wait"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-mutex-critical-section",
+      "dependent_card_id": "computer-systems.csys-m7-deadlock-wait-for-cycle"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-open-file-description",
+      "dependent_card_id": "computer-systems.csys-m7-buffered-i-o-layer"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-pathname-lookup-boundary",
+      "dependent_card_id": "computer-systems.csys-m7-open-flags-and-mode"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-read-result-contract",
+      "dependent_card_id": "computer-systems.csys-m7-systems-debugging-trace"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-thread-identity-and-execution",
+      "dependent_card_id": "computer-systems.csys-m7-happens-before-relation"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-thread-identity-and-execution",
+      "dependent_card_id": "computer-systems.csys-m7-thread-interleaving"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-thread-identity-and-execution",
+      "dependent_card_id": "computer-systems.csys-m7-thread-safe-resource-lifetime"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-thread-interleaving",
+      "dependent_card_id": "computer-systems.csys-m7-data-race"
+    },
+    {
+      "prerequisite_card_id": "computer-systems.csys-m7-thread-interleaving",
+      "dependent_card_id": "computer-systems.csys-m7-semaphore-count"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Computer Systems.",
+  "level": "College",
+  "tags": [
+    "computer-science-and-software"
+  ]
+}

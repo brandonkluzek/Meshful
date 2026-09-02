@@ -1,0 +1,4422 @@
+{
+  "id": "academic-reviewed-v1:data-structures",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Data Structures",
+  "subject": "Computer Science and Software",
+  "domain": "Computer Science and Software",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "data-structures.ds-m0-abstract-data-type",
+      "canonical_deck_id": "data-structures",
+      "term": "Abstract data type",
+      "prompt": "Define Abstract data type. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A set of logical values and permitted operations specified independently of how state is stored.",
+      "required_concepts": [
+        "A set of logical values and permitted operations specified independently of how state is stored."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Defining stack as a Python list and losing representation independence."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-abstraction-function",
+      "canonical_deck_id": "data-structures",
+      "term": "Abstraction function",
+      "prompt": "Define Abstraction function. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mapping from a valid concrete representation state to the ADT's logical value.",
+      "required_concepts": [
+        "The mapping from a valid concrete representation state to the ADT's logical value."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reading every allocated slot including unused or stale cells as live queue elements."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-concrete-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-aliasing-and-mutability-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Aliasing and mutability contract",
+      "prompt": "Define Aliasing and mutability contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The identity relationships and permitted changes among a container its elements views iterators and copied representations.",
+      "required_concepts": [
+        "The identity relationships and permitted changes among a container its elements views iterators and copied representations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming nested mutable elements were independently copied."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-concrete-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-amortized-operation-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "Amortized operation cost",
+      "prompt": "Define Amortized operation cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The total cost of a specified operation sequence divided or bounded per operation despite occasional expensive individual operations.",
+      "required_concepts": [
+        "The total cost of a specified operation sequence divided or bounded per operation despite occasional expensive individual operations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every append worst-case constant."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-size-parameter"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-concrete-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Concrete representation",
+      "prompt": "Define Concrete representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The fields objects references and encoding used to realize one ADT state.",
+      "required_concepts": [
+        "The fields objects references and encoding used to realize one ADT state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling different method names different representations while storage is identical."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-constructor-establishment",
+      "canonical_deck_id": "data-structures",
+      "term": "Constructor establishment",
+      "prompt": "Define Constructor establishment. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The proof obligation that every constructor result satisfies the representation invariant and maps to the promised initial abstract value.",
+      "required_concepts": [
+        "The proof obligation that every constructor result satisfies the representation invariant and maps to the promised initial abstract value."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Testing only that len returns zero while capacity or storage fields are inconsistent."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-representation-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-exception-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Exception contract",
+      "prompt": "Define Exception contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The declared exceptional outcome and state-preservation rule for invalid operations or resource limits.",
+      "required_concepts": [
+        "The declared exceptional outcome and state-preservation rule for invalid operations or resource limits."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Silently discarding an element despite a raise-on-full contract."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-operation-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-expected-operation-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "Expected operation cost",
+      "prompt": "Define Expected operation cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An expectation over explicitly specified randomness or input distribution rather than a guarantee for every case.",
+      "required_concepts": [
+        "An expectation over explicitly specified randomness or input distribution rather than a guarantee for every case."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling dictionary lookup worst-case constant merely because it is usually fast."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-size-parameter"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-iterator-validity-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Iterator validity contract",
+      "prompt": "Define Iterator validity contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rule for whether and how iteration may continue after structural or value mutation.",
+      "required_concepts": [
+        "The rule for whether and how iteration may continue after structural or value mutation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming all languages and structures share Python list iteration behavior."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-operation-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-mutator-preservation",
+      "canonical_deck_id": "data-structures",
+      "term": "Mutator preservation",
+      "prompt": "Define Mutator preservation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The proof obligation that a valid pre-state plus an operation precondition produces a valid post-state satisfying the operation contract.",
+      "required_concepts": [
+        "The proof obligation that a valid pre-state plus an operation precondition produces a valid post-state satisfying the operation contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Verifying the final length but not the copied prefix or capacity relation."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-constructor-establishment"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-observer-consistency",
+      "canonical_deck_id": "data-structures",
+      "term": "Observer consistency",
+      "prompt": "Define Observer consistency. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The requirement that nonmutating operations return results determined by the abstraction function without corrupting state.",
+      "required_concepts": [
+        "The requirement that nonmutating operations return results determined by the abstraction function without corrupting state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Allowing a peek operation to advance the head index."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstraction-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-operation-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Operation contract",
+      "prompt": "Define Operation contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The precondition state transition return value exception and observable side effects for one ADT operation.",
+      "required_concepts": [
+        "The precondition state transition return value exception and observable side effects for one ADT operation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving empty behavior undefined and accepting whatever the implementation happens to do."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-postcondition",
+      "canonical_deck_id": "data-structures",
+      "term": "Postcondition",
+      "prompt": "Define Postcondition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The required relation among old state inputs new state result and side effects after a valid operation.",
+      "required_concepts": [
+        "The required relation among old state inputs new state result and side effects after a valid operation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only that size decreased while the wrong item was removed."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-operation-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-precondition",
+      "canonical_deck_id": "data-structures",
+      "term": "Precondition",
+      "prompt": "Define Precondition. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A requirement on inputs and current abstract state that a caller must satisfy before an operation's guarantee applies.",
+      "required_concepts": [
+        "A requirement on inputs and current abstract state that a caller must satisfy before an operation's guarantee applies."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a nonnull node reference proves it belongs to the target list."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-operation-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-representation-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Representation invariant",
+      "prompt": "Define Representation invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A predicate that must hold for every valid concrete state so the abstraction function and operations are meaningful.",
+      "required_concepts": [
+        "A predicate that must hold for every valid concrete state so the abstraction function and operations are meaningful."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the current contents an invariant instead of a property required of all valid states."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstraction-function"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-size-parameter",
+      "canonical_deck_id": "data-structures",
+      "term": "Size parameter",
+      "prompt": "Define Size parameter. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The declared quantity n or tuple of quantities against which an operation cost is stated.",
+      "required_concepts": [
+        "The declared quantity n or tuple of quantities against which an operation cost is stated."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing O(n) without saying whether n is buckets, entries or key bytes."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-space-cost-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Space cost contract",
+      "prompt": "Define Space cost contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The live payload auxiliary capacity pointers metadata tombstones and transient-copy memory accounted against declared sizes.",
+      "required_concepts": [
+        "The live payload auxiliary capacity pointers metadata tombstones and transient-copy memory accounted against declared sizes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting both as O(n) and claiming equal memory use."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-size-parameter"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m0-worst-case-operation-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "Worst-case operation cost",
+      "prompt": "Define Worst-case operation cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** An upper bound over every admissible state and input of the declared size under the model.",
+      "required_concepts": [
+        "An upper bound over every admissible state and input of the declared size under the model."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling a lucky head match constant-time worst case."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-size-parameter"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m0",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-amortized-append-accounting",
+      "canonical_deck_id": "data-structures",
+      "term": "Amortized append accounting",
+      "prompt": "An initially empty dynamic array has capacity 1 and doubles when full. Count each element write/copy as constant work. Give the total work for m appends, the amortized cost, and the worst cost of one append; explain why.",
+      "definition": "For m>=1 appends, ordinary writes cost m and resize copies form 1+2+4+... up to the last copied capacity, totaling less than 2m. Thus total work is O(m) and append costs O(1) amortized over the whole sequence. One append that resizes n stored elements still costs Theta(n). No input randomness or exclusion of resize operations is needed.",
+      "required_concepts": [
+        "Account for all ordinary writes and the geometric sum of resize copies, giving O(m) total work.",
+        "Conclude O(1) amortized per append while a resizing append can take Theta(n) work."
+      ],
+      "accepted_variants": [
+        "There are m ordinary writes and fewer than 2m copied elements across doublings, so O(m) total and O(1) amortized. A single resize with n elements still takes Theta(n)."
+      ],
+      "major_error_concepts": [
+        "Only non-resizing appends count in the average, so every append including resizing has worst-case O(1) cost."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-resize-copy-trace"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-array-index-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Array index invariant",
+      "prompt": "Define Array index invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The valid-index relation 0<=i<length and mapping from logical positions to physical slots.",
+      "required_concepts": [
+        "The valid-index relation 0<=i<length and mapping from logical positions to physical slots."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using 0<=i<=length for ordinary element access."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-static-array"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-binary-search-insertion-tradeoff",
+      "canonical_deck_id": "data-structures",
+      "term": "Binary-search insertion tradeoff",
+      "prompt": "Define Binary-search insertion tradeoff. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The distinction between logarithmic insertion-point search in sorted data and linear element movement for array insertion.",
+      "required_concepts": [
+        "The distinction between logarithmic insertion-point search in sorted data and linear element movement for array insertion."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reporting the whole insertion as O(log n)."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-middle-insertion-shift"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-circular-buffer-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Circular-buffer representation",
+      "prompt": "Define Circular-buffer representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A fixed-capacity array plus head and size or head and tail state mapping a logical sequence across wraparound.",
+      "required_concepts": [
+        "A fixed-capacity array plus head and size or head and tail state mapping a logical sequence across wraparound."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reading only the contiguous suffix from head to capacity."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-dynamic-array-length-and-capacity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-circular-index-wrap",
+      "canonical_deck_id": "data-structures",
+      "term": "Circular index wrap",
+      "prompt": "For a circular buffer of capacity C>0 and head index h, map logical offset i to a physical array index. Assume 0<=h<C and 0<=i<size<=C. Evaluate C=5, h=4, i=2.",
+      "definition": "The physical index is (h+i) mod C, with the nonnegative remainder convention. For C=5, h=4, i=2 it is 1. Taking i mod C alone forgets where the logical sequence starts; using logical size as the modulus confuses occupancy with capacity.",
+      "required_concepts": [
+        "Use (h+i) mod C, not i mod C or modulo logical size.",
+        "For the stated values, the physical index is 1."
+      ],
+      "accepted_variants": [
+        "Add the head before wrapping: (4+2) mod 5=1. In general physical=(h+i) mod C."
+      ],
+      "major_error_concepts": [
+        "Use i mod C, so the example accesses physical index 2.",
+        "Use logical size rather than storage capacity as the modulus."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-circular-buffer-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-contiguous-slot-model",
+      "canonical_deck_id": "data-structures",
+      "term": "Contiguous-slot model",
+      "prompt": "Define Contiguous-slot model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The idealized representation where adjacent logical indices occupy adjacent fixed-width slots, enabling address arithmetic and locality claims under qualification.",
+      "required_concepts": [
+        "The idealized representation where adjacent logical indices occupy adjacent fixed-width slots, enabling address arithmetic and locality claims under qualification."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every Python list element object is stored inline contiguously."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-static-array"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-dynamic-array-append",
+      "canonical_deck_id": "data-structures",
+      "term": "Dynamic-array append",
+      "prompt": "Define Dynamic-array append. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation writing at the old length after ensuring capacity then increasing logical length while preserving the old prefix.",
+      "required_concepts": [
+        "The operation writing at the old length after ensuring capacity then increasing logical length while preserving the old prefix."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Incrementing length before ensuring a valid writable slot and leaving a corrupt state on failure."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-dynamic-array-length-and-capacity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-dynamic-array-length-and-capacity",
+      "canonical_deck_id": "data-structures",
+      "term": "Dynamic-array length and capacity",
+      "prompt": "Define Dynamic-array length and capacity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The separation between live logical element count and allocated slot count with 0<=length<=capacity.",
+      "required_concepts": [
+        "The separation between live logical element count and allocated slot count with 0<=length<=capacity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Iterating over all eight slots as logical values."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-array-index-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-full-versus-empty-encoding",
+      "canonical_deck_id": "data-structures",
+      "term": "Full-versus-empty encoding",
+      "prompt": "Define Full-versus-empty encoding. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The representation rule distinguishing equal head/tail indices using size, a reserved slot, or an explicit flag.",
+      "required_concepts": [
+        "The representation rule distinguishing equal head/tail indices using size, a reserved slot, or an explicit flag."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating head==tail as both states without extra metadata."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-circular-buffer-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-geometric-growth-policy",
+      "canonical_deck_id": "data-structures",
+      "term": "Geometric growth policy",
+      "prompt": "What is a fixed-factor geometric capacity-growth policy, and why is C -> C+1 not that policy even though (C+1)/C>1?",
+      "definition": "Starting from positive capacity, resize a full array from C to ceil(g*C) for a fixed constant g>1 independent of C; doubling is the usual example. Successive capacities then grow geometrically (up to rounding). In C -> C+1, the ratio is 1+1/C and approaches 1 rather than remaining a fixed factor. Repeated unit-cost copying under one-slot growth accumulates quadratic work over a long append sequence.",
+      "required_concepts": [
+        "The growth multiplier is a fixed constant g>1 independent of capacity, with integer rounding handled.",
+        "C+1 has a size-dependent ratio tending to 1 and is not fixed-factor geometric growth."
+      ],
+      "accepted_variants": [
+        "Doubling uses fixed g=2. Adding one uses ratio 1+1/C, which tends to 1, so being greater than one at each step is not enough."
+      ],
+      "major_error_concepts": [
+        "C+1 is geometric growth with constant amortized append because every individual ratio 1+1/C is greater than 1."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-dynamic-array-append"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-middle-deletion-shift",
+      "canonical_deck_id": "data-structures",
+      "term": "Middle deletion shift",
+      "prompt": "Define Middle deletion shift. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The leftward movement of a suffix after removing an element plus cleanup of the old last live slot.",
+      "required_concepts": [
+        "The leftward movement of a suffix after removing an element plus cleanup of the old last live slot."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reducing length without repairing the logical gap."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-middle-insertion-shift"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-middle-insertion-shift",
+      "canonical_deck_id": "data-structures",
+      "term": "Middle insertion shift",
+      "prompt": "Define Middle insertion shift. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rightward movement of a suffix before placing a new element while preserving order and capacity invariants.",
+      "required_concepts": [
+        "The rightward movement of a suffix before placing a new element while preserving order and capacity invariants."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Shifting left-to-right and overwriting b before it is copied."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-array-index-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-random-access-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Random-access contract",
+      "prompt": "Define Random-access contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ability to access a valid index without traversing preceding elements under the representation and machine model.",
+      "required_concepts": [
+        "The ability to access a valid index without traversing preceding elements under the representation and machine model."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Extending the claim to arbitrary linked lists or remote storage."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-contiguous-slot-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-resize-copy-trace",
+      "canonical_deck_id": "data-structures",
+      "term": "Resize copy trace",
+      "prompt": "Define Resize copy trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The explicit allocation copy write and ownership transition when capacity changes.",
+      "required_concepts": [
+        "The explicit allocation copy write and ownership transition when capacity changes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Copying capacity slots including stale data and treating them as live."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-geometric-growth-policy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-sequential-scan-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Sequential-scan contract",
+      "prompt": "Define Sequential-scan contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The requirement to examine positions in order for operations such as unsorted value search, even on a random-access representation.",
+      "required_concepts": [
+        "The requirement to examine positions in order for operations such as unsorted value search, even on a random-access representation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming random access makes value search logarithmic."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-random-access-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-shallow-copy-alias-trace",
+      "canonical_deck_id": "data-structures",
+      "term": "Shallow-copy alias trace",
+      "prompt": "Define Shallow-copy alias trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The state graph showing distinct outer containers still refer to the same mutable elements after a shallow copy.",
+      "required_concepts": [
+        "The state graph showing distinct outer containers still refer to the same mutable elements after a shallow copy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the original outer list mutated structurally because a shared element changed."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-slice-value-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-shrink-hysteresis",
+      "canonical_deck_id": "data-structures",
+      "term": "Shrink hysteresis",
+      "prompt": "Define Shrink hysteresis. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Shrink hysteresis uses separate growth and shrink thresholds to prevent repeated resizing when occupancy stays near one boundary.",
+      "required_concepts": [
+        "Shrink hysteresis uses separate growth and shrink thresholds to prevent repeated resizing when occupancy stays near one boundary."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling retained spare capacity a memory leak without the specified policy."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-dynamic-array-length-and-capacity"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-slice-value-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Slice value contract",
+      "prompt": "Define Slice value contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The selected index progression and returned sequence/view identity under a declared slicing API.",
+      "required_concepts": [
+        "The selected index progression and returned sequence/view identity under a declared slicing API."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming every language slice is a copy or every slice shares storage."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m1-array-index-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m1-static-array",
+      "canonical_deck_id": "data-structures",
+      "term": "Static array",
+      "prompt": "Define Static array. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A fixed-capacity indexed sequence of slots supporting direct position access under a declared element and memory model.",
+      "required_concepts": [
+        "A fixed-capacity indexed sequence of slots supporting direct position access under a declared element and memory model."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating fixed capacity as a prohibition on changing stored values."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m1",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-accidental-cycle-diagnostic",
+      "canonical_deck_id": "data-structures",
+      "term": "Accidental cycle diagnostic",
+      "prompt": "Define Accidental cycle diagnostic. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The detection and repair boundary for a next-link cycle that prevents termination and duplicates logical traversal.",
+      "required_concepts": [
+        "The detection and repair boundary for a next-link cycle that prevents termination and duplicates logical traversal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the cycle a circular list without changing the ADT contract."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-reachability-and-ownership-audit"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-delete-after-node",
+      "canonical_deck_id": "data-structures",
+      "term": "Delete-after-node",
+      "prompt": "Define Delete-after-node. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The local removal after a known predecessor with endpoint ownership and return behavior specified.",
+      "required_concepts": [
+        "The local removal after a known predecessor with endpoint ownership and return behavior specified."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Deleting a successor without verifying it exists or belongs to this list."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-insert-after-node"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-deque-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Deque ADT",
+      "prompt": "Define Deque ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The sequence supporting insertion and removal at both left and right ends with unambiguous endpoint names.",
+      "required_concepts": [
+        "The sequence supporting insertion and removal at both left and right ends with unambiguous endpoint names."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using front and back inconsistently across methods."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-doubly-linked-list-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Doubly linked-list invariant",
+      "prompt": "Define Doubly linked-list invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The chain where next and previous links are mutual, endpoints or sentinels are consistent, reachability is unique and size matches live nodes.",
+      "required_concepts": [
+        "The chain where next and previous links are mutual, endpoints or sentinels are consistent, reachability is unique and size matches live nodes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only forward reachability while backward links are corrupt."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-linked-node"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-doubly-linked-unlink",
+      "canonical_deck_id": "data-structures",
+      "term": "Doubly linked unlink",
+      "prompt": "Define Doubly linked unlink. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The constant local update reconnecting a known node's predecessor and successor then detaching it under ownership rules.",
+      "required_concepts": [
+        "The constant local update reconnecting a known node's predecessor and successor then detaching it under ownership rules."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Updating only a.next and leaving b.prev pointing to removed x."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-doubly-linked-list-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-head-and-tail-endpoint-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Head and tail endpoint contract",
+      "prompt": "Define Head and tail endpoint contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The exact first and last node identities plus empty-state representation used by endpoint operations.",
+      "required_concepts": [
+        "The exact first and last node identities plus empty-state representation used by endpoint operations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Allocating separate head and tail nodes with duplicate payloads for one logical element."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-singly-linked-list-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-insert-after-node",
+      "canonical_deck_id": "data-structures",
+      "term": "Insert-after-node",
+      "prompt": "Define Insert-after-node. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The local splice placing a new node after a known member while preserving the suffix and repairing tail when needed.",
+      "required_concepts": [
+        "The local splice placing a new node after a known member while preserving the suffix and repairing tail when needed."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Writing a.next=x before saving b and losing the suffix."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-singly-linked-list-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-library-deque-tradeoff",
+      "canonical_deck_id": "data-structures",
+      "term": "Library deque tradeoff",
+      "prompt": "Define Library deque tradeoff. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The documented Python deque behavior with approximately constant end operations and middle indexing that slows with distance.",
+      "required_concepts": [
+        "The documented Python deque behavior with approximately constant end operations and middle indexing that slows with distance."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling all deque indexing constant-time because end access is."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-deque-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-linked-node",
+      "canonical_deck_id": "data-structures",
+      "term": "Linked node",
+      "prompt": "Define Linked node. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A record containing a payload and one or more links whose identities form structure independently of allocation order.",
+      "required_concepts": [
+        "A record containing a payload and one or more links whose identities form structure independently of allocation order."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming adjacent nodes occupy adjacent memory addresses."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-linked-queue-implementation",
+      "canonical_deck_id": "data-structures",
+      "term": "Linked queue implementation",
+      "prompt": "Define Linked queue implementation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The representation using head as front and tail as rear so enqueue and dequeue each update the correct endpoint.",
+      "required_concepts": [
+        "The representation using head as front and tail as rear so enqueue and dequeue each update the correct endpoint."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Clearing head but leaving tail pointing to removed storage."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-head-and-tail-endpoint-contract",
+        "data-structures.ds-m2-queue-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-linked-stack-implementation",
+      "canonical_deck_id": "data-structures",
+      "term": "Linked stack implementation",
+      "prompt": "Define Linked stack implementation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The representation mapping stack top to a linked-list endpoint so push and pop avoid traversal.",
+      "required_concepts": [
+        "The representation mapping stack top to a linked-list endpoint so push and pop avoid traversal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using tail as top without predecessor links and claiming constant pop."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-stack-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-locate-versus-splice-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "Locate-versus-splice cost",
+      "prompt": "Define Locate-versus-splice cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The separation between finding a node or predecessor by traversal and performing constant local pointer updates once handles are known.",
+      "required_concepts": [
+        "The separation between finding a node or predecessor by traversal and performing constant local pointer updates once handles are known."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling delete-by-value O(1) because pointer reassignment is O(1)."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-delete-after-node"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-queue-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Queue ADT",
+      "prompt": "Define Queue ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The FIFO sequence supporting enqueue at rear and dequeue or front at the opposite end with declared underflow behavior.",
+      "required_concepts": [
+        "The FIFO sequence supporting enqueue at rear and dequeue or front at the opposite end with declared underflow behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning b because it was most recently inserted."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-reachability-and-ownership-audit",
+      "canonical_deck_id": "data-structures",
+      "term": "Reachability and ownership audit",
+      "prompt": "Define Reachability and ownership audit. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The check that every live node is reachable exactly once from the structure root and no owned live node is orphaned shared improperly or foreign.",
+      "required_concepts": [
+        "The check that every live node is reachable exactly once from the structure root and no owned live node is orphaned shared improperly or foreign."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Trusting size instead of reconciling the node graph."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-singly-linked-list-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-sentinel-node-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Sentinel-node representation",
+      "prompt": "Define Sentinel-node representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A distinguished nonpayload node or pair of nodes simplifying endpoint mutations while excluded by the abstraction function.",
+      "required_concepts": [
+        "A distinguished nonpayload node or pair of nodes simplifying endpoint mutations while excluded by the abstraction function."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning the sentinel as a logical element during iteration."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-doubly-linked-list-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-singly-linked-append-with-tail",
+      "canonical_deck_id": "data-structures",
+      "term": "Singly linked append with tail",
+      "prompt": "Define Singly linked append with tail. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The endpoint insertion linking old tail to a new terminal node or establishing both endpoints when empty.",
+      "required_concepts": [
+        "The endpoint insertion linking old tail to a new terminal node or establishing both endpoints when empty."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Moving tail to b before linking a.next and losing the old endpoint on failure."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-head-and-tail-endpoint-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-singly-linked-list-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Singly linked-list invariant",
+      "prompt": "Define Singly linked-list invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The head-reachable acyclic chain whose live nodes are owned exactly once, next links terminate at null, size matches reachability and tail matches the last node when stored.",
+      "required_concepts": [
+        "The head-reachable acyclic chain whose live nodes are owned exactly once, next links terminate at null, size matches reachability and tail matches the last node when stored."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Allowing head null with nonnull tail and calling it harmless cached state."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-linked-node"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-singly-linked-prepend",
+      "canonical_deck_id": "data-structures",
+      "term": "Singly linked prepend",
+      "prompt": "Define Singly linked prepend. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The constant-link update creating a new head whose next is the old head and repairing the tail in the empty case.",
+      "required_concepts": [
+        "The constant-link update creating a new head whose next is the old head and repairing the tail in the empty case."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Updating head but leaving tail null."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-head-and-tail-endpoint-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m2-stack-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Stack ADT",
+      "prompt": "Define Stack ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The LIFO sequence supporting push, pop and top at one designated end with declared underflow behavior.",
+      "required_concepts": [
+        "The LIFO sequence supporting push, pop and top at one designated end with declared underflow behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Removing a first and implementing FIFO semantics."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m2",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-bucket-index-reduction",
+      "canonical_deck_id": "data-structures",
+      "term": "Bucket-index reduction",
+      "prompt": "Define Bucket-index reduction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mapping from a hash value to a valid table position under a specified capacity rule.",
+      "required_concepts": [
+        "The mapping from a hash value to a valid table position under a specified capacity rule."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using live entry count instead of bucket capacity for reduction."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-hash-function-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-expected-hash-table-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "Expected hash-table cost",
+      "prompt": "Define Expected hash-table cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The qualified expected lookup/update cost under a stated hash distribution randomness load and key-operation model.",
+      "required_concepts": [
+        "The qualified expected lookup/update cost under a stated hash distribution randomness load and key-operation model."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Upgrading the expectation to adversarial worst-case constant time."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-load-factor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-hash-collision",
+      "canonical_deck_id": "data-structures",
+      "term": "Hash collision",
+      "prompt": "Define Hash collision. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The event that distinct unequal keys produce the same hash or bucket position and must remain separately retrievable.",
+      "required_concepts": [
+        "The event that distinct unequal keys produce the same hash or bucket position and must remain separately retrievable."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Overwriting a solely because b shares its bucket."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-hash-function-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-hash-flooding-boundary",
+      "canonical_deck_id": "data-structures",
+      "term": "Hash-flooding boundary",
+      "prompt": "Define Hash-flooding boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The adversarial case where many keys collide and expected-cost assumptions fail, requiring scoped performance and security claims.",
+      "required_concepts": [
+        "The adversarial case where many keys collide and expected-cost assumptions fail, requiring scoped performance and security claims."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling random test performance a worst-case security guarantee."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-expected-hash-table-cost"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-hash-function-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Hash function contract",
+      "prompt": "Define Hash function contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A deterministic mapping from a resident key's equality state to an integer such that equal keys have equal hashes during residence.",
+      "required_concepts": [
+        "A deterministic mapping from a resident key's equality state to an integer such that equal keys have equal hashes during residence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Requiring unequal keys to have unequal hashes."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-key-equality-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-hash-table-resize-and-rehash",
+      "canonical_deck_id": "data-structures",
+      "term": "Hash-table resize and rehash",
+      "prompt": "Define Hash-table resize and rehash. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The allocation of a new capacity and reinsertion or relocation of every live entry because bucket positions depend on capacity.",
+      "required_concepts": [
+        "The allocation of a new capacity and reinsertion or relocation of every live entry because bucket positions depend on capacity."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing capacity without relocating entries and making keys unreachable."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-bucket-index-reduction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-insert-versus-update-decision",
+      "canonical_deck_id": "data-structures",
+      "term": "Insert-versus-update decision",
+      "prompt": "Define Insert-versus-update decision. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The probe behavior that remembers a reusable tombstone but continues far enough to find an existing equal key before inserting.",
+      "required_concepts": [
+        "The probe behavior that remembers a reusable tombstone but continues far enough to find an existing equal key before inserting."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Reusing the first tombstone immediately and creating duplicate logical keys."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-open-address-search-termination"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-iteration-order-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Iteration-order contract",
+      "prompt": "Define Iteration-order contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The explicit promise of no order, insertion order, sorted order, or representation order for map/set iteration.",
+      "required_concepts": [
+        "The explicit promise of no order, insertion order, sorted order, or representation order for map/set iteration."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Inferring semantic order from one observed run."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-map-adt",
+        "data-structures.ds-m3-set-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-key-equality-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Key equality contract",
+      "prompt": "Define Key equality contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The specified equivalence relation determining when lookup and update refer to the same logical key.",
+      "required_concepts": [
+        "The specified equivalence relation determining when lookup and update refer to the same logical key."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using object identity as equality without declaring an identity map."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-map-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-load-factor",
+      "canonical_deck_id": "data-structures",
+      "term": "Load factor",
+      "prompt": "Define Load factor. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ratio of live entries to bucket capacity or another precisely defined occupancy measure used in cost and resize policies.",
+      "required_concepts": [
+        "The ratio of live entries to bucket capacity or another precisely defined occupancy measure used in cost and resize policies."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using maximum chain length while labeling it load factor."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-bucket-index-reduction"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-map-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Map ADT",
+      "prompt": "Define Map ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite association from unique logical keys to values with lookup insert update delete membership iteration and missing-key behavior.",
+      "required_concepts": [
+        "A finite association from unique logical keys to values with lookup insert update delete membership iteration and missing-key behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating repeated insertion as two entries without declaring a multimap."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-mutable-key-corruption",
+      "canonical_deck_id": "data-structures",
+      "term": "Mutable-key corruption",
+      "prompt": "Define Mutable-key corruption. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The failure where a resident key's equality or hash state changes so its stored placement no longer matches future lookup.",
+      "required_concepts": [
+        "The failure where a resident key's equality or hash state changes so its stored placement no longer matches future lookup."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling this a hash collision rather than a violated key-stability contract."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-hash-function-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-open-address-search-termination",
+      "canonical_deck_id": "data-structures",
+      "term": "Open-address search termination",
+      "prompt": "Define Open-address search termination. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rule that lookup stops at key equality, a never-used slot, or exhaustion according to the specified probe scheme but not at a tombstone.",
+      "required_concepts": [
+        "The rule that lookup stops at key equality, a never-used slot, or exhaustion according to the specified probe scheme but not at a tombstone."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Stopping at the tombstone and reporting missing."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-tombstone-deletion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-open-addressing",
+      "canonical_deck_id": "data-structures",
+      "term": "Open addressing",
+      "prompt": "Define Open addressing. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Open addressing resolves collisions by storing entries directly in table slots and following a deterministic probe sequence until a match or valid stopping state.",
+      "required_concepts": [
+        "Open addressing resolves collisions by storing entries directly in table slots and following a deterministic probe sequence until a match or valid stopping state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating deleted as never-used empty."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-hash-collision"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-primary-clustering",
+      "canonical_deck_id": "data-structures",
+      "term": "Primary clustering",
+      "prompt": "Define Primary clustering. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The growth of contiguous occupied runs under linear probing that increases later probe lengths.",
+      "required_concepts": [
+        "The growth of contiguous occupied runs under linear probing that increases later probe lengths."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling clustering a duplicate-key issue."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-probe-sequence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-probe-sequence",
+      "canonical_deck_id": "data-structures",
+      "term": "Probe sequence",
+      "prompt": "Define Probe sequence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ordered candidate slots derived from a key hash and probe number whose coverage and termination belong to the table design.",
+      "required_concepts": [
+        "The ordered candidate slots derived from a key hash and probe number whose coverage and termination belong to the table design."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Stopping rather than wrapping after slot seven."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-open-addressing"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-separate-chaining",
+      "canonical_deck_id": "data-structures",
+      "term": "Separate chaining",
+      "prompt": "Define Separate chaining. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Separate chaining resolves hash collisions by storing a bucket-local collection of entries and comparing keys within that collection.",
+      "required_concepts": [
+        "Separate chaining resolves hash collisions by storing a bucket-local collection of entries and comparing keys within that collection."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Keeping only the last colliding entry."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-hash-collision"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-set-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Set ADT",
+      "prompt": "Define Set ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite collection of unique logical elements with membership insertion deletion and iteration contracts.",
+      "required_concepts": [
+        "A finite collection of unique logical elements with membership insertion deletion and iteration contracts."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Preserving duplicates while calling the structure a set."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m3-tombstone-deletion",
+      "canonical_deck_id": "data-structures",
+      "term": "Tombstone deletion",
+      "prompt": "Define Tombstone deletion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The marking of a removed open-address entry so searches for later displaced keys continue through the probe chain.",
+      "required_concepts": [
+        "The marking of a removed open-address entry so searches for later displaced keys continue through the probe chain."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning the tombstoned key during iteration."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-open-addressing"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m3",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-avl-balance-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "AVL balance invariant",
+      "prompt": "Define AVL balance invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The requirement that every node's left and right subtree heights differ by at most one with stored heights matching structure.",
+      "required_concepts": [
+        "The requirement that every node's left and right subtree heights differ by at most one with stored heights matching structure."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking only the root while a lower node is unbalanced."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-node-depth-and-tree-height"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-binary-search-tree-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Binary-search-tree invariant",
+      "prompt": "Define Binary-search-tree invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The recursive key-order relation between every node and all keys in its left and right subtrees under a declared comparator and duplicate policy.",
+      "required_concepts": [
+        "The recursive key-order relation between every node and all keys in its left and right subtrees under a declared comparator and duplicate policy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing only parent-child pairs."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-in-order-key-sequence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-duplicate-policy",
+      "canonical_deck_id": "data-structures",
+      "term": "BST duplicate policy",
+      "prompt": "Define BST duplicate policy. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The explicit rule disallowing duplicates, counting them, storing a multiset payload, or consistently placing equals on one side.",
+      "required_concepts": [
+        "The explicit rule disallowing duplicates, counting them, storing a multiset payload, or consistently placing equals on one side."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Sometimes placing equals left and sometimes right without a stable invariant."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-binary-search-tree-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-height-indexed-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "BST height-indexed cost",
+      "prompt": "Define BST height-indexed cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation bound in tree height h, becoming logarithmic only when a maintained invariant bounds h by logarithm of n.",
+      "required_concepts": [
+        "The operation bound in tree height h, becoming logarithmic only when a maintained invariant bounds h by logarithm of n."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling all BST lookup O(log n)."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-node-depth-and-tree-height",
+        "data-structures.ds-m4-bst-search-path"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-insertion",
+      "canonical_deck_id": "data-structures",
+      "term": "BST insertion",
+      "prompt": "Define BST insertion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The search-to-missing-link operation attaching a new node then repairing parent and metadata invariants.",
+      "required_concepts": [
+        "The search-to-missing-link operation attaching a new node then repairing parent and metadata invariants."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Replacing 7 because 5 is less than it."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-bst-search-path"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-leaf-deletion",
+      "canonical_deck_id": "data-structures",
+      "term": "BST leaf deletion",
+      "prompt": "Define BST leaf deletion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** BST leaf deletion removes a node with no children and updates its parent link or the root while preserving ordering and stored metadata.",
+      "required_concepts": [
+        "BST leaf deletion removes a node with no children and updates its parent link or the root while preserving ordering and stored metadata."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving parent.left pointing to freed or detached node."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-tree-parent-child-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-minimum-maximum-and-successor",
+      "canonical_deck_id": "data-structures",
+      "term": "BST minimum maximum and successor",
+      "prompt": "Define BST minimum maximum and successor. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** BST minimum, maximum, and successor operations follow extreme-child paths and, for successor, the first qualifying ancestor under the search-tree invariant.",
+      "required_concepts": [
+        "BST minimum, maximum, and successor operations follow extreme-child paths and, for successor, the first qualifying ancestor under the search-tree invariant."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Always returning the parent even when the parent key is smaller."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-binary-search-tree-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-one-child-deletion",
+      "canonical_deck_id": "data-structures",
+      "term": "BST one-child deletion",
+      "prompt": "Define BST one-child deletion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** BST one-child deletion splices the node's sole child into the deleted node's position while updating root and parent links.",
+      "required_concepts": [
+        "BST one-child deletion splices the node's sole child into the deleted node's position while updating root and parent links."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dropping the entire child subtree."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-tree-parent-child-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-search-path",
+      "canonical_deck_id": "data-structures",
+      "term": "BST search path",
+      "prompt": "Define BST search path. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The comparator-directed root-to-child path that either finds an equal key or reaches a missing child.",
+      "required_concepts": [
+        "The comparator-directed root-to-child path that either finds an equal key or reaches a missing child."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Exploring both subtrees despite a valid total-order invariant."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-binary-search-tree-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-bst-two-child-deletion",
+      "canonical_deck_id": "data-structures",
+      "term": "BST two-child deletion",
+      "prompt": "Define BST two-child deletion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** BST two-child deletion replaces or transplants the node with an in-order successor or predecessor while preserving both displaced subtrees and metadata.",
+      "required_concepts": [
+        "BST two-child deletion replaces or transplants the node with an in-order successor or predecessor while preserving both displaced subtrees and metadata."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Attaching 7 directly and losing 5 or violating left-subtree order."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-bst-minimum-maximum-and-successor"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-degenerate-bst-diagnostic",
+      "canonical_deck_id": "data-structures",
+      "term": "Degenerate BST diagnostic",
+      "prompt": "Define Degenerate BST diagnostic. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The valid ordered tree whose shape approaches a linked chain and defeats logarithmic operation claims.",
+      "required_concepts": [
+        "The valid ordered tree whose shape approaches a linked chain and defeats logarithmic operation claims."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling the structure invalid merely because it is slow."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-bst-height-indexed-cost"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-in-order-key-sequence",
+      "canonical_deck_id": "data-structures",
+      "term": "In-order key sequence",
+      "prompt": "Define In-order key sequence. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The left-subtree then node then right-subtree enumeration used to expose binary-search order without implying balance.",
+      "required_concepts": [
+        "The left-subtree then node then right-subtree enumeration used to expose binary-search order without implying balance."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling in-order enumeration breadth-first search."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-rooted-binary-tree"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-left-rotation",
+      "canonical_deck_id": "data-structures",
+      "term": "Left rotation",
+      "prompt": "Define Left rotation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The local transformation promoting a node's right child while preserving the in-order sequence and reconnecting parent middle subtree root and metadata.",
+      "required_concepts": [
+        "The local transformation promoting a node's right child while preserving the in-order sequence and reconnecting parent middle subtree root and metadata."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Moving y but dropping beta or leaving two parents."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-tree-parent-child-invariant",
+        "data-structures.ds-m4-in-order-key-sequence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-node-depth-and-tree-height",
+      "canonical_deck_id": "data-structures",
+      "term": "Node depth and tree height",
+      "prompt": "Define Node depth and tree height. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Node depth is the edge distance from the root, while tree height is the maximum downward edge distance under an explicitly fixed empty-tree and leaf convention.",
+      "required_concepts": [
+        "Node depth is the edge distance from the root, while tree height is the maximum downward edge distance under an explicitly fixed empty-tree and leaf convention."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Mixing node-count and edge-count conventions mid-calculation."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-rooted-binary-tree"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-right-rotation",
+      "canonical_deck_id": "data-structures",
+      "term": "Right rotation",
+      "prompt": "Define Right rotation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mirror transformation promoting a node's left child while preserving in-order sequence and all ownership metadata.",
+      "required_concepts": [
+        "The mirror transformation promoting a node's left child while preserving in-order sequence and all ownership metadata."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Swapping payloads while calling it a pointer rotation."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-tree-parent-child-invariant",
+        "data-structures.ds-m4-in-order-key-sequence"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-rooted-binary-tree",
+      "canonical_deck_id": "data-structures",
+      "term": "Rooted binary tree",
+      "prompt": "Define Rooted binary tree. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A finite rooted node structure where each node has at most a distinguished left child and right child, independent of key order.",
+      "required_concepts": [
+        "A finite rooted node structure where each node has at most a distinguished left child and right child, independent of key order."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every binary tree a binary search tree."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-single-versus-double-avl-repair",
+      "canonical_deck_id": "data-structures",
+      "term": "Single-versus-double AVL repair",
+      "prompt": "Define Single-versus-double AVL repair. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rotation choice determined by the unbalanced node and heavy child's direction, with inner-heavy cases requiring two rotations.",
+      "required_concepts": [
+        "The rotation choice determined by the unbalanced node and heavy child's direction, with inner-heavy cases requiring two rotations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Applying one right rotation and retaining an inner-heavy violation."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-left-rotation",
+        "data-structures.ds-m4-right-rotation",
+        "data-structures.ds-m4-avl-balance-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-subtree-size-metadata",
+      "canonical_deck_id": "data-structures",
+      "term": "Subtree-size metadata",
+      "prompt": "Define Subtree-size metadata. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A cached field equal to one plus left and right subtree sizes used only when every mutation repairs it.",
+      "required_concepts": [
+        "A cached field equal to one plus left and right subtree sizes used only when every mutation repairs it."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving an ancestor's size unchanged after insertion below it."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-tree-parent-child-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m4-tree-parent-child-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Tree parent-child invariant",
+      "prompt": "Define Tree parent-child invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The ownership and reciprocity rules for root parent null, child pointers, optional parent pointers, acyclicity and unique reachability.",
+      "required_concepts": [
+        "The ownership and reciprocity rules for root parent null, child pointers, optional parent pointers, acyclicity and unique reachability."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Checking child links only while parent pointers disagree."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-rooted-binary-tree"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m4",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-bottom-up-heapify",
+      "canonical_deck_id": "data-structures",
+      "term": "Bottom-up heapify",
+      "prompt": "Define Bottom-up heapify. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The linear-time construction sifting down internal nodes from the last parent toward the root.",
+      "required_concepts": [
+        "The linear-time construction sifting down internal nodes from the last parent toward the root."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Sifting up every item and calling that the same linear construction."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-sift-down-repair"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-extract-root-operation",
+      "canonical_deck_id": "data-structures",
+      "term": "Extract-root operation",
+      "prompt": "Define Extract-root operation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Heap root extraction saves the extreme root, moves the last item to the root, shortens the array, sifts the replacement downward, and returns the saved item.",
+      "required_concepts": [
+        "Heap root extraction saves the extreme root, moves the last item to the root, shortens the array, sifts the replacement downward, and returns the saved item."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Deleting index zero and shifting all elements left without restoring heap structure."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-sift-down-repair"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-heap-insertion",
+      "canonical_deck_id": "data-structures",
+      "term": "Heap insertion",
+      "prompt": "Define Heap insertion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Heap insertion appends the new key at the next complete-tree position and repeatedly sifts it upward until heap order is restored.",
+      "required_concepts": [
+        "Heap insertion appends the new key at the next complete-tree position and repeatedly sifts it upward until heap order is restored."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Sorting the entire array after each insert and claiming heap insertion behavior."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-sift-up-repair"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-heap-parent-and-child-indices",
+      "canonical_deck_id": "data-structures",
+      "term": "Heap parent and child indices",
+      "prompt": "Define Heap parent and child indices. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The zero-based formulas parent=(i-1)//2 and children=2i+1,2i+2 when indices exist.",
+      "required_concepts": [
+        "The zero-based formulas parent=(i-1)//2 and children=2i+1,2i+2 when indices exist."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using one-based formulas without conversion."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-implicit-heap-layout"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-heap-partial-order-boundary",
+      "canonical_deck_id": "data-structures",
+      "term": "Heap partial-order boundary",
+      "prompt": "Define Heap partial-order boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The fact that heap order certifies only ancestor-child extremes and root access, not sorted iteration or fast arbitrary search.",
+      "required_concepts": [
+        "The fact that heap order certifies only ancestor-child extremes and root access, not sorted iteration or fast arbitrary search."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using array position to infer global rank beyond the root."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-min-heap-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-heap-peek",
+      "canonical_deck_id": "data-structures",
+      "term": "Heap peek",
+      "prompt": "Define Heap peek. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The constant root observation returning the extreme item without mutation under a nonempty contract.",
+      "required_concepts": [
+        "The constant root observation returning the extreme item without mutation under a nonempty contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Scanning the whole heap because it is not sorted."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-min-heap-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-heap-versus-search-tree-selection",
+      "canonical_deck_id": "data-structures",
+      "term": "Heap-versus-search-tree selection",
+      "prompt": "Define Heap-versus-search-tree selection. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The workload distinction between repeated extreme access and ordered search/range/predecessor operations.",
+      "required_concepts": [
+        "The workload distinction between repeated extreme access and ordered search/range/predecessor operations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling one universally faster from both having logarithmic updates."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m4-binary-search-tree-invariant",
+        "data-structures.ds-m5-priority-queue-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-implicit-heap-layout",
+      "canonical_deck_id": "data-structures",
+      "term": "Implicit heap layout",
+      "prompt": "Define Implicit heap layout. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The complete-tree shape encoded by an array without explicit child pointers.",
+      "required_concepts": [
+        "The complete-tree shape encoded by an array without explicit child pointers."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Leaving internal holes and still using standard index formulas."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-min-heap-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-lazy-deletion",
+      "canonical_deck_id": "data-structures",
+      "term": "Lazy deletion",
+      "prompt": "Define Lazy deletion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The technique marking old entries removed and inserting replacements while pop skips stale entries, with live mapping and compaction policy.",
+      "required_concepts": [
+        "The technique marking old entries removed and inserting replacements while pop skips stale entries, with live mapping and compaction policy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning the first stale entry because its priority is best."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-priority-update-strategy"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-linear-heapify-work-argument",
+      "canonical_deck_id": "data-structures",
+      "term": "Linear heapify work argument",
+      "prompt": "Define Linear heapify work argument. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The level-sensitive accounting where many nodes move little and few high nodes move far, summing to linear work.",
+      "required_concepts": [
+        "The level-sensitive accounting where many nodes move little and few high nodes move far, summing to linear work."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Claiming every node sifts through log n levels."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-bottom-up-heapify"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-max-heap-convention",
+      "canonical_deck_id": "data-structures",
+      "term": "Max-heap convention",
+      "prompt": "Define Max-heap convention. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The mirrored parent-not-less-than-child invariant whose root is maximal, kept separate from a min-heap API.",
+      "required_concepts": [
+        "The mirrored parent-not-less-than-child invariant whose root is maximal, kept separate from a min-heap API."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Negating some priorities while also using max-heap operations and reversing twice."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-priority-queue-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-min-heap-invariant",
+      "canonical_deck_id": "data-structures",
+      "term": "Min-heap invariant",
+      "prompt": "Define Min-heap invariant. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The partial order where every parent key is no greater than either child so the root is globally minimal.",
+      "required_concepts": [
+        "The partial order where every parent key is no greater than either child so the root is globally minimal."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Requiring every earlier array element to be no greater than every later one."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-priority-queue-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-priority-queue-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Priority-queue ADT",
+      "prompt": "Define Priority-queue ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A collection supporting insert and access/removal of the item with minimum or maximum specified priority plus empty and tie behavior.",
+      "required_concepts": [
+        "A collection supporting insert and access/removal of the item with minimum or maximum specified priority plus empty and tie behavior."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning insertion order while calling it priority order."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-priority-update-strategy",
+      "canonical_deck_id": "data-structures",
+      "term": "Priority-update strategy",
+      "prompt": "Define Priority-update strategy. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The specified choice among indexed handles, entry maps, decrease-key repair, remove-and-reinsert or lazy replacement.",
+      "required_concepts": [
+        "The specified choice among indexed handles, entry maps, decrease-key repair, remove-and-reinsert or lazy replacement."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing a field and assuming future pop repairs it automatically."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-min-heap-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-replace-and-push-pop-semantics",
+      "canonical_deck_id": "data-structures",
+      "term": "Replace and push-pop semantics",
+      "prompt": "For Python min-heaps, compare heapreplace and heappushpop. Starting separately from [5,9,7], what does each return when the new item is 3, and what remains? What happens on an empty heap?",
+      "definition": "heapreplace removes and returns the old minimum, then installs the new item: with [5,9,7] and 3 it returns 5 and retains the multiset {3,7,9}. heappushpop has push-then-pop semantics: it returns the minimum of the old items and the new item, so here it returns 3 and retains {5,7,9}. heapreplace raises IndexError on an empty heap; heappushpop([],3) returns 3 and leaves the heap empty. Their return values can coincide for other inputs; the operations are not synonyms.",
+      "required_concepts": [
+        "heapreplace returns 5 and retains {3,7,9}; heappushpop returns 3 and retains {5,7,9} for the stated independent heaps.",
+        "On an empty heap, heapreplace raises IndexError, while heappushpop returns the incoming item and leaves an empty heap."
+      ],
+      "accepted_variants": [
+        "Replace gives back old min 5 and keeps 3,7,9. Push-pop gives back new min 3 and keeps 5,7,9. Empty replace raises IndexError; empty push-pop returns 3 and stays empty."
+      ],
+      "major_error_concepts": [
+        "Both functions return 3 and keep 5,7,9, and both raise IndexError when the original heap is empty."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-extract-root-operation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:algorithm"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-sift-down-repair",
+      "canonical_deck_id": "data-structures",
+      "term": "Sift-down repair",
+      "prompt": "Define Sift-down repair. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The downward exchanges of a violating parent with the more extreme child until heap order is restored.",
+      "required_concepts": [
+        "The downward exchanges of a violating parent with the more extreme child until heap order is restored."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Always swapping with the left child."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-heap-parent-and-child-indices"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-sift-up-repair",
+      "canonical_deck_id": "data-structures",
+      "term": "Sift-up repair",
+      "prompt": "Define Sift-up repair. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The upward exchanges after insertion while a child violates heap order with its parent.",
+      "required_concepts": [
+        "The upward exchanges after insertion while a child violates heap order with its parent."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing only with siblings."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-heap-parent-and-child-indices"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-stable-priority-tie-breaker",
+      "canonical_deck_id": "data-structures",
+      "term": "Stable priority tie-breaker",
+      "prompt": "Define Stable priority tie-breaker. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A monotone insertion counter or declared secondary key ensuring deterministic FIFO order among equal priorities and avoiding payload comparison.",
+      "required_concepts": [
+        "A monotone insertion counter or declared secondary key ensuring deterministic FIFO order among equal priorities and avoiding payload comparison."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using (priority,task) and allowing a payload comparison error on ties."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-priority-queue-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m5-stale-entry-compaction",
+      "canonical_deck_id": "data-structures",
+      "term": "Stale-entry compaction",
+      "prompt": "Define Stale-entry compaction. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rebuild policy controlling physical heap growth when lazy-deleted entries dominate live entries.",
+      "required_concepts": [
+        "The rebuild policy controlling physical heap growth when lazy-deleted entries dominate live entries."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling physical length the priority-queue logical size."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m5-lazy-deletion"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m5",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-adjacency-list-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Adjacency-list representation",
+      "prompt": "Define Adjacency-list representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The per-vertex collection of outgoing or incident neighbors/edges whose symmetry and duplicate behavior depend on graph policy.",
+      "required_concepts": [
+        "The per-vertex collection of outgoing or incident neighbors/edges whose symmetry and duplicate behavior depend on graph policy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Storing only a->b while claiming undirected neighborhood symmetry."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-graph-semantic-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-adjacency-matrix-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Adjacency-matrix representation",
+      "prompt": "Define Adjacency-matrix representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The vertex-indexed table whose cell encodes edge existence count weight or reference under a declared graph policy.",
+      "required_concepts": [
+        "The vertex-indexed table whose cell encodes edge existence count weight or reference under a declared graph policy."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a boolean matrix and claiming multigraph round-trip fidelity."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-graph-semantic-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-disjoint-set-adt",
+      "canonical_deck_id": "data-structures",
+      "term": "Disjoint-set ADT",
+      "prompt": "Define Disjoint-set ADT. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A partition of elements supporting make-set, find-set and union while abstract membership is independent of chosen representative nodes.",
+      "required_concepts": [
+        "A partition of elements supporting make-set, find-set and union while abstract membership is independent of chosen representative nodes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating representative identity as the semantic block name."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-disjoint-set-amortized-boundary",
+      "canonical_deck_id": "data-structures",
+      "term": "Disjoint-set amortized boundary",
+      "prompt": "Define Disjoint-set amortized boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The qualified near-constant amortized sequence result for union by rank/size plus path compression, distinct from each operation's worst-case constant time.",
+      "required_concepts": [
+        "The qualified near-constant amortized sequence result for union by rank/size plus path compression, distinct from each operation's worst-case constant time."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling every individual find worst-case O(1)."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-union-by-size-or-rank",
+        "data-structures.ds-m6-path-compression"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-edge-list-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Edge-list representation",
+      "prompt": "Define Edge-list representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The collection of edge records directly preserving each specified edge occurrence and attributes, with neighborhood queries generally requiring scans or indexes.",
+      "required_concepts": [
+        "The collection of edge records directly preserving each specified edge occurrence and attributes, with neighborhood queries generally requiring scans or indexes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Deduplicating them because endpoints match."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-graph-semantic-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-find-set",
+      "canonical_deck_id": "data-structures",
+      "term": "Find-set",
+      "prompt": "Define Find-set. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation following parent links to a root and returning its representative while preserving partition semantics.",
+      "required_concepts": [
+        "The operation following parent links to a root and returning its representative while preserving partition semantics."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning a because it is the queried element."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-parent-forest-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-graph-representation-cost-matrix",
+      "canonical_deck_id": "data-structures",
+      "term": "Graph-representation cost matrix",
+      "prompt": "Define Graph-representation cost matrix. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The space and operation table indexed by vertex count V edge count E density directedness and cell/bucket representation.",
+      "required_concepts": [
+        "The space and operation table indexed by vertex count V edge count E density directedness and cell/bucket representation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling adjacency lists always smaller even for dense graphs with large per-edge overhead."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-edge-list-representation",
+        "data-structures.ds-m6-adjacency-list-representation",
+        "data-structures.ds-m6-adjacency-matrix-representation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-graph-semantic-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Graph semantic contract",
+      "prompt": "Define Graph semantic contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The frozen vertex identity edge identity directedness multiplicity self-loop weight and attribute policy before choosing storage.",
+      "required_concepts": [
+        "The frozen vertex identity edge identity directedness multiplicity self-loop weight and attribute policy before choosing storage."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing graph semantics during representation conversion."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-parent-forest-representation",
+      "canonical_deck_id": "data-structures",
+      "term": "Parent-forest representation",
+      "prompt": "Define Parent-forest representation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The concrete encoding where each element points toward a root and roots identify current representatives without cycles.",
+      "required_concepts": [
+        "The concrete encoding where each element points toward a root and roots identify current representatives without cycles."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Allowing a nonroot cycle and calling every node mutually representative."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-disjoint-set-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-path-compressed-trie-boundary",
+      "canonical_deck_id": "data-structures",
+      "term": "Path-compressed-trie boundary",
+      "prompt": "Define Path-compressed-trie boundary. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The context where unary paths can be stored as multi-symbol edges while split/merge correctness and advanced integer structures remain downstream.",
+      "required_concepts": [
+        "The context where unary paths can be stored as multi-symbol edges while split/merge correctness and advanced integer structures remain downstream."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling compression free without storing labels or handling partial matches."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-trie"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-path-compression",
+      "canonical_deck_id": "data-structures",
+      "term": "Path compression",
+      "prompt": "Define Path compression. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The find-time rewrite making visited nodes point closer or directly to the root while leaving partition membership unchanged.",
+      "required_concepts": [
+        "The find-time rewrite making visited nodes point closer or directly to the root while leaving partition membership unchanged."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Changing ranks as though compression were a union."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-find-set"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-representation-round-trip-audit",
+      "canonical_deck_id": "data-structures",
+      "term": "Representation round-trip audit",
+      "prompt": "Define Representation round-trip audit. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The conversion check preserving the specified vertex set edge multiset directions loops weights attributes and identities across representations.",
+      "required_concepts": [
+        "The conversion check preserving the specified vertex set edge multiset directions loops weights attributes and identities across representations."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Accepting equal edge count despite reversed directions or merged parallel edges."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-graph-representation-cost-matrix"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-representative-nonidentity",
+      "canonical_deck_id": "data-structures",
+      "term": "Representative nonidentity",
+      "prompt": "Define Representative nonidentity. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The rule that roots may change after unions and are unsuitable as stable external labels unless separately canonicalized.",
+      "required_concepts": [
+        "The rule that roots may change after unions and are unsuitable as stable external labels unless separately canonicalized."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a representative change as element migration between blocks."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-disjoint-set-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-trie-exact-lookup",
+      "canonical_deck_id": "data-structures",
+      "term": "Trie exact lookup",
+      "prompt": "Define Trie exact lookup. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation following one edge per key symbol and requiring a terminal marker at the final node.",
+      "required_concepts": [
+        "The operation following one edge per key symbol and requiring a terminal marker at the final node."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Returning true for any existing prefix."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-trie-terminal-marker"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-trie-length-and-alphabet-cost",
+      "canonical_deck_id": "data-structures",
+      "term": "Trie length-and-alphabet cost",
+      "prompt": "Define Trie length-and-alphabet cost. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation cost indexed by key length and child representation rather than only number of stored keys.",
+      "required_concepts": [
+        "The operation cost indexed by key length and child representation rather than only number of stored keys."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling lookup O(1) because tree height does not depend directly on number of keys."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-trie-exact-lookup"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-trie-prefix-lookup",
+      "canonical_deck_id": "data-structures",
+      "term": "Trie prefix lookup",
+      "prompt": "Define Trie prefix lookup. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation finding the node for a prefix then exposing or enumerating descendants under a separate output-cost contract.",
+      "required_concepts": [
+        "The operation finding the node for a prefix then exposing or enumerating descendants under a separate output-cost contract."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling prefix lookup constant regardless of prefix length or returned keys."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-trie"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-trie-terminal-marker",
+      "canonical_deck_id": "data-structures",
+      "term": "Trie terminal marker",
+      "prompt": "Define Trie terminal marker. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The state distinguishing a key that ends at an internal prefix node from a prefix that is not itself stored.",
+      "required_concepts": [
+        "The state distinguishing a key that ends at an internal prefix node from a prefix that is not itself stored."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating every internal prefix as an inserted key."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-trie"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-trie",
+      "canonical_deck_id": "data-structures",
+      "term": "Trie",
+      "prompt": "Define Trie. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A rooted prefix structure whose path labels encode key prefixes and whose terminal markers distinguish complete keys.",
+      "required_concepts": [
+        "A rooted prefix structure whose path labels encode key prefixes and whose terminal markers distinguish complete keys."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Duplicating the entire prefix for every key."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-union-by-size-or-rank",
+      "canonical_deck_id": "data-structures",
+      "term": "Union by size or rank",
+      "prompt": "Define Union by size or rank. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The heuristic attaching a smaller or lower-rank root below a larger/higher root and updating only root metadata.",
+      "required_concepts": [
+        "The heuristic attaching a smaller or lower-rank root below a larger/higher root and updating only root metadata."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Updating size on every member or attaching large under small while claiming the heuristic."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-union-operation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m6-union-operation",
+      "canonical_deck_id": "data-structures",
+      "term": "Union operation",
+      "prompt": "Define Union operation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The operation merging two blocks by linking their distinct roots and doing nothing semantically when already united.",
+      "required_concepts": [
+        "The operation merging two blocks by linking their distinct roots and doing nothing semantically when already united."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Linking arbitrary nonroot nodes and creating a cycle."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m6-find-set"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m6",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-ai-cache-and-index-application",
+      "canonical_deck_id": "data-structures",
+      "term": "AI cache-and-index application",
+      "prompt": "Define AI cache-and-index application. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The bounded use of maps sets tries and graph representations for memoization deduplication prefix lookup and relation storage while eviction persistence privacy and semantic validity remain separate.",
+      "required_concepts": [
+        "The bounded use of maps sets tries and graph representations for memoization deduplication prefix lookup and relation storage while eviction persistence privacy and semantic validity remain separate."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a correct hash table as proof cache keys are semantically valid or safe."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m3-map-adt",
+        "data-structures.ds-m6-trie",
+        "data-structures.ds-m6-graph-semantic-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-ai-task-queue-application",
+      "canonical_deck_id": "data-structures",
+      "term": "AI task-queue application",
+      "prompt": "Define AI task-queue application. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The bounded use of queue deque and priority structures for research tasks while scheduling policy fairness durability retries and distributed execution remain systems concerns.",
+      "required_concepts": [
+        "The bounded use of queue deque and priority structures for research tasks while scheduling policy fairness durability retries and distributed execution remain systems concerns."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling priority scheduling fair because heap operations are correct."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m2-queue-adt",
+        "data-structures.ds-m5-priority-queue-adt"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-benchmark-harness-contract",
+      "canonical_deck_id": "data-structures",
+      "term": "Benchmark harness contract",
+      "prompt": "Define Benchmark harness contract. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The controlled workload size distribution warmup repetitions environment versions measurement statistic and correctness precheck for empirical tradeoff evidence.",
+      "required_concepts": [
+        "The controlled workload size distribution warmup repetitions environment versions measurement statistic and correctness precheck for empirical tradeoff evidence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Timing one run with different initial data and calling it complexity proof."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-complexity-instrumentation",
+      "canonical_deck_id": "data-structures",
+      "term": "Complexity instrumentation",
+      "prompt": "Define Complexity instrumentation. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The counting of comparisons probes moves allocations pointer updates or other model events to connect traces with theoretical operation costs.",
+      "required_concepts": [
+        "The counting of comparisons probes moves allocations pointer updates or other model events to connect traces with theoretical operation costs."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using wall time alone to identify which operation caused scaling."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m7-benchmark-harness-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-corrupted-state-triage",
+      "canonical_deck_id": "data-structures",
+      "term": "Corrupted-state triage",
+      "prompt": "Define Corrupted-state triage. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The process locating the earliest broken invariant, classifying semantic versus representation damage, preserving the receipt and repairing from an accepted valid state.",
+      "required_concepts": [
+        "The process locating the earliest broken invariant, classifying semantic versus representation damage, preserving the receipt and repairing from an accepted valid state."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Editing the final size field to match reachable nodes without finding the lost node."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m7-executable-invariant-assertion",
+        "data-structures.ds-m7-failure-shrinking"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-differential-testing",
+      "canonical_deck_id": "data-structures",
+      "term": "Differential testing",
+      "prompt": "Define Differential testing. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The execution of identical generated operation sequences against candidate and reference implementations with semantic results compared after each step.",
+      "required_concepts": [
+        "The execution of identical generated operation sequences against candidate and reference implementations with semantic results compared after each step."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Comparing only final length after thousands of operations."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m7-reference-model"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-executable-invariant-assertion",
+      "canonical_deck_id": "data-structures",
+      "term": "Executable invariant assertion",
+      "prompt": "Define Executable invariant assertion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A check over concrete state run at controlled boundaries to detect corruption near its cause without replacing proof or tests.",
+      "required_concepts": [
+        "A check over concrete state run at controlled boundaries to detect corruption near its cause without replacing proof or tests."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Asserting only size>=0."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-representation-invariant"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-failure-shrinking",
+      "canonical_deck_id": "data-structures",
+      "term": "Failure shrinking",
+      "prompt": "Define Failure shrinking. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The reduction of a failing generated trace while preserving the same material invariant or semantic failure.",
+      "required_concepts": [
+        "The reduction of a failing generated trace while preserving the same material invariant or semantic failure."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Deleting the operation that triggers the bug merely to make the test pass."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-mutator-preservation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-memory-and-indirection-profile",
+      "canonical_deck_id": "data-structures",
+      "term": "Memory-and-indirection profile",
+      "prompt": "Define Memory-and-indirection profile. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The accounting of payload storage spare capacity node links object overhead tombstones caches and transient copies under representative sizes.",
+      "required_concepts": [
+        "The accounting of payload storage spare capacity node links object overhead tombstones caches and transient copies under representative sizes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using big-O space alone as an exact memory comparison."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-space-cost-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-metamorphic-structure-test",
+      "canonical_deck_id": "data-structures",
+      "term": "Metamorphic structure test",
+      "prompt": "Define Metamorphic structure test. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A relation among transformed inputs or operation sequences whose outputs should agree without requiring one expected output constant.",
+      "required_concepts": [
+        "A relation among transformed inputs or operation sequences whose outputs should agree without requiring one expected output constant."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming physical table layout must also return byte-for-byte identical."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m7-property-based-operation-sequences"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-operation-frequency-profile",
+      "canonical_deck_id": "data-structures",
+      "term": "Operation-frequency profile",
+      "prompt": "Define Operation-frequency profile. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The measured or estimated mix of lookups insertions deletions endpoint access range queries priority updates and iteration shaping a representation choice.",
+      "required_concepts": [
+        "The measured or estimated mix of lookups insertions deletions endpoint access range queries priority updates and iteration shaping a representation choice."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Selecting from one rare operation while ignoring dominant costs."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-operation-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-ordering-and-multiplicity-requirement",
+      "canonical_deck_id": "data-structures",
+      "term": "Ordering-and-multiplicity requirement",
+      "prompt": "Define Ordering-and-multiplicity requirement. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The contract for absent insertion sorted priority or stable order plus set map multiset or multimap duplicates.",
+      "required_concepts": [
+        "The contract for absent insertion sorted priority or stable order plus set map multiset or multimap duplicates."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Discarding duplicates to gain a simpler representation."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-operation-contract"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-persistence-and-concurrency-handoff",
+      "canonical_deck_id": "data-structures",
+      "term": "Persistence-and-concurrency handoff",
+      "prompt": "Define Persistence-and-concurrency handoff. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The boundary where in-memory mutable structures expose needs but durable transactions shared-memory synchronization reclamation and distributed replication belong to downstream owners.",
+      "required_concepts": [
+        "The boundary where in-memory mutable structures expose needs but durable transactions shared-memory synchronization reclamation and distributed replication belong to downstream owners."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Adding a lock field and claiming crash-safe exactly-once delivery."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-property-based-operation-sequences",
+      "canonical_deck_id": "data-structures",
+      "term": "Property-based operation sequences",
+      "prompt": "Define Property-based operation sequences. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** Property-based operation sequences are generated valid and invalid traces checked against general contracts and invariants across many structures and histories.",
+      "required_concepts": [
+        "Property-based operation sequences are generated valid and invalid traces checked against general contracts and invariants across many structures and histories."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Generating only pushes and never exercising pop or empty state."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-mutator-preservation"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-qualified-data-structure-conclusion",
+      "canonical_deck_id": "data-structures",
+      "term": "Qualified data-structure conclusion",
+      "prompt": "Define Qualified data-structure conclusion. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** The narrow final statement joining ADT conformance invariant preservation operation costs tests measurements versions limitations and handoffs for one implementation.",
+      "required_concepts": [
+        "The narrow final statement joining ADT conformance invariant preservation operation costs tests measurements versions limitations and handoffs for one implementation."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling passing tests and import proof of all-input correctness learner mastery or OpenAI research readiness."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m7-persistence-and-concurrency-handoff",
+        "data-structures.ds-m7-differential-testing",
+        "data-structures.ds-m7-metamorphic-structure-test",
+        "data-structures.ds-m7-randomized-adversarial-trace",
+        "data-structures.ds-m7-complexity-instrumentation",
+        "data-structures.ds-m7-corrupted-state-triage",
+        "data-structures.ds-m7-ai-task-queue-application",
+        "data-structures.ds-m7-ai-cache-and-index-application"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-randomized-adversarial-trace",
+      "canonical_deck_id": "data-structures",
+      "term": "Randomized adversarial trace",
+      "prompt": "Define Randomized adversarial trace. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A seeded operation sequence biased toward boundaries collisions duplicates resizes empty/full cases skewed trees ties updates and conversion hazards.",
+      "required_concepts": [
+        "A seeded operation sequence biased toward boundaries collisions duplicates resizes empty/full cases skewed trees ties updates and conversion hazards."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling uniform random inputs adversarial coverage."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m7-property-based-operation-sequences"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    },
+    {
+      "id": "data-structures.ds-m7-reference-model",
+      "canonical_deck_id": "data-structures",
+      "term": "Reference model",
+      "prompt": "Define Reference model. Include its essential conditions and distinctions.",
+      "definition": "**Definition.** A simpler trusted implementation of the same abstract contract used to compare operation results and logical state, not necessarily performance.",
+      "required_concepts": [
+        "A simpler trusted implementation of the same abstract contract used to compare operation results and logical state, not necessarily performance."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using a reference with different duplicate or ordering semantics."
+      ],
+      "prerequisite_ids": [
+        "data-structures.ds-m0-abstract-data-type"
+      ],
+      "source_refs": [],
+      "aliases": [],
+      "tags": [
+        "new-openai-curriculum",
+        "data-structures",
+        "ds-m7",
+        "shape:definition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m0-concrete-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m0-operation-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m2-deque-adt"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m2-queue-adt"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m2-stack-adt"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m3-set-adt"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstract-data-type",
+      "dependent_card_id": "data-structures.ds-m7-reference-model"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstraction-function",
+      "dependent_card_id": "data-structures.ds-m0-observer-consistency"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-abstraction-function",
+      "dependent_card_id": "data-structures.ds-m0-representation-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-concrete-representation",
+      "dependent_card_id": "data-structures.ds-m0-abstraction-function"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-concrete-representation",
+      "dependent_card_id": "data-structures.ds-m0-aliasing-and-mutability-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-constructor-establishment",
+      "dependent_card_id": "data-structures.ds-m0-mutator-preservation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-mutator-preservation",
+      "dependent_card_id": "data-structures.ds-m7-failure-shrinking"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-mutator-preservation",
+      "dependent_card_id": "data-structures.ds-m7-property-based-operation-sequences"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-operation-contract",
+      "dependent_card_id": "data-structures.ds-m0-exception-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-operation-contract",
+      "dependent_card_id": "data-structures.ds-m0-iterator-validity-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-operation-contract",
+      "dependent_card_id": "data-structures.ds-m0-postcondition"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-operation-contract",
+      "dependent_card_id": "data-structures.ds-m0-precondition"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-operation-contract",
+      "dependent_card_id": "data-structures.ds-m7-operation-frequency-profile"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-operation-contract",
+      "dependent_card_id": "data-structures.ds-m7-ordering-and-multiplicity-requirement"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-representation-invariant",
+      "dependent_card_id": "data-structures.ds-m0-constructor-establishment"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-representation-invariant",
+      "dependent_card_id": "data-structures.ds-m7-executable-invariant-assertion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-size-parameter",
+      "dependent_card_id": "data-structures.ds-m0-amortized-operation-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-size-parameter",
+      "dependent_card_id": "data-structures.ds-m0-expected-operation-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-size-parameter",
+      "dependent_card_id": "data-structures.ds-m0-space-cost-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-size-parameter",
+      "dependent_card_id": "data-structures.ds-m0-worst-case-operation-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m0-space-cost-contract",
+      "dependent_card_id": "data-structures.ds-m7-memory-and-indirection-profile"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-array-index-invariant",
+      "dependent_card_id": "data-structures.ds-m1-dynamic-array-length-and-capacity"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-array-index-invariant",
+      "dependent_card_id": "data-structures.ds-m1-middle-insertion-shift"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-array-index-invariant",
+      "dependent_card_id": "data-structures.ds-m1-slice-value-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-circular-buffer-representation",
+      "dependent_card_id": "data-structures.ds-m1-circular-index-wrap"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-circular-buffer-representation",
+      "dependent_card_id": "data-structures.ds-m1-full-versus-empty-encoding"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-contiguous-slot-model",
+      "dependent_card_id": "data-structures.ds-m1-random-access-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-dynamic-array-append",
+      "dependent_card_id": "data-structures.ds-m1-geometric-growth-policy"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-dynamic-array-length-and-capacity",
+      "dependent_card_id": "data-structures.ds-m1-circular-buffer-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-dynamic-array-length-and-capacity",
+      "dependent_card_id": "data-structures.ds-m1-dynamic-array-append"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-dynamic-array-length-and-capacity",
+      "dependent_card_id": "data-structures.ds-m1-shrink-hysteresis"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-geometric-growth-policy",
+      "dependent_card_id": "data-structures.ds-m1-resize-copy-trace"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-middle-insertion-shift",
+      "dependent_card_id": "data-structures.ds-m1-binary-search-insertion-tradeoff"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-middle-insertion-shift",
+      "dependent_card_id": "data-structures.ds-m1-middle-deletion-shift"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-random-access-contract",
+      "dependent_card_id": "data-structures.ds-m1-sequential-scan-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-resize-copy-trace",
+      "dependent_card_id": "data-structures.ds-m1-amortized-append-accounting"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-slice-value-contract",
+      "dependent_card_id": "data-structures.ds-m1-shallow-copy-alias-trace"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-static-array",
+      "dependent_card_id": "data-structures.ds-m1-array-index-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m1-static-array",
+      "dependent_card_id": "data-structures.ds-m1-contiguous-slot-model"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-delete-after-node",
+      "dependent_card_id": "data-structures.ds-m2-locate-versus-splice-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-deque-adt",
+      "dependent_card_id": "data-structures.ds-m2-library-deque-tradeoff"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-doubly-linked-list-invariant",
+      "dependent_card_id": "data-structures.ds-m2-doubly-linked-unlink"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-doubly-linked-list-invariant",
+      "dependent_card_id": "data-structures.ds-m2-sentinel-node-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-head-and-tail-endpoint-contract",
+      "dependent_card_id": "data-structures.ds-m2-linked-queue-implementation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-head-and-tail-endpoint-contract",
+      "dependent_card_id": "data-structures.ds-m2-singly-linked-append-with-tail"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-head-and-tail-endpoint-contract",
+      "dependent_card_id": "data-structures.ds-m2-singly-linked-prepend"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-insert-after-node",
+      "dependent_card_id": "data-structures.ds-m2-delete-after-node"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-linked-node",
+      "dependent_card_id": "data-structures.ds-m2-doubly-linked-list-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-linked-node",
+      "dependent_card_id": "data-structures.ds-m2-singly-linked-list-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-queue-adt",
+      "dependent_card_id": "data-structures.ds-m2-linked-queue-implementation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-queue-adt",
+      "dependent_card_id": "data-structures.ds-m7-ai-task-queue-application"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-reachability-and-ownership-audit",
+      "dependent_card_id": "data-structures.ds-m2-accidental-cycle-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-singly-linked-list-invariant",
+      "dependent_card_id": "data-structures.ds-m2-head-and-tail-endpoint-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-singly-linked-list-invariant",
+      "dependent_card_id": "data-structures.ds-m2-insert-after-node"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-singly-linked-list-invariant",
+      "dependent_card_id": "data-structures.ds-m2-reachability-and-ownership-audit"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m2-stack-adt",
+      "dependent_card_id": "data-structures.ds-m2-linked-stack-implementation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-bucket-index-reduction",
+      "dependent_card_id": "data-structures.ds-m3-hash-table-resize-and-rehash"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-bucket-index-reduction",
+      "dependent_card_id": "data-structures.ds-m3-load-factor"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-expected-hash-table-cost",
+      "dependent_card_id": "data-structures.ds-m3-hash-flooding-boundary"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-hash-collision",
+      "dependent_card_id": "data-structures.ds-m3-open-addressing"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-hash-collision",
+      "dependent_card_id": "data-structures.ds-m3-separate-chaining"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-hash-function-contract",
+      "dependent_card_id": "data-structures.ds-m3-bucket-index-reduction"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-hash-function-contract",
+      "dependent_card_id": "data-structures.ds-m3-hash-collision"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-hash-function-contract",
+      "dependent_card_id": "data-structures.ds-m3-mutable-key-corruption"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-key-equality-contract",
+      "dependent_card_id": "data-structures.ds-m3-hash-function-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-load-factor",
+      "dependent_card_id": "data-structures.ds-m3-expected-hash-table-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-map-adt",
+      "dependent_card_id": "data-structures.ds-m3-iteration-order-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-map-adt",
+      "dependent_card_id": "data-structures.ds-m3-key-equality-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-map-adt",
+      "dependent_card_id": "data-structures.ds-m7-ai-cache-and-index-application"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-open-address-search-termination",
+      "dependent_card_id": "data-structures.ds-m3-insert-versus-update-decision"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-open-addressing",
+      "dependent_card_id": "data-structures.ds-m3-probe-sequence"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-open-addressing",
+      "dependent_card_id": "data-structures.ds-m3-tombstone-deletion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-probe-sequence",
+      "dependent_card_id": "data-structures.ds-m3-primary-clustering"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-set-adt",
+      "dependent_card_id": "data-structures.ds-m3-iteration-order-contract"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m3-tombstone-deletion",
+      "dependent_card_id": "data-structures.ds-m3-open-address-search-termination"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-avl-balance-invariant",
+      "dependent_card_id": "data-structures.ds-m4-single-versus-double-avl-repair"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-binary-search-tree-invariant",
+      "dependent_card_id": "data-structures.ds-m4-bst-duplicate-policy"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-binary-search-tree-invariant",
+      "dependent_card_id": "data-structures.ds-m4-bst-minimum-maximum-and-successor"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-binary-search-tree-invariant",
+      "dependent_card_id": "data-structures.ds-m4-bst-search-path"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-binary-search-tree-invariant",
+      "dependent_card_id": "data-structures.ds-m5-heap-versus-search-tree-selection"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-bst-height-indexed-cost",
+      "dependent_card_id": "data-structures.ds-m4-degenerate-bst-diagnostic"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-bst-minimum-maximum-and-successor",
+      "dependent_card_id": "data-structures.ds-m4-bst-two-child-deletion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-bst-search-path",
+      "dependent_card_id": "data-structures.ds-m4-bst-height-indexed-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-bst-search-path",
+      "dependent_card_id": "data-structures.ds-m4-bst-insertion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-in-order-key-sequence",
+      "dependent_card_id": "data-structures.ds-m4-binary-search-tree-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-in-order-key-sequence",
+      "dependent_card_id": "data-structures.ds-m4-left-rotation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-in-order-key-sequence",
+      "dependent_card_id": "data-structures.ds-m4-right-rotation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-left-rotation",
+      "dependent_card_id": "data-structures.ds-m4-single-versus-double-avl-repair"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-node-depth-and-tree-height",
+      "dependent_card_id": "data-structures.ds-m4-avl-balance-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-node-depth-and-tree-height",
+      "dependent_card_id": "data-structures.ds-m4-bst-height-indexed-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-right-rotation",
+      "dependent_card_id": "data-structures.ds-m4-single-versus-double-avl-repair"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-rooted-binary-tree",
+      "dependent_card_id": "data-structures.ds-m4-in-order-key-sequence"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-rooted-binary-tree",
+      "dependent_card_id": "data-structures.ds-m4-node-depth-and-tree-height"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-rooted-binary-tree",
+      "dependent_card_id": "data-structures.ds-m4-tree-parent-child-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-tree-parent-child-invariant",
+      "dependent_card_id": "data-structures.ds-m4-bst-leaf-deletion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-tree-parent-child-invariant",
+      "dependent_card_id": "data-structures.ds-m4-bst-one-child-deletion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-tree-parent-child-invariant",
+      "dependent_card_id": "data-structures.ds-m4-left-rotation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-tree-parent-child-invariant",
+      "dependent_card_id": "data-structures.ds-m4-right-rotation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m4-tree-parent-child-invariant",
+      "dependent_card_id": "data-structures.ds-m4-subtree-size-metadata"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-bottom-up-heapify",
+      "dependent_card_id": "data-structures.ds-m5-linear-heapify-work-argument"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-extract-root-operation",
+      "dependent_card_id": "data-structures.ds-m5-replace-and-push-pop-semantics"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-heap-parent-and-child-indices",
+      "dependent_card_id": "data-structures.ds-m5-sift-down-repair"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-heap-parent-and-child-indices",
+      "dependent_card_id": "data-structures.ds-m5-sift-up-repair"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-implicit-heap-layout",
+      "dependent_card_id": "data-structures.ds-m5-heap-parent-and-child-indices"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-lazy-deletion",
+      "dependent_card_id": "data-structures.ds-m5-stale-entry-compaction"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-min-heap-invariant",
+      "dependent_card_id": "data-structures.ds-m5-heap-partial-order-boundary"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-min-heap-invariant",
+      "dependent_card_id": "data-structures.ds-m5-heap-peek"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-min-heap-invariant",
+      "dependent_card_id": "data-structures.ds-m5-implicit-heap-layout"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-min-heap-invariant",
+      "dependent_card_id": "data-structures.ds-m5-priority-update-strategy"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-priority-queue-adt",
+      "dependent_card_id": "data-structures.ds-m5-heap-versus-search-tree-selection"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-priority-queue-adt",
+      "dependent_card_id": "data-structures.ds-m5-max-heap-convention"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-priority-queue-adt",
+      "dependent_card_id": "data-structures.ds-m5-min-heap-invariant"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-priority-queue-adt",
+      "dependent_card_id": "data-structures.ds-m5-stable-priority-tie-breaker"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-priority-queue-adt",
+      "dependent_card_id": "data-structures.ds-m7-ai-task-queue-application"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-priority-update-strategy",
+      "dependent_card_id": "data-structures.ds-m5-lazy-deletion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-sift-down-repair",
+      "dependent_card_id": "data-structures.ds-m5-bottom-up-heapify"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-sift-down-repair",
+      "dependent_card_id": "data-structures.ds-m5-extract-root-operation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m5-sift-up-repair",
+      "dependent_card_id": "data-structures.ds-m5-heap-insertion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-adjacency-list-representation",
+      "dependent_card_id": "data-structures.ds-m6-graph-representation-cost-matrix"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-adjacency-matrix-representation",
+      "dependent_card_id": "data-structures.ds-m6-graph-representation-cost-matrix"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-disjoint-set-adt",
+      "dependent_card_id": "data-structures.ds-m6-parent-forest-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-disjoint-set-adt",
+      "dependent_card_id": "data-structures.ds-m6-representative-nonidentity"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-edge-list-representation",
+      "dependent_card_id": "data-structures.ds-m6-graph-representation-cost-matrix"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-find-set",
+      "dependent_card_id": "data-structures.ds-m6-path-compression"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-find-set",
+      "dependent_card_id": "data-structures.ds-m6-union-operation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-graph-representation-cost-matrix",
+      "dependent_card_id": "data-structures.ds-m6-representation-round-trip-audit"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-graph-semantic-contract",
+      "dependent_card_id": "data-structures.ds-m6-adjacency-list-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-graph-semantic-contract",
+      "dependent_card_id": "data-structures.ds-m6-adjacency-matrix-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-graph-semantic-contract",
+      "dependent_card_id": "data-structures.ds-m6-edge-list-representation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-graph-semantic-contract",
+      "dependent_card_id": "data-structures.ds-m7-ai-cache-and-index-application"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-parent-forest-representation",
+      "dependent_card_id": "data-structures.ds-m6-find-set"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-path-compression",
+      "dependent_card_id": "data-structures.ds-m6-disjoint-set-amortized-boundary"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-trie",
+      "dependent_card_id": "data-structures.ds-m6-path-compressed-trie-boundary"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-trie",
+      "dependent_card_id": "data-structures.ds-m6-trie-prefix-lookup"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-trie",
+      "dependent_card_id": "data-structures.ds-m6-trie-terminal-marker"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-trie",
+      "dependent_card_id": "data-structures.ds-m7-ai-cache-and-index-application"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-trie-exact-lookup",
+      "dependent_card_id": "data-structures.ds-m6-trie-length-and-alphabet-cost"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-trie-terminal-marker",
+      "dependent_card_id": "data-structures.ds-m6-trie-exact-lookup"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-union-by-size-or-rank",
+      "dependent_card_id": "data-structures.ds-m6-disjoint-set-amortized-boundary"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m6-union-operation",
+      "dependent_card_id": "data-structures.ds-m6-union-by-size-or-rank"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-ai-cache-and-index-application",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-ai-task-queue-application",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-benchmark-harness-contract",
+      "dependent_card_id": "data-structures.ds-m7-complexity-instrumentation"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-complexity-instrumentation",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-corrupted-state-triage",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-differential-testing",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-executable-invariant-assertion",
+      "dependent_card_id": "data-structures.ds-m7-corrupted-state-triage"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-failure-shrinking",
+      "dependent_card_id": "data-structures.ds-m7-corrupted-state-triage"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-metamorphic-structure-test",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-persistence-and-concurrency-handoff",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-property-based-operation-sequences",
+      "dependent_card_id": "data-structures.ds-m7-metamorphic-structure-test"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-property-based-operation-sequences",
+      "dependent_card_id": "data-structures.ds-m7-randomized-adversarial-trace"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-randomized-adversarial-trace",
+      "dependent_card_id": "data-structures.ds-m7-qualified-data-structure-conclusion"
+    },
+    {
+      "prerequisite_card_id": "data-structures.ds-m7-reference-model",
+      "dependent_card_id": "data-structures.ds-m7-differential-testing"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Data Structures.",
+  "level": "College",
+  "tags": [
+    "computer-science-and-software"
+  ]
+}

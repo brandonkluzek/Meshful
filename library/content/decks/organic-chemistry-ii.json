@@ -1,0 +1,3484 @@
+{
+  "id": "academic-reviewed-v1:organic-chemistry-ii",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Organic Chemistry II",
+  "subject": "Chemistry",
+  "domain": "Chemistry",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "organic-chemistry-ii.draft-degree-of-unsaturation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Degree of Unsaturation",
+      "prompt": "What is Degree of Unsaturation? State its defining idea and essential conditions.",
+      "definition": "Degree of unsaturation counts rings plus pi-bond equivalents: a ring or double bond contributes one, and a triple bond two. For a neutral, closed-shell formula with ordinary valences C(4), N(3), H/halogen(1), and O(2), DBE=(2C+2+N-H-X)/2, where letters denote atom counts and X counts halogens. Oxygen does not change this count. Charged, radical or unusual-valence species need adjusted bookkeeping; for a protonated/adduct mass-spectrometry ion, first identify the corresponding neutral formula before using this neutral formula rule.",
+      "required_concepts": [
+        "State the formula or equivalent hydrogen-deficiency count and the ring/double/triple-bond contributions.",
+        "The ordinary expression assumes a neutral closed-shell species with the stated usual valences, not an arbitrary detected ion."
+      ],
+      "accepted_variants": [
+        "For neutral C2H6O the DBE is zero. Its protonated ion C2H7O+ must not be inserted uncorrected into the neutral-formula expression."
+      ],
+      "major_error_concepts": [
+        "Adding oxygen count as a double-bond contribution.",
+        "Applying the neutral formula unchanged to every protonated ion and interpreting a negative half-integer as a physical number of rings."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-organic-structure-determination"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-mass-spectrometry",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Mass Spectrometry",
+      "prompt": "What is Mass Spectrometry? State its defining idea and essential conditions.",
+      "definition": "Mass spectrometry measures ions according to mass-to-charge ratio after a specified ionization and analysis process. The observed ions can be molecular ions, protonated species, adducts, or fragments, so peak mass cannot be interpreted without the ionization context.",
+      "required_concepts": [
+        "Ion m/z depends on charge and ion identity, not just neutral molecular mass."
+      ],
+      "accepted_variants": [
+        "MS molecular analysis."
+      ],
+      "major_error_concepts": [
+        "Treating every peak as a singly charged intact neutral molecule."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-degree-of-unsaturation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-molecular-ion-and-adduct",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Molecular Ion and Adduct",
+      "prompt": "What is Molecular Ion and Adduct? State its defining idea and essential conditions.",
+      "definition": "An electron-ionization molecular ion commonly is the radical cation of the intact molecule, whereas soft-ionization spectra may show protonated or other adduct ions. The largest observed m/z peak is not automatically the intact molecular ion.",
+      "required_concepts": [
+        "Identify intact ion type using the ionization method and evidence."
+      ],
+      "accepted_variants": [
+        "Molecular ion versus protonated molecule or adduct."
+      ],
+      "major_error_concepts": [
+        "Assuming the most intense peak must be the molecular ion."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-mass-spectrometry"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Accurate Mass and Molecular Formula",
+      "prompt": "What is Accurate Mass and Molecular Formula? State its defining idea and essential conditions.",
+      "definition": "Accurate mass uses precise isotope masses to constrain an ion's elemental composition. Formula assignment also requires charge, adduct identity, isotope pattern, and chemical plausibility; matching one mass value alone may leave multiple candidates.",
+      "required_concepts": [
+        "Precise ion mass narrows formulas under explicit ion and isotope assumptions."
+      ],
+      "accepted_variants": [
+        "High-resolution exact-mass interpretation."
+      ],
+      "major_error_concepts": [
+        "Inferring a unique molecular structure from one accurate mass alone."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-mass-spectrometry",
+        "organic-chemistry-ii.draft-molecular-ion-and-adduct",
+        "organic-chemistry-ii.draft-degree-of-unsaturation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-mass-spectral-isotope-pattern",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Mass Spectral Isotope Pattern",
+      "prompt": "What is Mass Spectral Isotope Pattern? State its defining idea and essential conditions.",
+      "definition": "An isotope pattern reflects naturally occurring isotope combinations and the number of relevant atoms in an ion. Characteristic halogen patterns can support a formula, but overlapping ions, charge state, and low signal can complicate that inference.",
+      "required_concepts": [
+        "Relative isotope peaks constrain elemental composition with charge and overlap considered."
+      ],
+      "accepted_variants": [
+        "Mass-spectral isotope envelope."
+      ],
+      "major_error_concepts": [
+        "Assuming an M-plus-two peak always uniquely proves one particular element."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-mass-spectrometry",
+        "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-mass-spectral-fragmentation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Mass Spectral Fragmentation",
+      "prompt": "What is Mass Spectral Fragmentation? State its defining idea and essential conditions.",
+      "definition": "Mass-spectral fragmentation forms smaller ions and neutral fragments through pathways influenced by ion stability and the ionization conditions. A fragment supports structural possibilities but need not correspond to a bond simply falling apart in the neutral molecule's ordinary solution chemistry.",
+      "required_concepts": [
+        "Ion fragmentation reflects gas-phase ion pathways and stability."
+      ],
+      "accepted_variants": [
+        "Fragment-ion structural interpretation."
+      ],
+      "major_error_concepts": [
+        "Interpreting every fragment as a direct measurement of the weakest neutral solution-phase bond."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-mass-spectrometry",
+        "organic-chemistry-ii.draft-molecular-ion-and-adduct",
+        "organic-chemistry-i.draft-organic-radical"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-formula-constraints-in-structure-determination",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Formula Constraints in Structure Determination",
+      "prompt": "What is Formula Constraints in Structure Determination? State its defining idea and essential conditions.",
+      "definition": "Formula and unsaturation constraints restrict which structures can explain a spectrum. A candidate must satisfy atom counts, valence, charge, and DBE simultaneously; a plausible functional-group peak does not excuse an inconsistent formula.",
+      "required_concepts": [
+        "Spectroscopic candidates must obey all formula and valence constraints."
+      ],
+      "accepted_variants": [
+        "Formula-constrained structure analysis."
+      ],
+      "major_error_concepts": [
+        "Accepting a proposed structure with the wrong hydrogen count because one IR peak fits."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-degree-of-unsaturation",
+        "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula",
+        "organic-chemistry-i.draft-octet-rule-in-organic-structures"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carbon-nmr",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carbon NMR",
+      "prompt": "What is Carbon NMR? State its defining idea and essential conditions.",
+      "definition": "Carbon-13 NMR reports distinct carbon environments under the experiment's timescale and symmetry. Routine proton-decoupled spectra simplify splitting, but ordinary signal intensities are not generally quantitative carbon counts without suitable acquisition conditions.",
+      "required_concepts": [
+        "Carbon environments produce resonances; common decoupled intensities are not automatic atom counts."
+      ],
+      "accepted_variants": [
+        "13C NMR spectroscopy."
+      ],
+      "major_error_concepts": [
+        "Reading every routine carbon signal area as exactly proportional to the number of carbons."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-nmr-chemical-shift",
+        "organic-chemistry-ii.draft-formula-constraints-in-structure-determination"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-dept-nmr",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "DEPT NMR",
+      "prompt": "What is DEPT NMR? State its defining idea and essential conditions.",
+      "definition": "DEPT-type NMR experiments distinguish carbons by the number of attached hydrogens through polarization-transfer and phase behavior under the specified sequence. Quaternary carbons are absent from standard DEPT spectra, so absence does not imply absence from the molecule.",
+      "required_concepts": [
+        "Attached-hydrogen editing complements ordinary carbon NMR."
+      ],
+      "accepted_variants": [
+        "DEPT carbon multiplicity editing."
+      ],
+      "major_error_concepts": [
+        "Concluding the molecule has no quaternary carbons because they are missing from DEPT."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbon-nmr"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nmr-equivalence",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "NMR Equivalence",
+      "prompt": "What is NMR Equivalence? State its defining idea and essential conditions.",
+      "definition": "Chemically equivalent nuclei have the same chemical shift under the specified conditions, while magnetic equivalence additionally requires appropriate identical couplings to other nuclei. Symmetry and rapid exchange can create equivalence, but equal apparent shifts alone do not establish full magnetic equivalence.",
+      "required_concepts": [
+        "Chemical-shift equivalence differs from full coupling equivalence."
+      ],
+      "accepted_variants": [
+        "Chemical versus magnetic NMR equivalence."
+      ],
+      "major_error_concepts": [
+        "Applying simple splitting rules solely because two nuclei have coincident shifts."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbon-nmr",
+        "organic-chemistry-i.draft-proton-nmr-splitting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-diastereotopic-hydrogens",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Diastereotopic Hydrogens",
+      "prompt": "What is Diastereotopic Hydrogens? State its defining idea and essential conditions.",
+      "definition": "Diastereotopic hydrogens are distinguished because replacing one or the other with a test group produces diastereomers. They can give different NMR shifts even on the same carbon, so a CH2 group does not always yield one simple two-proton signal.",
+      "required_concepts": [
+        "Replacement test gives diastereomers and potentially nonequivalent proton signals."
+      ],
+      "accepted_variants": [
+        "Diastereotopic proton pair."
+      ],
+      "major_error_concepts": [
+        "Assuming every methylene's two hydrogens are chemically equivalent."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nmr-equivalence",
+        "organic-chemistry-i.draft-diastereomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nmr-coupling-constant",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "NMR Coupling Constant",
+      "prompt": "What is NMR Coupling Constant? State its defining idea and essential conditions.",
+      "definition": "A scalar coupling constant measures the frequency separation associated with a spin-spin coupling interaction, conventionally in hertz. Unlike chemical-shift separation in hertz, a given J is approximately field independent and can provide connectivity or geometric information under the relevant model.",
+      "required_concepts": [
+        "J measures scalar coupling in hertz and is approximately independent of field strength."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Treating a chemical-shift difference in ppm as the same quantity as J."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nmr-equivalence",
+        "organic-chemistry-i.draft-proton-nmr-splitting"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-cosy",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "COSY",
+      "prompt": "What is COSY? State its defining idea and essential conditions.",
+      "definition": "A COSY spectrum correlates nuclei, usually protons, connected by detectable scalar coupling. Cross-peaks suggest coupling networks rather than direct spatial closeness or necessarily a single-bond atom connection.",
+      "required_concepts": [
+        "Through-bond scalar-coupling correlations map proton networks."
+      ],
+      "accepted_variants": [
+        "Correlation spectroscopy."
+      ],
+      "major_error_concepts": [
+        "Interpreting every COSY cross-peak as proof that two protons are spatial neighbors."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nmr-coupling-constant"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-hsqc",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "HSQC",
+      "prompt": "What is HSQC? State its defining idea and essential conditions.",
+      "definition": "HSQC commonly correlates a proton with the heteronucleus directly bonded to it, such as carbon, using a one-bond coupling pathway. It links proton and carbon environments but usually does not show an unprotonated carbon as if it had an attached proton.",
+      "required_concepts": [
+        "One-bond proton-heteronucleus correlation assigns attached pairs."
+      ],
+      "accepted_variants": [
+        "Heteronuclear single-quantum coherence."
+      ],
+      "major_error_concepts": [
+        "Reading ordinary HSQC as a general map of all long-range carbon-proton connections."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbon-nmr",
+        "organic-chemistry-ii.draft-nmr-coupling-constant"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-hmbc",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "HMBC",
+      "prompt": "What is HMBC? State its defining idea and essential conditions.",
+      "definition": "HMBC reveals selected longer-range heteronuclear scalar couplings, often between protons and carbons separated by multiple bonds. Coupling magnitude and pulse settings determine which peaks appear, so a missing cross-peak does not definitively rule out a proposed bond path.",
+      "required_concepts": [
+        "Long-range heteronuclear correlations support connectivity with experiment-dependent visibility."
+      ],
+      "accepted_variants": [
+        "Heteronuclear multiple-bond correlation."
+      ],
+      "major_error_concepts": [
+        "Treating every absent HMBC cross-peak as proof no relevant connectivity exists."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-hsqc",
+        "organic-chemistry-ii.draft-nmr-coupling-constant"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-integrated-spectral-analysis",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Integrated Spectral Analysis",
+      "prompt": "What is Integrated Spectral Analysis? State its defining idea and essential conditions.",
+      "definition": "Integrated spectral analysis combines formula, IR, NMR, and mass-spectral constraints rather than assigning each signal independently. A defensible candidate explains the total pattern, including symmetry, integrations, couplings, and unresolved ambiguity.",
+      "required_concepts": [
+        "Use mutually consistent evidence across independent measurement types."
+      ],
+      "accepted_variants": [
+        "Combined spectroscopic elucidation."
+      ],
+      "major_error_concepts": [
+        "Selecting a structure from one convenient signal while ignoring contradictory atom counts or correlations."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-formula-constraints-in-structure-determination",
+        "organic-chemistry-ii.draft-carbon-nmr",
+        "organic-chemistry-ii.draft-cosy",
+        "organic-chemistry-ii.draft-hsqc",
+        "organic-chemistry-ii.draft-hmbc",
+        "organic-chemistry-i.draft-infrared-spectroscopy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromaticity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromaticity",
+      "prompt": "What is Aromaticity? State its defining idea and essential conditions.",
+      "definition": "Aromaticity describes special stabilization and electronic behavior of certain cyclic conjugated systems with suitable geometry and electron occupancy. The introductory monocyclic criterion requires a continuous p-orbital loop, approximately planar geometry, and the appropriate pi-electron count.",
+      "required_concepts": [
+        "Cyclic continuous conjugation, geometry, and electron count jointly matter."
+      ],
+      "accepted_variants": [
+        "Aromatic conjugated ring system."
+      ],
+      "major_error_concepts": [
+        "Calling every ring with alternating drawn double bonds aromatic without checking orbital continuity."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-conjugative-stabilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-huckel-rule",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Huckel Rule",
+      "prompt": "What is Huckel Rule? State its defining idea and essential conditions.",
+      "definition": "Huckel's rule identifies 4n+2 pi electrons as the aromatic count for qualifying planar monocyclic continuously conjugated systems. It is not a general stand-alone formula for every fused, three-dimensional, or interrupted conjugated structure.",
+      "required_concepts": [
+        "4n+2 applies within the qualifying monocyclic conjugated framework."
+      ],
+      "accepted_variants": [
+        "Huckel aromatic electron-count rule."
+      ],
+      "major_error_concepts": [
+        "Using electron count alone without establishing planarity and a complete conjugated loop."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromaticity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-antiaromaticity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Antiaromaticity",
+      "prompt": "What is Antiaromaticity? State its defining idea and essential conditions.",
+      "definition": "Antiaromaticity occurs in qualifying planar cyclic continuously conjugated systems with 4n pi electrons, which have unfavorable electronic stabilization compared with suitable alternatives. A molecule that distorts or breaks conjugation can avoid this condition and become nonaromatic instead.",
+      "required_concepts": [
+        "Planar continuous cyclic 4n conjugation creates the antiaromatic condition."
+      ],
+      "accepted_variants": [
+        "Antiaromatic pi system."
+      ],
+      "major_error_concepts": [
+        "Calling every nonaromatic ring antiaromatic."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromaticity",
+        "organic-chemistry-ii.draft-huckel-rule"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nonaromatic-ring",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Nonaromatic Ring",
+      "prompt": "What is Nonaromatic Ring? State its defining idea and essential conditions.",
+      "definition": "A nonaromatic system lacks one or more requirements for the aromatic or antiaromatic cyclic conjugation classifications. Interrupted orbital overlap or nonplanarity can make a ring nonaromatic even when a simple electron count appears to match 4n or 4n+2.",
+      "required_concepts": [
+        "Failure of the required continuous cyclic geometry prevents the classification."
+      ],
+      "accepted_variants": [
+        "Nonaromatic ring system."
+      ],
+      "major_error_concepts": [
+        "Assigning aromaticity solely from formula while ignoring a saturated ring atom."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromaticity",
+        "organic-chemistry-ii.draft-antiaromaticity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-pyridine-nitrogen",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Pyridine Nitrogen",
+      "prompt": "What is Pyridine Nitrogen? State its defining idea and essential conditions.",
+      "definition": "In pyridine, the ring nitrogen contributes one electron from a p orbital to the aromatic pi system, while its lone pair lies outside that system. That lone pair can participate in protonation without the same aromatic-electron loss encountered when a pyrrole lone pair is removed from conjugation.",
+      "required_concepts": [
+        "Pyridine lone pair is not part of the aromatic six-pi-electron set."
+      ],
+      "accepted_variants": [
+        "Pyridine-type aromatic nitrogen."
+      ],
+      "major_error_concepts": [
+        "Counting the pyridine lone pair as two extra ring pi electrons."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromaticity",
+        "organic-chemistry-ii.draft-huckel-rule",
+        "organic-chemistry-i.draft-basicity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-pyrrole-nitrogen",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Pyrrole Nitrogen",
+      "prompt": "What is Pyrrole Nitrogen? State its defining idea and essential conditions.",
+      "definition": "In pyrrole, the nitrogen lone pair supplies two electrons to the aromatic pi system. Its participation affects basicity and reactivity, so the lone pair cannot be treated as an ordinary freely available amine pair without considering aromaticity.",
+      "required_concepts": [
+        "Pyrrole lone pair participates in the aromatic electron count."
+      ],
+      "accepted_variants": [
+        "Pyrrole-type aromatic nitrogen."
+      ],
+      "major_error_concepts": [
+        "Treating pyrrole and pyridine lone pairs as electronically identical."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-pyridine-nitrogen",
+        "organic-chemistry-ii.draft-huckel-rule"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-fused-aromatic-system",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Fused Aromatic System",
+      "prompt": "What is Fused Aromatic System? State its defining idea and essential conditions.",
+      "definition": "Fused aromatic systems share ring atoms and bonds, producing a larger connected pi framework. Aromaticity and local reactivity need analysis of the full electronic structure; applying the simple monocyclic count independently to every drawn ring can mislead.",
+      "required_concepts": [
+        "Shared-ring pi systems require whole-framework interpretation."
+      ],
+      "accepted_variants": [
+        "Fused polycyclic aromatic system."
+      ],
+      "major_error_concepts": [
+        "Assuming every ring in a fused drawing behaves as an isolated benzene molecule."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromaticity",
+        "organic-chemistry-ii.draft-huckel-rule"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-benzene-electronic-structure",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Benzene Electronic Structure",
+      "prompt": "What is Benzene Electronic Structure? State its defining idea and essential conditions.",
+      "definition": "Benzene has a delocalized six-pi-electron ring with equivalent carbon-carbon bonds in its idealized structure. Alternating-bond drawings are resonance contributors, not rapidly interconverting distinct molecules with alternating measured bond lengths.",
+      "required_concepts": [
+        "Equivalent delocalized aromatic ring bonds are represented by multiple contributors."
+      ],
+      "accepted_variants": [
+        "Benzene resonance and aromatic stabilization."
+      ],
+      "major_error_concepts": [
+        "Treating benzene as a localized ordinary cyclohexatriene with three independent alkene reactions."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-huckel-rule",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Electrophilic Aromatic Substitution",
+      "prompt": "What is Electrophilic Aromatic Substitution? State its defining idea and essential conditions.",
+      "definition": "Electrophilic aromatic substitution replaces a ring hydrogen or other specified group while restoring aromaticity after an electrophilic attack step. The common mechanism passes through a nonaromatic sigma complex rather than simply adding across the ring and leaving it nonaromatic.",
+      "required_concepts": [
+        "Electrophilic attack followed by restoration of aromaticity gives substitution."
+      ],
+      "accepted_variants": [
+        "EAS mechanism."
+      ],
+      "major_error_concepts": [
+        "Predicting an ordinary permanent alkene-style addition product as the generic EAS outcome."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-benzene-electronic-structure",
+        "organic-chemistry-i.draft-electrophile",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromatic-sigma-complex",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromatic Sigma Complex",
+      "prompt": "What is Aromatic Sigma Complex? State its defining idea and essential conditions.",
+      "definition": "The sigma complex in electrophilic aromatic substitution is a cationic intermediate with one formerly aromatic carbon newly sigma-bonded to the electrophile. Charge delocalization stabilizes it, but full ring aromaticity is temporarily lost until the restoring step.",
+      "required_concepts": [
+        "Arenium-ion intermediate is resonance stabilized but not fully aromatic."
+      ],
+      "accepted_variants": [
+        "Wheland intermediate or arenium sigma complex."
+      ],
+      "major_error_concepts": [
+        "Claiming the sigma complex retains the unchanged original aromatic pi loop."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-i.draft-reaction-intermediate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromatic-nitration",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromatic Nitration",
+      "prompt": "What is Aromatic Nitration? State its defining idea and essential conditions.",
+      "definition": "Aromatic nitration is electrophilic substitution that introduces a nitro group through an appropriate nitrogen-centered electrophile in the standard mechanism. Ring substitution and activation determine site preference and reactivity; the concept does not specify a safe preparative procedure.",
+      "required_concepts": [
+        "Electrophilic ring substitution introduces a nitro substituent."
+      ],
+      "accepted_variants": [
+        "Aromatic nitro-group installation."
+      ],
+      "major_error_concepts": [
+        "Treating the nitro group as introduced by ordinary nucleophilic attack on an unactivated ring."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-ii.draft-aromatic-sigma-complex"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromatic-sulfonation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromatic Sulfonation",
+      "prompt": "What is Aromatic Sulfonation? State its defining idea and essential conditions.",
+      "definition": "Aromatic sulfonation introduces a sulfonic-acid-related substituent by electrophilic substitution and can be reversible under suitable conditions. Reversibility distinguishes it from assuming every installed aromatic group is permanently fixed regardless of medium.",
+      "required_concepts": [
+        "Electrophilic sulfonation can be reversible under specified conditions."
+      ],
+      "accepted_variants": [
+        "Arene sulfonation and desulfonation concept."
+      ],
+      "major_error_concepts": [
+        "Assuming aromatic sulfonation is irreversible under all conditions."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-i.draft-reaction-thermodynamics"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromatic-halogenation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromatic Halogenation",
+      "prompt": "What is Aromatic Halogenation? State its defining idea and essential conditions.",
+      "definition": "Aromatic halogenation introduces a halogen through a suitable electrophilic substitution pathway. Its ring mechanism differs from alkene halonium addition and from radical substitution at a benzylic carbon.",
+      "required_concepts": [
+        "Ring electrophilic substitution differs from alkene addition and side-chain radical substitution."
+      ],
+      "accepted_variants": [
+        "Electrophilic arene halogenation."
+      ],
+      "major_error_concepts": [
+        "Using the alkene anti-addition mechanism unchanged for aromatic ring substitution."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-i.draft-alkene-halogenation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-friedel-crafts-alkylation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Friedel Crafts Alkylation",
+      "prompt": "What is Friedel Crafts Alkylation? State its defining idea and essential conditions.",
+      "definition": "Friedel-Crafts alkylation introduces an alkyl group onto a suitable aromatic ring through an electrophilic pathway. Carbocation-like rearrangement, further substitution, and strongly deactivated or incompatible substrates can limit the simple predicted outcome.",
+      "required_concepts": [
+        "Electrophilic aromatic alkylation has rearrangement and substrate limitations."
+      ],
+      "accepted_variants": [
+        "Friedel-Crafts alkyl substitution."
+      ],
+      "major_error_concepts": [
+        "Assuming the carbon skeleton never rearranges or every deactivated aromatic ring reacts readily."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-i.draft-carbocation-rearrangement"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-friedel-crafts-acylation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Friedel Crafts Acylation",
+      "prompt": "What is Friedel Crafts Acylation? State its defining idea and essential conditions.",
+      "definition": "Friedel-Crafts acylation introduces an acyl group using an acylium-like electrophile in the standard model. The newly attached carbonyl generally deactivates the ring, and the pathway differs from ordinary rearrangeable alkyl-carbocation chemistry.",
+      "required_concepts": [
+        "Electrophilic ring acylation gives an aryl carbonyl substituent with characteristic limitations."
+      ],
+      "accepted_variants": [
+        "Friedel-Crafts acyl substitution."
+      ],
+      "major_error_concepts": [
+        "Predicting ordinary alkyl-carbocation rearrangement of the acylium skeleton."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-ii.draft-friedel-crafts-alkylation",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromatic-activating-group",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromatic Activating Group",
+      "prompt": "What is Aromatic Activating Group? State its defining idea and essential conditions.",
+      "definition": "An activating aromatic substituent increases electrophilic substitution reactivity relative to an appropriate reference, commonly by stabilizing the relevant cationic pathway through electron donation. Activation concerns reaction rate, while directing behavior concerns relative positions and is a separate question.",
+      "required_concepts": [
+        "Substituent increases EAS reactivity under comparable conditions."
+      ],
+      "accepted_variants": [
+        "Electron-donating ring activation in the specified pathway."
+      ],
+      "major_error_concepts": [
+        "Equating activation automatically with every kind of aromatic reaction being faster."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-ii.draft-aromatic-sigma-complex"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aromatic-deactivating-group",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aromatic Deactivating Group",
+      "prompt": "What is Aromatic Deactivating Group? State its defining idea and essential conditions.",
+      "definition": "A deactivating substituent lowers electrophilic aromatic substitution reactivity under comparable conditions, often by withdrawing electron density or destabilizing the sigma-complex pathway. Deactivation does not alone determine whether substitution is directed meta or ortho/para.",
+      "required_concepts": [
+        "Reduced EAS reactivity is distinct from positional direction."
+      ],
+      "accepted_variants": [
+        "Ring deactivation toward electrophilic substitution."
+      ],
+      "major_error_concepts": [
+        "Assuming every deactivating substituent must be meta directing."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromatic-activating-group",
+        "organic-chemistry-ii.draft-aromatic-sigma-complex"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-ortho-para-direction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Ortho Para Direction",
+      "prompt": "What is Ortho Para Direction? State its defining idea and essential conditions.",
+      "definition": "Ortho-para direction means a substituent favors electrophilic substitution at positions adjacent to or opposite itself under the specified system. Relative sigma-complex stabilization and sterics influence the ratio, so direction does not require equal ortho and para amounts.",
+      "required_concepts": [
+        "Preferential ortho or para substitution relative to an existing group."
+      ],
+      "accepted_variants": [
+        "Ortho/para directing effect."
+      ],
+      "major_error_concepts": [
+        "Assuming an ortho-para director gives exactly equal product amounts at all allowed sites."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-ii.draft-aromatic-sigma-complex",
+        "organic-chemistry-ii.draft-aromatic-activating-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-meta-direction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Meta Direction",
+      "prompt": "What is Meta Direction? State its defining idea and essential conditions.",
+      "definition": "Meta direction favors substitution at positions separated by one ring carbon from the existing substituent. Many strongly electron-withdrawing groups destabilize competing ortho/para sigma-complex pathways, but the effect must be interpreted for the actual bonding and charge state.",
+      "required_concepts": [
+        "Relative pathway energies favor meta positions under the stated substituent conditions."
+      ],
+      "accepted_variants": [
+        "Meta-directing effect."
+      ],
+      "major_error_concepts": [
+        "Assigning direction from a group name while ignoring a changed protonation or bonding state."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromatic-deactivating-group",
+        "organic-chemistry-ii.draft-ortho-para-direction",
+        "organic-chemistry-ii.draft-aromatic-sigma-complex"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-halogen-directing-effect",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Halogen Directing Effect",
+      "prompt": "What is Halogen Directing Effect? State its defining idea and essential conditions.",
+      "definition": "Halogens on an aromatic ring commonly deactivate it toward electrophilic substitution through induction while directing ortho/para through lone-pair resonance donation. Rate effects and positional effects therefore need not follow the same simple electron-donation label.",
+      "required_concepts": [
+        "Halogens are usually deactivating yet ortho-para directing in EAS."
+      ],
+      "accepted_variants": [
+        "Halogen directing exception with induction and resonance distinguished."
+      ],
+      "major_error_concepts": [
+        "Calling a halogen activating merely because it directs ortho/para."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromatic-deactivating-group",
+        "organic-chemistry-ii.draft-ortho-para-direction",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-multiple-aromatic-substituents",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Multiple Aromatic Substituents",
+      "prompt": "What is Multiple Aromatic Substituents? State its defining idea and essential conditions.",
+      "definition": "Regioselectivity in a multiply substituted aromatic ring reflects the combined electronic and steric influences of existing groups. Directing effects can reinforce or conflict, and one generic strongest-director rule cannot replace analysis of the actual accessible pathways.",
+      "required_concepts": [
+        "Combined substituent and steric effects determine competing ring positions."
+      ],
+      "accepted_variants": [
+        "Multisubstituted arene directing analysis."
+      ],
+      "major_error_concepts": [
+        "Ignoring a blocked or strongly crowded site solely because one group points toward it."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ortho-para-direction",
+        "organic-chemistry-ii.draft-meta-direction",
+        "organic-chemistry-ii.draft-halogen-directing-effect",
+        "organic-chemistry-i.draft-steric-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-benzylic-oxidation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Benzylic Oxidation",
+      "prompt": "What is Benzylic Oxidation? State its defining idea and essential conditions.",
+      "definition": "Benzylic oxidation transforms an aromatic side chain at a carbon adjacent to the ring under a suitable oxidation pathway. The presence of an appropriate benzylic hydrogen and the substrate's other functionality affect the common introductory product rules.",
+      "required_concepts": [
+        "Side-chain oxidation depends on the benzylic structure and conditions."
+      ],
+      "accepted_variants": [
+        "Oxidation at a benzylic carbon."
+      ],
+      "major_error_concepts": [
+        "Assuming every alkyl substituent undergoes the same transformation despite lacking a benzylic hydrogen."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-benzene-electronic-structure",
+        "organic-chemistry-i.draft-alcohol-oxidation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Nucleophilic Aromatic Substitution",
+      "prompt": "What is Nucleophilic Aromatic Substitution? State its defining idea and essential conditions.",
+      "definition": "Addition-elimination nucleophilic aromatic substitution replaces a suitable leaving group on an activated aromatic system through nucleophile addition and restoring elimination. Stabilization of the anionic intermediate by properly located withdrawing groups matters; ordinary unactivated aryl halides are not equivalent to primary alkyl halides.",
+      "required_concepts": [
+        "Activated-ring nucleophile addition and elimination differs from alkyl SN2."
+      ],
+      "accepted_variants": [
+        "SNAr addition-elimination pathway."
+      ],
+      "major_error_concepts": [
+        "Predicting simple backside SN2 on every aryl halide using alkyl-halide rules."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-benzene-electronic-structure",
+        "organic-chemistry-i.draft-nucleophile",
+        "organic-chemistry-i.draft-leaving-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-benzyne-pathway",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Benzyne Pathway",
+      "prompt": "What is Benzyne Pathway? State its defining idea and essential conditions.",
+      "definition": "A benzyne is a highly reactive aryne intermediate represented by additional unsaturation in an aromatic ring. Elimination-addition pathways involving it differ from addition-elimination SNAr and can give regioisomer mixtures depending on substrate and capture conditions.",
+      "required_concepts": [
+        "Aryne-mediated elimination-addition is a distinct aromatic substitution pathway."
+      ],
+      "accepted_variants": [
+        "Benzyne intermediate."
+      ],
+      "major_error_concepts": [
+        "Treating benzyne and the stabilized anionic SNAr intermediate as the same species."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution",
+        "organic-chemistry-i.draft-reaction-intermediate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carbonyl-group",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carbonyl Group",
+      "prompt": "What is Carbonyl Group? State its defining idea and essential conditions.",
+      "definition": "A carbonyl group contains a polarized carbon-oxygen double bond whose carbon commonly acts as an electrophile. Resonance, substituents, protonation, and conjugation influence both its reactivity and spectroscopic properties.",
+      "required_concepts": [
+        "Polarized C=O supplies an electrophilic carbon with context-dependent behavior."
+      ],
+      "accepted_variants": [
+        "Carbonyl functional group."
+      ],
+      "major_error_concepts": [
+        "Treating carbonyl carbon and oxygen as equally electron rich in ordinary nucleophilic addition."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-bond-and-molecular-polarity",
+        "organic-chemistry-i.draft-carbonyl-infrared-stretch"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aldehyde and Ketone",
+      "prompt": "What is Aldehyde and Ketone? State its defining idea and essential conditions.",
+      "definition": "An aldehyde has a carbonyl carbon bonded to H and to either another H (formaldehyde) or a carbon substituent: R-C(=O)-H with R=H or a carbon-attached group. A ketone has carbon substituents on both sides, R-C(=O)-R'. A carbonyl carbon bonded directly to OH, OR or N instead belongs to the corresponding carboxylic acid, ester or amide class, even when its other substituent is H. Aldehydes often undergo nucleophilic addition more readily than analogous ketones, with substituent and condition exceptions.",
+      "required_concepts": [
+        "An aldehyde carbonyl has H plus H or carbon as its two non-oxygen substituents; a ketone has two carbon substituents.",
+        "A hydrogen on carbonyl carbon alone does not make formic acid or a formate ester an aldehyde."
+      ],
+      "accepted_variants": [
+        "H2C=O is an aldehyde and acetone is a ketone, but HC(=O)OH is a carboxylic acid rather than an aldehyde."
+      ],
+      "major_error_concepts": [
+        "Calling formic acid or a formate ester an aldehyde merely because the carbonyl carbon bears H.",
+        "Classifying carbonyl type by total molecular hydrogen count."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Nucleophilic Carbonyl Addition",
+      "prompt": "What is Nucleophilic Carbonyl Addition? State its defining idea and essential conditions.",
+      "definition": "Nucleophilic carbonyl addition forms a new bond to carbonyl carbon while the pi electrons shift toward oxygen. Subsequent proton transfer or other steps depend on conditions, and the planar starting carbonyl can give stereochemical outcomes when a new stereocenter forms.",
+      "required_concepts": [
+        "Electron-pair attack at carbonyl carbon converts C=O into a tetrahedral addition framework."
+      ],
+      "accepted_variants": [
+        "Carbonyl nucleophilic addition."
+      ],
+      "major_error_concepts": [
+        "Adding a fifth ordinary bond to carbon without moving the carbonyl pi electrons."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-group",
+        "organic-chemistry-ii.draft-aldehyde-and-ketone",
+        "organic-chemistry-i.draft-curved-arrow-mechanism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carbonyl-hydride-reduction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carbonyl Hydride Reduction",
+      "prompt": "What is Carbonyl Hydride Reduction? State its defining idea and essential conditions.",
+      "definition": "Hydride-transfer reduction adds a hydrogen equivalent to an electrophilic carbonyl carbon and ultimately gives an alcohol for ordinary aldehydes or ketones. Reagent and substrate selectivity determine which other functional groups are affected; it is not transfer of a bare proton alone.",
+      "required_concepts": [
+        "Carbonyl reduction by hydride-equivalent delivery differs from protonation."
+      ],
+      "accepted_variants": [
+        "Hydride reduction of aldehydes and ketones."
+      ],
+      "major_error_concepts": [
+        "Drawing the reducing event as only acid donation with no electron transfer to carbon."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-i.draft-alcohol"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-organomagnesium-carbon-nucleophile",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Organomagnesium Carbon Nucleophile",
+      "prompt": "What is Organomagnesium Carbon Nucleophile? State its defining idea and essential conditions.",
+      "definition": "A Grignard-type organomagnesium reagent has strongly nucleophilic and basic carbon character and can form carbon-carbon bonds with suitable carbonyl electrophiles. Proton donors and other reactive functionality can consume it, so compatibility is a central part of interpreting a proposed transformation.",
+      "required_concepts": [
+        "Organomagnesium carbon nucleophile also has strong basicity and compatibility limits."
+      ],
+      "accepted_variants": [
+        "Grignard reagent carbonyl addition."
+      ],
+      "major_error_concepts": [
+        "Assuming an unprotected acidic group cannot compete with the intended carbonyl addition."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-i.draft-basicity",
+        "organic-chemistry-i.draft-nucleophile"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-organolithium-carbon-reagent",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Organolithium Carbon Reagent",
+      "prompt": "What is Organolithium Carbon Reagent? State its defining idea and essential conditions.",
+      "definition": "Organolithium reagents provide strongly basic, nucleophilic carbon under suitable chemical settings. Aggregation, solvent, substitution, and competing proton transfer affect behavior, so a carbon-metal drawing does not alone specify a universally selective carbonyl reaction.",
+      "required_concepts": [
+        "Carbon-lithium reagents combine nucleophilic and basic reactivity with context dependence."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming all carbon-metal reagents are interchangeable under all substrates and solvents."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-organomagnesium-carbon-nucleophile",
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Functional Group Compatibility",
+      "prompt": "What is Functional Group Compatibility? State its defining idea and essential conditions.",
+      "definition": "Functional-group compatibility asks whether all groups present can survive or participate selectively in a proposed transformation. Acid-base quenching, competing electrophiles, and other pathways may invalidate a formally correct target-bond disconnection.",
+      "required_concepts": [
+        "Evaluate competing functionality, not only the desired reactive pair."
+      ],
+      "accepted_variants": [
+        "Chemoselective compatibility analysis."
+      ],
+      "major_error_concepts": [
+        "Ignoring an acidic proton when proposing an addition by a strongly basic carbon nucleophile."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-organomagnesium-carbon-nucleophile",
+        "organic-chemistry-ii.draft-organolithium-carbon-reagent",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carbonyl-hydrate",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carbonyl Hydrate",
+      "prompt": "What is Carbonyl Hydrate? State its defining idea and essential conditions.",
+      "definition": "A carbonyl hydrate is a geminal diol formed by water addition to an aldehyde or ketone. Its equilibrium abundance depends on steric and electronic factors, so not every carbonyl exists predominantly as the hydrate in aqueous solution.",
+      "required_concepts": [
+        "Water addition gives two hydroxyl groups on the former carbonyl carbon."
+      ],
+      "accepted_variants": [
+        "Gem-diol carbonyl hydrate."
+      ],
+      "major_error_concepts": [
+        "Assuming hydration always goes completely to the geminal diol."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-ii.draft-aldehyde-and-ketone"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-hemiacetal",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Hemiacetal",
+      "prompt": "What is Hemiacetal? State its defining idea and essential conditions.",
+      "definition": "A hemiacetal has both a hydroxyl and an alkoxy group on the same carbon derived from a carbonyl addition. It can be an equilibrium intermediate or a stable cyclic form in favorable structures, and differs from an acetal with two alkoxy groups.",
+      "required_concepts": [
+        "One OH and one OR group on the relevant carbon."
+      ],
+      "accepted_variants": [
+        "Hemiacetal, with hemiketal terminology when distinguished."
+      ],
+      "major_error_concepts": [
+        "Calling a carbon bearing two OR groups and no OH a hemiacetal."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-i.draft-alcohol",
+        "organic-chemistry-i.draft-ether"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-acetal",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Acetal",
+      "prompt": "What is Acetal? State its defining idea and essential conditions.",
+      "definition": "An acetal has two alkoxy groups bonded to the same carbon in the usual carbonyl-derived classification. Formation and hydrolysis involve acid-catalyzed equilibria under ordinary conditions, while relative stability to some basic conditions makes acetals useful carbonyl-protecting motifs.",
+      "required_concepts": [
+        "Two OR groups at the protected carbonyl-derived center with condition-dependent stability."
+      ],
+      "accepted_variants": [
+        "Acetal or ketal under the stated naming convention."
+      ],
+      "major_error_concepts": [
+        "Assuming acetals are equally stable to every acid and base environment."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-hemiacetal",
+        "organic-chemistry-ii.draft-functional-group-compatibility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-imine",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Imine",
+      "prompt": "What is Imine? State its defining idea and essential conditions.",
+      "definition": "An imine contains a carbon-nitrogen double bond and commonly forms through carbonyl addition by a primary amine followed by dehydration under suitable conditions. The process is reversible and depends on proton-transfer conditions rather than simply combining any carbonyl with any nitrogen compound.",
+      "required_concepts": [
+        "C=N formation through amine addition and dehydration with appropriate amine class."
+      ],
+      "accepted_variants": [
+        "Schiff base for qualifying imines."
+      ],
+      "major_error_concepts": [
+        "Predicting the same imine product from every primary, secondary, and tertiary amine."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-enamine",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Enamine",
+      "prompt": "What is Enamine? State its defining idea and essential conditions.",
+      "definition": "An enamine has an amino group attached to a carbon-carbon double-bond system and can form from suitable carbonyl compounds and secondary amines. Its electron-rich carbon can participate in reactions resembling some enolate chemistry under the appropriate conditions.",
+      "required_concepts": [
+        "Nitrogen-substituted alkene with nucleophilic carbon character in suitable reactions."
+      ],
+      "accepted_variants": [
+        "Enamine intermediate."
+      ],
+      "major_error_concepts": [
+        "Treating an enamine as merely another drawing of an imine with unchanged proton positions."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-imine",
+        "organic-chemistry-i.draft-keto-enol-tautomerism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-reductive-amination",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Reductive Amination",
+      "prompt": "What is Reductive Amination? State its defining idea and essential conditions.",
+      "definition": "Reductive amination forms a carbon-nitrogen bond by generating an imine or iminium-type intermediate and reducing it. Selectivity depends on amine class, carbonyl structure, and conditions, so direct carbonyl reduction can be a competing pathway.",
+      "required_concepts": [
+        "Carbonyl-to-amine conversion through a reduced C=N-related intermediate."
+      ],
+      "accepted_variants": [
+        "Reductive amination concept."
+      ],
+      "major_error_concepts": [
+        "Assuming reduction alone attaches nitrogen without an amine-addition intermediate."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-imine",
+        "organic-chemistry-ii.draft-enamine",
+        "organic-chemistry-ii.draft-carbonyl-hydride-reduction",
+        "organic-chemistry-ii.draft-functional-group-compatibility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-wittig-reaction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Wittig Reaction",
+      "prompt": "What is Wittig Reaction? State its defining idea and essential conditions.",
+      "definition": "The Wittig reaction converts an aldehyde or ketone carbonyl into an alkene using a phosphorus-ylide partner in the standard transformation. The new double bond joins the carbonyl carbon to the ylide carbon, while E/Z selectivity depends on reagent and reaction class.",
+      "required_concepts": [
+        "Carbonyl olefination joins carbonyl and ylide carbons."
+      ],
+      "accepted_variants": [
+        "Wittig olefination."
+      ],
+      "major_error_concepts": [
+        "Assuming every Wittig reagent gives the same alkene geometry."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aldehyde-and-ketone",
+        "organic-chemistry-i.draft-e-z-alkene-configuration"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aldehyde-oxidation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aldehyde Oxidation",
+      "prompt": "What is Aldehyde Oxidation? State its defining idea and essential conditions.",
+      "definition": "Aldehydes can oxidize to carboxylic-acid-level products under suitable conditions, while ketones generally lack the analogous carbonyl-bound hydrogen for that simple transformation. Stronger oxidation can alter carbon-carbon bonds, so aldehyde-versus-ketone rules have a defined scope.",
+      "required_concepts": [
+        "Aldehyde oxidation differs from ordinary ketone oxidation behavior."
+      ],
+      "accepted_variants": [
+        "Aldehyde-to-carboxyl oxidation."
+      ],
+      "major_error_concepts": [
+        "Predicting the same simple oxidation product for every aldehyde and ketone without bond changes."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aldehyde-and-ketone",
+        "organic-chemistry-i.draft-alcohol-oxidation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-reduction-chemoselectivity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Reduction Chemoselectivity",
+      "prompt": "What is Reduction Chemoselectivity? State its defining idea and essential conditions.",
+      "definition": "Chemoselective reduction favors one reducible group or oxidation level over alternatives in a molecule. Reagent identity, substrate electronics, and conditions determine selectivity; a generic reduction arrow does not specify whether an ester, alkene, or carbonyl is preserved.",
+      "required_concepts": [
+        "Preferential reduction depends on both reagent and substrate context."
+      ],
+      "accepted_variants": [
+        "Selective functional-group reduction."
+      ],
+      "major_error_concepts": [
+        "Assuming every reducing system affects all carbonyl derivatives identically."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-hydride-reduction",
+        "organic-chemistry-ii.draft-functional-group-compatibility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-conjugated-carbonyl",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Conjugated Carbonyl",
+      "prompt": "What is Conjugated Carbonyl? State its defining idea and essential conditions.",
+      "definition": "An alpha-beta-unsaturated carbonyl has a carbon-carbon double bond conjugated with a carbonyl. Delocalization creates electrophilic character at both the carbonyl carbon and the beta carbon, enabling different addition modes.",
+      "required_concepts": [
+        "Conjugated carbonyl system offers carbonyl and beta-carbon electrophilic sites."
+      ],
+      "accepted_variants": [
+        "Enone or enal when the carbonyl class is specified."
+      ],
+      "major_error_concepts": [
+        "Treating the alkene and carbonyl as electronically isolated groups."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-group",
+        "organic-chemistry-i.draft-conjugative-stabilization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-direct-and-conjugate-addition",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Direct and Conjugate Addition",
+      "prompt": "What is Direct and Conjugate Addition? State its defining idea and essential conditions.",
+      "definition": "One-two addition attacks the carbonyl carbon of a conjugated carbonyl, whereas one-four addition forms a bond at the beta carbon with subsequent reorganization of the conjugated system. Nucleophile type, catalyst, and conditions influence the competition rather than a universal preference for one site.",
+      "required_concepts": [
+        "Direct carbonyl versus conjugate beta addition yields distinct connectivity outcomes."
+      ],
+      "accepted_variants": [
+        "1,2 versus 1,4 addition."
+      ],
+      "major_error_concepts": [
+        "Assuming every nucleophile gives conjugate addition to any enone."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-conjugated-carbonyl",
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-ii.draft-functional-group-compatibility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-michael-addition",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Michael Addition",
+      "prompt": "What is Michael Addition? State its defining idea and essential conditions.",
+      "definition": "A Michael addition is conjugate addition of a suitable nucleophile, commonly a stabilized carbon nucleophile, to an activated unsaturated acceptor. It forms a bond at the beta position under the relevant mechanism and differs from direct attack at carbonyl carbon.",
+      "required_concepts": [
+        "Conjugate bond formation at an activated beta carbon."
+      ],
+      "accepted_variants": [
+        "Michael conjugate addition."
+      ],
+      "major_error_concepts": [
+        "Labeling every carbonyl nucleophilic addition a Michael reaction."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-direct-and-conjugate-addition",
+        "organic-chemistry-ii.draft-conjugated-carbonyl"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aldol-addition",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aldol Addition",
+      "prompt": "What is Aldol Addition? State its defining idea and essential conditions.",
+      "definition": "An aldol addition forms a carbon-carbon bond when an enol or enolate equivalent attacks another aldehyde or ketone carbonyl, commonly giving a beta-hydroxy carbonyl product. The carbonyl donor must have an appropriate enolizable site for the ordinary pathway.",
+      "required_concepts": [
+        "Enol-derived donor adds to a carbonyl acceptor to give a beta-hydroxy carbonyl framework."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming a carbonyl with no alpha hydrogen can serve as the ordinary enolate donor without another mechanism."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-ii.draft-aldehyde-and-ketone",
+        "organic-chemistry-i.draft-keto-enol-tautomerism",
+        "organic-chemistry-ii.draft-enolate"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aldol-condensation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aldol Condensation",
+      "prompt": "What is Aldol Condensation? State its defining idea and essential conditions.",
+      "definition": "Aldol condensation combines aldol bond formation with loss of water elements to produce a conjugated carbonyl when the required structure and conditions permit. Addition and condensation are distinct outcomes, and dehydration requires an appropriate hydrogen and leaving-group pathway.",
+      "required_concepts": [
+        "Aldol product dehydrates to a suitable conjugated carbonyl."
+      ],
+      "accepted_variants": [
+        "Aldol condensation with addition and dehydration distinguished."
+      ],
+      "major_error_concepts": [
+        "Calling every isolated beta-hydroxy carbonyl already the dehydrated condensation product."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aldol-addition",
+        "organic-chemistry-ii.draft-conjugated-carbonyl"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-crossed-aldol-reaction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Crossed Aldol Reaction",
+      "prompt": "What is Crossed Aldol Reaction? State its defining idea and essential conditions.",
+      "definition": "A crossed aldol uses different carbonyl partners, creating possible donor and acceptor combinations. Selectivity requires controlling which enolate forms and which carbonyl reacts; simply mixing two enolizable carbonyl compounds can yield several products.",
+      "required_concepts": [
+        "Different partners require donor-acceptor selectivity control."
+      ],
+      "accepted_variants": [
+        "Mixed aldol reaction."
+      ],
+      "major_error_concepts": [
+        "Assuming two different enolizable carbonyl compounds automatically produce one crossed product."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aldol-addition",
+        "organic-chemistry-ii.draft-functional-group-compatibility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-intramolecular-aldol-reaction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Intramolecular Aldol Reaction",
+      "prompt": "What is Intramolecular Aldol Reaction? State its defining idea and essential conditions.",
+      "definition": "An intramolecular aldol joins an enolizable site and a carbonyl acceptor within the same molecule to form a ring. Ring size, geometry, and competing enolate sites constrain which cyclization is favored.",
+      "required_concepts": [
+        "Within-molecule aldol carbon-carbon bond formation creates a ring."
+      ],
+      "accepted_variants": [
+        "Intramolecular aldol cyclization."
+      ],
+      "major_error_concepts": [
+        "Choosing a ring product without counting the atoms between donor and acceptor."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aldol-addition",
+        "organic-chemistry-ii.draft-crossed-aldol-reaction",
+        "organic-chemistry-i.draft-ring-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-enolate",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Enolate",
+      "prompt": "What is Enolate? State its defining idea and essential conditions.",
+      "definition": "An enolate is the conjugate base formed by removing an alpha proton from an appropriate carbonyl compound. Its electron density is delocalized between oxygen and carbon, giving ambident reactivity rather than two separately equilibrating resonance species.",
+      "required_concepts": [
+        "Alpha-deprotonated carbonyl anion has delocalized oxygen-carbon character."
+      ],
+      "accepted_variants": [
+        "Carbonyl enolate."
+      ],
+      "major_error_concepts": [
+        "Treating oxygen- and carbon-centered resonance contributors as separate constitutional isomers."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-group",
+        "organic-chemistry-i.draft-conjugate-base-stability",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-enolization",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Enolization",
+      "prompt": "What is Enolization? State its defining idea and essential conditions.",
+      "definition": "Enolization moves a proton and a pi bond between carbonyl and enol forms through acid- or base-assisted steps. Its rate and equilibrium composition are different questions, and alpha proton exchange can occur even when the enol is a minor equilibrium component.",
+      "required_concepts": [
+        "Catalyzed proton and bond rearrangement permits carbonyl-enol interconversion."
+      ],
+      "accepted_variants": [
+        "Enol formation and alpha-proton exchange."
+      ],
+      "major_error_concepts": [
+        "Assuming a low equilibrium enol fraction proves enolization never occurs."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-enolate",
+        "organic-chemistry-i.draft-keto-enol-tautomerism"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-enolate-selectivity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Enolate Selectivity",
+      "prompt": "What is Enolate Selectivity? State its defining idea and essential conditions.",
+      "definition": "Kinetic enolate selection favors the site deprotonated faster under the operative conditions, whereas thermodynamic selection reflects equilibrium enolate stability when equilibration is available. Base, solvent, counterion, substrate, temperature, and reversibility determine which description is justified.",
+      "required_concepts": [
+        "Fastest deprotonation and most stable equilibrated enolate need not coincide."
+      ],
+      "accepted_variants": [
+        "Kinetic versus thermodynamic enolate control."
+      ],
+      "major_error_concepts": [
+        "Assigning control from temperature alone while ignoring reversibility and base behavior."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-enolate",
+        "organic-chemistry-ii.draft-enolization",
+        "organic-chemistry-i.draft-kinetic-and-thermodynamic-control"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-enolate-alkylation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Enolate Alkylation",
+      "prompt": "What is Enolate Alkylation? State its defining idea and essential conditions.",
+      "definition": "Enolate alkylation forms a bond between an enolate nucleophilic site and a suitable alkyl electrophile. Carbon-versus-oxygen reaction, competing elimination, multiple alkylation, and regioselective enolate formation can affect the product.",
+      "required_concepts": [
+        "Enolate bond formation with an alkyl electrophile requires site and pathway selectivity."
+      ],
+      "accepted_variants": [
+        "Alpha alkylation through an enolate."
+      ],
+      "major_error_concepts": [
+        "Assuming a tertiary alkyl halide undergoes clean ordinary SN2 carbon alkylation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-enolate",
+        "organic-chemistry-ii.draft-enolate-selectivity",
+        "organic-chemistry-i.draft-sn2-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-alpha-halogenation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Alpha Halogenation",
+      "prompt": "What is Alpha Halogenation? State its defining idea and essential conditions.",
+      "definition": "Alpha halogenation replaces a hydrogen adjacent to a carbonyl with halogen through an enol or enolate pathway. Acidic and basic regimes can differ in rate control and repeated substitution tendencies, so the degree of halogenation is condition-dependent.",
+      "required_concepts": [
+        "Enol-derived alpha substitution has mechanism-dependent extent and selectivity."
+      ],
+      "accepted_variants": [
+        "Carbonyl alpha halogenation."
+      ],
+      "major_error_concepts": [
+        "Assuming acidic and basic halogenation always stop after the same single substitution."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-enolate",
+        "organic-chemistry-ii.draft-enolization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-haloform-reaction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Haloform Reaction",
+      "prompt": "What is Haloform Reaction? State its defining idea and essential conditions.",
+      "definition": "The haloform reaction cleaves an appropriate methyl-ketone-derived system after exhaustive alpha halogenation, producing a carboxylate-related fragment and a haloform under the standard pathway. Its structural requirement matters; it is not a generic cleavage of every ketone.",
+      "required_concepts": [
+        "Methyl-ketone-related motif undergoes characteristic halogenation-cleavage chemistry."
+      ],
+      "accepted_variants": [
+        "Haloform transformation."
+      ],
+      "major_error_concepts": [
+        "Predicting the haloform reaction for every ketone regardless of its alpha substitution."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-alpha-halogenation",
+        "organic-chemistry-ii.draft-aldehyde-and-ketone"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-claisen-condensation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Claisen Condensation",
+      "prompt": "What is Claisen Condensation? State its defining idea and essential conditions.",
+      "definition": "A Claisen condensation uses an ester-derived enolate to acylate a suitable ester, yielding a beta-dicarbonyl product through addition and elimination. The usual self-condensation needs compatible alkoxy chemistry and sufficient alpha-hydrogen availability for the driving acid-base steps.",
+      "required_concepts": [
+        "Ester enolate acyl substitution creates a beta-dicarbonyl framework."
+      ],
+      "accepted_variants": [
+        "Claisen ester condensation."
+      ],
+      "major_error_concepts": [
+        "Treating Claisen condensation as identical to aldehyde aldol addition with no leaving-group step."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-enolate",
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-ii.draft-aldol-addition"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-dieckmann-condensation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Dieckmann Condensation",
+      "prompt": "What is Dieckmann Condensation? State its defining idea and essential conditions.",
+      "definition": "A Dieckmann condensation is an intramolecular Claisen reaction of a suitable diester, forming a cyclic beta-keto ester. Ring size and enolate placement determine feasible products; the name does not guarantee every diester cyclizes favorably.",
+      "required_concepts": [
+        "Intramolecular ester condensation yields a cyclic beta-keto ester."
+      ],
+      "accepted_variants": [
+        "Dieckmann cyclization."
+      ],
+      "major_error_concepts": [
+        "Choosing the ring size without tracing the reacting ester and alpha-carbon connectivity."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-claisen-condensation",
+        "organic-chemistry-ii.draft-intramolecular-aldol-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Beta Dicarbonyl Compound",
+      "prompt": "What is Beta Dicarbonyl Compound? State its defining idea and essential conditions.",
+      "definition": "A beta-dicarbonyl compound has carbonyl groups separated by one carbon in the usual structural description. A hydrogen on that intervening carbon can be relatively acidic because its conjugate base delocalizes charge over both carbonyl systems.",
+      "required_concepts": [
+        "Two appropriately positioned carbonyls stabilize the intervening enolate."
+      ],
+      "accepted_variants": [
+        "1,3-dicarbonyl compound."
+      ],
+      "major_error_concepts": [
+        "Calling any two distant carbonyl groups a beta-dicarbonyl acidity system."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-enolate",
+        "organic-chemistry-ii.draft-claisen-condensation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-malonic-ester-strategy",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Malonic Ester Strategy",
+      "prompt": "What is Malonic Ester Strategy? State its defining idea and essential conditions.",
+      "definition": "Malonic-ester chemistry uses a stabilized diester-derived carbon nucleophile for suitable carbon-carbon bond formation, followed conceptually by conversion and decarboxylation to a substituted acid framework. Carbon tracing and allowed substitution steps determine the final skeleton.",
+      "required_concepts": [
+        "Stabilized malonate carbon chemistry can lead to substituted carboxylic-acid frameworks."
+      ],
+      "accepted_variants": [
+        "Malonic ester synthesis concept."
+      ],
+      "major_error_concepts": [
+        "Retaining every original carboxyl carbon in a product after a stated decarboxylation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+        "organic-chemistry-ii.draft-enolate-alkylation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-acetoacetic-ester-strategy",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Acetoacetic Ester Strategy",
+      "prompt": "What is Acetoacetic Ester Strategy? State its defining idea and essential conditions.",
+      "definition": "Acetoacetic-ester chemistry uses a beta-keto ester's stabilized alpha carbon for suitable alkylation and subsequent conversion to a ketone framework. It differs from the malonic-ester acid outcome, and substitution compatibility still constrains the accessible products.",
+      "required_concepts": [
+        "Beta-keto-ester carbon functionalization can lead to substituted ketones."
+      ],
+      "accepted_variants": [
+        "Acetoacetic ester synthesis concept."
+      ],
+      "major_error_concepts": [
+        "Confusing the ordinary ketone outcome with the malonic-ester carboxylic-acid outcome."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+        "organic-chemistry-ii.draft-enolate-alkylation",
+        "organic-chemistry-ii.draft-malonic-ester-strategy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-decarboxylation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Decarboxylation",
+      "prompt": "What is Decarboxylation? State its defining idea and essential conditions.",
+      "definition": "Decarboxylation removes a carboxyl carbon as carbon dioxide in a suitable reaction pathway. Beta-keto acids and some related activated structures can support this transformation through stabilized intermediates or transition states, unlike assuming every carboxylic acid readily loses CO2.",
+      "required_concepts": [
+        "Loss of a carboxyl carbon depends on structural activation and conditions."
+      ],
+      "accepted_variants": [
+        "Decarboxylation of a qualifying acid derivative."
+      ],
+      "major_error_concepts": [
+        "Predicting easy decarboxylation for any unactivated carboxylic acid solely because it contains COOH."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+        "organic-chemistry-ii.draft-malonic-ester-strategy",
+        "organic-chemistry-ii.draft-acetoacetic-ester-strategy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carboxylic Acid",
+      "prompt": "What is Carboxylic Acid? State its defining idea and essential conditions.",
+      "definition": "A carboxylic acid contains a carbonyl and hydroxyl bonded to the same carbon. Its conjugate carboxylate delocalizes negative charge over two oxygens, helping distinguish its acidity from that of an ordinary alcohol.",
+      "required_concepts": [
+        "COOH functional group with a resonance-stabilized conjugate base."
+      ],
+      "accepted_variants": [
+        "Carboxyl group."
+      ],
+      "major_error_concepts": [
+        "Treating a carboxylic acid as an unconnected ketone plus alcohol with no electronic interaction."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-group",
+        "organic-chemistry-i.draft-conjugate-base-stability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carboxylic-acid-properties",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carboxylic Acid Properties",
+      "prompt": "What is Carboxylic Acid Properties? State its defining idea and essential conditions.",
+      "definition": "Carboxylic-acid acidity and physical properties depend on substituents, solvation, hydrogen bonding, and ionization state. Carboxylate salts can differ greatly from neutral acids in volatility and solubility, so the charge state must be specified.",
+      "required_concepts": [
+        "Structure and protonation influence acidity and bulk behavior."
+      ],
+      "accepted_variants": [
+        "Carboxylic acid versus carboxylate properties."
+      ],
+      "major_error_concepts": [
+        "Assuming the neutral acid and its ionic salt share the same solubility and boiling behavior."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carboxylic-acid",
+        "organic-chemistry-i.draft-organic-solubility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Nucleophilic Acyl Substitution",
+      "prompt": "What is Nucleophilic Acyl Substitution? State its defining idea and essential conditions.",
+      "definition": "Nucleophilic acyl substitution replaces a substituent attached to an acyl carbon through addition and elimination in the common mechanism. A suitable departing group distinguishes this pathway from simple aldehyde or ketone addition, where hydride or alkyl departure is ordinarily unfavorable.",
+      "required_concepts": [
+        "Carbonyl addition followed by leaving-group elimination substitutes at an acyl center."
+      ],
+      "accepted_variants": [
+        "Addition-elimination acyl transfer."
+      ],
+      "major_error_concepts": [
+        "Drawing ordinary ketone addition as expelling an alkyl anion without a justified special pathway."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+        "organic-chemistry-ii.draft-carboxylic-acid",
+        "organic-chemistry-i.draft-leaving-group"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Acyl Derivative Reactivity",
+      "prompt": "What is Acyl Derivative Reactivity? State its defining idea and essential conditions.",
+      "definition": "Relative acyl-derivative reactivity reflects electrophilicity, resonance donation, leaving-group ability, and conditions. Introductory rankings often place acid chlorides above anhydrides, esters, and amides for comparable nucleophilic substitution, but protonation and activation can change the comparison.",
+      "required_concepts": [
+        "Electronic donation and leaving ability jointly control acyl-transfer reactivity."
+      ],
+      "accepted_variants": [
+        "Carboxylic-acid-derivative reactivity trend under stated conditions."
+      ],
+      "major_error_concepts": [
+        "Applying one ranking universally across different activation or protonation regimes."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-acid-chloride",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Acid Chloride",
+      "prompt": "What is Acid Chloride? State its defining idea and essential conditions.",
+      "definition": "An acid chloride has chlorine as the substituent directly attached to an acyl carbon. Its electrophilicity and chloride leaving ability commonly make it reactive in acyl transfer, and the functional group must not be confused with a halogen on an alpha carbon.",
+      "required_concepts": [
+        "Acyl carbon directly bonded to chlorine defines the derivative."
+      ],
+      "accepted_variants": [
+        "Acyl chloride."
+      ],
+      "major_error_concepts": [
+        "Calling an alpha-chloro ketone an acid chloride."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-acyl-derivative-reactivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-acid-anhydride",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Acid Anhydride",
+      "prompt": "What is Acid Anhydride? State its defining idea and essential conditions.",
+      "definition": "An acid anhydride links two acyl groups through an oxygen atom and can transfer an acyl group by nucleophilic substitution. Symmetric, mixed, and cyclic forms have different structural possibilities, and the leaving fragment is carboxylate-related in the common mechanism.",
+      "required_concepts": [
+        "Acyl-oxygen-acyl connectivity gives an anhydride acyl-transfer system."
+      ],
+      "accepted_variants": [
+        "Carboxylic anhydride."
+      ],
+      "major_error_concepts": [
+        "Treating an anhydride as two unrelated ethers with no carbonyl interaction."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+        "organic-chemistry-ii.draft-carboxylic-acid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-ester",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Ester",
+      "prompt": "What is Ester? State its defining idea and essential conditions.",
+      "definition": "An ester contains an acyl carbon bonded to an oxygen that is bonded to another carbon group. Its carbonyl reactivity and oxygen chemistry differ from both an ordinary ether and a carboxylic acid, despite sharing some structural features.",
+      "required_concepts": [
+        "Acyl-oxygen-carbon connectivity defines an ester."
+      ],
+      "accepted_variants": [
+        "Carboxylic ester."
+      ],
+      "major_error_concepts": [
+        "Classifying an ester as an ordinary ether while ignoring the adjacent carbonyl."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-carboxylic-acid",
+        "organic-chemistry-i.draft-ether"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-fischer-esterification",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Fischer Esterification",
+      "prompt": "What is Fischer Esterification? State its defining idea and essential conditions.",
+      "definition": "Fischer esterification interconverts a carboxylic acid and alcohol with an ester and water through acid-catalyzed steps. It is an equilibrium process, so final composition depends on the complete system rather than on acid catalyst forcing a different equilibrium constant.",
+      "required_concepts": [
+        "Acid-catalyzed equilibrium between acid plus alcohol and ester plus water."
+      ],
+      "accepted_variants": [
+        "Fischer-Speier esterification."
+      ],
+      "major_error_concepts": [
+        "Claiming the catalyst alone changes the equilibrium constant to guarantee complete ester formation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ester",
+        "organic-chemistry-ii.draft-carboxylic-acid",
+        "organic-chemistry-i.draft-catalysis"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-transesterification",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Transesterification",
+      "prompt": "What is Transesterification? State its defining idea and essential conditions.",
+      "definition": "Transesterification exchanges an ester's alkoxy component through a suitable acyl-substitution pathway. The equilibrium and selectivity depend on alcohols, catalysts, and the reacting system; it is not simply cleavage of the ester into free acid in every case.",
+      "required_concepts": [
+        "Exchange of an ester alcohol-derived group."
+      ],
+      "accepted_variants": [
+        "Ester interchange."
+      ],
+      "major_error_concepts": [
+        "Defining transesterification as only hydrolysis to a carboxylic acid."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ester",
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-fischer-esterification"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-saponification",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Saponification",
+      "prompt": "What is Saponification? State its defining idea and essential conditions.",
+      "definition": "Saponification is base-promoted ester hydrolysis that gives a carboxylate and an alcohol under the standard net reaction. Formation of the carboxylate changes the equilibrium picture relative to acid-catalyzed hydrolysis, and the product is not initially a neutral acid in basic solution.",
+      "required_concepts": [
+        "Basic ester hydrolysis yields carboxylate plus alcohol."
+      ],
+      "accepted_variants": [
+        "Ester saponification."
+      ],
+      "major_error_concepts": [
+        "Writing a neutral carboxylic acid as the predominant final species while retaining strongly basic conditions."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ester",
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-carboxylic-acid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amide",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amide",
+      "prompt": "What is Amide? State its defining idea and essential conditions.",
+      "definition": "An amide has nitrogen directly bonded to an acyl carbon, with resonance donation from nitrogen into the carbonyl system. Its electronic structure differs from a separate amine near a carbonyl and influences basicity, geometry, and acyl-transfer reactivity.",
+      "required_concepts": [
+        "Acyl-nitrogen bond defines an amide and permits conjugation."
+      ],
+      "accepted_variants": [
+        "Carboxamide functional group."
+      ],
+      "major_error_concepts": [
+        "Treating any molecule containing both an amine and a distant ketone as an amide."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-acyl-derivative-reactivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amide-resonance",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amide Resonance",
+      "prompt": "What is Amide Resonance? State its defining idea and essential conditions.",
+      "definition": "Amide resonance gives the carbon-nitrogen bond partial double-bond character and often favors a roughly planar local arrangement. It reduces availability of the nitrogen lone pair compared with an ordinary amine and restricts rotation relative to a typical isolated single bond.",
+      "required_concepts": [
+        "Nitrogen-carbonyl conjugation changes rotation, geometry, and lone-pair availability."
+      ],
+      "accepted_variants": [
+        "Amide delocalization."
+      ],
+      "major_error_concepts": [
+        "Assuming amide nitrogen has the same basicity and unrestricted rotation as an alkylamine."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-i.draft-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amide-formation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amide Formation",
+      "prompt": "What is Amide Formation? State its defining idea and essential conditions.",
+      "definition": "Amide bond formation generally requires an activated acyl system or another justified coupling strategy. Simply mixing a carboxylic acid and amine often first gives an acid-base salt, so proton transfer must be distinguished from covalent amide formation.",
+      "required_concepts": [
+        "Acyl activation or a suitable pathway is needed beyond acid-base salt formation."
+      ],
+      "accepted_variants": [
+        "Amide coupling concept."
+      ],
+      "major_error_concepts": [
+        "Calling an ammonium carboxylate salt automatically a newly formed amide bond."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+        "organic-chemistry-ii.draft-carboxylic-acid",
+        "organic-chemistry-i.draft-proton-transfer-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nitrile",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Nitrile",
+      "prompt": "What is Nitrile? State its defining idea and essential conditions.",
+      "definition": "A nitrile contains a carbon-nitrogen triple bond with electrophilic character at carbon in suitable reactions. Its linear geometry and transformations differ from those of a carbon-carbon alkyne, despite both containing a triple bond.",
+      "required_concepts": [
+        "Carbon-nitrogen triple bond defines a nitrile."
+      ],
+      "accepted_variants": [
+        "Cyano functional group in a nitrile structure."
+      ],
+      "major_error_concepts": [
+        "Treating nitriles as carbon-carbon alkynes with identical acidity and addition patterns."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbonyl-group",
+        "organic-chemistry-i.draft-alkyne"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-nitrile-hydrolysis",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Nitrile Hydrolysis",
+      "prompt": "What is Nitrile Hydrolysis? State its defining idea and essential conditions.",
+      "definition": "Nitrile hydrolysis converts the nitrile carbon to an amide and, under further suitable conditions, a carboxylic-acid-level product. The nitrile carbon remains part of the carbon skeleton, and protonation conditions determine the acid or carboxylate form.",
+      "required_concepts": [
+        "Hydrolysis changes the nitrile functional group while retaining its carbon."
+      ],
+      "accepted_variants": [
+        "Nitrile-to-amide or acid conversion."
+      ],
+      "major_error_concepts": [
+        "Deleting the nitrile carbon from the predicted hydrolysis product."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-nitrile",
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-ii.draft-carboxylic-acid"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-acyl-derivative-reduction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Acyl Derivative Reduction",
+      "prompt": "What is Acyl Derivative Reduction? State its defining idea and essential conditions.",
+      "definition": "Reduction of acyl derivatives depends strongly on derivative class and the reducing system. Esters, amides, nitriles, and acid chlorides can give different product classes or levels, so aldehyde reduction rules cannot be transferred unchanged to all carbonyl-containing substrates.",
+      "required_concepts": [
+        "Derivative and reduction conditions jointly determine product class."
+      ],
+      "accepted_variants": [
+        "Carboxylic-derivative reduction selectivity."
+      ],
+      "major_error_concepts": [
+        "Assuming every acyl derivative necessarily reduces to the same type of alcohol."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+        "organic-chemistry-ii.draft-reduction-chemoselectivity",
+        "organic-chemistry-ii.draft-nitrile"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-lactone",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Lactone",
+      "prompt": "What is Lactone? State its defining idea and essential conditions.",
+      "definition": "A lactone is a cyclic ester whose ring contains the ester linkage. Ring size, strain, and conditions affect its formation and opening, so a lactone is not simply an acyclic ester with the same unrestricted conformations.",
+      "required_concepts": [
+        "Cyclic ester connectivity with ring-dependent behavior."
+      ],
+      "accepted_variants": [
+        "Lactone functional group."
+      ],
+      "major_error_concepts": [
+        "Calling every oxygen-containing ring a lactone without a carbonyl ester linkage."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ester",
+        "organic-chemistry-i.draft-ring-strain"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-lactam",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Lactam",
+      "prompt": "What is Lactam? State its defining idea and essential conditions.",
+      "definition": "A lactam is a cyclic amide with the amide linkage incorporated into a ring. Ring geometry can alter the usual amide resonance and reactivity, making some constrained lactams behave differently from unstrained acyclic amides.",
+      "required_concepts": [
+        "Cyclic amide with ring-dependent resonance and strain effects."
+      ],
+      "accepted_variants": [
+        "Lactam functional group."
+      ],
+      "major_error_concepts": [
+        "Assuming all lactams have exactly the same reactivity as an unstrained ordinary amide."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-ii.draft-amide-resonance",
+        "organic-chemistry-ii.draft-lactone"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-protecting-group-strategy",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Protecting Group Strategy",
+      "prompt": "What is Protecting Group Strategy? State its defining idea and essential conditions.",
+      "definition": "A protecting group temporarily changes a functional group's reactivity so another intended transformation can occur selectively. Installation, stability during the intervening chemistry, and selective removal must all be compatible with the full molecule.",
+      "required_concepts": [
+        "Temporary masking requires a compatible install-survive-remove sequence."
+      ],
+      "accepted_variants": [
+        "Functional-group protection strategy."
+      ],
+      "major_error_concepts": [
+        "Choosing protection solely because installation works while ignoring later removal or interference."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-functional-group-compatibility",
+        "organic-chemistry-ii.draft-acetal",
+        "organic-chemistry-ii.draft-ester"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amine",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amine",
+      "prompt": "What is Amine? State its defining idea and essential conditions.",
+      "definition": "An amine is an ammonia-derived nitrogen compound classified by the number of carbon substituents on nitrogen. Primary, secondary, and tertiary amines differ from permanently substituted quaternary ammonium ions and from resonance-conjugated amides.",
+      "required_concepts": [
+        "Nitrogen substitution defines amine class; amides and ammonium ions are distinct."
+      ],
+      "accepted_variants": [
+        "Alkylamine or arylamine as appropriate."
+      ],
+      "major_error_concepts": [
+        "Classifying amine degree by substitution of a neighboring carbon instead of nitrogen."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-i.draft-basicity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amine-basicity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amine Basicity",
+      "prompt": "What is Amine Basicity? State its defining idea and essential conditions.",
+      "definition": "Amine basicity depends on the availability and stabilization of the nitrogen lone pair and its conjugate acid in a specified solvent. Induction, resonance, sterics, and solvation can compete, so gas-phase or simple substitution trends do not universally rank solution basicity.",
+      "required_concepts": [
+        "Lone-pair and conjugate-acid stabilization determine condition-dependent basicity."
+      ],
+      "accepted_variants": [
+        "Amine proton-accepting tendency."
+      ],
+      "major_error_concepts": [
+        "Assuming tertiary amines are always more basic than every primary amine in every medium."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amine",
+        "organic-chemistry-ii.draft-amide-resonance",
+        "organic-chemistry-i.draft-pka"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-aniline-electronic-effects",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Aniline Electronic Effects",
+      "prompt": "What is Aniline Electronic Effects? State its defining idea and essential conditions.",
+      "definition": "In aniline-type arylamines, nitrogen's lone pair can conjugate with the aromatic ring. This affects both nitrogen basicity and ring substitution behavior, while protonating the nitrogen changes the electronic effects and directing analysis.",
+      "required_concepts": [
+        "Aryl-nitrogen conjugation links amine basicity and ring reactivity."
+      ],
+      "accepted_variants": [
+        "Aniline lone-pair delocalization."
+      ],
+      "major_error_concepts": [
+        "Applying the neutral amino group's ring effects unchanged after converting it to an ammonium group."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amine",
+        "organic-chemistry-ii.draft-amine-basicity",
+        "organic-chemistry-ii.draft-aromatic-activating-group",
+        "organic-chemistry-ii.draft-meta-direction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amine-alkylation",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amine Alkylation",
+      "prompt": "What is Amine Alkylation? State its defining idea and essential conditions.",
+      "definition": "Amine alkylation forms a carbon-nitrogen bond with a compatible alkyl electrophile, often through substitution. Further alkylation can occur because products may remain nucleophilic, so a simple reaction design does not automatically stop at a primary or secondary amine.",
+      "required_concepts": [
+        "Nitrogen substitution can continue through successive alkylations."
+      ],
+      "accepted_variants": [
+        "N-alkylation."
+      ],
+      "major_error_concepts": [
+        "Assuming one starting amine and an alkyl halide necessarily yield one substitution level exclusively."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amine",
+        "organic-chemistry-i.draft-sn2-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-gabriel-amine-strategy",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Gabriel Amine Strategy",
+      "prompt": "What is Gabriel Amine Strategy? State its defining idea and essential conditions.",
+      "definition": "The Gabriel strategy uses a protected nitrogen nucleophile to introduce one compatible alkyl group before releasing a primary amine. Its ordinary substitution step has electrophile limitations, so it is not a universal route from every aryl, vinyl, or hindered halide.",
+      "required_concepts": [
+        "Protected-nitrogen alkylation supports selected primary-amine formation."
+      ],
+      "accepted_variants": [
+        "Gabriel amine synthesis concept."
+      ],
+      "major_error_concepts": [
+        "Assuming the standard pathway performs ordinary SN2 on an unactivated aryl halide."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amine-alkylation",
+        "organic-chemistry-ii.draft-protecting-group-strategy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-hofmann-rearrangement",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Hofmann Rearrangement",
+      "prompt": "What is Hofmann Rearrangement? State its defining idea and essential conditions.",
+      "definition": "The Hofmann rearrangement converts a suitable primary amide into an amine with one fewer carbon through migration and loss of the carbonyl carbon in the overall transformation. It differs from Hofmann elimination, which forms an alkene rather than contracting an amide-derived skeleton.",
+      "required_concepts": [
+        "Primary-amide rearrangement yields a carbon-shortened amine."
+      ],
+      "accepted_variants": [
+        "Hofmann amide rearrangement."
+      ],
+      "major_error_concepts": [
+        "Confusing this skeletal change with the less-substituted alkene rule in Hofmann elimination."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-ii.draft-amine",
+        "organic-chemistry-i.draft-hofmann-selectivity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-arenediazonium-group",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Arenediazonium Group",
+      "prompt": "What is Arenediazonium Group? State its defining idea and essential conditions.",
+      "definition": "An arenediazonium group links an aromatic carbon to an N2-containing cationic substituent and can serve as a transformation handle. Its stability and reaction behavior depend on structure and conditions; the concept is not a general safe-storage or preparation instruction.",
+      "required_concepts": [
+        "Aryl diazonium functionality provides a distinct reactive nitrogen-containing handle."
+      ],
+      "accepted_variants": [
+        "Arenediazonium ion."
+      ],
+      "major_error_concepts": [
+        "Assuming all diazonium salts are stable, interchangeable ordinary amine derivatives."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amine",
+        "organic-chemistry-ii.draft-benzene-electronic-structure"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-diazonium-transformation-logic",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Diazonium Transformation Logic",
+      "prompt": "What is Diazonium Transformation Logic? State its defining idea and essential conditions.",
+      "definition": "Arenediazonium transformations replace or couple through the diazonium functionality by reaction-specific pathways. Their usefulness is that the original amino-group position can be redirected into other connectivity, but the possible products require the actual transformation rather than a universal substitution rule.",
+      "required_concepts": [
+        "Diazonium functionality enables selected aryl substitution or coupling pathways."
+      ],
+      "accepted_variants": [
+        "Diazonium-based aromatic transformations."
+      ],
+      "major_error_concepts": [
+        "Assuming one generic mechanism gives every possible substituent with identical selectivity."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-arenediazonium-group",
+        "organic-chemistry-ii.draft-aniline-electronic-effects",
+        "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-heterocycle",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Heterocycle",
+      "prompt": "What is Heterocycle? State its defining idea and essential conditions.",
+      "definition": "A heterocycle contains at least one noncarbon ring atom. Heterocycles can be saturated, unsaturated, aromatic, or nonaromatic, so their reaction class depends on electron structure and not simply on the presence of nitrogen or oxygen in a ring.",
+      "required_concepts": [
+        "Noncarbon ring atom defines a heterocycle without determining aromaticity."
+      ],
+      "accepted_variants": [
+        "Heterocyclic compound."
+      ],
+      "major_error_concepts": [
+        "Calling every nitrogen-containing ring aromatic."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aromaticity",
+        "organic-chemistry-ii.draft-nonaromatic-ring",
+        "organic-chemistry-ii.draft-amine"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-heteroaromatic-reactivity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Heteroaromatic Reactivity",
+      "prompt": "What is Heteroaromatic Reactivity? State its defining idea and essential conditions.",
+      "definition": "Heteroaromatic reactivity depends on how heteroatom orbitals and lone pairs participate in the aromatic system. Electron-rich pyrrole-type rings and electron-poor pyridine-type rings can favor different substitution pathways, and protonation can change those patterns.",
+      "required_concepts": [
+        "Lone-pair participation and ring electronics determine heteroaromatic pathway tendencies."
+      ],
+      "accepted_variants": [
+        "Heteroaromatic substitution reasoning."
+      ],
+      "major_error_concepts": [
+        "Applying benzene substitution rules identically to all heteroaromatic rings."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-pyridine-nitrogen",
+        "organic-chemistry-ii.draft-pyrrole-nitrogen",
+        "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+        "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution",
+        "organic-chemistry-ii.draft-heterocycle"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-pericyclic-reaction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Pericyclic Reaction",
+      "prompt": "What is Pericyclic Reaction? State its defining idea and essential conditions.",
+      "definition": "A pericyclic reaction reorganizes bonds through a cyclic orbital interaction in a concerted idealized pathway. Orbital symmetry, electron count, and thermal versus photochemical conditions constrain allowed stereochemical modes; not every concerted reaction is pericyclic.",
+      "required_concepts": [
+        "Concerted cyclic orbital reorganization with symmetry-dependent pathways."
+      ],
+      "accepted_variants": [
+        "Pericyclic transformation."
+      ],
+      "major_error_concepts": [
+        "Equating every one-step reaction, including ordinary SN2, with a pericyclic reaction."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-diels-alder-reaction",
+        "organic-chemistry-i.draft-stereospecific-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-diels-alder-endo-selectivity",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Diels Alder Endo Selectivity",
+      "prompt": "What is Diels Alder Endo Selectivity? State its defining idea and essential conditions.",
+      "definition": "In a qualifying Diels-Alder reaction, endo and exo describe the orientation of dienophile substituents relative to the developing bicyclic framework. Endo products are often kinetically favored in common introductory cases, but substrate and conditions determine whether that preference applies.",
+      "required_concepts": [
+        "Endo/exo orientation is a defined bicyclic stereochemical relationship with conditional selectivity."
+      ],
+      "accepted_variants": [
+        "Diels-Alder endo tendency."
+      ],
+      "major_error_concepts": [
+        "Claiming every Diels-Alder reaction must produce only the endo product."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-pericyclic-reaction",
+        "organic-chemistry-i.draft-diels-alder-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-electrocyclic-reaction",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Electrocyclic Reaction",
+      "prompt": "What is Electrocyclic Reaction? State its defining idea and essential conditions.",
+      "definition": "An electrocyclic reaction interconverts a conjugated pi system and a ring through formation or cleavage of one sigma bond. In the standard thermal ground-state rules, 4n pi systems use conrotation and 4n+2 use disrotation; photochemical rules reverse for the corresponding idealized cases.",
+      "required_concepts": [
+        "Ring closure or opening has electron-count- and excitation-dependent rotational stereochemistry."
+      ],
+      "accepted_variants": [
+        "Electrocyclic conrotatory or disrotatory mode."
+      ],
+      "major_error_concepts": [
+        "Applying a thermal rotation rule unchanged after explicitly changing to photochemical excitation."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-pericyclic-reaction",
+        "organic-chemistry-i.draft-conjugated-diene"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-sigmatropic-rearrangement",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Sigmatropic Rearrangement",
+      "prompt": "What is Sigmatropic Rearrangement? State its defining idea and essential conditions.",
+      "definition": "A sigmatropic rearrangement shifts a sigma bond across a conjugated framework with accompanying pi-bond reorganization in a concerted pathway. The bracket indices count the participating atom paths, and orbital geometry determines allowed suprafacial or antarafacial relationships.",
+      "required_concepts": [
+        "Sigma-bond migration coupled to pi reorganization with defined atom-path indexing."
+      ],
+      "accepted_variants": [
+        "Sigmatropic shift such as a qualifying [3,3] rearrangement."
+      ],
+      "major_error_concepts": [
+        "Treating the bracket numbers as arbitrary reagent counts rather than connectivity-path labels."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-pericyclic-reaction"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-addition-polymerization",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Addition Polymerization",
+      "prompt": "What is Addition Polymerization? State its defining idea and essential conditions.",
+      "definition": "Addition polymerization joins monomers through bond rearrangement such as opening carbon-carbon pi bonds, commonly without eliminating a small molecule from each addition. Mechanism, chain architecture, and stereoregularity affect polymer properties beyond the identity of the repeat unit alone.",
+      "required_concepts": [
+        "Monomer addition forms repeat connectivity without obligatory small-molecule loss."
+      ],
+      "accepted_variants": [
+        "Addition polymer formation."
+      ],
+      "major_error_concepts": [
+        "Assuming every polymer with the same repeat formula has identical chain structure and properties."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-i.draft-alkene",
+        "organic-chemistry-i.draft-radical-chain-propagation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-condensation-polymerization",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Condensation Polymerization",
+      "prompt": "What is Condensation Polymerization? State its defining idea and essential conditions.",
+      "definition": "Condensation polymerization forms polymer links through reactions that commonly release small molecules, such as many ester- or amide-forming reactions. This chemical classification is related to but not identical with the kinetic distinction between step growth and chain growth.",
+      "required_concepts": [
+        "Link-forming condensation chemistry differs from growth-mechanism classification."
+      ],
+      "accepted_variants": [
+        "Polycondensation."
+      ],
+      "major_error_concepts": [
+        "Treating condensation and step growth as universally interchangeable definitions."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ester",
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-ii.draft-addition-polymerization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-step-growth-and-chain-growth",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Step Growth and Chain Growth",
+      "prompt": "What is Step Growth and Chain Growth? State its defining idea and essential conditions.",
+      "definition": "Chain-growth polymerization adds monomers at active centers, while step growth allows compatible molecules of many sizes to react with one another. Molecular-weight development and conversion requirements differ, and the distinction should not be inferred only from whether a small molecule is released.",
+      "required_concepts": [
+        "Active-center growth differs from broad functional-group coupling among chain sizes."
+      ],
+      "accepted_variants": [
+        "Chain-growth versus step-growth mechanism."
+      ],
+      "major_error_concepts": [
+        "Assuming every no-byproduct polymerization must be chain growth."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-addition-polymerization",
+        "organic-chemistry-ii.draft-condensation-polymerization"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-polymer-crosslinking",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Polymer Crosslinking",
+      "prompt": "What is Polymer Crosslinking? State its defining idea and essential conditions.",
+      "definition": "Crosslinking connects polymer chains into a network through covalent or appropriately defined persistent links. Increasing crosslink density can change swelling, flexibility, and flow behavior, but effects depend on network chemistry and structure rather than one universal property trend.",
+      "required_concepts": [
+        "Interchain links create network connectivity and alter bulk behavior."
+      ],
+      "accepted_variants": [
+        "Polymer network crosslinking."
+      ],
+      "major_error_concepts": [
+        "Assuming a crosslinked network must dissolve like an uncrosslinked small molecule in a good solvent."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-step-growth-and-chain-growth"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-carbohydrate-functional-groups",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Carbohydrate Functional Groups",
+      "prompt": "What is Carbohydrate Functional Groups? State its defining idea and essential conditions.",
+      "definition": "Carbohydrates include polyhydroxy aldehyde- or ketone-related structures and their derivatives. Many exist largely in cyclic hemiacetal or hemiketal forms, with stereochemistry determining identities that cannot be captured by a simple empirical formula alone.",
+      "required_concepts": [
+        "Polyhydroxy carbonyl-related chemistry and cyclic forms define core carbohydrate concepts."
+      ],
+      "accepted_variants": [
+        "Monosaccharide functional-group framework."
+      ],
+      "major_error_concepts": [
+        "Treating all compounds with a carbon-hydrogen-oxygen formula ratio as the same carbohydrate."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-aldehyde-and-ketone",
+        "organic-chemistry-ii.draft-hemiacetal",
+        "organic-chemistry-i.draft-stereoisomer"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-anomer",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Anomer",
+      "prompt": "What is Anomer? State its defining idea and essential conditions.",
+      "definition": "Anomers differ in configuration at the anomeric center created from a carbonyl carbon during cyclic sugar formation. Alpha/beta assignment depends on the relevant stereochemical convention, and anomers can interconvert through ring opening when the hemiacetal chemistry permits.",
+      "required_concepts": [
+        "Configuration differs specifically at the sugar's anomeric center."
+      ],
+      "accepted_variants": [
+        "Alpha and beta anomers with convention stated."
+      ],
+      "major_error_concepts": [
+        "Calling any pair of sugar stereoisomers anomers regardless of which center differs."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carbohydrate-functional-groups",
+        "organic-chemistry-ii.draft-hemiacetal"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-glycosidic-linkage",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Glycosidic Linkage",
+      "prompt": "What is Glycosidic Linkage? State its defining idea and essential conditions.",
+      "definition": "A glycosidic linkage joins an anomeric center to another group through the specified heteroatom or carbon connection. For common O-glycosides, acetal formation changes ring-opening and reducing behavior relative to a free anomeric hemiacetal.",
+      "required_concepts": [
+        "Bond at an anomeric center changes its functional-group and stereochemical behavior."
+      ],
+      "accepted_variants": [
+        "Glycosidic bond with atom type and configuration specified."
+      ],
+      "major_error_concepts": [
+        "Assuming every sugar with a glycosidic bond still has that same anomeric center free to open as a hemiacetal."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-anomer",
+        "organic-chemistry-ii.draft-acetal"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-amino-acid-structure",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Amino Acid Structure",
+      "prompt": "What is Amino Acid Structure? State its defining idea and essential conditions.",
+      "definition": "An alpha-amino acid has amino and carboxyl functionality associated with the alpha carbon, with side-chain-dependent properties. Protonation varies with conditions, and glycine lacks the ordinary alpha-carbon stereocenter present in most common proteinogenic amino acids.",
+      "required_concepts": [
+        "Amino-acid functional groups, protonation, and stereochemistry depend on structure."
+      ],
+      "accepted_variants": [
+        "Alpha-amino-acid framework."
+      ],
+      "major_error_concepts": [
+        "Claiming all amino acids are neutral or all have a chiral alpha carbon."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-carboxylic-acid",
+        "organic-chemistry-ii.draft-amine",
+        "organic-chemistry-i.draft-tetrahedral-stereocenter"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-peptide-bond",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Peptide Bond",
+      "prompt": "What is Peptide Bond? State its defining idea and essential conditions.",
+      "definition": "A peptide bond is an amide linkage connecting amino-acid-derived units. Amide resonance constrains its local geometry and rotation, while ionizable side chains and terminal groups give the complete peptide additional acid-base behavior.",
+      "required_concepts": [
+        "Amino-acid linkage is an amide with resonance-constrained local structure."
+      ],
+      "accepted_variants": [
+        "Peptide amide bond."
+      ],
+      "major_error_concepts": [
+        "Treating a peptide bond as a freely rotating ordinary carbon-nitrogen single bond with no resonance."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-amino-acid-structure",
+        "organic-chemistry-ii.draft-amide",
+        "organic-chemistry-ii.draft-amide-resonance"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-lipid-structural-classes",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Lipid Structural Classes",
+      "prompt": "What is Lipid Structural Classes? State its defining idea and essential conditions.",
+      "definition": "Lipids are a chemically diverse group often characterized by hydrophobic or amphipathic behavior rather than one universal functional group. Fatty-acid esters, phospholipids, and sterol frameworks therefore require different structural descriptions despite shared lipid classification.",
+      "required_concepts": [
+        "Lipid classification spans distinct structures with characteristic nonpolar or amphipathic behavior."
+      ],
+      "accepted_variants": [
+        "Major lipid structural motifs."
+      ],
+      "major_error_concepts": [
+        "Assuming every lipid is a triglyceride or contains the same ester linkage."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-ester",
+        "organic-chemistry-ii.draft-carboxylic-acid-properties",
+        "organic-chemistry-i.draft-organic-solubility"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-retrosynthetic-analysis",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Retrosynthetic Analysis",
+      "prompt": "What is Retrosynthetic Analysis? State its defining idea and essential conditions.",
+      "definition": "Retrosynthetic analysis reasons backward from a target by identifying bonds and functional groups that could arise from known transformations. A formal disconnection must be paired with plausible forward chemistry, selectivity, compatibility, and atom accounting before it becomes a viable route concept.",
+      "required_concepts": [
+        "Backward disconnections require feasible corresponding forward transformations."
+      ],
+      "accepted_variants": [
+        "Retrosynthesis with synthons and plausible equivalents distinguished."
+      ],
+      "major_error_concepts": [
+        "Treating any drawn bond disconnection as proof of an executable selective synthesis."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-functional-group-compatibility",
+        "organic-chemistry-ii.draft-protecting-group-strategy",
+        "organic-chemistry-ii.draft-aldol-addition",
+        "organic-chemistry-ii.draft-nucleophilic-acyl-substitution"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "organic-chemistry-ii.draft-synthesis-selectivity-planning",
+      "canonical_deck_id": "organic-chemistry-ii",
+      "term": "Synthesis Selectivity Planning",
+      "prompt": "What is Synthesis Selectivity Planning? State its defining idea and essential conditions.",
+      "definition": "A synthesis selectivity plan distinguishes which functional group reacts, where it reacts, and which stereoisomer is formed. Chemoselectivity, regioselectivity, and stereoselectivity must be tracked separately through each proposed transformation and can constrain one another.",
+      "required_concepts": [
+        "Functional-group, positional, and stereochemical selectivity are distinct linked requirements."
+      ],
+      "accepted_variants": [
+        "Integrated chemo-, regio-, and stereoselective planning."
+      ],
+      "major_error_concepts": [
+        "Assuming correct overall connectivity guarantees the correct stereoisomer or preserved functional groups."
+      ],
+      "prerequisite_ids": [
+        "organic-chemistry-ii.draft-retrosynthetic-analysis",
+        "organic-chemistry-ii.draft-reduction-chemoselectivity",
+        "organic-chemistry-ii.draft-protecting-group-strategy",
+        "organic-chemistry-i.draft-regioselectivity",
+        "organic-chemistry-i.draft-stereoselective-reaction"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula",
+      "dependent_card_id": "organic-chemistry-ii.draft-formula-constraints-in-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula",
+      "dependent_card_id": "organic-chemistry-ii.draft-mass-spectral-isotope-pattern"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acetal",
+      "dependent_card_id": "organic-chemistry-ii.draft-glycosidic-linkage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acetal",
+      "dependent_card_id": "organic-chemistry-ii.draft-protecting-group-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acetoacetic-ester-strategy",
+      "dependent_card_id": "organic-chemistry-ii.draft-decarboxylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-acid-anhydride"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-acid-chloride"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-acyl-derivative-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-acyl-derivative-reactivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-amide"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-addition-polymerization",
+      "dependent_card_id": "organic-chemistry-ii.draft-condensation-polymerization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-addition-polymerization",
+      "dependent_card_id": "organic-chemistry-ii.draft-step-growth-and-chain-growth"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldehyde-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldol-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-carbohydrate-functional-groups"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-carbonyl-hydrate"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-haloform-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone",
+      "dependent_card_id": "organic-chemistry-ii.draft-wittig-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldol-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldol-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldol-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-claisen-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldol-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-crossed-aldol-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldol-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-intramolecular-aldol-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aldol-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-retrosynthetic-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-alpha-halogenation",
+      "dependent_card_id": "organic-chemistry-ii.draft-haloform-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-amide-formation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-amide-resonance"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-amine"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-condensation-polymerization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-hofmann-rearrangement"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-lactam"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-nitrile-hydrolysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide",
+      "dependent_card_id": "organic-chemistry-ii.draft-peptide-bond"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide-resonance",
+      "dependent_card_id": "organic-chemistry-ii.draft-amine-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide-resonance",
+      "dependent_card_id": "organic-chemistry-ii.draft-lactam"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amide-resonance",
+      "dependent_card_id": "organic-chemistry-ii.draft-peptide-bond"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-amine-alkylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-amine-basicity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-amino-acid-structure"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-aniline-electronic-effects"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-arenediazonium-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-heterocycle"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine",
+      "dependent_card_id": "organic-chemistry-ii.draft-hofmann-rearrangement"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine-alkylation",
+      "dependent_card_id": "organic-chemistry-ii.draft-gabriel-amine-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amine-basicity",
+      "dependent_card_id": "organic-chemistry-ii.draft-aniline-electronic-effects"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-amino-acid-structure",
+      "dependent_card_id": "organic-chemistry-ii.draft-peptide-bond"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aniline-electronic-effects",
+      "dependent_card_id": "organic-chemistry-ii.draft-diazonium-transformation-logic"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-anomer",
+      "dependent_card_id": "organic-chemistry-ii.draft-glycosidic-linkage"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-antiaromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-nonaromatic-ring"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-arenediazonium-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-diazonium-transformation-logic"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-activating-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-aniline-electronic-effects"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-activating-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-deactivating-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-activating-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-ortho-para-direction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-deactivating-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-halogen-directing-effect"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-deactivating-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-meta-direction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-sigma-complex",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-activating-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-sigma-complex",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-deactivating-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-sigma-complex",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-nitration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-sigma-complex",
+      "dependent_card_id": "organic-chemistry-ii.draft-meta-direction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromatic-sigma-complex",
+      "dependent_card_id": "organic-chemistry-ii.draft-ortho-para-direction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-antiaromaticity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-fused-aromatic-system"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-heterocycle"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-huckel-rule"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-nonaromatic-ring"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-aromaticity",
+      "dependent_card_id": "organic-chemistry-ii.draft-pyridine-nitrogen"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-benzene-electronic-structure",
+      "dependent_card_id": "organic-chemistry-ii.draft-arenediazonium-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-benzene-electronic-structure",
+      "dependent_card_id": "organic-chemistry-ii.draft-benzylic-oxidation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-benzene-electronic-structure",
+      "dependent_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-benzene-electronic-structure",
+      "dependent_card_id": "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+      "dependent_card_id": "organic-chemistry-ii.draft-acetoacetic-ester-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+      "dependent_card_id": "organic-chemistry-ii.draft-decarboxylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-beta-dicarbonyl-compound",
+      "dependent_card_id": "organic-chemistry-ii.draft-malonic-ester-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbohydrate-functional-groups",
+      "dependent_card_id": "organic-chemistry-ii.draft-anomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbon-nmr",
+      "dependent_card_id": "organic-chemistry-ii.draft-dept-nmr"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbon-nmr",
+      "dependent_card_id": "organic-chemistry-ii.draft-hsqc"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbon-nmr",
+      "dependent_card_id": "organic-chemistry-ii.draft-integrated-spectral-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbon-nmr",
+      "dependent_card_id": "organic-chemistry-ii.draft-nmr-equivalence"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldehyde-and-ketone"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-carboxylic-acid"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-conjugated-carbonyl"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-enolate"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-nitrile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-group",
+      "dependent_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-hydride-reduction",
+      "dependent_card_id": "organic-chemistry-ii.draft-reduction-chemoselectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carbonyl-hydride-reduction",
+      "dependent_card_id": "organic-chemistry-ii.draft-reductive-amination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-acid-anhydride"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-amide-formation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-amino-acid-structure"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-carboxylic-acid-properties"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-ester"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-fischer-esterification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-nitrile-hydrolysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid",
+      "dependent_card_id": "organic-chemistry-ii.draft-saponification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-carboxylic-acid-properties",
+      "dependent_card_id": "organic-chemistry-ii.draft-lipid-structural-classes"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-claisen-condensation",
+      "dependent_card_id": "organic-chemistry-ii.draft-beta-dicarbonyl-compound"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-claisen-condensation",
+      "dependent_card_id": "organic-chemistry-ii.draft-dieckmann-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-condensation-polymerization",
+      "dependent_card_id": "organic-chemistry-ii.draft-step-growth-and-chain-growth"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-conjugated-carbonyl",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldol-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-conjugated-carbonyl",
+      "dependent_card_id": "organic-chemistry-ii.draft-direct-and-conjugate-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-conjugated-carbonyl",
+      "dependent_card_id": "organic-chemistry-ii.draft-michael-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-cosy",
+      "dependent_card_id": "organic-chemistry-ii.draft-integrated-spectral-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-crossed-aldol-reaction",
+      "dependent_card_id": "organic-chemistry-ii.draft-intramolecular-aldol-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-degree-of-unsaturation",
+      "dependent_card_id": "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-degree-of-unsaturation",
+      "dependent_card_id": "organic-chemistry-ii.draft-formula-constraints-in-structure-determination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-degree-of-unsaturation",
+      "dependent_card_id": "organic-chemistry-ii.draft-mass-spectrometry"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-direct-and-conjugate-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-michael-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-activating-group"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-nitration"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-sigma-complex"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-aromatic-sulfonation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-friedel-crafts-acylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-friedel-crafts-alkylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-heteroaromatic-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-electrophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-ortho-para-direction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enamine",
+      "dependent_card_id": "organic-chemistry-ii.draft-reductive-amination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldol-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-alpha-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-beta-dicarbonyl-compound"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-claisen-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-enolate-alkylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-enolate-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate",
+      "dependent_card_id": "organic-chemistry-ii.draft-enolization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate-alkylation",
+      "dependent_card_id": "organic-chemistry-ii.draft-acetoacetic-ester-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate-alkylation",
+      "dependent_card_id": "organic-chemistry-ii.draft-malonic-ester-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolate-selectivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-enolate-alkylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolization",
+      "dependent_card_id": "organic-chemistry-ii.draft-alpha-halogenation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-enolization",
+      "dependent_card_id": "organic-chemistry-ii.draft-enolate-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-condensation-polymerization"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-fischer-esterification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-lactone"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-lipid-structural-classes"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-protecting-group-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-saponification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ester",
+      "dependent_card_id": "organic-chemistry-ii.draft-transesterification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-fischer-esterification",
+      "dependent_card_id": "organic-chemistry-ii.draft-transesterification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-formula-constraints-in-structure-determination",
+      "dependent_card_id": "organic-chemistry-ii.draft-carbon-nmr"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-formula-constraints-in-structure-determination",
+      "dependent_card_id": "organic-chemistry-ii.draft-integrated-spectral-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-friedel-crafts-alkylation",
+      "dependent_card_id": "organic-chemistry-ii.draft-friedel-crafts-acylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-acetal"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-crossed-aldol-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-direct-and-conjugate-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-protecting-group-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-reduction-chemoselectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-reductive-amination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-functional-group-compatibility",
+      "dependent_card_id": "organic-chemistry-ii.draft-retrosynthetic-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-halogen-directing-effect",
+      "dependent_card_id": "organic-chemistry-ii.draft-multiple-aromatic-substituents"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-hemiacetal",
+      "dependent_card_id": "organic-chemistry-ii.draft-acetal"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-hemiacetal",
+      "dependent_card_id": "organic-chemistry-ii.draft-anomer"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-hemiacetal",
+      "dependent_card_id": "organic-chemistry-ii.draft-carbohydrate-functional-groups"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-heterocycle",
+      "dependent_card_id": "organic-chemistry-ii.draft-heteroaromatic-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-hmbc",
+      "dependent_card_id": "organic-chemistry-ii.draft-integrated-spectral-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-hsqc",
+      "dependent_card_id": "organic-chemistry-ii.draft-hmbc"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-hsqc",
+      "dependent_card_id": "organic-chemistry-ii.draft-integrated-spectral-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-huckel-rule",
+      "dependent_card_id": "organic-chemistry-ii.draft-antiaromaticity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-huckel-rule",
+      "dependent_card_id": "organic-chemistry-ii.draft-benzene-electronic-structure"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-huckel-rule",
+      "dependent_card_id": "organic-chemistry-ii.draft-fused-aromatic-system"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-huckel-rule",
+      "dependent_card_id": "organic-chemistry-ii.draft-pyridine-nitrogen"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-huckel-rule",
+      "dependent_card_id": "organic-chemistry-ii.draft-pyrrole-nitrogen"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-imine",
+      "dependent_card_id": "organic-chemistry-ii.draft-enamine"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-imine",
+      "dependent_card_id": "organic-chemistry-ii.draft-reductive-amination"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-intramolecular-aldol-reaction",
+      "dependent_card_id": "organic-chemistry-ii.draft-dieckmann-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-lactone",
+      "dependent_card_id": "organic-chemistry-ii.draft-lactam"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-malonic-ester-strategy",
+      "dependent_card_id": "organic-chemistry-ii.draft-acetoacetic-ester-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-malonic-ester-strategy",
+      "dependent_card_id": "organic-chemistry-ii.draft-decarboxylation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-mass-spectrometry",
+      "dependent_card_id": "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-mass-spectrometry",
+      "dependent_card_id": "organic-chemistry-ii.draft-mass-spectral-fragmentation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-mass-spectrometry",
+      "dependent_card_id": "organic-chemistry-ii.draft-mass-spectral-isotope-pattern"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-mass-spectrometry",
+      "dependent_card_id": "organic-chemistry-ii.draft-molecular-ion-and-adduct"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-meta-direction",
+      "dependent_card_id": "organic-chemistry-ii.draft-aniline-electronic-effects"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-meta-direction",
+      "dependent_card_id": "organic-chemistry-ii.draft-multiple-aromatic-substituents"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-molecular-ion-and-adduct",
+      "dependent_card_id": "organic-chemistry-ii.draft-accurate-mass-and-molecular-formula"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-molecular-ion-and-adduct",
+      "dependent_card_id": "organic-chemistry-ii.draft-mass-spectral-fragmentation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nitrile",
+      "dependent_card_id": "organic-chemistry-ii.draft-acyl-derivative-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nitrile",
+      "dependent_card_id": "organic-chemistry-ii.draft-nitrile-hydrolysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nmr-coupling-constant",
+      "dependent_card_id": "organic-chemistry-ii.draft-cosy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nmr-coupling-constant",
+      "dependent_card_id": "organic-chemistry-ii.draft-hmbc"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nmr-coupling-constant",
+      "dependent_card_id": "organic-chemistry-ii.draft-hsqc"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nmr-equivalence",
+      "dependent_card_id": "organic-chemistry-ii.draft-diastereotopic-hydrogens"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nmr-equivalence",
+      "dependent_card_id": "organic-chemistry-ii.draft-nmr-coupling-constant"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nonaromatic-ring",
+      "dependent_card_id": "organic-chemistry-ii.draft-heterocycle"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-acid-anhydride"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-acid-chloride"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-acyl-derivative-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-amide"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-amide-formation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-ester"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-retrosynthetic-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-saponification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-transesterification"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-benzyne-pathway"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-diazonium-transformation-logic"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-aromatic-substitution",
+      "dependent_card_id": "organic-chemistry-ii.draft-heteroaromatic-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-aldol-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-carbonyl-hydrate"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-carbonyl-hydride-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-claisen-condensation"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-direct-and-conjugate-addition"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-hemiacetal"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-imine"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-nucleophilic-acyl-substitution"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-organolithium-carbon-reagent"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-nucleophilic-carbonyl-addition",
+      "dependent_card_id": "organic-chemistry-ii.draft-organomagnesium-carbon-nucleophile"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-organolithium-carbon-reagent",
+      "dependent_card_id": "organic-chemistry-ii.draft-functional-group-compatibility"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-organomagnesium-carbon-nucleophile",
+      "dependent_card_id": "organic-chemistry-ii.draft-functional-group-compatibility"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-organomagnesium-carbon-nucleophile",
+      "dependent_card_id": "organic-chemistry-ii.draft-organolithium-carbon-reagent"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ortho-para-direction",
+      "dependent_card_id": "organic-chemistry-ii.draft-halogen-directing-effect"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ortho-para-direction",
+      "dependent_card_id": "organic-chemistry-ii.draft-meta-direction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-ortho-para-direction",
+      "dependent_card_id": "organic-chemistry-ii.draft-multiple-aromatic-substituents"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-pericyclic-reaction",
+      "dependent_card_id": "organic-chemistry-ii.draft-diels-alder-endo-selectivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-pericyclic-reaction",
+      "dependent_card_id": "organic-chemistry-ii.draft-electrocyclic-reaction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-pericyclic-reaction",
+      "dependent_card_id": "organic-chemistry-ii.draft-sigmatropic-rearrangement"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-protecting-group-strategy",
+      "dependent_card_id": "organic-chemistry-ii.draft-gabriel-amine-strategy"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-protecting-group-strategy",
+      "dependent_card_id": "organic-chemistry-ii.draft-retrosynthetic-analysis"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-protecting-group-strategy",
+      "dependent_card_id": "organic-chemistry-ii.draft-synthesis-selectivity-planning"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-pyridine-nitrogen",
+      "dependent_card_id": "organic-chemistry-ii.draft-heteroaromatic-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-pyridine-nitrogen",
+      "dependent_card_id": "organic-chemistry-ii.draft-pyrrole-nitrogen"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-pyrrole-nitrogen",
+      "dependent_card_id": "organic-chemistry-ii.draft-heteroaromatic-reactivity"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-reduction-chemoselectivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-acyl-derivative-reduction"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-reduction-chemoselectivity",
+      "dependent_card_id": "organic-chemistry-ii.draft-synthesis-selectivity-planning"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-retrosynthetic-analysis",
+      "dependent_card_id": "organic-chemistry-ii.draft-synthesis-selectivity-planning"
+    },
+    {
+      "prerequisite_card_id": "organic-chemistry-ii.draft-step-growth-and-chain-growth",
+      "dependent_card_id": "organic-chemistry-ii.draft-polymer-crosslinking"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Organic Chemistry II.",
+  "level": "College",
+  "tags": [
+    "chemistry"
+  ]
+}

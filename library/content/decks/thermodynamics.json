@@ -1,0 +1,4068 @@
+{
+  "id": "academic-reviewed-v1:thermodynamics",
+  "version": "2026-09-02.public-sanitized-72.v2",
+  "title": "Thermodynamics",
+  "subject": "Physics",
+  "domain": "Physics",
+  "review_status": "ai-reviewed-not-human-expert-reviewed",
+  "content_status": "public-sanitized-release-candidate",
+  "evidence_tier": "full-card-ai-review-with-second-reader-repairs",
+  "rights_status": "cc-by-4.0-owner-release-approval-pending",
+  "license": "CC-BY-4.0",
+  "cards": [
+    {
+      "id": "thermodynamics.draft-thermodynamic-system",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic System",
+      "prompt": "What is Thermodynamic System? State its defining idea and essential conditions.",
+      "definition": "A thermodynamic system is the part of the physical world selected for analysis, distinguished from its surroundings by a defined boundary. The boundary determines which matter and energy transfers enter the bookkeeping.",
+      "required_concepts": [
+        "Chosen subsystem with an explicit analysis boundary."
+      ],
+      "accepted_variants": [
+        "Thermodynamic object of analysis."
+      ],
+      "major_error_concepts": [
+        "Changing which matter is inside the system during a calculation without adjusting the boundary accounting."
+      ],
+      "prerequisite_ids": [],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-surroundings",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Surroundings",
+      "prompt": "What is Surroundings? State its defining idea and essential conditions.",
+      "definition": "The surroundings comprise what lies outside the selected system and can interact with it through the boundary. A reservoir or apparatus belongs to the surroundings unless explicitly included in a larger system.",
+      "required_concepts": [
+        "External environment relative to the chosen boundary."
+      ],
+      "accepted_variants": [
+        "System environment."
+      ],
+      "major_error_concepts": [
+        "Excluding a heat source from both the system and surroundings while claiming complete energy accounting."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-boundary",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Boundary",
+      "prompt": "What is Thermodynamic Boundary? State its defining idea and essential conditions.",
+      "definition": "A thermodynamic boundary can be real or conceptual and can permit or restrict matter, heat, and work transfer. Its mechanical mobility and thermal properties are separate choices that must be stated.",
+      "required_concepts": [
+        "Boundary specifies allowed transfers and motion."
+      ],
+      "accepted_variants": [
+        "System interface."
+      ],
+      "major_error_concepts": [
+        "Assuming a fixed-volume boundary necessarily prevents all heat transfer."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-system",
+        "thermodynamics.draft-surroundings"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-open-system",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Open System",
+      "prompt": "What is Open System? State its defining idea and essential conditions.",
+      "definition": "An open system can exchange matter with its surroundings, and that matter can carry energy and other properties. A control-volume energy balance must therefore include flow terms as well as heat and work.",
+      "required_concepts": [
+        "Matter crosses the analysis boundary."
+      ],
+      "accepted_variants": [
+        "Flow system or control volume."
+      ],
+      "major_error_concepts": [
+        "Using a closed-system energy equation unchanged while omitting material energy flow."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-boundary"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-closed-system",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Closed System",
+      "prompt": "What is Closed System? State its defining idea and essential conditions.",
+      "definition": "A closed system exchanges no matter across its boundary, though it may exchange energy as heat or work. Closed does not mean thermally insulated or fixed in volume.",
+      "required_concepts": [
+        "No matter transfer, energy transfer still possible."
+      ],
+      "accepted_variants": [
+        "Fixed-mass system."
+      ],
+      "major_error_concepts": [
+        "Equating closed with isolated."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-boundary",
+        "thermodynamics.draft-open-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isolated-system",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isolated System",
+      "prompt": "What is Isolated System? State its defining idea and essential conditions.",
+      "definition": "An isolated system exchanges neither matter nor energy with its surroundings. Isolation is a stronger condition than either a closed or merely adiabatic system.",
+      "required_concepts": [
+        "No matter or energy exchange."
+      ],
+      "accepted_variants": [
+        "Fully isolated thermodynamic system."
+      ],
+      "major_error_concepts": [
+        "Calling an insulated piston isolated while external work crosses its boundary."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-closed-system",
+        "thermodynamics.draft-thermodynamic-boundary"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-state",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic State",
+      "prompt": "What is Thermodynamic State? State its defining idea and essential conditions.",
+      "definition": "A thermodynamic state is specified by enough macroscopic properties to determine the equilibrium condition under the chosen model. Not every arbitrary list of variables is independent because equations of state impose relations.",
+      "required_concepts": [
+        "Macroscopic equilibrium specification with independent variables."
+      ],
+      "accepted_variants": [
+        "Thermodynamic state point."
+      ],
+      "major_error_concepts": [
+        "Treating every listed state variable as independently adjustable despite an equation-of-state constraint."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Equilibrium",
+      "prompt": "What is Thermodynamic Equilibrium? State its defining idea and essential conditions.",
+      "definition": "Thermodynamic equilibrium has no unbalanced internal driving forces producing macroscopic change under the imposed constraints. Thermal, mechanical, and chemical equilibrium are distinct aspects; a steady nonequilibrium flow need not satisfy them.",
+      "required_concepts": [
+        "No unresolved macroscopic driving tendencies under constraints."
+      ],
+      "accepted_variants": [
+        "Equilibrium macrostate."
+      ],
+      "major_error_concepts": [
+        "Calling every time-independent flowing state thermodynamic equilibrium."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-state",
+        "thermodynamics.draft-open-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-intensive-property",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Intensive Property",
+      "prompt": "What is Intensive Property? State its defining idea and essential conditions.",
+      "definition": "An intensive property does not scale with the amount of an otherwise equivalent homogeneous equilibrium system, such as temperature or pressure. Spatial uniformity is a separate condition from being intensive.",
+      "required_concepts": [
+        "Independent of overall system size at fixed state type."
+      ],
+      "accepted_variants": [
+        "Size-independent state property."
+      ],
+      "major_error_concepts": [
+        "Assuming an intensive field must be uniform in every nonequilibrium system."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-extensive-property",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Extensive Property",
+      "prompt": "What is Extensive Property? State its defining idea and essential conditions.",
+      "definition": "An extensive property scales with system amount for ordinary additive macroscopic systems, such as volume, particle number, or internal energy. Long-range interactions and surface contributions can require qualifications to simple extensivity.",
+      "required_concepts": [
+        "Scales with system amount under additivity assumptions."
+      ],
+      "accepted_variants": [
+        "Amount-dependent property."
+      ],
+      "major_error_concepts": [
+        "Assuming every quantity called energy is exactly extensive in all systems and size regimes."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-intensive-property",
+        "thermodynamics.draft-thermodynamic-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-state-function",
+      "canonical_deck_id": "thermodynamics",
+      "term": "State Function",
+      "prompt": "What is State Function? State its defining idea and essential conditions.",
+      "definition": "A state function has a change determined by endpoint states rather than by the process path. Internal energy and entropy are state functions; heat and work are transfers along a process, not stored state quantities.",
+      "required_concepts": [
+        "Endpoint-dependent change, path independence."
+      ],
+      "accepted_variants": [
+        "State property with exact differential."
+      ],
+      "major_error_concepts": [
+        "Treating heat absorbed as a unique property stored in each equilibrium state."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-path-function",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Path Function",
+      "prompt": "What is Path Function? State its defining idea and essential conditions.",
+      "definition": "A path-dependent quantity depends on the process connecting states, not only the endpoints. Heat and work can differ across routes even when their energy-balance combination gives the same internal-energy change.",
+      "required_concepts": [
+        "Process dependence beyond endpoint states."
+      ],
+      "accepted_variants": [
+        "Process quantity."
+      ],
+      "major_error_concepts": [
+        "Assuming equal initial and final states force equal heat and work separately."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-state-function"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-zeroth-law",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Zeroth Law",
+      "prompt": "What is Zeroth Law? State its defining idea and essential conditions.",
+      "definition": "The zeroth law states that systems individually in thermal equilibrium with a third system are in thermal equilibrium with each other. It supports temperature as a consistent label of thermal equilibrium.",
+      "required_concepts": [
+        "Transitive thermal-equilibrium relation."
+      ],
+      "accepted_variants": [
+        "Zeroth law of thermodynamics."
+      ],
+      "major_error_concepts": [
+        "Equating thermal equilibrium with equal total internal energy regardless of size and material."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-temperature",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Temperature",
+      "prompt": "What is Temperature? State its defining idea and essential conditions.",
+      "definition": "Temperature characterizes thermal state and determines the direction of spontaneous heat transfer between ordinary positive-temperature bodies: from hotter to colder. It differs from total energy or the amount of heat transferred.",
+      "required_concepts": [
+        "Thermal-equilibrium property distinct from heat and total energy."
+      ],
+      "accepted_variants": [
+        "Thermodynamic temperature."
+      ],
+      "major_error_concepts": [
+        "Assuming a larger object necessarily has higher temperature because it stores more energy."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-zeroth-law",
+        "thermodynamics.draft-intensive-property"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-absolute-temperature",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Absolute Temperature",
+      "prompt": "What is Absolute Temperature? State its defining idea and essential conditions.",
+      "definition": "Absolute thermodynamic temperature is measured on a scale with an absolute-zero reference, such as kelvin. Temperature ratios in ideal-gas and Carnot formulas require an absolute scale rather than an offset scale such as Celsius.",
+      "required_concepts": [
+        "Absolute scale required for thermodynamic ratios."
+      ],
+      "accepted_variants": [
+        "Kelvin temperature scale."
+      ],
+      "major_error_concepts": [
+        "Substituting Celsius values directly into a Carnot temperature ratio."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-pressure",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Pressure",
+      "prompt": "What is Pressure? State its defining idea and essential conditions.",
+      "definition": "Pressure is normal force per unit area in a simple mechanical description, and equilibrium fluid pressure is an intensive state variable. Anisotropic stresses require a more general description than one scalar pressure.",
+      "required_concepts": [
+        "Normal force per area with scalar-fluid assumptions."
+      ],
+      "accepted_variants": [
+        "Thermodynamic pressure."
+      ],
+      "major_error_concepts": [
+        "Treating every directional solid stress as one identical scalar pressure."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-intensive-property",
+        "thermodynamics.draft-thermodynamic-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-volume",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Volume",
+      "prompt": "What is Volume? State its defining idea and essential conditions.",
+      "definition": "Volume is the spatial extent occupied by the defined system under the chosen boundary. For a simple compressible system it is an extensive coordinate whose change can accompany pressure-volume work.",
+      "required_concepts": [
+        "System spatial extent and compressible-work coordinate."
+      ],
+      "accepted_variants": [
+        "Thermodynamic volume."
+      ],
+      "major_error_concepts": [
+        "Assuming no matter transfer implies volume cannot change."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-extensive-property",
+        "thermodynamics.draft-closed-system",
+        "thermodynamics.draft-thermodynamic-boundary"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-particle-number-and-moles",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Particle Number and Moles",
+      "prompt": "What is Particle Number and Moles? State its defining idea and essential conditions.",
+      "definition": "Particle number counts constituents of a specified species, while amount of substance in moles is particle number divided by Avogadro's constant. Multicomponent systems require species-resolved counts when composition can change.",
+      "required_concepts": [
+        "N versus molar amount with conversion.",
+        "Species counts matter."
+      ],
+      "accepted_variants": [
+        "Amount of substance."
+      ],
+      "major_error_concepts": [
+        "Interchanging number of particles and number of moles in a formula without converting the constant."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-extensive-property"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-equation-of-state",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Equation of State",
+      "prompt": "What is Equation of State? State its defining idea and essential conditions.",
+      "definition": "An equation of state relates equilibrium state variables such as pressure, volume, temperature, and composition. It does not generally specify every caloric property or process path by itself.",
+      "required_concepts": [
+        "Equilibrium relation among state variables."
+      ],
+      "accepted_variants": [
+        "Constitutive state relation."
+      ],
+      "major_error_concepts": [
+        "Assuming a pressure-volume-temperature relation alone determines all heat and work for arbitrary processes."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-state",
+        "thermodynamics.draft-pressure",
+        "thermodynamics.draft-volume",
+        "thermodynamics.draft-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-ideal-gas-law",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Ideal Gas Law",
+      "prompt": "What is Ideal Gas Law? State its defining idea and essential conditions.",
+      "definition": "The ideal-gas equation is PV=nRT=N k_B T, with absolute temperature and consistent amount conventions. It neglects interaction and finite-size effects important outside the dilute classical regime.",
+      "required_concepts": [
+        "Correct PV relation and particle-versus-mole constants."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using N with the molar constant R without the required Avogadro conversion."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-equation-of-state",
+        "thermodynamics.draft-particle-number-and-moles",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-ideal-gas-assumptions",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Ideal-Gas Assumptions",
+      "prompt": "What is Ideal-Gas Assumptions? State its defining idea and essential conditions.",
+      "definition": "An ideal gas is a model whose particles occupy negligible volume and have negligible interactions except those needed for equilibration. It is often useful for dilute gases but is not a claim that every real gas follows it at all densities and temperatures.",
+      "required_concepts": [
+        "Negligible particle volume and interaction corrections."
+      ],
+      "accepted_variants": [
+        "Dilute noninteracting gas model."
+      ],
+      "major_error_concepts": [
+        "Applying ideal behavior as exact near every condensation or high-density regime."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-compressibility-factor",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Compressibility Factor",
+      "prompt": "What is Compressibility Factor? State its defining idea and essential conditions.",
+      "definition": "The compressibility factor Z=PV/(nRT) compares a gas with the ideal-gas equation at the same state. Z=1 is ideal-equation behavior, while departures summarize nonideal pressure-volume-temperature response.",
+      "required_concepts": [
+        "Dimensionless PV/nRT deviation indicator."
+      ],
+      "accepted_variants": [
+        "Gas compressibility factor."
+      ],
+      "major_error_concepts": [
+        "Confusing Z with isothermal compressibility, which has inverse-pressure units."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-law",
+        "thermodynamics.draft-equation-of-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-van-der-waals-gas",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Van der Waals Gas",
+      "prompt": "What is Van der Waals Gas? State its defining idea and essential conditions.",
+      "definition": "The van der Waals model adds attraction and excluded-volume corrections to the ideal-gas equation, commonly (P+a n squared/V squared)(V-nb)=nRT. It captures qualitative real-fluid behavior but is not quantitatively exact for all substances and phases.",
+      "required_concepts": [
+        "Attraction and excluded-volume corrected equation."
+      ],
+      "accepted_variants": [
+        "Van der Waals equation of state."
+      ],
+      "major_error_concepts": [
+        "Treating its parameters or predictions as universal for all materials."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-assumptions",
+        "thermodynamics.draft-compressibility-factor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat",
+      "prompt": "What is Heat? State its defining idea and essential conditions.",
+      "definition": "Heat is energy transfer across a boundary caused by a temperature difference. It is positive into the system in this deck, and it is not a substance or state quantity stored inside an object.",
+      "required_concepts": [
+        "Temperature-driven energy transfer.",
+        "Positive into system here."
+      ],
+      "accepted_variants": [
+        "Thermal energy transfer Q."
+      ],
+      "major_error_concepts": [
+        "Defining heat as the total internal energy contained in the system."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-temperature",
+        "thermodynamics.draft-path-function",
+        "thermodynamics.draft-thermodynamic-boundary"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-work",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Work",
+      "prompt": "What is Thermodynamic Work? State its defining idea and essential conditions.",
+      "definition": "Thermodynamic work is energy transfer associated with generalized forces acting through boundary or state-coordinate changes rather than heat transfer. This deck takes work done by the system on its surroundings as positive.",
+      "required_concepts": [
+        "Nonheat energy transfer by generalized force-displacement action.",
+        "Positive work is by the system."
+      ],
+      "accepted_variants": [
+        "Mechanical or generalized work transfer."
+      ],
+      "major_error_concepts": [
+        "Mixing work-on-system and work-by-system signs without changing the energy equation."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-path-function",
+        "thermodynamics.draft-thermodynamic-boundary"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat-and-work-sign-convention",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat and Work Sign Convention",
+      "prompt": "What is Heat and Work Sign Convention? State its defining idea and essential conditions.",
+      "definition": "With heat Q positive into the system and work W positive done by the system, the closed-system first law is Delta U=Q-W when bulk kinetic and potential changes are excluded. The chemistry work-on-system convention instead uses Delta U=Q+W_on, with W_on=-W.",
+      "required_concepts": [
+        "Consistent heat-in and work-by signs.",
+        "Equivalent work-on convention recognized."
+      ],
+      "accepted_variants": [
+        "Physics thermodynamic sign convention."
+      ],
+      "major_error_concepts": [
+        "Using positive expansion work with Delta U=Q+W while still calling W work done by the system."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat",
+        "thermodynamics.draft-thermodynamic-work",
+        "thermodynamics.draft-closed-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-quasistatic-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Quasistatic Process",
+      "prompt": "What is Quasistatic Process? State its defining idea and essential conditions.",
+      "definition": "A quasistatic process proceeds through states sufficiently near equilibrium that state variables are defined along the path. It is not automatically reversible, since friction or other dissipation may persist even in a slow process.",
+      "required_concepts": [
+        "Near-equilibrium sequence.",
+        "Slow does not guarantee reversible."
+      ],
+      "accepted_variants": [
+        "Quasiequilibrium process."
+      ],
+      "major_error_concepts": [
+        "Equating arbitrarily slow motion with absence of entropy production."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-equilibrium",
+        "thermodynamics.draft-thermodynamic-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-reversible-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Reversible Process",
+      "prompt": "What is Reversible Process? State its defining idea and essential conditions.",
+      "definition": "A reversible process can be reversed through infinitesimal changes while restoring both system and surroundings without net residual effects. It is an ideal limit requiring no entropy production, not merely a path that can be physically traversed backward.",
+      "required_concepts": [
+        "System and surroundings restored with no net residual effect."
+      ],
+      "accepted_variants": [
+        "Thermodynamically reversible process."
+      ],
+      "major_error_concepts": [
+        "Calling a frictional slow compression reversible solely because a piston can later move back."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-quasistatic-process",
+        "thermodynamics.draft-surroundings"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-internal-energy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Internal Energy",
+      "prompt": "What is Internal Energy? State its defining idea and essential conditions.",
+      "definition": "Internal energy U is a state function describing energy internal to the system, excluding the separately tracked bulk kinetic and gravitational potential energy of its overall motion or placement. Microscopic kinetic and interaction energies contribute to U.",
+      "required_concepts": [
+        "Internal microscopic energy distinct from bulk mechanical terms."
+      ],
+      "accepted_variants": [
+        "Thermodynamic internal energy."
+      ],
+      "major_error_concepts": [
+        "Equating internal energy solely with heat or solely with translational molecular kinetic energy for every substance."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-state-function",
+        "thermodynamics.draft-thermodynamic-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-first-law",
+      "canonical_deck_id": "thermodynamics",
+      "term": "First Law",
+      "prompt": "What is First Law? State its defining idea and essential conditions.",
+      "definition": "The first law expresses energy conservation with transfers and storage tracked consistently. For a closed system with no bulk mechanical-energy change, Delta U=Q-W under this deck's work-by-system convention.",
+      "required_concepts": [
+        "Energy conservation with declared boundary and signs."
+      ],
+      "accepted_variants": [
+        "First law of thermodynamics."
+      ],
+      "major_error_concepts": [
+        "Assuming the first law alone determines which direction a spontaneous process must take."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-internal-energy",
+        "thermodynamics.draft-heat-and-work-sign-convention"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-pressure-volume-work",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Pressure-Volume Work",
+      "prompt": "What is Pressure-Volume Work? State its defining idea and essential conditions.",
+      "definition": "Pressure-volume work done by a simple expanding system against an external pressure is delta W=P_external dV in the basic piston model. In the reversible mechanical-equilibrium limit, external pressure equals the system pressure to the needed limiting accuracy.",
+      "required_concepts": [
+        "Expansion work against external pressure.",
+        "Use system P directly only with appropriate equilibrium assumptions."
+      ],
+      "accepted_variants": [
+        "Boundary compression-expansion work."
+      ],
+      "major_error_concepts": [
+        "Using internal gas pressure along an arbitrary violent nonequilibrium expansion as though it were a reversible path."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-work",
+        "thermodynamics.draft-pressure",
+        "thermodynamics.draft-volume",
+        "thermodynamics.draft-reversible-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-pressure-volume-diagram",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Pressure-Volume Diagram",
+      "prompt": "What is Pressure-Volume Diagram? State its defining idea and essential conditions.",
+      "definition": "For a quasistatic simple compressible path, work done by the system is the signed area integral of P dV in a pressure-volume diagram. A closed-cycle area gives net work with sign set by traversal direction.",
+      "required_concepts": [
+        "Signed P-V area represents work under stated conditions."
+      ],
+      "accepted_variants": [
+        "Work on a P-V diagram."
+      ],
+      "major_error_concepts": [
+        "Taking unsigned geometric area for both expansion and compression without a sign convention."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-pressure-volume-work",
+        "thermodynamics.draft-quasistatic-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isochoric-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isochoric Process",
+      "prompt": "What is Isochoric Process? State its defining idea and essential conditions.",
+      "definition": "An isochoric process holds volume constant, so pressure-volume boundary work is zero. Heat can still change internal energy, and other forms of work must be excluded before equating all heat to Delta U.",
+      "required_concepts": [
+        "Constant volume eliminates only PV work."
+      ],
+      "accepted_variants": [
+        "Constant-volume process."
+      ],
+      "major_error_concepts": [
+        "Assuming fixed volume prevents electrical or shaft work as well as PV work."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-pressure-volume-work",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isobaric-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isobaric Process",
+      "prompt": "What is Isobaric Process? State its defining idea and essential conditions.",
+      "definition": "An isobaric process holds pressure constant under the stated process model. Its reversible pressure-volume work is P Delta V, and for a closed simple system with only PV work the absorbed heat equals enthalpy change.",
+      "required_concepts": [
+        "Constant pressure with P Delta V boundary work."
+      ],
+      "accepted_variants": [
+        "Constant-pressure process."
+      ],
+      "major_error_concepts": [
+        "Assuming constant pressure means no heat transfer or no temperature change."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-pressure-volume-work",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isothermal-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isothermal Process",
+      "prompt": "What is Isothermal Process? State its defining idea and essential conditions.",
+      "definition": "An isothermal process maintains constant temperature. For an ideal gas this gives constant internal energy, but isothermal does not generally mean zero heat transfer or zero work.",
+      "required_concepts": [
+        "Constant temperature.",
+        "Heat and work can remain nonzero."
+      ],
+      "accepted_variants": [
+        "Constant-temperature process."
+      ],
+      "major_error_concepts": [
+        "Calling every isothermal process adiabatic."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-temperature",
+        "thermodynamics.draft-ideal-gas-law",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-adiabatic-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Adiabatic Process",
+      "prompt": "What is Adiabatic Process? State its defining idea and essential conditions.",
+      "definition": "An adiabatic process transfers no heat across the system boundary. It can still exchange work and change temperature or entropy; constant entropy additionally requires reversibility under the usual closed-system conditions.",
+      "required_concepts": [
+        "Zero heat transfer, not necessarily constant temperature or entropy."
+      ],
+      "accepted_variants": [
+        "Thermally insulated process."
+      ],
+      "major_error_concepts": [
+        "Equating adiabatic with isothermal or with reversible by definition."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat",
+        "thermodynamics.draft-thermodynamic-work",
+        "thermodynamics.draft-reversible-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-free-expansion",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Free Expansion",
+      "prompt": "What is Free Expansion? State its defining idea and essential conditions.",
+      "definition": "Free expansion into a vacuum performs no pressure-volume work against an external load. If also isolated from heat, an ideal gas has unchanged internal energy and temperature, yet the process is irreversible and entropy increases for a larger available volume.",
+      "required_concepts": [
+        "Zero external-pressure work in the stated isolated setup.",
+        "Ideal-gas temperature unchanged despite irreversibility."
+      ],
+      "accepted_variants": [
+        "Joule free expansion."
+      ],
+      "major_error_concepts": [
+        "Calling free expansion reversible because the ideal-gas temperature stays constant."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-pressure-volume-work",
+        "thermodynamics.draft-adiabatic-process",
+        "thermodynamics.draft-ideal-gas-assumptions"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-ideal-gas-internal-energy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Ideal-Gas Internal Energy",
+      "prompt": "What is Ideal-Gas Internal Energy? State its defining idea and essential conditions.",
+      "definition": "For a fixed amount of ideal gas, internal energy depends only on temperature, though its temperature dependence can reflect active molecular degrees of freedom. This property is stronger than merely writing the ideal pressure-volume equation without caloric assumptions.",
+      "required_concepts": [
+        "Ideal-gas U depends on temperature at fixed amount."
+      ],
+      "accepted_variants": [
+        "Ideal-gas caloric property."
+      ],
+      "major_error_concepts": [
+        "Assuming internal energy changes with volume at fixed temperature for the ideal noninteracting gas."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-internal-energy",
+        "thermodynamics.draft-ideal-gas-assumptions",
+        "thermodynamics.draft-isothermal-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Constant-Volume Heat Capacity",
+      "prompt": "What is Constant-Volume Heat Capacity? State its defining idea and essential conditions.",
+      "definition": "Constant-volume heat capacity is C_V=(partial U/partial T) at fixed V and composition. It is a state response derivative, and amount-normalized versions must be distinguished from the total system heat capacity.",
+      "required_concepts": [
+        "Temperature derivative of U at fixed V and composition."
+      ],
+      "accepted_variants": [
+        "Isochoric heat capacity."
+      ],
+      "major_error_concepts": [
+        "Mixing total and molar heat capacities without accounting for amount."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-internal-energy",
+        "thermodynamics.draft-isochoric-process",
+        "thermodynamics.draft-particle-number-and-moles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-constant-pressure-heat-capacity",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Constant-Pressure Heat Capacity",
+      "prompt": "What is Constant-Pressure Heat Capacity? State its defining idea and essential conditions.",
+      "definition": "Constant-pressure heat capacity is C_P=(partial H/partial T) at fixed pressure and composition. In a simple closed constant-pressure process with only PV work it relates absorbed heat to temperature change.",
+      "required_concepts": [
+        "Temperature derivative of enthalpy at fixed P and composition."
+      ],
+      "accepted_variants": [
+        "Isobaric heat capacity."
+      ],
+      "major_error_concepts": [
+        "Using C_P and C_V interchangeably for gases while ignoring expansion work."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-isobaric-process",
+        "thermodynamics.draft-constant-volume-heat-capacity",
+        "thermodynamics.draft-enthalpy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-ideal-gas-heat-capacity-difference",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Ideal-Gas Heat-Capacity Difference",
+      "prompt": "What is Ideal-Gas Heat-Capacity Difference? State its defining idea and essential conditions.",
+      "definition": "For n moles of ideal gas, total heat capacities satisfy C_P-C_V=nR, or the molar difference is R. The additional constant-pressure heat supports expansion work as well as the internal-energy change.",
+      "required_concepts": [
+        "Correct total versus molar ideal-gas heat-capacity difference."
+      ],
+      "accepted_variants": [
+        "Mayer heat-capacity relation."
+      ],
+      "major_error_concepts": [
+        "Applying C_P-C_V=R to total heat capacities for an arbitrary number of moles without normalization."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-constant-pressure-heat-capacity",
+        "thermodynamics.draft-constant-volume-heat-capacity",
+        "thermodynamics.draft-ideal-gas-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat-capacity-ratio",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat-Capacity Ratio",
+      "prompt": "What is Heat-Capacity Ratio? State its defining idea and essential conditions.",
+      "definition": "The heat-capacity ratio gamma=C_P/C_V is dimensionless when both capacities use the same amount convention. It can vary with temperature as molecular degrees of freedom become active.",
+      "required_concepts": [
+        "Same-convention heat-capacity ratio."
+      ],
+      "accepted_variants": [
+        "Adiabatic index gamma."
+      ],
+      "major_error_concepts": [
+        "Assuming gamma has one universal value for every gas and temperature."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-heat-capacity-difference"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-ideal-gas-adiabatic-relation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Ideal-Gas Adiabatic Relation",
+      "prompt": "What is Ideal-Gas Adiabatic Relation? State its defining idea and essential conditions.",
+      "definition": "For a reversible adiabatic ideal-gas process with constant heat capacities, P V^gamma is constant and T V^(gamma-1) is constant. These relations do not describe arbitrary irreversible adiabatic expansion or a variable-gamma gas exactly.",
+      "required_concepts": [
+        "Reversible adiabatic ideal-gas power laws with constant gamma."
+      ],
+      "accepted_variants": [
+        "Poisson adiabatic relations."
+      ],
+      "major_error_concepts": [
+        "Applying PV^gamma constant to free expansion merely because Q=0."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-adiabatic-process",
+        "thermodynamics.draft-reversible-process",
+        "thermodynamics.draft-heat-capacity-ratio",
+        "thermodynamics.draft-ideal-gas-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isothermal-ideal-gas-work",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isothermal Ideal-Gas Work",
+      "prompt": "What is Isothermal Ideal-Gas Work? State its defining idea and essential conditions.",
+      "definition": "A reversible isothermal expansion of n moles of ideal gas from V_i to V_f does work W=nRT ln(V_f/V_i). It absorbs equal heat under the stated ideal-gas energy property and work-by-system convention.",
+      "required_concepts": [
+        "Logarithmic reversible isothermal work."
+      ],
+      "accepted_variants": [
+        "Ideal-gas isothermal expansion work."
+      ],
+      "major_error_concepts": [
+        "Applying the reversible work formula to an arbitrary rapid free expansion between the same endpoints."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-isothermal-process",
+        "thermodynamics.draft-pressure-volume-work",
+        "thermodynamics.draft-ideal-gas-internal-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-cycle",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Cycle",
+      "prompt": "What is Thermodynamic Cycle? State its defining idea and essential conditions.",
+      "definition": "A thermodynamic cycle returns the system to its initial state, so every state-function change over the cycle is zero. Net heat and net work can each be nonzero and equal under the closed-system work-by convention.",
+      "required_concepts": [
+        "State variables return; net transfers can remain."
+      ],
+      "accepted_variants": [
+        "Closed thermodynamic process loop."
+      ],
+      "major_error_concepts": [
+        "Concluding Q and W individually vanish because Delta U over a cycle is zero."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-state-function",
+        "thermodynamics.draft-first-law",
+        "thermodynamics.draft-pressure-volume-diagram"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat-engine",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat Engine",
+      "prompt": "What is Heat Engine? State its defining idea and essential conditions.",
+      "definition": "A cyclic heat engine absorbs heat from a hotter source, converts part to net work, and rejects remaining heat to another sink in the ordinary two-reservoir model. Its working substance returns to its initial state each cycle.",
+      "required_concepts": [
+        "Cyclic heat input, work output, and heat rejection."
+      ],
+      "accepted_variants": [
+        "Thermal engine."
+      ],
+      "major_error_concepts": [
+        "Counting a one-time internal-energy discharge as a complete repeating heat-engine cycle without restoration."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-cycle",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermal-efficiency",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermal Efficiency",
+      "prompt": "What is Thermal Efficiency? State its defining idea and essential conditions.",
+      "definition": "Heat-engine efficiency is net work output divided by heat absorbed from the hot reservoir. For a two-reservoir cycle it is 1-Q_c/Q_h using positive magnitudes, and absolute upper bounds require the second law as well as energy conservation.",
+      "required_concepts": [
+        "Efficiency W_out/Q_h with positive heat magnitudes."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Dividing work by total absolute heat exchanged while calling it the standard engine efficiency."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat-engine",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-carnot-cycle",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Carnot Cycle",
+      "prompt": "What is Carnot Cycle? State its defining idea and essential conditions.",
+      "definition": "A Carnot cycle consists of two reversible isothermal processes and two reversible adiabatic processes connecting two reservoirs. Its reversibility makes it an ideal benchmark rather than a promise of finite-power practical operation.",
+      "required_concepts": [
+        "Two reversible isotherms and two reversible adiabats."
+      ],
+      "accepted_variants": [
+        "Reversible two-temperature engine cycle."
+      ],
+      "major_error_concepts": [
+        "Calling any four-step engine cycle Carnot without its reversibility and process conditions."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-cycle",
+        "thermodynamics.draft-reversible-process",
+        "thermodynamics.draft-isothermal-process",
+        "thermodynamics.draft-adiabatic-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-carnot-efficiency",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Carnot Efficiency",
+      "prompt": "What is Carnot Efficiency? State its defining idea and essential conditions.",
+      "definition": "A reversible engine operating between absolute temperatures T_h and T_c has efficiency 1-T_c/T_h. No cyclic engine using only those reservoirs exceeds it under the standard second-law assumptions.",
+      "required_concepts": [
+        "Carnot temperature-ratio efficiency using absolute temperatures."
+      ],
+      "accepted_variants": [
+        "Carnot efficiency bound."
+      ],
+      "major_error_concepts": [
+        "Using Celsius temperature ratios or claiming efficiency exceeds one for ordinary positive-temperature reservoirs."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-carnot-cycle",
+        "thermodynamics.draft-thermal-efficiency",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-refrigerator",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Refrigerator",
+      "prompt": "What is Refrigerator? State its defining idea and essential conditions.",
+      "definition": "A refrigerator uses net work to remove heat Q_c from a colder region and reject it to a warmer one. Its coefficient of performance is Q_c/W_in, which can exceed one because it measures moved heat per work input, not heat-to-work efficiency.",
+      "required_concepts": [
+        "Work-driven heat removal with COP=Q_c/W_in."
+      ],
+      "accepted_variants": [
+        "Refrigeration coefficient of performance."
+      ],
+      "major_error_concepts": [
+        "Calling COP greater than one a violation of energy conservation."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat-engine",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-enthalpy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Enthalpy",
+      "prompt": "What is Enthalpy? State its defining idea and essential conditions.",
+      "definition": "Enthalpy is H=U+PV. For a closed constant-pressure system with only pressure-volume work and appropriate equilibrium conditions, its change equals heat absorbed; this heat interpretation is conditional, not the definition of H.",
+      "required_concepts": [
+        "H=U+PV.",
+        "Constant-pressure heat equality needs stated conditions."
+      ],
+      "accepted_variants": [
+        "Thermodynamic enthalpy."
+      ],
+      "major_error_concepts": [
+        "Defining enthalpy as heat for every arbitrary process."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-internal-energy",
+        "thermodynamics.draft-pressure",
+        "thermodynamics.draft-volume",
+        "thermodynamics.draft-isobaric-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat-pump",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat Pump",
+      "prompt": "What is Heat Pump? State its defining idea and essential conditions.",
+      "definition": "A heat pump supplies heat Q_h to a warm region using work and heat drawn from a cooler region. Its heating COP is Q_h/W_in, equal to the refrigerator COP plus one for the same two-reservoir cycle with consistent positive magnitudes.",
+      "required_concepts": [
+        "Heating COP counts delivered hot-side heat."
+      ],
+      "accepted_variants": [
+        "Heat-pump coefficient of performance."
+      ],
+      "major_error_concepts": [
+        "Using Q_c/W as heating COP without distinguishing it from refrigeration COP."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-refrigerator",
+        "thermodynamics.draft-first-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-kelvin-planck-statement",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Kelvin-Planck Statement",
+      "prompt": "What is Kelvin-Planck Statement? State its defining idea and essential conditions.",
+      "definition": "The Kelvin-Planck statement of the second law forbids a cyclic engine whose sole effect is extracting heat from a single reservoir and converting all of it to work. Noncyclic changes or additional effects must not be omitted from the comparison.",
+      "required_concepts": [
+        "No sole-effect complete cyclic single-reservoir heat-to-work conversion."
+      ],
+      "accepted_variants": [
+        "Kelvin-Planck second-law statement."
+      ],
+      "major_error_concepts": [
+        "Ignoring restoration of a consumed working resource when claiming a counterexample."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat-engine",
+        "thermodynamics.draft-thermodynamic-cycle"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-clausius-statement",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Clausius Statement",
+      "prompt": "What is Clausius Statement? State its defining idea and essential conditions.",
+      "definition": "The Clausius statement forbids a process whose sole effect is transferring heat from a colder body to a hotter one. Refrigerators are consistent with it because they require work or another compensating effect.",
+      "required_concepts": [
+        "No uncompensated cold-to-hot heat transfer."
+      ],
+      "accepted_variants": [
+        "Clausius second-law statement."
+      ],
+      "major_error_concepts": [
+        "Calling a work-driven refrigerator a violation merely because it moves heat from cold to hot."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-refrigerator",
+        "thermodynamics.draft-heat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-first-and-second-law-roles",
+      "canonical_deck_id": "thermodynamics",
+      "term": "First and Second Law Roles",
+      "prompt": "What is First and Second Law Roles? State its defining idea and essential conditions.",
+      "definition": "The first law restricts energy accounting, while the second law restricts possible directions and conversions even when energy balances. A proposed cycle can conserve energy yet remain impossible because it violates a second-law condition.",
+      "required_concepts": [
+        "Energy conservation is necessary but not sufficient for process possibility."
+      ],
+      "accepted_variants": [
+        "First-versus-second-law distinction."
+      ],
+      "major_error_concepts": [
+        "Accepting every energy-balanced perpetual cycle as thermodynamically possible."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-first-law",
+        "thermodynamics.draft-kelvin-planck-statement",
+        "thermodynamics.draft-clausius-statement"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-entropy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Entropy",
+      "prompt": "What is Entropy? State its defining idea and essential conditions.",
+      "definition": "Entropy S is a state function defined thermodynamically through reversible heat transfer dS=delta Q_rev/T and extended by state differences. Microscopic interpretations concern multiplicity or probability; disorder is not a complete operational definition.",
+      "required_concepts": [
+        "State function with reversible-heat definition."
+      ],
+      "accepted_variants": [
+        "Thermodynamic entropy."
+      ],
+      "major_error_concepts": [
+        "Computing any irreversible entropy change simply as actual Q/T without additional conditions."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-state-function",
+        "thermodynamics.draft-reversible-process",
+        "thermodynamics.draft-heat",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-entropy-change",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Entropy Change",
+      "prompt": "What is Entropy Change? State its defining idea and essential conditions.",
+      "definition": "Entropy change between equilibrium states can be calculated along any convenient reversible path joining them, even if the actual process is irreversible. The reversible path is a calculation device, not a claim about the actual heat transferred.",
+      "required_concepts": [
+        "Use an imagined reversible path for a state-function difference."
+      ],
+      "accepted_variants": [
+        "Reversible-path entropy calculation."
+      ],
+      "major_error_concepts": [
+        "Equating imagined reversible heat with actual irreversible-process heat by definition."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-state-function",
+        "thermodynamics.draft-reversible-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-clausius-inequality",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Clausius Inequality",
+      "prompt": "What is Clausius Inequality? State its defining idea and essential conditions.",
+      "definition": "The Clausius inequality states that the cyclic integral of delta Q/T_boundary is at most zero, with equality for a reversible cycle under the standard conditions. It encodes entropy generation rather than replacing the energy balance.",
+      "required_concepts": [
+        "Closed heat-over-temperature integral nonpositive.",
+        "Equality in reversible limit."
+      ],
+      "accepted_variants": [
+        "Clausius cyclic inequality."
+      ],
+      "major_error_concepts": [
+        "Using the opposite inequality while retaining heat-positive-into-system convention."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-thermodynamic-cycle",
+        "thermodynamics.draft-reversible-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-entropy-production",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Entropy Production",
+      "prompt": "What is Entropy Production? State its defining idea and essential conditions.",
+      "definition": "Entropy production measures internally generated entropy from irreversible processes and is nonnegative under the second law. For a closed system, entropy change equals entropy transferred with heat plus generated entropy, with boundary temperatures treated consistently.",
+      "required_concepts": [
+        "Entropy balance includes nonnegative production."
+      ],
+      "accepted_variants": [
+        "Internal entropy generation."
+      ],
+      "major_error_concepts": [
+        "Assuming negative system entropy change necessarily implies negative entropy production."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-clausius-inequality",
+        "thermodynamics.draft-closed-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isentropic-process",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isentropic Process",
+      "prompt": "What is Isentropic Process? State its defining idea and essential conditions.",
+      "definition": "An isentropic process has constant system entropy. A reversible adiabatic closed-system process is isentropic, but constant entropy alone can also result from compensating entropy transfer and production in a more general process.",
+      "required_concepts": [
+        "Constant entropy.",
+        "Reversible adiabatic is sufficient under closed-system conditions, not a universal equivalence."
+      ],
+      "accepted_variants": [
+        "Entropy-preserving process."
+      ],
+      "major_error_concepts": [
+        "Inferring zero entropy production from constant system entropy while ignoring entropy outflow."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-adiabatic-process",
+        "thermodynamics.draft-entropy-production"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-total-entropy-and-isolation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Total Entropy and Isolation",
+      "prompt": "What is Total Entropy and Isolation? State its defining idea and essential conditions.",
+      "definition": "For an isolated combined system, total entropy cannot decrease; it stays constant in the reversible limit and increases for irreversible processes. One subsystem can lose entropy if compensating entropy transfer and production occur elsewhere.",
+      "required_concepts": [
+        "Nondecreasing total entropy of an isolated aggregate."
+      ],
+      "accepted_variants": [
+        "Entropy form of the second law."
+      ],
+      "major_error_concepts": [
+        "Claiming each individual subsystem must increase entropy independently even while exporting heat."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-isolated-system",
+        "thermodynamics.draft-entropy-production"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-ideal-gas-entropy-change",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Ideal-Gas Entropy Change",
+      "prompt": "What is Ideal-Gas Entropy Change? State its defining idea and essential conditions.",
+      "definition": "For n moles of ideal gas with constant molar c_V, Delta S=n c_V ln(T_f/T_i)+nR ln(V_f/V_i). Temperatures are absolute, and the formula describes a state change regardless of the actual path.",
+      "required_concepts": [
+        "Ideal-gas temperature and volume logarithm terms.",
+        "Constant heat-capacity and amount conventions stated."
+      ],
+      "accepted_variants": [
+        "Ideal-gas entropy difference."
+      ],
+      "major_error_concepts": [
+        "Using this state-change formula to conclude the actual path must have been reversible."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-entropy-change",
+        "thermodynamics.draft-constant-volume-heat-capacity",
+        "thermodynamics.draft-ideal-gas-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-entropy-of-mixing",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Entropy of Mixing",
+      "prompt": "What is Entropy of Mixing? State its defining idea and essential conditions.",
+      "definition": "For distinct ideal-gas species initially separated as pure gases at the same temperature T and pressure P, mixing to an ideal mixture at that T and P changes entropy by Delta S_mix = -R sum_i n_i ln x_i, where x_i=n_i/sum_j n_j. It is positive when more than one species is present. Unequal initial pressures require accounting separately for the associated state changes. Merely removing a partition between physically identical gas portions at the same T and P does not create entropy from arbitrary labels.",
+      "required_concepts": [
+        "For distinct ideal-gas components with pure and mixed reference states at common T and P, Delta S_mix=-R sum_i n_i ln x_i.",
+        "Actual distinguishable species, not arbitrary labels on identical gas, determine mixing entropy."
+      ],
+      "accepted_variants": [
+        "For ideal-gas mixing from pure species at fixed common T and P, the mole-fraction contribution is -nR sum_i x_i ln x_i; pressure-equalization changes from other initial states are separate."
+      ],
+      "major_error_concepts": [
+        "Applying the composition-only expression to the entire entropy change from arbitrary unequal initial pressures.",
+        "Assigning a new physical mixing entropy merely by labeling two identical equilibrium gas portions."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-entropy-change",
+        "thermodynamics.draft-particle-number-and-moles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermal-reservoir",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermal Reservoir",
+      "prompt": "What is Thermal Reservoir? State its defining idea and essential conditions.",
+      "definition": "A thermal reservoir exchanges finite heat while its temperature remains effectively fixed because its thermal capacity is large relative to the exchange. It is an approximation for the selected interaction scale, not an assertion of literally infinite energy.",
+      "required_concepts": [
+        "Approximately fixed temperature during finite heat exchange."
+      ],
+      "accepted_variants": [
+        "Heat bath."
+      ],
+      "major_error_concepts": [
+        "Assuming a reservoir has no energy change merely because its temperature is nearly constant."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat",
+        "thermodynamics.draft-temperature",
+        "thermodynamics.draft-constant-volume-heat-capacity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat-transfer-entropy-change",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat-Transfer Entropy Change",
+      "prompt": "What is Heat-Transfer Entropy Change? State its defining idea and essential conditions.",
+      "definition": "When heat magnitude Q passes from a reservoir at T_h to one at T_c with T_h>T_c, total entropy change is Q/T_c-Q/T_h in the ideal fixed-temperature model. It is positive even though total transferred energy balances exactly.",
+      "required_concepts": [
+        "Hot reservoir loses Q/T_h; cold gains Q/T_c."
+      ],
+      "accepted_variants": [
+        "Entropy generation by finite-temperature heat transfer."
+      ],
+      "major_error_concepts": [
+        "Claiming zero total energy change implies zero total entropy change."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermal-reservoir",
+        "thermodynamics.draft-total-entropy-and-isolation",
+        "thermodynamics.draft-first-and-second-law-roles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-third-law",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Third Law",
+      "prompt": "What is Third Law? State its defining idea and essential conditions.",
+      "definition": "The third law assigns zero entropy to a perfect crystal with a unique ground state at zero kelvin in its standard form. Residual disorder or ground-state degeneracy requires qualification rather than silently assigning every zero-temperature system zero entropy.",
+      "required_concepts": [
+        "Perfect unique-ground-state crystal zero-entropy reference."
+      ],
+      "accepted_variants": [
+        "Third law of thermodynamics."
+      ],
+      "major_error_concepts": [
+        "Claiming every possible material state must have exactly zero entropy at zero temperature regardless of degeneracy."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-unattainability-of-absolute-zero",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Unattainability of Absolute Zero",
+      "prompt": "What is Unattainability of Absolute Zero? State its defining idea and essential conditions.",
+      "definition": "The unattainability formulation of the third law states that absolute zero cannot be reached through a finite sequence of physically admissible cooling operations under its assumptions. Approaching very low temperature differs from attaining exactly zero.",
+      "required_concepts": [
+        "Finite-operation unattainability of absolute zero under the formulation."
+      ],
+      "accepted_variants": [
+        "Absolute-zero unattainability."
+      ],
+      "major_error_concepts": [
+        "Assuming repeated finite cooling steps necessarily reach exactly zero after enough repetitions."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-third-law",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Fundamental Thermodynamic Relation",
+      "prompt": "What is Fundamental Thermodynamic Relation? State its defining idea and essential conditions.",
+      "definition": "For a simple compressible equilibrium system with variable species amounts, dU=T dS-P dV+sum mu_i dN_i using particle-number chemical potentials. The identity relates neighboring equilibrium states; actual heat equals T dS only for the appropriate reversible transfer.",
+      "required_concepts": [
+        "Fundamental energy differential with entropy, volume, and species terms."
+      ],
+      "accepted_variants": [
+        "Thermodynamic fundamental relation."
+      ],
+      "major_error_concepts": [
+        "Equating actual irreversible heat directly to T dS merely because the state identity contains that term."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-internal-energy",
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-pressure-volume-work",
+        "thermodynamics.draft-particle-number-and-moles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-chemical-potential",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Chemical Potential",
+      "prompt": "What is Chemical Potential? State its defining idea and essential conditions.",
+      "definition": "Chemical potential mu_i is the change of internal energy with species particle number at fixed entropy, volume, and other species counts, or an equivalent derivative of another potential at its natural variables. Its units depend on whether amount is particles or moles.",
+      "required_concepts": [
+        "Energy change per added species amount under specified constraints."
+      ],
+      "accepted_variants": [
+        "Partial thermodynamic potential for particle exchange."
+      ],
+      "major_error_concepts": [
+        "Treating particle-based and molar chemical potentials as numerically interchangeable."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-fundamental-thermodynamic-relation",
+        "thermodynamics.draft-particle-number-and-moles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-helmholtz-free-energy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Helmholtz Free Energy",
+      "prompt": "What is Helmholtz Free Energy? State its defining idea and essential conditions.",
+      "definition": "Helmholtz free energy is F=U-TS. For a closed system at fixed temperature and volume under appropriate work constraints, spontaneous relaxation decreases F and equilibrium minimizes it over allowed states.",
+      "required_concepts": [
+        "F=U-TS with fixed-T,V equilibrium role."
+      ],
+      "accepted_variants": [
+        "Helmholtz potential."
+      ],
+      "major_error_concepts": [
+        "Using Helmholtz minimization at arbitrary changing temperature and pressure without specifying constraints."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-internal-energy",
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-fundamental-thermodynamic-relation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-gibbs-free-energy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Gibbs Free Energy",
+      "prompt": "What is Gibbs Free Energy? State its defining idea and essential conditions.",
+      "definition": "Gibbs free energy is G=H-TS=U+PV-TS. Under appropriate closed-system constraints at fixed temperature and pressure, spontaneous relaxation lowers G and equilibrium minimizes it with respect to allowed changes.",
+      "required_concepts": [
+        "G=H-TS with fixed-T,P equilibrium role."
+      ],
+      "accepted_variants": [
+        "Gibbs thermodynamic potential."
+      ],
+      "major_error_concepts": [
+        "Claiming Gibbs energy must decrease along every possible driven process regardless of constraints."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-enthalpy",
+        "thermodynamics.draft-entropy",
+        "thermodynamics.draft-helmholtz-free-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-natural-variables",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Natural Variables",
+      "prompt": "What is Natural Variables? State its defining idea and essential conditions.",
+      "definition": "Natural variables are the independent variables appearing in a thermodynamic potential's fundamental differential. For a simple fixed-composition system, U uses S,V; H uses S,P; F uses T,V; and G uses T,P.",
+      "required_concepts": [
+        "Potential-specific variables identified by the differential."
+      ],
+      "accepted_variants": [
+        "Thermodynamic natural coordinates."
+      ],
+      "major_error_concepts": [
+        "Differentiating a potential while silently holding the wrong variables fixed."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-fundamental-thermodynamic-relation",
+        "thermodynamics.draft-enthalpy",
+        "thermodynamics.draft-helmholtz-free-energy",
+        "thermodynamics.draft-gibbs-free-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-maxwell-relations",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Maxwell Relations",
+      "prompt": "What is Maxwell Relations? State its defining idea and essential conditions.",
+      "definition": "Maxwell relations follow from equality of mixed derivatives of sufficiently smooth thermodynamic potentials. For example, from dF=-S dT-P dV at fixed composition, (partial S/partial V)_T=(partial P/partial T)_V.",
+      "required_concepts": [
+        "Mixed-derivative identities with fixed-variable labels."
+      ],
+      "accepted_variants": [
+        "Thermodynamic Maxwell identities."
+      ],
+      "major_error_concepts": [
+        "Dropping held-fixed subscripts and mixing derivatives from incompatible potential variables."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-natural-variables",
+        "thermodynamics.draft-helmholtz-free-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-internal-energy-response-identity",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Internal-Energy Response Identity",
+      "prompt": "What is Internal-Energy Response Identity? State its defining idea and essential conditions.",
+      "definition": "For a simple fixed-composition system, (partial U/partial V)_T=T(partial P/partial T)_V-P. This connects caloric behavior with the equation of state and gives zero for the ideal-gas volume derivative at fixed temperature.",
+      "required_concepts": [
+        "Correct internal-energy volume derivative identity."
+      ],
+      "accepted_variants": [
+        "Thermodynamic energy equation."
+      ],
+      "major_error_concepts": [
+        "Assuming the ideal-gas zero derivative applies unchanged to every interacting fluid."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-maxwell-relations",
+        "thermodynamics.draft-fundamental-thermodynamic-relation",
+        "thermodynamics.draft-ideal-gas-internal-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-gibbs-duhem-relation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Gibbs-Duhem Relation",
+      "prompt": "What is Gibbs-Duhem Relation? State its defining idea and essential conditions.",
+      "definition": "For an extensive equilibrium system, the Gibbs-Duhem relation is S dT-V dP+sum N_i dmu_i=0 in particle-number form. It shows that intensive variables are constrained rather than all independently adjustable at fixed composition.",
+      "required_concepts": [
+        "Constraint among temperature, pressure, and chemical potentials."
+      ],
+      "accepted_variants": [
+        "Gibbs-Duhem identity."
+      ],
+      "major_error_concepts": [
+        "Treating every chemical potential as independently variable alongside arbitrary T and P in a fixed-composition extensive phase."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-chemical-potential",
+        "thermodynamics.draft-natural-variables",
+        "thermodynamics.draft-extensive-property"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-euler-extensivity-relation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Euler Extensivity Relation",
+      "prompt": "What is Euler Extensivity Relation? State its defining idea and essential conditions.",
+      "definition": "For an ordinary extensive simple system, homogeneity gives U=TS-PV+sum mu_i N_i. Surface and nonadditive contributions can require extra terms or modified assumptions, so the relation is not an unqualified identity for every finite system.",
+      "required_concepts": [
+        "Euler relation from extensive homogeneity."
+      ],
+      "accepted_variants": [
+        "Euler thermodynamic identity."
+      ],
+      "major_error_concepts": [
+        "Applying the extensive bulk Euler relation without qualification when dominant surface contributions are excluded."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-extensive-property",
+        "thermodynamics.draft-fundamental-thermodynamic-relation",
+        "thermodynamics.draft-chemical-potential"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-stability",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Stability",
+      "prompt": "What is Thermodynamic Stability? State its defining idea and essential conditions.",
+      "definition": "Thermodynamic stability requires an equilibrium to resist allowed small fluctuations under its constraints. It leads to curvature and response conditions, such as positive heat capacity and compressibility in ordinary stable equilibrium ensembles, with ensemble and system assumptions specified.",
+      "required_concepts": [
+        "Local stability tied to potential curvature and allowed constraints."
+      ],
+      "accepted_variants": [
+        "Equilibrium stability conditions."
+      ],
+      "major_error_concepts": [
+        "Inferring universal stability from one stationary derivative without checking curvature or constraints."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-helmholtz-free-energy",
+        "thermodynamics.draft-gibbs-free-energy",
+        "thermodynamics.draft-thermodynamic-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-isothermal-compressibility",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Isothermal Compressibility",
+      "prompt": "What is Isothermal Compressibility? State its defining idea and essential conditions.",
+      "definition": "Isothermal compressibility is kappa_T=-(1/V)(partial V/partial P)_T at fixed composition. It measures fractional volume response to pressure and is positive for an ordinary mechanically stable single phase.",
+      "required_concepts": [
+        "Negative fractional volume-pressure derivative at constant T."
+      ],
+      "accepted_variants": [
+        "Isothermal volume compliance."
+      ],
+      "major_error_concepts": [
+        "Confusing compressibility with the dimensionless ideal-gas deviation factor Z."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-pressure",
+        "thermodynamics.draft-volume",
+        "thermodynamics.draft-thermodynamic-stability",
+        "thermodynamics.draft-compressibility-factor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermal-expansion-coefficient",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermal Expansion Coefficient",
+      "prompt": "What is Thermal Expansion Coefficient? State its defining idea and essential conditions.",
+      "definition": "The volume thermal-expansion coefficient is alpha=(1/V)(partial V/partial T)_P at fixed composition. It describes fractional volume change per temperature change and can depend strongly on state and material.",
+      "required_concepts": [
+        "Fractional volume-temperature derivative at fixed P."
+      ],
+      "accepted_variants": [
+        "Volumetric expansion coefficient."
+      ],
+      "major_error_concepts": [
+        "Assuming alpha must have one positive constant value for every material and temperature."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-volume",
+        "thermodynamics.draft-temperature",
+        "thermodynamics.draft-equation-of-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-general-heat-capacity-difference",
+      "canonical_deck_id": "thermodynamics",
+      "term": "General Heat-Capacity Difference",
+      "prompt": "What is General Heat-Capacity Difference? State its defining idea and essential conditions.",
+      "definition": "For a simple stable single phase at fixed composition, total heat capacities satisfy C_P-C_V=T V alpha squared/kappa_T. This general identity reduces to nR for an ideal gas and uses mutually consistent total-property definitions.",
+      "required_concepts": [
+        "General heat-capacity difference from expansion and compressibility."
+      ],
+      "accepted_variants": [
+        "Thermodynamic C_P-C_V identity."
+      ],
+      "major_error_concepts": [
+        "Mixing molar heat capacities with total volume in the same unconverted formula."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-isothermal-compressibility",
+        "thermodynamics.draft-thermal-expansion-coefficient",
+        "thermodynamics.draft-constant-pressure-heat-capacity",
+        "thermodynamics.draft-constant-volume-heat-capacity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-phase",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Phase",
+      "prompt": "What is Thermodynamic Phase? State its defining idea and essential conditions.",
+      "definition": "A phase is a macroscopically distinct equilibrium form with characteristic intensive properties and structure, such as a liquid or vapor. Multiple phases can coexist under appropriate temperature, pressure, and composition constraints.",
+      "required_concepts": [
+        "Distinct equilibrium material form."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Calling any arbitrary spatial subdivision of one homogeneous phase a new thermodynamic phase."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-equilibrium",
+        "thermodynamics.draft-equation-of-state"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-latent-heat",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Latent Heat",
+      "prompt": "What is Latent Heat? State its defining idea and essential conditions.",
+      "definition": "Latent heat is heat absorbed or released during a phase change under specified equilibrium conditions without necessarily changing temperature. For a reversible first-order transition, latent heat per chosen amount equals T times the corresponding entropy change per amount.",
+      "required_concepts": [
+        "Phase-change heat and T Delta S relation in reversible coexistence."
+      ],
+      "accepted_variants": [
+        "Latent heat of transformation."
+      ],
+      "major_error_concepts": [
+        "Assuming zero temperature change means no energy was transferred during a phase transition."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-phase",
+        "thermodynamics.draft-heat",
+        "thermodynamics.draft-entropy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-phase-equilibrium",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Phase Equilibrium",
+      "prompt": "What is Phase Equilibrium? State its defining idea and essential conditions.",
+      "definition": "Coexisting phases in thermal, mechanical, and diffusive equilibrium share temperature, pressure, and the chemical potential of each exchangeable species. Equality of chemical potential prevents a net thermodynamic tendency for matter to transfer between phases.",
+      "required_concepts": [
+        "Equality of T, P, and relevant chemical potentials."
+      ],
+      "accepted_variants": [
+        "Phase-coexistence equilibrium."
+      ],
+      "major_error_concepts": [
+        "Assuming equal temperature alone guarantees complete equilibrium between phases with unequal chemical potentials."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-phase",
+        "thermodynamics.draft-chemical-potential",
+        "thermodynamics.draft-thermodynamic-equilibrium"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-clapeyron-equation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Clapeyron Equation",
+      "prompt": "What is Clapeyron Equation? State its defining idea and essential conditions.",
+      "definition": "Along a first-order coexistence curve, the Clapeyron equation gives dP/dT=Delta s/Delta v=L/(T Delta v), using entropy, volume, and latent heat per the same amount convention. Signs depend on the chosen phase-transition direction.",
+      "required_concepts": [
+        "Coexistence slope from entropy-volume or latent-heat difference."
+      ],
+      "accepted_variants": [
+        "Clapeyron phase-boundary equation."
+      ],
+      "major_error_concepts": [
+        "Mixing specific latent heat with molar volume change without conversion."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-phase-equilibrium",
+        "thermodynamics.draft-latent-heat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-clausius-clapeyron-approximation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Clausius-Clapeyron Approximation",
+      "prompt": "What is Clausius-Clapeyron Approximation? State its defining idea and essential conditions.",
+      "definition": "The Clausius-Clapeyron approximation for vaporization assumes vapor is approximately ideal and its volume dominates the condensed phase. With nearly constant molar latent heat, ln P varies approximately as minus L_m/(R T) plus a constant.",
+      "required_concepts": [
+        "Ideal-vapor, negligible-liquid-volume approximation.",
+        "Constant latent heat needed for simple integrated form."
+      ],
+      "accepted_variants": [
+        "Approximate vapor-pressure temperature law."
+      ],
+      "major_error_concepts": [
+        "Treating the simple integrated expression as exact through the critical region."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-clapeyron-equation",
+        "thermodynamics.draft-ideal-gas-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-critical-point",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Critical Point",
+      "prompt": "What is Critical Point? State its defining idea and essential conditions.",
+      "definition": "A liquid-vapor critical point is the endpoint of the coexistence curve where distinct liquid and vapor phases cease to differ in the usual macroscopic order parameter. Near it, large fluctuations and response changes can invalidate simple noncritical approximations.",
+      "required_concepts": [
+        "Endpoint of distinct liquid-vapor coexistence."
+      ],
+      "accepted_variants": [
+        "Fluid critical point."
+      ],
+      "major_error_concepts": [
+        "Assuming liquid and vapor remain separated by a finite-density discontinuity exactly at the critical point."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-phase",
+        "thermodynamics.draft-phase-equilibrium",
+        "thermodynamics.draft-van-der-waals-gas"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-triple-point",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Triple Point",
+      "prompt": "What is Triple Point? State its defining idea and essential conditions.",
+      "definition": "A triple point is a state where three phases coexist in equilibrium. For a pure simple substance with temperature and pressure as controls, it fixes a particular coexistence pair of values under the standard phase-rule assumptions.",
+      "required_concepts": [
+        "Three-phase equilibrium state."
+      ],
+      "accepted_variants": [
+        "Three-phase coexistence point."
+      ],
+      "major_error_concepts": [
+        "Confusing a triple point with the endpoint where liquid and vapor become indistinguishable."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-phase-equilibrium",
+        "thermodynamics.draft-critical-point"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-phase-rule",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Phase Rule",
+      "prompt": "What is Phase Rule? State its defining idea and essential conditions.",
+      "definition": "For a nonreacting equilibrium system with C independent components and P phases, the usual Gibbs phase rule gives F=C-P+2 independent intensive degrees of freedom when temperature and pressure can vary. Additional constraints or reactions change the counting.",
+      "required_concepts": [
+        "F=C-P+2 under stated component and control assumptions."
+      ],
+      "accepted_variants": [
+        "Gibbs phase rule."
+      ],
+      "major_error_concepts": [
+        "Counting every chemical species as independent when reactions impose component constraints."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-phase-equilibrium",
+        "thermodynamics.draft-triple-point",
+        "thermodynamics.draft-particle-number-and-moles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-chemical-equilibrium-condition",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Chemical Equilibrium Condition",
+      "prompt": "What is Chemical Equilibrium Condition? State its defining idea and essential conditions.",
+      "definition": "Chemical equilibrium requires the reaction-affinity combination sum nu_i mu_i to vanish for each independent reaction, using signed stoichiometric coefficients. It minimizes the appropriate potential under conservation constraints rather than requiring every species to have equal chemical potential.",
+      "required_concepts": [
+        "Stoichiometric chemical-potential sum vanishes."
+      ],
+      "accepted_variants": [
+        "Reaction equilibrium condition."
+      ],
+      "major_error_concepts": [
+        "Setting all different species' chemical potentials equal as a universal reaction-equilibrium condition."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-chemical-potential",
+        "thermodynamics.draft-gibbs-free-energy",
+        "thermodynamics.draft-particle-number-and-moles"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-osmotic-pressure",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Osmotic Pressure",
+      "prompt": "What is Osmotic Pressure? State its defining idea and essential conditions.",
+      "definition": "Osmotic pressure is the pressure difference needed to prevent net solvent flow through a solvent-permeable membrane under the stated equilibrium conditions. For dilute ideal solutions it follows an ideal-particle concentration relation, while nonideality and membrane selectivity can matter.",
+      "required_concepts": [
+        "Pressure balancing solvent transfer across a selective membrane."
+      ],
+      "accepted_variants": [
+        "Osmotic equilibrium pressure."
+      ],
+      "major_error_concepts": [
+        "Assuming every membrane passes solute and solvent identically while still using a selective-osmosis model."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-chemical-potential",
+        "thermodynamics.draft-phase-equilibrium",
+        "thermodynamics.draft-ideal-gas-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-joule-thomson-effect",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Joule-Thomson Effect",
+      "prompt": "What is Joule-Thomson Effect? State its defining idea and essential conditions.",
+      "definition": "Joule-Thomson throttling is a steady-flow pressure drop modeled as approximately adiabatic, with no shaft work and negligible changes in bulk kinetic and potential energy. Enthalpy remains approximately constant, and temperature can rise or fall depending on the fluid state.",
+      "required_concepts": [
+        "Approximately isenthalpic throttling under stated flow assumptions."
+      ],
+      "accepted_variants": [
+        "Joule-Thomson process."
+      ],
+      "major_error_concepts": [
+        "Assuming every throttling pressure drop must cool every gas."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-enthalpy",
+        "thermodynamics.draft-open-system",
+        "thermodynamics.draft-adiabatic-process"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-joule-thomson-coefficient",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Joule-Thomson Coefficient",
+      "prompt": "What is Joule-Thomson Coefficient? State its defining idea and essential conditions.",
+      "definition": "The Joule-Thomson coefficient is (partial T/partial P)_H. Its sign determines cooling or warming during a pressure decrease at fixed enthalpy, and an inversion condition marks a sign change; an ideal gas has zero coefficient in the simple model.",
+      "required_concepts": [
+        "Isenthalpic temperature-pressure derivative and sign interpretation."
+      ],
+      "accepted_variants": [
+        "Throttling coefficient and inversion."
+      ],
+      "major_error_concepts": [
+        "Calling a positive coefficient warming under a negative pressure change without tracking the signs."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-joule-thomson-effect",
+        "thermodynamics.draft-ideal-gas-internal-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-steady-flow-energy-balance",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Steady-Flow Energy Balance",
+      "prompt": "What is Steady-Flow Energy Balance? State its defining idea and essential conditions.",
+      "definition": "A steady-flow energy balance tracks enthalpy, bulk kinetic energy, and gravitational energy carried by matter along with heat and shaft work. Steady means no net control-volume storage change, not that every flow energy term is zero.",
+      "required_concepts": [
+        "Matter energy flux plus heat and work with zero steady storage."
+      ],
+      "accepted_variants": [
+        "Steady control-volume first law."
+      ],
+      "major_error_concepts": [
+        "Omitting enthalpy flow because the control volume's stored energy is constant."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-open-system",
+        "thermodynamics.draft-first-law",
+        "thermodynamics.draft-enthalpy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-flow-work-and-enthalpy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Flow Work and Enthalpy",
+      "prompt": "What is Flow Work and Enthalpy? State its defining idea and essential conditions.",
+      "definition": "Flow work is the pressure work associated with pushing matter across a control-volume boundary. Combining it with transported internal energy gives the enthalpy term in standard flow energy balances, avoiding separate double counting.",
+      "required_concepts": [
+        "Pressure transport work combines with U into H."
+      ],
+      "accepted_variants": [
+        "Pressure-flow energy."
+      ],
+      "major_error_concepts": [
+        "Including enthalpy and then adding the same pressure-flow work again as if not already included."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-steady-flow-energy-balance",
+        "thermodynamics.draft-enthalpy",
+        "thermodynamics.draft-pressure-volume-work"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-calorimetry",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Calorimetry",
+      "prompt": "What is Calorimetry? State its defining idea and essential conditions.",
+      "definition": "Calorimetry infers heat or thermal properties from an energy balance using measured changes such as temperature. The calorimeter's own heat capacity, losses, phase changes, and work terms must be included when relevant rather than assuming only the sample absorbs heat.",
+      "required_concepts": [
+        "Energy-balance measurement of heat with apparatus contributions."
+      ],
+      "accepted_variants": [
+        "Thermal measurement by calorimeter."
+      ],
+      "major_error_concepts": [
+        "Ignoring the apparatus heat capacity while claiming all transferred energy changed only the sample temperature."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-first-law",
+        "thermodynamics.draft-constant-volume-heat-capacity",
+        "thermodynamics.draft-constant-pressure-heat-capacity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-phase-change-energy-balance",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Phase-Change Energy Balance",
+      "prompt": "What is Phase-Change Energy Balance? State its defining idea and essential conditions.",
+      "definition": "A thermal balance involving phase change includes latent heat in addition to sensible heating or cooling terms. A single m c Delta T term cannot represent energy transfer through a transition plateau with unchanged temperature.",
+      "required_concepts": [
+        "Include latent and sensible heat separately when needed."
+      ],
+      "accepted_variants": [
+        "Phase-change calorimetric balance."
+      ],
+      "major_error_concepts": [
+        "Setting heat transfer to zero across a phase change because Delta T is zero."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-calorimetry",
+        "thermodynamics.draft-latent-heat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-fourier-heat-conduction-law",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Fourier Heat-Conduction Law",
+      "prompt": "What is Fourier Heat-Conduction Law? State its defining idea and essential conditions.",
+      "definition": "Fourier's heat-conduction law is heat flux j_Q=-k gradient T for a simple isotropic linear material. Heat flows down the temperature gradient when k is positive; k is conductivity, not the Boltzmann constant despite notation reuse.",
+      "required_concepts": [
+        "Heat flux opposite temperature gradient with positive conductivity."
+      ],
+      "accepted_variants": [
+        "Thermal conduction law."
+      ],
+      "major_error_concepts": [
+        "Using the positive temperature gradient as the spontaneous heat-flux direction for positive k."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-heat",
+        "thermodynamics.draft-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermal-resistance",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermal Resistance",
+      "prompt": "What is Thermal Resistance? State its defining idea and essential conditions.",
+      "definition": "For steady one-dimensional conduction through a uniform slab, thermal resistance is L/(k A), so heat-transfer rate is Delta T divided by that resistance. Series and parallel thermal paths combine according to the corresponding steady-flow network assumptions.",
+      "required_concepts": [
+        "Slab thermal resistance from thickness, conductivity, and area."
+      ],
+      "accepted_variants": [
+        "Conductive thermal resistance."
+      ],
+      "major_error_concepts": [
+        "Confusing thermal resistance with electrical resistance units or omitting the area factor."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-fourier-heat-conduction-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermal-diffusion",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermal Diffusion",
+      "prompt": "What is Thermal Diffusion? State its defining idea and essential conditions.",
+      "definition": "The diffusion equation for a homogeneous material with constant properties and no internal heat source is partial T/partial t=D_th Laplacian T. Thermal diffusivity D_th=k/(rho c) compares conductivity with volumetric heat capacity under the appropriate heat-capacity model.",
+      "required_concepts": [
+        "Temperature diffusion with conductivity-to-volumetric-capacity ratio."
+      ],
+      "accepted_variants": [
+        "Heat equation and thermal diffusivity."
+      ],
+      "major_error_concepts": [
+        "Equating thermal diffusivity numerically or dimensionally with conductivity."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-fourier-heat-conduction-law",
+        "thermodynamics.draft-constant-volume-heat-capacity",
+        "mathematical-methods-for-physics-i.draft-diffusion-equation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-newton-cooling-model",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Newton Cooling Model",
+      "prompt": "What is Newton Cooling Model? State its defining idea and essential conditions.",
+      "definition": "Newton's cooling model makes heat-transfer rate proportional to the temperature difference between a body and its environment over a suitable regime. A lumped uniform-temperature body then relaxes exponentially if coefficients and bath temperature remain constant.",
+      "required_concepts": [
+        "Linear heat-transfer approximation with conditions for exponential relaxation."
+      ],
+      "accepted_variants": [
+        "Newton cooling law."
+      ],
+      "major_error_concepts": [
+        "Assuming the model is exact for arbitrary radiation-dominated or strongly nonuniform cooling."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermal-reservoir",
+        "thermodynamics.draft-calorimetry",
+        "thermodynamics.draft-heat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-blackbody",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Blackbody",
+      "prompt": "What is Blackbody? State its defining idea and essential conditions.",
+      "definition": "A blackbody is an ideal absorber of incident radiation at all wavelengths and directions and an equilibrium emitter with a temperature-determined spectrum. Real surfaces can have wavelength-dependent emissivity and need not behave as perfect blackbodies.",
+      "required_concepts": [
+        "Ideal complete absorber and thermal equilibrium emitter."
+      ],
+      "accepted_variants": [
+        "Ideal thermal radiator."
+      ],
+      "major_error_concepts": [
+        "Assuming a visibly black surface automatically has unit emissivity at every wavelength."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-temperature",
+        "thermodynamics.draft-heat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-stefan-boltzmann-law",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Stefan-Boltzmann Law",
+      "prompt": "What is Stefan-Boltzmann Law? State its defining idea and essential conditions.",
+      "definition": "An ideal blackbody emits total radiant power per area sigma_SB T^4. A simple graybody net-exchange approximation with large surroundings uses emissivity times sigma_SB times (T_body^4-T_surroundings^4), with geometry and assumptions made explicit.",
+      "required_concepts": [
+        "Fourth-power absolute-temperature radiation law."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Using Celsius temperatures in the fourth-power relation."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-blackbody",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-radiative-heat-transfer",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Radiative Heat Transfer",
+      "prompt": "What is Radiative Heat Transfer? State its defining idea and essential conditions.",
+      "definition": "Radiative heat exchange occurs through electromagnetic radiation without requiring a material conduction path. Net transfer depends on both emission and absorption, view geometry, and spectral surface properties rather than only one body's emitted power.",
+      "required_concepts": [
+        "Electromagnetic heat exchange including incoming radiation and geometry."
+      ],
+      "accepted_variants": [
+        "Thermal radiation transfer."
+      ],
+      "major_error_concepts": [
+        "Equating a body's total emitted power with net heat loss while ignoring absorbed surroundings radiation."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-stefan-boltzmann-law",
+        "thermodynamics.draft-blackbody",
+        "thermodynamics.draft-heat"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-equipartition",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Equipartition",
+      "prompt": "What is Equipartition? State its defining idea and essential conditions.",
+      "definition": "Classical equipartition assigns mean energy one-half k_B T to each independent quadratic term in the energy under canonical classical equilibrium conditions. It fails when quantum level spacing or other assumptions prevent those degrees of freedom from being classically populated.",
+      "required_concepts": [
+        "Half k_B T per independent quadratic energy term.",
+        "Classical equilibrium limitations."
+      ],
+      "accepted_variants": [
+        "Equipartition theorem."
+      ],
+      "major_error_concepts": [
+        "Assigning k_B T/2 to every arbitrary nonquadratic term without checking the theorem's form."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-ideal-gas-internal-energy",
+        "thermodynamics.draft-absolute-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-molecular-degrees-of-freedom",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Molecular Degrees of Freedom",
+      "prompt": "What is Molecular Degrees of Freedom? State its defining idea and essential conditions.",
+      "definition": "Molecular translational, rotational, and vibrational degrees of freedom contribute differently to gas internal energy and heat capacity. Their thermal activation depends on temperature and quantum energy spacing, so counting all modes as active at every temperature is incorrect.",
+      "required_concepts": [
+        "Different molecular modes and temperature-dependent activation."
+      ],
+      "accepted_variants": [
+        "Thermally active molecular degrees of freedom."
+      ],
+      "major_error_concepts": [
+        "Assuming every vibrational mode contributes its full classical heat capacity down to zero temperature."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-equipartition",
+        "thermodynamics.draft-constant-volume-heat-capacity",
+        "thermodynamics.draft-heat-capacity-ratio"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-boltzmann-factor",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Boltzmann Factor",
+      "prompt": "What is Boltzmann Factor? State its defining idea and essential conditions.",
+      "definition": "The Boltzmann factor exp(-E/(k_B T)) gives the relative equilibrium weight of an energy state in a canonical setting. Normalization and degeneracy are needed to turn state or energy-level weights into probabilities.",
+      "required_concepts": [
+        "Exponential energy weight with normalization and degeneracy accounted for."
+      ],
+      "accepted_variants": [
+        "Thermal Boltzmann weight."
+      ],
+      "major_error_concepts": [
+        "Treating an unnormalized Boltzmann factor as a complete level probability while ignoring degeneracy."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-absolute-temperature",
+        "thermodynamics.draft-internal-energy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-microstate-and-macrostate",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Microstate and Macrostate",
+      "prompt": "What is Microstate and Macrostate? State its defining idea and essential conditions.",
+      "definition": "A microstate specifies the detailed microscopic configuration under the model, while a macrostate records coarse thermodynamic properties. Many microstates can correspond to the same macrostate, which is why state counting contributes to entropy.",
+      "required_concepts": [
+        "Detailed state versus coarse macroscopic specification."
+      ],
+      "accepted_variants": [
+        "Microscopic configuration and macroscopic state."
+      ],
+      "major_error_concepts": [
+        "Assuming one equilibrium macrostate uniquely specifies every particle's microscopic state."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-state",
+        "thermodynamics.draft-entropy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-statistical-entropy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Statistical Entropy",
+      "prompt": "What is Statistical Entropy? State its defining idea and essential conditions.",
+      "definition": "For an equiprobable collection of accessible microstates, Boltzmann entropy is S=k_B ln Omega. Counting conventions, constraints, and indistinguishability matter; the formula is not a license to count arbitrary labels as physically distinct states.",
+      "required_concepts": [
+        "Entropy logarithmic in accessible equiprobable multiplicity."
+      ],
+      "accepted_variants": [
+        "Boltzmann entropy formula."
+      ],
+      "major_error_concepts": [
+        "Using arbitrary distinguishability labels to generate physical mixing entropy for identical particles."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-microstate-and-macrostate",
+        "thermodynamics.draft-entropy-of-mixing"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-statistical-ensemble",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Statistical Ensemble",
+      "prompt": "What is Statistical Ensemble? State its defining idea and essential conditions.",
+      "definition": "An ensemble is a probability description of possible microscopic states consistent with chosen macroscopic constraints. Different ensembles fix different quantities and are not simply different names for one universally identical finite-system distribution.",
+      "required_concepts": [
+        "Probability collection of states under specified constraints."
+      ],
+      "accepted_variants": [],
+      "major_error_concepts": [
+        "Assuming all ensembles give identical fluctuations for every finite system."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-microstate-and-macrostate",
+        "thermodynamics.draft-boltzmann-factor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-canonical-ensemble",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Canonical Ensemble",
+      "prompt": "What is Canonical Ensemble? State its defining idea and essential conditions.",
+      "definition": "The canonical ensemble describes a system exchanging energy with a temperature reservoir while volume and particle number are fixed in the standard setup. Energy fluctuates, while temperature is the bath-imposed parameter.",
+      "required_concepts": [
+        "Fixed T,V,N with energy exchange and fluctuations."
+      ],
+      "accepted_variants": [
+        "Canonical thermal ensemble."
+      ],
+      "major_error_concepts": [
+        "Assuming canonical energy is exactly fixed in each microstate."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-statistical-ensemble",
+        "thermodynamics.draft-thermal-reservoir",
+        "thermodynamics.draft-closed-system"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-partition-function",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Partition Function",
+      "prompt": "What is Partition Function? State its defining idea and essential conditions.",
+      "definition": "The canonical partition function Z=sum over microstates exp(-beta E_i), with beta=1/(k_B T), normalizes equilibrium weights. It depends on the permitted states and external parameters such as volume and particle number.",
+      "required_concepts": [
+        "Sum of Boltzmann weights over allowed microstates."
+      ],
+      "accepted_variants": [
+        "Canonical normalization function."
+      ],
+      "major_error_concepts": [
+        "Summing only distinct energy values while silently omitting their degeneracies."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-boltzmann-factor",
+        "thermodynamics.draft-canonical-ensemble"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-canonical-probability",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Canonical Probability",
+      "prompt": "What is Canonical Probability? State its defining idea and essential conditions.",
+      "definition": "In the canonical ensemble a microstate has probability p_i=exp(-beta E_i)/Z. If several states share an energy, that energy level's probability includes their degeneracy rather than equaling one microstate's probability.",
+      "required_concepts": [
+        "Normalized canonical probability with level degeneracy distinction."
+      ],
+      "accepted_variants": [
+        "Canonical state probability."
+      ],
+      "major_error_concepts": [
+        "Equating one state probability with the full probability of a degenerate energy level."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-partition-function",
+        "thermodynamics.draft-boltzmann-factor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-mean-energy-from-partition-function",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Mean Energy from Partition Function",
+      "prompt": "What is Mean Energy from Partition Function? State its defining idea and essential conditions.",
+      "definition": "For a canonical system with fixed external parameters, mean energy is minus the derivative of ln Z with respect to beta. It is an ensemble average, not necessarily the exact energy of every realization.",
+      "required_concepts": [
+        "Mean U=-partial ln Z/partial beta."
+      ],
+      "accepted_variants": [
+        "Partition-function energy derivative."
+      ],
+      "major_error_concepts": [
+        "Claiming the canonical mean removes energy fluctuations from the underlying distribution."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-partition-function",
+        "thermodynamics.draft-canonical-probability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-free-energy-from-partition-function",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Free Energy from Partition Function",
+      "prompt": "What is Free Energy from Partition Function? State its defining idea and essential conditions.",
+      "definition": "For the canonical ensemble, Helmholtz free energy is F=-k_B T ln Z under consistent state-counting conventions. Its derivatives yield equilibrium quantities at fixed natural variables, connecting statistical weights to thermodynamic potentials.",
+      "required_concepts": [
+        "F=-k_B T ln Z."
+      ],
+      "accepted_variants": [
+        "Canonical free energy."
+      ],
+      "major_error_concepts": [
+        "Using positive k_B T ln Z as Helmholtz energy without an alternative definition."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-partition-function",
+        "thermodynamics.draft-helmholtz-free-energy",
+        "thermodynamics.draft-natural-variables"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-fluctuations",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Fluctuations",
+      "prompt": "What is Thermodynamic Fluctuations? State its defining idea and essential conditions.",
+      "definition": "Thermodynamic fluctuations are variations of microscopic or subsystem quantities around equilibrium ensemble averages. Their relative importance often decreases with large system size away from criticality, but they need not be negligible in small systems or near a critical point.",
+      "required_concepts": [
+        "Equilibrium variability with size and regime dependence."
+      ],
+      "accepted_variants": [
+        "Equilibrium statistical fluctuations."
+      ],
+      "major_error_concepts": [
+        "Assuming equilibrium means every microscopic observable is constant in time."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-statistical-ensemble",
+        "thermodynamics.draft-canonical-ensemble",
+        "thermodynamics.draft-critical-point"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-heat-capacity-and-energy-fluctuations",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Heat Capacity and Energy Fluctuations",
+      "prompt": "What is Heat Capacity and Energy Fluctuations? State its defining idea and essential conditions.",
+      "definition": "In the canonical ensemble with a temperature-independent energy spectrum at fixed V and N, energy variance equals k_B T squared C_V. This relates thermal response to equilibrium fluctuations and implies nonnegative canonical heat capacity for this ordinary setup.",
+      "required_concepts": [
+        "Var(E)=k_B T squared C_V under stated canonical assumptions."
+      ],
+      "accepted_variants": [
+        "Energy fluctuation-heat capacity relation."
+      ],
+      "major_error_concepts": [
+        "Applying the canonical relation unchanged to a different ensemble with fixed energy and no energy fluctuations."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-mean-energy-from-partition-function",
+        "thermodynamics.draft-thermodynamic-fluctuations",
+        "thermodynamics.draft-constant-volume-heat-capacity"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-classical-thermal-limit",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Classical Thermal Limit",
+      "prompt": "What is Classical Thermal Limit? State its defining idea and essential conditions.",
+      "definition": "A classical thermal approximation is suitable when relevant quantum level spacings and quantum degeneracy effects are small on the thermal scales being modeled. High temperature alone without density or energy-scale context is not a complete criterion for every system.",
+      "required_concepts": [
+        "Thermal scales justify ignoring selected quantum effects."
+      ],
+      "accepted_variants": [
+        "Classical equilibrium limit."
+      ],
+      "major_error_concepts": [
+        "Assuming temperature described as high in everyday units automatically makes every mode classical."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-equipartition",
+        "thermodynamics.draft-molecular-degrees-of-freedom",
+        "thermodynamics.draft-boltzmann-factor"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-quantum-heat-capacity",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Quantum Heat Capacity",
+      "prompt": "What is Quantum Heat Capacity? State its defining idea and essential conditions.",
+      "definition": "Quantum level structure suppresses heat-capacity contributions when thermal energy is too small to excite the relevant modes. This explains departures from classical equipartition, including low-temperature reductions in many ordinary systems.",
+      "required_concepts": [
+        "Frozen-out excitations reduce classical heat-capacity contributions."
+      ],
+      "accepted_variants": [
+        "Quantum heat-capacity behavior."
+      ],
+      "major_error_concepts": [
+        "Extending a constant classical equipartition heat capacity to zero temperature without checking the spectrum."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-molecular-degrees-of-freedom",
+        "thermodynamics.draft-classical-thermal-limit",
+        "thermodynamics.draft-third-law"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-limit",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Limit",
+      "prompt": "What is Thermodynamic Limit? State its defining idea and essential conditions.",
+      "definition": "The thermodynamic limit takes particle number and volume large together at fixed density and other appropriate intensive controls. It clarifies bulk behavior and possible sharp phase transitions while suppressing relative boundary contributions under standard short-range assumptions.",
+      "required_concepts": [
+        "Large N and V at fixed density.",
+        "Bulk-limit assumptions matter."
+      ],
+      "accepted_variants": [
+        "Macroscopic thermodynamic limit."
+      ],
+      "major_error_concepts": [
+        "Taking only particle number large in a fixed volume and calling it the usual fixed-density limit."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-extensive-property",
+        "thermodynamics.draft-thermodynamic-phase",
+        "thermodynamics.draft-thermodynamic-fluctuations"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-local-equilibrium",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Local Equilibrium",
+      "prompt": "What is Local Equilibrium? State its defining idea and essential conditions.",
+      "definition": "Local equilibrium assumes small regions of a nonequilibrium system can be assigned equilibrium-like temperature and other state variables on an intermediate scale. It requires internal equilibration faster than the macroscopic variations being modeled.",
+      "required_concepts": [
+        "Locally equilibrated cells within global nonequilibrium.",
+        "Separation of scales required."
+      ],
+      "accepted_variants": [
+        "Local thermodynamic equilibrium approximation."
+      ],
+      "major_error_concepts": [
+        "Assuming the existence of a local temperature automatically proves the entire system is in global equilibrium."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermodynamic-equilibrium",
+        "thermodynamics.draft-thermal-diffusion"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-relaxation-time",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Relaxation Time",
+      "prompt": "What is Relaxation Time? State its defining idea and essential conditions.",
+      "definition": "A relaxation time characterizes how quickly a disturbed quantity approaches its relevant equilibrium or steady state. Different modes can have different timescales, and quasistatic modeling requires driving slow relative to the relevant relaxation processes.",
+      "required_concepts": [
+        "Timescale of approach for a specified mode or variable."
+      ],
+      "accepted_variants": [
+        "Thermal relaxation timescale."
+      ],
+      "major_error_concepts": [
+        "Assigning one universal equilibration time to every variable without considering slow modes."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-local-equilibrium",
+        "thermodynamics.draft-quasistatic-process",
+        "thermodynamics.draft-newton-cooling-model"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-engine-entropy-balance",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Engine Entropy Balance",
+      "prompt": "What is Engine Entropy Balance? State its defining idea and essential conditions.",
+      "definition": "For a cyclic engine between two fixed-temperature reservoirs, entropy production gives Q_c/T_c-Q_h/T_h greater than or equal to zero using positive heat magnitudes. Combining it with energy conservation yields the Carnot efficiency bound.",
+      "required_concepts": [
+        "Two-reservoir cycle entropy inequality and energy combination."
+      ],
+      "accepted_variants": [
+        "Entropy derivation of the engine bound."
+      ],
+      "major_error_concepts": [
+        "Using negative entropy production to claim an engine exceeds Carnot while retaining only those two reservoirs."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-entropy-production",
+        "thermodynamics.draft-thermal-efficiency",
+        "thermodynamics.draft-carnot-efficiency",
+        "thermodynamics.draft-thermal-reservoir"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-efficiency-and-power",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Efficiency and Power",
+      "prompt": "What is Efficiency and Power? State its defining idea and essential conditions.",
+      "definition": "Efficiency measures output energy relative to input, while power measures output energy per time. A reversible limiting cycle can approach maximum efficiency while delivering vanishing power if its required transfers become arbitrarily slow.",
+      "required_concepts": [
+        "Efficiency is a ratio; power is a rate.",
+        "Reversible maximum efficiency need not maximize power."
+      ],
+      "accepted_variants": [
+        "Efficiency-power distinction."
+      ],
+      "major_error_concepts": [
+        "Assuming the most efficient thermodynamic limit automatically delivers the greatest finite power."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-thermal-efficiency",
+        "thermodynamics.draft-reversible-process",
+        "thermodynamics.draft-relaxation-time"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermodynamic-legendre-transformation",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermodynamic Legendre Transformation",
+      "prompt": "What is Thermodynamic Legendre Transformation? State its defining idea and essential conditions.",
+      "definition": "A thermodynamic Legendre transformation replaces one natural variable with its conjugate by adding or subtracting their product. Subtracting TS changes from entropy control to temperature control in U-to-F, while adding PV changes volume to pressure control in U-to-H.",
+      "required_concepts": [
+        "Exchange natural variables with conjugates through product terms."
+      ],
+      "accepted_variants": [
+        "Thermodynamic potential transformation."
+      ],
+      "major_error_concepts": [
+        "Changing potential names without changing derivatives or natural variables."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-natural-variables",
+        "thermodynamics.draft-fundamental-thermodynamic-relation",
+        "thermodynamics.draft-helmholtz-free-energy",
+        "thermodynamics.draft-enthalpy"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-system-and-heat-bath",
+      "canonical_deck_id": "thermodynamics",
+      "term": "System and Heat Bath",
+      "prompt": "What is System and Heat Bath? State its defining idea and essential conditions.",
+      "definition": "A small system in contact with a large heat bath can exchange energy while the combined isolated system conserves total energy. Maximizing combined entropy leads to canonical weights for the subsystem under the usual weak-coupling approximation.",
+      "required_concepts": [
+        "Combined isolation permits subsystem energy fluctuations.",
+        "Large-bath entropy expansion gives canonical behavior."
+      ],
+      "accepted_variants": [
+        "System-bath derivation of thermal equilibrium."
+      ],
+      "major_error_concepts": [
+        "Assuming total energy conservation forces subsystem energy to be fixed despite heat exchange."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-isolated-system",
+        "thermodynamics.draft-thermal-reservoir",
+        "thermodynamics.draft-canonical-ensemble",
+        "thermodynamics.draft-total-entropy-and-isolation"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-probability-form-of-entropy",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Probability Form of Entropy",
+      "prompt": "What is Probability Form of Entropy? State its defining idea and essential conditions.",
+      "definition": "For discrete microstate probabilities, statistical entropy is S=-k_B sum p_i ln p_i under the chosen physical state description. Equal probabilities recover k_B ln Omega; physical interpretation still depends on constraints and the states being counted.",
+      "required_concepts": [
+        "Probability-weighted entropy and equal-probability limit."
+      ],
+      "accepted_variants": [
+        "Gibbs statistical entropy."
+      ],
+      "major_error_concepts": [
+        "Equating any arbitrary data-label entropy directly with a material thermodynamic entropy without a physical state model."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-statistical-entropy",
+        "thermodynamics.draft-canonical-probability"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermal-parameters-and-fluctuations",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermal Parameters and Fluctuations",
+      "prompt": "What is Thermal Parameters and Fluctuations? State its defining idea and essential conditions.",
+      "definition": "An equilibrium ensemble fixes some quantities while allowing others to fluctuate. Canonical temperature is a control parameter, whereas a temperature inferred from finite subsystem measurements can have estimation uncertainty that must not be confused with a change of ensemble definition.",
+      "required_concepts": [
+        "Separate imposed ensemble parameters from noisy finite estimates."
+      ],
+      "accepted_variants": [
+        "Thermal parameter versus measurement fluctuation."
+      ],
+      "major_error_concepts": [
+        "Claiming finite measurement noise means the canonical ensemble never had a specified temperature."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-canonical-ensemble",
+        "thermodynamics.draft-thermodynamic-fluctuations",
+        "thermodynamics.draft-temperature"
+      ],
+      "source_refs": []
+    },
+    {
+      "id": "thermodynamics.draft-thermometry",
+      "canonical_deck_id": "thermodynamics",
+      "term": "Thermometry",
+      "prompt": "What is Thermometry? State its defining idea and essential conditions.",
+      "definition": "Thermometry infers temperature from a calibrated property after suitable thermal contact and response time. The sensor can disturb a small system, and calibration, gradients, and incomplete equilibration affect what the reading represents.",
+      "required_concepts": [
+        "Calibrated temperature-sensitive response with equilibration and loading considerations."
+      ],
+      "accepted_variants": [
+        "Temperature measurement."
+      ],
+      "major_error_concepts": [
+        "Assuming any instantaneous sensor reading equals a uniform undisturbed sample temperature regardless of gradients or equilibration."
+      ],
+      "prerequisite_ids": [
+        "thermodynamics.draft-zeroth-law",
+        "thermodynamics.draft-temperature",
+        "thermodynamics.draft-relaxation-time",
+        "thermodynamics.draft-calorimetry"
+      ],
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-boltzmann-factor"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-carnot-efficiency"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-equipartition"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-stefan-boltzmann-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-third-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-absolute-temperature",
+      "dependent_card_id": "thermodynamics.draft-unattainability-of-absolute-zero"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-adiabatic-process",
+      "dependent_card_id": "thermodynamics.draft-carnot-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-adiabatic-process",
+      "dependent_card_id": "thermodynamics.draft-free-expansion"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-adiabatic-process",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-adiabatic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-adiabatic-process",
+      "dependent_card_id": "thermodynamics.draft-isentropic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-adiabatic-process",
+      "dependent_card_id": "thermodynamics.draft-joule-thomson-effect"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-blackbody",
+      "dependent_card_id": "thermodynamics.draft-radiative-heat-transfer"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-blackbody",
+      "dependent_card_id": "thermodynamics.draft-stefan-boltzmann-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-boltzmann-factor",
+      "dependent_card_id": "thermodynamics.draft-canonical-probability"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-boltzmann-factor",
+      "dependent_card_id": "thermodynamics.draft-classical-thermal-limit"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-boltzmann-factor",
+      "dependent_card_id": "thermodynamics.draft-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-boltzmann-factor",
+      "dependent_card_id": "thermodynamics.draft-statistical-ensemble"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-calorimetry",
+      "dependent_card_id": "thermodynamics.draft-newton-cooling-model"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-calorimetry",
+      "dependent_card_id": "thermodynamics.draft-phase-change-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-calorimetry",
+      "dependent_card_id": "thermodynamics.draft-thermometry"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-canonical-ensemble",
+      "dependent_card_id": "thermodynamics.draft-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-canonical-ensemble",
+      "dependent_card_id": "thermodynamics.draft-system-and-heat-bath"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-canonical-ensemble",
+      "dependent_card_id": "thermodynamics.draft-thermal-parameters-and-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-canonical-ensemble",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-canonical-probability",
+      "dependent_card_id": "thermodynamics.draft-mean-energy-from-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-canonical-probability",
+      "dependent_card_id": "thermodynamics.draft-probability-form-of-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-carnot-cycle",
+      "dependent_card_id": "thermodynamics.draft-carnot-efficiency"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-carnot-efficiency",
+      "dependent_card_id": "thermodynamics.draft-engine-entropy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-chemical-potential",
+      "dependent_card_id": "thermodynamics.draft-chemical-equilibrium-condition"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-chemical-potential",
+      "dependent_card_id": "thermodynamics.draft-euler-extensivity-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-chemical-potential",
+      "dependent_card_id": "thermodynamics.draft-gibbs-duhem-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-chemical-potential",
+      "dependent_card_id": "thermodynamics.draft-osmotic-pressure"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-chemical-potential",
+      "dependent_card_id": "thermodynamics.draft-phase-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-clapeyron-equation",
+      "dependent_card_id": "thermodynamics.draft-clausius-clapeyron-approximation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-classical-thermal-limit",
+      "dependent_card_id": "thermodynamics.draft-quantum-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-clausius-inequality",
+      "dependent_card_id": "thermodynamics.draft-entropy-production"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-clausius-statement",
+      "dependent_card_id": "thermodynamics.draft-first-and-second-law-roles"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-closed-system",
+      "dependent_card_id": "thermodynamics.draft-canonical-ensemble"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-closed-system",
+      "dependent_card_id": "thermodynamics.draft-entropy-production"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-closed-system",
+      "dependent_card_id": "thermodynamics.draft-heat-and-work-sign-convention"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-closed-system",
+      "dependent_card_id": "thermodynamics.draft-isolated-system"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-closed-system",
+      "dependent_card_id": "thermodynamics.draft-volume"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-compressibility-factor",
+      "dependent_card_id": "thermodynamics.draft-isothermal-compressibility"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-compressibility-factor",
+      "dependent_card_id": "thermodynamics.draft-van-der-waals-gas"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-pressure-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-calorimetry"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-pressure-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-general-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-pressure-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-calorimetry"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-constant-pressure-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-general-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-heat-capacity-and-energy-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-molecular-degrees-of-freedom"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-thermal-diffusion"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-constant-volume-heat-capacity",
+      "dependent_card_id": "thermodynamics.draft-thermal-reservoir"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-critical-point",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-critical-point",
+      "dependent_card_id": "thermodynamics.draft-triple-point"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-constant-pressure-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-flow-work-and-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-gibbs-free-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-joule-thomson-effect"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-natural-variables"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-steady-flow-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-enthalpy",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-legendre-transformation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-clausius-inequality"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-entropy-production"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-gibbs-free-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-helmholtz-free-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-latent-heat"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-microstate-and-macrostate"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy",
+      "dependent_card_id": "thermodynamics.draft-third-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy-change",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy-of-mixing",
+      "dependent_card_id": "thermodynamics.draft-statistical-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy-production",
+      "dependent_card_id": "thermodynamics.draft-engine-entropy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy-production",
+      "dependent_card_id": "thermodynamics.draft-isentropic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-entropy-production",
+      "dependent_card_id": "thermodynamics.draft-total-entropy-and-isolation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-equation-of-state",
+      "dependent_card_id": "thermodynamics.draft-compressibility-factor"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-equation-of-state",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-equation-of-state",
+      "dependent_card_id": "thermodynamics.draft-thermal-expansion-coefficient"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-equation-of-state",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-phase"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-equipartition",
+      "dependent_card_id": "thermodynamics.draft-classical-thermal-limit"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-equipartition",
+      "dependent_card_id": "thermodynamics.draft-molecular-degrees-of-freedom"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-extensive-property",
+      "dependent_card_id": "thermodynamics.draft-euler-extensivity-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-extensive-property",
+      "dependent_card_id": "thermodynamics.draft-gibbs-duhem-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-extensive-property",
+      "dependent_card_id": "thermodynamics.draft-particle-number-and-moles"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-extensive-property",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-limit"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-extensive-property",
+      "dependent_card_id": "thermodynamics.draft-volume"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-and-second-law-roles",
+      "dependent_card_id": "thermodynamics.draft-heat-transfer-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-calorimetry"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-first-and-second-law-roles"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-heat-engine"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-heat-pump"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-isobaric-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-isochoric-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-isothermal-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-refrigerator"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-steady-flow-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-thermal-efficiency"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-first-law",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fourier-heat-conduction-law",
+      "dependent_card_id": "thermodynamics.draft-thermal-diffusion"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fourier-heat-conduction-law",
+      "dependent_card_id": "thermodynamics.draft-thermal-resistance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "dependent_card_id": "thermodynamics.draft-chemical-potential"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "dependent_card_id": "thermodynamics.draft-euler-extensivity-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "dependent_card_id": "thermodynamics.draft-helmholtz-free-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "dependent_card_id": "thermodynamics.draft-internal-energy-response-identity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "dependent_card_id": "thermodynamics.draft-natural-variables"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-legendre-transformation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-gibbs-free-energy",
+      "dependent_card_id": "thermodynamics.draft-chemical-equilibrium-condition"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-gibbs-free-energy",
+      "dependent_card_id": "thermodynamics.draft-natural-variables"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-gibbs-free-energy",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-stability"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-adiabatic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-blackbody"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-clausius-statement"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-fourier-heat-conduction-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-heat-and-work-sign-convention"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-latent-heat"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-newton-cooling-model"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-radiative-heat-transfer"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat",
+      "dependent_card_id": "thermodynamics.draft-thermal-reservoir"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat-and-work-sign-convention",
+      "dependent_card_id": "thermodynamics.draft-first-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat-capacity-ratio",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-adiabatic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat-capacity-ratio",
+      "dependent_card_id": "thermodynamics.draft-molecular-degrees-of-freedom"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat-engine",
+      "dependent_card_id": "thermodynamics.draft-kelvin-planck-statement"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat-engine",
+      "dependent_card_id": "thermodynamics.draft-refrigerator"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-heat-engine",
+      "dependent_card_id": "thermodynamics.draft-thermal-efficiency"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-helmholtz-free-energy",
+      "dependent_card_id": "thermodynamics.draft-free-energy-from-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-helmholtz-free-energy",
+      "dependent_card_id": "thermodynamics.draft-gibbs-free-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-helmholtz-free-energy",
+      "dependent_card_id": "thermodynamics.draft-maxwell-relations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-helmholtz-free-energy",
+      "dependent_card_id": "thermodynamics.draft-natural-variables"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-helmholtz-free-energy",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-legendre-transformation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-helmholtz-free-energy",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-stability"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-assumptions",
+      "dependent_card_id": "thermodynamics.draft-free-expansion"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-assumptions",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-internal-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-assumptions",
+      "dependent_card_id": "thermodynamics.draft-van-der-waals-gas"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-entropy-change",
+      "dependent_card_id": "thermodynamics.draft-entropy-of-mixing"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-heat-capacity-difference",
+      "dependent_card_id": "thermodynamics.draft-heat-capacity-ratio"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-constant-volume-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-equipartition"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-internal-energy-response-identity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-isothermal-ideal-gas-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-joule-thomson-coefficient"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-clausius-clapeyron-approximation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-compressibility-factor"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-adiabatic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-assumptions"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-isothermal-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-ideal-gas-law",
+      "dependent_card_id": "thermodynamics.draft-osmotic-pressure"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-intensive-property",
+      "dependent_card_id": "thermodynamics.draft-extensive-property"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-intensive-property",
+      "dependent_card_id": "thermodynamics.draft-pressure"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-intensive-property",
+      "dependent_card_id": "thermodynamics.draft-temperature"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-boltzmann-factor"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-first-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-helmholtz-free-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-internal-energy",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-internal-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isobaric-process",
+      "dependent_card_id": "thermodynamics.draft-constant-pressure-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isobaric-process",
+      "dependent_card_id": "thermodynamics.draft-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isochoric-process",
+      "dependent_card_id": "thermodynamics.draft-constant-volume-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isolated-system",
+      "dependent_card_id": "thermodynamics.draft-system-and-heat-bath"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isolated-system",
+      "dependent_card_id": "thermodynamics.draft-total-entropy-and-isolation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isothermal-compressibility",
+      "dependent_card_id": "thermodynamics.draft-general-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isothermal-process",
+      "dependent_card_id": "thermodynamics.draft-carnot-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isothermal-process",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-internal-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-isothermal-process",
+      "dependent_card_id": "thermodynamics.draft-isothermal-ideal-gas-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-joule-thomson-effect",
+      "dependent_card_id": "thermodynamics.draft-joule-thomson-coefficient"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-kelvin-planck-statement",
+      "dependent_card_id": "thermodynamics.draft-first-and-second-law-roles"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-latent-heat",
+      "dependent_card_id": "thermodynamics.draft-clapeyron-equation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-latent-heat",
+      "dependent_card_id": "thermodynamics.draft-phase-change-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-local-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-relaxation-time"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-maxwell-relations",
+      "dependent_card_id": "thermodynamics.draft-internal-energy-response-identity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-mean-energy-from-partition-function",
+      "dependent_card_id": "thermodynamics.draft-heat-capacity-and-energy-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-microstate-and-macrostate",
+      "dependent_card_id": "thermodynamics.draft-statistical-ensemble"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-microstate-and-macrostate",
+      "dependent_card_id": "thermodynamics.draft-statistical-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-molecular-degrees-of-freedom",
+      "dependent_card_id": "thermodynamics.draft-classical-thermal-limit"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-molecular-degrees-of-freedom",
+      "dependent_card_id": "thermodynamics.draft-quantum-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-natural-variables",
+      "dependent_card_id": "thermodynamics.draft-free-energy-from-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-natural-variables",
+      "dependent_card_id": "thermodynamics.draft-gibbs-duhem-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-natural-variables",
+      "dependent_card_id": "thermodynamics.draft-maxwell-relations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-natural-variables",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-legendre-transformation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-newton-cooling-model",
+      "dependent_card_id": "thermodynamics.draft-relaxation-time"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-open-system",
+      "dependent_card_id": "thermodynamics.draft-closed-system"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-open-system",
+      "dependent_card_id": "thermodynamics.draft-joule-thomson-effect"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-open-system",
+      "dependent_card_id": "thermodynamics.draft-steady-flow-energy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-open-system",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-chemical-equilibrium-condition"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-chemical-potential"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-constant-volume-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-entropy-of-mixing"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-particle-number-and-moles",
+      "dependent_card_id": "thermodynamics.draft-phase-rule"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-partition-function",
+      "dependent_card_id": "thermodynamics.draft-canonical-probability"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-partition-function",
+      "dependent_card_id": "thermodynamics.draft-free-energy-from-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-partition-function",
+      "dependent_card_id": "thermodynamics.draft-mean-energy-from-partition-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-path-function",
+      "dependent_card_id": "thermodynamics.draft-heat"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-path-function",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-phase-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-clapeyron-equation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-phase-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-critical-point"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-phase-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-osmotic-pressure"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-phase-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-phase-rule"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-phase-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-triple-point"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure",
+      "dependent_card_id": "thermodynamics.draft-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure",
+      "dependent_card_id": "thermodynamics.draft-equation-of-state"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure",
+      "dependent_card_id": "thermodynamics.draft-isothermal-compressibility"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure",
+      "dependent_card_id": "thermodynamics.draft-pressure-volume-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-diagram",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-flow-work-and-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-free-expansion"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-fundamental-thermodynamic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-isobaric-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-isochoric-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-isothermal-ideal-gas-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-pressure-volume-work",
+      "dependent_card_id": "thermodynamics.draft-pressure-volume-diagram"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-quasistatic-process",
+      "dependent_card_id": "thermodynamics.draft-pressure-volume-diagram"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-quasistatic-process",
+      "dependent_card_id": "thermodynamics.draft-relaxation-time"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-quasistatic-process",
+      "dependent_card_id": "thermodynamics.draft-reversible-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-refrigerator",
+      "dependent_card_id": "thermodynamics.draft-clausius-statement"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-refrigerator",
+      "dependent_card_id": "thermodynamics.draft-heat-pump"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-relaxation-time",
+      "dependent_card_id": "thermodynamics.draft-efficiency-and-power"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-relaxation-time",
+      "dependent_card_id": "thermodynamics.draft-thermometry"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-adiabatic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-carnot-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-clausius-inequality"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-efficiency-and-power"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-ideal-gas-adiabatic-relation"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-reversible-process",
+      "dependent_card_id": "thermodynamics.draft-pressure-volume-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-state-function",
+      "dependent_card_id": "thermodynamics.draft-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-state-function",
+      "dependent_card_id": "thermodynamics.draft-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-state-function",
+      "dependent_card_id": "thermodynamics.draft-internal-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-state-function",
+      "dependent_card_id": "thermodynamics.draft-path-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-state-function",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-statistical-ensemble",
+      "dependent_card_id": "thermodynamics.draft-canonical-ensemble"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-statistical-ensemble",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-statistical-entropy",
+      "dependent_card_id": "thermodynamics.draft-probability-form-of-entropy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-steady-flow-energy-balance",
+      "dependent_card_id": "thermodynamics.draft-flow-work-and-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-stefan-boltzmann-law",
+      "dependent_card_id": "thermodynamics.draft-radiative-heat-transfer"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-surroundings",
+      "dependent_card_id": "thermodynamics.draft-reversible-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-surroundings",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-boundary"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-absolute-temperature"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-blackbody"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-equation-of-state"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-fourier-heat-conduction-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-heat"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-isothermal-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-thermal-expansion-coefficient"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-thermal-parameters-and-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-thermal-reservoir"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-temperature",
+      "dependent_card_id": "thermodynamics.draft-thermometry"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-diffusion",
+      "dependent_card_id": "thermodynamics.draft-local-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-efficiency",
+      "dependent_card_id": "thermodynamics.draft-carnot-efficiency"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-efficiency",
+      "dependent_card_id": "thermodynamics.draft-efficiency-and-power"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-efficiency",
+      "dependent_card_id": "thermodynamics.draft-engine-entropy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-expansion-coefficient",
+      "dependent_card_id": "thermodynamics.draft-general-heat-capacity-difference"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-reservoir",
+      "dependent_card_id": "thermodynamics.draft-canonical-ensemble"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-reservoir",
+      "dependent_card_id": "thermodynamics.draft-engine-entropy-balance"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-reservoir",
+      "dependent_card_id": "thermodynamics.draft-heat-transfer-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-reservoir",
+      "dependent_card_id": "thermodynamics.draft-newton-cooling-model"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermal-reservoir",
+      "dependent_card_id": "thermodynamics.draft-system-and-heat-bath"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-boundary",
+      "dependent_card_id": "thermodynamics.draft-closed-system"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-boundary",
+      "dependent_card_id": "thermodynamics.draft-heat"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-boundary",
+      "dependent_card_id": "thermodynamics.draft-isolated-system"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-boundary",
+      "dependent_card_id": "thermodynamics.draft-open-system"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-boundary",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-boundary",
+      "dependent_card_id": "thermodynamics.draft-volume"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-cycle",
+      "dependent_card_id": "thermodynamics.draft-carnot-cycle"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-cycle",
+      "dependent_card_id": "thermodynamics.draft-clausius-inequality"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-cycle",
+      "dependent_card_id": "thermodynamics.draft-heat-engine"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-cycle",
+      "dependent_card_id": "thermodynamics.draft-kelvin-planck-statement"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-local-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-phase-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-pressure"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-quasistatic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-phase"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-stability"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-equilibrium",
+      "dependent_card_id": "thermodynamics.draft-zeroth-law"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-fluctuations",
+      "dependent_card_id": "thermodynamics.draft-heat-capacity-and-energy-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-fluctuations",
+      "dependent_card_id": "thermodynamics.draft-thermal-parameters-and-fluctuations"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-fluctuations",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-limit"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-phase",
+      "dependent_card_id": "thermodynamics.draft-critical-point"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-phase",
+      "dependent_card_id": "thermodynamics.draft-latent-heat"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-phase",
+      "dependent_card_id": "thermodynamics.draft-phase-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-phase",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-limit"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-stability",
+      "dependent_card_id": "thermodynamics.draft-isothermal-compressibility"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-equation-of-state"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-extensive-property"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-intensive-property"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-microstate-and-macrostate"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-quasistatic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-state-function"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-state",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-equilibrium"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-system",
+      "dependent_card_id": "thermodynamics.draft-internal-energy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-system",
+      "dependent_card_id": "thermodynamics.draft-surroundings"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-system",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-boundary"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-system",
+      "dependent_card_id": "thermodynamics.draft-thermodynamic-state"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-work",
+      "dependent_card_id": "thermodynamics.draft-adiabatic-process"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-work",
+      "dependent_card_id": "thermodynamics.draft-heat-and-work-sign-convention"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-thermodynamic-work",
+      "dependent_card_id": "thermodynamics.draft-pressure-volume-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-third-law",
+      "dependent_card_id": "thermodynamics.draft-quantum-heat-capacity"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-third-law",
+      "dependent_card_id": "thermodynamics.draft-unattainability-of-absolute-zero"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-total-entropy-and-isolation",
+      "dependent_card_id": "thermodynamics.draft-heat-transfer-entropy-change"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-total-entropy-and-isolation",
+      "dependent_card_id": "thermodynamics.draft-system-and-heat-bath"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-triple-point",
+      "dependent_card_id": "thermodynamics.draft-phase-rule"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-van-der-waals-gas",
+      "dependent_card_id": "thermodynamics.draft-critical-point"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-volume",
+      "dependent_card_id": "thermodynamics.draft-enthalpy"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-volume",
+      "dependent_card_id": "thermodynamics.draft-equation-of-state"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-volume",
+      "dependent_card_id": "thermodynamics.draft-isothermal-compressibility"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-volume",
+      "dependent_card_id": "thermodynamics.draft-pressure-volume-work"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-volume",
+      "dependent_card_id": "thermodynamics.draft-thermal-expansion-coefficient"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-zeroth-law",
+      "dependent_card_id": "thermodynamics.draft-temperature"
+    },
+    {
+      "prerequisite_card_id": "thermodynamics.draft-zeroth-law",
+      "dependent_card_id": "thermodynamics.draft-thermometry"
+    }
+  ],
+  "description": "A definition-recall course deck covering core concepts in Thermodynamics.",
+  "level": "College",
+  "tags": [
+    "physics"
+  ]
+}

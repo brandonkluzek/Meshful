@@ -1,0 +1,15 @@
+{
+  "name": "meshful-learner-backend-capacity-successor",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:capacity": "node --test integration/capacity.test.mjs",
+    "test:library": "node --test integration/library-capacity.test.mjs",
+    "test:accounts": "node --test integration/account-storage.test.mjs",
+    "check": "node scripts/check.mjs",
+    "verify": "node scripts/verify-delivery.mjs"
+  }
+}
