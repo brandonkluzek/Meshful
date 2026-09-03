@@ -13,7 +13,7 @@ under `site/` is not promoted merely because it builds locally.
 
 The current public product snapshot is Sites v42:
 
-- public repository mirror commit: recorded by the following metadata commit
+- public repository mirror commit: `985a40d71565d2a73a1e3255449ae295af0e8c44`
 - Website source commit: `dd578874933241eb8d679f10e3d5726c2ad6b855`
 - Website source tree: `c6bddcda6f3224b9c76163d0f1b8f9367b68e934`
 - deployment and live-asset receipt: [`release/deployed-v42.json`](../release/deployed-v42.json)
