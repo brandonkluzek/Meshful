@@ -6,18 +6,18 @@
     "release/file-manifest.sha256",
     "release/validation.json"
   ],
-  "file_count": 339,
-  "total_bytes": 31485803,
+  "file_count": 585,
+  "total_bytes": 92752279,
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 191,
-      "sha256": "2877b85b9f3084142d15e88b25fec9ac032e4fea748610f60b66950d0545e11f"
+      "bytes": 172,
+      "sha256": "b0eefb7807d6d7e4b0bfb68cf6c0ff4954ae358b09eef51bfef49ea6225efa46"
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 1341,
-      "sha256": "e786b160508e7fa0633ba1837cb1ac43dd5672aab7f06a0b82f7bb4e55614fae"
+      "bytes": 1365,
+      "sha256": "46790079297c47cbf4ee56f772cab95c97d82ccae45568fe9b3f99efef7ffc5a"
     },
     {
       "path": "LICENSE",
@@ -36,18 +36,18 @@
     },
     {
       "path": "LICENSES/README.md",
-      "bytes": 2053,
-      "sha256": "7a0964b23d4ad813128af59ac28683eaae5a182deb0ac889ced86263b8261ba2"
+      "bytes": 1921,
+      "sha256": "f520fc94344820d20c135979a5762dc7932dbebba4af53cab2cafc0185bcd1eb"
     },
     {
       "path": "NOTICE",
-      "bytes": 571,
-      "sha256": "8ff373529eb2c6aa907ce55981b09cc35e4d1176373a85d84c153ad5917bd3ca"
+      "bytes": 524,
+      "sha256": "e0d3947185aa74a776a959b055c6b23d9968884bcdd4638ed759040cd2144c92"
     },
     {
       "path": "README.md",
-      "bytes": 5279,
-      "sha256": "bdd89d297dbf8e36bff82c13f0a299973bfb14444ea76b8527fea34876165ba0"
+      "bytes": 6667,
+      "sha256": "713f576a9efecfae324e871dd239628f97792e1f6e161003a51ec488f90ceb71"
     },
     {
       "path": "SECURITY.md",
@@ -56,783 +56,18 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1003,
-      "sha256": "5fe5cd0f6ae2a32c15f8299703029167f99a5596ddf8b59bdf04392e2cb9230c"
-    },
-    {
-      "path": "accounts/.gitignore",
-      "bytes": 26,
-      "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d"
-    },
-    {
-      "path": "accounts/README.md",
-      "bytes": 3684,
-      "sha256": "691e7ad8a228982c3699db4cc26846318a15973a8b883218a3250cabe07635e3"
-    },
-    {
-      "path": "accounts/browser-state.mjs",
-      "bytes": 1986,
-      "sha256": "2fe73992600423bc3df2a9ee7a9d5055379f2615b14ea422f24bdb6e9b30de32"
-    },
-    {
-      "path": "accounts/browser-storage-records.mjs",
-      "bytes": 7788,
-      "sha256": "0f9e1cdf8c9009c2919de29c7b6298e762523d50c23e4d96ca0552658e96011f"
-    },
-    {
-      "path": "accounts/browser-storage.mjs",
-      "bytes": 11563,
-      "sha256": "7222622717397cc9ef2a8255430869ed77a2cd6dea580949ee292eee1d8a43bc"
-    },
-    {
-      "path": "accounts/checks/backend-browser-storage.mjs",
-      "bytes": 5845,
-      "sha256": "13c7fcdfe5c55b3ab1b2a0f426b6a4f6478eb20667e57f46eadefdd643cb3eb9"
-    },
-    {
-      "path": "accounts/checks/current-runtime-privacy.mjs",
-      "bytes": 6537,
-      "sha256": "e435d393dbb87fb4cada9db89e1a4bc5dce55e5debe290febc0ab911ae521fb8"
-    },
-    {
-      "path": "accounts/checks/serve-browser-fixture.mjs",
-      "bytes": 1833,
-      "sha256": "189c4cb9c727ab91d32aee7888731d714d771bd57c8e9fce58d4076a29700c75"
-    },
-    {
-      "path": "accounts/checks/verify-delivery.mjs",
-      "bytes": 2733,
-      "sha256": "c099fb26bc0e44bff299e0eec8809869d1f6979bd4d4baf16449ee938fc7e2fb"
-    },
-    {
-      "path": "accounts/core.mjs",
-      "bytes": 6592,
-      "sha256": "c08cd3844411d0648c05e098bcda293e480597cca0a0c10ee0779ba4c02795a9"
-    },
-    {
-      "path": "accounts/index.mjs",
-      "bytes": 452,
-      "sha256": "25ca4f9b3788a2a0e1daf55a29dcc2bb44eb1f3eb951fe5ba8f231f81196dac4"
-    },
-    {
-      "path": "accounts/package-lock.json",
-      "bytes": 679,
-      "sha256": "1af0c33d7540eb1f934ef6802f400f23595333daf26fceec7d42c55cfd624a7a"
-    },
-    {
-      "path": "accounts/package.json",
-      "bytes": 238,
-      "sha256": "b480c976243eedb17f60d8d949546d6ecf20c19c84ddd6c17ccc7cf9587ce1b7"
-    },
-    {
-      "path": "accounts/remote.mjs",
-      "bytes": 5061,
-      "sha256": "dfc17abcec5413e68b30a89959a6b105a0e4663f0f2555eef17689666fbbf3ba"
-    },
-    {
-      "path": "accounts/sites.mjs",
-      "bytes": 3258,
-      "sha256": "425cd07b8b28c24804ed1bf35a0c0974101d48d21d2ceed3561c302dc59521e4"
-    },
-    {
-      "path": "accounts/tests/auth.test.mjs",
-      "bytes": 33051,
-      "sha256": "c0c9a0e3f46171a155656976f9538cc086f7087864946c9ae059c329df26f9f4"
-    },
-    {
-      "path": "accounts/tests/browser-fixture.html",
-      "bytes": 1001,
-      "sha256": "645de9660cb3927335b9b7027f1fa495e5926741e445492b9f4c77e86d29b95f"
-    },
-    {
-      "path": "accounts/tests/browser-fixture.mjs",
-      "bytes": 2980,
-      "sha256": "59b759001acc9b3e6c7d31dbaefd43f05c27e5eba4cf4187c015bc69759432c2"
-    },
-    {
-      "path": "accounts/tests/browser-storage-fixtures.mjs",
-      "bytes": 7986,
-      "sha256": "711d08d1f079c8411d2b80dff796153feb9caa12b02d7264aa3adc02c653e05f"
-    },
-    {
-      "path": "accounts/tests/browser-storage.test.mjs",
-      "bytes": 22355,
-      "sha256": "184621c3ea4feecba19971ac48f4ddcecf69701d6a23d4ac7ddd3a5071ce644c"
-    },
-    {
-      "path": "accounts/tests/fixtures.mjs",
-      "bytes": 4161,
-      "sha256": "a30066e045f4f2d6b304541311003442668bd865c7e7c9518398fdae22d0daa0"
-    },
-    {
-      "path": "backend/CONTRACT.md",
-      "bytes": 13535,
-      "sha256": "f80c240a2d8c9ad627a7e9c6c9b56b1c890a719cee486dff4acc3838e602aa8a"
-    },
-    {
-      "path": "backend/README.md",
-      "bytes": 2453,
-      "sha256": "a67dd8ff7a5066fc1d9b5d670e68b619b232b4868b1704b621584367456aa3c0"
-    },
-    {
-      "path": "backend/db/schema.ts",
-      "bytes": 6390,
-      "sha256": "b891c151aedb0608348e47afa28fe59316197b103603073673991c35716ed598"
-    },
-    {
-      "path": "backend/integration/accounts.test.mjs",
-      "bytes": 9503,
-      "sha256": "670d896b36fbf30f1d1f5dbe466b5c9870f43490f2a4fc55ed8a7f2052add037"
-    },
-    {
-      "path": "backend/integration/canonical.test.mjs",
-      "bytes": 24789,
-      "sha256": "c04514118e5515dc1dafd9ca3ebef21bf72c924da98abc761c1a869d4f770231"
-    },
-    {
-      "path": "backend/migrations/0001_learner_data.sql",
-      "bytes": 5078,
-      "sha256": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2"
-    },
-    {
-      "path": "backend/package.json",
-      "bytes": 375,
-      "sha256": "4db040ff4dfc44f524a0642322b8650aeebe56f8b2be426cfffc5b2d5fb8899d"
-    },
-    {
-      "path": "backend/scripts/check.mjs",
-      "bytes": 1506,
-      "sha256": "a3ac40265c840e49681b5a5d1f0a136bcfebfe94794c76ae9ce3719361f62275"
-    },
-    {
-      "path": "backend/src/canonical-engine.mjs",
-      "bytes": 9246,
-      "sha256": "71ccc731c88ed6f56d991f5f3e065ea4ecdf3329fa17b0c7f0cd6535c3317e3c"
-    },
-    {
-      "path": "backend/src/contracts.mjs",
-      "bytes": 8636,
-      "sha256": "d0f7a76ce9b87c805a7b12d5078ba20ecb370817cfa6bfc61cab6d3750c8ac40"
-    },
-    {
-      "path": "backend/src/d1-repository.mjs",
-      "bytes": 10948,
-      "sha256": "eb6a4a99e5c66b6a628aa1877b85c7adaee6f400832db04c83c0816249fad30d"
-    },
-    {
-      "path": "backend/src/durable-client.mjs",
-      "bytes": 14051,
-      "sha256": "9ba52fe937cf8a6f0e76e20bc86749c450b168b07f89450c074611a59e0c9626"
-    },
-    {
-      "path": "backend/src/http-handler.mjs",
-      "bytes": 7254,
-      "sha256": "c512e1b5b105aeb69f6c5959a5493bb3220bd6c82f7ffed49393efd74a278cc1"
-    },
-    {
-      "path": "backend/src/index.mjs",
-      "bytes": 447,
-      "sha256": "0c836564bc73ba7122446414d001cdd3166af5ede60ce4cfabdd7b8f8df3ed0b"
-    },
-    {
-      "path": "backend/src/learner-service.mjs",
-      "bytes": 11248,
-      "sha256": "97c9f6676cb84bd009e1c5769be255ec96c849e802b72eeb7143a17114f3a6b3"
-    },
-    {
-      "path": "backend/src/local-state-validation.mjs",
-      "bytes": 5562,
-      "sha256": "bd442fc82e1e163ba8ef9577d06b3af6ee54f302c3b6fbdc00d2bd1a5e231293"
-    },
-    {
-      "path": "backend/test-support/fixtures.mjs",
-      "bytes": 3508,
-      "sha256": "20df34e633fab8457d73b272f19b7f522023798c911ebe9445ac6c056ebcda03"
-    },
-    {
-      "path": "backend/test-support/sqlite-d1.mjs",
-      "bytes": 2936,
-      "sha256": "e3b7931aa58889ee660bfa562f65d68127d6232f145e0f0f5b261a59528b326e"
-    },
-    {
-      "path": "backend/tests/client.test.mjs",
-      "bytes": 22689,
-      "sha256": "5989090c69531c7597f7b2e2450d6f6eba8c6ec608dba16f00ad252c778a69e8"
-    },
-    {
-      "path": "backend/tests/http.test.mjs",
-      "bytes": 5729,
-      "sha256": "6cb5e4235f3ef153cf525a38eeac39bebd4df767a14a82f317749b4ea8128f89"
-    },
-    {
-      "path": "backend/tests/persistence.test.mjs",
-      "bytes": 9324,
-      "sha256": "7ca6fa39d8597908324d7e77545dd983f988a6b9be736c1b5d287181e232a3d0"
-    },
-    {
-      "path": "backend/v2/CONTRACT.md",
-      "bytes": 10494,
-      "sha256": "0e0d323fc3f7045036d225650020f21788eaaf638971383a4d3b34a7dd630a82"
-    },
-    {
-      "path": "backend/v2/README.md",
-      "bytes": 1161,
-      "sha256": "b66f131e87f6a748b21911c05d5497a4a6716ebdf304c83cf23c1bf2ab724288"
-    },
-    {
-      "path": "backend/v2/db/schema.ts",
-      "bytes": 11602,
-      "sha256": "16ab4cd851a328b85bdce7b51de1d958f2aa4575f5b83a108fe2d90d661e6cc5"
-    },
-    {
-      "path": "backend/v2/integration/account-storage.test.mjs",
-      "bytes": 19131,
-      "sha256": "1475f8bc8f30d442df657827c0d12ef27493c8dd7777c36dd9eafb498a970ddb"
-    },
-    {
-      "path": "backend/v2/integration/capacity.test.mjs",
-      "bytes": 18527,
-      "sha256": "822868d6a62dbb26b557a44c6e79cba27fc8b0f107faa0a1ec877adb55d5696a"
-    },
-    {
-      "path": "backend/v2/migrations/0002_fragmented_storage.sql",
-      "bytes": 12258,
-      "sha256": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3"
-    },
-    {
-      "path": "backend/v2/package.json",
-      "bytes": 522,
-      "sha256": "543aafd74e5f207097cc2bb98328743beea38f907d123978315163ecb1849dbd"
-    },
-    {
-      "path": "backend/v2/scripts/check.mjs",
-      "bytes": 1839,
-      "sha256": "c75dfe03eca25533efc4d6fb37c7caa6299ac57bdbe2abe892eda5c4833a0e95"
-    },
-    {
-      "path": "backend/v2/src/canonical-engine.mjs",
-      "bytes": 9974,
-      "sha256": "4131d37ed8d231bf8f81d5c9e8a85297a0f07eacd0ec932ba03aea90c215bef8"
-    },
-    {
-      "path": "backend/v2/src/capacity.mjs",
-      "bytes": 3157,
-      "sha256": "1114b10abae650df3f239bf36a4cb55b26e9a0b74ae51606bed3102cf0b6854a"
-    },
-    {
-      "path": "backend/v2/src/d1-repository.mjs",
-      "bytes": 23542,
-      "sha256": "a61e896140283e04fceacc9842cf76bc82c885f9d13396c1c2081d7b7f6d2faa"
-    },
-    {
-      "path": "backend/v2/src/durable-client.mjs",
-      "bytes": 2611,
-      "sha256": "ae5b2537257727bb39ee4a9e2d1b5adfc31b662b0cac0068f2ea50aa0ae3f0d1"
-    },
-    {
-      "path": "backend/v2/src/fragment-codec.mjs",
-      "bytes": 4492,
-      "sha256": "05b6f2866f0a89848dbd0ea3466fb9a1e70f983ca0bb1ffbc5e405c300e20690"
-    },
-    {
-      "path": "backend/v2/src/http-handler.mjs",
-      "bytes": 9643,
-      "sha256": "86eabd4eee6bee2f86a5f7ac9276d3bc796b746d38a2ded4db2e151b82cd0a81"
-    },
-    {
-      "path": "backend/v2/src/index.mjs",
-      "bytes": 321,
-      "sha256": "b028b7deb4bb8fd87c44ca1b3505d8ad191bac16ead7c3a0c1b3ef35ea6faf74"
-    },
-    {
-      "path": "backend/v2/src/json-budget.mjs",
-      "bytes": 2383,
-      "sha256": "17ed54d02d4c73fd598fabe1ebabc7cff4db4c6ed0ae1d594f37190be5451161"
-    },
-    {
-      "path": "backend/v2/src/learner-service.mjs",
-      "bytes": 13498,
-      "sha256": "8c399848cb0174b75bc2b98359123d01badadb364596995113fb1599affde154"
-    },
-    {
-      "path": "backend/v2/src/request-identity.mjs",
-      "bytes": 579,
-      "sha256": "effc6cc4557c4c765ccfcf9365c085f07032742bfe49c6b0dc3df96a030133d0"
-    },
-    {
-      "path": "backend/v2/test-support/capacity-fixtures.mjs",
-      "bytes": 4678,
-      "sha256": "a2f25ea92d3ee9ecd964ac3ba6a5533a5abf73ee7eca8e6c7001842fc4d360d0"
-    },
-    {
-      "path": "backend/v2/test-support/real-runtime.mjs",
-      "bytes": 5446,
-      "sha256": "d04db77ba0dfc85f1a1b7932fdf9eb7a477409ace1237af86c6d45363c89dd72"
-    },
-    {
-      "path": "backend/v2/tests/fragment-codec.test.mjs",
-      "bytes": 3323,
-      "sha256": "a3f66edaf92957d115abebea911769ea93b871ab7f81d2640ac0ac7373f1ba9d"
-    },
-    {
-      "path": "backend/v2/tests/http.test.mjs",
-      "bytes": 3383,
-      "sha256": "25c948e4049e46b1e9b93c7a0510773b2b445bbd0f309c6014b9ea4af404d39e"
-    },
-    {
-      "path": "backend/v2/tests/json-budget.test.mjs",
-      "bytes": 1127,
-      "sha256": "dabdc39a3daa67de9c4bc7302d6dd8a3ec3c54ba898fb23ad876048cc0d22eb6"
-    },
-    {
-      "path": "backend/v2/tests/repository.test.mjs",
-      "bytes": 24849,
-      "sha256": "ef09929248349a88fea93f640697376d126daf1d4ef8420d3fced16d903b9bef"
-    },
-    {
-      "path": "docs/BRAND_ASSET_PROVENANCE.md",
-      "bytes": 888,
-      "sha256": "0b4ed346d13c480588a60b0e37f999a631f7aa290bbd39e21027ef77081bf07c"
-    },
-    {
-      "path": "docs/CHALLENGE_DELTA.md",
-      "bytes": 1534,
-      "sha256": "84c2b1382816ab7d7fe765dc6bc1597abc035a9af72bc69fc4f5b1d56b4c4f75"
-    },
-    {
-      "path": "docs/CONTENT_PROVENANCE.md",
-      "bytes": 2151,
-      "sha256": "57294126bb7a650a3cfde083fdefaf56db5a7684581496b5908ffafb29719394"
-    },
-    {
-      "path": "docs/CONTENT_RIGHTS.md",
-      "bytes": 1648,
-      "sha256": "c31b450a6fd4d2c5351a0931bf4c927625a9c761bf9f200eca1ecc0da9345ed9"
-    },
-    {
-      "path": "docs/D1_ACCOUNT_ACTIVATION.md",
-      "bytes": 853,
-      "sha256": "023ad16753608dca2937e86907933c97f278897507789679714b669e3e3fd143"
-    },
-    {
-      "path": "docs/HOSTED_ACCEPTANCE.md",
-      "bytes": 1755,
-      "sha256": "4ae62195d6c24708474fd8438da19f2e2f1396ea23b29d00f050b5fee999d68c"
-    },
-    {
-      "path": "docs/OWNER_DECISIONS.md",
-      "bytes": 1199,
-      "sha256": "d1b64ba2fa4934cd935aaf1acbdd2972dc46f208231a45b5a3457d4a474424f5"
-    },
-    {
-      "path": "docs/PUBLIC_READINESS.md",
-      "bytes": 2257,
-      "sha256": "bc5960a290cd1e9435dc3777c9c2a6cfd21e57d9593f4c36d33ff8a28e0c05ba"
-    },
-    {
-      "path": "docs/RELEASE_HANDOFF.md",
-      "bytes": 1436,
-      "sha256": "07a2d5bae583743b3f25d1506168e678046b100b5661d1e5af00865e9980520b"
-    },
-    {
-      "path": "docs/REPRODUCIBILITY.md",
-      "bytes": 2440,
-      "sha256": "d335ef36179b0f40369feebceb64591434620d3192e2e5df45bbaccf1505bce3"
-    },
-    {
-      "path": "docs/SOURCE_AUTHORITY.md",
-      "bytes": 3499,
-      "sha256": "f107801fbdb569bbd0589b0b794ed34b145b407a0ba8fd801227650e4859e2e4"
-    },
-    {
-      "path": "library/CONTENT-LICENSE-NOTICE.md",
-      "bytes": 912,
-      "sha256": "e32416959bf13f56cfe3fb1c73dff2ac738aaa2ae222eff9996d80fca797464d"
-    },
-    {
-      "path": "library/MANIFEST.json",
-      "bytes": 20059,
-      "sha256": "3b65e9b04c82f9d6523cad8488203156ae4b5e56ef85480f4eb46c16b5529e85"
-    },
-    {
-      "path": "library/README.md",
-      "bytes": 2849,
-      "sha256": "4cd90aaed73a13507efb43a0833008c13f61206a327e9956da5a098450520943"
-    },
-    {
-      "path": "library/content/decks/algorithms-i.json",
-      "bytes": 175350,
-      "sha256": "8bf9a3f264ea7e3c3f0067facd0de2a9c0e1cec7db279bd879af4c460650b816"
-    },
-    {
-      "path": "library/content/decks/analytical-chemistry.json",
-      "bytes": 180859,
-      "sha256": "6828cd6622d87b86811a57c9109b58ec0e128e08139bb32fa5c2c929aa01ea5a"
-    },
-    {
-      "path": "library/content/decks/applied-statistics-i.json",
-      "bytes": 117925,
-      "sha256": "bc05c083c2f5d8327a5dab581547c75ed04ec74e8487d3ba4c3e06332e271d09"
-    },
-    {
-      "path": "library/content/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
-      "bytes": 169920,
-      "sha256": "aba3d0c5245cae3d87795d716870a9ac2252161d2fbe7cd669aa4bc3f210a4cc"
-    },
-    {
-      "path": "library/content/decks/bayesian-inference.json",
-      "bytes": 162129,
-      "sha256": "cf1de040c22877660cf9285626d8375280a4d4d0a278149565ac7bcc6f54b914"
-    },
-    {
-      "path": "library/content/decks/behavioral-and-experimental-economics.json",
-      "bytes": 183605,
-      "sha256": "3e38b0fee42e19ccef9097fde12b0f5221f742e156499e29f74cb97a7b867597"
-    },
-    {
-      "path": "library/content/decks/biochemistry.json",
-      "bytes": 202863,
-      "sha256": "d3589b4aecf3edf4d6f4658404afc7db74d7c20cb294e150cc7f0cca34f918b3"
-    },
-    {
-      "path": "library/content/decks/biology-i.json",
-      "bytes": 157154,
-      "sha256": "30e270cdbc6880ceb6a6c8afade0955e1cb60160879d71c469812dcf840075c3"
-    },
-    {
-      "path": "library/content/decks/biology-ii.json",
-      "bytes": 147079,
-      "sha256": "33bfeda9096cdf60446b6033657a34cd095fa9f9342f8c35a02ee25339d1882b"
-    },
-    {
-      "path": "library/content/decks/calculus-i.json",
-      "bytes": 131608,
-      "sha256": "d9c9e879c38d9fda1c32340190268c48322cc078c585a197cc44e1c581d294e1"
-    },
-    {
-      "path": "library/content/decks/calculus-ii.json",
-      "bytes": 134788,
-      "sha256": "666d658955b419eaaca6cd04fea1db91612b58c25dec38bf83e77d1e588332dc"
-    },
-    {
-      "path": "library/content/decks/causal-inference.json",
-      "bytes": 154087,
-      "sha256": "902d768fa0c502f7ee2c24c8dede26f597a4fbc9adc84473fbc7382f898bfeb3"
-    },
-    {
-      "path": "library/content/decks/cell-biology.json",
-      "bytes": 196112,
-      "sha256": "b4105ebe6aa1329fef22e1a0d518595f1cdf8471f5c3acd074ff20a0f039c0e5"
-    },
-    {
-      "path": "library/content/decks/chemistry-laboratory-and-measurement.json",
-      "bytes": 186423,
-      "sha256": "c897e52cbda029ac98ea194e1e8b7966ec5284e97ef87f6f7ade966300ad4792"
-    },
-    {
-      "path": "library/content/decks/college-algebra-and-precalculus.json",
-      "bytes": 168154,
-      "sha256": "e10a87c9d553ca0003da84f405df2dde4f9ecdcd26bc224eb0b11453ec0e9b16"
-    },
-    {
-      "path": "library/content/decks/computer-networks.json",
-      "bytes": 204294,
-      "sha256": "8822796ec22a06c5fc12af57194a3023a076ee3c18bcc020e16507ca691d32f5"
-    },
-    {
-      "path": "library/content/decks/computer-systems.json",
-      "bytes": 178057,
-      "sha256": "4a7fbec2335f1138d4430b92ab10403d78fb9a21d09598b33b4b8dd433f33b64"
-    },
-    {
-      "path": "library/content/decks/data-structures.json",
-      "bytes": 180335,
-      "sha256": "02626705b6694586c839a7c9da3c4383a1ff35b589a8b212832eaaa3bc9bd07b"
-    },
-    {
-      "path": "library/content/decks/data-systems.json",
-      "bytes": 173692,
-      "sha256": "d7e349c404f85176447c1665d6a32531c305b9e0804c5a82bebbcab33eba7271"
-    },
-    {
-      "path": "library/content/decks/databases-i.json",
-      "bytes": 196366,
-      "sha256": "281c52322e720a288b541b8c7c789e699838e9e820c7ba52392d98df1321b17c"
-    },
-    {
-      "path": "library/content/decks/discrete-mathematics.json",
-      "bytes": 152255,
-      "sha256": "562d95f9d8155fb3cf2e8f1b7871ec7fd5d96c6620b97683b9baac1b1b279c68"
-    },
-    {
-      "path": "library/content/decks/ecology.json",
-      "bytes": 207139,
-      "sha256": "cedab1e9d205abca40437c7b1e15e9d4ea16d21bfc449583586acf6e545830c0"
-    },
-    {
-      "path": "library/content/decks/econometrics-i.json",
-      "bytes": 172186,
-      "sha256": "6ddcd8c88cb64146c8ffdf79c880beedfede18856070aa3d351651bde226e801"
-    },
-    {
-      "path": "library/content/decks/econometrics-ii.json",
-      "bytes": 170562,
-      "sha256": "50b634eab51e5e5999a9d4229eb33cfe7dbadc14e776e01105496e4ae40d1d22"
-    },
-    {
-      "path": "library/content/decks/economic-foundations.json",
-      "bytes": 148329,
-      "sha256": "9a385248c7c418f97cff41f94ea573f522cc91cf69b9016ebc0f7f409cb0173e"
-    },
-    {
-      "path": "library/content/decks/electricity-and-magnetism-i.json",
-      "bytes": 183260,
-      "sha256": "0ad3f1df040865ce50adac6d783d829ac891c37917279551e7619066d75362c4"
-    },
-    {
-      "path": "library/content/decks/evolutionary-biology.json",
-      "bytes": 209064,
-      "sha256": "c9ff5ac433c421bf9d383e401a5cd77fab7cbc122d9e0c45d4a69091cd926a71"
-    },
-    {
-      "path": "library/content/decks/experimental-design.json",
-      "bytes": 176166,
-      "sha256": "8fa24c7ab09dbba444dd8719cdd81004d3ea841d279c00820471b420321e6a99"
-    },
-    {
-      "path": "library/content/decks/experimental-physics-and-measurement.json",
-      "bytes": 196844,
-      "sha256": "cd9c97dd1290d75ff2526b812036ee9ce2ec5facc9dc1aa32bd98214a420fb81"
-    },
-    {
-      "path": "library/content/decks/general-chemistry-i.json",
-      "bytes": 348764,
-      "sha256": "97bcf83e4cd640e66f0a6aa9fdb9440c2323a45b5a5cf9d0780456261a856dde"
-    },
-    {
-      "path": "library/content/decks/general-chemistry-ii.json",
-      "bytes": 192252,
-      "sha256": "9b60f7f5677e942cdd7ecd791eab08919e5a8583824df7e2c49d74d2f109ab81"
-    },
-    {
-      "path": "library/content/decks/genetics.json",
-      "bytes": 134705,
-      "sha256": "ee8daca8b4ddc7973735a777dba988c9bf360ef6f2d63b297ef1bc4696c61185"
-    },
-    {
-      "path": "library/content/decks/immunology.json",
-      "bytes": 210640,
-      "sha256": "55b6ed2aecd76065a32d2c2b32b221e8cf860f12d572302852d60becc93c5ad9"
-    },
-    {
-      "path": "library/content/decks/inorganic-chemistry.json",
-      "bytes": 186823,
-      "sha256": "0993af0f555e64e8e9ffa23e0b82124023c25054fc720f4bb0e016d3fdc2cf47"
-    },
-    {
-      "path": "library/content/decks/linear-algebra-i.json",
-      "bytes": 189913,
-      "sha256": "fe31749c7211e76aff007407dd0373f3e397ead152687eb43394ac5388c06642"
-    },
-    {
-      "path": "library/content/decks/linear-algebra-ii.json",
-      "bytes": 211220,
-      "sha256": "c6f94cec3287a63c082b71c7beb4392a7c737fb0eb010323d3c37af3cbd7820b"
-    },
-    {
-      "path": "library/content/decks/macroeconomic-theory-i.json",
-      "bytes": 171619,
-      "sha256": "6d2b715dd5f0c5e7d5c999b3fb929eb339c25d98885435b38514f7fbd53d1684"
-    },
-    {
-      "path": "library/content/decks/macroeconomic-theory-ii.json",
-      "bytes": 188599,
-      "sha256": "7ade9f1bb532260a9cb17dcf1e1e8e317de3da0e406e694a37659a4cf886776a"
-    },
-    {
-      "path": "library/content/decks/mathematical-methods-for-economics.json",
-      "bytes": 178315,
-      "sha256": "b6f22217906d68a1205e5216594fdc7c40182762f9135d90c23d07ec2674ca2a"
-    },
-    {
-      "path": "library/content/decks/mathematical-methods-for-physics-i.json",
-      "bytes": 175552,
-      "sha256": "213d02e11430bdcca5529626a0576aae40eb7cc1526e7eb010d653a606216da7"
-    },
-    {
-      "path": "library/content/decks/mathematical-proof-and-foundations.json",
-      "bytes": 256047,
-      "sha256": "51e000bc6f4314dd083d5889704b9d7fa0e7bcc8fb458d246056097b491e9a02"
-    },
-    {
-      "path": "library/content/decks/mathematical-statistics.json",
-      "bytes": 224081,
-      "sha256": "94c42569c2cca15e5e158ce6415f984b7ffee267e62f489d9782aa459f3ccc7d"
-    },
-    {
-      "path": "library/content/decks/mechanics-i.json",
-      "bytes": 126551,
-      "sha256": "252cd1d6af24f87aafe9cb5ab33f2090d89943a702a418f27440211e806d2d44"
-    },
-    {
-      "path": "library/content/decks/mechanics-ii.json",
-      "bytes": 175190,
-      "sha256": "ea192ef22adff4ae2b5ea35724b0fc869e66a4ebf5bbbe05faf84ee85c1e00fa"
-    },
-    {
-      "path": "library/content/decks/microbiology.json",
-      "bytes": 208918,
-      "sha256": "1c1354a9e52e3f30332927b72a8d64ae52abe485a61415e9afa3262b4df88dfa"
-    },
-    {
-      "path": "library/content/decks/microeconomic-theory-i.json",
-      "bytes": 186619,
-      "sha256": "85d75e13516d249021d6b4146f99e5db0d32a104fd3fbb9318e05d3720bc81d5"
-    },
-    {
-      "path": "library/content/decks/microeconomic-theory-ii.json",
-      "bytes": 165439,
-      "sha256": "f5b2b6a08fda3f7fa2324391d8d885db6d6042161c6a25e399485b3eebd00509"
-    },
-    {
-      "path": "library/content/decks/modern-physics.json",
-      "bytes": 177706,
-      "sha256": "008411212f2a9ec6b9ca606327620a2c61c21bc621de3efbc95735b6bac60cb7"
-    },
-    {
-      "path": "library/content/decks/molecular-biology.json",
-      "bytes": 263446,
-      "sha256": "a4e196d189fa31a018cd2e12d574ee597735200fd9cf894ab371eb49b6b9141f"
-    },
-    {
-      "path": "library/content/decks/multivariable-calculus.json",
-      "bytes": 167222,
-      "sha256": "8a00a8481f73fc6c45c5d7b96bb3454cd3cc731682de9f87f428cd35ac290bba"
-    },
-    {
-      "path": "library/content/decks/numerical-analysis-and-scientific-computing.json",
-      "bytes": 155024,
-      "sha256": "30695dad5a7c42b005fde7b8d5461d213d3baebddfbcdcecfeeeb32316bc0fc9"
-    },
-    {
-      "path": "library/content/decks/optics.json",
-      "bytes": 161999,
-      "sha256": "7ccc509801155d76cfa65f5fd70ffd5adda4430d31b007ee2ff79057ce6211eb"
-    },
-    {
-      "path": "library/content/decks/optimization-mathematics-i-convex-optimization.json",
-      "bytes": 216711,
-      "sha256": "8a4e07a353dd426dc5feeff04a650daa31ddd9358e085586091b8a2fd8e4696d"
-    },
-    {
-      "path": "library/content/decks/ordinary-differential-equations.json",
-      "bytes": 249088,
-      "sha256": "5978fe08af84cb4e0a98fb7370bc5a97985ade4ff211866ea77e786caf11af1a"
-    },
-    {
-      "path": "library/content/decks/organic-chemistry-i.json",
-      "bytes": 181368,
-      "sha256": "df9f6f2649f72c942f86a99a97fef4dd36506910b85c21b99c356c486e83b6f1"
-    },
-    {
-      "path": "library/content/decks/organic-chemistry-ii.json",
-      "bytes": 171142,
-      "sha256": "f09c011d66511313b3eb9bb153f7d1f305de928d997ba6a33a45a67207b008dd"
-    },
-    {
-      "path": "library/content/decks/organic-chemistry-laboratory.json",
-      "bytes": 181180,
-      "sha256": "d8c1d9a9b69ce7cb5f0d04ba0b2e1dae58b1c71d3d4c03824ed52ad1733b99b9"
-    },
-    {
-      "path": "library/content/decks/physics-foundations.json",
-      "bytes": 129103,
-      "sha256": "f320e903c747802204cf5c95567dc4949f77f4da73dec66fdfe2a0922bb64214"
-    },
-    {
-      "path": "library/content/decks/physiology.json",
-      "bytes": 229793,
-      "sha256": "b7f5bef3e9904a2b3b49b5355664487ca2b7c04651e1b75d85b97cda33827b7c"
-    },
-    {
-      "path": "library/content/decks/probability-theory-i.json",
-      "bytes": 197059,
-      "sha256": "1009da01a93d2f87ed405325b989db8052cd0eae9beadf2fc19551c7997a3c67"
-    },
-    {
-      "path": "library/content/decks/probability-theory-ii.json",
-      "bytes": 163461,
-      "sha256": "1edd75287c5654f44dce41a0b56c82389087ab964da8a743e8023f5324a3c608"
-    },
-    {
-      "path": "library/content/decks/programming-i.json",
-      "bytes": 662573,
-      "sha256": "491bc4f481fca186e1b83ce0d74d3f0afddf32b1b853beaa2b3f6190430b7e9e"
-    },
-    {
-      "path": "library/content/decks/programming-ii.json",
-      "bytes": 633418,
-      "sha256": "d51c7a232aaf48967b5708514c75049db4ffa04e47279052bfb50fb78ce2b2ec"
-    },
-    {
-      "path": "library/content/decks/real-analysis-i.json",
-      "bytes": 226991,
-      "sha256": "1fafcc7a768708cc013717e5155d57016e5a9151486870a86ef30a7bfe6399d6"
-    },
-    {
-      "path": "library/content/decks/sampling-and-survey-methods.json",
-      "bytes": 175211,
-      "sha256": "7ddf78143ad5383777a09be487ef45a71825e65f8585b98b4e9d352ba55b761f"
-    },
-    {
-      "path": "library/content/decks/security-engineering-i.json",
-      "bytes": 159112,
-      "sha256": "807ddd01b08cf1d47392e02cde194dbfdd407eb344867899e32503e09cba2497"
-    },
-    {
-      "path": "library/content/decks/software-architecture.json",
-      "bytes": 115177,
-      "sha256": "12be984395d429c832e952df7528542346fad6eac22446d882b7587c4c4facb9"
-    },
-    {
-      "path": "library/content/decks/software-engineering-i.json",
-      "bytes": 197957,
-      "sha256": "028c34f60aabbde33ca9baa5bb2ddead0aa6441cdc5b48e47ccd1c0540c295f2"
-    },
-    {
-      "path": "library/content/decks/software-testing-i-foundations-and-test-design.json",
-      "bytes": 423655,
-      "sha256": "44e5d30bfaede3c21f5b471eb8d1e6af14b2a0c95f6870dfafc8e6c3f9a2af02"
-    },
-    {
-      "path": "library/content/decks/thermodynamics.json",
-      "bytes": 182745,
-      "sha256": "f23b7fb7d698dfe0a07537f2ada812f309b2643617f36572055a4d0b29443d78"
-    },
-    {
-      "path": "library/content/decks/time-series-analysis.json",
-      "bytes": 160326,
-      "sha256": "6fbd6778d838aa3e5f4525474254ae8d61c3fcd49e4eb908e9520cd582f451a3"
-    },
-    {
-      "path": "library/content/decks/waves-and-oscillations.json",
-      "bytes": 166644,
-      "sha256": "c5138db9c92e9cedcc2c12fb611259600a35322886c0f7876146181de9d1b509"
-    },
-    {
-      "path": "library/public-metadata.json",
-      "bytes": 460312,
-      "sha256": "51b8ddea29042162702a4f721302435188d5e2bb6281f3ae57f6a4ab7e9ddffe"
+      "bytes": 801,
+      "sha256": "7ca631db0f4772bdcc71fa0a797493b07ac801a7822add2e6e0d498ff809e7b5"
     },
     {
       "path": "package.json",
-      "bytes": 669,
-      "sha256": "a4d4126e822b04d1b2e35b76d41ce2172719aaa4e191abd1584d4c550879b860"
+      "bytes": 490,
+      "sha256": "60c74cec2623080d1d16d4f785d781c670715ecb8cab6bbc5a1fc3ba19a9b651"
     },
     {
-      "path": "release/source-authority.json",
-      "bytes": 3521,
-      "sha256": "ff358ba97a04a3384b4d8a8afd58e6b9a9c3880eedc62c0ef46b8bfc9d136a63"
+      "path": "release/deployed-v39.json",
+      "bytes": 1899,
+      "sha256": "87076cdc4e3a4b1871377d45c8a721b362f434e488509eba0bca8fb4873f1b6f"
     },
     {
       "path": "scripts/build-file-manifest.mjs",
@@ -840,29 +75,14 @@
       "sha256": "1f58bec79fedd92a08a01a3a4c480b8f528ba7f0f48d77756b166f7eb44ccec7"
     },
     {
-      "path": "scripts/test-durable.mjs",
-      "bytes": 1122,
-      "sha256": "b625a2d035972c928045e660624ef6c745e5593efc63fed9e1e6360844eb3140"
-    },
-    {
-      "path": "scripts/verify-public-readiness.mjs",
-      "bytes": 8162,
-      "sha256": "97fa68d00c99c35f6170802b5cc5f169968b207d1c270e666cd90d8d33d368e8"
-    },
-    {
       "path": "scripts/verify-release.mjs",
-      "bytes": 3241,
-      "sha256": "e085e8ed08cbae6a1f1658481634d10e6746547d77da39989fcb0ab2af7bf502"
-    },
-    {
-      "path": "scripts/verify-source-authority.mjs",
-      "bytes": 5630,
-      "sha256": "5a39fcae12c52b98c782b107060ccebb09d668ac38ac60819c90dde067a27c6f"
+      "bytes": 3160,
+      "sha256": "dd89a7d1006fc60dda82780032254e68a1de14ef71cc8fe3f6fbbc21dfef5b6c"
     },
     {
       "path": "site/.gitignore",
-      "bytes": 111,
-      "sha256": "1b834319f595aea98afad8ef4832c66d34401281d3f1c198de331938bf244163"
+      "bytes": 411,
+      "sha256": "3a69e576a9e0d4d1288806f6943eba4097e4e98ebfb5af791cab273e521263b8"
     },
     {
       "path": "site/.openai/hosting.json",
@@ -876,13 +96,13 @@
     },
     {
       "path": "site/.oxlintrc.json",
-      "bytes": 1591,
-      "sha256": "8b6e8a0b05a58ad99ba3a1090d699c571eaa00ed572f4727bf8eb49281ea42b9"
+      "bytes": 1677,
+      "sha256": "c89df6dd16f80480d1bc013f1bc50817f12d5244b917d97c1c12eb642a4643dc"
     },
     {
       "path": "site/app/api/learner/[...path]/route.ts",
-      "bytes": 486,
-      "sha256": "fb15817d929d8536cbe35ed67982d5c699cd2f8774a2e4c51e3d41117fe06b68"
+      "bytes": 2347,
+      "sha256": "5f372a25cde05808eb9b37194e22694210c6317502f29281f7be01cb887b48c1"
     },
     {
       "path": "site/app/chatgpt-auth.ts",
@@ -891,53 +111,978 @@
     },
     {
       "path": "site/app/globals.css",
-      "bytes": 777,
-      "sha256": "8ae55682d187926c67feb202c5169ff484db993178002e5e215152cc69191a66"
+      "bytes": 834,
+      "sha256": "9ad7e2b3302e56ee2bd3b21206d607b3ef19e86bd1276a2b8e0adbfcb7d8e7aa"
     },
     {
       "path": "site/app/layout.tsx",
-      "bytes": 1271,
-      "sha256": "0589646d697e6dc940f1a4dfd891d81e4ecc8243f567a84d9f310442a75539d5"
+      "bytes": 1737,
+      "sha256": "4b947cecb7613b2ae4ff5bca225054b2a18179cbc55731a589f2964fd8c8e47f"
     },
     {
       "path": "site/app/page.tsx",
-      "bytes": 6275,
-      "sha256": "1ef2a92a8026baa1e537f89978594c6b58f9bf51fa9724a266d1db487e10cfb1"
+      "bytes": 8782,
+      "sha256": "57b936fc1df5173d9ff1a4091aba50cf55c8f1374f89583d67c3b9aefde58887"
     },
     {
-      "path": "site/db/env.d.ts",
-      "bytes": 147,
-      "sha256": "64b383d2c27dda0440fe941cd7f3cf9d65680445bbf2555b94dc73a9be192afb"
+      "path": "site/backend/d1-integration/FILE_MANIFEST.json",
+      "bytes": 6500,
+      "sha256": "47bb451e2ed8c6a0c2e43833e8183652d65334a60a6cdcef2904a26bdea9bba4"
     },
     {
-      "path": "site/drizzle/0001_learner_data.sql",
+      "path": "site/backend/d1-integration/HOSTED_ACCEPTANCE.json",
+      "bytes": 14543,
+      "sha256": "b5bc90127ad9ef80e7c9b0967e096ae35ff22b5f76febc86a389200eaa9def50"
+    },
+    {
+      "path": "site/backend/d1-integration/HOSTED_ADAPTER.md",
+      "bytes": 9841,
+      "sha256": "d5634c6692ca46d68eec58a794900d26f6b2fc86b44584b3634ddd4b9a8c225b"
+    },
+    {
+      "path": "site/backend/d1-integration/HOSTED_EVIDENCE_CONTRACT.json",
+      "bytes": 5305,
+      "sha256": "db7bf7bf654e3c5c0c970d698a2f07808aa2b3efe24ff657a2b44165b3286699"
+    },
+    {
+      "path": "site/backend/d1-integration/README.md",
+      "bytes": 11008,
+      "sha256": "80e176db6cc8f218b8815f59ae342a993808bc81c376e77810f32ba1bee86464"
+    },
+    {
+      "path": "site/backend/d1-integration/SITES_D1_CONTRACT.json",
+      "bytes": 7859,
+      "sha256": "63fa1f62e21e2ea7e2a40e91882a7a53b742cf4de690d87628f0accdc717c0fe"
+    },
+    {
+      "path": "site/backend/d1-integration/drizzle/0000_meshful_learner_data.sql",
+      "bytes": 5298,
+      "sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "path": "site/backend/d1-integration/drizzle/0001_meshful_fragmented_storage.sql",
+      "bytes": 13021,
+      "sha256": "7a7e88d529fd1359e18d74b9cc8f2ecb75cd05708fa5b6bcc44198e5cda24a07"
+    },
+    {
+      "path": "site/backend/d1-integration/drizzle/meta/_journal.json",
+      "bytes": 365,
+      "sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec"
+    },
+    {
+      "path": "site/backend/d1-integration/generate-manifest.mjs",
+      "bytes": 5061,
+      "sha256": "ed6f82dc56c388b167cecea22781a8c5ff4dc87828edb8f14675cb1a54e2cc6e"
+    },
+    {
+      "path": "site/backend/d1-integration/inspect-applied-schema.mjs",
+      "bytes": 5005,
+      "sha256": "6c6ff5fb9135223aa5d2e48bcec85bbcf84bb814d7aefd0781a06ecfbaef0e0c"
+    },
+    {
+      "path": "site/backend/d1-integration/pack-sites-migrations.mjs",
+      "bytes": 9700,
+      "sha256": "6181b16d84e30d9a207b5d8701d48bff09612e2bb8283849a2a891726df0d5dc"
+    },
+    {
+      "path": "site/backend/d1-integration/package.json",
+      "bytes": 292,
+      "sha256": "e6f78afdc5c1bbd86f00df678a4b25b23ec985e4b5dba050721db9e4dc3bf54b"
+    },
+    {
+      "path": "site/backend/d1-integration/run-hosted-acceptance.mjs",
+      "bytes": 27397,
+      "sha256": "d31752f9bf66a4128158edc2a63e4b8f704ca8297b23ca3618662644e11508bc"
+    },
+    {
+      "path": "site/backend/d1-integration/tests/integration.test.mjs",
+      "bytes": 30804,
+      "sha256": "3e91e711c47db254113ba2333161a5ff047eb982d35747f3a4da3831e3c8b0ab"
+    },
+    {
+      "path": "site/backend/d1-integration/verify.mjs",
+      "bytes": 13811,
+      "sha256": "527fb820bb01287122b2555718aab78e80569e43d017d66c8cdf0abc1546976d"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/CONTRACT.json",
+      "bytes": 4204,
+      "sha256": "1e7265fd9f46f866d1d7dae3aa3fb26da6c46d990d2512cc192bea41243c91f4"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/FILE_MANIFEST.json",
+      "bytes": 5277,
+      "sha256": "ce4daed12f6b0a916d71d96743a8e9b76ea161617dd44623987f8a3e79206961"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/README.md",
+      "bytes": 2834,
+      "sha256": "298af9f151cfbca65c82b7885c03758a75bd39d99ac1515eb9a88561b2e0e782"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/build-case-fixed-package.mjs",
+      "bytes": 4209,
+      "sha256": "fb5fb7aa22d6b2891227bd570d679d59974219eb520e827d71be91b219d341d5"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/drizzle/0000_meshful_learner_data.sql",
+      "bytes": 5298,
+      "sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/drizzle/0001_meshful_fragmented_storage.sql",
+      "bytes": 13027,
+      "sha256": "6644a87087193b85df28964637600d5b2ee3e5562881bc31c46969741ecc7e78"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/drizzle/meta/_journal.json",
+      "bytes": 365,
+      "sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/evidence/LOCAL_WRANGLER_4_92_RECEIPT.json",
+      "bytes": 1452,
+      "sha256": "49f325ce9fefc7bf64c7824dfce286062b22a63ff4634ad7244a252373879a7a"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/evidence/WEBSITE_V12_FAILURE_RECEIPT.json",
+      "bytes": 2524,
+      "sha256": "df81189b80e6fb0a80cc02aa19f9cee0f04a1fdd881b61db86a78df7d298d2aa"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/generate-manifest.mjs",
+      "bytes": 4003,
+      "sha256": "c3ae7c18a862e5f9ef8cff4fcb2c6503b5b12ee3f47e98061609149e5d20cf65"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/inspect-case-fixed-schema.mjs",
+      "bytes": 4949,
+      "sha256": "3a1ee9a12bb0be3a5e7d25dc417b40593333e0595e73a17dba4015592baa8c25"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/pack-case-fixed.mjs",
+      "bytes": 4634,
+      "sha256": "efbc23c2403bde40cf2c7862ffe66f7cdd4c87de00b63c47a7c9ca2309995d9e"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/package.json",
+      "bytes": 283,
+      "sha256": "e528929eb43382324d774e5e518d928d84d51f27903ec83e111811dc89b42140"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/tests/integration.test.mjs",
+      "bytes": 11827,
+      "sha256": "330edd61e5a2a84e3a8c5e3a7d047f402b11414980101ce817a9d6dd697129eb"
+    },
+    {
+      "path": "site/backend/d1-sites-case-fix/verify.mjs",
+      "bytes": 8793,
+      "sha256": "6cb2813bb55f12057e7546eb0a7add220e80e49dd24c8150df6968c807cd117a"
+    },
+    {
+      "path": "site/components.json",
+      "bytes": 516,
+      "sha256": "9928283696d86836422959a2c520df83a718d31ffbcab533a14ca8dca2c8d475"
+    },
+    {
+      "path": "site/components/ui/accordion.tsx",
+      "bytes": 2664,
+      "sha256": "33e1c60ba503f4eb36f9a8b1f68b236174b11656d8efea6bac65abddda2f9019"
+    },
+    {
+      "path": "site/components/ui/alert-dialog.tsx",
+      "bytes": 5301,
+      "sha256": "ed0f1fc432bca4c72f9dd8741ae2268a00d2d3429ff1149bf463c4271b13d8e9"
+    },
+    {
+      "path": "site/components/ui/alert.tsx",
+      "bytes": 2060,
+      "sha256": "e760c470414c9e617d7292094146d906352fee3b1526b790a611d4a118e79196"
+    },
+    {
+      "path": "site/components/ui/aspect-ratio.tsx",
+      "bytes": 406,
+      "sha256": "b7fb499905e441a0602392ce118828425ad059079060109694d01f9fac00ad20"
+    },
+    {
+      "path": "site/components/ui/attachment.tsx",
+      "bytes": 6132,
+      "sha256": "dcb9e899f1322158f016d75c400fa8cce9b797ea49bec65528bac686cee2ec5c"
+    },
+    {
+      "path": "site/components/ui/avatar.tsx",
+      "bytes": 3056,
+      "sha256": "342f32b683937b826cdff2999d5e3057836d459aa43eadb0c3538b818d195b9a"
+    },
+    {
+      "path": "site/components/ui/badge.tsx",
+      "bytes": 1934,
+      "sha256": "5706189b86e8670499fb33f37147dd6f65c39d59eef5211e34157f2952c35e32"
+    },
+    {
+      "path": "site/components/ui/breadcrumb.tsx",
+      "bytes": 2602,
+      "sha256": "b28b76d6f8d0feafbbeff2220cf83f9a6b03d8c81f0145b3af4c7d19933ab2c0"
+    },
+    {
+      "path": "site/components/ui/bubble.tsx",
+      "bytes": 4828,
+      "sha256": "dfb9f52ae3b89e4a419b336c3893ab6fb658fc324fb402759d878d54e3b2db5a"
+    },
+    {
+      "path": "site/components/ui/button-group.tsx",
+      "bytes": 2494,
+      "sha256": "79ad8fb6644a775cc49131c1aa737ca26cae6a563beec0fa52ef6e8d85202fab"
+    },
+    {
+      "path": "site/components/ui/button.tsx",
+      "bytes": 3247,
+      "sha256": "081d2a1cb4f3aec636a6894d9eff4e90d476d5db85b82d0399c1f4d18517112e"
+    },
+    {
+      "path": "site/components/ui/calendar.tsx",
+      "bytes": 8503,
+      "sha256": "e7bc682eff8f2215e6b0aab40d1afb7ee927c5f5bef348ccff207631b9261658"
+    },
+    {
+      "path": "site/components/ui/card.tsx",
+      "bytes": 2645,
+      "sha256": "625fce5e16577a45108a86d7afcd70b8931cb2032abe0d6a3faf1010f666d672"
+    },
+    {
+      "path": "site/components/ui/carousel.tsx",
+      "bytes": 5727,
+      "sha256": "7444126492d4e0b85b1270f0d83a0955350fa95b3d3fb7b88edc2a5c2b4e5d14"
+    },
+    {
+      "path": "site/components/ui/chart.tsx",
+      "bytes": 10581,
+      "sha256": "56ab0e0b41f0cc7902414e046ea4f710bdbf0b756028672ea8c7e5137a278f2b"
+    },
+    {
+      "path": "site/components/ui/checkbox.tsx",
+      "bytes": 1538,
+      "sha256": "56b2869e5478f38238e6a3d8aefabfbe8af565b38b2ffad06466487b3eacf154"
+    },
+    {
+      "path": "site/components/ui/collapsible.tsx",
+      "bytes": 664,
+      "sha256": "3fdf7ef1ca89c4d85de5ecbb25813d0f572003a53b021baf43c5f3523e48ec97"
+    },
+    {
+      "path": "site/components/ui/combobox.tsx",
+      "bytes": 9135,
+      "sha256": "282041e2e8c52cc12e7bbc717bbd3f8c9c5ba18e7fa75b97053bc79687e1181e"
+    },
+    {
+      "path": "site/components/ui/command.tsx",
+      "bytes": 5029,
+      "sha256": "9c1eae65aa105935a34c6b736f673b71a2ef939dde53dce29d986221edbf1f9f"
+    },
+    {
+      "path": "site/components/ui/context-menu.tsx",
+      "bytes": 8166,
+      "sha256": "05c3646b452f5e3b9eb952eeba3d90657606d2b0875cb77652cdb5eadba0eb5c"
+    },
+    {
+      "path": "site/components/ui/dialog.tsx",
+      "bytes": 4087,
+      "sha256": "8bc85def62538b4e62e8530c6b0ba167a192c38519c05f104bf6e10de73b811f"
+    },
+    {
+      "path": "site/components/ui/direction.tsx",
+      "bytes": 105,
+      "sha256": "2dea8a95accb1723db2454ccc858697d5b1f1454568cf4da5e8fcbd0cf7cc1ee"
+    },
+    {
+      "path": "site/components/ui/drawer.tsx",
+      "bytes": 11396,
+      "sha256": "b7ac53d0e5d1fed25fc3f2ac5f5a36e247ca684c677ac376829fa8a7c039b79e"
+    },
+    {
+      "path": "site/components/ui/dropdown-menu.tsx",
+      "bytes": 8809,
+      "sha256": "efc088f3d79f64cf96e222701ae23dcf385b53947b3cd57ffb7be6f5dadcbfe2"
+    },
+    {
+      "path": "site/components/ui/empty.tsx",
+      "bytes": 2415,
+      "sha256": "bf54bac4881b79f6a53f55e70c18640f58a058add88aed763c71be35c4f64f59"
+    },
+    {
+      "path": "site/components/ui/field.tsx",
+      "bytes": 6303,
+      "sha256": "79023ca89aae39f9cffa83a9483c9c672099b4547cc821486283db61c6ae9327"
+    },
+    {
+      "path": "site/components/ui/hover-card.tsx",
+      "bytes": 1863,
+      "sha256": "d8cb7270c5893213fc00b5f270f9bc461e2d7ce5b81f77b8778253a1aeda6a2c"
+    },
+    {
+      "path": "site/components/ui/input-group.tsx",
+      "bytes": 5289,
+      "sha256": "2e65ddecb4401220be374cc6cfc42344538266cafeb2e590b3c760c7ed6b490a"
+    },
+    {
+      "path": "site/components/ui/input-otp.tsx",
+      "bytes": 2558,
+      "sha256": "867f568259caac95f682d128d72e681b3fe7c31701a396eacc9284401d917a6a"
+    },
+    {
+      "path": "site/components/ui/input.tsx",
+      "bytes": 1046,
+      "sha256": "6763c86c34c1c07826386d376f5da8fe2e41585bff3615716d5da88915e088d8"
+    },
+    {
+      "path": "site/components/ui/item.tsx",
+      "bytes": 4888,
+      "sha256": "9c5e45e6c4aae5b9c4c1304e1f1208d32681ab616a6e0de9de6e0d6b22690592"
+    },
+    {
+      "path": "site/components/ui/kbd.tsx",
+      "bytes": 842,
+      "sha256": "bdfb38a4f7b9b604e196b5cee0d86f12311dae72946f0dbf5928c8ad0638178f"
+    },
+    {
+      "path": "site/components/ui/label.tsx",
+      "bytes": 524,
+      "sha256": "e4a6fb662c44a44c468d16d79d02b3a3e5bf7b77bd50aef1e586c4d9613df0f6"
+    },
+    {
+      "path": "site/components/ui/marker.tsx",
+      "bytes": 1962,
+      "sha256": "cd1e872384cf5001e48b4dc3cc2bb011eba9700561d41c83a89e872b60baf175"
+    },
+    {
+      "path": "site/components/ui/menubar.tsx",
+      "bytes": 8315,
+      "sha256": "a3715f8e8b78261f5784929c532e100759c58e831c91e842438730797bc9a124"
+    },
+    {
+      "path": "site/components/ui/message-scroller.tsx",
+      "bytes": 4070,
+      "sha256": "9512c586d1b0885cf3ae4f1c3dd4281cbdfec7428fe98ff48a66b4ba2a7319f4"
+    },
+    {
+      "path": "site/components/ui/message.tsx",
+      "bytes": 2246,
+      "sha256": "2fedcc64ed8563a44f6697615e77574d96f819fe6e5e2fa8a555e30f8ed6bbd7"
+    },
+    {
+      "path": "site/components/ui/native-select.tsx",
+      "bytes": 2133,
+      "sha256": "3aafb74b98c039dae4eb2c64c47ec6f5d61fdc888c057de47550346f702f434b"
+    },
+    {
+      "path": "site/components/ui/navigation-menu.tsx",
+      "bytes": 7436,
+      "sha256": "c8e64bf5241145b512ae18f1062da8275691edf927736496a3860bec76ad6fa1"
+    },
+    {
+      "path": "site/components/ui/pagination.tsx",
+      "bytes": 2928,
+      "sha256": "1f3c1713e8824cca7c3c0edacf9da7b0114bfda58640771b8fe0bc6179b370ce"
+    },
+    {
+      "path": "site/components/ui/popover.tsx",
+      "bytes": 2586,
+      "sha256": "7376624438588e2d64b6e0c5cdf82cbc5fd4530bbcf1f0235c5f3ee08d12e877"
+    },
+    {
+      "path": "site/components/ui/progress.tsx",
+      "bytes": 1751,
+      "sha256": "0d8ddec9731940e104b851cf3ac67d2fa8589b289824317a9e8f326e090ba65a"
+    },
+    {
+      "path": "site/components/ui/radio-group.tsx",
+      "bytes": 1843,
+      "sha256": "43f2d6c2f5bdd4a26c57d93e6f141be20472f9bb8777d9a0d61cd8a5e281a999"
+    },
+    {
+      "path": "site/components/ui/resizable.tsx",
+      "bytes": 1681,
+      "sha256": "ea7b85817d4dc70866e0bcf15264e7e1bd7e1893eb4404261fbc23a4d6ff9029"
+    },
+    {
+      "path": "site/components/ui/scroll-area.tsx",
+      "bytes": 1632,
+      "sha256": "730c4cc49f8f1b705eb1389cd32c774056a0a2a7a48a9b092cbe44c608be3a0b"
+    },
+    {
+      "path": "site/components/ui/select.tsx",
+      "bytes": 6700,
+      "sha256": "45489c502a21fdd5271481d64ad8f762181c9653d8d26bdc6f75450b78c3c852"
+    },
+    {
+      "path": "site/components/ui/separator.tsx",
+      "bytes": 551,
+      "sha256": "92ad5065f03d7edc98f367e729f3ec84ece1d99ee8cd0d3a8137f266d4ab3d8a"
+    },
+    {
+      "path": "site/components/ui/sheet.tsx",
+      "bytes": 4446,
+      "sha256": "adb432b6f9d7a4733caa45ba8bf510a8a7ff0f6d0dd3aa1f013959fb61268234"
+    },
+    {
+      "path": "site/components/ui/sidebar.tsx",
+      "bytes": 21779,
+      "sha256": "aa3322ca63f098aa1d2abf750f9d097da07362fce25939357f2cefc9b6a03988"
+    },
+    {
+      "path": "site/components/ui/skeleton.tsx",
+      "bytes": 278,
+      "sha256": "4c342102b2bbf5bd8c04fa151fe5c13c42faee2f9587a3586c27322020ca35d1"
+    },
+    {
+      "path": "site/components/ui/slider.tsx",
+      "bytes": 1879,
+      "sha256": "af657e73d672f4dd205f19abf151d21a172cf36abfdca49fd7014a20e12367a9"
+    },
+    {
+      "path": "site/components/ui/spinner.tsx",
+      "bytes": 360,
+      "sha256": "8ddbb330e5564a1f53026da36c2322ed4b027687e91a88f63348ab10f26ae0cb"
+    },
+    {
+      "path": "site/components/ui/switch.tsx",
+      "bytes": 1818,
+      "sha256": "04b085443a1c6a72d408e6eb7dd45df881ca27814415b81b39f614806b52c8fc"
+    },
+    {
+      "path": "site/components/ui/table.tsx",
+      "bytes": 2418,
+      "sha256": "88f2ba7877eea7f34a5da18b7fa096eb2c7bed602677ce54f5494b494c5afc2e"
+    },
+    {
+      "path": "site/components/ui/tabs.tsx",
+      "bytes": 3510,
+      "sha256": "dd914d769bc223b5d5ea56839a7752e534eb475f8d2897d5675606c368bbca1f"
+    },
+    {
+      "path": "site/components/ui/textarea.tsx",
+      "bytes": 847,
+      "sha256": "7ae7f0f5d907be24658652c771fee1685193102bf3200aafbf578d144d379fbf"
+    },
+    {
+      "path": "site/components/ui/toast.tsx",
+      "bytes": 7353,
+      "sha256": "9126b09f47f0b117bf748cf19aaa4987a1f72d0813d10bfc4b4b0128e6439e48"
+    },
+    {
+      "path": "site/components/ui/toggle-group.tsx",
+      "bytes": 3201,
+      "sha256": "9b006523be0fe3230cd75f7adf78a501829d594fd3506c56c55bb38211ff1850"
+    },
+    {
+      "path": "site/components/ui/toggle.tsx",
+      "bytes": 1770,
+      "sha256": "6bf41d6f6ffe602c3e28274a82ac029e6ee1331ba3c670a6d814048e1823cc28"
+    },
+    {
+      "path": "site/components/ui/tooltip.tsx",
+      "bytes": 2855,
+      "sha256": "b86e51969931c3d62e88d0bdacd1cd8219105dc6d6b6a588a80011bf92e987cd"
+    },
+    {
+      "path": "site/drizzle/0000_meshful_learner_data.sql",
+      "bytes": 5298,
+      "sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "path": "site/drizzle/0001_meshful_fragmented_storage.sql",
+      "bytes": 13027,
+      "sha256": "6644a87087193b85df28964637600d5b2ee3e5562881bc31c46969741ecc7e78"
+    },
+    {
+      "path": "site/drizzle/0002_meshful_study_writer_grants.sql",
+      "bytes": 2977,
+      "sha256": "1f0d0faa172abc03e9d1bed83b779cb52ad612bbe0f9b80ad9de75a5afd78d11"
+    },
+    {
+      "path": "site/drizzle/meta/_journal.json",
+      "bytes": 520,
+      "sha256": "20412ef2b8bf9b637aa4fde54f3fa5e22bd577561152c0926ce3b6608bafbc91"
+    },
+    {
+      "path": "site/hooks/use-mobile.ts",
+      "bytes": 585,
+      "sha256": "82bff42ff087bd5dc90a5d17609cc428b8688de92d1333073a839af5ad3c9cbd"
+    },
+    {
+      "path": "site/integration/SELECTED_INPUTS.json",
+      "bytes": 24830,
+      "sha256": "46598d14e227d544bfb9d6154c6e8f747a019b6042d6283c0537da87d208edc8"
+    },
+    {
+      "path": "site/integration/account-persistence-release.mjs",
+      "bytes": 2375,
+      "sha256": "c1ba7da34640733e8bdd86128949c1fb3235bb8b105b274d000a8c939330242d"
+    },
+    {
+      "path": "site/integration/accounts/core.mjs",
+      "bytes": 6592,
+      "sha256": "c08cd3844411d0648c05e098bcda293e480597cca0a0c10ee0779ba4c02795a9"
+    },
+    {
+      "path": "site/integration/accounts/sites-trusted-request.mjs",
+      "bytes": 5070,
+      "sha256": "414df1abb6fbc55c0ae110b58b7b740a863ffd154f9c17c6dd3edbfd1123c564"
+    },
+    {
+      "path": "site/integration/accounts/sites.mjs",
+      "bytes": 3258,
+      "sha256": "425cd07b8b28c24804ed1bf35a0c0974101d48d21d2ceed3561c302dc59521e4"
+    },
+    {
+      "path": "site/integration/backend/migrations/0001_learner_data.sql",
       "bytes": 5078,
       "sha256": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2"
     },
     {
-      "path": "site/drizzle/0002_fragmented_storage.sql",
+      "path": "site/integration/backend/src/canonical-engine.mjs",
+      "bytes": 9246,
+      "sha256": "71ccc731c88ed6f56d991f5f3e065ea4ecdf3329fa17b0c7f0cd6535c3317e3c"
+    },
+    {
+      "path": "site/integration/backend/src/contracts.mjs",
+      "bytes": 8636,
+      "sha256": "d0f7a76ce9b87c805a7b12d5078ba20ecb370817cfa6bfc61cab6d3750c8ac40"
+    },
+    {
+      "path": "site/integration/backend/src/d1-repository.mjs",
+      "bytes": 10948,
+      "sha256": "eb6a4a99e5c66b6a628aa1877b85c7adaee6f400832db04c83c0816249fad30d"
+    },
+    {
+      "path": "site/integration/backend/src/durable-client.mjs",
+      "bytes": 14051,
+      "sha256": "9ba52fe937cf8a6f0e76e20bc86749c450b168b07f89450c074611a59e0c9626"
+    },
+    {
+      "path": "site/integration/backend/src/http-handler.mjs",
+      "bytes": 7254,
+      "sha256": "c512e1b5b105aeb69f6c5959a5493bb3220bd6c82f7ffed49393efd74a278cc1"
+    },
+    {
+      "path": "site/integration/backend/src/index.mjs",
+      "bytes": 447,
+      "sha256": "0c836564bc73ba7122446414d001cdd3166af5ede60ce4cfabdd7b8f8df3ed0b"
+    },
+    {
+      "path": "site/integration/backend/src/learner-service.mjs",
+      "bytes": 11248,
+      "sha256": "97c9f6676cb84bd009e1c5769be255ec96c849e802b72eeb7143a17114f3a6b3"
+    },
+    {
+      "path": "site/integration/backend/src/local-state-validation.mjs",
+      "bytes": 5562,
+      "sha256": "bd442fc82e1e163ba8ef9577d06b3af6ee54f302c3b6fbdc00d2bd1a5e231293"
+    },
+    {
+      "path": "site/integration/backend/test-support/fixtures.mjs",
+      "bytes": 3508,
+      "sha256": "20df34e633fab8457d73b272f19b7f522023798c911ebe9445ac6c056ebcda03"
+    },
+    {
+      "path": "site/integration/backend/test-support/sqlite-d1.mjs",
+      "bytes": 2936,
+      "sha256": "e3b7931aa58889ee660bfa562f65d68127d6232f145e0f0f5b261a59528b326e"
+    },
+    {
+      "path": "site/integration/backend/v2/migrations/0002_fragmented_storage.sql",
       "bytes": 12258,
       "sha256": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3"
     },
     {
-      "path": "site/integration/account-start.js",
-      "bytes": 1191,
-      "sha256": "51a1648454e3e095bf2ff7429bb71000bfa3a09797867b5018b0c03d1fddd8d4"
+      "path": "site/integration/backend/v2/src/canonical-engine.mjs",
+      "bytes": 9974,
+      "sha256": "4131d37ed8d231bf8f81d5c9e8a85297a0f07eacd0ec932ba03aea90c215bef8"
+    },
+    {
+      "path": "site/integration/backend/v2/src/capacity.mjs",
+      "bytes": 3157,
+      "sha256": "1114b10abae650df3f239bf36a4cb55b26e9a0b74ae51606bed3102cf0b6854a"
+    },
+    {
+      "path": "site/integration/backend/v2/src/d1-repository.mjs",
+      "bytes": 23542,
+      "sha256": "a61e896140283e04fceacc9842cf76bc82c885f9d13396c1c2081d7b7f6d2faa"
+    },
+    {
+      "path": "site/integration/backend/v2/src/durable-client.mjs",
+      "bytes": 2611,
+      "sha256": "ae5b2537257727bb39ee4a9e2d1b5adfc31b662b0cac0068f2ea50aa0ae3f0d1"
+    },
+    {
+      "path": "site/integration/backend/v2/src/fragment-codec.mjs",
+      "bytes": 4492,
+      "sha256": "05b6f2866f0a89848dbd0ea3466fb9a1e70f983ca0bb1ffbc5e405c300e20690"
+    },
+    {
+      "path": "site/integration/backend/v2/src/http-handler.mjs",
+      "bytes": 9643,
+      "sha256": "86eabd4eee6bee2f86a5f7ac9276d3bc796b746d38a2ded4db2e151b82cd0a81"
+    },
+    {
+      "path": "site/integration/backend/v2/src/index.mjs",
+      "bytes": 321,
+      "sha256": "b028b7deb4bb8fd87c44ca1b3505d8ad191bac16ead7c3a0c1b3ef35ea6faf74"
+    },
+    {
+      "path": "site/integration/backend/v2/src/json-budget.mjs",
+      "bytes": 2383,
+      "sha256": "17ed54d02d4c73fd598fabe1ebabc7cff4db4c6ed0ae1d594f37190be5451161"
+    },
+    {
+      "path": "site/integration/backend/v2/src/learner-service.mjs",
+      "bytes": 13498,
+      "sha256": "8c399848cb0174b75bc2b98359123d01badadb364596995113fb1599affde154"
+    },
+    {
+      "path": "site/integration/backend/v2/src/request-identity.mjs",
+      "bytes": 579,
+      "sha256": "effc6cc4557c4c765ccfcf9365c085f07032742bfe49c6b0dc3df96a030133d0"
+    },
+    {
+      "path": "site/integration/backend/v3/FILE_MANIFEST.json",
+      "bytes": 9531,
+      "sha256": "8ea8096550a100c78177160858bc43f4b7e15ad26a656173e1fb61c967f374cb"
+    },
+    {
+      "path": "site/integration/backend/v3/src/canonical-engine.mjs",
+      "bytes": 19443,
+      "sha256": "dba7d3500f0434f2282591b5eaf52d29d8174775695aea595ce8b8c24ef34347"
+    },
+    {
+      "path": "site/integration/backend/v3/src/http-handler.mjs",
+      "bytes": 9979,
+      "sha256": "35bb4136fd3b20a91a2584c58d89cf8df25c3229b84e4c3c75df1f12939a9a15"
+    },
+    {
+      "path": "site/integration/backend/v3/src/index.mjs",
+      "bytes": 254,
+      "sha256": "40792491853b5c7fddc8e23760897a8d0bcbaa0c55708290b705b7062348bfa6"
+    },
+    {
+      "path": "site/integration/backend/v3/src/learner-service.mjs",
+      "bytes": 13759,
+      "sha256": "34843de42b6c38e4d60636c70598f57527dbbd04e2ee9889c795c0baca8df7d0"
+    },
+    {
+      "path": "site/integration/backend/v3/test-support/pinned-resolver.mjs",
+      "bytes": 9495,
+      "sha256": "922bb0ab814569cdc82f8071ebe71cbea2442ae5186010aa6b01dcc1dd5c0499"
+    },
+    {
+      "path": "site/integration/backend/v4/CONTRACT.md",
+      "bytes": 4672,
+      "sha256": "92e172e3d01bf2ab2977b492a960a0237c26f0a47887eec50e9b63d5e46aac32"
+    },
+    {
+      "path": "site/integration/backend/v4/FILE_MANIFEST.json",
+      "bytes": 6466,
+      "sha256": "a8c48bb05652665da99c58e29b3530049d59902287676999c3190d4a98ffce00"
+    },
+    {
+      "path": "site/integration/backend/v4/HANDOFF.md",
+      "bytes": 2106,
+      "sha256": "37deddcc8628144a83a903fa3589e2c7b6fa6a5d418d0c0943473a5f68231e1b"
+    },
+    {
+      "path": "site/integration/backend/v4/README.md",
+      "bytes": 1283,
+      "sha256": "6f6f9c7fc63691ddf9b5ce5d91a3cd64483a1b9446a9aea38826e206f7ef4ec4"
+    },
+    {
+      "path": "site/integration/backend/v4/VALIDATION.json",
+      "bytes": 2432,
+      "sha256": "7b6b2d42bbeba3d05570c4acf947b6c306899f79631b0ceaef4838ada50582e7"
+    },
+    {
+      "path": "site/integration/backend/v4/package.json",
+      "bytes": 509,
+      "sha256": "55cbd8111f8b709d08657c346b17bbe773b23cb4fb02e7c28dcc2b17ba03eabd"
+    },
+    {
+      "path": "site/integration/backend/v4/scripts/build-manifest.mjs",
+      "bytes": 4469,
+      "sha256": "46fcdcb2fab668f9bff24e224dbf20980f2f4aeced64007eeb2c158fe48a948e"
+    },
+    {
+      "path": "site/integration/backend/v4/scripts/check-browser.mjs",
+      "bytes": 942,
+      "sha256": "60167c1cf7b0356c0100730f8aee326e4d5e731e3f0808680ba44aa22fede6ce"
+    },
+    {
+      "path": "site/integration/backend/v4/scripts/check.mjs",
+      "bytes": 1637,
+      "sha256": "d52e0650bcb7854f08620756d70d391267d4d9af68c86568dbc53e4bff2e3078"
+    },
+    {
+      "path": "site/integration/backend/v4/scripts/verify-delivery.mjs",
+      "bytes": 3542,
+      "sha256": "850309cd8859024308df9a065d71b04ee7d41c87d1fbc73308ce06c11cff1c17"
+    },
+    {
+      "path": "site/integration/backend/v4/src/canonical-engine.mjs",
+      "bytes": 22794,
+      "sha256": "04cc11ec903cd48659a6b08be50dad56839c6852e63124348a1347468d219b19"
+    },
+    {
+      "path": "site/integration/backend/v4/src/durable-client.mjs",
+      "bytes": 18473,
+      "sha256": "c7d686de7bd236d45148553f78c4eee2666aa77d208d3311f6ee3981767ce0dd"
+    },
+    {
+      "path": "site/integration/backend/v4/src/http-handler.mjs",
+      "bytes": 10002,
+      "sha256": "c5d06e15a8dfd6dfabe83c5a4a2621fa4a36d9dab1ffeff1659f33de556bced0"
+    },
+    {
+      "path": "site/integration/backend/v4/src/index.mjs",
+      "bytes": 325,
+      "sha256": "980df6dd2ffd159b7e937b7a3f5f034582d3e63eda10b120cc7750f4b6dc757b"
+    },
+    {
+      "path": "site/integration/backend/v4/test-support/two-release-resolver.mjs",
+      "bytes": 6595,
+      "sha256": "e2cc697ad51a8ab2a6f780219dc1816caeaf7c5d8c1ac2d7740d0c2036afb7e5"
+    },
+    {
+      "path": "site/integration/backend/v4/tests/archive-durable.test.mjs",
+      "bytes": 17902,
+      "sha256": "759810b7105cb34fe3839caa9d0b2fb35516b0a69d2e96dce74e16c1eb2178ff"
+    },
+    {
+      "path": "site/integration/backend/v4/tests/catalog-promotion.test.mjs",
+      "bytes": 7975,
+      "sha256": "b720c4d70e8ff4598f87de9d20b21c05aea4a2ce2ee49cab0b2c2124f2bb3f7a"
+    },
+    {
+      "path": "site/integration/backend/v5/CONTRACT.md",
+      "bytes": 4689,
+      "sha256": "516b83cb788b3f2fef0f3b86516d331fbb7149870fcba06fbe8ae7ce9ba85cb9"
+    },
+    {
+      "path": "site/integration/backend/v5/FILE_MANIFEST.json",
+      "bytes": 6466,
+      "sha256": "f9d4a86ffb5cabc3e80f88b2f6958d33cd0dbe0dd3cd15419081addc36527243"
+    },
+    {
+      "path": "site/integration/backend/v5/HANDOFF.md",
+      "bytes": 2414,
+      "sha256": "2e661ba00c97dac0eb0e1ba4b73251f5308b9eb9b0f7bfe24c9f467c18808037"
+    },
+    {
+      "path": "site/integration/backend/v5/README.md",
+      "bytes": 1112,
+      "sha256": "a99b3505a2b8ee576394a0b4a3ef952bf8944be28cbf7e9de25a67bf46fe0644"
+    },
+    {
+      "path": "site/integration/backend/v5/VALIDATION.json",
+      "bytes": 2537,
+      "sha256": "f8e97d218d9bce75f0cc0d6d6b70f1be265bd6bcef60fc6d3c4a53ec71e760ca"
+    },
+    {
+      "path": "site/integration/backend/v5/package.json",
+      "bytes": 512,
+      "sha256": "dc82ebe323b5374c387307b4661b5b6bc5af4e62b45028c0d9aa4d8492b4d337"
+    },
+    {
+      "path": "site/integration/backend/v5/scripts/build-manifest.mjs",
+      "bytes": 4469,
+      "sha256": "7ecac616504055f037c821405077fdea843de571ccf650309ff743b75c40208e"
+    },
+    {
+      "path": "site/integration/backend/v5/scripts/check-browser.mjs",
+      "bytes": 942,
+      "sha256": "4dbc732a4f9ef307e4ac16ac399c6e0dffb88b4a7908d1abc4243f622569ad01"
+    },
+    {
+      "path": "site/integration/backend/v5/scripts/check.mjs",
+      "bytes": 1637,
+      "sha256": "f87e749156e0c690422b00c08d604c5427379e235ca1593db77b6747a0c26480"
+    },
+    {
+      "path": "site/integration/backend/v5/scripts/verify-delivery.mjs",
+      "bytes": 3542,
+      "sha256": "10b581cc08ba8f2807388c8d134aa8cb40e81baacaf850356cd886f075260eeb"
+    },
+    {
+      "path": "site/integration/backend/v5/src/canonical-engine.mjs",
+      "bytes": 23558,
+      "sha256": "17c10ff4b7bd804f81c2815dc2f59a4e36627dde1d5dfc5e7e2a3eed9f472e56"
+    },
+    {
+      "path": "site/integration/backend/v5/src/durable-client.mjs",
+      "bytes": 18473,
+      "sha256": "c7d686de7bd236d45148553f78c4eee2666aa77d208d3311f6ee3981767ce0dd"
+    },
+    {
+      "path": "site/integration/backend/v5/src/http-handler.mjs",
+      "bytes": 10002,
+      "sha256": "c5d06e15a8dfd6dfabe83c5a4a2621fa4a36d9dab1ffeff1659f33de556bced0"
+    },
+    {
+      "path": "site/integration/backend/v5/src/index.mjs",
+      "bytes": 325,
+      "sha256": "980df6dd2ffd159b7e937b7a3f5f034582d3e63eda10b120cc7750f4b6dc757b"
+    },
+    {
+      "path": "site/integration/backend/v5/test-support/two-release-resolver.mjs",
+      "bytes": 6589,
+      "sha256": "c75770a08fc9de92fccde982091a804b4075fa61f8c023ba730cf02e2e88bc86"
+    },
+    {
+      "path": "site/integration/backend/v5/tests/archive-durable.test.mjs",
+      "bytes": 19482,
+      "sha256": "b6c0b1544ddc4a72d581006cfeb1fb67a9a84de3ad25cf74d0fa2c0b0e765b04"
+    },
+    {
+      "path": "site/integration/backend/v5/tests/catalog-promotion.test.mjs",
+      "bytes": 7975,
+      "sha256": "b720c4d70e8ff4598f87de9d20b21c05aea4a2ce2ee49cab0b2c2124f2bb3f7a"
+    },
+    {
+      "path": "site/integration/backend/v7/src/canonical-engine.mjs",
+      "bytes": 26546,
+      "sha256": "a9bd41627cbb3e43f08faa48b7f66a40cc3b5dc677ff85c660661263c2046be0"
+    },
+    {
+      "path": "site/integration/backend/v7/src/d1-repository.mjs",
+      "bytes": 18944,
+      "sha256": "8c213c13266c8a18ace9c7733c28c924e37632f527bcbaf499bd7afa1f389b78"
+    },
+    {
+      "path": "site/integration/backend/v7/src/durable-client.mjs",
+      "bytes": 19629,
+      "sha256": "0ded48603a54f76e61667518f11a98816b1e887e75d747e727b615b5381b3006"
+    },
+    {
+      "path": "site/integration/backend/v7/src/http-handler.mjs",
+      "bytes": 11685,
+      "sha256": "e381dbb4bbf25a431bf67f56323b6e1abaa69903e65728801ff01a67f752bd58"
+    },
+    {
+      "path": "site/integration/backend/v7/src/index.mjs",
+      "bytes": 387,
+      "sha256": "e80d178034a100a93c519e77b0299dffd2bfc117934fb5ade06f114f0e3fd57e"
+    },
+    {
+      "path": "site/integration/backend/v7/src/learner-service.mjs",
+      "bytes": 19799,
+      "sha256": "43d6c2d89163419ae93454559ee4f8acdd752470f74e85a50cde956d89c3de80"
+    },
+    {
+      "path": "site/integration/backend/v7/src/writer-client.mjs",
+      "bytes": 5816,
+      "sha256": "6fe231deec8a8b05b747cd6e52cd87f65ffc2b087cf2a530336eeb4df89cbebd"
+    },
+    {
+      "path": "site/integration/branding/approved-logo-v18.json",
+      "bytes": 1404,
+      "sha256": "2f5d5fc818ea2bf95e81adaa65070a3942f3b7c232bbbbc9482932435d25ccd8"
     },
     {
       "path": "site/integration/catalog-release.mjs",
-      "bytes": 337,
-      "sha256": "5ff70f7996f35ef20bf1fd98d0b089e1b6683a7ba19c890c0dd3ae982b5669b6"
+      "bytes": 272,
+      "sha256": "8d6397e3f41334e4bed302e0cf6b6e93050a8de60d42600821b66dcfd15bb96e"
+    },
+    {
+      "path": "site/integration/core/data/catalog.js",
+      "bytes": 27875,
+      "sha256": "b8ccedf548b4ec199bbeb1986c0774c61b08eed6e48495ff1ddf1f54690e179c"
+    },
+    {
+      "path": "site/integration/core/js/deck-build-guide.js",
+      "bytes": 32658,
+      "sha256": "6444795b10e082b119e8987c4a7bb4ce549d1dcb8e6923060c1542fab3280138"
+    },
+    {
+      "path": "site/integration/core/js/grading-guide.js",
+      "bytes": 15217,
+      "sha256": "93a139c32205b224fccf6458e7cf91f200cc3aa7e182ef33830878b9b2119d12"
+    },
+    {
+      "path": "site/integration/core/js/library-catalog.js",
+      "bytes": 90975,
+      "sha256": "58d2c069251d022ba5cc9ba91d0c385e397f05f82a533dcba7e5699bd46ded1f"
+    },
+    {
+      "path": "site/integration/core/js/store.js",
+      "bytes": 221866,
+      "sha256": "2d71521457b90075ad205de8eaea9d6dcc544968d97752dd7838da1ccfe901f9"
+    },
+    {
+      "path": "site/integration/core/js/streak.js",
+      "bytes": 5359,
+      "sha256": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3"
+    },
+    {
+      "path": "site/integration/core/js/webmcp.js",
+      "bytes": 54672,
+      "sha256": "aadd6c476bb54ff83fb7c121d7a3723b36c95b2b8357003652b2c4a08892ad08"
+    },
+    {
+      "path": "site/integration/library-assets/COURSE_DESCRIPTION_OVERLAY_V1.json",
+      "bytes": 54438,
+      "sha256": "221a8ce11bcc52cbb81814baf27599b7081b6b7d79460c70006971f914f140ee"
+    },
+    {
+      "path": "site/integration/library-assets/PUBLIC_LIBRARY_V2_ASSET_MANIFEST.json",
+      "bytes": 35494,
+      "sha256": "92b9e2b5083d8a45ea11ef6d4793c180c1eed073f56d1577127b17d2fbbd45e7"
+    },
+    {
+      "path": "site/integration/library-assets/PUBLIC_LIBRARY_V3_ASSET_MANIFEST.json",
+      "bytes": 35473,
+      "sha256": "ea6e86ee82962fb29b8e862d744be0399f0ea093b0dd908df6f32e43fe4c0a05"
+    },
+    {
+      "path": "site/integration/library-assets/PUBLIC_LIBRARY_V4_ASSET_MANIFEST.json",
+      "bytes": 35960,
+      "sha256": "e41e2f866c943456a1f7fe2eff3fa8f2a9989f68fc1ea992119e726565f3c985"
+    },
+    {
+      "path": "site/integration/library-assets/PUBLIC_LIBRARY_V4_METADATA.json",
+      "bytes": 463319,
+      "sha256": "b0bbb20dc4fa641d00143208d94cfc4ef80e0e779b92642cdd75b339d53aff0e"
+    },
+    {
+      "path": "site/integration/library-assets/PUBLIC_LIBRARY_V4_VERIFICATION_RECEIPT.json",
+      "bytes": 2889,
+      "sha256": "8095eb18e610477664aecbe721eafe33855c0ccbbbf10a535ccc77b4ede1ff46"
+    },
+    {
+      "path": "site/integration/library-assets/WEBMCP_LIBRARY_RESOLVER_ASSET_MANIFEST.json",
+      "bytes": 15298,
+      "sha256": "f3a02d02441f8d7ba9a5e19e3e3c89c1e66501a796bdf80750419ed8a0272bba"
+    },
+    {
+      "path": "site/integration/library-runtime.mjs",
+      "bytes": 8465,
+      "sha256": "c67a204174162a23bd79635661ba4e1abb4d4b760a0fc5b9b8e66cc668193cc6"
     },
     {
       "path": "site/integration/site-runtime.mjs",
-      "bytes": 2486,
-      "sha256": "a51806356e47d7befa357ea5458618f649aa7d9d7705b2db2b27f47a9a1d2450"
+      "bytes": 2121,
+      "sha256": "242ef8a71c48c35c17eea3542d2e987fae6c8d9abfe7a5a23d94e5a001254b2f"
     },
     {
-      "path": "site/next-env.d.ts",
-      "bytes": 189,
-      "sha256": "a291a6b60536fec0a3b9d4ffd6d51179b463e9bc20281d7499d756813b4c07d5"
+      "path": "site/integration/site-selection.mjs",
+      "bytes": 1000,
+      "sha256": "ee68470343d18fff4fa8b1069866cf5d73202a865e8836cb7ca895b200ad57f3"
+    },
+    {
+      "path": "site/integration/website/learner-endpoint.mjs",
+      "bytes": 2630,
+      "sha256": "f21767fa4a1c2bf09c96500588bdc391141dfc85f0c0eb80c446813c47505a8a"
+    },
+    {
+      "path": "site/lib/utils.ts",
+      "bytes": 169,
+      "sha256": "9304a861c8673bee09e0f12de31773abbde503b02e59dfd74763ddec2e37cf05"
     },
     {
       "path": "site/next.config.ts",
@@ -946,33 +1091,1838 @@
     },
     {
       "path": "site/package-lock.json",
-      "bytes": 124350,
-      "sha256": "321ca0cb09d3ede958ce791270892835542dcb9aeb98c11b0a941f82aa7bc839"
+      "bytes": 242553,
+      "sha256": "96f14a276b220ec5a7e65d449bd580b6547be4002ebe6e524a70b21e9d1d535a"
     },
     {
       "path": "site/package.json",
-      "bytes": 1231,
-      "sha256": "feeaf57c592a71562d5cad3907bb0d901f3064f41d0482d01d05ead95da5b997"
+      "bytes": 1535,
+      "sha256": "6fee17b2fcd76f17fe67fb8ac1eff0a2790e216ef2dce72718ba1cad57411cb2"
+    },
+    {
+      "path": "site/public/apple-touch-icon.png",
+      "bytes": 4556,
+      "sha256": "81b2abcf09cdb09e594c5988186816fd64ef9d4d6a6c7f4b7b6e28d99522b15b"
+    },
+    {
+      "path": "site/public/favicon-16.png",
+      "bytes": 462,
+      "sha256": "28fa37a4d0d3302c53a9913b053a0a8ef732b89b4c36f8af96d09c562fef8b4e"
+    },
+    {
+      "path": "site/public/favicon-32.png",
+      "bytes": 857,
+      "sha256": "9bc198c5d70edc64a1a40eeb57093221e8fcc4a366cec7272d0b3ec3a82a6fb6"
     },
     {
       "path": "site/public/favicon.svg",
-      "bytes": 727,
-      "sha256": "1695c3a71b6ef5283cb68b5e347169ba1d7d5823cb5362bd9b92e3430f9fc307"
+      "bytes": 1246,
+      "sha256": "31ba7ddf82870914719c747cbea81208afa253fb58eefb09c77b93b48003c846"
+    },
+    {
+      "path": "site/public/meshful-header-mark.svg",
+      "bytes": 1272,
+      "sha256": "131cad4f63e7712cbcfe66db8e48cefed7f20d223e2603cb55f0e565eecde5c8"
+    },
+    {
+      "path": "site/public/meshful-social-card-1200x630.png",
+      "bytes": 83741,
+      "sha256": "0e03372a3f9a538d18ac0e5e5e1a06bb84eb85f3900d72d70541a9d93563dd8d"
     },
     {
       "path": "site/public/og.png",
-      "bytes": 849633,
-      "sha256": "3904cdfee2abaa6a7450ce6d8159861197fdda33f9bd0fb48d1c9ce6837849fc"
+      "bytes": 83741,
+      "sha256": "0e03372a3f9a538d18ac0e5e5e1a06bb84eb85f3900d72d70541a9d93563dd8d"
     },
     {
-      "path": "site/scripts/sync-study.mjs",
-      "bytes": 3158,
-      "sha256": "d959a35680c111813515ed6f8a67d93d85444cc3ad33784b8c095fe2e03259fa"
+      "path": "site/public/study/accounts/browser-state.mjs",
+      "bytes": 1986,
+      "sha256": "2fe73992600423bc3df2a9ee7a9d5055379f2615b14ea422f24bdb6e9b30de32"
     },
     {
-      "path": "site/tests/wrapper.test.mjs",
-      "bytes": 3691,
-      "sha256": "805949cb233ec8d19aa687e2744899a55d51adb13ab84a9ef83d4a84f3c837d3"
+      "path": "site/public/study/accounts/browser-storage-records.mjs",
+      "bytes": 7788,
+      "sha256": "0f9e1cdf8c9009c2919de29c7b6298e762523d50c23e4d96ca0552658e96011f"
+    },
+    {
+      "path": "site/public/study/accounts/browser-storage.mjs",
+      "bytes": 11563,
+      "sha256": "7222622717397cc9ef2a8255430869ed77a2cd6dea580949ee292eee1d8a43bc"
+    },
+    {
+      "path": "site/public/study/accounts/browser-study-session.mjs",
+      "bytes": 25987,
+      "sha256": "c02435cefa9b6aaa7a8d2c724f725f9743eab026bd26476ed9b06d6283f5ebad"
+    },
+    {
+      "path": "site/public/study/backend/src/canonical-engine.mjs",
+      "bytes": 9246,
+      "sha256": "71ccc731c88ed6f56d991f5f3e065ea4ecdf3329fa17b0c7f0cd6535c3317e3c"
+    },
+    {
+      "path": "site/public/study/backend/src/contracts.mjs",
+      "bytes": 8636,
+      "sha256": "d0f7a76ce9b87c805a7b12d5078ba20ecb370817cfa6bfc61cab6d3750c8ac40"
+    },
+    {
+      "path": "site/public/study/backend/src/durable-client.mjs",
+      "bytes": 14051,
+      "sha256": "9ba52fe937cf8a6f0e76e20bc86749c450b168b07f89450c074611a59e0c9626"
+    },
+    {
+      "path": "site/public/study/backend/src/local-state-validation.mjs",
+      "bytes": 5562,
+      "sha256": "bd442fc82e1e163ba8ef9577d06b3af6ee54f302c3b6fbdc00d2bd1a5e231293"
+    },
+    {
+      "path": "site/public/study/backend/v2/src/durable-client.mjs",
+      "bytes": 2611,
+      "sha256": "ae5b2537257727bb39ee4a9e2d1b5adfc31b662b0cac0068f2ea50aa0ae3f0d1"
+    },
+    {
+      "path": "site/public/study/backend/v2/src/request-identity.mjs",
+      "bytes": 579,
+      "sha256": "effc6cc4557c4c765ccfcf9365c085f07032742bfe49c6b0dc3df96a030133d0"
+    },
+    {
+      "path": "site/public/study/backend/v4/src/durable-client.mjs",
+      "bytes": 18473,
+      "sha256": "c7d686de7bd236d45148553f78c4eee2666aa77d208d3311f6ee3981767ce0dd"
+    },
+    {
+      "path": "site/public/study/backend/v5/src/durable-client.mjs",
+      "bytes": 18473,
+      "sha256": "c7d686de7bd236d45148553f78c4eee2666aa77d208d3311f6ee3981767ce0dd"
+    },
+    {
+      "path": "site/public/study/backend/v7/src/durable-client.mjs",
+      "bytes": 19629,
+      "sha256": "0ded48603a54f76e61667518f11a98816b1e887e75d747e727b615b5381b3006"
+    },
+    {
+      "path": "site/public/study/backend/v7/src/writer-client.mjs",
+      "bytes": 5816,
+      "sha256": "6fe231deec8a8b05b747cd6e52cd87f65ffc2b087cf2a530336eeb4df89cbebd"
+    },
+    {
+      "path": "site/public/study/data/catalog.js",
+      "bytes": 27875,
+      "sha256": "b8ccedf548b4ec199bbeb1986c0774c61b08eed6e48495ff1ddf1f54690e179c"
+    },
+    {
+      "path": "site/public/study/data/library-releases.json",
+      "bytes": 5420,
+      "sha256": "b7c337c3001e7b6cefab7c630c2d728c265b4cf2f41b624aedecbb4d26465b3d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/algorithms-i.json",
+      "bytes": 156943,
+      "sha256": "508f0e48006016d6a8ec316af82adffb2f52cb3b52c434a72a5833ed11695128"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/analytical-chemistry.json",
+      "bytes": 165121,
+      "sha256": "a2629e917781504c656efd3ef4159eb0ada693b568d34d2669ab844bfa5c84fd"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/applied-statistics-i.json",
+      "bytes": 104951,
+      "sha256": "f813baf854932063bd1c0179576ff90399e48019baaa6106d7fadae6992d3f47"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "bytes": 154949,
+      "sha256": "4c504aa9a8f67e762914bab0366489b87c49798b5e19d1b3c9e5e842e3485bce"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/bayesian-inference.json",
+      "bytes": 147537,
+      "sha256": "97f587ec0804a98528d4f75859e77028c8be67354db7811cb41034345e002dca"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/behavioral-and-experimental-economics.json",
+      "bytes": 169421,
+      "sha256": "f8a0abf8f8601e22ddd16609fe57d9e77658e9d37e10281898d5d119e4407f44"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/biochemistry.json",
+      "bytes": 182499,
+      "sha256": "f986f7d9413e114dcec26d82e2f2787623294412f6e30f99f6a5fbbba9b5e675"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/biology-i.json",
+      "bytes": 140561,
+      "sha256": "8d704a0a9bd39467e0b38602a5425d08103be166a5c76890fbec8b738482584e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/biology-ii.json",
+      "bytes": 132288,
+      "sha256": "778940cb82423740c581cfbf68e314fe88773235e528b99e8a82bd552286e73f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/calculus-i.json",
+      "bytes": 116196,
+      "sha256": "3c4dfab7096149dc61ae82948517d25313df23005d2a6af2b20d4be80055bba5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/calculus-ii.json",
+      "bytes": 119772,
+      "sha256": "5c5076dc1def8e5d684773887c9288f9aeabcca15dd11d2c4b568d7f450fdc2f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/causal-inference.json",
+      "bytes": 137786,
+      "sha256": "914a68623d5bdb3e2ef83de0fd5d33a01ce5a24d142675fd14f6435acf580b59"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/cell-biology.json",
+      "bytes": 175808,
+      "sha256": "315d6f223383a577c74aaf4424321a5f5c6ff0263ec36678bf02897bd1d35f4a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/chemistry-laboratory-and-measurement.json",
+      "bytes": 170781,
+      "sha256": "04908e094c0c09892a6f80f179994feada6171505cf2b9de4dd5f977ce1183ba"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/college-algebra-and-precalculus.json",
+      "bytes": 152861,
+      "sha256": "b502f60b985d5bb45333456330175f34b67df6f8fb16aec1b1829d509ce9b32b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/computer-networks.json",
+      "bytes": 182766,
+      "sha256": "d00e5774b4187d0ce00a798da7f21532150821c84c11da92b3d70ca18dbced1d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/computer-systems.json",
+      "bytes": 158968,
+      "sha256": "d8c7197bdf964749d70736f03a3b90cac8241d20611e1729d5170ba2c8cc727f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/data-structures.json",
+      "bytes": 160152,
+      "sha256": "a1228d12fbc8fe621bafe8e1af686171c27683a3a484576b563bdef7363c98b5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/data-systems.json",
+      "bytes": 154626,
+      "sha256": "b20d29e10b289156c666f921d02c14fb5f168b6846ed81c9d0a8dd3b3506a511"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/databases-i.json",
+      "bytes": 174946,
+      "sha256": "ee8d6710b286f14794a79101cd7fcb9efa74041810acbbfebe5af4749f534730"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/discrete-mathematics.json",
+      "bytes": 135630,
+      "sha256": "90cac78ee107ab84225993a721269a6af0f0fee403cb7e28396c3830efda728d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/ecology.json",
+      "bytes": 185424,
+      "sha256": "9cf72c878f3a81f0f678ed6d1433e393aff90e9358cc90433891cc07ae8ba560"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/econometrics-i.json",
+      "bytes": 155852,
+      "sha256": "4a100321b3487f99e13566bda41b21deb6b64cdd2832dc29f804b21ad52bd39e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/econometrics-ii.json",
+      "bytes": 156093,
+      "sha256": "3512ae7c77eb4429667be3945f9d50ef5211809e29b7ea3423552205e84c3b55"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/economic-foundations.json",
+      "bytes": 134418,
+      "sha256": "efec057ea1fb9b4c344bcde428e5b10681895e56b8b157dcb7b213ec5225b8a2"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/electricity-and-magnetism-i.json",
+      "bytes": 166905,
+      "sha256": "4af306908d211affb03903f84e8a69a95e37df9b4553750c4c14db268f50662f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/evolutionary-biology.json",
+      "bytes": 188972,
+      "sha256": "f6c5410f03570e4f0468edd88d8016d9af96c64de0610561538658df550da017"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/experimental-design.json",
+      "bytes": 158065,
+      "sha256": "26ecaf67a64a60092676c35d52db3f8626af5f861a3f478d4a437772610d103e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/experimental-physics-and-measurement.json",
+      "bytes": 180086,
+      "sha256": "314798be833d65e06e66d788c07100b23ee29aab336b19652fc3050caf4673d2"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/general-chemistry-i.json",
+      "bytes": 324028,
+      "sha256": "e592edfa0778c34c9c0c7b911b6f22f7ef37b9c9df2341489832c68e94ea3155"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/general-chemistry-ii.json",
+      "bytes": 174761,
+      "sha256": "29fb585e2e5c2faa44d20d2a6551fee7f2e906d1e316c67e000d89a0a6b253de"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/genetics.json",
+      "bytes": 122134,
+      "sha256": "a6e4ed4fd19b99c4e99c426dc515c79e233533a922fd4edf5ae2af7f3bba3792"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/immunology.json",
+      "bytes": 188287,
+      "sha256": "577b4c775d08142f2191a5c92baf04e549dcb85bab7077be35ebc1db05c1ff2b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/inorganic-chemistry.json",
+      "bytes": 170227,
+      "sha256": "9a73572ff8891f69dff19a9ff264f79726609bc99bd52041d003c2ab2e52b6bf"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/linear-algebra-i.json",
+      "bytes": 168798,
+      "sha256": "6bbc198ad7ef932b6eafc7b2ec18c025a8cfabfa9ae67c71db06140e18f97713"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/linear-algebra-ii.json",
+      "bytes": 188896,
+      "sha256": "22b6c298e9d5d708cb3cb0ed99015028015172c32752c1b1d9b3b4c6ed032f36"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/macroeconomic-theory-i.json",
+      "bytes": 156774,
+      "sha256": "e8e9eeab709f51c91de298ac8bfcaa4e0032f5693b044f973d47dc7df0f2382f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/macroeconomic-theory-ii.json",
+      "bytes": 172756,
+      "sha256": "29cd12221e7eb999338da15fb19b484b58f2433dc53453779577066c3659405d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/mathematical-methods-for-economics.json",
+      "bytes": 162998,
+      "sha256": "23b62809c0a2fcac9c1f8c9a414fe20c27b44d22c55a903b1eacaba7121381da"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/mathematical-methods-for-physics-i.json",
+      "bytes": 160298,
+      "sha256": "489d2393fbe59d5bab90bd4e6acbe75dfe5b487f7a0e86ee9367ec77b4ec2c80"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/mathematical-proof-and-foundations.json",
+      "bytes": 229958,
+      "sha256": "cdc514f7040afc8db165dd5bf204b0b2e09e94a962dafc0819a7df08e54cea23"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/mathematical-statistics.json",
+      "bytes": 202465,
+      "sha256": "0514dcc7a7bec524107816b9407b848afd27395f796f75ca31323a1f260f2a6e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/mechanics-i.json",
+      "bytes": 114483,
+      "sha256": "977c7a80b73cd9d3895d0623c124c84c4f92b1d6c122fd715d75cc35e0920392"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/mechanics-ii.json",
+      "bytes": 158196,
+      "sha256": "f09c0f4ca9ac5a743764ca250b3e1493d3bbced96d7bcb3e3e3b9ce84ebcea69"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/microbiology.json",
+      "bytes": 187138,
+      "sha256": "1738dee37543ff375fe329ad3ebcc6ab2e13218326640ca8263df2e08a18eb28"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/microeconomic-theory-i.json",
+      "bytes": 171027,
+      "sha256": "38a06432e3b7e9d81f08169c043002277ae400a4f6fe46a2d4cd0c3c770a246d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/microeconomic-theory-ii.json",
+      "bytes": 150513,
+      "sha256": "193c3fcbe8c4fbacb311c7fa25cff0468b7b8cc27c276ff2426730ea8e9de76a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/modern-physics.json",
+      "bytes": 160914,
+      "sha256": "154064ed0aefba9027fd4668f2db41c7de83eef220c42c41c7c6ef73842ff9de"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/molecular-biology.json",
+      "bytes": 240165,
+      "sha256": "c55215fac0323a9938f97ea8db508b1620aa0a02d2dcafbccec9bf83e9fcae8b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/multivariable-calculus.json",
+      "bytes": 149537,
+      "sha256": "4b8d3a803b9aa31622e97e621cb48a9f772cc58b4382d7246105f8a1ad707e9d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/numerical-analysis-and-scientific-computing.json",
+      "bytes": 140250,
+      "sha256": "62a61e2dfe5587e7688ff456a8b30023ff1f2112957571eebe3041190a2448c2"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/optics.json",
+      "bytes": 145545,
+      "sha256": "91f1b95685973e0894b7da98bf8c6e7d2282d6a9c1bcc7133bd17aca31f9aa1a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/optimization-mathematics-i-convex-optimization.json",
+      "bytes": 195944,
+      "sha256": "846197cdfad8aa884b0414164b3207ae1170be1e6490c994bcc82976e7d35e38"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/ordinary-differential-equations.json",
+      "bytes": 229609,
+      "sha256": "fad692276f984b78250a8adfa67e4e17dd618a2628816f2deb28115aa81f7afe"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/organic-chemistry-i.json",
+      "bytes": 164194,
+      "sha256": "136b98606230529f282d3d8c224b35f0264539712e71898da9701482898e5d0a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/organic-chemistry-ii.json",
+      "bytes": 156341,
+      "sha256": "c30948beaa523ce1142ea98e45c734a0497ea22e3ab3f43265fb6ce4e77a3aca"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/organic-chemistry-laboratory.json",
+      "bytes": 165781,
+      "sha256": "4aa18d8b8d841dc3e97ba67179083581ce57e0c9809810b0241f6f9c057432dc"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/physics-foundations.json",
+      "bytes": 117358,
+      "sha256": "c3e1a7e2962c05a0f5195de080d824f06a24e978747639979a20cc413b6257bd"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/physiology.json",
+      "bytes": 206156,
+      "sha256": "1198c4551c77abbfdacd727b75b3a7ef5ef6ac06b9dde8434c92534ab2f34d99"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/probability-theory-i.json",
+      "bytes": 175894,
+      "sha256": "1a23769791b32a262ca879200ef4b9965a798bc2a9d33a747a0e2a78d1824677"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/probability-theory-ii.json",
+      "bytes": 147616,
+      "sha256": "bf0cf93aad154c59aefb006934613dd426f15777179d9cdb7cb08fe8bbac624e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/programming-i.json",
+      "bytes": 588946,
+      "sha256": "4a6350add8e264e26bffb42b2534685760283e53a598ac0a4e03fae7bbedd36d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/programming-ii.json",
+      "bytes": 564093,
+      "sha256": "54ef2dd0add6404b7740ca22754246462afd22ef854090ea1a345cf1c7759662"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/real-analysis-i.json",
+      "bytes": 203392,
+      "sha256": "7a69a6cf1555446729ce1b445e9d01a8d40e139cb7300fd040290db7041d2247"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/sampling-and-survey-methods.json",
+      "bytes": 159763,
+      "sha256": "6d5139da21233eb88c9375fd67afe8643dd57a78d91d95fa2d7d05a00e450bb6"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/security-engineering-i.json",
+      "bytes": 142219,
+      "sha256": "3410a6ccdab9a59f540865d49936c4c6f25d7fa57237d6eeaab474d82d39c6b3"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/software-architecture.json",
+      "bytes": 103929,
+      "sha256": "a8a9cfe4914fe1a7c315a5afbbc7126159bfa83fd6fb567c69c5e3a5672f919f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/software-engineering-i.json",
+      "bytes": 178426,
+      "sha256": "c30016cf777883e55499c1c4be74dc1efd98688718af0e6f03a1056bccbb2fa5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/software-testing-i-foundations-and-test-design.json",
+      "bytes": 385425,
+      "sha256": "40bca555c4aad5fc98a4e5495bf683bacdb3fe5e4138a9d9972882c49b90c593"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/thermodynamics.json",
+      "bytes": 164576,
+      "sha256": "092103efaba87183b979bf85bc0b33234966af2e31783f4371282d9dcff4ca28"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/time-series-analysis.json",
+      "bytes": 145686,
+      "sha256": "75123e8ce0dab71aa1fd51b9bc5e2f311692d3fae00dc39ef35c909bff616a53"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/decks/waves-and-oscillations.json",
+      "bytes": 150840,
+      "sha256": "fb49711b329c285b9b6d967d6890476ea8146c2e45d53eedc3709c3cafb5e446"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-08-30.reviewed-72.v1/index.json",
+      "bytes": 368126,
+      "sha256": "6daff48b99faae5047a69d56cfbbf7aa6b162367337044ce59e9774bbfc29a00"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/algorithms-i.json",
+      "bytes": 144819,
+      "sha256": "d8f8fa31abaa448f58edc8c166f1bb3acb5e0c5d90f429c068fd6e25d2a5441d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/analytical-chemistry.json",
+      "bytes": 154745,
+      "sha256": "f4cd4cd390184dc28eff9900e50538decff0c8b7b78a5b2c6bc603d5b6a4d4c9"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/applied-statistics-i.json",
+      "bytes": 97480,
+      "sha256": "971bd20914f53030cb391fc94a35c70f88f86ff381c5b3e959032684e655c258"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "bytes": 146423,
+      "sha256": "65159d2e6dc8c392bbdee2735f26ed5ab7278d7d5369b489412c1d4b85c325df"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/bayesian-inference.json",
+      "bytes": 137512,
+      "sha256": "8db74b623cfbc346af804e3594c79809912c222ece2e9a234ecd83a3c2e00f89"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/behavioral-and-experimental-economics.json",
+      "bytes": 159062,
+      "sha256": "3e0389ccb6d498db15747900b9175633c98fd53313a2faecebaef145777cc070"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/biochemistry.json",
+      "bytes": 170013,
+      "sha256": "4ee9ddab4c5b051533dd1543bb32feebe27c06027d9a2b2ed912ca985ab491a8"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/biology-i.json",
+      "bytes": 130172,
+      "sha256": "8bb21ba327b65cf015fab7fb204947a6d2a1d1fb21ff823b72e1a9f0dcfb6e02"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/biology-ii.json",
+      "bytes": 121900,
+      "sha256": "8e280c9cb71dc336f1c85e00cd26431aaebbe27a952d7705d480f4a2cb44c021"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/calculus-i.json",
+      "bytes": 106956,
+      "sha256": "d9111a56ca6bb6b6f62036bb55dc174cff91993d5803110cab3e0992c95a7c96"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/calculus-ii.json",
+      "bytes": 110005,
+      "sha256": "594aeb8142e99c3a1fc5436fd36fcc0e449ac7ffa844ebb78455a43011afe849"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/causal-inference.json",
+      "bytes": 129079,
+      "sha256": "87f77b58bf6ee291b5fd693abdc86c76c4f831139aab9eb0d8a03d37aa4f3a31"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/cell-biology.json",
+      "bytes": 163662,
+      "sha256": "1656cc5583d511c0ecabd471de385c363e0b9331c9182561a047fbf44af850b4"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/chemistry-laboratory-and-measurement.json",
+      "bytes": 160421,
+      "sha256": "bc6793c583f9ea532024c0dd6cb9fce9c92b269bfd8b3942320e98e8428c9514"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/college-algebra-and-precalculus.json",
+      "bytes": 141970,
+      "sha256": "b420b2c527c1364b1afdcc74dd4e87c8c8b2b5e3c4855820f83c52d446e6c9a9"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/computer-networks.json",
+      "bytes": 168359,
+      "sha256": "5633d3b51c71aac574f5f8c44e0746663b636ff2c471068701c87b310ff7ec41"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/computer-systems.json",
+      "bytes": 146232,
+      "sha256": "d09c4d11551b45e7c109a8858be554046827c62ab3d7f33c30a7d2c703123d75"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/data-structures.json",
+      "bytes": 147151,
+      "sha256": "c255ddaf46dd1c119d60aa334b80295a0c635083e931dbfe760bc75d9b18c232"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/data-systems.json",
+      "bytes": 142150,
+      "sha256": "335eca57593ec2ebf95502d338801f5d22d81ec20b4f5f56c8169dc976e148eb"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/databases-i.json",
+      "bytes": 161501,
+      "sha256": "c8e7dd5dba4a873a7edec4635a6604b2f1e2ff097204c9e925506a397132484e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/discrete-mathematics.json",
+      "bytes": 125432,
+      "sha256": "e795963922c80662be7c232efcc5b2697d69a6b883648ace88ea5abb9f69f34e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/ecology.json",
+      "bytes": 172393,
+      "sha256": "0f8f7379d7ab0a2528608c7ea82801325bb3a75227e33ea46bb885e91e739fef"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/econometrics-i.json",
+      "bytes": 145470,
+      "sha256": "4547bdf082e51dfb5bc41e095bc5832cc2c4face76fed894b0d2fd9adb7a2692"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/econometrics-ii.json",
+      "bytes": 145712,
+      "sha256": "492d6c1c280d8fdb40031289fae4ea74f8cce71e3f83f1adb05cf37df53d24ce"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/economic-foundations.json",
+      "bytes": 124746,
+      "sha256": "714a6d74dfa6420110c78f7993a3baa5bed28de3474729479eee982e609b316c"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/electricity-and-magnetism-i.json",
+      "bytes": 155654,
+      "sha256": "44c2323ef3b33d6e34d6554f97396bf85f456eba70731654613f6233acd42b3c"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/evolutionary-biology.json",
+      "bytes": 176834,
+      "sha256": "0e5f44e7ee78a632022583a379b105ac05e116f86eed73f6e4303b9af2db7d2a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/experimental-design.json",
+      "bytes": 146281,
+      "sha256": "9f34b21638909dfd0ff4f11ca5522ecbe4deff474cfea36aae64ba3c9897a8af"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/experimental-physics-and-measurement.json",
+      "bytes": 169196,
+      "sha256": "eb3210642e347acd16bfda7834e5847160dc61080bf46e702cfa6093f9fe7068"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/general-chemistry-i.json",
+      "bytes": 309427,
+      "sha256": "abe7be077c748ebc2baa23a3299af36a1b91c8d131deb2d6350291e0a447ef55"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/general-chemistry-ii.json",
+      "bytes": 162361,
+      "sha256": "d09a893683c5a9fdc1c276ceb469c21f980977375d8034c59753a9991118b8d0"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/genetics.json",
+      "bytes": 113680,
+      "sha256": "4228f0e08b435d1f95ecd5b8ea30b181f0eb57b372a1c68922e76cae5b03b5b9"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/immunology.json",
+      "bytes": 175259,
+      "sha256": "65cca5b4d34eac85d522e8f980e1f472f6e298e25327c11e570a9f05a74132d0"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/inorganic-chemistry.json",
+      "bytes": 159850,
+      "sha256": "91950908b860a54f1bd0976da4d0114a59b64eba91a8ccd64f4820a78a6948be"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/linear-algebra-i.json",
+      "bytes": 156484,
+      "sha256": "e73752658d25a9390a31caf39de802cb8e14cf32878a0f9da175e0d91064b915"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/linear-algebra-ii.json",
+      "bytes": 175615,
+      "sha256": "a17c1ca562f60d57999abdc5807cbcdfbc82f3f9596c48136a77c99081542e55"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/macroeconomic-theory-i.json",
+      "bytes": 146400,
+      "sha256": "0ba8133fce28072836ce7e18b358e222b31ead66c1b44349eea37493a971be61"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/macroeconomic-theory-ii.json",
+      "bytes": 162383,
+      "sha256": "928fb4244a476f7215110ce757acc20219db28d19e36f773a03cbfce32802574"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/mathematical-methods-for-economics.json",
+      "bytes": 152636,
+      "sha256": "58cbd0c2fd526b3cc8162075210c1dca9099a5e34179f2f2077237a1731292bb"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/mathematical-methods-for-physics-i.json",
+      "bytes": 149934,
+      "sha256": "2ce2b813908fd18145a6dae9bfa6a9e1f346f190871a0d64e6b397f17ff23bbc"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/mathematical-proof-and-foundations.json",
+      "bytes": 215023,
+      "sha256": "a444abd893b643455ad98f7c2ee85b96f0fd592737984e789d2462d558592240"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/mathematical-statistics.json",
+      "bytes": 189805,
+      "sha256": "2646088987354c3d0970ada378bfbf6c4a15412b63f38d3bba663aa013462f81"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/mechanics-i.json",
+      "bytes": 106296,
+      "sha256": "01c965c418335299eaf22237fe139e2592c4d0bf39fab06254067120e2d27c95"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/mechanics-ii.json",
+      "bytes": 147106,
+      "sha256": "5310db5b9b13e1785ff7e99e275acb279df50d97cdd86e989d11f81595d747d8"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/microbiology.json",
+      "bytes": 174112,
+      "sha256": "c45832bee81a271f827cebc0b338b8daf69f3e47442e4552591e0c623f4b2e25"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/microeconomic-theory-i.json",
+      "bytes": 160477,
+      "sha256": "4a57735861541a47541f6bb3799fb7578da81c59c4747e1011cd6f91958a3b27"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/microeconomic-theory-ii.json",
+      "bytes": 140140,
+      "sha256": "c96b6a50e155a52143dd637781c8a0b34959ba5ef917c9d34773e46801f2cdc4"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/modern-physics.json",
+      "bytes": 149474,
+      "sha256": "802b74586b196ec57132302cd8805360dfdaa5583a842a542868b0c352114963"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/molecular-biology.json",
+      "bytes": 224768,
+      "sha256": "f4714c5dad33c923c7c1254171157ddf0c40ac6a7dbfdc1890ce2e790bb3f7ea"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/multivariable-calculus.json",
+      "bytes": 138461,
+      "sha256": "61fd8d9c7b700d99da88bda4ba58099a6cf9d5a5af872d072cd2e33710001e7d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/numerical-analysis-and-scientific-computing.json",
+      "bytes": 131370,
+      "sha256": "4ad2ca9b73556aaba6feb0f1b6745faa5e7349b194e025be8b01dfb83a5ebcc3"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/optics.json",
+      "bytes": 134449,
+      "sha256": "f868d5758accc4a5fd4aa7ef050bcee0f1427ad112077b2c52b1ab2c30f1700c"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/optimization-mathematics-i-convex-optimization.json",
+      "bytes": 182660,
+      "sha256": "7c419d48842aefeb5528f80c0e4b3a678c8f709027a39b8dbceffa9e4a9be2ae"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/ordinary-differential-equations.json",
+      "bytes": 216078,
+      "sha256": "31b37d72f5ebede81e3a0ac698538e9061300f07deb2650de24a9d4508f53b33"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/organic-chemistry-i.json",
+      "bytes": 153817,
+      "sha256": "e39cf4f981f496045f5c95f1534620a76e861a851b65cd462011d2520aaba77e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/organic-chemistry-ii.json",
+      "bytes": 145965,
+      "sha256": "b828e3a26281801743b975da2b8c30df0ef058d943009d26fca98caf4f84ee8b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/organic-chemistry-laboratory.json",
+      "bytes": 155413,
+      "sha256": "192bc1315ce4bbc4db8b5bf5b9a6e1f97703812fb2694417e49cd3d8fd285c96"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/physics-foundations.json",
+      "bytes": 108651,
+      "sha256": "98b64bfc4f1f97ad5bc9bb5f2ee9e05e8ed1fc9eb3583d64d31487f62f3ed88c"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/physiology.json",
+      "bytes": 192248,
+      "sha256": "74843c81d6298b3f5946108a162c8bafccfa4f928db62163cb0b2bf0aba16689"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/probability-theory-i.json",
+      "bytes": 163407,
+      "sha256": "f92730641ae50c70f83660f35fdc06cbb80ec0924a97fdccffa7288171a7443e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/probability-theory-ii.json",
+      "bytes": 138298,
+      "sha256": "aff618ff76358410533de8099250c3a07cdc304fdb9c1d8b30e6200623678fb4"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/programming-i.json",
+      "bytes": 550511,
+      "sha256": "a92abcc7a848f77a6d31da69815d286c8b63e4040491363a153d9340ba006dfc"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/programming-ii.json",
+      "bytes": 529091,
+      "sha256": "eec1cbd0a35c18fe9bf92750b0a83dc1e391a5c26fbcc99b8c58e8bfe682efdb"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/real-analysis-i.json",
+      "bytes": 189493,
+      "sha256": "0e540881573063efa65013562150839fa61f147f7f394f3860b803f1e2af70ec"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/sampling-and-survey-methods.json",
+      "bytes": 149571,
+      "sha256": "3a2d8f8f1ede1b7e863622fda65743dac838a7c2cab3ead508dea4ce384b8eea"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/security-engineering-i.json",
+      "bytes": 132041,
+      "sha256": "813c7aa41aa5674e4af17518995b5b384467f28d0988f863196ae40f8beb5600"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/software-architecture.json",
+      "bytes": 96742,
+      "sha256": "907d3ca2c2312dac6378b22d5b3a541a842da17d2b4c2b8187b2ef76c341ab92"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/software-engineering-i.json",
+      "bytes": 166312,
+      "sha256": "159c39dd6d392a585b5110eaf4589311988439b40cd7a662e31b2c2961bea7a6"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/software-testing-i-foundations-and-test-design.json",
+      "bytes": 363803,
+      "sha256": "b0889ae7f2f420e80eb86d9943def2e3ba2be4fc4c742912aaa69390331e4d79"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/thermodynamics.json",
+      "bytes": 153488,
+      "sha256": "63d8c80d10ab5933e8aa98ec76621a29907583294fc6f76484a9049152dd2737"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/time-series-analysis.json",
+      "bytes": 135663,
+      "sha256": "5fb50e61e6ecdd872e42cd8c03895d89c014a1833b90b47d53c2c434e953a4e2"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/decks/waves-and-oscillations.json",
+      "bytes": 141080,
+      "sha256": "1ce149c14eeb8cbe7b6348d42f4ee903d7488bef90a1a6d017b0c409580fd751"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-02.public-sanitized.v3/index.json",
+      "bytes": 376780,
+      "sha256": "b4f523e60ea1b3d6251af0193696db1eb78061ea207d13b1e1393388046c0e0e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/algorithms-i.json",
+      "bytes": 144896,
+      "sha256": "faf7f44f09a728a3ea3bd31b018c6f56e6cb45895b808f1b07bfa975ee3ca921"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/analytical-chemistry.json",
+      "bytes": 154827,
+      "sha256": "e9c5bee0d25541c98d722872bf609dca2e59a0ff51440ec2bdbabef22d4a1b5d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/applied-statistics-i.json",
+      "bytes": 97567,
+      "sha256": "3f3de44e11f9402a80e0f3708887a99637a3afe5c3d77f6e7b28cf9b2cb00411"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "bytes": 146511,
+      "sha256": "3ed4e9afdac0eaeffebfb58736a85655655c600f89c8272e4c44911b1f8ee04f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/bayesian-inference.json",
+      "bytes": 137578,
+      "sha256": "be7e8fd3b41eda00c817f73a2ade19b8dc84546410ba9986a503c350d66eb660"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/behavioral-and-experimental-economics.json",
+      "bytes": 159127,
+      "sha256": "4999d5ed43f226aa5ce82c0a35f21c952c383b0e1696e17484cdf1be4e5fc2d0"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/biochemistry.json",
+      "bytes": 170083,
+      "sha256": "ea9945e256fcce418d374ee9439b651642e0925de67623f65b000341b0708e1b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/biology-i.json",
+      "bytes": 130253,
+      "sha256": "85c681ff846c15cfe16dd0b9039bdc9333e41c212a618fc9cca286da88061152"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/biology-ii.json",
+      "bytes": 121964,
+      "sha256": "0963d594a88759b91e05c0b9499a4a3059125f0d946269230c25b38b82606654"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/calculus-i.json",
+      "bytes": 107019,
+      "sha256": "7a238ad79ded114061cefed58c55c99509e2602d75d515844503fa4d2515e428"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/calculus-ii.json",
+      "bytes": 110073,
+      "sha256": "4e8641406fa358a6f4c4a1caccb053197b3c0084573e9a54187dcec88c713a49"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/causal-inference.json",
+      "bytes": 129155,
+      "sha256": "1420948d30b344d12d830934f43c747431f6c3c1ad43bdcc2c67be49121c737a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/cell-biology.json",
+      "bytes": 163743,
+      "sha256": "ee3fa8cef2339a1b243885288c1320a18c7f8ea08d30bec11ee0b84927f1d1be"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/chemistry-laboratory-and-measurement.json",
+      "bytes": 160483,
+      "sha256": "93c177c49fedf49beb6c5f57e108cc55f45cc4cb3e1dceae8c99930ce348c074"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/college-algebra-and-precalculus.json",
+      "bytes": 142028,
+      "sha256": "db7a6e80ba959858c2145ea7689a029f703eb29c5ba94b7cd05bd515f212bb4d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/computer-networks.json",
+      "bytes": 168443,
+      "sha256": "18624af9f988c92b656bb3b40a9e776105a416db67de4541340864cb8de22af9"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/computer-systems.json",
+      "bytes": 146302,
+      "sha256": "fc205366365873159e74786433dd1cde7c13b4d9a46997ea2a71c49176682ff5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/data-structures.json",
+      "bytes": 147226,
+      "sha256": "b8d8dd520ec7ff130d52d21f25967383a3f9ded58153d072f8423678ee2c6cfb"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/data-systems.json",
+      "bytes": 142237,
+      "sha256": "bbbb4b4e5bb9e4e8eb1c52d900220d625741b7d1ad7c17465df0b20d6be13025"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/databases-i.json",
+      "bytes": 161580,
+      "sha256": "8052c5f7fd4cc2c5c41f9fd1fca33f387aa743d8b5b7b0d810a2b26bb1a87734"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/discrete-mathematics.json",
+      "bytes": 125502,
+      "sha256": "d6bc5b5e1b845235c20a313a6c1bd87298407a804c4e0b178df5df7b438d4dda"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/ecology.json",
+      "bytes": 172472,
+      "sha256": "463b0669160e43e8276f4e35ce731519798280ff4080162d33630076a8d620b0"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/econometrics-i.json",
+      "bytes": 145573,
+      "sha256": "29726dd2491f44fa9f159f2e822609e890da8032bd615a2866ce5d7ef0bde3b5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/econometrics-ii.json",
+      "bytes": 145784,
+      "sha256": "9d616c0bdd77d96722e65ec010ffc4da187b18682c4db409fbdee1f222864686"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/economic-foundations.json",
+      "bytes": 124827,
+      "sha256": "2f5824dddd7945b8e05c2b13e95107bc7b4fb309aa948efb38c48a835aca2771"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/electricity-and-magnetism-i.json",
+      "bytes": 155713,
+      "sha256": "65b9cbee06cb1efbd7ed243610e252286b1996206de848be9bbac0aaef0cda82"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/evolutionary-biology.json",
+      "bytes": 176917,
+      "sha256": "26ac6c63c3d67e667712455adea16e015bdb3b52408f6b04286ec11717b5c312"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/experimental-design.json",
+      "bytes": 146370,
+      "sha256": "dd66b55852ca917559c6492d65ee8999483bf8774950f337905cbbcdd2489828"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/experimental-physics-and-measurement.json",
+      "bytes": 169261,
+      "sha256": "af05f3cb9c52c1340c24dc6a4990d34bd474a718abf9e99ca5868b7e4d0780ed"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/general-chemistry-i.json",
+      "bytes": 309501,
+      "sha256": "f0bfc3b61b1acfe1a9f1fce28579c47fdad5fae061ab1b1b839d7453263f480c"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/general-chemistry-ii.json",
+      "bytes": 162427,
+      "sha256": "699a9797f43ed58e8c41285f101bf7d175bf6055f582451a694cf2d9ab8bd4da"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/genetics.json",
+      "bytes": 113775,
+      "sha256": "88e60b748bd7167b216cab94f6fa2a7962b0e9a3303bc6ae4ad7618167f1bf63"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/immunology.json",
+      "bytes": 175358,
+      "sha256": "eb7073d26d642640d18ce84ec511c35b3097710e993e2a5faf2ec4c43edb540c"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/inorganic-chemistry.json",
+      "bytes": 159937,
+      "sha256": "9827341fa4f108f1c32b8a85c40bf2c30683043f7268d3ee0f2d54d71db5074b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/linear-algebra-i.json",
+      "bytes": 156555,
+      "sha256": "01a9167364f7688ab548790cafe0ea95f990495dbe8741d6919f118e0bd2e525"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/linear-algebra-ii.json",
+      "bytes": 175699,
+      "sha256": "c3fd47ff18a53a4502a0112abee66245121a5c9badd684d1cf6bdfa39e37f489"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/macroeconomic-theory-i.json",
+      "bytes": 146474,
+      "sha256": "f95289e233f1b4f1252d0f066d59182683695e82fe67de304b670e0dea00bd1b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/macroeconomic-theory-ii.json",
+      "bytes": 162471,
+      "sha256": "6a2263ea342e43531a90bb8510d9a05bf003c648fd9ef0b5522ea34c39fa15db"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/mathematical-methods-for-economics.json",
+      "bytes": 152702,
+      "sha256": "8336eb158879062652626f302d2f94b85ed61f67b6544d68e12042aa7ec25dae"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/mathematical-methods-for-physics-i.json",
+      "bytes": 149993,
+      "sha256": "80c9061058c90078cfebad871b378dfdc6fbba156c4562e2a4a16cdda149e14a"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/mathematical-proof-and-foundations.json",
+      "bytes": 215083,
+      "sha256": "51c1c7c0b8888eddc7f4659c9cc09f8d09a14d4bc156317d4b8becb172f2efe1"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/mathematical-statistics.json",
+      "bytes": 189892,
+      "sha256": "5106e7c046e3fd3c02f387bfffb4c5fd3b1c7d0d2ab43a7ed135edc05829a3e4"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/mechanics-i.json",
+      "bytes": 106378,
+      "sha256": "100559246e0a7601d520972da946b11f5172fc72ce10e540e2f51c76b7a8693f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/mechanics-ii.json",
+      "bytes": 147200,
+      "sha256": "8d9124c35a99547c2c1999cf3bd7c6af5a204b7cd4cf1d2bfaf04b9b5c370d86"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/microbiology.json",
+      "bytes": 174201,
+      "sha256": "92e0b7fe48a3151b29abba48effe750ac71316c764bc1405f8c71288cd168c8f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/microeconomic-theory-i.json",
+      "bytes": 160550,
+      "sha256": "eee7280fe3c7f6a13b92491cf8628f29ba2d7f81445a68d8a063fb269efb69d4"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/microeconomic-theory-ii.json",
+      "bytes": 140202,
+      "sha256": "7a17cec3e8bf60f5f4177cd83926529b44cd0d63cab87637fbd68d9e3ccfdaa4"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/modern-physics.json",
+      "bytes": 149567,
+      "sha256": "dc48ed2b32714051e4c413be284851dd4f76e03920b8acc1727caad96e66fc72"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/molecular-biology.json",
+      "bytes": 224847,
+      "sha256": "150cdee68bf395f77958207ab6555040fd1f5eb4b3331f630baa70dd429edd33"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/multivariable-calculus.json",
+      "bytes": 138536,
+      "sha256": "3d1e824fdc300dba82e9557c60577e000400b9dd60a408bdd677901bdee9bdf7"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/numerical-analysis-and-scientific-computing.json",
+      "bytes": 131452,
+      "sha256": "ff71049446ca386d364e0fc6b7627ebd47baea1efe866b2e052b2ad45906d607"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/optics.json",
+      "bytes": 134550,
+      "sha256": "bb643b43c2d4697f3f52b6d1c635158d0f145cb3756e444e59b6abde5b81de1d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/optimization-mathematics-i-convex-optimization.json",
+      "bytes": 182751,
+      "sha256": "3a189104ec155ca7440e89967c254db47f82f3dbf90bb4dcacd2bf33c3ca26b5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/ordinary-differential-equations.json",
+      "bytes": 216157,
+      "sha256": "25cfa8f7b8f7dbba3864adcb55fb7466772087a744f68b4967a11d4f2fbc8461"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/organic-chemistry-i.json",
+      "bytes": 153903,
+      "sha256": "9b95dc9fc1b3e6792505f214610305060211d0acd2722c46ff07321ae77bf8fc"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/organic-chemistry-ii.json",
+      "bytes": 146019,
+      "sha256": "71299aa8cc2c3614eb77233795be27e20ca446112d8f269b7edd25310bcb5607"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/organic-chemistry-laboratory.json",
+      "bytes": 155494,
+      "sha256": "f2d3d5c4257e019f939bf5955554eaa231e97a6c98b8e33f65632cfbfb82bb8b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/physics-foundations.json",
+      "bytes": 108724,
+      "sha256": "40b9a88e984d5a9ded82d61cbfac82118392987565db910cc5ccb2cf03b6a13e"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/physiology.json",
+      "bytes": 192328,
+      "sha256": "ceea719c5379cc228de0505cdff5e6fa6561670bbeac0a73736b2ad5faabfae8"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/probability-theory-i.json",
+      "bytes": 163489,
+      "sha256": "27a7e03ef854c3b27fb89354f22dba717eb37e8c646c85b73697681d75364aee"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/probability-theory-ii.json",
+      "bytes": 138382,
+      "sha256": "4e0f6c044bbdd0b9c23af6ff4b2b743802f741d5d634390e5e745e5d684a7160"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/programming-i.json",
+      "bytes": 550602,
+      "sha256": "f1e23d62048b409df8207a0ab40a42df303039f22d32aed2005abc2a2fa699b9"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/programming-ii.json",
+      "bytes": 529176,
+      "sha256": "8f966a4ee7b4211629ac5b1e819bfacb642359657bfeac65f6c6d13efb9b892b"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/real-analysis-i.json",
+      "bytes": 189576,
+      "sha256": "76f99eb36b56e99194e16fa2d172e8c4bca62b652739e0d196f60fd6111c9991"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/sampling-and-survey-methods.json",
+      "bytes": 149654,
+      "sha256": "6dc1191b3488d2a4b51e1823acfb65ddbe03be2def051580d24a7601b28ec4c5"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/security-engineering-i.json",
+      "bytes": 132122,
+      "sha256": "af734e66392d4c59411ee5828e1f55a99c12b7a74f5cde25d79edc24487a1255"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/software-architecture.json",
+      "bytes": 96828,
+      "sha256": "7f28366d24a4167b2c68376c64ab072d3b1979784df0e3e08e5098341c1e0370"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/software-engineering-i.json",
+      "bytes": 166398,
+      "sha256": "657b9804cdf83b49ce283f1b0352bb787b3e09ad69baa79acb138f5f1fd01f38"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/software-testing-i-foundations-and-test-design.json",
+      "bytes": 363898,
+      "sha256": "1b4031e03395f07412c1f824fc1dcf2f563c8e844a00380b4282be50983b214f"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/thermodynamics.json",
+      "bytes": 153582,
+      "sha256": "5582ed44d2c24f56a46eea6d35f157180b03db5c688642447ce6d339b8bc2c72"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/time-series-analysis.json",
+      "bytes": 135738,
+      "sha256": "77cba91ec4df15c3d4d58ebd81b9f752023a5a681ac8b1a836181e7cbc0519cd"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/decks/waves-and-oscillations.json",
+      "bytes": 141164,
+      "sha256": "893802109ba1bd89bb30ded66441ca8395d8299f8ce0512877edcc75e2313c7d"
+    },
+    {
+      "path": "site/public/study/data/library-runtime/2026-09-03.public-sanitized.v4/index.json",
+      "bytes": 382457,
+      "sha256": "2e70c4f08117cf0645cfb9d61c3333abf96ce36e90b3274f5980921eef8e3e4a"
+    },
+    {
+      "path": "site/public/study/data/library/2026-08-30.reviewed-72.v1/612d5c79dbe924ba00db2c08833ac79922d3de3e71a7a857bac3b1204bdca783.json",
+      "bytes": 24756804,
+      "sha256": "612d5c79dbe924ba00db2c08833ac79922d3de3e71a7a857bac3b1204bdca783"
+    },
+    {
+      "path": "site/public/study/data/library/2026-09-02.public-sanitized.v3/fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332.json",
+      "bytes": 12030738,
+      "sha256": "fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332"
+    },
+    {
+      "path": "site/public/study/data/library/2026-09-03.public-sanitized.v4/ffcd11b6409fcc7c5fb500e097e41c829d94601614b6fe5ae37ebf23dafb28a1.json",
+      "bytes": 12036415,
+      "sha256": "ffcd11b6409fcc7c5fb500e097e41c829d94601614b6fe5ae37ebf23dafb28a1"
+    },
+    {
+      "path": "site/public/study/integration/account-entry.js",
+      "bytes": 2734,
+      "sha256": "69610f0057cf550665ef8dff3109912c28aa0a907525ec59e2de1d007885c3f4"
+    },
+    {
+      "path": "site/public/study/integration/account-start.js",
+      "bytes": 1538,
+      "sha256": "a7a4d8d1765dddc9b23ba9d21b557c822a674c1193590490d43ad6840e55039d"
+    },
+    {
+      "path": "site/public/study/integration/catalog-release.mjs",
+      "bytes": 272,
+      "sha256": "8d6397e3f41334e4bed302e0cf6b6e93050a8de60d42600821b66dcfd15bb96e"
+    },
+    {
+      "path": "site/public/study/js/account-runtime.js",
+      "bytes": 42544,
+      "sha256": "b80bb0627ab1b32986959e86aa837a0b57d8cffd83c1ad664f0eb1682a1fc468"
+    },
+    {
+      "path": "site/public/study/js/account-snapshot.js",
+      "bytes": 1877,
+      "sha256": "2f655fa0ed35851fa7196ee64070662ab320d020911a4003f4558c13234fccda"
+    },
+    {
+      "path": "site/public/study/js/app.js",
+      "bytes": 117305,
+      "sha256": "026bb01705aee42d3d0ac98cf18a6715ffffed8f4d73f67b0ae8347b6eee9186"
+    },
+    {
+      "path": "site/public/study/js/browser-workspace.js",
+      "bytes": 1868,
+      "sha256": "0833869ccc95fdc4b8cf149f798f58712b9c4f29963df902d65fdaa266f8a5e1"
+    },
+    {
+      "path": "site/public/study/js/deck-build-guide.js",
+      "bytes": 32658,
+      "sha256": "6444795b10e082b119e8987c4a7bb4ce549d1dcb8e6923060c1542fab3280138"
+    },
+    {
+      "path": "site/public/study/js/definition-renderer.js",
+      "bytes": 13347,
+      "sha256": "f0445c732d71047d38c969c703a2b75629f406fb0acb5f6a7f5b90fbbf9c928c"
+    },
+    {
+      "path": "site/public/study/js/grading-guide.js",
+      "bytes": 15217,
+      "sha256": "93a139c32205b224fccf6458e7cf91f200cc3aa7e182ef33830878b9b2119d12"
+    },
+    {
+      "path": "site/public/study/js/graph-engine.js",
+      "bytes": 91625,
+      "sha256": "2bf0eb25027b62e00a55c9e1a4083a47cdcb5ca425e12a5fab9181d59a444cc1"
+    },
+    {
+      "path": "site/public/study/js/graph-scope.js",
+      "bytes": 21941,
+      "sha256": "ac262e974d900d0407b8ac5287798e21f708ccd9ce03f50c804b4698d295e8c5"
+    },
+    {
+      "path": "site/public/study/js/graph-view.js",
+      "bytes": 52757,
+      "sha256": "f361faf9ed5c68631b2047b4d5cb003405cf349a1a19cbdf18633f7b625e8847"
+    },
+    {
+      "path": "site/public/study/js/library-catalog.js",
+      "bytes": 90975,
+      "sha256": "58d2c069251d022ba5cc9ba91d0c385e397f05f82a533dcba7e5699bd46ded1f"
+    },
+    {
+      "path": "site/public/study/js/library-descriptions.js",
+      "bytes": 14047,
+      "sha256": "56f53d0310382249ae8e07c0c5740fcdd48630f570804246bbf8df50dc043c15"
+    },
+    {
+      "path": "site/public/study/js/library-loader.js",
+      "bytes": 21131,
+      "sha256": "7b3a99c56d54a284d6cf31851036bf13b34d279e477e270372eee18de3f7ebf0"
+    },
+    {
+      "path": "site/public/study/js/library-view.js",
+      "bytes": 5037,
+      "sha256": "791d8c10355ffd45520a2f55c5317134576a18853294fa92d13ec94af3fc88a9"
+    },
+    {
+      "path": "site/public/study/js/local-claim-source.js",
+      "bytes": 2814,
+      "sha256": "d278ee4e00bfed541e96cd0548bf2b7e18cb78ecde883452f5b638c4bb3af93e"
+    },
+    {
+      "path": "site/public/study/js/mastery.js",
+      "bytes": 177,
+      "sha256": "1dac9e959107489fee79663375c115d135c70c921d60cf778d3bd5da229bc006"
+    },
+    {
+      "path": "site/public/study/js/search-field-state.js",
+      "bytes": 736,
+      "sha256": "83301fea26418e5260b4213f21e2975f5b2aa15d099f17ec7fabd2871d07290e"
+    },
+    {
+      "path": "site/public/study/js/start.js",
+      "bytes": 252,
+      "sha256": "b8d83a83362db1e85878d3419e2dcfb72af63a9254473411fd48a457c20a7903"
+    },
+    {
+      "path": "site/public/study/js/startup-view-state.js",
+      "bytes": 346,
+      "sha256": "4dd1ba5c57ffae327b4ba0c9deceb6784f10e34e280388d140e17bf8f8a10db3"
+    },
+    {
+      "path": "site/public/study/js/store.js",
+      "bytes": 221866,
+      "sha256": "2d71521457b90075ad205de8eaea9d6dcc544968d97752dd7838da1ccfe901f9"
+    },
+    {
+      "path": "site/public/study/js/streak.js",
+      "bytes": 5359,
+      "sha256": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3"
+    },
+    {
+      "path": "site/public/study/js/view-clock.js",
+      "bytes": 2739,
+      "sha256": "65912b756f6b6e02db5a3cc6f9a1a8c32b743e3355be47fad7579efe483e66ec"
+    },
+    {
+      "path": "site/public/study/js/webmcp.js",
+      "bytes": 54672,
+      "sha256": "aadd6c476bb54ff83fb7c121d7a3723b36c95b2b8357003652b2c4a08892ad08"
+    },
+    {
+      "path": "site/public/study/styles.css",
+      "bytes": 98345,
+      "sha256": "e0bc6fc496e444c1bea3238eb77e6849c42985f0796e1f434418f518de8b7bc2"
+    },
+    {
+      "path": "site/public/study/vendor/katex/LICENSE",
+      "bytes": 1107,
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    {
+      "path": "site/public/study/vendor/katex/README.md",
+      "bytes": 480,
+      "sha256": "fa3558c165080bea50975243aa95199ed24ce4732d8699db4e20a3b00aa619e5"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_AMS-Regular.ttf",
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_AMS-Regular.woff",
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Caligraphic-Bold.ttf",
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff",
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2",
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Caligraphic-Regular.ttf",
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff",
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2",
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Fraktur-Bold.ttf",
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff",
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2",
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Fraktur-Regular.ttf",
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff",
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2",
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Bold.ttf",
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Bold.woff",
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Bold.woff2",
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-BoldItalic.ttf",
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff",
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2",
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Italic.ttf",
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Italic.woff",
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Italic.woff2",
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Regular.ttf",
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Regular.woff",
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Main-Regular.woff2",
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Math-BoldItalic.ttf",
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff",
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2",
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Math-Italic.ttf",
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Math-Italic.woff",
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Math-Italic.woff2",
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Bold.ttf",
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff",
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2",
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Italic.ttf",
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff",
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2",
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Regular.ttf",
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff",
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2",
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Script-Regular.ttf",
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Script-Regular.woff",
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Script-Regular.woff2",
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size1-Regular.ttf",
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size1-Regular.woff",
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size1-Regular.woff2",
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size2-Regular.ttf",
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size2-Regular.woff",
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size2-Regular.woff2",
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size3-Regular.ttf",
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size3-Regular.woff",
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size3-Regular.woff2",
+      "bytes": 3624,
+      "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size4-Regular.ttf",
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size4-Regular.woff",
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Size4-Regular.woff2",
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Typewriter-Regular.ttf",
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff",
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+    },
+    {
+      "path": "site/public/study/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2",
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+    },
+    {
+      "path": "site/public/study/vendor/katex/katex.js",
+      "bytes": 601882,
+      "sha256": "9069225f8307ea43f5c98e3c4772e26572a234a8d740018724acfe57f7467cbe"
+    },
+    {
+      "path": "site/public/study/vendor/katex/katex.min.css",
+      "bytes": 24727,
+      "sha256": "180c2d77d434d7da51d6625c50a964d4fd6fdbdb9bc8796a0a016c30c49931fb"
+    },
+    {
+      "path": "site/tests/account-command-writer-independence.test.mjs",
+      "bytes": 14879,
+      "sha256": "196ad811f5e34ee697d50356f645095642a5462316e01a3502465bc1b4791e20"
+    },
+    {
+      "path": "site/tests/account-library-hydration.test.mjs",
+      "bytes": 7019,
+      "sha256": "cc14d311ef4213890f70c1e4b71c65fad5157304372d6cd05ae7162625cacb4d"
+    },
+    {
+      "path": "site/tests/account-runtime-busy.test.mjs",
+      "bytes": 9466,
+      "sha256": "54dbb8cc96a8cd5d0ab1b7843923003f7196da0bfa4d767cb67e7936269c2874"
+    },
+    {
+      "path": "site/tests/account-runtime-v6.test.mjs",
+      "bytes": 46259,
+      "sha256": "85f1ac6d3c0c468d7f3d44c1e4b4826c9cba57a335739499a31284d954fd2b97"
+    },
+    {
+      "path": "site/tests/account-wrapper.test.mjs",
+      "bytes": 21653,
+      "sha256": "f292c929d40f08a36d053eb80f6352aaade2cda87bca02ead4496402ed3a10c4"
+    },
+    {
+      "path": "site/tests/account-writer-bridge.test.mjs",
+      "bytes": 9188,
+      "sha256": "20955ebd989198a0f5c724583535956120db8a3cc14a40a29302560b22b76505"
+    },
+    {
+      "path": "site/tests/archive-durable-client.test.mjs",
+      "bytes": 5972,
+      "sha256": "a26ec0400fb739b2b216a2c57303aaaf31f4f660e6c0f7c4c011207c88018311"
+    },
+    {
+      "path": "site/tests/backend-v5-account-composition.test.mjs",
+      "bytes": 4488,
+      "sha256": "868eeb33d83529c21d5ff809cbcf0922346beea209c97546b6d47a3762fafb0b"
+    },
+    {
+      "path": "site/tests/branding.test.mjs",
+      "bytes": 3605,
+      "sha256": "48fd2334e8dc76534807a5bb82477cfe342e041433d76143536fb9bb0efea060"
+    },
+    {
+      "path": "site/tests/catalog-release-routing.test.mjs",
+      "bytes": 4648,
+      "sha256": "d1eeb45ef6d7ec01bb89b0d2ba2d11b9f6acf4c7d7c8fccddcc4df9b938d99f9"
+    },
+    {
+      "path": "site/tests/continuous-study.test.mjs",
+      "bytes": 5045,
+      "sha256": "c16c7982a376a8821b5f7852695c0a3339663a4cc497bed65a5107a68bf90401"
+    },
+    {
+      "path": "site/tests/d1-package.test.mjs",
+      "bytes": 5805,
+      "sha256": "80860a54f303cb594e2aebc381cd12e09b6e8d981965a9f63c102022c0a2257a"
+    },
+    {
+      "path": "site/tests/graph-curves.test.mjs",
+      "bytes": 6720,
+      "sha256": "9a881b96c20161b442e01b874784057b9e1f271626348cc7c7644d47afb2f1a9"
+    },
+    {
+      "path": "site/tests/graph-mobile.test.mjs",
+      "bytes": 20061,
+      "sha256": "1c89e82a4a86770fa57ce58c2fdfe90376d02d5695c98df06ced3246373f7eab"
+    },
+    {
+      "path": "site/tests/library-card.test.mjs",
+      "bytes": 8533,
+      "sha256": "a7217c2ad2c952430a262e78b7f8d4f56a439a6b8481fcdb3cd5aec384e42a32"
+    },
+    {
+      "path": "site/tests/library-graph-preview.test.mjs",
+      "bytes": 3228,
+      "sha256": "478bf7d15719da01b695c554165a05cc2df256281addbfb8619808901e626b88"
+    },
+    {
+      "path": "site/tests/library-runtime.test.mjs",
+      "bytes": 6853,
+      "sha256": "be2290f0b5b0ef24816fa0fd2a1dbb15bf4a340b84115203b0946d85a853d650"
+    },
+    {
+      "path": "site/tests/library-search-continuity.test.mjs",
+      "bytes": 2249,
+      "sha256": "728709eef21317ef7f05f83f2c61a2d99c06a6f17c247f8668cc776bded0f177"
+    },
+    {
+      "path": "site/tests/library-single-course-boundary.test.mjs",
+      "bytes": 27309,
+      "sha256": "b19f6e5c336d2b1e0a1d5cade5539b6b2b28f7d9f78f9a8f9a92132c3fc294cc"
+    },
+    {
+      "path": "site/tests/library-v3-website-flow.test.mjs",
+      "bytes": 10414,
+      "sha256": "19cf9bc4f2af218af7629e5774139f1f2f8dff55577a77a6a8426ddc48ec1457"
+    },
+    {
+      "path": "site/tests/library-v4-description-successor.test.mjs",
+      "bytes": 9072,
+      "sha256": "44c3ccc663fb04ec08586b973b770316db9726e8a4d74f3238304483fb9d91f1"
+    },
+    {
+      "path": "site/tests/mastered-demo.test.mjs",
+      "bytes": 6528,
+      "sha256": "23b2a7a797e430b79ac670caa7b9e4c4e7587d90329e19972a3cf4633635d713"
+    },
+    {
+      "path": "site/tests/my-decks-polish.test.mjs",
+      "bytes": 7049,
+      "sha256": "5e2a7bb6d38c02b6459856b28543e28a909d0d353764f1b83830c7599f4dd728"
+    },
+    {
+      "path": "site/tests/preferred-demo-continuous.test.mjs",
+      "bytes": 9200,
+      "sha256": "af0c77b670f581276a65ebde3034276f3732db601257060ad6fdac17d0e8cd25"
+    },
+    {
+      "path": "site/tests/release-selection.test.mjs",
+      "bytes": 16815,
+      "sha256": "53716231dd2467751c4ce24540065e0ed94185c8d8b4b85075d078911cdca57d"
+    },
+    {
+      "path": "site/tests/startup-view-state.test.mjs",
+      "bytes": 1077,
+      "sha256": "c931d05b609ca195759a868c28c4179b0a595837d4846f20317e359aadc6c7da"
+    },
+    {
+      "path": "site/tests/study-card-ui-successor.test.mjs",
+      "bytes": 37207,
+      "sha256": "29cabe6cde8597e961801ad97142aec4c94116a7ecf4d5ae2ff7d09d502b2a44"
+    },
+    {
+      "path": "site/tests/study-home-polish.test.mjs",
+      "bytes": 13673,
+      "sha256": "168ae8924300f1a303d517331675aec26cea5f4bdba5ccd4e7ea7a1fb4c5d7e0"
+    },
+    {
+      "path": "site/tests/webmcp-metadata.test.mjs",
+      "bytes": 5085,
+      "sha256": "3d121ee9f85b0e6f8f8887838051825569cb0900929c700b6c5176356e5acf16"
     },
     {
       "path": "site/tsconfig.json",
@@ -981,728 +2931,8 @@
     },
     {
       "path": "site/vite.config.ts",
-      "bytes": 2008,
-      "sha256": "d78bfb9e72cdbbaddd82285c00c0f1a651f1e576955322c6c1749b6d1cf589d2"
-    },
-    {
-      "path": "tests/fixtures/deck_generation/order-relations.normalized.json",
-      "bytes": 4655,
-      "sha256": "20a6ba8fa9736888a2b4e2d656fb0dadcfe8f37d1afe7e871957bde76df4f55a"
-    },
-    {
-      "path": "web/README.md",
-      "bytes": 11471,
-      "sha256": "c5e4e75db65e554a4f1d174946c91ae15e51182fe0ef8101cc51654094ee6f43"
-    },
-    {
-      "path": "web/data/catalog.js",
-      "bytes": 7869,
-      "sha256": "75cac89c7f3235aa40bc683b490ff154a27f8a9bfd12287f834559820ab79de2"
-    },
-    {
-      "path": "web/data/library-releases.json",
-      "bytes": 1902,
-      "sha256": "20f1729c6d7f0853fc5ebd23978f211db6f6ba76a5108bdb885703d95279c5b7"
-    },
-    {
-      "path": "web/data/library/2026-09-02.public-sanitized-72.v2/a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1.json",
-      "bytes": 12033408,
-      "sha256": "a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1"
-    },
-    {
-      "path": "web/dev-server.mjs",
-      "bytes": 2038,
-      "sha256": "c7d379309cbb74d580276f443a8448ca42f60255830329ce5af7924e064cae2e"
-    },
-    {
-      "path": "web/index.html",
-      "bytes": 4859,
-      "sha256": "6e54ed5889cf7d7e5cafccd1ca1effdd17373a15df8524095196e9c26c072cbf"
-    },
-    {
-      "path": "web/integration/account-entry.js",
-      "bytes": 1718,
-      "sha256": "3ba91ae1ab5195bde7a03fa1b9eedaabcd052c1bd34493093a0297ec947b412a"
-    },
-    {
-      "path": "web/integration/learner-endpoint.mjs",
-      "bytes": 2388,
-      "sha256": "2f970b7143a34ac322fd3e3f519fbe79df41de0a7c5973a85eb64eb4b6385718"
-    },
-    {
-      "path": "web/integration/sites-route.ts",
-      "bytes": 490,
-      "sha256": "d1ea53562c039c5d2de9df7c298539bc2d4482fdec0a42f50581ad2ce99b8dab"
-    },
-    {
-      "path": "web/js/account-runtime.js",
-      "bytes": 20222,
-      "sha256": "49217272d13ecbb7d755fe02cdbab94f86fbe1b82a08d530529d4e05555990bd"
-    },
-    {
-      "path": "web/js/account-snapshot.js",
-      "bytes": 1591,
-      "sha256": "4e2cc0c7fef304c5c5469bb4d5cec5902378a211f5954345467ef58a96c407a2"
-    },
-    {
-      "path": "web/js/app.js",
-      "bytes": 77299,
-      "sha256": "907667447ec5f3ca5532a4fc40f72d7f0884b170816d64704c3b20ce4934ed99"
-    },
-    {
-      "path": "web/js/browser-workspace.js",
-      "bytes": 1868,
-      "sha256": "0833869ccc95fdc4b8cf149f798f58712b9c4f29963df902d65fdaa266f8a5e1"
-    },
-    {
-      "path": "web/js/deck-build-guide.js",
-      "bytes": 18771,
-      "sha256": "df713b00100ebbba5a3b28d4ea3da954bd61abb30351c047f8e6499112813e91"
-    },
-    {
-      "path": "web/js/definition-renderer.js",
-      "bytes": 13347,
-      "sha256": "f0445c732d71047d38c969c703a2b75629f406fb0acb5f6a7f5b90fbbf9c928c"
-    },
-    {
-      "path": "web/js/grading-guide.js",
-      "bytes": 15055,
-      "sha256": "a107ccb0da434902745d21921393d2ca59ada5b5e534e0ee1494a3c027cf3afa"
-    },
-    {
-      "path": "web/js/grading-guide.v1.2-candidate.2.js",
-      "bytes": 15997,
-      "sha256": "6e9daca994fd5fe4786f562c34c569789accbd0a25045ffd0acdf106b5bc5089"
-    },
-    {
-      "path": "web/js/grading-guide.v1.2-candidate.3.js",
-      "bytes": 16505,
-      "sha256": "e50683c32ce28c4e84b89e511c856136e9daad7dc971cbec93c805d67846b188"
-    },
-    {
-      "path": "web/js/graph-engine.js",
-      "bytes": 59859,
-      "sha256": "f3afcde08aa2c18f1b1dee34460584f682cecfb4bfae4b0e9896d58e2b611d9a"
-    },
-    {
-      "path": "web/js/graph-scope.js",
-      "bytes": 19794,
-      "sha256": "a18028bffc9acfe5f559eb914727b5ec0fe20a7c5611625186d813f8fafea221"
-    },
-    {
-      "path": "web/js/graph-view.js",
-      "bytes": 35468,
-      "sha256": "bde3a50358a963d1baafc1516201dbc8f105534ed215983fca50df2a71ae68e5"
-    },
-    {
-      "path": "web/js/library-catalog.js",
-      "bytes": 91161,
-      "sha256": "fc2458b63e813f53bd81b231084dcc756963a4ed3625fd38aee5d8ceb024ba95"
-    },
-    {
-      "path": "web/js/library-loader.js",
-      "bytes": 7173,
-      "sha256": "67f32d2cc678fc75c9b055fff68bbe9ab093dad120fb38575c2ad728665e4cfb"
-    },
-    {
-      "path": "web/js/library-view.js",
-      "bytes": 3642,
-      "sha256": "83d8e1ff59cde3b12c219d42afe780c5a660faa6e484ac444ab2474bcc480e1a"
-    },
-    {
-      "path": "web/js/local-claim-source.js",
-      "bytes": 2814,
-      "sha256": "d278ee4e00bfed541e96cd0548bf2b7e18cb78ecde883452f5b638c4bb3af93e"
-    },
-    {
-      "path": "web/js/mastery.js",
-      "bytes": 177,
-      "sha256": "1dac9e959107489fee79663375c115d135c70c921d60cf778d3bd5da229bc006"
-    },
-    {
-      "path": "web/js/start.js",
-      "bytes": 226,
-      "sha256": "841a1fd09e4926c3928dca864620b091be39d56d3b64d17984dfef3572303d9d"
-    },
-    {
-      "path": "web/js/store.js",
-      "bytes": 214698,
-      "sha256": "8cbde997ee0330f180e1aecd107425c53a7005e5e427dd58c2da9e120ec05dc6"
-    },
-    {
-      "path": "web/js/streak.js",
-      "bytes": 5359,
-      "sha256": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3"
-    },
-    {
-      "path": "web/js/view-clock.js",
-      "bytes": 2231,
-      "sha256": "792240f972c57b968fb3897664d72924ee8321720c7afd4f04220ae9955be5c0"
-    },
-    {
-      "path": "web/js/webmcp.js",
-      "bytes": 46425,
-      "sha256": "9faa86f447eddf4424b432075129f02ea7d7875eb6b2f1ea78f25181aae440df"
-    },
-    {
-      "path": "web/package.json",
-      "bytes": 354,
-      "sha256": "26554838b95e37437d4a788dc006e29ff89428b1d153dd8fa45d73243cb10bce"
-    },
-    {
-      "path": "web/scripts/build-library-release.mjs",
-      "bytes": 8348,
-      "sha256": "fb515889ba8196428f83dfdf272767c00a0c811cbfbef50ea93e7148f55b04b6"
-    },
-    {
-      "path": "web/scripts/check.mjs",
-      "bytes": 1976,
-      "sha256": "ac1503e1036bfb277d3d8079f6fbc2c5d3e6999cd6e3c3d509acea946e685db1"
-    },
-    {
-      "path": "web/styles.css",
-      "bytes": 63507,
-      "sha256": "36e7651fbc2ab686250449f685384692df4ece592140e94f49504e96ca5d6d25"
-    },
-    {
-      "path": "web/tests/account-activity.test.mjs",
-      "bytes": 11221,
-      "sha256": "11a222c768d3a819a8d28fabc1d964f55b60290ecf8c662559e038c5d5616b4c"
-    },
-    {
-      "path": "web/tests/account-app.test.mjs",
-      "bytes": 9928,
-      "sha256": "bd1655c1575a2e9fc8cc8521d46e7751ad9f31f1e171d214353da82f83ea943f"
-    },
-    {
-      "path": "web/tests/account-availability.test.mjs",
-      "bytes": 19003,
-      "sha256": "1131c4f93d0b6d2b92774aaa9c61254af7143ef492d5db26b2f1420c05d0109d"
-    },
-    {
-      "path": "web/tests/account-hydration-guards.test.mjs",
-      "bytes": 7821,
-      "sha256": "54b9965fe28d81ee701082c54e4d561e6819c4dca22df295c76e8a5fad8c4f13"
-    },
-    {
-      "path": "web/tests/account-runtime.test.mjs",
-      "bytes": 13570,
-      "sha256": "6e104a1092e4ba57e5c80ef9b8e3ea0b8a43ad8a245dcbba675acd7776ee3618"
-    },
-    {
-      "path": "web/tests/account-server.test.mjs",
-      "bytes": 1667,
-      "sha256": "3540fef16592e1540951c48b59fbca74bd3681ce1abded1a2d20e2c6acc24e0f"
-    },
-    {
-      "path": "web/tests/app-runtime.test.mjs",
-      "bytes": 15883,
-      "sha256": "2286f6fab0320290db50587ba0a4ac41dae4cad4024464708c03f664d02d840c"
-    },
-    {
-      "path": "web/tests/catalog-integration.test.mjs",
-      "bytes": 4092,
-      "sha256": "af11189d95017b0cd12dae8bbfdfa7f17e063d56ea651d8757dea8b2ece0353e"
-    },
-    {
-      "path": "web/tests/catalog-retention.test.mjs",
-      "bytes": 16488,
-      "sha256": "448de1cfe25c021104ac44894c718015a346646e3614ff15e207bb9b9b82e09d"
-    },
-    {
-      "path": "web/tests/catalog.test.mjs",
-      "bytes": 3319,
-      "sha256": "dafa5f77c7dfe6c824df64301edddc6339e866ed519363cc5df4c8658642cf6f"
-    },
-    {
-      "path": "web/tests/definition-renderer.test.mjs",
-      "bytes": 8511,
-      "sha256": "a16869a0d617556d54e48c0106a0604002f25cced1bca0cb754179f3c32f99ed"
-    },
-    {
-      "path": "web/tests/graph-engine.test.mjs",
-      "bytes": 13319,
-      "sha256": "1fdf7cfbf1b0b5bf787950b4899e894d86b81e078656e6896dfb804874689072"
-    },
-    {
-      "path": "web/tests/graph-mobile.test.mjs",
-      "bytes": 15976,
-      "sha256": "8d362c474dfe46de0ea91aacd371c2f94f08d24c2efb156ae4f36541c952ffd5"
-    },
-    {
-      "path": "web/tests/graph-scope.test.mjs",
-      "bytes": 7801,
-      "sha256": "edcb2847571ebf0a92231e96ffb2bcf962c2b4cee9cb55efe613c4a95f7ca8a0"
-    },
-    {
-      "path": "web/tests/graph-view-scope.test.mjs",
-      "bytes": 7509,
-      "sha256": "e454e01eae42810dfb17c5d3e160942200a75fdce3ddc0af9918c27ad222b540"
-    },
-    {
-      "path": "web/tests/helpers/account-fixture.mjs",
-      "bytes": 4371,
-      "sha256": "2464425f02716bee471ce086f2c2e3ede0e6bcfbed764019d1764aeaddf5be2c"
-    },
-    {
-      "path": "web/tests/helpers/activity-consumer-fixture.mjs",
-      "bytes": 3022,
-      "sha256": "5d10458fcbf6864ef664f0dcb1cfacb6dc1561c3cb2a3992596824013b24f5e6"
-    },
-    {
-      "path": "web/tests/helpers/app-harness.mjs",
-      "bytes": 9913,
-      "sha256": "8317531863610f4d6da43005c6810ec006db45bb7dc58e2f44ffd6916338cf20"
-    },
-    {
-      "path": "web/tests/helpers/library-fixture.mjs",
-      "bytes": 5648,
-      "sha256": "6e4a83c5502effe464f2fd37e6865fb292f4fe113e39769b45126bb28199180b"
-    },
-    {
-      "path": "web/tests/library-authoring.test.mjs",
-      "bytes": 11076,
-      "sha256": "ef4eafbae4aca0ba4e86ca668790ab56c527dfcd7bdbdd1718f6c509c9a1ffb1"
-    },
-    {
-      "path": "web/tests/library-candidate-contract.test.mjs",
-      "bytes": 2177,
-      "sha256": "b41c4b793f459fdf106c9d5cae3fff301be3987ba97a504fae237bb26fa53fac"
-    },
-    {
-      "path": "web/tests/library-catalog.test.mjs",
-      "bytes": 20430,
-      "sha256": "0642de0dc8933584efd9a90dd2d084674887019c01a02b8ed22384a7c28a207b"
-    },
-    {
-      "path": "web/tests/library-core.test.mjs",
-      "bytes": 9928,
-      "sha256": "5571025cf14be2257871efb9e0133fc7c813acf35b9d5d3e00e70e0b4ec85b77"
-    },
-    {
-      "path": "web/tests/library-installation.test.mjs",
-      "bytes": 22538,
-      "sha256": "a8d28a2af9dc28e9c2399f9cf40c89eaac4dfdde74e6b29716379a31cb8ac926"
-    },
-    {
-      "path": "web/tests/library-webmcp.test.mjs",
-      "bytes": 7386,
-      "sha256": "bb7c5b1fdc380b42b2c8da943e7add52b224af0c997b86789ab836bf110e2431"
-    },
-    {
-      "path": "web/tests/library-website.test.mjs",
-      "bytes": 15662,
-      "sha256": "27a8bda03095f260d79cf879d6f5de66537757494e678635574b05889632f230"
-    },
-    {
-      "path": "web/tests/mastered-demo.test.mjs",
-      "bytes": 6489,
-      "sha256": "02c3c1a00bbb281ffdd45fe0234d530c3d201d37d3ab4e3870c5419b211dedde"
-    },
-    {
-      "path": "web/tests/mastery.test.mjs",
-      "bytes": 731,
-      "sha256": "e4001458e0450f55408332938658d0b2b5ec6b38f5ef75954eb07ffa89ce346a"
-    },
-    {
-      "path": "web/tests/persistence.test.mjs",
-      "bytes": 18714,
-      "sha256": "977fea351804c7cf8ca8d2f4922ffd6b6a21ef9e18249038359ec69602d316c0"
-    },
-    {
-      "path": "web/tests/public-library-release.test.mjs",
-      "bytes": 1729,
-      "sha256": "13cd5221cc425db6cddf0709130083ae21e02f8190274fbfab4aa91587388a28"
-    },
-    {
-      "path": "web/tests/store.test.mjs",
-      "bytes": 46739,
-      "sha256": "e2c2615176b74d9d302da388766dc7f34e6037511532763781f0c88109757356"
-    },
-    {
-      "path": "web/tests/streak-store.test.mjs",
-      "bytes": 6968,
-      "sha256": "06d156ee87e9275afd0c6b1e95a73a3e2c4c429e8f965f8408c070c870b8385e"
-    },
-    {
-      "path": "web/tests/streak.test.mjs",
-      "bytes": 11212,
-      "sha256": "2ada535977224318cae839b95061de03b7a653cc00941e0b462239b81187fe2a"
-    },
-    {
-      "path": "web/tests/study-activity-history.test.mjs",
-      "bytes": 24827,
-      "sha256": "ce3373553303dd4f02af008e4770767253b0592735e0f86a312f18ebd2e4f822"
-    },
-    {
-      "path": "web/tests/study-activity-progress.test.mjs",
-      "bytes": 5897,
-      "sha256": "45463beda68d40811b370fad977bfa44af6a5cba869504bcc8b36348a93ae04b"
-    },
-    {
-      "path": "web/tests/study-activity-ui.test.mjs",
-      "bytes": 18094,
-      "sha256": "78d44ec1161d263044163e6fe05c43c3047b8bfc89bcf23b720425a28dd34d0a"
-    },
-    {
-      "path": "web/tests/study-activity.test.mjs",
-      "bytes": 18620,
-      "sha256": "d9bbcbee51cf73269fa27e16e9890ddea0bbeda6f8a00e3bda7f978b7f8c3150"
-    },
-    {
-      "path": "web/tests/study-availability-library.test.mjs",
-      "bytes": 19402,
-      "sha256": "743b85616f5426ec04f113e022b8b64b01ea4ab02162f55aa9bbcedbfd0f0f3f"
-    },
-    {
-      "path": "web/tests/study-availability-ui.test.mjs",
-      "bytes": 17652,
-      "sha256": "8819b66d066df7cf2f8cd46382e785c49cffa48204fe921bb47aa3bc2214b932"
-    },
-    {
-      "path": "web/tests/study-availability.test.mjs",
-      "bytes": 20343,
-      "sha256": "b08390f7ce0c7f357edcceedeee6eccd5743465cf7ea9c4e40c6e3ab51629c16"
-    },
-    {
-      "path": "web/tests/ui-contract.test.mjs",
-      "bytes": 10842,
-      "sha256": "789c5c4dcb64117a51667a6c6ae25e9c9a38a7302239d6800013cc5be47ad77a"
-    },
-    {
-      "path": "web/tests/view-clock.test.mjs",
-      "bytes": 3171,
-      "sha256": "1345fc35970ee20edd374688b43157d98423fd03677ac8fe447ea3b9439011af"
-    },
-    {
-      "path": "web/tests/webmcp-account-context.test.mjs",
-      "bytes": 17019,
-      "sha256": "f522130905e1a7eafaacb74769753c2555625de631b088331211e85c356b0461"
-    },
-    {
-      "path": "web/tests/webmcp.test.mjs",
-      "bytes": 87800,
-      "sha256": "3325d204118a59a4346f272445886ee7d4935d937fd8b6830e3df63ba451fd2d"
-    },
-    {
-      "path": "web/vendor/katex/LICENSE",
-      "bytes": 1107,
-      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
-    },
-    {
-      "path": "web/vendor/katex/README.md",
-      "bytes": 480,
-      "sha256": "fa3558c165080bea50975243aa95199ed24ce4732d8699db4e20a3b00aa619e5"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_AMS-Regular.ttf",
-      "bytes": 63632,
-      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_AMS-Regular.woff",
-      "bytes": 33516,
-      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
-      "bytes": 28076,
-      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Bold.ttf",
-      "bytes": 12368,
-      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff",
-      "bytes": 7716,
-      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2",
-      "bytes": 6912,
-      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Regular.ttf",
-      "bytes": 12344,
-      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff",
-      "bytes": 7656,
-      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2",
-      "bytes": 6908,
-      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Bold.ttf",
-      "bytes": 19584,
-      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff",
-      "bytes": 13296,
-      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2",
-      "bytes": 11348,
-      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Regular.ttf",
-      "bytes": 19572,
-      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff",
-      "bytes": 13208,
-      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2",
-      "bytes": 11316,
-      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Bold.ttf",
-      "bytes": 51336,
-      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Bold.woff",
-      "bytes": 29912,
-      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Bold.woff2",
-      "bytes": 25324,
-      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-BoldItalic.ttf",
-      "bytes": 32968,
-      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff",
-      "bytes": 19412,
-      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2",
-      "bytes": 16780,
-      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Italic.ttf",
-      "bytes": 33580,
-      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Italic.woff",
-      "bytes": 19676,
-      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Italic.woff2",
-      "bytes": 16988,
-      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Regular.ttf",
-      "bytes": 53580,
-      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Regular.woff",
-      "bytes": 30772,
-      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Main-Regular.woff2",
-      "bytes": 26272,
-      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Math-BoldItalic.ttf",
-      "bytes": 31196,
-      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff",
-      "bytes": 18668,
-      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2",
-      "bytes": 16400,
-      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Math-Italic.ttf",
-      "bytes": 31308,
-      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Math-Italic.woff",
-      "bytes": 18748,
-      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Math-Italic.woff2",
-      "bytes": 16440,
-      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Bold.ttf",
-      "bytes": 24504,
-      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff",
-      "bytes": 14408,
-      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2",
-      "bytes": 12216,
-      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Italic.ttf",
-      "bytes": 22364,
-      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff",
-      "bytes": 14112,
-      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2",
-      "bytes": 12028,
-      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Regular.ttf",
-      "bytes": 19436,
-      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff",
-      "bytes": 12316,
-      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2",
-      "bytes": 10344,
-      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Script-Regular.ttf",
-      "bytes": 16648,
-      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Script-Regular.woff",
-      "bytes": 10588,
-      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Script-Regular.woff2",
-      "bytes": 9644,
-      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size1-Regular.ttf",
-      "bytes": 12228,
-      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size1-Regular.woff",
-      "bytes": 6496,
-      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size1-Regular.woff2",
-      "bytes": 5468,
-      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size2-Regular.ttf",
-      "bytes": 11508,
-      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size2-Regular.woff",
-      "bytes": 6188,
-      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size2-Regular.woff2",
-      "bytes": 5208,
-      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size3-Regular.ttf",
-      "bytes": 7588,
-      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size3-Regular.woff",
-      "bytes": 4420,
-      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size3-Regular.woff2",
-      "bytes": 3624,
-      "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size4-Regular.ttf",
-      "bytes": 10364,
-      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size4-Regular.woff",
-      "bytes": 5980,
-      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Size4-Regular.woff2",
-      "bytes": 4928,
-      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Typewriter-Regular.ttf",
-      "bytes": 27556,
-      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff",
-      "bytes": 16028,
-      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
-    },
-    {
-      "path": "web/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2",
-      "bytes": 13568,
-      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
-    },
-    {
-      "path": "web/vendor/katex/katex.js",
-      "bytes": 601882,
-      "sha256": "9069225f8307ea43f5c98e3c4772e26572a234a8d740018724acfe57f7467cbe"
-    },
-    {
-      "path": "web/vendor/katex/katex.min.css",
-      "bytes": 24727,
-      "sha256": "180c2d77d434d7da51d6625c50a964d4fd6fdbdb9bc8796a0a016c30c49931fb"
+      "bytes": 2197,
+      "sha256": "69444c17c6766da71b1babe7c156b89014f8895e5ff5d78add0edec8acdf4da9"
     }
   ]
 }

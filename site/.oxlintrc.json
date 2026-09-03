@@ -23,6 +23,7 @@
     "typeCheck": true
   },
   "ignorePatterns": [
+    ".cache/**",
     ".next/**",
     ".vinext/**",
     "out/**",
@@ -32,6 +33,8 @@
     "components/ui/**",
     "hooks/**",
     "public/study/**",
+    "backend/d1-integration/**",
+    "backend/d1-sites-case-fix/**",
     "integration/backend/**",
     "integration/accounts/**",
     "integration/core/**",

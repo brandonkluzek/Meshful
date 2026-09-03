@@ -15,6 +15,9 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 const localBindingConfig = {
   main: 'vinext/server/fetch-handler',
   compatibility_flags: ['nodejs_compat'],
+  // Vinext emits the static directory, while this explicit binding makes the
+  // same immutable files available to the server-side thin Library resolver.
+  assets: { binding: 'ASSETS' },
   d1_databases: d1
     ? [
         {

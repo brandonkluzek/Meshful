@@ -1,0 +1,147 @@
+{
+  "schema": "meshful-d1-integration-delivery.v1",
+  "prepared_on": "2026-09-01",
+  "state": "local-qualified-default-denied-not-hosted",
+  "delivery_root": "backend/d1-integration",
+  "integration_owner": "Dev - Website",
+  "integration_owner_task": "01a04b75-6f44-7783-a88c-77b03ec4c2a4",
+  "file_count": 16,
+  "payload_file_count": 15,
+  "payload_sha256": "8cc9db06ebe71a300a32f873ca5d89c2995ceaa51cbededfa6cdc1f60ad68d93",
+  "fingerprint_recipe": "SHA-256 of each payload SHA-256, two ASCII spaces, full repo-relative path, and one LF byte (0x0A), concatenated in lexicographic code-unit path order. Paths begin backend/d1-integration/. Exclude this manifest; do not use localeCompare.",
+  "predecessors": [
+    {
+      "delivery": "backend-v1",
+      "manifest": "backend/FILE_MANIFEST.md",
+      "manifest_sha256": "6c4ca3ccb5681cca26f082ba3782c0990e53962d95280ddab4ab2597cd308de1",
+      "payload_sha256": "4a38303cc21f4693706246e8a0ceace7f0200e0c5c7203a2a9db149b9ccf023a"
+    },
+    {
+      "delivery": "backend-v2-capacity-successor",
+      "manifest": "backend/v2/FILE_MANIFEST.json",
+      "manifest_sha256": "0a24e7c6e8084942b4f4a76eb3f2bc183c1817a20f07b3eff361184631080a39",
+      "payload_sha256": "304e2981eb9974247ce11c79cf5039e46d81151844545cecb2bf49a0c7468e1a"
+    },
+    {
+      "delivery": "d1-base-migration-rehearsal",
+      "manifest": "backend/migration-base/FILE_MANIFEST.json",
+      "manifest_sha256": "05db45d5e1ccf2a034c4df1695c74c496d7a7de1f8eed3ca64f1a129afd7dc9c",
+      "payload_sha256": "1a6517b935e39af15b3c7ecea1326a7b2b1df305984bacec42a82dd227620172"
+    }
+  ],
+  "files": [
+    {
+      "path": "backend/d1-integration/FILE_MANIFEST.json",
+      "destination": "backend/d1-integration/FILE_MANIFEST.json",
+      "role": "manifest-self-excluded",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "backend/d1-integration/HOSTED_ACCEPTANCE.json",
+      "destination": "backend/d1-integration/HOSTED_ACCEPTANCE.json",
+      "role": "hosted-acceptance-contract",
+      "bytes": 14543,
+      "sha256": "b5bc90127ad9ef80e7c9b0967e096ae35ff22b5f76febc86a389200eaa9def50"
+    },
+    {
+      "path": "backend/d1-integration/HOSTED_ADAPTER.md",
+      "destination": "backend/d1-integration/HOSTED_ADAPTER.md",
+      "role": "website-handoff-documentation",
+      "bytes": 9841,
+      "sha256": "d5634c6692ca46d68eec58a794900d26f6b2fc86b44584b3634ddd4b9a8c225b"
+    },
+    {
+      "path": "backend/d1-integration/HOSTED_EVIDENCE_CONTRACT.json",
+      "destination": "backend/d1-integration/HOSTED_EVIDENCE_CONTRACT.json",
+      "role": "hosted-evidence-contract",
+      "bytes": 5305,
+      "sha256": "db7bf7bf654e3c5c0c970d698a2f07808aa2b3efe24ff657a2b44165b3286699"
+    },
+    {
+      "path": "backend/d1-integration/README.md",
+      "destination": "backend/d1-integration/README.md",
+      "role": "handoff-documentation",
+      "bytes": 11008,
+      "sha256": "80e176db6cc8f218b8815f59ae342a993808bc81c376e77810f32ba1bee86464"
+    },
+    {
+      "path": "backend/d1-integration/SITES_D1_CONTRACT.json",
+      "destination": "backend/d1-integration/SITES_D1_CONTRACT.json",
+      "role": "integration-contract",
+      "bytes": 7859,
+      "sha256": "63fa1f62e21e2ea7e2a40e91882a7a53b742cf4de690d87628f0accdc717c0fe"
+    },
+    {
+      "path": "backend/d1-integration/drizzle/0000_meshful_learner_data.sql",
+      "destination": "backend/d1-integration/drizzle/0000_meshful_learner_data.sql",
+      "role": "sites-migration-artifact",
+      "bytes": 5298,
+      "sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "path": "backend/d1-integration/drizzle/0001_meshful_fragmented_storage.sql",
+      "destination": "backend/d1-integration/drizzle/0001_meshful_fragmented_storage.sql",
+      "role": "sites-migration-artifact",
+      "bytes": 13021,
+      "sha256": "7a7e88d529fd1359e18d74b9cc8f2ecb75cd05708fa5b6bcc44198e5cda24a07"
+    },
+    {
+      "path": "backend/d1-integration/drizzle/meta/_journal.json",
+      "destination": "backend/d1-integration/drizzle/meta/_journal.json",
+      "role": "sites-migration-journal",
+      "bytes": 365,
+      "sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec"
+    },
+    {
+      "path": "backend/d1-integration/generate-manifest.mjs",
+      "destination": "backend/d1-integration/generate-manifest.mjs",
+      "role": "deterministic-manifest-generator",
+      "bytes": 5061,
+      "sha256": "ed6f82dc56c388b167cecea22781a8c5ff4dc87828edb8f14675cb1a54e2cc6e"
+    },
+    {
+      "path": "backend/d1-integration/inspect-applied-schema.mjs",
+      "destination": "backend/d1-integration/inspect-applied-schema.mjs",
+      "role": "owner-only-schema-attestation",
+      "bytes": 5005,
+      "sha256": "6c6ff5fb9135223aa5d2e48bcec85bbcf84bb814d7aefd0781a06ecfbaef0e0c"
+    },
+    {
+      "path": "backend/d1-integration/pack-sites-migrations.mjs",
+      "destination": "backend/d1-integration/pack-sites-migrations.mjs",
+      "role": "sites-migration-packager",
+      "bytes": 9700,
+      "sha256": "6181b16d84e30d9a207b5d8701d48bff09612e2bb8283849a2a891726df0d5dc"
+    },
+    {
+      "path": "backend/d1-integration/package.json",
+      "destination": "backend/d1-integration/package.json",
+      "role": "local-tooling",
+      "bytes": 292,
+      "sha256": "e6f78afdc5c1bbd86f00df678a4b25b23ec985e4b5dba050721db9e4dc3bf54b"
+    },
+    {
+      "path": "backend/d1-integration/run-hosted-acceptance.mjs",
+      "destination": "backend/d1-integration/run-hosted-acceptance.mjs",
+      "role": "hosted-acceptance-runner",
+      "bytes": 27397,
+      "sha256": "d31752f9bf66a4128158edc2a63e4b8f704ca8297b23ca3618662644e11508bc"
+    },
+    {
+      "path": "backend/d1-integration/tests/integration.test.mjs",
+      "destination": "backend/d1-integration/tests/integration.test.mjs",
+      "role": "provider-free-verification",
+      "bytes": 30804,
+      "sha256": "3e91e711c47db254113ba2333161a5ff047eb982d35747f3a4da3831e3c8b0ab"
+    },
+    {
+      "path": "backend/d1-integration/verify.mjs",
+      "destination": "backend/d1-integration/verify.mjs",
+      "role": "source-and-package-verifier",
+      "bytes": 13811,
+      "sha256": "527fb820bb01287122b2555718aab78e80569e43d017d66c8cdf0abc1546976d"
+    }
+  ],
+  "boundary": "Backend-owned configuration, verification and hosted-acceptance handoff only. It contains no Site mutation, D1 resource, credential, identity, learner row, private Library corpus, deployment or endpoint activation."
+}

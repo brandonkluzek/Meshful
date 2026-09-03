@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "brand": "Meshful",
+  "branding_version": "matched-arcs-v18",
+  "status": "owner_approved",
+  "source": {
+    "file": "meshful-mark-approved.svg",
+    "sha256": "dfb731e0c1e9c2743f3cb676f51b40eb0cd0db0bb873ed5a0803a7bc01f09bcc"
+  },
+  "assets": [
+    {
+      "path": "public/meshful-header-mark.svg",
+      "sha256": "dfb731e0c1e9c2743f3cb676f51b40eb0cd0db0bb873ed5a0803a7bc01f09bcc"
+    },
+    {
+      "path": "public/favicon.svg",
+      "sha256": "317d9c49d1a7608674e4d80272f84303a2e9c580cde7030f579d84b1f4f9dcc8"
+    },
+    {
+      "path": "public/favicon-16.png",
+      "sha256": "85f1ef543346268c5b7a0e1861a500e4e5174476ebba2832cefa0ce023d40bdf",
+      "dimensions": [16, 16]
+    },
+    {
+      "path": "public/favicon-32.png",
+      "sha256": "799065578cc7e2af4847ef8d53fa5c891afb1ee142dea9a44c7badcbe032c120",
+      "dimensions": [32, 32]
+    },
+    {
+      "path": "public/apple-touch-icon.png",
+      "sha256": "c0de14cf56a556f7a3dfa5c2071611f5a03b09c2ca3293c73dc240cbe595d171",
+      "dimensions": [180, 180]
+    },
+    {
+      "path": "public/meshful-social-card-1200x630.png",
+      "sha256": "5f13ba0b6100a6b37c9be61ce572ade4b1300e070cd9a7752b7fec11ebf5b816",
+      "dimensions": [1200, 630]
+    },
+    {
+      "path": "public/og.png",
+      "sha256": "5f13ba0b6100a6b37c9be61ce572ade4b1300e070cd9a7752b7fec11ebf5b816",
+      "dimensions": [1200, 630]
+    }
+  ]
+}

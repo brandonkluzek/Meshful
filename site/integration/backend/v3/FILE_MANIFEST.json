@@ -1,0 +1,246 @@
+{
+  "schema": "meshful-backend-delivery.v3",
+  "prepared_on": "2026-09-02",
+  "state": "local-qualified-default-denied-not-deployed",
+  "source_root": ".",
+  "integration_owner": "Dev - Website",
+  "integration_owner_task": "01a04b75-6f44-7783-a88c-77b03ec4c2a4",
+  "delivery_root": "backend/v3",
+  "file_count": 22,
+  "payload_file_count": 21,
+  "payload_sha256": "f238f6fc8a66d6a24164730a2c8987356187799624e6196fce499ba94123f39a",
+  "fingerprint_recipe": "SHA-256 of each payload SHA-256, two ASCII spaces, full repo-relative path, and one LF byte (0x0A), concatenated in lexicographic code-unit path order. Paths begin backend/v3/. Exclude this manifest; do not use localeCompare.",
+  "predecessor": {
+    "v1": {
+      "manifest": "backend/FILE_MANIFEST.md",
+      "file_count": 24,
+      "manifest_sha256": "6c4ca3ccb5681cca26f082ba3782c0990e53962d95280ddab4ab2597cd308de1",
+      "payload_sha256": "4a38303cc21f4693706246e8a0ceace7f0200e0c5c7203a2a9db149b9ccf023a",
+      "changed_files": []
+    },
+    "v2": {
+      "manifest": "backend/v2/FILE_MANIFEST.json",
+      "file_count": 30,
+      "manifest_sha256": "0a24e7c6e8084942b4f4a76eb3f2bc183c1817a20f07b3eff361184631080a39",
+      "payload_sha256": "304e2981eb9974247ce11c79cf5039e46d81151844545cecb2bf49a0c7468e1a",
+      "changed_files": []
+    }
+  },
+  "files": [
+    {
+      "path": "backend/v3/CAPACITY_RECEIPT.md",
+      "destination": "backend/v3/CAPACITY_RECEIPT.md",
+      "role": "handoff-documentation",
+      "bytes": 7244,
+      "sha256": "8d81ae8e92f4c163d9b01932f92cca0ed71c5687cfdd1ca12bfcef5ae1afd5a0"
+    },
+    {
+      "path": "backend/v3/CONTRACT.md",
+      "destination": "backend/v3/CONTRACT.md",
+      "role": "handoff-documentation",
+      "bytes": 5942,
+      "sha256": "3dbde245af1d4e6fd4a878603332939bca6d91175394be47001e0d65944a3c1f"
+    },
+    {
+      "path": "backend/v3/FILE_MANIFEST.json",
+      "destination": "backend/v3/FILE_MANIFEST.json",
+      "role": "manifest-self-excluded",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "backend/v3/HANDOFF.md",
+      "destination": "backend/v3/HANDOFF.md",
+      "role": "handoff-documentation",
+      "bytes": 4867,
+      "sha256": "6317adb8e1066687501e1cf136925fd165bc3020275cd1aa35d77d24fb7544d0"
+    },
+    {
+      "path": "backend/v3/README.md",
+      "destination": "backend/v3/README.md",
+      "role": "handoff-documentation",
+      "bytes": 2090,
+      "sha256": "34cbe55a1fc839c63f5258398600c37fe052568cca013119a960fa591ca6354b"
+    },
+    {
+      "path": "backend/v3/VALIDATION.json",
+      "destination": "backend/v3/VALIDATION.json",
+      "role": "local-validation-receipt",
+      "bytes": 4543,
+      "sha256": "4c2b47665824596e7fc9529d4e612c5f0610a4a7358abbc77da3835fdea196ed"
+    },
+    {
+      "path": "backend/v3/integration/history-growth.test.mjs",
+      "destination": "backend/v3/integration/history-growth.test.mjs",
+      "role": "local-verification",
+      "bytes": 5545,
+      "sha256": "e58d2edd0280394c353ea746247b5826466f3c22fd12df08695ed2030393f529"
+    },
+    {
+      "path": "backend/v3/integration/reviewed-library.test.mjs",
+      "destination": "backend/v3/integration/reviewed-library.test.mjs",
+      "role": "local-verification",
+      "bytes": 9511,
+      "sha256": "31ac44571f4f39ae804e912434b6e85beeffc01a3302a7ab74f0eaf3f0f597af"
+    },
+    {
+      "path": "backend/v3/integration/runtime-memory.test.mjs",
+      "destination": "backend/v3/integration/runtime-memory.test.mjs",
+      "role": "local-verification",
+      "bytes": 5839,
+      "sha256": "324464dc7e4c50688f3b8e0e1c097e26786503dd0e4e135471a8023e4114296d"
+    },
+    {
+      "path": "backend/v3/integration/transaction-capacity.test.mjs",
+      "destination": "backend/v3/integration/transaction-capacity.test.mjs",
+      "role": "local-verification",
+      "bytes": 6685,
+      "sha256": "26b6f9d91d85d105e3da70a4ef94b72e83b24d825e1b7bfee7be5604bc50cc08"
+    },
+    {
+      "path": "backend/v3/package.json",
+      "destination": "backend/v3/package.json",
+      "role": "local-tooling",
+      "bytes": 755,
+      "sha256": "3e98710c0efcf2f9b483361fb2cc69d2bcaeb9cb3f115cb13f1a1585899f96e7"
+    },
+    {
+      "path": "backend/v3/scripts/build-manifest.mjs",
+      "destination": "backend/v3/scripts/build-manifest.mjs",
+      "role": "local-tooling",
+      "bytes": 5823,
+      "sha256": "98bb13593bee32e36526665630cf6393ff3903f35d4841c8d6d4feca905d8d9f"
+    },
+    {
+      "path": "backend/v3/scripts/check.mjs",
+      "destination": "backend/v3/scripts/check.mjs",
+      "role": "local-tooling",
+      "bytes": 2429,
+      "sha256": "c771447f8db473e459dcaba4f0d82713f0fe26dba4f1045e89e719fccdd6af14"
+    },
+    {
+      "path": "backend/v3/scripts/verify-delivery.mjs",
+      "destination": "backend/v3/scripts/verify-delivery.mjs",
+      "role": "local-tooling",
+      "bytes": 7322,
+      "sha256": "db675a2ffc31167cbe76d11fbd91c96ec9feb1bf0711140546b2c6a0f68616c8"
+    },
+    {
+      "path": "backend/v3/src/canonical-engine.mjs",
+      "destination": "backend/v3/src/canonical-engine.mjs",
+      "role": "runtime",
+      "bytes": 19443,
+      "sha256": "dba7d3500f0434f2282591b5eaf52d29d8174775695aea595ce8b8c24ef34347"
+    },
+    {
+      "path": "backend/v3/src/http-handler.mjs",
+      "destination": "backend/v3/src/http-handler.mjs",
+      "role": "runtime",
+      "bytes": 9979,
+      "sha256": "35bb4136fd3b20a91a2584c58d89cf8df25c3229b84e4c3c75df1f12939a9a15"
+    },
+    {
+      "path": "backend/v3/src/index.mjs",
+      "destination": "backend/v3/src/index.mjs",
+      "role": "runtime",
+      "bytes": 254,
+      "sha256": "40792491853b5c7fddc8e23760897a8d0bcbaa0c55708290b705b7062348bfa6"
+    },
+    {
+      "path": "backend/v3/src/learner-service.mjs",
+      "destination": "backend/v3/src/learner-service.mjs",
+      "role": "runtime",
+      "bytes": 13759,
+      "sha256": "34843de42b6c38e4d60636c70598f57527dbbd04e2ee9889c795c0baca8df7d0"
+    },
+    {
+      "path": "backend/v3/test-support/pinned-resolver.mjs",
+      "destination": "backend/v3/test-support/pinned-resolver.mjs",
+      "role": "local-verification",
+      "bytes": 9495,
+      "sha256": "922bb0ab814569cdc82f8071ebe71cbea2442ae5186010aa6b01dcc1dd5c0499"
+    },
+    {
+      "path": "backend/v3/test-support/real-runtime.mjs",
+      "destination": "backend/v3/test-support/real-runtime.mjs",
+      "role": "local-verification",
+      "bytes": 7123,
+      "sha256": "57503e8654a8136f01836d764ef4a4dc729a582ddec2691e0c2c0cacfeeb3755"
+    },
+    {
+      "path": "backend/v3/test-support/runtime-memory-child.mjs",
+      "destination": "backend/v3/test-support/runtime-memory-child.mjs",
+      "role": "local-verification",
+      "bytes": 13224,
+      "sha256": "c976839255f4448fe1f748cffbb33d9cc03bd67b4172400a9a79c324b5f449da"
+    },
+    {
+      "path": "backend/v3/tests/resolver-replay.test.mjs",
+      "destination": "backend/v3/tests/resolver-replay.test.mjs",
+      "role": "local-verification",
+      "bytes": 25355,
+      "sha256": "bbe5d3dfa051e26944ad58ec347c44d0b5e4471beddb69920e3c86cc724e4590"
+    }
+  ],
+  "read_only_dependencies": {
+    "canonical": {
+      "root_env": "MESHFUL_CANONICAL_ROOT",
+      "files": [
+        {
+          "path": "docs/challenge/WEBMCP_LIBRARY_RESOLVER_ASSET_MANIFEST.json",
+          "sha256": "f3a02d02441f8d7ba9a5e19e3e3c89c1e66501a796bdf80750419ed8a0272bba"
+        },
+        {
+          "path": "web/js/library-catalog.js",
+          "sha256": "16a3a2ef5dc924e39dba07189d6f7c2c633808b8c3c5e539e12f993956711bd1"
+        },
+        {
+          "path": "web/js/store.js",
+          "sha256": "4e288fe72bf248acbf086bdef73eb9bc52a2718afd69f510ce98fccf5607bb76"
+        },
+        {
+          "path": "web/js/streak.js",
+          "sha256": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3"
+        },
+        {
+          "path": "web/js/webmcp.js",
+          "sha256": "9faa86f447eddf4424b432075129f02ea7d7875eb6b2f1ea78f25181aae440df"
+        },
+        {
+          "path": "web/tests/library-catalog.test.mjs",
+          "sha256": "771fcd14c4df4904b808db6ea2c002bf2d312a46804713ac7b003f9bc0603fc1"
+        },
+        {
+          "path": "web/tests/library-resolver.test.mjs",
+          "sha256": "3d3714b0b77da949571e0fa87530a60cd20ad0de517d138a1d3dbc57a0543a23"
+        }
+      ]
+    },
+    "library_assets": {
+      "root_env": "MESHFUL_LIBRARY_ASSET_ROOT",
+      "manifest_root_env": "MESHFUL_CANONICAL_ROOT",
+      "manifest_path": "docs/challenge/WEBMCP_LIBRARY_RESOLVER_ASSET_MANIFEST.json",
+      "manifest_sha256": "f3a02d02441f8d7ba9a5e19e3e3c89c1e66501a796bdf80750419ed8a0272bba",
+      "index_sha256": "sha256:6daff48b99faae5047a69d56cfbbf7aa6b162367337044ce59e9774bbfc29a00",
+      "asset_entries_sha256": "sha256:c9633fa60352ae81406e8f58f800e19df535bc76c25c6cce6f4d9e8c66e43248",
+      "asset_count": 72,
+      "total_asset_bytes": 12906713
+    },
+    "accounts": {
+      "root_env": "MESHFUL_ACCOUNTS_ROOT",
+      "manifest_path": "docs/accounts-privacy/FILE_MANIFEST.json",
+      "manifest_sha256": "bd05466bcff38498bc7e297f89e67ae8909c54b23842d3ac950fdb8cd2c4de39",
+      "payload_sha256": "8a15dd8c7155c14f0cd20926a8c8cccecd70e309bc0974a0a3eefe7d2a010b42",
+      "files": [
+        {
+          "path": "accounts/core.mjs",
+          "sha256": "c08cd3844411d0648c05e098bcda293e480597cca0a0c10ee0779ba4c02795a9"
+        },
+        {
+          "path": "accounts/sites-trusted-request.mjs",
+          "sha256": "414df1abb6fbc55c0ae110b58b7b740a863ffd154f9c17c6dd3edbfd1123c564"
+        }
+      ]
+    }
+  }
+}

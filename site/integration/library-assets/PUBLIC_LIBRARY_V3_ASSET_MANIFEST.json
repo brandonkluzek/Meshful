@@ -1,0 +1,890 @@
+{
+  "schema_version": "meshful-public-library-asset-manifest.v1",
+  "release": "2026-09-02.public-sanitized.v3",
+  "status": "public-sanitized-approved-candidate-not-published",
+  "public_release_approved": true,
+  "content_license": "CC-BY-4.0",
+  "catalog_ref": {
+    "version": "2026-09-02.public-sanitized.v3",
+    "digest": "sha256:ce5945142785ae528532f057eb09c44966c2ecca10844ec638aa793e74cea3bc"
+  },
+  "dependency_graph_sha256": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0",
+  "runtime_contract": "meshful-library-exact-ref-index.v1",
+  "counts": {
+    "decks": 72,
+    "cards": 9988,
+    "prerequisite_edges": 17712,
+    "external_prerequisite_edges": 770
+  },
+  "totals": {
+    "source_deck_files": 72,
+    "runtime_files": 74,
+    "source_bytes": 14293515,
+    "runtime_bytes": 24448690
+  },
+  "runtime_index": {
+    "path": "runtime/index.json",
+    "bytes": 376780,
+    "sha256": "sha256:b4f523e60ea1b3d6251af0193696db1eb78061ea207d13b1e1393388046c0e0e"
+  },
+  "browser_catalog_artifact": {
+    "path": "runtime/catalog-artifact.json",
+    "bytes": 12030738,
+    "sha256": "sha256:fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332"
+  },
+  "website_release_entry": {
+    "version": "2026-09-02.public-sanitized.v3",
+    "browser_artifact_contract": "meshful-library-runtime-artifact.v1",
+    "path": "library/2026-09-02.public-sanitized.v3/fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332.json",
+    "sha256": "fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332",
+    "bytes": 12030738,
+    "constructorDigest": "sha256:93529fe0fc172b6ff58391a08230b15fcc82a5c9bd5e2fa2d85679f2f0573495",
+    "catalogDigest": "sha256:ce5945142785ae528532f057eb09c44966c2ecca10844ec638aa793e74cea3bc",
+    "dependencyGraphDigest": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0",
+    "sourceManifestSha256": "c6672c69df5159fdcf68f76cc27e42b2160d4d0725fc9998756b793a1fe2a4be",
+    "runtime": {
+      "indexPath": "library-runtime/2026-09-02.public-sanitized.v3/index.json",
+      "indexSha256": "b4f523e60ea1b3d6251af0193696db1eb78061ea207d13b1e1393388046c0e0e",
+      "preparedConstructorDigest": "sha256:43af55b6108bd0901723ff4977c28469c84ee07bccafd4c307a172e2c7f49c2f",
+      "normalizationVersion": "canonical-library-card-identity.v1",
+      "criterionDerivationVersion": "store-normalizeRubricItems-ordinal.v1",
+      "resolutionBudget": {
+        "max_decks": 42,
+        "max_cards": 5500,
+        "max_raw_chunk_bytes": 7000000
+      }
+    },
+    "counts": {
+      "decks": 72,
+      "cards": 9988,
+      "prerequisite_edges": 17712,
+      "external_prerequisite_edges": 770,
+      "internal_prerequisite_edges": 16942
+    },
+    "crossListings": {
+      "academic-reviewed-v1:biochemistry": [
+        "Biology"
+      ]
+    }
+  },
+  "runtime_assets": [
+    {
+      "path": "runtime/catalog-artifact.json",
+      "bytes": 12030738,
+      "sha256": "sha256:fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332"
+    },
+    {
+      "path": "runtime/decks/algorithms-i.json",
+      "bytes": 144819,
+      "sha256": "sha256:d8f8fa31abaa448f58edc8c166f1bb3acb5e0c5d90f429c068fd6e25d2a5441d"
+    },
+    {
+      "path": "runtime/decks/analytical-chemistry.json",
+      "bytes": 154745,
+      "sha256": "sha256:f4cd4cd390184dc28eff9900e50538decff0c8b7b78a5b2c6bc603d5b6a4d4c9"
+    },
+    {
+      "path": "runtime/decks/applied-statistics-i.json",
+      "bytes": 97480,
+      "sha256": "sha256:971bd20914f53030cb391fc94a35c70f88f86ff381c5b3e959032684e655c258"
+    },
+    {
+      "path": "runtime/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "bytes": 146423,
+      "sha256": "sha256:65159d2e6dc8c392bbdee2735f26ed5ab7278d7d5369b489412c1d4b85c325df"
+    },
+    {
+      "path": "runtime/decks/bayesian-inference.json",
+      "bytes": 137512,
+      "sha256": "sha256:8db74b623cfbc346af804e3594c79809912c222ece2e9a234ecd83a3c2e00f89"
+    },
+    {
+      "path": "runtime/decks/behavioral-and-experimental-economics.json",
+      "bytes": 159062,
+      "sha256": "sha256:3e0389ccb6d498db15747900b9175633c98fd53313a2faecebaef145777cc070"
+    },
+    {
+      "path": "runtime/decks/biochemistry.json",
+      "bytes": 170013,
+      "sha256": "sha256:4ee9ddab4c5b051533dd1543bb32feebe27c06027d9a2b2ed912ca985ab491a8"
+    },
+    {
+      "path": "runtime/decks/biology-i.json",
+      "bytes": 130172,
+      "sha256": "sha256:8bb21ba327b65cf015fab7fb204947a6d2a1d1fb21ff823b72e1a9f0dcfb6e02"
+    },
+    {
+      "path": "runtime/decks/biology-ii.json",
+      "bytes": 121900,
+      "sha256": "sha256:8e280c9cb71dc336f1c85e00cd26431aaebbe27a952d7705d480f4a2cb44c021"
+    },
+    {
+      "path": "runtime/decks/calculus-i.json",
+      "bytes": 106956,
+      "sha256": "sha256:d9111a56ca6bb6b6f62036bb55dc174cff91993d5803110cab3e0992c95a7c96"
+    },
+    {
+      "path": "runtime/decks/calculus-ii.json",
+      "bytes": 110005,
+      "sha256": "sha256:594aeb8142e99c3a1fc5436fd36fcc0e449ac7ffa844ebb78455a43011afe849"
+    },
+    {
+      "path": "runtime/decks/causal-inference.json",
+      "bytes": 129079,
+      "sha256": "sha256:87f77b58bf6ee291b5fd693abdc86c76c4f831139aab9eb0d8a03d37aa4f3a31"
+    },
+    {
+      "path": "runtime/decks/cell-biology.json",
+      "bytes": 163662,
+      "sha256": "sha256:1656cc5583d511c0ecabd471de385c363e0b9331c9182561a047fbf44af850b4"
+    },
+    {
+      "path": "runtime/decks/chemistry-laboratory-and-measurement.json",
+      "bytes": 160421,
+      "sha256": "sha256:bc6793c583f9ea532024c0dd6cb9fce9c92b269bfd8b3942320e98e8428c9514"
+    },
+    {
+      "path": "runtime/decks/college-algebra-and-precalculus.json",
+      "bytes": 141970,
+      "sha256": "sha256:b420b2c527c1364b1afdcc74dd4e87c8c8b2b5e3c4855820f83c52d446e6c9a9"
+    },
+    {
+      "path": "runtime/decks/computer-networks.json",
+      "bytes": 168359,
+      "sha256": "sha256:5633d3b51c71aac574f5f8c44e0746663b636ff2c471068701c87b310ff7ec41"
+    },
+    {
+      "path": "runtime/decks/computer-systems.json",
+      "bytes": 146232,
+      "sha256": "sha256:d09c4d11551b45e7c109a8858be554046827c62ab3d7f33c30a7d2c703123d75"
+    },
+    {
+      "path": "runtime/decks/data-structures.json",
+      "bytes": 147151,
+      "sha256": "sha256:c255ddaf46dd1c119d60aa334b80295a0c635083e931dbfe760bc75d9b18c232"
+    },
+    {
+      "path": "runtime/decks/data-systems.json",
+      "bytes": 142150,
+      "sha256": "sha256:335eca57593ec2ebf95502d338801f5d22d81ec20b4f5f56c8169dc976e148eb"
+    },
+    {
+      "path": "runtime/decks/databases-i.json",
+      "bytes": 161501,
+      "sha256": "sha256:c8e7dd5dba4a873a7edec4635a6604b2f1e2ff097204c9e925506a397132484e"
+    },
+    {
+      "path": "runtime/decks/discrete-mathematics.json",
+      "bytes": 125432,
+      "sha256": "sha256:e795963922c80662be7c232efcc5b2697d69a6b883648ace88ea5abb9f69f34e"
+    },
+    {
+      "path": "runtime/decks/ecology.json",
+      "bytes": 172393,
+      "sha256": "sha256:0f8f7379d7ab0a2528608c7ea82801325bb3a75227e33ea46bb885e91e739fef"
+    },
+    {
+      "path": "runtime/decks/econometrics-i.json",
+      "bytes": 145470,
+      "sha256": "sha256:4547bdf082e51dfb5bc41e095bc5832cc2c4face76fed894b0d2fd9adb7a2692"
+    },
+    {
+      "path": "runtime/decks/econometrics-ii.json",
+      "bytes": 145712,
+      "sha256": "sha256:492d6c1c280d8fdb40031289fae4ea74f8cce71e3f83f1adb05cf37df53d24ce"
+    },
+    {
+      "path": "runtime/decks/economic-foundations.json",
+      "bytes": 124746,
+      "sha256": "sha256:714a6d74dfa6420110c78f7993a3baa5bed28de3474729479eee982e609b316c"
+    },
+    {
+      "path": "runtime/decks/electricity-and-magnetism-i.json",
+      "bytes": 155654,
+      "sha256": "sha256:44c2323ef3b33d6e34d6554f97396bf85f456eba70731654613f6233acd42b3c"
+    },
+    {
+      "path": "runtime/decks/evolutionary-biology.json",
+      "bytes": 176834,
+      "sha256": "sha256:0e5f44e7ee78a632022583a379b105ac05e116f86eed73f6e4303b9af2db7d2a"
+    },
+    {
+      "path": "runtime/decks/experimental-design.json",
+      "bytes": 146281,
+      "sha256": "sha256:9f34b21638909dfd0ff4f11ca5522ecbe4deff474cfea36aae64ba3c9897a8af"
+    },
+    {
+      "path": "runtime/decks/experimental-physics-and-measurement.json",
+      "bytes": 169196,
+      "sha256": "sha256:eb3210642e347acd16bfda7834e5847160dc61080bf46e702cfa6093f9fe7068"
+    },
+    {
+      "path": "runtime/decks/general-chemistry-i.json",
+      "bytes": 309427,
+      "sha256": "sha256:abe7be077c748ebc2baa23a3299af36a1b91c8d131deb2d6350291e0a447ef55"
+    },
+    {
+      "path": "runtime/decks/general-chemistry-ii.json",
+      "bytes": 162361,
+      "sha256": "sha256:d09a893683c5a9fdc1c276ceb469c21f980977375d8034c59753a9991118b8d0"
+    },
+    {
+      "path": "runtime/decks/genetics.json",
+      "bytes": 113680,
+      "sha256": "sha256:4228f0e08b435d1f95ecd5b8ea30b181f0eb57b372a1c68922e76cae5b03b5b9"
+    },
+    {
+      "path": "runtime/decks/immunology.json",
+      "bytes": 175259,
+      "sha256": "sha256:65cca5b4d34eac85d522e8f980e1f472f6e298e25327c11e570a9f05a74132d0"
+    },
+    {
+      "path": "runtime/decks/inorganic-chemistry.json",
+      "bytes": 159850,
+      "sha256": "sha256:91950908b860a54f1bd0976da4d0114a59b64eba91a8ccd64f4820a78a6948be"
+    },
+    {
+      "path": "runtime/decks/linear-algebra-i.json",
+      "bytes": 156484,
+      "sha256": "sha256:e73752658d25a9390a31caf39de802cb8e14cf32878a0f9da175e0d91064b915"
+    },
+    {
+      "path": "runtime/decks/linear-algebra-ii.json",
+      "bytes": 175615,
+      "sha256": "sha256:a17c1ca562f60d57999abdc5807cbcdfbc82f3f9596c48136a77c99081542e55"
+    },
+    {
+      "path": "runtime/decks/macroeconomic-theory-i.json",
+      "bytes": 146400,
+      "sha256": "sha256:0ba8133fce28072836ce7e18b358e222b31ead66c1b44349eea37493a971be61"
+    },
+    {
+      "path": "runtime/decks/macroeconomic-theory-ii.json",
+      "bytes": 162383,
+      "sha256": "sha256:928fb4244a476f7215110ce757acc20219db28d19e36f773a03cbfce32802574"
+    },
+    {
+      "path": "runtime/decks/mathematical-methods-for-economics.json",
+      "bytes": 152636,
+      "sha256": "sha256:58cbd0c2fd526b3cc8162075210c1dca9099a5e34179f2f2077237a1731292bb"
+    },
+    {
+      "path": "runtime/decks/mathematical-methods-for-physics-i.json",
+      "bytes": 149934,
+      "sha256": "sha256:2ce2b813908fd18145a6dae9bfa6a9e1f346f190871a0d64e6b397f17ff23bbc"
+    },
+    {
+      "path": "runtime/decks/mathematical-proof-and-foundations.json",
+      "bytes": 215023,
+      "sha256": "sha256:a444abd893b643455ad98f7c2ee85b96f0fd592737984e789d2462d558592240"
+    },
+    {
+      "path": "runtime/decks/mathematical-statistics.json",
+      "bytes": 189805,
+      "sha256": "sha256:2646088987354c3d0970ada378bfbf6c4a15412b63f38d3bba663aa013462f81"
+    },
+    {
+      "path": "runtime/decks/mechanics-i.json",
+      "bytes": 106296,
+      "sha256": "sha256:01c965c418335299eaf22237fe139e2592c4d0bf39fab06254067120e2d27c95"
+    },
+    {
+      "path": "runtime/decks/mechanics-ii.json",
+      "bytes": 147106,
+      "sha256": "sha256:5310db5b9b13e1785ff7e99e275acb279df50d97cdd86e989d11f81595d747d8"
+    },
+    {
+      "path": "runtime/decks/microbiology.json",
+      "bytes": 174112,
+      "sha256": "sha256:c45832bee81a271f827cebc0b338b8daf69f3e47442e4552591e0c623f4b2e25"
+    },
+    {
+      "path": "runtime/decks/microeconomic-theory-i.json",
+      "bytes": 160477,
+      "sha256": "sha256:4a57735861541a47541f6bb3799fb7578da81c59c4747e1011cd6f91958a3b27"
+    },
+    {
+      "path": "runtime/decks/microeconomic-theory-ii.json",
+      "bytes": 140140,
+      "sha256": "sha256:c96b6a50e155a52143dd637781c8a0b34959ba5ef917c9d34773e46801f2cdc4"
+    },
+    {
+      "path": "runtime/decks/modern-physics.json",
+      "bytes": 149474,
+      "sha256": "sha256:802b74586b196ec57132302cd8805360dfdaa5583a842a542868b0c352114963"
+    },
+    {
+      "path": "runtime/decks/molecular-biology.json",
+      "bytes": 224768,
+      "sha256": "sha256:f4714c5dad33c923c7c1254171157ddf0c40ac6a7dbfdc1890ce2e790bb3f7ea"
+    },
+    {
+      "path": "runtime/decks/multivariable-calculus.json",
+      "bytes": 138461,
+      "sha256": "sha256:61fd8d9c7b700d99da88bda4ba58099a6cf9d5a5af872d072cd2e33710001e7d"
+    },
+    {
+      "path": "runtime/decks/numerical-analysis-and-scientific-computing.json",
+      "bytes": 131370,
+      "sha256": "sha256:4ad2ca9b73556aaba6feb0f1b6745faa5e7349b194e025be8b01dfb83a5ebcc3"
+    },
+    {
+      "path": "runtime/decks/optics.json",
+      "bytes": 134449,
+      "sha256": "sha256:f868d5758accc4a5fd4aa7ef050bcee0f1427ad112077b2c52b1ab2c30f1700c"
+    },
+    {
+      "path": "runtime/decks/optimization-mathematics-i-convex-optimization.json",
+      "bytes": 182660,
+      "sha256": "sha256:7c419d48842aefeb5528f80c0e4b3a678c8f709027a39b8dbceffa9e4a9be2ae"
+    },
+    {
+      "path": "runtime/decks/ordinary-differential-equations.json",
+      "bytes": 216078,
+      "sha256": "sha256:31b37d72f5ebede81e3a0ac698538e9061300f07deb2650de24a9d4508f53b33"
+    },
+    {
+      "path": "runtime/decks/organic-chemistry-i.json",
+      "bytes": 153817,
+      "sha256": "sha256:e39cf4f981f496045f5c95f1534620a76e861a851b65cd462011d2520aaba77e"
+    },
+    {
+      "path": "runtime/decks/organic-chemistry-ii.json",
+      "bytes": 145965,
+      "sha256": "sha256:b828e3a26281801743b975da2b8c30df0ef058d943009d26fca98caf4f84ee8b"
+    },
+    {
+      "path": "runtime/decks/organic-chemistry-laboratory.json",
+      "bytes": 155413,
+      "sha256": "sha256:192bc1315ce4bbc4db8b5bf5b9a6e1f97703812fb2694417e49cd3d8fd285c96"
+    },
+    {
+      "path": "runtime/decks/physics-foundations.json",
+      "bytes": 108651,
+      "sha256": "sha256:98b64bfc4f1f97ad5bc9bb5f2ee9e05e8ed1fc9eb3583d64d31487f62f3ed88c"
+    },
+    {
+      "path": "runtime/decks/physiology.json",
+      "bytes": 192248,
+      "sha256": "sha256:74843c81d6298b3f5946108a162c8bafccfa4f928db62163cb0b2bf0aba16689"
+    },
+    {
+      "path": "runtime/decks/probability-theory-i.json",
+      "bytes": 163407,
+      "sha256": "sha256:f92730641ae50c70f83660f35fdc06cbb80ec0924a97fdccffa7288171a7443e"
+    },
+    {
+      "path": "runtime/decks/probability-theory-ii.json",
+      "bytes": 138298,
+      "sha256": "sha256:aff618ff76358410533de8099250c3a07cdc304fdb9c1d8b30e6200623678fb4"
+    },
+    {
+      "path": "runtime/decks/programming-i.json",
+      "bytes": 550511,
+      "sha256": "sha256:a92abcc7a848f77a6d31da69815d286c8b63e4040491363a153d9340ba006dfc"
+    },
+    {
+      "path": "runtime/decks/programming-ii.json",
+      "bytes": 529091,
+      "sha256": "sha256:eec1cbd0a35c18fe9bf92750b0a83dc1e391a5c26fbcc99b8c58e8bfe682efdb"
+    },
+    {
+      "path": "runtime/decks/real-analysis-i.json",
+      "bytes": 189493,
+      "sha256": "sha256:0e540881573063efa65013562150839fa61f147f7f394f3860b803f1e2af70ec"
+    },
+    {
+      "path": "runtime/decks/sampling-and-survey-methods.json",
+      "bytes": 149571,
+      "sha256": "sha256:3a2d8f8f1ede1b7e863622fda65743dac838a7c2cab3ead508dea4ce384b8eea"
+    },
+    {
+      "path": "runtime/decks/security-engineering-i.json",
+      "bytes": 132041,
+      "sha256": "sha256:813c7aa41aa5674e4af17518995b5b384467f28d0988f863196ae40f8beb5600"
+    },
+    {
+      "path": "runtime/decks/software-architecture.json",
+      "bytes": 96742,
+      "sha256": "sha256:907d3ca2c2312dac6378b22d5b3a541a842da17d2b4c2b8187b2ef76c341ab92"
+    },
+    {
+      "path": "runtime/decks/software-engineering-i.json",
+      "bytes": 166312,
+      "sha256": "sha256:159c39dd6d392a585b5110eaf4589311988439b40cd7a662e31b2c2961bea7a6"
+    },
+    {
+      "path": "runtime/decks/software-testing-i-foundations-and-test-design.json",
+      "bytes": 363803,
+      "sha256": "sha256:b0889ae7f2f420e80eb86d9943def2e3ba2be4fc4c742912aaa69390331e4d79"
+    },
+    {
+      "path": "runtime/decks/thermodynamics.json",
+      "bytes": 153488,
+      "sha256": "sha256:63d8c80d10ab5933e8aa98ec76621a29907583294fc6f76484a9049152dd2737"
+    },
+    {
+      "path": "runtime/decks/time-series-analysis.json",
+      "bytes": 135663,
+      "sha256": "sha256:5fb50e61e6ecdd872e42cd8c03895d89c014a1833b90b47d53c2c434e953a4e2"
+    },
+    {
+      "path": "runtime/decks/waves-and-oscillations.json",
+      "bytes": 141080,
+      "sha256": "sha256:1ce149c14eeb8cbe7b6348d42f4ee903d7488bef90a1a6d017b0c409580fd751"
+    },
+    {
+      "path": "runtime/index.json",
+      "bytes": 376780,
+      "sha256": "sha256:b4f523e60ea1b3d6251af0193696db1eb78061ea207d13b1e1393388046c0e0e"
+    }
+  ],
+  "source_decks": [
+    {
+      "catalog_deck_id": "academic-reviewed-v1:algorithms-i",
+      "path": "content/decks/algorithms-i.json",
+      "bytes": 175316,
+      "sha256": "sha256:6e7c563740f3b9b4afae4992e61aaa9a0ed7cf066ae22fcf04cbe59ea6ce5661"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:analytical-chemistry",
+      "path": "content/decks/analytical-chemistry.json",
+      "bytes": 180825,
+      "sha256": "sha256:3b77d8ab6c8464e892aa9140103ed494c7a6bfc015a61e2774729db884c14f52"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:applied-statistics-i",
+      "path": "content/decks/applied-statistics-i.json",
+      "bytes": 117891,
+      "sha256": "sha256:1a8fc23aaab0482a7100ad98f33cfcb5344385495ae5e9085b8fd1ab061eac58"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:applied-statistics-ii-regression-and-generalized-linear-models",
+      "path": "content/decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "bytes": 169886,
+      "sha256": "sha256:7910f6e86bf9402b8b81e5c4bcbfdf40378f6166e5ebf5155f7907fa719a607f"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:bayesian-inference",
+      "path": "content/decks/bayesian-inference.json",
+      "bytes": 162095,
+      "sha256": "sha256:0be5ce8e8cd66acec8c41e77b9f34afbf0517797c4a1433f20dbbb041a6f0ae6"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:behavioral-and-experimental-economics",
+      "path": "content/decks/behavioral-and-experimental-economics.json",
+      "bytes": 183571,
+      "sha256": "sha256:40a6bfdd26756a28c913e485b791ed238b0fb3e67f6085c43841245742ac508a"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:biochemistry",
+      "path": "content/decks/biochemistry.json",
+      "bytes": 202829,
+      "sha256": "sha256:73a7df49816d05a9901308c30edd52f59cf36aa589fcbdfa1e474e377857e212"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:biology-i",
+      "path": "content/decks/biology-i.json",
+      "bytes": 157120,
+      "sha256": "sha256:b0d54c074928afeed17a894dfdb635f6c4a3f1bf288edbca61c92b5492d471c3"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:biology-ii",
+      "path": "content/decks/biology-ii.json",
+      "bytes": 147045,
+      "sha256": "sha256:8327040039fc6aa3bb0536da749fcfd404fb3f0cc829bb2a0d7202cb3b2c2822"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:calculus-i",
+      "path": "content/decks/calculus-i.json",
+      "bytes": 131574,
+      "sha256": "sha256:2216725352071e58b663dd5bac5385f8ebc2eee52533bc2f428fd932a8050e49"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:calculus-ii",
+      "path": "content/decks/calculus-ii.json",
+      "bytes": 134754,
+      "sha256": "sha256:5232ddbafd602bf04a50999fd5193f071e9471bcb118da21367ea96c002ccb96"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:causal-inference",
+      "path": "content/decks/causal-inference.json",
+      "bytes": 154053,
+      "sha256": "sha256:f55884869a2bc5d1388611b7b05218240779b888844168de90d8095cdcebc2c1"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:cell-biology",
+      "path": "content/decks/cell-biology.json",
+      "bytes": 196078,
+      "sha256": "sha256:398aa9d806122ac6c1a107d13c16877f267cb6b985d3f8216a68be96036fc8e2"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:chemistry-laboratory-and-measurement",
+      "path": "content/decks/chemistry-laboratory-and-measurement.json",
+      "bytes": 186389,
+      "sha256": "sha256:6ba4d12d4b5f47acbb87293e9e09af5701d424ba0450002451f4982703ff72c5"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:college-algebra-and-precalculus",
+      "path": "content/decks/college-algebra-and-precalculus.json",
+      "bytes": 168120,
+      "sha256": "sha256:2196346b5a6cca16c2e4bd56db9242af037aaab2d81724250e209b04b73dfdbf"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:computer-networks",
+      "path": "content/decks/computer-networks.json",
+      "bytes": 204260,
+      "sha256": "sha256:7d86050ca190442557b0afaae4039d7f968f7283525d102b77d58b7a782a7eaa"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:computer-systems",
+      "path": "content/decks/computer-systems.json",
+      "bytes": 178023,
+      "sha256": "sha256:0fbc2d6722739c0f25f58ea5bc7d40f47008de8bdd243600b54c6bbb9a70bac7"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:data-structures",
+      "path": "content/decks/data-structures.json",
+      "bytes": 180301,
+      "sha256": "sha256:571d869e699bc2fda930ad3fcea8358c24125ea8aa3135989e4b99c49e5cfc97"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:data-systems",
+      "path": "content/decks/data-systems.json",
+      "bytes": 173658,
+      "sha256": "sha256:71f3b0a7042433818a86dcfee2e846765505104aae42a11cdaea46d8cf549b09"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:databases-i",
+      "path": "content/decks/databases-i.json",
+      "bytes": 196332,
+      "sha256": "sha256:e6e1402b0d48f6da9ed0d5865b8b8f524a836c6184060b858d4e7bf734c11f75"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:discrete-mathematics",
+      "path": "content/decks/discrete-mathematics.json",
+      "bytes": 152221,
+      "sha256": "sha256:2ee53c11ba997694000ebe2cf2e50938c156e67db4b7097eb16083877231e48f"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:ecology",
+      "path": "content/decks/ecology.json",
+      "bytes": 207105,
+      "sha256": "sha256:4a9645dffb678e4d85c31c304adc877e78851f49c45344e63138f7a377b56e71"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:econometrics-i",
+      "path": "content/decks/econometrics-i.json",
+      "bytes": 172152,
+      "sha256": "sha256:036d69e3dec680089ce571207d37c6d997779b891b8ed03f6801d6eadc379048"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:econometrics-ii",
+      "path": "content/decks/econometrics-ii.json",
+      "bytes": 170528,
+      "sha256": "sha256:ec11bd331795cd5aff751181b472106a52bee044f1cafe3c2c1f6507bebce7c6"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:economic-foundations",
+      "path": "content/decks/economic-foundations.json",
+      "bytes": 148295,
+      "sha256": "sha256:100222099973c29dab6b9361c7166430f55ad93f69ad1ae3a3ae1cb454a45139"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:electricity-and-magnetism-i",
+      "path": "content/decks/electricity-and-magnetism-i.json",
+      "bytes": 183226,
+      "sha256": "sha256:9d4826f4d954ff8b91c3414f765253dcb3177b134a3d8fe44d0987f5e41441c5"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:evolutionary-biology",
+      "path": "content/decks/evolutionary-biology.json",
+      "bytes": 209030,
+      "sha256": "sha256:d5e0c767572285fc962f9b88327fd7de23813792620119662412404d26821dc8"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:experimental-design",
+      "path": "content/decks/experimental-design.json",
+      "bytes": 176132,
+      "sha256": "sha256:39d976e3ff5c912dafd40ef28d6c723c20ac26363fa36359fd9834a4c95f7e03"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:experimental-physics-and-measurement",
+      "path": "content/decks/experimental-physics-and-measurement.json",
+      "bytes": 196810,
+      "sha256": "sha256:f2c9213f9fc5868fe6d533a00d9468a9b99b5b59a2807e824734e8b733eaa05e"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:general-chemistry-i",
+      "path": "content/decks/general-chemistry-i.json",
+      "bytes": 348730,
+      "sha256": "sha256:7a2f575ed73dc18c378623fcbfc7861a6edd9d835e5dd0ed6d07826a77b7e435"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:general-chemistry-ii",
+      "path": "content/decks/general-chemistry-ii.json",
+      "bytes": 192218,
+      "sha256": "sha256:13e6a2a7f169dd11f0ff6d4e7c4ebf1178b937ff71c9d35ab146e13324c54f37"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:genetics",
+      "path": "content/decks/genetics.json",
+      "bytes": 134671,
+      "sha256": "sha256:662bc719423a87840e14014c73710858fdf95a125b18de960a0400c19cb3b8c4"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:immunology",
+      "path": "content/decks/immunology.json",
+      "bytes": 210606,
+      "sha256": "sha256:730f1a43824798124b0be0dd436eb1e98f5b2454b7a5eb39ae467c9987ad9f21"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:inorganic-chemistry",
+      "path": "content/decks/inorganic-chemistry.json",
+      "bytes": 186789,
+      "sha256": "sha256:3652326f84965982550090dca6f16517e4da7b289023ea5e5d36559fe7850c4d"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:linear-algebra-i",
+      "path": "content/decks/linear-algebra-i.json",
+      "bytes": 189879,
+      "sha256": "sha256:aca4595981d070f2d8f2c70fc950c31891e130788eb80b38e807ddd888890704"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:linear-algebra-ii",
+      "path": "content/decks/linear-algebra-ii.json",
+      "bytes": 211186,
+      "sha256": "sha256:96ca8a576872dd4c16a44b8ad650e96c52dea03ec3749342882a22dda654b1fb"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:macroeconomic-theory-i",
+      "path": "content/decks/macroeconomic-theory-i.json",
+      "bytes": 171585,
+      "sha256": "sha256:8a9f102e3355bdf84ebab97d3aadc161a7c99758c6d46c3856c3183a4f2ac459"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:macroeconomic-theory-ii",
+      "path": "content/decks/macroeconomic-theory-ii.json",
+      "bytes": 188565,
+      "sha256": "sha256:bcec926b537427182e383775bbf78ad4f866cfb203f19e29edd4f4bfda82f22b"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-methods-for-economics",
+      "path": "content/decks/mathematical-methods-for-economics.json",
+      "bytes": 178281,
+      "sha256": "sha256:230bfb511d79686c0ce6fe6f3d5fe853d3228a30153d23d213fa9ea08f22ac63"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-methods-for-physics-i",
+      "path": "content/decks/mathematical-methods-for-physics-i.json",
+      "bytes": 175518,
+      "sha256": "sha256:bd41a897c8060c2ce6d2a5f8bb5aac702066310778ed9da8b0538893ee2a13e3"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-proof-and-foundations",
+      "path": "content/decks/mathematical-proof-and-foundations.json",
+      "bytes": 256013,
+      "sha256": "sha256:c2d60526b94b4142075b0a1683dadb89b04e4d569a71c7ab41d04942aec56aec"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-statistics",
+      "path": "content/decks/mathematical-statistics.json",
+      "bytes": 224047,
+      "sha256": "sha256:40406af3efd72db62f650fc0426d1ecf1766f9ba0ca8c05751f16ec6a0634380"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:mechanics-i",
+      "path": "content/decks/mechanics-i.json",
+      "bytes": 126517,
+      "sha256": "sha256:3812e59a9560da64a8129ffc7c68b8ed189fe2883fbb5b2b0656c5b64fbacc47"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:mechanics-ii",
+      "path": "content/decks/mechanics-ii.json",
+      "bytes": 175156,
+      "sha256": "sha256:471b493ef8cc60dd5178a4a5f89513bd05d5f0ac717abc0e9300c5cfcbb11499"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:microbiology",
+      "path": "content/decks/microbiology.json",
+      "bytes": 208884,
+      "sha256": "sha256:4f3543e5b6547e52faedf875da8fb6627bc4b62f0c52f7bc104fb4222cd79388"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:microeconomic-theory-i",
+      "path": "content/decks/microeconomic-theory-i.json",
+      "bytes": 186585,
+      "sha256": "sha256:1330af65239c0efadb8b35d925efb27567440c2d4da39c253e6da84743fcda77"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:microeconomic-theory-ii",
+      "path": "content/decks/microeconomic-theory-ii.json",
+      "bytes": 165405,
+      "sha256": "sha256:be74ad93aa9e0d160c358812a51120ed85e39ffe9722f9dff21619f4500af0f0"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:modern-physics",
+      "path": "content/decks/modern-physics.json",
+      "bytes": 177672,
+      "sha256": "sha256:0270675854b4f6a2f8a6aeda50bc742fcae47be3005c7194d429eabddaf3e042"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:molecular-biology",
+      "path": "content/decks/molecular-biology.json",
+      "bytes": 263412,
+      "sha256": "sha256:3cb956f77735ab282fda394a93eee3c07d222f2b0d02e0cff15a08a626e98d39"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:multivariable-calculus",
+      "path": "content/decks/multivariable-calculus.json",
+      "bytes": 167188,
+      "sha256": "sha256:e99a6922669b82c5ded94194aaa83a2c3ca9f85953fd251cd959ac0b549a3923"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:numerical-analysis-and-scientific-computing",
+      "path": "content/decks/numerical-analysis-and-scientific-computing.json",
+      "bytes": 154990,
+      "sha256": "sha256:6bb26134c5a944fdc2490c0209eaee1df9fc79ad9f36346743f29966246850c5"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:optics",
+      "path": "content/decks/optics.json",
+      "bytes": 161965,
+      "sha256": "sha256:b9c26f390a1cfd7f1300dac95cf39c17de08dac3f623eb0a3ef1050f894fa616"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:optimization-mathematics-i-convex-optimization",
+      "path": "content/decks/optimization-mathematics-i-convex-optimization.json",
+      "bytes": 216677,
+      "sha256": "sha256:ece3ff3b9630571aedd52e62e60829dfe0a59124114de10b423afd0bd0362960"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:ordinary-differential-equations",
+      "path": "content/decks/ordinary-differential-equations.json",
+      "bytes": 249054,
+      "sha256": "sha256:e33fb34a6e0108dae012e7d515fe8c9852cba80f58156e058a5f9c1b29edefb3"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:organic-chemistry-i",
+      "path": "content/decks/organic-chemistry-i.json",
+      "bytes": 181334,
+      "sha256": "sha256:9b7ad0020ffb126eaaef61c37b4a904a254a12be847037bff0f75b834f75cf45"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:organic-chemistry-ii",
+      "path": "content/decks/organic-chemistry-ii.json",
+      "bytes": 171108,
+      "sha256": "sha256:028abd060f340502390fe4a39976abbaf05e9ae36671e0b62e6e8edf2bd47790"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:organic-chemistry-laboratory",
+      "path": "content/decks/organic-chemistry-laboratory.json",
+      "bytes": 181146,
+      "sha256": "sha256:e38ebed04d91cae9028fab31432a25dca9fada9d122c742471ad61d9f16e2372"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:physics-foundations",
+      "path": "content/decks/physics-foundations.json",
+      "bytes": 129069,
+      "sha256": "sha256:b0f5b968a5d5bb001d7c29b70207a6e625295ea14d73a3ee5bd33d4d88b99512"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:physiology",
+      "path": "content/decks/physiology.json",
+      "bytes": 229759,
+      "sha256": "sha256:ba8fb742e9590e1749f5271b746c3128af3293b46655c69f49be3f5be3cc458f"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:probability-theory-i",
+      "path": "content/decks/probability-theory-i.json",
+      "bytes": 197025,
+      "sha256": "sha256:0838652dbefb2c095dcfe307beaba457c0f3311a7ebef1658172667aa5598e0f"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:probability-theory-ii",
+      "path": "content/decks/probability-theory-ii.json",
+      "bytes": 163427,
+      "sha256": "sha256:5fbf6493fcb402b68e96973298a6ae06dde67e9d5ce0e189ecd738ada772e5f6"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:programming-i",
+      "path": "content/decks/programming-i.json",
+      "bytes": 662539,
+      "sha256": "sha256:157f353eae68de9f8fa0143dd85c628a996f8171cc530b00337f346d9be5cc32"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:programming-ii",
+      "path": "content/decks/programming-ii.json",
+      "bytes": 633384,
+      "sha256": "sha256:1a15467807c70193c29e6c07f495078a22b72f735fa9c04ade71d090a6507e83"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:real-analysis-i",
+      "path": "content/decks/real-analysis-i.json",
+      "bytes": 226957,
+      "sha256": "sha256:49a9707916bbbf279b6784a58fda7b7d38e25a74c1b2d1301d8e9c41277ee493"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:sampling-and-survey-methods",
+      "path": "content/decks/sampling-and-survey-methods.json",
+      "bytes": 175177,
+      "sha256": "sha256:0f65004c743bb1ed6d37cd48a9648e9bcf940ce5a74bb6847bc8fc81fe5179fd"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:security-engineering-i",
+      "path": "content/decks/security-engineering-i.json",
+      "bytes": 159078,
+      "sha256": "sha256:b2e78ea3d7648c245cef075c11fae523f1194254fbd7710f697901d9669e741f"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:software-architecture",
+      "path": "content/decks/software-architecture.json",
+      "bytes": 115143,
+      "sha256": "sha256:539f9234934895288a1c80a0917427ac5e53476a9ec27a7ed1acf99aaa615841"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:software-engineering-i",
+      "path": "content/decks/software-engineering-i.json",
+      "bytes": 197923,
+      "sha256": "sha256:2d50f892dd999c5c1701ef415d2e4953f3dfd0426fbd31e0adbef7aa7953261b"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:software-testing-i-foundations-and-test-design",
+      "path": "content/decks/software-testing-i-foundations-and-test-design.json",
+      "bytes": 423621,
+      "sha256": "sha256:5a7c5c94637cb948800b47c0c8b970555756c87db28f1298d36be449cd32d79c"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:thermodynamics",
+      "path": "content/decks/thermodynamics.json",
+      "bytes": 182711,
+      "sha256": "sha256:7e31d6afd84d8a57d95ff852e1782da7f6e0e63d8a6e722c30ce25e5bcb7d8e0"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:time-series-analysis",
+      "path": "content/decks/time-series-analysis.json",
+      "bytes": 160292,
+      "sha256": "sha256:0a2b7be57c5d04701a3c1578b45378d2a82c3f426c4ede66feae553e84c143b4"
+    },
+    {
+      "catalog_deck_id": "academic-reviewed-v1:waves-and-oscillations",
+      "path": "content/decks/waves-and-oscillations.json",
+      "bytes": 166610,
+      "sha256": "sha256:f9d8edbf80e33ef4b4e4791587ab529aa7bf845b01fda09e59b4ff16736cc9b4"
+    }
+  ],
+  "expected_pins": {
+    "constructorRef": {
+      "version": "2026-09-02.public-sanitized.v3",
+      "digest": "sha256:93529fe0fc172b6ff58391a08230b15fcc82a5c9bd5e2fa2d85679f2f0573495"
+    },
+    "preparedConstructorDigest": "sha256:43af55b6108bd0901723ff4977c28469c84ee07bccafd4c307a172e2c7f49c2f",
+    "catalogRef": {
+      "version": "2026-09-02.public-sanitized.v3",
+      "digest": "sha256:ce5945142785ae528532f057eb09c44966c2ecca10844ec638aa793e74cea3bc"
+    },
+    "dependencyGraphSha256": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0",
+    "sourceManifestSha256": "sha256:c6672c69df5159fdcf68f76cc27e42b2160d4d0725fc9998756b793a1fe2a4be",
+    "criterionDerivationVersion": "store-normalizeRubricItems-ordinal.v1"
+  }
+}

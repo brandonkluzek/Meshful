@@ -1,0 +1,52 @@
+{
+  "schema": "meshful-sites-d1-provisioning-receipt.v1",
+  "recorded_at": "2026-09-02T02:50:17Z",
+  "status": "provider_failed_before_publication",
+  "site": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "access": "owner-only",
+    "public_access_changed": false,
+    "live_predecessor_version": 11,
+    "live_version_changed": false
+  },
+  "source": {
+    "commit_sha": "edcb18940d08954acf6e9b541f286faf545cea73",
+    "local_archive_sha256": "c2e420dfa0ee97b4534b343c81d6e1fc96a592d925c1556b818716364f7e5d3d",
+    "saved_version_id": "appgprj_6a9334b99f20819195ece80ebe97016b~appgver_59ed5b402478819185a9690bee8a7dcc",
+    "saved_version_number": 12,
+    "saved_archive_content_hash": "sha256:91ce7098bc711816b31f9806a265da8761c789b9b002b455d8af38f5024262c4",
+    "saved_archive_size_bytes": 30218240,
+    "saved_archive_file_count": 166
+  },
+  "backend_delivery": {
+    "manifest_sha256": "47bb451e2ed8c6a0c2e43833e8183652d65334a60a6cdcef2904a26bdea9bba4",
+    "payload_sha256": "8cc9db06ebe71a300a32f873ca5d89c2995ceaa51cbededfa6cdc1f60ad68d93",
+    "contract_sha256": "63fa1f62e21e2ea7e2a40e91882a7a53b742cf4de690d87628f0accdc717c0fe",
+    "migration_0000_sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3",
+    "migration_0001_sha256": "7a7e88d529fd1359e18d74b9cc8f2ecb75cd05708fa5b6bcc44198e5cda24a07",
+    "journal_sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec",
+    "expected_schema_sha256": "7a3c780a36d7a8a3865942d5f7a457ad52852dae7505641c6af9185610b54c9f",
+    "expected_table_count": 13,
+    "expected_trigger_count": 23
+  },
+  "deployment": {
+    "deployment_id": "appgdep_6a978d8646508191803a4e757817f3ef",
+    "status": "failed",
+    "failure_message": "incomplete input: SQLITE_ERROR",
+    "published_url": null
+  },
+  "post_failure_database_overview": {
+    "bindings": [],
+    "tables": [],
+    "partial_schema_visible": false
+  },
+  "validation": {
+    "focused_wrapper_tests": "12/12",
+    "backend_source_and_site_package_verifier": "passed",
+    "verified_migration_statement_count": 42,
+    "wrangler_4_92_0_local_migrations": "passed: 11 commands for 0000 and 33 commands for 0001",
+    "account_endpoints": "default-denied",
+    "provider_logs_available": false
+  },
+  "blocker": "Sites hosted migration ingestion or execution rejected SQL that passes the frozen verifier and Wrangler local D1 migration engine. Do not retry unchanged or edit Backend migration semantics without a frozen provider-compatible successor."
+}

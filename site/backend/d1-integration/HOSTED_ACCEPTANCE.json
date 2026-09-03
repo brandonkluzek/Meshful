@@ -1,0 +1,238 @@
+{
+  "schema": "meshful-hosted-d1-acceptance-matrix.v1",
+  "environment": "website-adapter-attested-private-sites-d1",
+  "receipt_authority": "The runner validates a frozen assertion and pin contract, but the Website adapter attests its own browser/network observations. Pair the receipt with the reviewed adapter hash, browser/network trace and owner D1 metrics; this runner alone cannot prove that network traffic occurred.",
+  "allowed_origins": [
+    "https://meshful.ai"
+  ],
+  "endpoint_prefix": "/api/learner/v2",
+  "required_actors": [
+    "a_device_1",
+    "a_device_2",
+    "b_device_1"
+  ],
+  "required_release_pins": {
+    "site_project_id": { "equals": "appgprj_6a9334b99f20819195ece80ebe97016b" },
+    "site_source_commit": { "matches": "^[a-f0-9]{40}$" },
+    "site_source_manifest_sha256": { "matches": "^[a-f0-9]{64}$" },
+    "site_source_payload_sha256": { "matches": "^[a-f0-9]{64}$" },
+    "site_saved_version_id": { "matches": "^[A-Za-z0-9._:-]{1,128}$" },
+    "site_deployment_id": { "matches": "^[A-Za-z0-9._:-]{1,128}$" },
+    "backend_v1_manifest_sha256": { "equals": "6c4ca3ccb5681cca26f082ba3782c0990e53962d95280ddab4ab2597cd308de1" },
+    "backend_v2_manifest_sha256": { "equals": "0a24e7c6e8084942b4f4a76eb3f2bc183c1817a20f07b3eff361184631080a39" },
+    "hosted_evidence_contract_sha256": { "equals": "db7bf7bf654e3c5c0c970d698a2f07808aa2b3efe24ff657a2b44165b3286699" },
+    "d1_contract_sha256": { "equals": "63fa1f62e21e2ea7e2a40e91882a7a53b742cf4de690d87628f0accdc717c0fe" },
+    "migration_0001_source_sha256": { "equals": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2" },
+    "migration_0001_packaged_sha256": { "equals": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3" },
+    "migration_0002_source_sha256": { "equals": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3" },
+    "migration_0002_packaged_sha256": { "equals": "7a7e88d529fd1359e18d74b9cc8f2ecb75cd05708fa5b6bcc44198e5cda24a07" },
+    "migration_journal_sha256": { "equals": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec" },
+    "accounts_manifest_sha256": { "equals": "262c0a425a5e6dc8f94e67fc9f792dead2fe2070a4a5b0b8adef70b06dfee8ad" },
+    "canonical_store_sha256": { "equals": "b7d0ac1c0d3fabb55ec3c801a84d7b85a4810eacdc9338a5292d4d267c5429e2" },
+    "webmcp_sha256": { "equals": "9faa86f447eddf4424b432075129f02ea7d7875eb6b2f1ea78f25181aae440df" },
+    "library_catalog_module_sha256": { "equals": "6864784ea962c11b4fb621557c70493b054b416c5772f6c75dfe879ad2002f7d" },
+    "streak_module_sha256": { "equals": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3" },
+    "library_candidate_manifest_sha256": { "equals": "sha256:172e079349252368559beeddcd540b34f02c769f66fa5e8bfd6092f49f6ad8b8" },
+    "catalog_version": { "equals": "2026-08-30.reviewed-72.v1" },
+    "catalog_digest": { "equals": "sha256:908e28f0a7a43ec53715a6811d0cc09c59f627fb3f74de01fc8fbceb7fbe84bb" },
+    "dependency_graph_sha256": { "equals": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0" },
+    "catalog_constructor_digest": { "equals": "sha256:e26951ad5070be6546561f2769659dda87715fb6dc6d061b5ee6ed3b1b17f461" },
+    "catalog_runtime_resolver_sha256": { "matches": "^[a-f0-9]{64}$" }
+  },
+  "scenarios": [
+    {
+      "id": "schema_and_fail_closed_gate",
+      "purpose": "Prove the real binding and applied schema before account writes are selected.",
+      "assertions": [
+        { "path": "logical_d1_binding", "equals": "DB" },
+        { "path": "table_count", "equals": 13 },
+        { "path": "trigger_count", "equals": 23 },
+        { "path": "unexpected_schema_reference_count", "equals": 0 },
+        { "path": "schema_sha256", "equals": "7a3c780a36d7a8a3865942d5f7a457ad52852dae7505641c6af9185610b54c9f" },
+        { "path": "deferred_response_document_fk", "equals": true },
+        { "path": "foreign_key_check", "equals": "ok" },
+        { "path": "quick_check", "equals": "ok" },
+        { "path": "migration_journal_in_order", "equals": true },
+        { "path": "untrusted_write_status", "equals": 503 },
+        { "path": "untrusted_write_code", "equals": "ACCOUNT_SYNC_DISABLED" },
+        { "path": "activation_state", "equals": "private_acceptance" },
+        { "path": "acceptance_cohort_source", "equals": "server_config" },
+        { "path": "request_selected_acceptance", "equals": false }
+      ]
+    },
+    {
+      "id": "trusted_ingress_and_identity_binding",
+      "purpose": "Enable the production path only through verified Sites dispatch and prove forged or unknown identities cannot select or provision learner data.",
+      "assertions": [
+        { "path": "legitimate_dispatched_a_authenticated", "equals": true },
+        { "path": "legitimate_dispatched_a_status", "equals": 200 },
+        { "path": "forged_identity_header_selected_a", "equals": false },
+        { "path": "forged_identity_header_status", "one_of": [401, 403] },
+        { "path": "host_or_header_only_status", "one_of": [401, 403] },
+        { "path": "direct_origin_status", "one_of": [401, 403, 404] },
+        { "path": "unknown_identity_status", "equals": 403 },
+        { "path": "unknown_identity_provisioned", "equals": false },
+        { "path": "known_identity_principal_stable", "equals": true },
+        { "path": "email_change_rebound_principal", "equals": false },
+        { "path": "name_change_rebound_principal", "equals": false },
+        { "path": "dispatcher_spoof_stripping_observed", "equals": true }
+      ]
+    },
+    {
+      "id": "same_account_two_devices",
+      "purpose": "Install once on A1 and load the exact account state and pins on A2.",
+      "assertions": [
+        { "path": "same_verified_principal", "equals": true },
+        { "path": "state_digest_matches", "equals": true },
+        { "path": "durable_revision_matches", "equals": true },
+        { "path": "catalog_pin_matches", "equals": true },
+        { "path": "installed_deck_and_cards_match", "equals": true },
+        { "path": "cross_device_local_storage_copy_used", "equals": false }
+      ]
+    },
+    {
+      "id": "grade_lost_ack_and_exact_replay",
+      "purpose": "Commit one real-shaped grade, lose its acknowledgement, and replay the identical original envelope.",
+      "assertions": [
+        { "path": "durable_grade_commits", "equals": 1 },
+        { "path": "durable_review_events", "equals": 1 },
+        { "path": "same_review_id", "equals": true },
+        { "path": "retry_replayed", "equals": true },
+        { "path": "definition_reveals", "equals": 1 },
+        { "path": "visible_effects", "equals": 1 },
+        { "path": "answer_feedback_schedule_exact_after_reload", "equals": true }
+      ]
+    },
+    {
+      "id": "stale_concurrency_and_atomic_rollback",
+      "purpose": "Race two writers and inject one failed batch without leaving partial state, history, receipts, or fragments.",
+      "assertions": [
+        { "path": "concurrent_winners", "equals": 1 },
+        { "path": "stale_rejections", "equals": 1 },
+        { "path": "stale_status", "equals": 409 },
+        { "path": "stale_code", "equals": "STALE_DURABLE_REVISION" },
+        { "path": "failed_batch_partial_rows", "equals": 0 },
+        { "path": "identical_retry_after_failure_succeeds", "equals": true }
+      ]
+    },
+    {
+      "id": "learner_a_b_isolation",
+      "purpose": "Prove B cannot select, read, recover, or mutate any A-owned object.",
+      "assertions": [
+        { "path": "distinct_verified_principals", "equals": true },
+        { "path": "assert_a_binding_as_b_status", "equals": 409 },
+        { "path": "read_a_document_as_b_status", "equals": 404 },
+        { "path": "mutate_a_as_b_status", "equals": 409 },
+        { "path": "foreign_answers_or_feedback_visible", "equals": false },
+        { "path": "foreign_recovery_or_receipt_visible", "equals": false }
+      ]
+    },
+    {
+      "id": "sign_out_after_in_flight_server_commit",
+      "purpose": "Retire A's epoch after its in-flight request commits, show B, and recover A later without applying or duplicating it under B.",
+      "assertions": [
+        { "path": "a_server_commits", "equals": 1 },
+        { "path": "a_response_applied_to_b", "equals": false },
+        { "path": "a_content_visible_to_b", "equals": false },
+        { "path": "b_original_outbox_preserved", "equals": true },
+        { "path": "b_durable_head_unchanged", "equals": true },
+        { "path": "retired_a_cleanup_touched_b", "equals": false },
+        { "path": "a_exact_receipt_recoverable_after_return", "equals": true },
+        { "path": "a_duplicate_grade_after_recovery", "equals": false }
+      ]
+    },
+    {
+      "id": "sign_out_before_in_flight_server_commit",
+      "purpose": "Retire A's epoch before its in-flight request commits, preserve A's original draft, and retry it once after A returns without touching B.",
+      "assertions": [
+        { "path": "a_initial_server_commits", "equals": 0 },
+        { "path": "a_original_pending_draft_preserved", "equals": true },
+        { "path": "a_retry_commits", "equals": 1 },
+        { "path": "a_retry_review_events", "equals": 1 },
+        { "path": "a_response_applied_to_b", "equals": false },
+        { "path": "a_content_visible_to_b", "equals": false },
+        { "path": "b_original_outbox_preserved", "equals": true },
+        { "path": "b_durable_head_unchanged", "equals": true },
+        { "path": "retired_a_cleanup_touched_b", "equals": false }
+      ]
+    },
+    {
+      "id": "confirmed_guest_claim_into_empty_account",
+      "purpose": "Claim exact guest browser state only after confirmation and preserve the original source without merging.",
+      "assertions": [
+        { "path": "explicit_user_confirmation_observed", "equals": true },
+        { "path": "destination_initial_revision", "equals": 0 },
+        { "path": "destination_initial_state_is_null", "equals": true },
+        { "path": "original_browser_key_preserved", "equals": true },
+        { "path": "original_browser_key_sha256_unchanged", "equals": true },
+        { "path": "claim_slot_backup_readable_after_reload", "equals": true },
+        { "path": "raw_archive_digest_matches", "equals": true },
+        { "path": "claim_commits", "equals": 1 },
+        { "path": "lost_ack_retry_replayed", "equals": true },
+        { "path": "second_source_merge_status", "equals": 409 },
+        { "path": "destination_state_changed_by_rejected_merge", "equals": false },
+        { "path": "same_source_other_account_status", "equals": 409 },
+        { "path": "same_source_other_account_mutation", "equals": false }
+      ]
+    },
+    {
+      "id": "full_catalog_and_supported_envelope",
+      "purpose": "Use the intended catalog and the qualified transport shape rather than the dormant demo release.",
+      "assertions": [
+        { "path": "library_course_count", "equals": 72 },
+        { "path": "library_card_count", "equals": 9988 },
+        { "path": "server_uses_demo_fixture_catalog", "equals": false },
+        { "path": "catalog_and_graph_pins_survive_reload", "equals": true },
+        { "path": "closure_install_commits", "equals": 1 },
+        { "path": "closure_install_revision_delta", "equals": 1 },
+        { "path": "closure_installed_decks", "equals": 14 },
+        { "path": "closure_installed_cards", "equals": 1892 },
+        { "path": "closure_parent_first_pins_exact", "equals": true },
+        { "path": "closure_second_device_reload_exact", "equals": true },
+        { "path": "closure_replay_additional_writes", "equals": 0 },
+        { "path": "input_205026_bytes_commits", "equals": true },
+        { "path": "qualified_input_is_one_atomic_revision", "equals": true },
+        { "path": "over_capacity_refusal_preserves_original_draft", "equals": true }
+      ]
+    },
+    {
+      "id": "qualified_capacity_history_and_recovery",
+      "purpose": "Exercise the measured v2 native, history and recovery bounds on the real hosted path and record effective resource use without claiming unlimited storage.",
+      "assertions": [
+        { "path": "max_native_args_bytes", "equals": 4523091 },
+        { "path": "max_native_state_bytes", "equals": 6709782 },
+        { "path": "max_native_server_commit", "equals": true },
+        { "path": "max_native_atomic_revision_delta", "equals": 1 },
+        { "path": "max_native_reload_exact", "equals": true },
+        { "path": "browser_draft_outcome", "one_of": ["persisted", "quota_refused_safely"] },
+        { "path": "browser_quota_refusal_preserves_original_bytes", "equals": true },
+        { "path": "history_reviews_before_claim", "equals": 512 },
+        { "path": "history_claim_state_bytes", "integer_min": 1, "integer_max": 8388608 },
+        { "path": "history_claim_http_body_bytes", "integer_min": 1, "integer_max": 16785408 },
+        { "path": "history_review_events_after_grade", "equals": 513 },
+        { "path": "history_state_bytes_after_grade", "integer_min": 1, "integer_max": 8388608 },
+        { "path": "history_grade_commits", "equals": 1 },
+        { "path": "history_replay_additional_writes", "equals": 0 },
+        { "path": "history_reload_exact", "equals": true },
+        { "path": "retained_storage_growth_bytes", "integer_min": 1 },
+        { "path": "capacity_invocations_without_exceeded_memory", "equals": true },
+        { "path": "max_observed_invocation_cpu_ms", "integer_min": 0 },
+        { "path": "observed_total_query_count", "integer_min": 1 },
+        { "path": "observed_d1_rows_read", "integer_min": 0 },
+        { "path": "observed_d1_rows_written", "integer_min": 1 },
+        { "path": "observed_request_body_bytes", "integer_min": 1 },
+        { "path": "observed_d1_storage_bytes", "integer_min": 1 },
+        { "path": "effective_cpu_limit_ms", "integer_min": 1 },
+        { "path": "effective_query_limit", "integer_min": 1 },
+        { "path": "effective_request_body_limit_bytes", "integer_min": 1 },
+        { "path": "effective_d1_storage_limit_bytes", "integer_min": 1 },
+        { "path": "resource_metrics_source", "one_of": ["sites_runtime_and_d1_metadata", "cloudflare_worker_trace_and_d1_metadata"] },
+        { "path": "resource_metrics_sha256", "matches": "^[a-f0-9]{64}$" },
+        { "path": "missing_pinned_base_code", "equals": "CATALOG_BASE_UNAVAILABLE" },
+        { "path": "missing_pinned_base_recovery_exact", "equals": true },
+        { "path": "over_budget_code", "equals": "INPUT_TOO_LARGE" },
+        { "path": "over_budget_recovery_untruncated", "equals": true }
+      ]
+    }
+  ]
+}

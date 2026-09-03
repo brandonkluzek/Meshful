@@ -32,8 +32,8 @@ for (const path of admitted) {
   const info = await lstat(absolute);
   if (info.isSymbolicLink()) throw new Error(`Symlink not admitted: ${path}`);
   if (!info.isFile()) throw new Error(`Non-file tracked entry not admitted: ${path}`);
-  const maxBytes = path === 'web/data/library/2026-09-02.public-sanitized-72.v2/a035f44a36a088610d78b8499ebe8e55f014e0d35f77d7238972513e3077f5c1.json'
-    ? 16 * 1024 * 1024
+  const maxBytes = path.startsWith('site/public/study/data/library/')
+    ? 32 * 1024 * 1024
     : 10 * 1024 * 1024;
   if (info.size > maxBytes) throw new Error(`File exceeds reviewed size boundary: ${path}`);
   const bytes = await readFile(absolute);

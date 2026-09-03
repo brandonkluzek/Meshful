@@ -1,0 +1,71 @@
+{
+  "schema_version": "meshful-public-library-release-verification.v1",
+  "build_date": "2026-09-03",
+  "status": "verified-unpublished-public-release-candidate",
+  "claim_boundary": "All 72 sanitized decks are packaged for the Website exact-reference resolver with course-specific descriptions. This is local release readiness, not public deployment, Devpost submission, or human-expert validation.",
+  "release": {
+    "version": "2026-09-03.public-sanitized.v4",
+    "digest": "sha256:e37e6bccacf4d77ea3858793247e9cc36a10e95c86db723c74b2dcbf29dc3276"
+  },
+  "dependency_graph_sha256": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0",
+  "counts": {
+    "decks": 72,
+    "cards": 9988,
+    "prerequisite_edges": 17712,
+    "external_prerequisite_edges": 770
+  },
+  "description_successor": {
+    "overlay_sha256": "sha256:221a8ce11bcc52cbb81814baf27599b7081b6b7d79460c70006971f914f140ee",
+    "base_public_metadata_sha256": "sha256:b73810e51aedffbe0062e3d4bb0e0c982e4b6f792eb236ea13d4fe6982b7f8be",
+    "base_browser_catalog_artifact_sha256": "sha256:fd26b03178e8ffa0db631814cc7771aae1966f9b087499378ddfa1c78b98a332",
+    "changed_descriptions": 72,
+    "blank_descriptions": 0,
+    "duplicate_descriptions": 0,
+    "boilerplate_matches": 0,
+    "minimum_length": 132,
+    "maximum_length": 176
+  },
+  "sanitation": {
+    "public_source_reference_records": 0,
+    "exact_quote_records": 0,
+    "private_path_or_locator_tokens": 0,
+    "learner_facing_card_content_changed_from_v3": false
+  },
+  "checks": {
+    "all_deck_and_card_ids_and_order_preserved": true,
+    "all_definitions_and_grading_criteria_preserved": true,
+    "all_prerequisites_preserved": true,
+    "all_descriptions_match_the_pinned_overlay": true,
+    "runtime_chunks_prepared_by_canonical_website_resolver": true,
+    "public_metadata_aligned_with_runtime_index": true,
+    "public_release_approved": true,
+    "deployed": false
+  },
+  "outputs": {
+    "public_metadata": {
+      "path": "public-metadata.json",
+      "sha256": "sha256:b0bbb20dc4fa641d00143208d94cfc4ef80e0e779b92642cdd75b339d53aff0e",
+      "bytes": 463319
+    },
+    "asset_manifest": {
+      "path": "asset-manifest.json",
+      "sha256": "sha256:e41e2f866c943456a1f7fe2eff3fa8f2a9989f68fc1ea992119e726565f3c985",
+      "bytes": 35960
+    },
+    "build_manifest": {
+      "path": "build-only/source-manifest.json",
+      "sha256": "sha256:66922285f28b47e3c18d391473f935a69fd2f926b7d25c00360b757f73fbd936",
+      "bytes": 96745
+    },
+    "browser_catalog_artifact": {
+      "path": "runtime/catalog-artifact.json",
+      "sha256": "sha256:ffcd11b6409fcc7c5fb500e097e41c829d94601614b6fe5ae37ebf23dafb28a1",
+      "bytes": 12036415
+    },
+    "runtime_index": {
+      "path": "runtime/index.json",
+      "sha256": "sha256:2e70c4f08117cf0645cfb9d61c3333abf96ce36e90b3274f5980921eef8e3e4a",
+      "bytes": 382457
+    }
+  }
+}

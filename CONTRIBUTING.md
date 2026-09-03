@@ -14,12 +14,12 @@ Before proposing a change:
 
 Software contributions are submitted under Apache-2.0. Original documentation
 and artwork are submitted under CC BY 4.0. New public example content in
-`web/data/catalog.js` is submitted under CC0 1.0 Universal, without an
-attribution requirement. Changes to the manifest-bound academic catalog in
-`library/**` are submitted under CC BY 4.0 and must preserve the exact-release
-attribution and integrity process. Submit only material you created or have
-authority to release on those terms. Third-party material must retain its own
-license and notice.
+`site/public/study/data/catalog.js` is submitted under CC0 1.0 Universal,
+without an attribution requirement. Changes to the versioned academic catalog
+in `site/public/study/data/library-runtime/**` are submitted under CC BY 4.0 and
+must preserve the exact-release integrity process. Submit only material you
+created or have authority to release on those terms. Third-party material must
+retain its own license and notice.
 
 Public examples must remain small and explicitly labeled. A passing structural
 check does not establish human expert review or learning outcomes. Library

@@ -1,0 +1,1104 @@
+{
+  "schema_version": "meshful-course-description-overlay.v1",
+  "status": "metadata-only-handoff-not-deployed",
+  "generated_at": "2026-09-03",
+  "source": {
+    "public_metadata_path": ".tmp/library-development/public-release-candidate-2026-09-02-v3/public-metadata.json",
+    "public_metadata_sha256": "b73810e51aedffbe0062e3d4bb0e0c982e4b6f792eb236ea13d4fe6982b7f8be",
+    "catalog_release_version": "2026-09-02.public-sanitized.v3",
+    "catalog_digest": "sha256:ce5945142785ae528532f057eb09c44966c2ecca10844ec638aa793e74cea3bc"
+  },
+  "invariants": {
+    "descriptions": 72,
+    "blank_descriptions": 0,
+    "duplicate_descriptions": 0,
+    "boilerplate_matches": 0,
+    "minimum_length": 132,
+    "maximum_length": 176,
+    "deck_ids_changed": 0,
+    "projected_payload_hashes_changed": 0,
+    "card_payloads_changed": 0
+  },
+  "decks": [
+    {
+      "source_deck_id": "algorithms-i",
+      "catalog_deck_id": "academic-reviewed-v1:algorithms-i",
+      "title": "Algorithms I",
+      "subject": "Computer Science and Software",
+      "card_count": 140,
+      "description": "Analyze specifications, invariants, correctness proofs, asymptotic bounds, divide-and-conquer methods, and foundational search and graph algorithms.",
+      "topic_anchors": [
+        "Algorithm specification",
+        "Asymptotic upper bound",
+        "Binary-search invariant"
+      ],
+      "source_deck_sha256": "sha256:6e7c563740f3b9b4afae4992e61aaa9a0ed7cf066ae22fcf04cbe59ea6ce5661",
+      "projected_payload_sha256": "sha256:4de011a0d9b88574c201ae5f91ded06cac50e0964bb3d67e9c3eae85f8818aa3"
+    },
+    {
+      "source_deck_id": "analytical-chemistry",
+      "catalog_deck_id": "academic-reviewed-v1:analytical-chemistry",
+      "title": "Analytical Chemistry",
+      "subject": "Chemistry",
+      "card_count": 120,
+      "description": "Develop quantitative chemical analysis through sampling, calibration, uncertainty, method validation, separations, spectroscopy, and electrochemical measurement.",
+      "topic_anchors": [
+        "Analytical Selectivity",
+        "External Calibration",
+        "Analytical Uncertainty Propagation"
+      ],
+      "source_deck_sha256": "sha256:3b77d8ab6c8464e892aa9140103ed494c7a6bfc015a61e2774729db884c14f52",
+      "projected_payload_sha256": "sha256:45bedf44d91605592f5084b01b2408581a9a70ec8e60b00c7a26620363ba2e5d"
+    },
+    {
+      "source_deck_id": "applied-statistics-i",
+      "catalog_deck_id": "academic-reviewed-v1:applied-statistics-i",
+      "title": "Applied Statistics I",
+      "subject": "Statistics",
+      "card_count": 87,
+      "description": "Build practical inference skills with estimands, sampling distributions, standard errors, confidence intervals, hypothesis tests, effect sizes, and bootstrap methods.",
+      "topic_anchors": [
+        "estimand",
+        "confidence interval",
+        "bootstrap distribution"
+      ],
+      "source_deck_sha256": "sha256:1a8fc23aaab0482a7100ad98f33cfcb5344385495ae5e9085b8fd1ab061eac58",
+      "projected_payload_sha256": "sha256:da5301ac7ede6a58467ccac3bb216eb29bda43aab0f424c6609d58bf550a87bf"
+    },
+    {
+      "source_deck_id": "applied-statistics-ii-regression-and-generalized-linear-models",
+      "catalog_deck_id": "academic-reviewed-v1:applied-statistics-ii-regression-and-generalized-linear-models",
+      "title": "Applied Statistics II",
+      "subject": "Statistics",
+      "card_count": 99,
+      "description": "Extend statistical modeling through multiple regression, generalized linear models, diagnostics, robust uncertainty, interactions, prediction, and multiplicity control.",
+      "topic_anchors": [
+        "regression coefficient vector",
+        "Cook's distance",
+        "Bonferroni multiple-testing procedure"
+      ],
+      "source_deck_sha256": "sha256:7910f6e86bf9402b8b81e5c4bcbfdf40378f6166e5ebf5155f7907fa719a607f",
+      "projected_payload_sha256": "sha256:9562e7c345c17e3a7561251ada60fa68ab95a84c02be42bc25d4f83d18a7065b"
+    },
+    {
+      "source_deck_id": "bayesian-inference",
+      "catalog_deck_id": "academic-reviewed-v1:bayesian-inference",
+      "title": "Bayesian Inference",
+      "subject": "Statistics",
+      "card_count": 116,
+      "description": "Connect priors, likelihoods, posteriors, predictive distributions, hierarchical models, computation, diagnostics, and Bayesian decision-making.",
+      "topic_anchors": [
+        "Prior Distribution",
+        "Posterior Distribution",
+        "Posterior Predictive Distribution"
+      ],
+      "source_deck_sha256": "sha256:0be5ce8e8cd66acec8c41e77b9f34afbf0517797c4a1433f20dbbb041a6f0ae6",
+      "projected_payload_sha256": "sha256:84cdace0c98f3ecf4aa65c5260a2c0866c082ada6a5bef56457b4f49bfb60bea"
+    },
+    {
+      "source_deck_id": "behavioral-and-experimental-economics",
+      "catalog_deck_id": "academic-reviewed-v1:behavioral-and-experimental-economics",
+      "title": "Behavioral and Experimental Economics",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Study bounded rationality, reference dependence, heuristics, social preferences, experimental identification, treatment effects, and behavioral welfare analysis.",
+      "topic_anchors": [
+        "Bounded Rationality",
+        "Reference Dependence",
+        "Experimental Economics"
+      ],
+      "source_deck_sha256": "sha256:40a6bfdd26756a28c913e485b791ed238b0fb3e67f6085c43841245742ac508a",
+      "projected_payload_sha256": "sha256:730e5275838ee594b57317b1b3d5acdcf96d13d0cc83c45ba8f17412f2a6d8b5"
+    },
+    {
+      "source_deck_id": "biochemistry",
+      "catalog_deck_id": "academic-reviewed-v1:biochemistry",
+      "title": "Biochemistry",
+      "subject": "Chemistry",
+      "card_count": 144,
+      "description": "Trace how molecular structure, noncovalent forces, enzymes, bioenergetics, signaling, and major metabolic pathways govern cellular chemistry.",
+      "topic_anchors": [
+        "Biomolecular Noncovalent Interactions",
+        "ATP",
+        "Metabolic Flux"
+      ],
+      "source_deck_sha256": "sha256:73a7df49816d05a9901308c30edd52f59cf36aa589fcbdfa1e474e377857e212",
+      "projected_payload_sha256": "sha256:6d3215ac136d8a86b514e73bee03d693cfc9bb96e375bacc73f9938ee609fc97"
+    },
+    {
+      "source_deck_id": "biology-i",
+      "catalog_deck_id": "academic-reviewed-v1:biology-i",
+      "title": "Biology I",
+      "subject": "Biology",
+      "card_count": 120,
+      "description": "Establish the foundations of cells, heredity, evolution, homeostasis, energy flow, and scientific reasoning from experiments and biological evidence.",
+      "topic_anchors": [
+        "Cell Theory",
+        "Evolution",
+        "Homeostasis"
+      ],
+      "source_deck_sha256": "sha256:b0d54c074928afeed17a894dfdb635f6c4a3f1bf288edbca61c92b5492d471c3",
+      "projected_payload_sha256": "sha256:b0c9f7c4651a2408261379a83ceca5b10f2dbd34ab2d7979acea019481cf4932"
+    },
+    {
+      "source_deck_id": "biology-ii",
+      "catalog_deck_id": "academic-reviewed-v1:biology-ii",
+      "title": "Biology II",
+      "subject": "Biology",
+      "card_count": 120,
+      "description": "Compare organismal diversity, phylogeny, plant and animal form, reproduction, physiology, behavior, ecology, and the history of life.",
+      "topic_anchors": [
+        "Phylogenetic Inference",
+        "Eukaryotic Diversity",
+        "Comparative Biology"
+      ],
+      "source_deck_sha256": "sha256:8327040039fc6aa3bb0536da749fcfd404fb3f0cc829bb2a0d7202cb3b2c2822",
+      "projected_payload_sha256": "sha256:90912ec59d1da409297d432512f343477ce23281b5bc63bd27fc54d10c8e8b6c"
+    },
+    {
+      "source_deck_id": "calculus-i",
+      "catalog_deck_id": "academic-reviewed-v1:calculus-i",
+      "title": "Calculus I",
+      "subject": "Mathematics",
+      "card_count": 107,
+      "description": "Learn limits, continuity, derivatives, applications of differentiation, definite integrals, and the Fundamental Theorem of Calculus.",
+      "topic_anchors": [
+        "epsilon-delta definition of a limit",
+        "Intermediate Value Theorem",
+        "Average rate of change"
+      ],
+      "source_deck_sha256": "sha256:2216725352071e58b663dd5bac5385f8ebc2eee52533bc2f428fd932a8050e49",
+      "projected_payload_sha256": "sha256:4e5d333582bb318b2117f3ece1195a89637548d79c6433fa804208daf222ff99"
+    },
+    {
+      "source_deck_id": "calculus-ii",
+      "catalog_deck_id": "academic-reviewed-v1:calculus-ii",
+      "title": "Calculus II",
+      "subject": "Mathematics",
+      "card_count": 113,
+      "description": "Advance through integration techniques, improper integrals, sequences and series, Taylor approximation, and parametric and polar calculus.",
+      "topic_anchors": [
+        "Integration-by-parts identity",
+        "Partial-fraction coefficient verification",
+        "Taylor polynomial"
+      ],
+      "source_deck_sha256": "sha256:5232ddbafd602bf04a50999fd5193f071e9471bcb118da21367ea96c002ccb96",
+      "projected_payload_sha256": "sha256:f03bf26ac0d72821f8432d85adff530102560f13644287abf64965f924ff247f"
+    },
+    {
+      "source_deck_id": "causal-inference",
+      "catalog_deck_id": "academic-reviewed-v1:causal-inference",
+      "title": "Causal Inference",
+      "subject": "Statistics",
+      "card_count": 101,
+      "description": "Reason from potential outcomes and causal graphs through confounding control, adjustment, instrumental variables, mediation, and bounded causal claims.",
+      "topic_anchors": [
+        "average treatment effect",
+        "causal directed acyclic graph",
+        "collider bias"
+      ],
+      "source_deck_sha256": "sha256:f55884869a2bc5d1388611b7b05218240779b888844168de90d8095cdcebc2c1",
+      "projected_payload_sha256": "sha256:aca648f6ff8ec1f6cda1132c22d1d46525ab175d38e98e30c0aac8997f42dd27"
+    },
+    {
+      "source_deck_id": "cell-biology",
+      "catalog_deck_id": "academic-reviewed-v1:cell-biology",
+      "title": "Cell Biology",
+      "subject": "Biology",
+      "card_count": 140,
+      "description": "Examine membranes, organelles, trafficking, cytoskeleton, signaling, gene regulation, cell division, death, and experimental methods for studying cells.",
+      "topic_anchors": [
+        "Plasma Membrane",
+        "Endomembrane System",
+        "Cytoskeleton"
+      ],
+      "source_deck_sha256": "sha256:398aa9d806122ac6c1a107d13c16877f267cb6b985d3f8216a68be96036fc8e2",
+      "projected_payload_sha256": "sha256:3363f0806f4c8f17bb174457111126224976d3699f63833f9bd227c460af989e"
+    },
+    {
+      "source_deck_id": "chemistry-laboratory-and-measurement",
+      "catalog_deck_id": "academic-reviewed-v1:chemistry-laboratory-and-measurement",
+      "title": "Chemistry Laboratory and Measurement",
+      "subject": "Chemistry",
+      "card_count": 120,
+      "description": "Practice measurement design, uncertainty, calibration, solution preparation, separations, instrumental analysis, laboratory safety, and defensible reporting.",
+      "topic_anchors": [
+        "Measurement Uncertainty",
+        "Calibration",
+        "Measurement Model"
+      ],
+      "source_deck_sha256": "sha256:6ba4d12d4b5f47acbb87293e9e09af5701d424ba0450002451f4982703ff72c5",
+      "projected_payload_sha256": "sha256:909b65603eb9ad9312300353cc5dec598a05091507f05641b1bca51b28a3e000"
+    },
+    {
+      "source_deck_id": "college-algebra-and-precalculus",
+      "catalog_deck_id": "academic-reviewed-v1:college-algebra-and-precalculus",
+      "title": "College Algebra and Precalculus",
+      "subject": "Mathematics",
+      "card_count": 126,
+      "description": "Strengthen algebraic fluency with equations, inequalities, functions, polynomials, rational expressions, exponentials, logarithms, and trigonometry.",
+      "topic_anchors": [
+        "Polynomial",
+        "Exponent Laws",
+        "Interval Notation"
+      ],
+      "source_deck_sha256": "sha256:2196346b5a6cca16c2e4bd56db9242af037aaab2d81724250e209b04b73dfdbf",
+      "projected_payload_sha256": "sha256:bf375fc943c2e4eaf79e590adf5dbfaf2f1bdf1b51007a662f8b2154ad386f3d"
+    },
+    {
+      "source_deck_id": "computer-networks",
+      "catalog_deck_id": "academic-reviewed-v1:computer-networks",
+      "title": "Computer Networks",
+      "subject": "Computer Science and Software",
+      "card_count": 166,
+      "description": "Follow data across layered networks through addressing, switching, routing, transport, congestion, naming, web protocols, security, and performance measurement.",
+      "topic_anchors": [
+        "Encapsulation and decapsulation",
+        "Throughput",
+        "Bandwidth-delay product"
+      ],
+      "source_deck_sha256": "sha256:7d86050ca190442557b0afaae4039d7f968f7283525d102b77d58b7a782a7eaa",
+      "projected_payload_sha256": "sha256:6b478fa9ac4edfe5c8b19f5ea942af3bd8bcb706f3a54b885012a1d67f8cca4f"
+    },
+    {
+      "source_deck_id": "computer-systems",
+      "catalog_deck_id": "academic-reviewed-v1:computer-systems",
+      "title": "Computer Systems",
+      "subject": "Computer Science and Software",
+      "card_count": 147,
+      "description": "Connect bits and machine representation to C execution, memory, assembly, linking, processes, virtual memory, concurrency, and system interfaces.",
+      "topic_anchors": [
+        "Bit and byte identity",
+        "Object representation",
+        "Byte order"
+      ],
+      "source_deck_sha256": "sha256:0fbc2d6722739c0f25f58ea5bc7d40f47008de8bdd243600b54c6bbb9a70bac7",
+      "projected_payload_sha256": "sha256:ee6a11c6aabbb730f740263c1cc42a6e109d11fb040ff2740fda5f5a135533bb"
+    },
+    {
+      "source_deck_id": "data-structures",
+      "catalog_deck_id": "academic-reviewed-v1:data-structures",
+      "title": "Data Structures",
+      "subject": "Computer Science and Software",
+      "card_count": 150,
+      "description": "Design and analyze abstract data types, arrays, linked structures, stacks, queues, hash tables, trees, heaps, graphs, and their invariants and costs.",
+      "topic_anchors": [
+        "Abstract data type",
+        "Representation invariant",
+        "Amortized operation cost"
+      ],
+      "source_deck_sha256": "sha256:571d869e699bc2fda930ad3fcea8358c24125ea8aa3135989e4b99c49e5cfc97",
+      "projected_payload_sha256": "sha256:f6c086797e99ecc6254190e1cd92f056c2d3871e1f97775276b0688fba797e54"
+    },
+    {
+      "source_deck_id": "data-systems",
+      "catalog_deck_id": "academic-reviewed-v1:data-systems",
+      "title": "Data Systems",
+      "subject": "Computer Science and Software",
+      "card_count": 144,
+      "description": "Build reliable data products using contracts, schemas, change capture, batch and stream processing, storage layers, orchestration, quality, and observability.",
+      "topic_anchors": [
+        "Data contract",
+        "Change-data-capture event",
+        "Data-quality objective"
+      ],
+      "source_deck_sha256": "sha256:71f3b0a7042433818a86dcfee2e846765505104aae42a11cdaea46d8cf549b09",
+      "projected_payload_sha256": "sha256:bb2a357b0d9d46d5e1e2d6888708334ae5ce6b16b9922230e6219d9171c51e03"
+    },
+    {
+      "source_deck_id": "databases-i",
+      "catalog_deck_id": "academic-reviewed-v1:databases-i",
+      "title": "Databases I",
+      "subject": "Computer Science and Software",
+      "card_count": 155,
+      "description": "Model relational data and write correct SQL while studying normalization, constraints, transactions, indexes, query plans, concurrency, and recovery.",
+      "topic_anchors": [
+        "Relation schema",
+        "SQL three-valued truth",
+        "Database invariant"
+      ],
+      "source_deck_sha256": "sha256:e6e1402b0d48f6da9ed0d5865b8b8f524a836c6184060b858d4e7bf734c11f75",
+      "projected_payload_sha256": "sha256:ec1fab57ff4462df518993751f1cfab48f7a655ba3bf97b7bbbd8648c7c82b4b"
+    },
+    {
+      "source_deck_id": "discrete-mathematics",
+      "catalog_deck_id": "academic-reviewed-v1:discrete-mathematics",
+      "title": "Discrete Mathematics",
+      "subject": "Mathematics",
+      "card_count": 118,
+      "description": "Develop finite mathematical reasoning through logic, counting, recurrences, relations, graphs, trees, matchings, colorings, and combinatorial proofs.",
+      "topic_anchors": [
+        "binomial coefficient",
+        "bipartite graph",
+        "connected graph"
+      ],
+      "source_deck_sha256": "sha256:2ee53c11ba997694000ebe2cf2e50938c156e67db4b7097eb16083877231e48f",
+      "projected_payload_sha256": "sha256:67b771958e1a05c79e03b6e31ac4232d820a11bdd1b55830ad1750f2e9e1433e"
+    },
+    {
+      "source_deck_id": "ecology",
+      "catalog_deck_id": "academic-reviewed-v1:ecology",
+      "title": "Ecology",
+      "subject": "Biology",
+      "card_count": 150,
+      "description": "Analyze populations, communities, species interactions, energy flow, nutrient cycles, ecosystem change, biodiversity, and conservation decisions.",
+      "topic_anchors": [
+        "Biological Population",
+        "Biodiversity",
+        "Habitat and Niche"
+      ],
+      "source_deck_sha256": "sha256:4a9645dffb678e4d85c31c304adc877e78851f49c45344e63138f7a377b56e71",
+      "projected_payload_sha256": "sha256:aa40d6f7b08237d4bf0a37c0977c8c8a42406148b1b6b5577a7b7f4ae6242da7"
+    },
+    {
+      "source_deck_id": "econometrics-i",
+      "catalog_deck_id": "academic-reviewed-v1:econometrics-i",
+      "title": "Econometrics I",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Learn regression-based empirical analysis through identification, OLS assumptions, inference, functional form, heteroskedasticity, endogeneity, and introductory causal designs.",
+      "topic_anchors": [
+        "Identification",
+        "Exogeneity",
+        "Selection Bias"
+      ],
+      "source_deck_sha256": "sha256:036d69e3dec680089ce571207d37c6d997779b891b8ed03f6801d6eadc379048",
+      "projected_payload_sha256": "sha256:4a893b1e871fc745830c0b43a659a662b30c56f77296c85fb08b34eee96e32f6"
+    },
+    {
+      "source_deck_id": "econometrics-ii",
+      "catalog_deck_id": "academic-reviewed-v1:econometrics-ii",
+      "title": "Econometrics II",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Advance to moment-based estimation, GMM, maximum likelihood, asymptotics, instrumental variables, panel methods, and robust specification testing.",
+      "topic_anchors": [
+        "Generalized Method of Moments",
+        "Maximum Likelihood Estimation",
+        "Asymptotic Normality"
+      ],
+      "source_deck_sha256": "sha256:ec11bd331795cd5aff751181b472106a52bee044f1cafe3c2c1f6507bebce7c6",
+      "projected_payload_sha256": "sha256:6f764429e03f1721370ddaa77935209c9d0cb90fc5a1b67e347a6a509c945505"
+    },
+    {
+      "source_deck_id": "economic-foundations",
+      "catalog_deck_id": "academic-reviewed-v1:economic-foundations",
+      "title": "Economic Foundations",
+      "subject": "Economics",
+      "card_count": 112,
+      "description": "Use scarcity, incentives, marginal reasoning, supply and demand, elasticity, market structure, policy, and macroeconomic measures to interpret economic choices.",
+      "topic_anchors": [
+        "Scarcity",
+        "Opportunity Cost",
+        "Economic Equilibrium"
+      ],
+      "source_deck_sha256": "sha256:100222099973c29dab6b9361c7166430f55ad93f69ad1ae3a3ae1cb454a45139",
+      "projected_payload_sha256": "sha256:a16d0bc3ea8654757e27c81f84f9ebaaab44b6174762bcd09a3db73521d895b5"
+    },
+    {
+      "source_deck_id": "electricity-and-magnetism-i",
+      "catalog_deck_id": "academic-reviewed-v1:electricity-and-magnetism-i",
+      "title": "Electricity and Magnetism I",
+      "subject": "Physics",
+      "card_count": 130,
+      "description": "Study electric and magnetic fields, Gauss’s law, potential, capacitance, circuits, induction, Maxwell’s equations, and electromagnetic waves.",
+      "topic_anchors": [
+        "Electric Field",
+        "Gauss Law",
+        "Electric Flux"
+      ],
+      "source_deck_sha256": "sha256:9d4826f4d954ff8b91c3414f765253dcb3177b134a3d8fe44d0987f5e41441c5",
+      "projected_payload_sha256": "sha256:33bd656561d411a5294e5f571053e19f6fded034b8c3ac28fd68524249f7b4fd"
+    },
+    {
+      "source_deck_id": "evolutionary-biology",
+      "catalog_deck_id": "academic-reviewed-v1:evolutionary-biology",
+      "title": "Evolutionary Biology",
+      "subject": "Biology",
+      "card_count": 140,
+      "description": "Explain evolutionary change with population genetics, selection, drift, gene flow, adaptation, speciation, phylogeny, and evidence from living and fossil systems.",
+      "topic_anchors": [
+        "Natural Selection",
+        "Genetic Drift",
+        "Speciation"
+      ],
+      "source_deck_sha256": "sha256:d5e0c767572285fc962f9b88327fd7de23813792620119662412404d26821dc8",
+      "projected_payload_sha256": "sha256:6089241c04f506913a14f711669f867eccdd893f599535e9d727b8db3d9f3e61"
+    },
+    {
+      "source_deck_id": "experimental-design",
+      "catalog_deck_id": "academic-reviewed-v1:experimental-design",
+      "title": "Experimental Design",
+      "subject": "Statistics",
+      "card_count": 136,
+      "description": "Plan credible experiments by defining units and estimands, randomizing, blocking, using factorial designs, controlling multiplicity, and preserving protocol integrity.",
+      "topic_anchors": [
+        "Experimental unit",
+        "Randomization unit",
+        "Protocol freeze"
+      ],
+      "source_deck_sha256": "sha256:39d976e3ff5c912dafd40ef28d6c723c20ac26363fa36359fd9834a4c95f7e03",
+      "projected_payload_sha256": "sha256:66faeecf50744776e3dbb64d659c1460f7e9d7b9e9cdbe61b41535bdee1f7878"
+    },
+    {
+      "source_deck_id": "experimental-physics-and-measurement",
+      "catalog_deck_id": "academic-reviewed-v1:experimental-physics-and-measurement",
+      "title": "Experimental Physics and Measurement",
+      "subject": "Physics",
+      "card_count": 126,
+      "description": "Turn physical measurements into defensible results through calibration, uncertainty budgets, fitting, residual analysis, instrument limits, and reproducibility.",
+      "topic_anchors": [
+        "Measurement Uncertainty",
+        "Calibration",
+        "Instrument Resolution"
+      ],
+      "source_deck_sha256": "sha256:f2c9213f9fc5868fe6d533a00d9468a9b99b5b59a2807e824734e8b733eaa05e",
+      "projected_payload_sha256": "sha256:2f693751f0d0ea755655db97ed7239c37a99e66a9780a4220251107a4075ca3c"
+    },
+    {
+      "source_deck_id": "general-chemistry-i",
+      "catalog_deck_id": "academic-reviewed-v1:general-chemistry-i",
+      "title": "General Chemistry I",
+      "subject": "Chemistry",
+      "card_count": 168,
+      "description": "Build chemical foundations from matter and measurement through stoichiometry, atomic structure, periodic trends, bonding, molecular geometry, and gases.",
+      "topic_anchors": [
+        "Matter",
+        "Chemical equation",
+        "Electron Configuration"
+      ],
+      "source_deck_sha256": "sha256:7a2f575ed73dc18c378623fcbfc7861a6edd9d835e5dd0ed6d07826a77b7e435",
+      "projected_payload_sha256": "sha256:a8b0414bf4bae1b495d8edb753be040146c56e60473e3d9d3b62dfe284b479eb"
+    },
+    {
+      "source_deck_id": "general-chemistry-ii",
+      "catalog_deck_id": "academic-reviewed-v1:general-chemistry-ii",
+      "title": "General Chemistry II",
+      "subject": "Chemistry",
+      "card_count": 143,
+      "description": "Study thermodynamics, intermolecular forces, solutions, kinetics, equilibrium, acids and bases, solubility, electrochemistry, and phase behavior.",
+      "topic_anchors": [
+        "Internal Energy",
+        "Chemical Equilibrium",
+        "Acid Dissociation Constant"
+      ],
+      "source_deck_sha256": "sha256:13e6a2a7f169dd11f0ff6d4e7c4ebf1178b937ff71c9d35ab146e13324c54f37",
+      "projected_payload_sha256": "sha256:c15e687d2378e03dcfa6e8892fcb219780a9630c401e2b9299b584254d5a4d8e"
+    },
+    {
+      "source_deck_id": "genetics",
+      "catalog_deck_id": "academic-reviewed-v1:genetics",
+      "title": "Genetics",
+      "subject": "Biology",
+      "card_count": 98,
+      "description": "Connect DNA and chromosomes to Mendelian inheritance, linkage, recombination, mutation, gene expression, pedigrees, quantitative traits, and population variation.",
+      "topic_anchors": [
+        "Gene",
+        "Genetic Linkage",
+        "Mutation"
+      ],
+      "source_deck_sha256": "sha256:662bc719423a87840e14014c73710858fdf95a125b18de960a0400c19cb3b8c4",
+      "projected_payload_sha256": "sha256:0e0fe90f2983b6266b03218c01a43a1844bd5cae837edce4ba622dcfac9eb5b7"
+    },
+    {
+      "source_deck_id": "immunology",
+      "catalog_deck_id": "academic-reviewed-v1:immunology",
+      "title": "Immunology",
+      "subject": "Biology",
+      "card_count": 150,
+      "description": "Follow innate and adaptive defense through recognition, inflammation, complement, antigen presentation, lymphocyte activation, antibodies, tolerance, and immune memory.",
+      "topic_anchors": [
+        "Innate Immunity",
+        "Cell Signaling",
+        "Immunology"
+      ],
+      "source_deck_sha256": "sha256:730f1a43824798124b0be0dd436eb1e98f5b2454b7a5eb39ae467c9987ad9f21",
+      "projected_payload_sha256": "sha256:f94fcd92847c074d2b84550a33cc4f603e161736f0b3ca3793a855dbc499c14d"
+    },
+    {
+      "source_deck_id": "inorganic-chemistry",
+      "catalog_deck_id": "academic-reviewed-v1:inorganic-chemistry",
+      "title": "Inorganic Chemistry",
+      "subject": "Chemistry",
+      "card_count": 120,
+      "description": "Relate periodic structure and bonding to coordination complexes, crystal and ligand fields, magnetism, spectroscopy, redox chemistry, organometallics, and catalysis.",
+      "topic_anchors": [
+        "Chemical Periodicity",
+        "Oxidation State",
+        "Hard Soft Acid Base Principle"
+      ],
+      "source_deck_sha256": "sha256:3652326f84965982550090dca6f16517e4da7b289023ea5e5d36559fe7850c4d",
+      "projected_payload_sha256": "sha256:2984fdb115592a022c08a3e4f5443db192977b1f2ae0745e7b75702d5220940d"
+    },
+    {
+      "source_deck_id": "linear-algebra-i",
+      "catalog_deck_id": "academic-reviewed-v1:linear-algebra-i",
+      "title": "Linear Algebra I",
+      "subject": "Mathematics",
+      "card_count": 142,
+      "description": "Move from linear systems and matrices to vector spaces, linear maps, determinants, eigenvalues, diagonalization, orthogonality, and least squares.",
+      "topic_anchors": [
+        "Column picture of Ax=b",
+        "Elementary row operations",
+        "Matrix-vector multiplication"
+      ],
+      "source_deck_sha256": "sha256:aca4595981d070f2d8f2c70fc950c31891e130788eb80b38e807ddd888890704",
+      "projected_payload_sha256": "sha256:af40e2104d579cbb539b07144c7674548779862b1004a63e49e2d3dc393e70f5"
+    },
+    {
+      "source_deck_id": "linear-algebra-ii",
+      "catalog_deck_id": "academic-reviewed-v1:linear-algebra-ii",
+      "title": "Linear Algebra II",
+      "subject": "Mathematics",
+      "card_count": 153,
+      "description": "Study quotient and dual spaces, invariant subspaces, canonical forms, inner-product operators, spectral theory, bilinear forms, and advanced structure theorems.",
+      "topic_anchors": [
+        "Quotient-space coset equality",
+        "Internal direct sum",
+        "Dimension invariance proof"
+      ],
+      "source_deck_sha256": "sha256:96ca8a576872dd4c16a44b8ad650e96c52dea03ec3749342882a22dda654b1fb",
+      "projected_payload_sha256": "sha256:bfcc366151eedc6efbc78a861f0d26f2bf11d3603226b8d671f7314c61725efa"
+    },
+    {
+      "source_deck_id": "macroeconomic-theory-i",
+      "catalog_deck_id": "academic-reviewed-v1:macroeconomic-theory-i",
+      "title": "Macroeconomic Theory I",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Connect national accounting, labor markets, money, inflation, growth, saving, business cycles, and fiscal and monetary policy in core macroeconomic models.",
+      "topic_anchors": [
+        "Gross Domestic Product",
+        "Inflation Rate",
+        "Unemployment Rate"
+      ],
+      "source_deck_sha256": "sha256:8a9f102e3355bdf84ebab97d3aadc161a7c99758c6d46c3856c3183a4f2ac459",
+      "projected_payload_sha256": "sha256:2a9360d57bd4c4f6d9c0363858ad1f1a52c80cdac61c5e669f19751d12a8bc5e"
+    },
+    {
+      "source_deck_id": "macroeconomic-theory-ii",
+      "catalog_deck_id": "academic-reviewed-v1:macroeconomic-theory-ii",
+      "title": "Macroeconomic Theory II",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Analyze dynamic economies with Euler and Bellman equations, Ramsey growth, recursive equilibrium, asset pricing, business cycles, policy rules, and open-economy dynamics.",
+      "topic_anchors": [
+        "Bellman Equation",
+        "Ramsey Growth Model",
+        "Consumption Euler Equation"
+      ],
+      "source_deck_sha256": "sha256:bcec926b537427182e383775bbf78ad4f866cfb203f19e29edd4f4bfda82f22b",
+      "projected_payload_sha256": "sha256:8edfa100782a39d1c9ef2829f361cbdc24bec9e9c7a1ae94d84f39627927bab4"
+    },
+    {
+      "source_deck_id": "mathematical-methods-for-economics",
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-methods-for-economics",
+      "title": "Mathematical Methods for Economics",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Apply functions, multivariable calculus, matrices, constrained optimization, comparative statics, difference equations, and dynamic systems to economic models.",
+      "topic_anchors": [
+        "Partial Derivative",
+        "Level Set",
+        "Discount Factor"
+      ],
+      "source_deck_sha256": "sha256:230bfb511d79686c0ce6fe6f3d5fe853d3228a30153d23d213fa9ea08f22ac63",
+      "projected_payload_sha256": "sha256:f6cbdda59e7e1e6e2a272966d138d5bcb82f376097f799ddb6bbc84029f1eaf5"
+    },
+    {
+      "source_deck_id": "mathematical-methods-for-physics-i",
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-methods-for-physics-i",
+      "title": "Mathematical Methods for Physics I",
+      "subject": "Physics",
+      "card_count": 120,
+      "description": "Use vectors, matrices, complex numbers, vector calculus, Fourier methods, differential equations, and coordinate systems to formulate physical problems.",
+      "topic_anchors": [
+        "Vector Components",
+        "Cross Product",
+        "Euler's Formula"
+      ],
+      "source_deck_sha256": "sha256:bd41a897c8060c2ce6d2a5f8bb5aac702066310778ed9da8b0538893ee2a13e3",
+      "projected_payload_sha256": "sha256:6a07e8f9af50205e762caefea6a287a1a23b1c5241dcb3e766433d7d8f21329a"
+    },
+    {
+      "source_deck_id": "mathematical-proof-and-foundations",
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-proof-and-foundations",
+      "title": "Introduction to Mathematical Proofs",
+      "subject": "Mathematics",
+      "card_count": 172,
+      "description": "Learn to read and write proofs using logic, quantifiers, sets, functions, relations, induction, contradiction, equivalence, and careful theorem structure.",
+      "topic_anchors": [
+        "Logical equivalence",
+        "Existential quantification",
+        "Necessary and sufficient conditions"
+      ],
+      "source_deck_sha256": "sha256:c2d60526b94b4142075b0a1683dadb89b04e4d569a71c7ab41d04942aec56aec",
+      "projected_payload_sha256": "sha256:38bd1212bbfb8443935ecfc2c6e238c698757c307bef547c4d54ec171cdcf759"
+    },
+    {
+      "source_deck_id": "mathematical-statistics",
+      "catalog_deck_id": "academic-reviewed-v1:mathematical-statistics",
+      "title": "Mathematical Statistics",
+      "subject": "Statistics",
+      "card_count": 146,
+      "description": "Develop probability-based statistical theory through likelihood, sufficiency, completeness, estimation, hypothesis testing, information bounds, and asymptotic arguments.",
+      "topic_anchors": [
+        "Likelihood function",
+        "Fisher information",
+        "Statistical model family"
+      ],
+      "source_deck_sha256": "sha256:40406af3efd72db62f650fc0426d1ecf1766f9ba0ca8c05751f16ec6a0634380",
+      "projected_payload_sha256": "sha256:750c23ccd0d5518a17b8bad14527dd5f924335331cbeb39d5384c22a850c16f3"
+    },
+    {
+      "source_deck_id": "mechanics-i",
+      "catalog_deck_id": "academic-reviewed-v1:mechanics-i",
+      "title": "Mechanics I",
+      "subject": "Physics",
+      "card_count": 95,
+      "description": "Model motion with vectors, kinematics, Newton’s laws, common forces, work and energy, momentum, collisions, center of mass, and introductory rotation.",
+      "topic_anchors": [
+        "Velocity",
+        "Net Force",
+        "Linear Momentum"
+      ],
+      "source_deck_sha256": "sha256:3812e59a9560da64a8129ffc7c68b8ed189fe2883fbb5b2b0656c5b64fbacc47",
+      "projected_payload_sha256": "sha256:1b60c3b5437979919cd8908edd7fc9d0d54aac296e18f490aa6d9c2a28949adc"
+    },
+    {
+      "source_deck_id": "mechanics-ii",
+      "catalog_deck_id": "academic-reviewed-v1:mechanics-ii",
+      "title": "Mechanics II",
+      "subject": "Physics",
+      "card_count": 128,
+      "description": "Extend mechanics through rigid-body motion, noninertial frames, central forces, oscillations, constraints, Lagrangian and Hamiltonian methods, and conservation laws.",
+      "topic_anchors": [
+        "Torque",
+        "Angular Momentum",
+        "Universal Gravitation"
+      ],
+      "source_deck_sha256": "sha256:471b493ef8cc60dd5178a4a5f89513bd05d5f0ac717abc0e9300c5cfcbb11499",
+      "projected_payload_sha256": "sha256:18e782dcda31d74c70927ec33e1924f2ba7f1dcb34136c616e360088e74eeb38"
+    },
+    {
+      "source_deck_id": "microbiology",
+      "catalog_deck_id": "academic-reviewed-v1:microbiology",
+      "title": "Microbiology",
+      "subject": "Biology",
+      "card_count": 150,
+      "description": "Study microbial cell structure, metabolism, growth, genetics, viruses, host interactions, pathogenesis, antimicrobial control, ecology, and laboratory evidence.",
+      "topic_anchors": [
+        "Prokaryotic Cell",
+        "Microbial Growth",
+        "Virus"
+      ],
+      "source_deck_sha256": "sha256:4f3543e5b6547e52faedf875da8fb6627bc4b62f0c52f7bc104fb4222cd79388",
+      "projected_payload_sha256": "sha256:473384fdf574ab665359cfe25e9f2843f4689b9e42be664f7456b44cb2a60473"
+    },
+    {
+      "source_deck_id": "microeconomic-theory-i",
+      "catalog_deck_id": "academic-reviewed-v1:microeconomic-theory-i",
+      "title": "Microeconomic Theory I",
+      "subject": "Economics",
+      "card_count": 122,
+      "description": "Derive consumer and producer choice, duality, demand, cost, competitive equilibrium, welfare results, and market behavior from preferences and technology.",
+      "topic_anchors": [
+        "Preference Relation",
+        "Budget Set",
+        "Utility Representation"
+      ],
+      "source_deck_sha256": "sha256:1330af65239c0efadb8b35d925efb27567440c2d4da39c253e6da84743fcda77",
+      "projected_payload_sha256": "sha256:4c363fee7f89b3f52f3f86ad81e4398cf06c95ca70660265a6dee94593fba4c0"
+    },
+    {
+      "source_deck_id": "microeconomic-theory-ii",
+      "catalog_deck_id": "academic-reviewed-v1:microeconomic-theory-ii",
+      "title": "Microeconomic Theory II",
+      "subject": "Economics",
+      "card_count": 120,
+      "description": "Study choice under uncertainty, strategic games, repeated interaction, asymmetric information, contracts, mechanism design, and market failures.",
+      "topic_anchors": [
+        "Expected Utility",
+        "Risk Aversion",
+        "Mixed Strategy"
+      ],
+      "source_deck_sha256": "sha256:be74ad93aa9e0d160c358812a51120ed85e39ffe9722f9dff21619f4500af0f0",
+      "projected_payload_sha256": "sha256:8a5345f5dcd9dd57772593e604d42d639bd09dcb80d96125b47edf4599487820"
+    },
+    {
+      "source_deck_id": "modern-physics",
+      "catalog_deck_id": "academic-reviewed-v1:modern-physics",
+      "title": "Modern Physics",
+      "subject": "Physics",
+      "card_count": 132,
+      "description": "Explore special relativity, quantum states and measurement, atomic structure, statistical quantum ideas, nuclear physics, particles, and modern experimental evidence.",
+      "topic_anchors": [
+        "Special-Relativity Postulates",
+        "Lorentz Transformation",
+        "Relativistic Energy"
+      ],
+      "source_deck_sha256": "sha256:0270675854b4f6a2f8a6aeda50bc742fcae47be3005c7194d429eabddaf3e042",
+      "projected_payload_sha256": "sha256:fbfd14b07bbfae93fa6c4c5b66054febc3f11536e1d16d54f263525816f8afac"
+    },
+    {
+      "source_deck_id": "molecular-biology",
+      "catalog_deck_id": "academic-reviewed-v1:molecular-biology",
+      "title": "Molecular Biology",
+      "subject": "Biology",
+      "card_count": 177,
+      "description": "Trace genetic information through DNA structure, replication, repair, transcription, RNA processing, translation, regulation, genomes, and molecular tools.",
+      "topic_anchors": [
+        "DNA Double Helix",
+        "RNA",
+        "Nucleotide"
+      ],
+      "source_deck_sha256": "sha256:3cb956f77735ab282fda394a93eee3c07d222f2b0d02e0cff15a08a626e98d39",
+      "projected_payload_sha256": "sha256:4f98db6eb05f4e549b75d26ca65d2883c750314565e4d87dd6bcef1846dff2bd"
+    },
+    {
+      "source_deck_id": "multivariable-calculus",
+      "catalog_deck_id": "academic-reviewed-v1:multivariable-calculus",
+      "title": "Multivariable Calculus",
+      "subject": "Mathematics",
+      "card_count": 128,
+      "description": "Work with vectors and surfaces, partial and directional derivatives, multiple integrals, coordinate changes, vector fields, and the major integral theorems.",
+      "topic_anchors": [
+        "Vector-valued curve",
+        "Partial Derivative",
+        "Flux integral"
+      ],
+      "source_deck_sha256": "sha256:e99a6922669b82c5ded94194aaa83a2c3ca9f85953fd251cd959ac0b549a3923",
+      "projected_payload_sha256": "sha256:098abdade9454752d462e46aca8aecb5dd9085597bfbb8daca62229550092edd"
+    },
+    {
+      "source_deck_id": "numerical-analysis-and-scientific-computing",
+      "catalog_deck_id": "academic-reviewed-v1:numerical-analysis-and-scientific-computing",
+      "title": "Numerical Analysis",
+      "subject": "Mathematics",
+      "card_count": 103,
+      "description": "Understand error and conditioning while learning numerical methods for roots, interpolation, quadrature, linear systems, differential equations, and stability.",
+      "topic_anchors": [
+        "absolute error",
+        "condition number",
+        "numerical stability"
+      ],
+      "source_deck_sha256": "sha256:6bb26134c5a944fdc2490c0209eaee1df9fc79ad9f36346743f29966246850c5",
+      "projected_payload_sha256": "sha256:f479bd6fe85aecbd0b7c3021ee09872161768d573d64d043985800fe1c73a2d1"
+    },
+    {
+      "source_deck_id": "optics",
+      "catalog_deck_id": "academic-reviewed-v1:optics",
+      "title": "Optics",
+      "subject": "Physics",
+      "card_count": 128,
+      "description": "Connect ray and wave descriptions of light through reflection, refraction, mirrors, lenses, interference, diffraction, polarization, imaging, and optical instruments.",
+      "topic_anchors": [
+        "Refractive Index",
+        "Snell Law",
+        "Optical Path Length"
+      ],
+      "source_deck_sha256": "sha256:b9c26f390a1cfd7f1300dac95cf39c17de08dac3f623eb0a3ef1050f894fa616",
+      "projected_payload_sha256": "sha256:b923b5eedad5aecc6e857daf35e4ac637a86267df6170ad78d558062d51d63db"
+    },
+    {
+      "source_deck_id": "optimization-mathematics-i-convex-optimization",
+      "catalog_deck_id": "academic-reviewed-v1:optimization-mathematics-i-convex-optimization",
+      "title": "Optimization I",
+      "subject": "Mathematics",
+      "card_count": 153,
+      "description": "Formulate and solve optimization problems using convexity, existence conditions, duality, KKT theory, gradient methods, proximal methods, and solution certificates.",
+      "topic_anchors": [
+        "Feasible point",
+        "Global minimizer",
+        "Stationary point"
+      ],
+      "source_deck_sha256": "sha256:ece3ff3b9630571aedd52e62e60829dfe0a59124114de10b423afd0bd0362960",
+      "projected_payload_sha256": "sha256:47423c68bd889e4194034f9cfa14a41b60f986ca1c768a695021c381062bc7f7"
+    },
+    {
+      "source_deck_id": "ordinary-differential-equations",
+      "catalog_deck_id": "academic-reviewed-v1:ordinary-differential-equations",
+      "title": "Ordinary Differential Equations",
+      "subject": "Mathematics",
+      "card_count": 156,
+      "description": "Solve and interpret first- and higher-order differential equations, linear systems, phase portraits, stability, transforms, series methods, and numerical approximations.",
+      "topic_anchors": [
+        "Initial Value Problem",
+        "Linear ODE",
+        "Phase Space"
+      ],
+      "source_deck_sha256": "sha256:e33fb34a6e0108dae012e7d515fe8c9852cba80f58156e058a5f9c1b29edefb3",
+      "projected_payload_sha256": "sha256:9413141927bed39914c476ac73da786be88ffa386808388d5f7d04dd3ef47682"
+    },
+    {
+      "source_deck_id": "organic-chemistry-i",
+      "catalog_deck_id": "academic-reviewed-v1:organic-chemistry-i",
+      "title": "Organic Chemistry I",
+      "subject": "Chemistry",
+      "card_count": 120,
+      "description": "Reason from molecular structure through resonance, acidity, stereochemistry, conformations, substitution, elimination, and foundational alkene and alkyne reactions.",
+      "topic_anchors": [
+        "Resonance",
+        "Functional Group",
+        "Constitutional Isomer"
+      ],
+      "source_deck_sha256": "sha256:9b7ad0020ffb126eaaef61c37b4a904a254a12be847037bff0f75b834f75cf45",
+      "projected_payload_sha256": "sha256:6d15a8f3930aa402233b3df7992a10cef3036cd5090ba2caa61cf175aac95e10"
+    },
+    {
+      "source_deck_id": "organic-chemistry-ii",
+      "catalog_deck_id": "academic-reviewed-v1:organic-chemistry-ii",
+      "title": "Organic Chemistry II",
+      "subject": "Chemistry",
+      "card_count": 120,
+      "description": "Use spectroscopy and mechanism to study aromatic, carbonyl, enolate, amine, carbohydrate, polymer, and multistep synthesis chemistry.",
+      "topic_anchors": [
+        "Mass Spectrometry",
+        "Carbon NMR",
+        "Aromaticity"
+      ],
+      "source_deck_sha256": "sha256:028abd060f340502390fe4a39976abbaf05e9ae36671e0b62e6e8edf2bd47790",
+      "projected_payload_sha256": "sha256:3221a4370dd25468efe191144615896dddcb3057cc083062174e2ebb9f350978"
+    },
+    {
+      "source_deck_id": "organic-chemistry-laboratory",
+      "catalog_deck_id": "academic-reviewed-v1:organic-chemistry-laboratory",
+      "title": "Organic Chemistry Laboratory",
+      "subject": "Chemistry",
+      "card_count": 120,
+      "description": "Plan, execute, and evaluate organic experiments using stoichiometry, extraction, distillation, crystallization, chromatography, spectroscopy, safety, and green metrics.",
+      "topic_anchors": [
+        "Reaction Stoichiometry",
+        "Isolated Yield",
+        "Experimental Record"
+      ],
+      "source_deck_sha256": "sha256:e38ebed04d91cae9028fab31432a25dca9fada9d122c742471ad61d9f16e2372",
+      "projected_payload_sha256": "sha256:801452be6d27e27e22490d37e79e52e2934021304db3ef7f3ff380813997b8e1"
+    },
+    {
+      "source_deck_id": "physics-foundations",
+      "catalog_deck_id": "academic-reviewed-v1:physics-foundations",
+      "title": "Physics Foundations",
+      "subject": "Physics",
+      "card_count": 101,
+      "description": "Build a quantitative base in units, vectors, kinematics, forces, energy, momentum, rotation, gravitation, fluids, thermal physics, waves, and circuits.",
+      "topic_anchors": [
+        "Position Vector",
+        "Hooke's Law",
+        "Impulse"
+      ],
+      "source_deck_sha256": "sha256:b0f5b968a5d5bb001d7c29b70207a6e625295ea14d73a3ee5bd33d4d88b99512",
+      "projected_payload_sha256": "sha256:49559b7de42f1bc1e94d98abb7ff528081085f3650fb6f1f24a8657f20d3d11e"
+    },
+    {
+      "source_deck_id": "physiology",
+      "catalog_deck_id": "academic-reviewed-v1:physiology",
+      "title": "Physiology",
+      "subject": "Biology",
+      "card_count": 160,
+      "description": "Connect homeostasis and cellular transport to nervous, endocrine, muscular, cardiovascular, respiratory, renal, digestive, and reproductive function.",
+      "topic_anchors": [
+        "Homeostasis",
+        "Negative Feedback",
+        "Gas Exchange"
+      ],
+      "source_deck_sha256": "sha256:ba8fb742e9590e1749f5271b746c3128af3293b46655c69f49be3f5be3cc458f",
+      "projected_payload_sha256": "sha256:7fa5cb2b29fb4667b4b870c49e4d3d236c23a02193dbf10e41a0968b3e043149"
+    },
+    {
+      "source_deck_id": "probability-theory-i",
+      "catalog_deck_id": "academic-reviewed-v1:probability-theory-i",
+      "title": "Probability Theory I",
+      "subject": "Statistics",
+      "card_count": 144,
+      "description": "Develop probability from sample spaces and counting through conditioning, independence, random variables, distributions, expectation, transforms, and limit laws.",
+      "topic_anchors": [
+        "Probability axioms",
+        "Conditional Probability",
+        "Indicator random variable"
+      ],
+      "source_deck_sha256": "sha256:0838652dbefb2c095dcfe307beaba457c0f3311a7ebef1658172667aa5598e0f",
+      "projected_payload_sha256": "sha256:ef2ebdbdf0eaca2fad6e221568f7e2583bfe85c95b58b0c8b4406f231178bf12"
+    },
+    {
+      "source_deck_id": "probability-theory-ii",
+      "catalog_deck_id": "academic-reviewed-v1:probability-theory-ii",
+      "title": "Probability Theory II",
+      "subject": "Statistics",
+      "card_count": 108,
+      "description": "Advance to measure-based probability, modes of convergence, conditional expectation, martingales, stochastic processes, laws of large numbers, and weak convergence.",
+      "topic_anchors": [
+        "Measurable random variable",
+        "Probability sigma-field",
+        "Uniform integrability criterion"
+      ],
+      "source_deck_sha256": "sha256:5fbf6493fcb402b68e96973298a6ae06dde67e9d5ce0e189ecd738ada772e5f6",
+      "projected_payload_sha256": "sha256:e42ba2720c089dbd5a4ab767ff5bc498f464c27654d47cd9f7f7419a7e3df612"
+    },
+    {
+      "source_deck_id": "programming-i",
+      "catalog_deck_id": "academic-reviewed-v1:programming-i",
+      "title": "Programming I",
+      "subject": "Computer Science and Software",
+      "card_count": 439,
+      "description": "Learn Python execution through values, expressions, control flow, functions, collections, files, exceptions, modules, testing, debugging, and small-program design.",
+      "topic_anchors": [
+        "Python Boolean value",
+        "Python branch partition",
+        "Python assignment event"
+      ],
+      "source_deck_sha256": "sha256:157f353eae68de9f8fa0143dd85c628a996f8171cc530b00337f346d9be5cc32",
+      "projected_payload_sha256": "sha256:9d9dc7626b0bc73bb244c4465243d1cbb3370ef3f6f009ea8c2a8b3736631ee6"
+    },
+    {
+      "source_deck_id": "programming-ii",
+      "catalog_deck_id": "academic-reviewed-v1:programming-ii",
+      "title": "Programming II",
+      "subject": "Computer Science and Software",
+      "card_count": 400,
+      "description": "Build larger Python systems with modules, object-oriented design, typing, protocols, iterators, concurrency, performance, packaging, and stable API contracts.",
+      "topic_anchors": [
+        "Abstract method",
+        "Static `Any` type",
+        "Python API contract"
+      ],
+      "source_deck_sha256": "sha256:1a15467807c70193c29e6c07f495078a22b72f735fa9c04ade71d090a6507e83",
+      "projected_payload_sha256": "sha256:3bf0634ac4464749c109cdf44f87bba47008af610d73a2b2f07f3ea54e4a8285"
+    },
+    {
+      "source_deck_id": "real-analysis-i",
+      "catalog_deck_id": "academic-reviewed-v1:real-analysis-i",
+      "title": "Real Analysis I",
+      "subject": "Mathematics",
+      "card_count": 160,
+      "description": "Develop rigorous arguments about the real numbers, sequences, series, continuity, differentiation, compactness, uniform convergence, and Riemann integration.",
+      "topic_anchors": [
+        "Completeness axiom of the reals",
+        "Cauchy sequence criterion in the reals",
+        "Supremum and infimum"
+      ],
+      "source_deck_sha256": "sha256:49a9707916bbbf279b6784a58fda7b7d38e25a74c1b2d1301d8e9c41277ee493",
+      "projected_payload_sha256": "sha256:9f257e951023d973bed7533bb0802a22ba42b9dd94b303fe301b5c91b46884d1"
+    },
+    {
+      "source_deck_id": "sampling-and-survey-methods",
+      "catalog_deck_id": "academic-reviewed-v1:sampling-and-survey-methods",
+      "title": "Sampling and Survey Methods",
+      "subject": "Statistics",
+      "card_count": 118,
+      "description": "Design and analyze surveys using frames, inclusion probabilities, weights, stratification, clustering, ratio estimation, nonresponse adjustment, and variance estimation.",
+      "topic_anchors": [
+        "Sampling Frame",
+        "Inclusion Probability",
+        "Base Sampling Weight"
+      ],
+      "source_deck_sha256": "sha256:0f65004c743bb1ed6d37cd48a9648e9bcf940ce5a74bb6847bc8fc81fe5179fd",
+      "projected_payload_sha256": "sha256:ce304d101c26266dd5d28c440729c5092f0d796ae15a81e5147a20a990493bf2"
+    },
+    {
+      "source_deck_id": "security-engineering-i",
+      "catalog_deck_id": "academic-reviewed-v1:security-engineering-i",
+      "title": "Security Engineering I",
+      "subject": "Computer Science and Software",
+      "card_count": 118,
+      "description": "Reason about threats, trust boundaries, authentication, authorization, cryptography, secure design, software and network attacks, privacy, and assurance evidence.",
+      "topic_anchors": [
+        "adversary model",
+        "attack surface",
+        "authorization"
+      ],
+      "source_deck_sha256": "sha256:b2e78ea3d7648c245cef075c11fae523f1194254fbd7710f697901d9669e741f",
+      "projected_payload_sha256": "sha256:35fc952d8dc4c5c9ef1cd86dc4e24fcffdcf0598708465747cd031391cb48bb4"
+    },
+    {
+      "source_deck_id": "software-architecture",
+      "catalog_deck_id": "academic-reviewed-v1:software-architecture",
+      "title": "Software Architecture",
+      "subject": "Computer Science and Software",
+      "card_count": 84,
+      "description": "Shape systems around quality attributes, workload and context models, components, interfaces, architectural views, tradeoffs, decisions, and evolutionary constraints.",
+      "topic_anchors": [
+        "Quality attribute",
+        "System-context view",
+        "Architectural component"
+      ],
+      "source_deck_sha256": "sha256:539f9234934895288a1c80a0917427ac5e53476a9ec27a7ed1acf99aaa615841",
+      "projected_payload_sha256": "sha256:f74cede62d4746fbecfc0b31700e39706b815c7cb81d8290e6b011c9c1239f7e"
+    },
+    {
+      "source_deck_id": "software-engineering-i",
+      "catalog_deck_id": "academic-reviewed-v1:software-engineering-i",
+      "title": "Software Engineering I",
+      "subject": "Computer Science and Software",
+      "card_count": 140,
+      "description": "Practice evidence-driven software work across requirements, repository state, design, implementation, review, testing, CI, release, maintenance, and incident learning.",
+      "topic_anchors": [
+        "Acceptance criterion",
+        "Working-tree state",
+        "Atomic cohesive commit"
+      ],
+      "source_deck_sha256": "sha256:2d50f892dd999c5c1701ef415d2e4953f3dfd0426fbd31e0adbef7aa7953261b",
+      "projected_payload_sha256": "sha256:36b2c8c7a7178637767a39e409d135c838998b43f5d6d20dd966bd86fdb37b28"
+    },
+    {
+      "source_deck_id": "software-testing-i-foundations-and-test-design",
+      "catalog_deck_id": "academic-reviewed-v1:software-testing-i-foundations-and-test-design",
+      "title": "Software Testing I",
+      "subject": "Computer Science and Software",
+      "card_count": 248,
+      "description": "Design trustworthy tests with explicit behavior boundaries, oracles, equivalence classes, fixtures, coverage, property checks, mutation analysis, and verification evidence.",
+      "topic_anchors": [
+        "Assertion-based software oracle",
+        "Test-case design basis clause",
+        "Software behavior boundary"
+      ],
+      "source_deck_sha256": "sha256:5a7c5c94637cb948800b47c0c8b970555756c87db28f1298d36be449cd32d79c",
+      "projected_payload_sha256": "sha256:f0ee302b1b7074adeecea61ede5248704bba9a5986be034aa46810b13f93f7d9"
+    },
+    {
+      "source_deck_id": "thermodynamics",
+      "catalog_deck_id": "academic-reviewed-v1:thermodynamics",
+      "title": "Thermodynamics",
+      "subject": "Physics",
+      "card_count": 128,
+      "description": "Relate equilibrium states and processes through the laws of thermodynamics, entropy, energy potentials, engines, phase behavior, mixtures, and statistical foundations.",
+      "topic_anchors": [
+        "Thermodynamic System",
+        "State Function",
+        "Absolute Temperature"
+      ],
+      "source_deck_sha256": "sha256:7e31d6afd84d8a57d95ff852e1782da7f6e0e63d8a6e722c30ce25e5bcb7d8e0",
+      "projected_payload_sha256": "sha256:f6316feb22c44bebb530bdbeaf2fac41215fda7b3b8bfa876b2a4e27d49fcad5"
+    },
+    {
+      "source_deck_id": "time-series-analysis",
+      "catalog_deck_id": "academic-reviewed-v1:time-series-analysis",
+      "title": "Time Series Analysis",
+      "subject": "Statistics",
+      "card_count": 116,
+      "description": "Model serial data using stationarity, autocorrelation, ARIMA methods, forecasting diagnostics, volatility, state-space models, and frequency-domain ideas.",
+      "topic_anchors": [
+        "Autocorrelation Function",
+        "Weak Stationarity",
+        "Time Series"
+      ],
+      "source_deck_sha256": "sha256:0a2b7be57c5d04701a3c1578b45378d2a82c3f426c4ede66feae553e84c143b4",
+      "projected_payload_sha256": "sha256:771b25e293ac4ff0d1a0a3000b26f4afd1ff5fb03400447811b0017e1c98dd0e"
+    },
+    {
+      "source_deck_id": "waves-and-oscillations",
+      "catalog_deck_id": "academic-reviewed-v1:waves-and-oscillations",
+      "title": "Waves and Oscillations",
+      "subject": "Physics",
+      "card_count": 113,
+      "description": "Study simple, damped, driven, and coupled oscillators before developing wave equations, normal modes, strings, sound, interference, dispersion, and energy transport.",
+      "topic_anchors": [
+        "Restoring Force",
+        "Normal Mode",
+        "Standing Wave"
+      ],
+      "source_deck_sha256": "sha256:f9d8edbf80e33ef4b4e4791587ab529aa7bf845b01fda09e59b4ff16736cc9b4",
+      "projected_payload_sha256": "sha256:2368737177a7b940ab7919de8ea7e0d01b21db91f3bf204bb0f72b8c369cc017"
+    }
+  ]
+}

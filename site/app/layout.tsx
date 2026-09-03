@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteOrigin = process.env.SITE_ORIGIN ?? 'http://localhost:3000';
+const siteOrigin = process.env.SITE_ORIGIN ?? 'https://meshful.ai';
+const assetRevision = 'v39-catalog-graph';
+const versionedAsset = (path: string) => `${path}?release=${assetRevision}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: 'Meshful',
-  description:
-    'Connect terms. Build understanding. Definition recall, spaced review, and readable prerequisite maps in one agent-ready study workspace.',
+  description: 'Study tools for your AI agent.',
   openGraph: {
     title: 'Meshful',
-    description: 'Connect terms. Build understanding.',
+    description: 'Study tools for your AI agent.',
     type: 'website',
     images: [
       {
-        url: new URL('/og.png', siteOrigin).toString(),
+        url: new URL(versionedAsset('/meshful-social-card-1200x630.png'), siteOrigin).toString(),
         width: 1200,
         height: 630,
       },
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Meshful',
-    description: 'Connect terms. Build understanding.',
-    images: [new URL('/og.png', siteOrigin).toString()],
+    description: 'Study tools for your AI agent.',
+    images: [new URL(versionedAsset('/meshful-social-card-1200x630.png'), siteOrigin).toString()],
   },
 };
 
@@ -35,11 +36,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#101114" />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href={versionedAsset('/favicon.svg')} type="image/svg+xml" />
+        <link rel="icon" href={versionedAsset('/favicon-32.png')} sizes="32x32" type="image/png" />
+        <link rel="icon" href={versionedAsset('/favicon-16.png')} sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href={versionedAsset('/apple-touch-icon.png')} sizes="180x180" />
         <link rel="stylesheet" href="/study/vendor/katex/katex.min.css" />
-        <link rel="stylesheet" href="/study/styles.css" />
+        <link rel="stylesheet" href={versionedAsset('/study/styles.css')} />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

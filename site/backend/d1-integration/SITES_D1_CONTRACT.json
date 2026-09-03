@@ -1,0 +1,189 @@
+{
+  "contract_schema": "meshful-sites-d1-integration.v1",
+  "status": "integration-ready-default-denied-not-hosted",
+  "site": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "logical_d1_binding": "DB",
+    "hosting_json_exact": {
+      "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+      "d1": "DB",
+      "r2": null
+    },
+    "required_source_paths": [
+      ".openai/hosting.json",
+      "drizzle/0000_meshful_learner_data.sql",
+      "drizzle/0001_meshful_fragmented_storage.sql",
+      "drizzle/meta/_journal.json"
+    ],
+    "required_packaged_paths": [
+      "dist/.openai/hosting.json",
+      "dist/.openai/drizzle/0000_meshful_learner_data.sql",
+      "dist/.openai/drizzle/0001_meshful_fragmented_storage.sql",
+      "dist/.openai/drizzle/meta/_journal.json"
+    ]
+  },
+  "migrations": [
+    {
+      "order": 1,
+      "tag": "0000_meshful_learner_data",
+      "source": "backend/migrations/0001_learner_data.sql",
+      "source_bytes": 5078,
+      "source_sha256": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2",
+      "site_path": "drizzle/0000_meshful_learner_data.sql",
+      "statement_count": 10,
+      "breakpoint_count": 9,
+      "packaged_bytes": 5298,
+      "packaged_sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "order": 2,
+      "tag": "0001_meshful_fragmented_storage",
+      "source": "backend/v2/migrations/0002_fragmented_storage.sql",
+      "source_bytes": 12258,
+      "source_sha256": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3",
+      "site_path": "drizzle/0001_meshful_fragmented_storage.sql",
+      "statement_count": 32,
+      "breakpoint_count": 31,
+      "packaged_bytes": 13021,
+      "packaged_sha256": "7a7e88d529fd1359e18d74b9cc8f2ecb75cd05708fa5b6bcc44198e5cda24a07"
+    }
+  ],
+  "migration_format": {
+    "schema": "drizzle-kit-journal-v7-sqlite-custom",
+    "journal_version": "7",
+    "entry_version": "6",
+    "statement_delimiter": "--> statement-breakpoint",
+    "packager": "backend/d1-integration/pack-sites-migrations.mjs",
+    "policy": "Treat the authored Backend SQL as semantic source and the breakpoint-packaged SQL as the immutable Sites runtime artifact. Never edit an applied migration. A future schema change appends one reviewed custom SQL source, one journal entry, and regenerated exact package pins; it must pass per-statement rehearsal and applied-schema attestation before deployment."
+  },
+  "migration_journal": {
+    "version": "7",
+    "dialect": "sqlite",
+    "entries": [
+      {
+        "idx": 0,
+        "version": "6",
+        "when": 1788134400000,
+        "tag": "0000_meshful_learner_data",
+        "breakpoints": true
+      },
+      {
+        "idx": 1,
+        "version": "6",
+        "when": 1788134401000,
+        "tag": "0001_meshful_fragmented_storage",
+        "breakpoints": true
+      }
+    ]
+  },
+  "migration_journal_bytes": 365,
+  "migration_journal_sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec",
+  "database_schema": {
+    "sqlite_schema_sha256": "7a3c780a36d7a8a3865942d5f7a457ad52852dae7505641c6af9185610b54c9f",
+    "table_names": [
+      "meshful_identity_bindings",
+      "meshful_import_archives",
+      "meshful_learner_state",
+      "meshful_principals",
+      "meshful_request_receipts",
+      "meshful_review_events",
+      "meshful_v2_documents",
+      "meshful_v2_heads",
+      "meshful_v2_import_archives",
+      "meshful_v2_objects",
+      "meshful_v2_parts",
+      "meshful_v2_receipts",
+      "meshful_v2_review_events"
+    ],
+    "trigger_names": [
+      "meshful_v1_import_preserve_v2",
+      "meshful_v1_receipt_preserve_v2",
+      "meshful_v1_review_preserve_v2",
+      "meshful_v1_state_after_takeover_delete",
+      "meshful_v1_state_after_takeover_update",
+      "meshful_v2_documents_no_delete",
+      "meshful_v2_documents_no_update",
+      "meshful_v2_head_complete_insert",
+      "meshful_v2_head_complete_update",
+      "meshful_v2_head_no_delete",
+      "meshful_v2_import_preserve_v1",
+      "meshful_v2_imports_no_delete",
+      "meshful_v2_imports_no_update",
+      "meshful_v2_objects_no_delete",
+      "meshful_v2_objects_no_update",
+      "meshful_v2_parts_no_delete",
+      "meshful_v2_parts_no_update",
+      "meshful_v2_receipt_preserve_v1",
+      "meshful_v2_receipts_no_delete",
+      "meshful_v2_receipts_no_update",
+      "meshful_v2_review_preserve_v1",
+      "meshful_v2_reviews_no_delete",
+      "meshful_v2_reviews_no_update"
+    ],
+    "deferred_foreign_key": {
+      "table": "meshful_v2_receipts",
+      "columns": [
+        "principal_id",
+        "response_document_id"
+      ],
+      "references": "meshful_v2_documents(principal_id, document_id)",
+      "sql_signature": "DEFERRABLE INITIALLY DEFERRED"
+    }
+  },
+  "runtime": {
+    "server_entry": "backend/v2/src/index.mjs",
+    "factories": [
+      "createD1Repository",
+      "createCanonicalEngine",
+      "createLearnerService",
+      "createLearnerHandler"
+    ],
+    "browser_entry": "backend/v2/src/durable-client.mjs",
+    "endpoint_prefix": "/api/learner/v2",
+    "binding_rule": "Website passes the runtime env.DB object as database; Backend never discovers or provisions it.",
+    "write_gate": "Remain default-denied until the hosted schema receipt, trusted ingress, full catalog injection, and hosted acceptance all pass."
+  },
+  "activation": {
+    "default_state": "closed",
+    "states": ["closed", "private_acceptance", "released"],
+    "closed": "Ordinary learner endpoints return ACCOUNT_SYNC_DISABLED. Owner-only schema inspection may run without returning learner data rows; integrity checks can still scan stored records/pages and incur D1 reads.",
+    "private_acceptance": "The same production route admits only exact verified identities or opaque principal IDs in server-only acceptance configuration. No query, body, cookie, email, Host, identity header, feature flag or client user ID selects the cohort.",
+    "released": "Broader authenticated access is allowed only after the pinned private-acceptance receipt and owner release decision.",
+    "transition_rule": "Website changes one server-owned deployment policy after saving and reviewing the exact source version; the client cannot change activation state.",
+    "rollback_rule": "Return to closed without deleting or rewriting principals, bindings, heads, documents, receipts, reviews, imports, recovery pages or original browser drafts."
+  },
+  "identity": {
+    "context_fields": [
+      "principalId",
+      "identity",
+      "transport",
+      "scopes"
+    ],
+    "provider": "sites-chatgpt",
+    "issuer": "urn:meshful:sites:appgprj_6a9334b99f20819195ece80ebe97016b",
+    "transport": "sites-browser",
+    "required_scopes": [
+      "learner:read",
+      "learner:write"
+    ],
+    "ownership_rule": "Every query and mutation derives ownership only from the verified server context and rechecks the exact identity binding.",
+    "forbidden_ownership_inputs": [
+      "client user id",
+      "email",
+      "Host",
+      "unverified identity header"
+    ]
+  },
+  "claim": {
+    "path": "/api/learner/v2/claims",
+    "destination_requirement": "durable revision 0 with null state",
+    "confirmation": "Website obtains an explicit user confirmation before POST",
+    "merge": false,
+    "archive": "Preserve exact raw_state_json, source_id, original account binding, request_id, and the original browser key/backup.",
+    "replay": "Retry only the identical original envelope after an uncertain acknowledgement."
+  },
+  "catalog": {
+    "required": "Inject the genuine prepared 72-course/9,988-card catalog reference and every retained release needed by existing pins before enabling writes.",
+    "forbidden": "Do not activate against the seven-demo-fixture constructor catalog and do not relabel old catalog pins."
+  }
+}

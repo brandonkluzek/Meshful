@@ -1,0 +1,87 @@
+{
+  "schema": "meshful-sites-d1-case-parentheses-successor.v1",
+  "status": "provider-workaround-ready-default-denied-not-hosted",
+  "site_project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+  "logical_d1_binding": "DB",
+  "predecessor": {
+    "manifest_sha256": "47bb451e2ed8c6a0c2e43833e8183652d65334a60a6cdcef2904a26bdea9bba4",
+    "payload_sha256": "8cc9db06ebe71a300a32f873ca5d89c2995ceaa51cbededfa6cdc1f60ad68d93",
+    "failed_saved_version": "v12",
+    "failed_deployment_id": "appgdep_6a978d8646508191803a4e757817f3ef",
+    "failure_receipt_path": "evidence/WEBSITE_V12_FAILURE_RECEIPT.json",
+    "failure_receipt_sha256": "df81189b80e6fb0a80cc02aa19f9cee0f04a1fdd881b61db86a78df7d298d2aa",
+    "failure_receipt_recorded_at": "2026-09-02T02:50:17Z",
+    "provider_error": "incomplete input: SQLITE_ERROR",
+    "post_failure_d1_bindings": 0,
+    "post_failure_d1_tables": 0,
+    "live_version_changed": false,
+    "wrangler_4_92_0_local_control_passed": true
+  },
+  "workaround": {
+    "upstream_issue": "https://github.com/cloudflare/workers-sdk/issues/4727",
+    "rule": "Directly parenthesize every CASE expression inside the two safety trigger programs before packaging.",
+    "transformed_trigger_names": [
+      "meshful_v2_head_complete_insert",
+      "meshful_v2_head_complete_update"
+    ],
+    "case_expression_replacements": 3,
+    "line_endings": "LF",
+    "uppercase_trigger_begin": true,
+    "business_semantics_changed": false
+  },
+  "migrations": [
+    {
+      "order": 1,
+      "tag": "0000_meshful_learner_data",
+      "source": "backend/migrations/0001_learner_data.sql",
+      "source_bytes": 5078,
+      "source_sha256": "f14f6e2cbfdad5796fcf79b8038940497fb43a39056b3e83a082a72ec7037ff2",
+      "site_path": "drizzle/0000_meshful_learner_data.sql",
+      "statement_count": 10,
+      "packaged_bytes": 5298,
+      "packaged_sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "order": 2,
+      "tag": "0001_meshful_fragmented_storage",
+      "source": "backend/v2/migrations/0002_fragmented_storage.sql",
+      "source_bytes": 12258,
+      "source_sha256": "a7e094675020fed5e441d226a11acc591e35cc98978b75c3632cb7aa5f9e72c3",
+      "site_path": "drizzle/0001_meshful_fragmented_storage.sql",
+      "statement_count": 32,
+      "packaged_bytes": 13027,
+      "packaged_sha256": "6644a87087193b85df28964637600d5b2ee3e5562881bc31c46969741ecc7e78"
+    }
+  ],
+  "journal": {
+    "path": "drizzle/meta/_journal.json",
+    "bytes": 365,
+    "sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec"
+  },
+  "database_schema": {
+    "table_count": 13,
+    "trigger_count": 23,
+    "canonical_sqlite_schema_sha256": "643dd073a167c4520494bbc9290f461a8607f2c6115efbe0303660c23db2aa2e",
+    "canonicalization": "Order Meshful sqlite_schema rows by type/name, remove SQL comments outside quoted tokens, collapse external whitespace, remove one trailing semicolon, retain all other tokens and quoted bytes."
+  },
+  "local_wrangler_control": {
+    "receipt_path": "evidence/LOCAL_WRANGLER_4_92_RECEIPT.json",
+    "wrangler_version": "4.92.0",
+    "mode": "local",
+    "migration_command_counts": [11, 33],
+    "canonical_sqlite_schema_sha256": "643dd073a167c4520494bbc9290f461a8607f2c6115efbe0303660c23db2aa2e",
+    "remote_database_mutations": 0
+  },
+  "pre_retry_gate": {
+    "owner": "Website",
+    "timing": "Immediately before the next owner-only deployment",
+    "required_fresh_checks": [
+      "The recorded v12 deployment remains failed for this project and has no published URL.",
+      "The Site remains owner-only and live version 11 remains unchanged.",
+      "Database overview returns exact project ID, bindings [], selected_binding_name null, tables [], no omissions and no truncation."
+    ],
+    "abort_on": "Any binding, selected binding, table, omission, truncation, project mismatch, live-version change or ambiguous provider response."
+  },
+  "activation": "closed",
+  "boundary": "This changes only the unapplied Sites packaging bytes needed by the remote D1 statement splitter. It is valid only because the failed deployment exposed no D1 binding or tables. It does not authorize public activation."
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "meshful-sites-d1-case-fix-delivery.v1",
+  "delivery_root": "backend/d1-sites-case-fix",
+  "prepared_on": "2026-09-01",
+  "status": "provider-workaround-ready-default-denied-not-hosted",
+  "predecessor": {
+    "manifest": "backend/d1-integration/FILE_MANIFEST.json",
+    "manifest_sha256": "47bb451e2ed8c6a0c2e43833e8183652d65334a60a6cdcef2904a26bdea9bba4",
+    "payload_sha256": "8cc9db06ebe71a300a32f873ca5d89c2995ceaa51cbededfa6cdc1f60ad68d93"
+  },
+  "provider_failure_receipt_sha256": "df81189b80e6fb0a80cc02aa19f9cee0f04a1fdd881b61db86a78df7d298d2aa",
+  "file_count": 15,
+  "payload_sha256": "8fde4f29ddc4aaad54b96854552db433dba4a4db04a4bf854fbeeaf14948df8b",
+  "files": [
+    {
+      "path": "backend/d1-sites-case-fix/CONTRACT.json",
+      "destination": "backend/d1-sites-case-fix/CONTRACT.json",
+      "role": "provider_workaround_contract",
+      "bytes": 4204,
+      "sha256": "1e7265fd9f46f866d1d7dae3aa3fb26da6c46d990d2512cc192bea41243c91f4"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/FILE_MANIFEST.json",
+      "destination": "backend/d1-sites-case-fix/FILE_MANIFEST.json",
+      "role": "delivery_manifest",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "backend/d1-sites-case-fix/README.md",
+      "destination": "backend/d1-sites-case-fix/README.md",
+      "role": "integration_handoff",
+      "bytes": 2834,
+      "sha256": "298af9f151cfbca65c82b7885c03758a75bd39d99ac1515eb9a88561b2e0e782"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/build-case-fixed-package.mjs",
+      "destination": "backend/d1-sites-case-fix/build-case-fixed-package.mjs",
+      "role": "deterministic_transform",
+      "bytes": 4209,
+      "sha256": "fb5fb7aa22d6b2891227bd570d679d59974219eb520e827d71be91b219d341d5"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/drizzle/0000_meshful_learner_data.sql",
+      "destination": "backend/d1-sites-case-fix/drizzle/0000_meshful_learner_data.sql",
+      "role": "sites_migration",
+      "bytes": 5298,
+      "sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/drizzle/0001_meshful_fragmented_storage.sql",
+      "destination": "backend/d1-sites-case-fix/drizzle/0001_meshful_fragmented_storage.sql",
+      "role": "sites_migration",
+      "bytes": 13027,
+      "sha256": "6644a87087193b85df28964637600d5b2ee3e5562881bc31c46969741ecc7e78"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/drizzle/meta/_journal.json",
+      "destination": "backend/d1-sites-case-fix/drizzle/meta/_journal.json",
+      "role": "sites_migration_journal",
+      "bytes": 365,
+      "sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/evidence/LOCAL_WRANGLER_4_92_RECEIPT.json",
+      "destination": "backend/d1-sites-case-fix/evidence/LOCAL_WRANGLER_4_92_RECEIPT.json",
+      "role": "local_wrangler_evidence",
+      "bytes": 1452,
+      "sha256": "49f325ce9fefc7bf64c7824dfce286062b22a63ff4634ad7244a252373879a7a"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/evidence/WEBSITE_V12_FAILURE_RECEIPT.json",
+      "destination": "backend/d1-sites-case-fix/evidence/WEBSITE_V12_FAILURE_RECEIPT.json",
+      "role": "website_failure_evidence",
+      "bytes": 2524,
+      "sha256": "df81189b80e6fb0a80cc02aa19f9cee0f04a1fdd881b61db86a78df7d298d2aa"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/generate-manifest.mjs",
+      "destination": "backend/d1-sites-case-fix/generate-manifest.mjs",
+      "role": "manifest_generator",
+      "bytes": 4003,
+      "sha256": "c3ae7c18a862e5f9ef8cff4fcb2c6503b5b12ee3f47e98061609149e5d20cf65"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/inspect-case-fixed-schema.mjs",
+      "destination": "backend/d1-sites-case-fix/inspect-case-fixed-schema.mjs",
+      "role": "worker_schema_attestation",
+      "bytes": 4949,
+      "sha256": "3a1ee9a12bb0be3a5e7d25dc417b40593333e0595e73a17dba4015592baa8c25"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/pack-case-fixed.mjs",
+      "destination": "backend/d1-sites-case-fix/pack-case-fixed.mjs",
+      "role": "site_packager",
+      "bytes": 4634,
+      "sha256": "efbc23c2403bde40cf2c7862ffe66f7cdd4c87de00b63c47a7c9ca2309995d9e"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/package.json",
+      "destination": "backend/d1-sites-case-fix/package.json",
+      "role": "package_metadata",
+      "bytes": 283,
+      "sha256": "e528929eb43382324d774e5e518d928d84d51f27903ec83e111811dc89b42140"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/tests/integration.test.mjs",
+      "destination": "backend/d1-sites-case-fix/tests/integration.test.mjs",
+      "role": "provider_free_test",
+      "bytes": 11827,
+      "sha256": "330edd61e5a2a84e3a8c5e3a7d047f402b11414980101ce817a9d6dd697129eb"
+    },
+    {
+      "path": "backend/d1-sites-case-fix/verify.mjs",
+      "destination": "backend/d1-sites-case-fix/verify.mjs",
+      "role": "delivery_verifier",
+      "bytes": 8793,
+      "sha256": "6cb2813bb55f12057e7546eb0a7add220e80e49dd24c8150df6968c807cd117a"
+    }
+  ],
+  "boundary": "No provider mutation is proven by this delivery. Website owns the next owner-only Sites deployment; learner activation remains closed."
+}

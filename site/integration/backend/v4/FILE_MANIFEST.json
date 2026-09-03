@@ -1,0 +1,174 @@
+{
+  "schema": "meshful-backend-delivery.v4",
+  "prepared_on": "2026-09-02",
+  "state": "local-qualified-not-selected-not-deployed",
+  "source_root": ".",
+  "delivery_root": "backend/v4",
+  "integration_owner": "Dev - Website",
+  "integration_owner_task": "01a04b75-6f44-7783-a88c-77b03ec4c2a4",
+  "file_count": 17,
+  "payload_file_count": 16,
+  "payload_sha256": "2b06191616208dceefb0fab4ac66f16f52bc914c950e09d4662814fc94b824b0",
+  "fingerprint_recipe": "SHA-256 of each payload SHA-256, two ASCII spaces, full repo-relative path, and one LF byte, concatenated in lexicographic code-unit path order; exclude this manifest.",
+  "predecessor": {
+    "path": "backend/v3/FILE_MANIFEST.json",
+    "manifest_sha256": "8ea8096550a100c78177160858bc43f4b7e15ad26a656173e1fb61c967f374cb",
+    "payload_sha256": "f238f6fc8a66d6a24164730a2c8987356187799624e6196fce499ba94123f39a",
+    "file_count": 22
+  },
+  "migrations": {
+    "added": [],
+    "required_existing": [
+      "backend/migrations/0001_learner_data.sql",
+      "backend/v2/migrations/0002_fragmented_storage.sql"
+    ]
+  },
+  "public_webmcp_tool_change": false,
+  "read_only_dependencies": {
+    "canonical": {
+      "root_env": "MESHFUL_CANONICAL_ROOT",
+      "files": [
+        {
+          "path": "web/js/library-catalog.js",
+          "sha256": "fc2458b63e813f53bd81b231084dcc756963a4ed3625fd38aee5d8ceb024ba95"
+        },
+        {
+          "path": "web/js/store.js",
+          "sha256": "4e288fe72bf248acbf086bdef73eb9bc52a2718afd69f510ce98fccf5607bb76"
+        },
+        {
+          "path": "web/js/streak.js",
+          "sha256": "ef5337ebb320bc1cd96f292164dd57667189ff04eb7150ff4a926e2938e9ead3"
+        },
+        {
+          "path": "web/js/webmcp.js",
+          "sha256": "d25fe626c108341bd82488559b4dae8d103fc85988d58f289023183a282e115d"
+        },
+        {
+          "path": "web/tests/library-resolver.test.mjs",
+          "sha256": "967254b13276d3b92a473c426a2d2aa55ee3809eef8260ca06cc997be465bd44"
+        },
+        {
+          "path": "web/tests/library-catalog.test.mjs",
+          "sha256": "771fcd14c4df4904b808db6ea2c002bf2d312a46804713ac7b003f9bc0603fc1"
+        }
+      ]
+    },
+    "public_library": {
+      "root_env": "MESHFUL_PUBLIC_LIBRARY_ROOT",
+      "manifest_path": "asset-manifest.json",
+      "manifest_sha256": "92b9e2b5083d8a45ea11ef6d4793c180c1eed073f56d1577127b17d2fbbd45e7",
+      "index_path": "runtime/index.json",
+      "index_sha256": "9638252b82ec483c97e7d40ddee9278aa892db9cc541e47b73c9c7f088efe5a7"
+    },
+    "retained_library": {
+      "root_env": "MESHFUL_LIBRARY_ASSET_ROOT",
+      "index_path": "index.json",
+      "index_sha256": "6daff48b99faae5047a69d56cfbbf7aa6b162367337044ce59e9774bbfc29a00"
+    }
+  },
+  "files": [
+    {
+      "path": "backend/v4/CONTRACT.md",
+      "destination": "backend/v4/CONTRACT.md",
+      "bytes": 4672,
+      "sha256": "92e172e3d01bf2ab2977b492a960a0237c26f0a47887eec50e9b63d5e46aac32"
+    },
+    {
+      "path": "backend/v4/FILE_MANIFEST.json",
+      "destination": "backend/v4/FILE_MANIFEST.json",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "backend/v4/HANDOFF.md",
+      "destination": "backend/v4/HANDOFF.md",
+      "bytes": 2106,
+      "sha256": "37deddcc8628144a83a903fa3589e2c7b6fa6a5d418d0c0943473a5f68231e1b"
+    },
+    {
+      "path": "backend/v4/README.md",
+      "destination": "backend/v4/README.md",
+      "bytes": 1283,
+      "sha256": "6f6f9c7fc63691ddf9b5ce5d91a3cd64483a1b9446a9aea38826e206f7ef4ec4"
+    },
+    {
+      "path": "backend/v4/VALIDATION.json",
+      "destination": "backend/v4/VALIDATION.json",
+      "bytes": 2432,
+      "sha256": "7b6b2d42bbeba3d05570c4acf947b6c306899f79631b0ceaef4838ada50582e7"
+    },
+    {
+      "path": "backend/v4/package.json",
+      "destination": "backend/v4/package.json",
+      "bytes": 509,
+      "sha256": "55cbd8111f8b709d08657c346b17bbe773b23cb4fb02e7c28dcc2b17ba03eabd"
+    },
+    {
+      "path": "backend/v4/scripts/build-manifest.mjs",
+      "destination": "backend/v4/scripts/build-manifest.mjs",
+      "bytes": 4469,
+      "sha256": "46fcdcb2fab668f9bff24e224dbf20980f2f4aeced64007eeb2c158fe48a948e"
+    },
+    {
+      "path": "backend/v4/scripts/check-browser.mjs",
+      "destination": "backend/v4/scripts/check-browser.mjs",
+      "bytes": 942,
+      "sha256": "60167c1cf7b0356c0100730f8aee326e4d5e731e3f0808680ba44aa22fede6ce"
+    },
+    {
+      "path": "backend/v4/scripts/check.mjs",
+      "destination": "backend/v4/scripts/check.mjs",
+      "bytes": 1637,
+      "sha256": "d52e0650bcb7854f08620756d70d391267d4d9af68c86568dbc53e4bff2e3078"
+    },
+    {
+      "path": "backend/v4/scripts/verify-delivery.mjs",
+      "destination": "backend/v4/scripts/verify-delivery.mjs",
+      "bytes": 3542,
+      "sha256": "850309cd8859024308df9a065d71b04ee7d41c87d1fbc73308ce06c11cff1c17"
+    },
+    {
+      "path": "backend/v4/src/canonical-engine.mjs",
+      "destination": "backend/v4/src/canonical-engine.mjs",
+      "bytes": 22794,
+      "sha256": "04cc11ec903cd48659a6b08be50dad56839c6852e63124348a1347468d219b19"
+    },
+    {
+      "path": "backend/v4/src/durable-client.mjs",
+      "destination": "backend/v4/src/durable-client.mjs",
+      "bytes": 18473,
+      "sha256": "c7d686de7bd236d45148553f78c4eee2666aa77d208d3311f6ee3981767ce0dd"
+    },
+    {
+      "path": "backend/v4/src/http-handler.mjs",
+      "destination": "backend/v4/src/http-handler.mjs",
+      "bytes": 10002,
+      "sha256": "c5d06e15a8dfd6dfabe83c5a4a2621fa4a36d9dab1ffeff1659f33de556bced0"
+    },
+    {
+      "path": "backend/v4/src/index.mjs",
+      "destination": "backend/v4/src/index.mjs",
+      "bytes": 325,
+      "sha256": "980df6dd2ffd159b7e937b7a3f5f034582d3e63eda10b120cc7750f4b6dc757b"
+    },
+    {
+      "path": "backend/v4/test-support/two-release-resolver.mjs",
+      "destination": "backend/v4/test-support/two-release-resolver.mjs",
+      "bytes": 6595,
+      "sha256": "e2cc697ad51a8ab2a6f780219dc1816caeaf7c5d8c1ac2d7740d0c2036afb7e5"
+    },
+    {
+      "path": "backend/v4/tests/archive-durable.test.mjs",
+      "destination": "backend/v4/tests/archive-durable.test.mjs",
+      "bytes": 17902,
+      "sha256": "759810b7105cb34fe3839caa9d0b2fb35516b0a69d2e96dce74e16c1eb2178ff"
+    },
+    {
+      "path": "backend/v4/tests/catalog-promotion.test.mjs",
+      "destination": "backend/v4/tests/catalog-promotion.test.mjs",
+      "bytes": 7975,
+      "sha256": "b720c4d70e8ff4598f87de9d20b21c05aea4a2ce2ee49cab0b2c2124f2bb3f7a"
+    }
+  ]
+}

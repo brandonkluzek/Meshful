@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1788134400000,
+      "tag": "0000_meshful_learner_data",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1788134401000,
+      "tag": "0001_meshful_fragmented_storage",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1788408000000,
+      "tag": "0002_meshful_study_writer_grants",
+      "breakpoints": true
+    }
+  ]
+}

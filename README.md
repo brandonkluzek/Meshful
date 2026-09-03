@@ -1,118 +1,164 @@
 # Meshful
 
-Meshful is an agent-ready study workspace. Learners study through conversation,
-answer in their own words, receive one atomic grade, and return on an FSRS
-schedule. The website owns deterministic learner state while agents grade,
-tutor, and make bounded deck proposals through thirteen page-owned WebMCP
-tools.
+**Learn through conversation. Keep progress in one dependable study system.**
 
-## Release boundary
+Meshful is a chat-led learning workspace where a learner answers in their own
+words, an AI agent evaluates the meaning of the answer, and the website records
+one deterministic review. The site owns decks, sessions, scheduling, and saved
+progress. Agents can tutor and propose bounded changes through 13 page-owned
+WebMCP tools without maintaining a separate copy of learner state.
 
-This clean-history source tree is the release candidate for
-`brandonkluzek/Meshful`. Software is licensed under Apache-2.0.
-Owner-controlled documentation and brand artwork are licensed under CC BY 4.0.
-Generated public example deck content is dedicated under CC0 1.0 Universal, so
-reuse does not require attribution. The sanitized academic Deck Library is licensed
-under CC BY 4.0 with the attribution notice retained in `library/`. See
-[the license map](LICENSES/README.md).
+- [Open Meshful](https://meshful.ai)
+- [View the source](https://github.com/brandonkluzek/Meshful)
 
-The repository includes the approved academic Deck Library. Its current public
-release contains 72 courses, 9,988 cards, and 17,712 prerequisite links, plus
-three small source-recorded examples totaling 18 cards. The Deck Library received full-card AI review and second-reader
-repairs, but it has not been certified by human subject-matter experts. Neither
-the Deck Library nor the examples are evidence of learning outcomes. Learner data,
-credentials, provider outputs, private source locators, build-only helpers, and
-construction history are not included.
+## How Meshful works
 
-The default guest build ships a public-only, hash-pinned browser projection of
-that same Deck Library release. A clean clone opens all 72 current courses without private
-construction inputs or provider access.
+1. Choose a course from the Deck Library or create a personal deck.
+2. Start or resume a study session. Meshful shows the current term while keeping
+   the definition and grading rubric private.
+3. Answer naturally in chat. The agent evaluates meaning and gives concise
+   feedback.
+4. The agent calls `submit_grade` once. Meshful atomically records the exact
+   answer and assessment, updates the FSRS schedule, reveals the definition, and
+   advances the session.
+5. Return later for due reviews, switch decks without losing the queue, and use
+   the prerequisite graph to see how concepts connect.
 
-## Product behavior
+The regular website remains usable when WebMCP is unavailable. WebMCP adds a
+shared, inspectable contract so an agent can work with the same state and rules
+as the learner-facing interface.
 
-- Signed-out visitors use a same-origin browser-local guest workspace.
-- Signed-in visitors use the durable account entry selected by the server.
-- Guest state is never merged automatically. It can be copied only after
-  explicit confirmation into an empty account, while the local original stays
-  available.
-- Account mode requires the Sites `DB` binding, exact HTTPS origin, trusted
-  identity ingress, and explicit activation. Missing configuration fails closed
-  without falling back to signed-in local storage.
-- `submit_grade` is one revision-guarded, idempotent transaction that records
-  the answer and assessment, schedules once, reveals once, and advances once.
+## Why WebMCP
+
+Meshful divides responsibility deliberately:
+
+- **The learner** supplies the answer and decides when to reveal, continue, or
+  move a study session between clients.
+- **The agent** grades semantic recall, explains mistakes, tutors in chat, and
+  makes deck changes only through declared tool inputs.
+- **The site** authorizes access, validates every input and output, owns the
+  canonical learner state, applies scheduling exactly once, and renders visible
+  effects.
+
+This keeps the creative strengths of an agent separate from operations that
+need deterministic state, revision checks, idempotency, and durable receipts.
+The result is a coherent study product rather than an agent operating an
+unstructured page.
+
+## Capabilities
+
+- A continuous study queue with due reviews, eligible new cards, and early
+  practice ordered by due date
+- Meaning-based grading mapped to Again, Hard, Good, or Easy
+- Revision-guarded, retry-safe mutations and exact readback after uncertain
+  results
+- Deck Library search, installation, personal deck creation, and targeted card
+  editing
+- My Decks progress, recent activity, resumable sessions, and deck switching
+- A prerequisite graph backed by the same card and edge identities used by
+  study
+- Browser-local guest use and durable signed-in account storage
+
+## WebMCP surface
+
+`site/public/study/js/webmcp.js` contains the inspectable
+`document.modelContext.registerTool` calls, closed JSON schemas, output
+validation, account-epoch guards, and visible-effect handoffs for all 13 tools.
+The site registers this surface:
+
+| Area | Read tools | State-changing tools |
+|---|---|---|
+| Overview and collections | `get_learning_overview`, `search_library`, `list_my_decks`, `get_deck` | |
+| Deck authoring | | `validate_deck`, `ingest_deck`, `update_deck`, `add_cards`, `update_cards` |
+| Study | `get_study_session` | `start_study_session`, `submit_grade`, `finish_study_session` |
+
+Tool discovery metadata is compact, but the registered names, schemas,
+annotations, handlers, execution guards, and response contracts remain explicit.
+WebMCP support is optional and registration is skipped cleanly when
+`document.modelContext` is absent.
+
+## Architecture
+
+- `site/public/study/` contains the browser application, WebMCP registration,
+  deterministic store, and versioned Deck Library runtime.
+- `site/integration/accounts/` owns the trusted identity boundary used by the
+  site.
+- `site/integration/backend/v7/` contains the selected durable learner service
+  and Study-writer implementation for Cloudflare D1.
+- `site/app/` packages the learner API and the page that hosts the study
+  workspace.
+- `site/drizzle/` contains the three applied D1 schema migrations.
+- `site/tests/` verifies the selected sources, browser behavior, WebMCP metadata,
+  account boundaries, and deployment composition.
+
+The page and the agent share one canonical store. There is no agent-side shadow
+database and no provider call inside the deterministic scheduling path.
 
 ## Run locally
 
-Requirements: Node.js 22.13 or newer. Guest browser development has no package
-dependencies:
+Requirements: Node.js 22.13 or newer.
 
 ```bash
-npm --prefix web run check
-npm --prefix web test
-npm --prefix web run dev
-```
-
-Complete source and package verification:
-
-```bash
-npm --prefix accounts ci
+git clone https://github.com/brandonkluzek/Meshful.git
+cd Meshful
 npm --prefix site ci
-npm run check
-npm test
-npm run verify:webmcp
-npm run build
+npm run verify
+npm --prefix site run dev
 ```
 
-`npm run check` includes the repository-scoped licensing, provenance, public
-example, Library-manifest, social-preview, and governance checks in
-[the public-readiness contract](docs/PUBLIC_READINESS.md).
+Open the local URL printed by Vinext. Guest study does not require an AI
+provider, account, or environment file.
 
-`site/prebuild` regenerates the ignored `site/public/study/` mirror from the
-canonical admitted sources. Both authored D1 migrations remain in
-`site/drizzle/` for Sites packaging.
+For a hosted signed-in deployment, bind a D1 database as `DB` and configure the
+account route with exact values supplied by the deployment environment:
 
-## WebMCP implementation map
+```dotenv
+MESHFUL_ACCOUNT_SYNC=enabled
+MESHFUL_ALLOWED_ORIGIN=https://your-approved-host.example
+SITE_ORIGIN=https://your-approved-host.example
+```
 
-| Product surface | Read tools | State-changing tools |
-|---|---|---|
-| Overview and collections | `get_learning_overview`, `search_library`, `list_my_decks`, `get_deck` | None |
-| Deck authoring | None | `validate_deck`, `ingest_deck`, `update_deck`, `add_cards`, `update_cards` |
-| Study | `get_study_session` | `start_study_session`, `submit_grade`, `finish_study_session` |
+Account mode fails closed when its binding, activation flag, exact origin, or
+trusted identity ingress is missing.
 
-- `web/js/webmcp.js` defines the thirteen closed schemas, registers the tools,
-  validates outputs, and guards delivery across account epochs.
-- `web/js/store.js` owns deterministic deck, session, revision, receipt, and
-  FSRS scheduling mutations.
-- `web/js/app.js` renders the same page-owned state and visible effects used by
-  tools. The agent has no shadow learner-state copy.
-- `accounts/` provides the identity, lease, outbox, browser-storage, and privacy
-  boundary.
-- `backend/v2/` provides D1 persistence and capacity enforcement.
-- `site/` packages the canonical browser app, D1 migrations, guest entry, and
-  fail-closed account route.
+## Test WebMCP
 
-Provider-free tests cover schemas, transaction replay and conflicts, visible
-effects, Accounts storage, D1 persistence, and Sites composition. Hosted access,
-trusted identity, source/live parity, and semantic grading quality require
-separate evidence.
+Run the focused registration and transaction suite:
 
-## Challenge delta
+```bash
+npm run verify:webmcp
+```
 
-The pre-challenge baseline is
-`62b65cc841d01f3f5144bc6aac0cbb6887f530d9`. Challenge-period work added the
-browser study experience, thirteen WebMCP tools, atomic grading, FSRS
-scheduling, retry-safe mutations, Library, My Decks, Study, and Graph views,
-the D1-backed account path, and the Sites wrapper. See
-[the dated challenge delta](docs/CHALLENGE_DELTA.md).
+Run the complete source, test, WebMCP, and production-build verification:
 
-## Competition links
+```bash
+npm run verify
+```
 
-- Live app: pending exact-commit deployment and hosted acceptance.
-- Source repository: <https://github.com/brandonkluzek/Meshful>.
-- Demo video: pending exact-source recording and owner approval.
-- Devpost: pending final source, live URL, and video tuple.
+The focused tests exercise exact 13-tool registration, closed schemas,
+idempotent grading, revision conflicts, account changes, output validation,
+Deck Library access, and fail-closed behavior.
 
-The [WebMCP Challenge rules](https://webmcp.devpost.com/rules) require a working
-live URL, public source with a visible open-source license, a public
-under-three-minute YouTube demo with audio, and clear prior-versus-new
-documentation. External actions remain owner-gated.
+## Deck Library and licensing
+
+The included public Deck Library release contains 72 courses, 9,988 cards, and
+17,712 prerequisite links. It is AI-reviewed educational content, not a claim
+of human subject-matter certification or measured learning outcomes. Its
+versioned manifests and course files under `site/public/study/data/` make the
+shipped collection inspectable and replaceable as future releases are added.
+
+Software is licensed under [Apache License 2.0](LICENSE). The Deck Library,
+owner-controlled documentation, and brand artwork are licensed under
+[CC BY 4.0](LICENSES/CC-BY-4.0.md). The three small generated example decks are
+dedicated under [CC0 1.0](LICENSES/CC0-1.0.md). See
+[LICENSES/README.md](LICENSES/README.md) for the file-level license map and
+attribution requirements.
+
+## Contributing
+
+Issues and focused pull requests are welcome. Please preserve the
+learner/agent/site authority boundary, include tests for state-changing
+behavior, and run `npm run verify` before opening a pull request.
+
+Meshful began from an experimental local study-engine foundation and was
+meaningfully extended into this hosted WebMCP product.

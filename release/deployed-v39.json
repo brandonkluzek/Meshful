@@ -1,0 +1,46 @@
+{
+  "schema_version": "meshful.deployed-source.v1",
+  "observed_at": "2026-09-03",
+  "sites": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "saved_version": 39,
+    "version_id": "appgprj_6a9334b99f20819195ece80ebe97016b~appgver_4f811d5d8b30819180fff608e54fa9c7",
+    "deployment_id": "appgdep_6a997c3aaf4c8191a211e7e654e0e3e9",
+    "deployment_status": "succeeded",
+    "public_url": "https://meshful.ai",
+    "provider_url": "https://adaptive-study-lab.brandonkluzek.chatgpt.site"
+  },
+  "source": {
+    "commit": "016ac349c76878cdeae404aacc0011c0f53f0ab4",
+    "tree": "e7c75a26cce99087a44c205a70baddc2184bce9b",
+    "stored_archive_sha256": "16b66e89ea9d9289a4df27bc64b3d2fc73578e17ff48ab873b840021f8f585b8",
+    "repository_path": "site"
+  },
+  "live_runtime_sha256": {
+    "site/public/study/js/webmcp.js": "aadd6c476bb54ff83fb7c121d7a3723b36c95b2b8357003652b2c4a08892ad08",
+    "site/public/study/js/deck-build-guide.js": "6444795b10e082b119e8987c4a7bb4ce549d1dcb8e6923060c1542fab3280138",
+    "site/public/study/js/grading-guide.js": "93a139c32205b224fccf6458e7cf91f200cc1aa7e182ef33830878b9b2119d12",
+    "site/public/study/js/store.js": "2d71521457b90075ad205de8a8aea9d6dcc544968d97752dd7838da1ccfe901f9"
+  },
+  "validation": {
+    "predeploy_tests_passed": 165,
+    "predeploy_tests_failed": 0,
+    "focused_release_and_metadata_passed": 7,
+    "focused_release_and_metadata_failed": 0,
+    "lint": "passed",
+    "build": "passed",
+    "source_dist_parity": "passed",
+    "live_native_webmcp_tools": 13,
+    "live_read_only_overview": "passed",
+    "anonymous_state_read": 401,
+    "forged_bearer_state_read": 401,
+    "production_learner_writes_performed": false
+  },
+  "excluded_successors": [
+    "post-v39 CTA changes",
+    "post-v39 card-back changes",
+    "post-v39 archive changes",
+    "post-v39 account-lease changes",
+    "post-v39 deletion changes"
+  ]
+}

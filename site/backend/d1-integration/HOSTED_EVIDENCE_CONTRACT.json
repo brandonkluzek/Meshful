@@ -1,0 +1,47 @@
+{
+  "schema": "meshful-hosted-evidence-contract.v1",
+  "actor_lifecycle": {
+    "mode": "fresh-isolated-interactive-browser-contexts.v1",
+    "contexts": [
+      { "id": "a_device_1", "account_group": "a", "device": 1 },
+      { "id": "a_device_2", "account_group": "a", "device": 2 },
+      { "id": "b_device_1", "account_group": "b", "device": 1 }
+    ],
+    "factory_rule": "createHostedAcceptanceAdapter receives these descriptors and must create three new isolated browser storage contexts before resolving.",
+    "sign_in_rule": "The adapter opens the deployed sign-in flow in each context and waits for interactive operator sign-in: the same verified A identity in a_device_1 and a_device_2, and a distinct verified B identity in b_device_1.",
+    "credential_rule": "Credentials, cookies, tokens, browser profiles and identity values are never stored in the adapter bundle, command arguments, process environment, evidence manifests or receipt.",
+    "ambient_state_rule": "The adapter must not attach an undeclared pre-existing browser context or infer actors from ambient profiles. If fresh interactive contexts or a distinct B identity are unavailable, acceptance remains unpassed.",
+    "readiness_rule": "The factory resolves only after the server-derived ownership checks establish A1 equals A2 and A differs from B; only booleans and hashes may enter evidence. The adapter remains silent on stdout and stderr."
+  },
+  "challenge_transport": {
+    "header": "X-Meshful-Acceptance-Challenge",
+    "value_format": "^[a-f0-9]{64}$",
+    "scope": "Every learner-API request participating in a private_acceptance scenario carries that scenario's exact runner challenge.",
+    "server_rule": "The production learner route validates the header only in server-selected private_acceptance, records the exact value in the request trace, and correlates the D1 observation to the same trace. It never uses the value for identity, authorization, cohort selection, request replay, ownership or business rules and never persists it in learner tables.",
+    "failure_rule": "A missing, malformed, changed or host-unobserved challenge leaves the scenario unpassed. Browser-only observation does not satisfy this contract."
+  },
+  "canonical_encoding": "UTF-8 JSON with object keys recursively sorted by Unicode code unit, arrays in recorded order, JSON primitive encoding, no insignificant whitespace, and exactly one trailing LF byte (0x0A).",
+  "network_evidence": {
+    "schema": "meshful-hosted-network-evidence.v1",
+    "top_level_keys": ["schema", "scenario_id", "base_url", "runner_challenge_sha256", "requests"],
+    "request_keys": ["sequence", "actor", "method", "path", "response_status", "request_id_sha256", "worker_trace_id_sha256", "server_observed_challenge", "d1_observation_sha256"],
+    "request_path_rule": "path is an allowlisted fixed route template with the query removed and every document, request, source, account or other dynamic identifier replaced by a brace placeholder such as /api/learner/v2/documents/{document_id}; never retain the raw request target.",
+    "ordering": "requests is ordered by monotonically increasing sequence in actual dispatch order.",
+    "hash_rule": "network_trace_sha256 is SHA-256 of the exact canonical encoded manifest bytes.",
+    "retention_rule": "Website retains the canonical manifest beside the pinned deployment receipt; Backend prints only its digest."
+  },
+  "d1_evidence": {
+    "schema": "meshful-hosted-d1-observation.v1",
+    "top_level_keys": ["schema", "scenario_id", "runner_challenge_sha256", "worker_trace_ids_sha256", "query_count", "rows_read", "rows_written", "storage_bytes_before", "storage_bytes_after", "state_assertions_sha256"],
+    "hash_rule": "d1_observation_sha256 is SHA-256 of the exact canonical encoded manifest bytes.",
+    "data_rule": "The manifest contains counts and digests only, never SQL text, row bodies, principal IDs, identity subjects, answers, feedback, cookies, tokens or browser backups."
+  },
+  "resource_evidence": {
+    "schema": "meshful-hosted-resource-evidence.v1",
+    "top_level_keys": ["schema", "scenario_id", "runner_challenge_sha256", "source", "capacity_invocations_without_exceeded_memory", "max_observed_invocation_cpu_ms", "effective_cpu_limit_ms", "observed_total_query_count", "effective_query_limit", "observed_request_body_bytes", "effective_request_body_limit_bytes", "observed_d1_rows_read", "observed_d1_rows_written", "observed_d1_storage_bytes", "effective_d1_storage_limit_bytes", "provider_observation_ids_sha256"],
+    "hash_rule": "resource_metrics_sha256 is SHA-256 of the exact canonical encoded manifest bytes.",
+    "memory_rule": "Successful capacity requests plus absence of an exceededMemory outcome are the per-invocation memory evidence. Sampled aggregate Worker memory percentiles must not be relabeled as a scenario peak.",
+    "source_values": ["sites_runtime_and_d1_metadata", "cloudflare_worker_trace_and_d1_metadata"]
+  },
+  "forbidden_evidence": ["raw learner state", "answers", "feedback", "principal IDs", "identity subjects", "email", "name", "cookies", "tokens", "raw request targets or query strings", "dynamic document, request, source or account IDs", "headers other than the hashed acceptance challenge", "browser backups", "SQL row bodies"]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "meshful-backend-validation.v4",
+  "status": "local-qualified-not-selected-not-deployed",
+  "prepared_on": "2026-09-02",
+  "scope": "Website-only durable archive/restore and retained-to-current Library promotion successor",
+  "d1_migration_required": false,
+  "webmcp_tool_count_changed": false,
+  "provider_calls": 0,
+  "hosted_mutations": 0,
+  "hosted_acceptance": false,
+  "focused_local_receipt": {
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "asserted": [
+      "canonical 14-deck Library closure remains one durable transaction",
+      "archive and restore commit with deck and durable revision guards",
+      "exact archive replay writes no second mutation",
+      "lost acknowledgement recovers from the original account outbox",
+      "stale durable writes fail without mutation",
+      "a second principal cannot archive or read the first principal's state",
+      "active-session archive rejection writes neither state nor receipt",
+      "actual HTTP preserves DECK_IN_ACTIVE_SESSION as nonretryable status 409",
+      "browser client exposes Archive without importing the v4 server engine or capacity modules",
+      "exact terminal no-commit Archive code set clears only its matching 4xx draft",
+      "active-session rejection clears before Finish commits",
+      "stale deck revision clears before a corrected Archive commits",
+      "stale durable revision requires scoped receipt lookup before clear or replay",
+      "same-ID durable race resolves only through a fully bound scoped Archive receipt",
+      "lost acknowledgement and account-bound recovery remain unchanged",
+      "mismatched Archive success raises INVALID_SERVER_RESPONSE and preserves the exact draft",
+      "terminal settlement and preserved recovery codes match the documented allowlist",
+      "v1 account browses v2 Library without mutating its recorded constructor",
+      "same-ID different-pin v2 install conflict rolls back without promotion",
+      "compatible v2 closure installs and promotes catalog_ref in one transaction",
+      "v1 personal deck read and grade remain exact after v2 promotion",
+      "v2 install replay cannot retarget and stale v1 expected version fails without mutation"
+    ]
+  },
+  "remaining_gates": [
+    "Website exact selected-input receipt",
+    "Website UI and Accounts lease composition",
+    "owner-only hosted D1 acceptance after trusted identity and kill-switch gates"
+  ]
+}

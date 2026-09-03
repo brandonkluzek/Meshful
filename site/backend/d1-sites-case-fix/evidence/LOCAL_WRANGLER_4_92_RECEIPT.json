@@ -1,0 +1,34 @@
+{
+  "schema": "meshful-sites-d1-case-fix-local-wrangler-receipt.v1",
+  "recorded_on": "2026-09-01",
+  "mode": "local",
+  "wrangler_version": "4.92.0",
+  "node_major_version": 22,
+  "database_name": "meshful-case-fix-local",
+  "binding": "DB",
+  "remote_flag_used": false,
+  "remote_database_mutations": 0,
+  "provider_resources_created": 0,
+  "telemetry_network_activity": "not_attested",
+  "migrations": [
+    {
+      "path": "drizzle/0000_meshful_learner_data.sql",
+      "sha256": "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3",
+      "wrangler_commands_executed": 11,
+      "status": "passed"
+    },
+    {
+      "path": "drizzle/0001_meshful_fragmented_storage.sql",
+      "sha256": "6644a87087193b85df28964637600d5b2ee3e5562881bc31c46969741ecc7e78",
+      "wrangler_commands_executed": 33,
+      "status": "passed"
+    }
+  ],
+  "journal_sha256": "e2adffb888094f488534ebd57994303593c6288deceeadb023c95deb3680dfec",
+  "canonical_sqlite_schema_sha256": "643dd073a167c4520494bbc9290f461a8607f2c6115efbe0303660c23db2aa2e",
+  "table_count": 13,
+  "trigger_count": 23,
+  "wrangler_log_sha256": "c4295819de4a3959dd9b5e3130a933343c200f3d6f32981d2bc48484747de89e",
+  "local_sqlite_file_sha256": "98b183e9d0e29bad6dc1d2a2f5636342bbcf2d8157cfce49cdef1653a8238b0a",
+  "boundary": "This is a local Wrangler migration-engine control. It proves no remote Sites or D1 acceptance and makes no claim about Wrangler telemetry network activity."
+}

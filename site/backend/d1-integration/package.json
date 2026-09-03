@@ -1,0 +1,14 @@
+{
+  "name": "meshful-sites-d1-integration",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "manifest": "node generate-manifest.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "node verify.mjs"
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "schema_version": "meshful-library-resolver-asset-manifest.v1",
+  "release": "2026-08-30.reviewed-72.v1",
+  "private_candidate": true,
+  "public_release_approved": false,
+  "rights_status": "not-cleared",
+  "runtime_source": {
+    "library_catalog_sha256": "16a3a2ef5dc924e39dba07189d6f7c2c633808b8c3c5e539e12f993956711bd1",
+    "paired_store_sha256": "4e288fe72bf248acbf086bdef73eb9bc52a2718afd69f510ce98fccf5607bb76",
+    "resolver_test_sha256": "3d3714b0b77da949571e0fa87530a60cd20ad0de517d138a1d3dbc57a0543a23"
+  },
+  "resolution_budget": {
+    "max_decks": 42,
+    "max_cards": 5500,
+    "max_raw_chunk_bytes": 7000000
+  },
+  "index": {
+    "key": "index.json",
+    "byte_length": 368126,
+    "sha256": "sha256:6daff48b99faae5047a69d56cfbbf7aa6b162367337044ce59e9774bbfc29a00"
+  },
+  "asset_entry_serialization": "JSON.stringify of code-unit-sorted entries with field order key,byte_length,sha256",
+  "asset_entries_sha256": "sha256:c9633fa60352ae81406e8f58f800e19df535bc76c25c6cce6f4d9e8c66e43248",
+  "assets": [
+    {
+      "key": "decks/algorithms-i.json",
+      "byte_length": 156943,
+      "sha256": "sha256:508f0e48006016d6a8ec316af82adffb2f52cb3b52c434a72a5833ed11695128"
+    },
+    {
+      "key": "decks/analytical-chemistry.json",
+      "byte_length": 165121,
+      "sha256": "sha256:a2629e917781504c656efd3ef4159eb0ada693b568d34d2669ab844bfa5c84fd"
+    },
+    {
+      "key": "decks/applied-statistics-i.json",
+      "byte_length": 104951,
+      "sha256": "sha256:f813baf854932063bd1c0179576ff90399e48019baaa6106d7fadae6992d3f47"
+    },
+    {
+      "key": "decks/applied-statistics-ii-regression-and-generalized-linear-models.json",
+      "byte_length": 154949,
+      "sha256": "sha256:4c504aa9a8f67e762914bab0366489b87c49798b5e19d1b3c9e5e842e3485bce"
+    },
+    {
+      "key": "decks/bayesian-inference.json",
+      "byte_length": 147537,
+      "sha256": "sha256:97f587ec0804a98528d4f75859e77028c8be67354db7811cb41034345e002dca"
+    },
+    {
+      "key": "decks/behavioral-and-experimental-economics.json",
+      "byte_length": 169421,
+      "sha256": "sha256:f8a0abf8f8601e22ddd16609fe57d9e77658e9d37e10281898d5d119e4407f44"
+    },
+    {
+      "key": "decks/biochemistry.json",
+      "byte_length": 182499,
+      "sha256": "sha256:f986f7d9413e114dcec26d82e2f2787623294412f6e30f99f6a5fbbba9b5e675"
+    },
+    {
+      "key": "decks/biology-i.json",
+      "byte_length": 140561,
+      "sha256": "sha256:8d704a0a9bd39467e0b38602a5425d08103be166a5c76890fbec8b738482584e"
+    },
+    {
+      "key": "decks/biology-ii.json",
+      "byte_length": 132288,
+      "sha256": "sha256:778940cb82423740c581cfbf68e314fe88773235e528b99e8a82bd552286e73f"
+    },
+    {
+      "key": "decks/calculus-i.json",
+      "byte_length": 116196,
+      "sha256": "sha256:3c4dfab7096149dc61ae82948517d25313df23005d2a6af2b20d4be80055bba5"
+    },
+    {
+      "key": "decks/calculus-ii.json",
+      "byte_length": 119772,
+      "sha256": "sha256:5c5076dc1def8e5d684773887c9288f9aeabcca15dd11d2c4b568d7f450fdc2f"
+    },
+    {
+      "key": "decks/causal-inference.json",
+      "byte_length": 137786,
+      "sha256": "sha256:914a68623d5bdb3e2ef83de0fd5d33a01ce5a24d142675fd14f6435acf580b59"
+    },
+    {
+      "key": "decks/cell-biology.json",
+      "byte_length": 175808,
+      "sha256": "sha256:315d6f223383a577c74aaf4424321a5f5c6ff0263ec36678bf02897bd1d35f4a"
+    },
+    {
+      "key": "decks/chemistry-laboratory-and-measurement.json",
+      "byte_length": 170781,
+      "sha256": "sha256:04908e094c0c09892a6f80f179994feada6171505cf2b9de4dd5f977ce1183ba"
+    },
+    {
+      "key": "decks/college-algebra-and-precalculus.json",
+      "byte_length": 152861,
+      "sha256": "sha256:b502f60b985d5bb45333456330175f34b67df6f8fb16aec1b1829d509ce9b32b"
+    },
+    {
+      "key": "decks/computer-networks.json",
+      "byte_length": 182766,
+      "sha256": "sha256:d00e5774b4187d0ce00a798da7f21532150821c84c11da92b3d70ca18dbced1d"
+    },
+    {
+      "key": "decks/computer-systems.json",
+      "byte_length": 158968,
+      "sha256": "sha256:d8c7197bdf964749d70736f03a3b90cac8241d20611e1729d5170ba2c8cc727f"
+    },
+    {
+      "key": "decks/data-structures.json",
+      "byte_length": 160152,
+      "sha256": "sha256:a1228d12fbc8fe621bafe8e1af686171c27683a3a484576b563bdef7363c98b5"
+    },
+    {
+      "key": "decks/data-systems.json",
+      "byte_length": 154626,
+      "sha256": "sha256:b20d29e10b289156c666f921d02c14fb5f168b6846ed81c9d0a8dd3b3506a511"
+    },
+    {
+      "key": "decks/databases-i.json",
+      "byte_length": 174946,
+      "sha256": "sha256:ee8d6710b286f14794a79101cd7fcb9efa74041810acbbfebe5af4749f534730"
+    },
+    {
+      "key": "decks/discrete-mathematics.json",
+      "byte_length": 135630,
+      "sha256": "sha256:90cac78ee107ab84225993a721269a6af0f0fee403cb7e28396c3830efda728d"
+    },
+    {
+      "key": "decks/ecology.json",
+      "byte_length": 185424,
+      "sha256": "sha256:9cf72c878f3a81f0f678ed6d1433e393aff90e9358cc90433891cc07ae8ba560"
+    },
+    {
+      "key": "decks/econometrics-i.json",
+      "byte_length": 155852,
+      "sha256": "sha256:4a100321b3487f99e13566bda41b21deb6b64cdd2832dc29f804b21ad52bd39e"
+    },
+    {
+      "key": "decks/econometrics-ii.json",
+      "byte_length": 156093,
+      "sha256": "sha256:3512ae7c77eb4429667be3945f9d50ef5211809e29b7ea3423552205e84c3b55"
+    },
+    {
+      "key": "decks/economic-foundations.json",
+      "byte_length": 134418,
+      "sha256": "sha256:efec057ea1fb9b4c344bcde428e5b10681895e56b8b157dcb7b213ec5225b8a2"
+    },
+    {
+      "key": "decks/electricity-and-magnetism-i.json",
+      "byte_length": 166905,
+      "sha256": "sha256:4af306908d211affb03903f84e8a69a95e37df9b4553750c4c14db268f50662f"
+    },
+    {
+      "key": "decks/evolutionary-biology.json",
+      "byte_length": 188972,
+      "sha256": "sha256:f6c5410f03570e4f0468edd88d8016d9af96c64de0610561538658df550da017"
+    },
+    {
+      "key": "decks/experimental-design.json",
+      "byte_length": 158065,
+      "sha256": "sha256:26ecaf67a64a60092676c35d52db3f8626af5f861a3f478d4a437772610d103e"
+    },
+    {
+      "key": "decks/experimental-physics-and-measurement.json",
+      "byte_length": 180086,
+      "sha256": "sha256:314798be833d65e06e66d788c07100b23ee29aab336b19652fc3050caf4673d2"
+    },
+    {
+      "key": "decks/general-chemistry-i.json",
+      "byte_length": 324028,
+      "sha256": "sha256:e592edfa0778c34c9c0c7b911b6f22f7ef37b9c9df2341489832c68e94ea3155"
+    },
+    {
+      "key": "decks/general-chemistry-ii.json",
+      "byte_length": 174761,
+      "sha256": "sha256:29fb585e2e5c2faa44d20d2a6551fee7f2e906d1e316c67e000d89a0a6b253de"
+    },
+    {
+      "key": "decks/genetics.json",
+      "byte_length": 122134,
+      "sha256": "sha256:a6e4ed4fd19b99c4e99c426dc515c79e233533a922fd4edf5ae2af7f3bba3792"
+    },
+    {
+      "key": "decks/immunology.json",
+      "byte_length": 188287,
+      "sha256": "sha256:577b4c775d08142f2191a5c92baf04e549dcb85bab7077be35ebc1db05c1ff2b"
+    },
+    {
+      "key": "decks/inorganic-chemistry.json",
+      "byte_length": 170227,
+      "sha256": "sha256:9a73572ff8891f69dff19a9ff264f79726609bc99bd52041d003c2ab2e52b6bf"
+    },
+    {
+      "key": "decks/linear-algebra-i.json",
+      "byte_length": 168798,
+      "sha256": "sha256:6bbc198ad7ef932b6eafc7b2ec18c025a8cfabfa9ae67c71db06140e18f97713"
+    },
+    {
+      "key": "decks/linear-algebra-ii.json",
+      "byte_length": 188896,
+      "sha256": "sha256:22b6c298e9d5d708cb3cb0ed99015028015172c32752c1b1d9b3b4c6ed032f36"
+    },
+    {
+      "key": "decks/macroeconomic-theory-i.json",
+      "byte_length": 156774,
+      "sha256": "sha256:e8e9eeab709f51c91de298ac8bfcaa4e0032f5693b044f973d47dc7df0f2382f"
+    },
+    {
+      "key": "decks/macroeconomic-theory-ii.json",
+      "byte_length": 172756,
+      "sha256": "sha256:29cd12221e7eb999338da15fb19b484b58f2433dc53453779577066c3659405d"
+    },
+    {
+      "key": "decks/mathematical-methods-for-economics.json",
+      "byte_length": 162998,
+      "sha256": "sha256:23b62809c0a2fcac9c1f8c9a414fe20c27b44d22c55a903b1eacaba7121381da"
+    },
+    {
+      "key": "decks/mathematical-methods-for-physics-i.json",
+      "byte_length": 160298,
+      "sha256": "sha256:489d2393fbe59d5bab90bd4e6acbe75dfe5b487f7a0e86ee9367ec77b4ec2c80"
+    },
+    {
+      "key": "decks/mathematical-proof-and-foundations.json",
+      "byte_length": 229958,
+      "sha256": "sha256:cdc514f7040afc8db165dd5bf204b0b2e09e94a962dafc0819a7df08e54cea23"
+    },
+    {
+      "key": "decks/mathematical-statistics.json",
+      "byte_length": 202465,
+      "sha256": "sha256:0514dcc7a7bec524107816b9407b848afd27395f796f75ca31323a1f260f2a6e"
+    },
+    {
+      "key": "decks/mechanics-i.json",
+      "byte_length": 114483,
+      "sha256": "sha256:977c7a80b73cd9d3895d0623c124c84c4f92b1d6c122fd715d75cc35e0920392"
+    },
+    {
+      "key": "decks/mechanics-ii.json",
+      "byte_length": 158196,
+      "sha256": "sha256:f09c0f4ca9ac5a743764ca250b3e1493d3bbced96d7bcb3e3e3b9ce84ebcea69"
+    },
+    {
+      "key": "decks/microbiology.json",
+      "byte_length": 187138,
+      "sha256": "sha256:1738dee37543ff375fe329ad3ebcc6ab2e13218326640ca8263df2e08a18eb28"
+    },
+    {
+      "key": "decks/microeconomic-theory-i.json",
+      "byte_length": 171027,
+      "sha256": "sha256:38a06432e3b7e9d81f08169c043002277ae400a4f6fe46a2d4cd0c3c770a246d"
+    },
+    {
+      "key": "decks/microeconomic-theory-ii.json",
+      "byte_length": 150513,
+      "sha256": "sha256:193c3fcbe8c4fbacb311c7fa25cff0468b7b8cc27c276ff2426730ea8e9de76a"
+    },
+    {
+      "key": "decks/modern-physics.json",
+      "byte_length": 160914,
+      "sha256": "sha256:154064ed0aefba9027fd4668f2db41c7de83eef220c42c41c7c6ef73842ff9de"
+    },
+    {
+      "key": "decks/molecular-biology.json",
+      "byte_length": 240165,
+      "sha256": "sha256:c55215fac0323a9938f97ea8db508b1620aa0a02d2dcafbccec9bf83e9fcae8b"
+    },
+    {
+      "key": "decks/multivariable-calculus.json",
+      "byte_length": 149537,
+      "sha256": "sha256:4b8d3a803b9aa31622e97e621cb48a9f772cc58b4382d7246105f8a1ad707e9d"
+    },
+    {
+      "key": "decks/numerical-analysis-and-scientific-computing.json",
+      "byte_length": 140250,
+      "sha256": "sha256:62a61e2dfe5587e7688ff456a8b30023ff1f2112957571eebe3041190a2448c2"
+    },
+    {
+      "key": "decks/optics.json",
+      "byte_length": 145545,
+      "sha256": "sha256:91f1b95685973e0894b7da98bf8c6e7d2282d6a9c1bcc7133bd17aca31f9aa1a"
+    },
+    {
+      "key": "decks/optimization-mathematics-i-convex-optimization.json",
+      "byte_length": 195944,
+      "sha256": "sha256:846197cdfad8aa884b0414164b3207ae1170be1e6490c994bcc82976e7d35e38"
+    },
+    {
+      "key": "decks/ordinary-differential-equations.json",
+      "byte_length": 229609,
+      "sha256": "sha256:fad692276f984b78250a8adfa67e4e17dd618a2628816f2deb28115aa81f7afe"
+    },
+    {
+      "key": "decks/organic-chemistry-i.json",
+      "byte_length": 164194,
+      "sha256": "sha256:136b98606230529f282d3d8c224b35f0264539712e71898da9701482898e5d0a"
+    },
+    {
+      "key": "decks/organic-chemistry-ii.json",
+      "byte_length": 156341,
+      "sha256": "sha256:c30948beaa523ce1142ea98e45c734a0497ea22e3ab3f43265fb6ce4e77a3aca"
+    },
+    {
+      "key": "decks/organic-chemistry-laboratory.json",
+      "byte_length": 165781,
+      "sha256": "sha256:4aa18d8b8d841dc3e97ba67179083581ce57e0c9809810b0241f6f9c057432dc"
+    },
+    {
+      "key": "decks/physics-foundations.json",
+      "byte_length": 117358,
+      "sha256": "sha256:c3e1a7e2962c05a0f5195de080d824f06a24e978747639979a20cc413b6257bd"
+    },
+    {
+      "key": "decks/physiology.json",
+      "byte_length": 206156,
+      "sha256": "sha256:1198c4551c77abbfdacd727b75b3a7ef5ef6ac06b9dde8434c92534ab2f34d99"
+    },
+    {
+      "key": "decks/probability-theory-i.json",
+      "byte_length": 175894,
+      "sha256": "sha256:1a23769791b32a262ca879200ef4b9965a798bc2a9d33a747a0e2a78d1824677"
+    },
+    {
+      "key": "decks/probability-theory-ii.json",
+      "byte_length": 147616,
+      "sha256": "sha256:bf0cf93aad154c59aefb006934613dd426f15777179d9cdb7cb08fe8bbac624e"
+    },
+    {
+      "key": "decks/programming-i.json",
+      "byte_length": 588946,
+      "sha256": "sha256:4a6350add8e264e26bffb42b2534685760283e53a598ac0a4e03fae7bbedd36d"
+    },
+    {
+      "key": "decks/programming-ii.json",
+      "byte_length": 564093,
+      "sha256": "sha256:54ef2dd0add6404b7740ca22754246462afd22ef854090ea1a345cf1c7759662"
+    },
+    {
+      "key": "decks/real-analysis-i.json",
+      "byte_length": 203392,
+      "sha256": "sha256:7a69a6cf1555446729ce1b445e9d01a8d40e139cb7300fd040290db7041d2247"
+    },
+    {
+      "key": "decks/sampling-and-survey-methods.json",
+      "byte_length": 159763,
+      "sha256": "sha256:6d5139da21233eb88c9375fd67afe8643dd57a78d91d95fa2d7d05a00e450bb6"
+    },
+    {
+      "key": "decks/security-engineering-i.json",
+      "byte_length": 142219,
+      "sha256": "sha256:3410a6ccdab9a59f540865d49936c4c6f25d7fa57237d6eeaab474d82d39c6b3"
+    },
+    {
+      "key": "decks/software-architecture.json",
+      "byte_length": 103929,
+      "sha256": "sha256:a8a9cfe4914fe1a7c315a5afbbc7126159bfa83fd6fb567c69c5e3a5672f919f"
+    },
+    {
+      "key": "decks/software-engineering-i.json",
+      "byte_length": 178426,
+      "sha256": "sha256:c30016cf777883e55499c1c4be74dc1efd98688718af0e6f03a1056bccbb2fa5"
+    },
+    {
+      "key": "decks/software-testing-i-foundations-and-test-design.json",
+      "byte_length": 385425,
+      "sha256": "sha256:40bca555c4aad5fc98a4e5495bf683bacdb3fe5e4138a9d9972882c49b90c593"
+    },
+    {
+      "key": "decks/thermodynamics.json",
+      "byte_length": 164576,
+      "sha256": "sha256:092103efaba87183b979bf85bc0b33234966af2e31783f4371282d9dcff4ca28"
+    },
+    {
+      "key": "decks/time-series-analysis.json",
+      "byte_length": 145686,
+      "sha256": "sha256:75123e8ce0dab71aa1fd51b9bc5e2f311692d3fae00dc39ef35c909bff616a53"
+    },
+    {
+      "key": "decks/waves-and-oscillations.json",
+      "byte_length": 150840,
+      "sha256": "sha256:fb49711b329c285b9b6d967d6890476ea8146c2e45d53eedc3709c3cafb5e446"
+    }
+  ],
+  "totals": {
+    "runtime_files": 73,
+    "decks": 72,
+    "cards": 9988,
+    "prerequisite_edges": 17712,
+    "external_prerequisite_edges": 770,
+    "chunk_bytes": 12906713,
+    "index_and_chunk_bytes": 13274839
+  },
+  "expected_pins": {
+    "constructorRef": {
+      "version": "2026-08-30.reviewed-72.v1",
+      "digest": "sha256:e3d0daad45310fa3d7e1cf473156d09d9700fd504fc41b1b770989cadab816b7"
+    },
+    "preparedConstructorDigest": "sha256:e26951ad5070be6546561f2769659dda87715fb6dc6d061b5ee6ed3b1b17f461",
+    "catalogRef": {
+      "version": "2026-08-30.reviewed-72.v1",
+      "digest": "sha256:908e28f0a7a43ec53715a6811d0cc09c59f627fb3f74de01fc8fbceb7fbe84bb"
+    },
+    "dependencyGraphSha256": "sha256:82025162442152929780e8bcf42066361b8ebc1602c899b1f706f621b2257ce0",
+    "sourceManifestSha256": "sha256:172e079349252368559beeddcd540b34f02c769f66fa5e8bfd6092f49f6ad8b8",
+    "criterionDerivationVersion": "store-normalizeRubricItems-ordinal.v1"
+  },
+  "compiler_guards": {
+    "source_feed_sha256": "612d5c79dbe924ba00db2c08833ac79922d3de3e71a7a857bac3b1204bdca783",
+    "source_manifest_sha256": "172e079349252368559beeddcd540b34f02c769f66fa5e8bfd6092f49f6ad8b8",
+    "raw_feed_in_runtime_bundle": false,
+    "source_manifest_in_runtime_bundle": false
+  }
+}
+

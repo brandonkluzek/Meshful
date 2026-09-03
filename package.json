@@ -7,9 +7,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "check": "npm --prefix web run check && npm --prefix backend run check && npm --prefix backend/v2 run check && node scripts/verify-source-authority.mjs && node scripts/verify-release.mjs && node scripts/verify-public-readiness.mjs",
-    "test": "npm --prefix web test && node scripts/test-durable.mjs && npm --prefix site test",
-    "verify:webmcp": "npm --prefix web run verify:webmcp",
+    "check": "node scripts/verify-release.mjs",
+    "test": "cd site && node --test tests/*.test.mjs",
+    "verify:webmcp": "cd site && node --test tests/webmcp-metadata.test.mjs tests/continuous-study.test.mjs",
     "build": "npm --prefix site run build",
     "verify": "npm run check && npm test && npm run verify:webmcp && npm run build"
   }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" role="img" aria-label="Meshful header mark, currentColor"><title>Meshful header mark, currentColor</title><desc>Meshful owner-approved matched-arc production asset. Approved; publication state is tracked separately.</desc><g transform="scale(1.1666666666666667)"><defs>
+    <path id="arrow" d="M-2.25 -1.975L-2.25 1.975L0 0Z" fill="currentColor" stroke="currentColor" stroke-width=".08" stroke-linejoin="round"/>
+  </defs>
+  <path d="M3.5 19C4.6 16.6 4.6 10.8 6.5 8.3C7.4 7.1 8.7 7.4 9.3 8.7L10.810 11.812"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12.6 15.5C13.70 13.10 14.45 9.05 16.35 6.55C17.25 5.35 18.55 5.65 19.15 6.95C19.70 8.15 20.269 11.288 20.419 12.529"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <use href="#arrow" transform="translate(11.683 13.611) rotate(64.12)"/>
+  <use href="#arrow" transform="translate(20.660 14.514) rotate(83.10)"/>
+  <circle cx="3.5" cy="19" r="1.65" fill="currentColor"/>
+  <circle cx="12.6" cy="15.5" r="1.75" fill="currentColor"/>
+  <circle cx="20.9" cy="16.5" r="1.65" fill="currentColor"/></g></svg>
