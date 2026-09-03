@@ -117,6 +117,56 @@ function effectiveReleaseFocusedTests() {
   );
 }
 
+function effectiveGraphBrowserFiles() {
+  return applyOverrides(
+    effectiveReleaseBrowserFiles(),
+    selection.post_v35_successors.release_v43_graph_candidate.release_browser_file_overrides,
+  );
+}
+
+function effectiveGraphReleaseSelectedFiles() {
+  return applyOverrides(
+    selection.post_v35_successors.release_v40_candidate.selected_files,
+    selection.post_v35_successors.release_v43_graph_candidate.release_selected_file_overrides,
+  );
+}
+
+function effectiveGraphRuntimeFiles() {
+  const candidate = selection.post_v35_successors.release_v43_graph_candidate;
+  return [
+    ...applyOverrides(
+      selection.post_v35_successors.graph_learner_progress_v1.runtime_files,
+      candidate.runtime_file_overrides,
+    ),
+    ...candidate.runtime_file_additions,
+  ];
+}
+
+function effectiveGraphFocusedTests() {
+  const candidate = selection.post_v35_successors.release_v43_graph_candidate;
+  return [
+    ...applyOverrides(
+      selection.post_v35_successors.graph_learner_progress_v1.focused_tests,
+      candidate.graph_focused_test_overrides,
+    ),
+    ...candidate.graph_focused_test_additions,
+  ];
+}
+
+function effectiveGraphReleaseFocusedTests() {
+  return applyOverrides(
+    effectiveReleaseFocusedTests(),
+    selection.post_v35_successors.release_v43_graph_candidate.release_focused_test_overrides,
+  );
+}
+
+function effectiveGraphVisualPolishFocusedTests() {
+  return applyOverrides(
+    selection.post_v35_successors.release_v42_visual_polish.focused_tests,
+    selection.post_v35_successors.release_v43_graph_candidate.visual_focused_test_overrides,
+  );
+}
+
 async function filesBelow(relative) {
   const base = path.join(root, relative);
   const output = [];
@@ -281,6 +331,27 @@ test("the source allowlist retains exact Accounts and Backend successor bytes", 
   });
   assert.equal(nonAnswerGrade.d1_migration_change, false);
   assert.equal(nonAnswerGrade.public_webmcp_tool_change, false);
+  const graphCandidate = selection.post_v35_successors.release_v43_graph_candidate;
+  assert.equal(graphCandidate.predecessor_commit, "dd578874933241eb8d679f10e3d5726c2ad6b855");
+  assert.deepEqual(graphCandidate.predecessor_selections, [
+    "graph_learner_progress_v1",
+    "release_v40_candidate",
+    "release_v42_visual_polish",
+    "release_v42_non_answer_grade_v1",
+  ]);
+  assert.equal(graphCandidate.asset_query_token, "v43-real-progress-graph");
+  assert.equal(graphCandidate.graph_query_revision, "graph-revision-18");
+  assert.deepEqual(graphCandidate.contract, {
+    all_active_cards_and_internal_edges_visible: true,
+    personal_progress_source: "retained_learner_records_only",
+    library_progress_source: "neutral_structure",
+    selected_direct_neighborhood_opacity: 1,
+    unrelated_node_opacity: 0.6,
+    single_cubic_s_curve_per_edge: true,
+    labels_hidden_at_overview_zoom: true,
+  });
+  assert.equal(graphCandidate.d1_migration_change, false);
+  assert.equal(graphCandidate.public_webmcp_tool_change, false);
   const effectiveRuntime = effectiveV7RuntimeFiles();
   const effectiveBrowser = effectiveV7BrowserFiles();
   for (const item of [
@@ -299,12 +370,12 @@ test("the source allowlist retains exact Accounts and Backend successor bytes", 
     selection.backend_v7_writer_successor.packaged_migration,
     ...effectiveStartupBrowserFiles(),
     ...effectiveAccountFocusedTests(),
-    ...effectiveReleaseBrowserFiles(),
-    ...effectiveReleaseFocusedTests(),
-    ...graphSuccessor.runtime_files,
-    ...graphSuccessor.focused_tests,
-    ...releaseCandidate.selected_files,
-    ...visualPolish.focused_tests,
+    ...effectiveGraphBrowserFiles(),
+    ...effectiveGraphReleaseFocusedTests(),
+    ...effectiveGraphRuntimeFiles(),
+    ...effectiveGraphFocusedTests(),
+    ...effectiveGraphReleaseSelectedFiles(),
+    ...effectiveGraphVisualPolishFocusedTests(),
     ...nonAnswerGrade.focused_tests,
   ]) {
     assert.equal(await digest(item.path), item.sha256, item.path);

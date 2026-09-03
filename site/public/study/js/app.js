@@ -4,15 +4,15 @@ import {
   matchesLibraryQuery,
   graphForCatalog,
   graphForPersonal,
-} from "./library-view.js?release=v40-learner-graph";
+} from "./library-view.js?release=v43-real-progress-graph";
 import { captureSearchFieldState, restoreSearchFieldState } from "./search-field-state.js";
 import { prepareAccountStartupShell, showNeutralLoadingShell } from "./startup-view-state.js";
 import { renderDefinition } from "./definition-renderer.js";
 import { createBrowserWorkspace } from "./browser-workspace.js";
 import { createAccountRuntime } from "./account-runtime.js";
 import { calendarRelativeLabel, observeViewClock } from "./view-clock.js";
-import { mountGraphView } from "./graph-view.js?graph-revision-17";
-import { cardStatesForDeck } from "./graph-progress-state.js";
+import { mountGraphView } from "./graph-view.js?graph-revision-18";
+import { cardStatesForDeck } from "./graph-progress-state.js?release=v43-real-progress-graph";
 import { isDeckFullyMastered } from "./mastery.js";
 import {
   createStudyStore,
@@ -633,6 +633,16 @@ function setActiveNav(route) {
   document.body.dataset.route = route.name === "library-graph" ? "graph" : route.name;
 }
 
+function graphRouteForDeck(deckId, snapshot) {
+  const direct = snapshot.personalDecks?.[deckId];
+  const personal = direct && !direct.archived
+    ? direct
+    : installedPersonalDeck(deckId, snapshot);
+  return personal && !personal.archived
+    ? `graph/${personal.id}`
+    : `library-graph/${deckId}`;
+}
+
 function personalDeckArray(snapshot, { archived = false, availability = null } = {}) {
   return Object.values(snapshot.personalDecks ?? {})
     .filter((deck) => Boolean(deck.archived) === archived)
@@ -1227,6 +1237,8 @@ async function showDeckPreview(deckId) {
   if (!deck || !isViewCurrent(context) || !deckDialog.open) return;
   const snapshot = store.getSnapshot();
   const installed = installedPersonalDeck(deck.id, snapshot);
+  const graphHref = graphRouteForDeck(deck.id, snapshot);
+  const graphLabel = installed && !installed.archived ? "View my graph" : "Preview graph";
   deckDialogContent.innerHTML = `
     <div class="deck-dialog-inner">
       <header class="dialog-header">
@@ -1246,7 +1258,7 @@ async function showDeckPreview(deckId) {
       </div>
       <div class="dialog-actions">
         <button class="button button-quiet" type="button" data-close-dialog>Close</button>
-        <a class="button button-quiet" href="#library-graph/${escapeAttribute(deck.id)}" data-close-dialog>${icon("graph")} Preview graph</a>
+        <a class="button button-quiet" href="#${escapeAttribute(graphHref)}" data-close-dialog>${icon("graph")} ${graphLabel}</a>
         ${installed
           ? installed.archived
             ? `<button class="button button-primary" type="button" data-request-unarchive="${escapeAttribute(deck.id)}" data-catalog-version="${escapeAttribute(installed.source?.catalogVersion ?? "")}">Archived</button>`
@@ -1651,6 +1663,11 @@ async function render() {
   if (demoMode === "error") throw new Error("This is the intentional error-state preview.");
 
   if (route.name === "library-graph") {
+    const installed = installedPersonalDeck(route.id, snapshot);
+    if (installed && !installed.archived) {
+      location.hash = `graph/${installed.id}`;
+      return;
+    }
     const catalogDeck = await loadExactCatalogDeck(route.id, { context });
     if (!isViewCurrent(context)) return;
     if (!catalogDeck) {

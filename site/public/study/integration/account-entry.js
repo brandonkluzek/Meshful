@@ -1,4 +1,4 @@
-import { initializeWebsite } from "../js/app.js?release=v40-learner-graph";
+import { initializeWebsite } from "../js/app.js?release=v43-real-progress-graph";
 import { createAccountSnapshotHydrator } from "../js/account-snapshot.js";
 import { createLocalClaimSource } from "../js/local-claim-source.js";
 

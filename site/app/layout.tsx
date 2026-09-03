@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 const siteOrigin = process.env.SITE_ORIGIN ?? 'https://meshful.ai';
-const assetRevision = 'v40-learner-graph';
+const assetRevision = 'v43-real-progress-graph';
 const versionedAsset = (path: string) => `${path}?release=${assetRevision}`;
 
 export const metadata: Metadata = {

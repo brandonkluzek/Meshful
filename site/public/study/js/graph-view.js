@@ -6,12 +6,12 @@ import {
   semanticZoomLevel,
   traceDownstream,
   traceUpstream,
-} from "./graph-engine.js?graph-revision-16";
+} from "./graph-engine.js?graph-revision-18";
 import {
   buildGraphIndex,
   chooseDefaultGraphProjection,
   findDependencyPath,
-} from "./graph-scope.js?graph-revision-16";
+} from "./graph-scope.js?graph-revision-18";
 import { renderDefinition } from "./definition-renderer.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -20,13 +20,6 @@ const MAX_SCALE = 1.65;
 const DEFAULT_GRAPH_NODE_LIMIT = 10_000;
 const POINTER_TAP_SLOP = 8;
 const ENTIRE_GRAPH_MIN_SCALE = 0.01;
-
-const GRAPH_STATE_SCENARIOS = Object.freeze([
-  Object.freeze({ id: "actual", label: "Course map", shortLabel: "Structure" }),
-  Object.freeze({ id: "unseen", label: "Not started", shortLabel: "Example" }),
-  Object.freeze({ id: "mixed", label: "In progress", shortLabel: "Example" }),
-  Object.freeze({ id: "recent", label: "Recently reviewed", shortLabel: "Example" }),
-]);
 
 export function graphNodeLimitForWidth(width) {
   if (!Number.isFinite(width) || width <= 0) return DEFAULT_GRAPH_NODE_LIMIT;
@@ -65,17 +58,13 @@ export function graphLayoutOptionsForWidth(width) {
   };
 }
 
-export function layoutForGraphProjection(projection, {
-  viewportWidth = Infinity,
-  nodeHeight = null,
-} = {}) {
+export function layoutForGraphProjection(projection, { viewportWidth = Infinity } = {}) {
   if (!projection?.nodes || !projection?.edges) {
     throw new TypeError("A graph projection with nodes and edges is required.");
   }
-  const responsiveOptions = graphLayoutOptionsForWidth(viewportWidth);
   return layoutGraph(
     { nodes: projection.nodes, edges: projection.edges },
-    Number.isFinite(nodeHeight) ? { ...responsiveOptions, nodeHeight } : responsiveOptions,
+    graphLayoutOptionsForWidth(viewportWidth),
   );
 }
 
@@ -252,10 +241,6 @@ function titleCase(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function learningLabel(state) {
-  return state.learning === "unseen" ? "Not started" : titleCase(state.learning);
-}
-
 function stateFor(cardId, cardStates) {
   const value = cardStates?.[cardId] ?? cardStates?.get?.(cardId) ?? {};
   const reviewCount = Number(value.reviewCount ?? value.reviews ?? value.reps ?? 0);
@@ -295,64 +280,6 @@ function stateFor(cardId, cardStates) {
   };
 }
 
-function stableStateSeed(value) {
-  let hash = 2_166_136_261;
-  for (const character of String(value)) {
-    hash ^= character.codePointAt(0);
-    hash = Math.imul(hash, 16_777_619);
-  }
-  return hash >>> 0;
-}
-
-function stateForScenario(cardId, cardStates, scenario = "actual") {
-  const actual = stateFor(cardId, cardStates);
-  if (scenario === "actual") return actual;
-  if (scenario === "unseen") {
-    return {
-      ...actual,
-      reviewCount: 0,
-      dueAt: null,
-      lastReviewedAt: null,
-      lastRating: null,
-      reviewHistory: [],
-      learning: "unseen",
-      freshness: "new",
-    };
-  }
-
-  const seed = stableStateSeed(cardId) % 100;
-  if (scenario === "mixed" && seed < 34) {
-    return stateForScenario(cardId, cardStates, "unseen");
-  }
-  if (scenario === "recent" && seed < 12) {
-    return stateForScenario(cardId, cardStates, "unseen");
-  }
-
-  const now = Date.now();
-  const reviewCount = scenario === "recent"
-    ? 3 + (seed % 6)
-    : seed < 64
-      ? 1 + (seed % 2)
-      : 3 + (seed % 5);
-  const ageDays = scenario === "recent" ? seed % 24 : (seed * 17) % 176;
-  const lastReviewedAt = new Date(now - ageDays * 86_400_000);
-  const dueAt = new Date(now + ((seed % 19) - 4) * 86_400_000);
-  const lastRating = 2 + (seed % 3);
-  return {
-    ...actual,
-    reviewCount,
-    dueAt,
-    lastReviewedAt,
-    lastRating,
-    reviewHistory: [
-      { rating: Math.max(1, lastRating - 1), submittedAt: new Date(lastReviewedAt.valueOf() - 12 * 86_400_000).toISOString() },
-      { rating: lastRating, submittedAt: lastReviewedAt.toISOString() },
-    ],
-    learning: reviewCount < 3 ? "learning" : "established",
-    freshness: dueAt <= now ? "due" : (dueAt - now) / 86_400_000 <= 2 ? "soon" : "fresh",
-  };
-}
-
 function formatDue(state) {
   if (!state.dueAt) return "Not introduced";
   if (state.freshness === "due") return "Due now";
@@ -379,13 +306,25 @@ function recencyColor(state) {
   return "#f3f0e8";
 }
 
+function formatLastReviewed(state) {
+  if (!state.lastReviewedAt) return "Not reviewed";
+  const ageDays = Math.max(0, Math.floor((Date.now() - state.lastReviewedAt.valueOf()) / 86_400_000));
+  if (ageDays === 0) return "Reviewed today";
+  if (ageDays === 1) return "Reviewed yesterday";
+  return `Reviewed ${ageDays} days ago`;
+}
+
 function ratingValue(value) {
-  if (Number.isInteger(Number(value)) && Number(value) >= 1 && Number(value) <= 4) return Number(value);
-  return ({ again: 1, hard: 2, good: 3, easy: 4 })[String(value ?? "").toLowerCase()] ?? null;
+  const numeric = Number(value);
+  if (Number.isInteger(numeric) && numeric >= 1 && numeric <= 4) return numeric;
+  return ({ again: 1, hard: 2, good: 3, easy: 4 })[
+    String(value ?? "").toLocaleLowerCase()
+  ] ?? null;
 }
 
 function ratingLabel(value) {
-  return ({ 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" })[ratingValue(value)] ?? "—";
+  return ({ 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" })[ratingValue(value)]
+    ?? String(value ?? "—");
 }
 
 function retainedReviews(state) {
@@ -429,7 +368,7 @@ function iconPath(name) {
 export function mountGraphView(container, {
   deck,
   cardStates = {},
-  progressSource = "structure",
+  progressSource = "learner",
   focusCardId = null,
   pulseCardId = null,
   storage = undefined,
@@ -494,7 +433,6 @@ export function mountGraphView(container, {
       ? layoutEntireGraphProjection(projection)
       : layoutForGraphProjection(projection, {
           viewportWidth: container.getBoundingClientRect().width || window.innerWidth,
-          nodeHeight: showsLearnerProgress ? 72 : null,
         });
     nodeById = new Map(layout.nodes.map((node) => [node.id, node]));
     cardById = new Map(projection.nodes.map((card) => [card.id, card]));
@@ -544,11 +482,10 @@ export function mountGraphView(container, {
   let traceDirection = "direct";
   let activePath = projection.path ?? null;
   let searchQuery = "";
-  let stateScenario = "actual";
-  const activeStateFor = (cardId) => stateForScenario(cardId, cardStates, stateScenario);
+  const activeStateFor = (cardId) => stateFor(cardId, cardStates);
 
   container.innerHTML = `
-    <section class="graph-page${showsLearnerProgress ? "" : " has-comparison"}" aria-label="${escapeHTML(deck.title)} prerequisite graph">
+    <section class="graph-page" aria-label="${escapeHTML(deck.title)} prerequisite graph">
       <div class="graph-toolbar">
         <button class="graph-back" type="button" data-graph-action="back" aria-label="${escapeHTML(backAriaLabel)}"><span aria-hidden="true">×</span> Close</button>
         <div class="graph-title">
@@ -563,9 +500,6 @@ export function mountGraphView(container, {
           <button type="button" data-graph-action="reset" data-action="reset-graph">Reset</button>
         </div>
       </div>
-      ${showsLearnerProgress ? "" : `<div class="graph-comparison-bar" aria-label="Course graph examples">
-        <div class="graph-scenario-previews" data-graph-scenarios aria-label="Preview possible learning states"></div>
-      </div>`}
       <div class="graph-workspace" data-graph-workspace role="application" aria-label="Draggable and zoomable prerequisite map">
         <div class="graph-search">
           <label class="search-field">
@@ -591,7 +525,6 @@ export function mountGraphView(container, {
   const inspector = container.querySelector("[data-graph-inspector]");
   const legend = container.querySelector("[data-graph-legend]");
   const search = container.querySelector("[data-graph-search]");
-  const scenarioPreviews = container.querySelector("[data-graph-scenarios]");
   const scopeNote = container.querySelector("[data-graph-scope]");
   const listeners = [];
   const edgeElements = new Map();
@@ -658,7 +591,7 @@ export function mountGraphView(container, {
           endStop.setAttribute("offset", "100%");
           gradient.append(startStop, endStop);
           edgeDefinitions.append(gradient);
-          edgeGradients.set(edge.id, { gradient, gradientId, startStop, endStop });
+          edgeGradients.set(edge.id, { gradient, startStop, endStop });
           path.style.stroke = `url(#${gradientId})`;
           edgeElements.set(edge.id, path);
         }
@@ -693,8 +626,6 @@ export function mountGraphView(container, {
         traced.edges.has(edge.id) ? "is-traced" : "",
       ].filter(Boolean).join(" ");
       if (path.getAttribute("class") !== className) path.setAttribute("class", className);
-      const stroke = traced.edges.has(edge.id) ? "#e0e3e7" : `url(#${paint?.gradientId})`;
-      if (path.style.stroke !== stroke) path.style.stroke = stroke;
     }
   }
 
@@ -714,6 +645,7 @@ export function mountGraphView(container, {
         button = document.createElement("button");
         button.type = "button";
         button.dataset.nodeId = node.id;
+        button.innerHTML = `<span>${escapeHTML(node.term)}</span>`;
         nodeElements.set(node.id, button);
       }
       button.className = [
@@ -726,19 +658,15 @@ export function mountGraphView(container, {
       ].filter(Boolean).join(" ");
       button.dataset.learning = state.learning;
       button.dataset.freshness = state.freshness;
-      button.dataset.scenario = stateScenario;
       button.dataset.progressSource = showsLearnerProgress ? "learner" : "structure";
       button.setAttribute("aria-pressed", String(selectedId === node.id));
       button.style.transform = `translate(${Math.round(position.x)}px, ${Math.round(position.y)}px)`;
       button.style.width = `${node.width}px`;
       button.style.minHeight = `${node.height}px`;
-      button.style.borderColor = "";
+      button.style.borderColor = recencyColor(state);
       button.setAttribute("aria-label", showsLearnerProgress
-        ? `${node.term}. Your learning: ${learningLabel(state)}. Your next review: ${formatDue(state)}.`
+        ? `${node.term}. Your learning: ${titleCase(state.learning)}. ${formatLastReviewed(state)}. ${formatDue(state)}.`
         : `${node.term}. Course structure preview.`);
-      button.innerHTML = `<span>${escapeHTML(node.term)}</span>${showsLearnerProgress
-        ? `<small class="node-progress-label">${escapeHTML(learningLabel(state))}</small><i class="node-recency" aria-hidden="true"></i>`
-        : ""}`;
       orderedButtons.push(button);
     }
     if (renderedNodeLayout !== layout) {
@@ -775,26 +703,6 @@ export function mountGraphView(container, {
       ? recent.map((review) => `
           <li><strong>${escapeHTML(ratingLabel(review.rating))}</strong><span>${escapeHTML(formatReviewMoment(review.submittedAt))}</span></li>`).join("")
       : `<li class="is-empty"><span>${latestRating === null ? "No retained score history yet" : `Latest rating: ${escapeHTML(ratingLabel(latestRating))}`}</span></li>`;
-    const scenarioMarkup = !showsLearnerProgress && stateScenario !== "actual"
-      ? `<p class="inspector-preview-note">Visual example · ${escapeHTML(GRAPH_STATE_SCENARIOS.find((scenario) => scenario.id === stateScenario)?.label ?? stateScenario)}</p>`
-      : "";
-    const progressMarkup = showsLearnerProgress
-      ? `<div class="inspector-state" data-progress-source="learner">
-        <div><strong>${escapeHTML(learningLabel(state))}</strong><span>Your learning</span></div>
-        <div><strong>${escapeHTML(formatDue(state))}</strong><span>Next review</span></div>
-      </div>`
-      : `<p class="graph-structure-note">Course structure preview. Add this course and study to see your progress here.</p>`;
-    const reviewsMarkup = showsLearnerProgress
-      ? `<details class="inspector-disclosure inspector-reviews">
-        <summary>Reviews <span>${state.reviewCount} total</span></summary>
-        <div class="inspector-review-summary">
-          <span><strong>${latestRating === null ? "—" : escapeHTML(ratingLabel(latestRating))}</strong>Latest score</span>
-          <span><strong>${average ?? "—"}</strong>Average retained</span>
-          <span><strong>${escapeHTML(formatDue(state))}</strong>Next review</span>
-        </div>
-        <ol class="inspector-review-history">${recentMarkup}</ol>
-      </details>`
-      : "";
     inspector.innerHTML = `
       <div class="graph-inspector-header" data-inspector-drag-handle>
         <div>
@@ -804,13 +712,23 @@ export function mountGraphView(container, {
         <button class="icon-button graph-inspector-close" type="button" data-graph-action="dismiss" aria-label="Close card info">×</button>
       </div>
       <div class="graph-inspector-body">
-      ${scenarioMarkup}
-      ${progressMarkup}
+      ${showsLearnerProgress ? `<div class="inspector-state" data-progress-source="learner">
+        <div><strong>${escapeHTML(titleCase(state.learning))}</strong><span>Learning</span></div>
+        <div><strong>${escapeHTML(formatLastReviewed(state))}</strong><span>Recency</span></div>
+      </div>` : `<p class="graph-structure-note">Course structure preview. Add this course and study to see your progress here.</p>`}
       <details class="inspector-disclosure inspector-definition">
         <summary>Definition</summary>
         <div class="inspector-definition-content" data-graph-definition></div>
       </details>
-      ${reviewsMarkup}
+      ${showsLearnerProgress ? `<details class="inspector-disclosure inspector-reviews">
+        <summary>Reviews <span>${state.reviewCount} total</span></summary>
+        <div class="inspector-review-summary">
+          <span><strong>${latestRating === null ? "—" : escapeHTML(ratingLabel(latestRating))}</strong>Latest score</span>
+          <span><strong>${average ?? "—"}</strong>Average retained</span>
+          <span><strong>${escapeHTML(formatDue(state))}</strong>Next review</span>
+        </div>
+        <ol class="inspector-review-history">${recentMarkup}</ol>
+      </details>` : ""}
       <ul class="inspector-list">
         <li><span>Direct prerequisites</span><strong>${directUpstream.nodeIds.length}</strong></li>
         <li><span>Direct dependents</span><strong>${directDownstream.nodeIds.length}</strong></li>
@@ -830,39 +748,11 @@ export function mountGraphView(container, {
 
   function renderLegend() {
     legend.innerHTML = showsLearnerProgress
-      ? `<strong>Your progress</strong><span class="legend-learning"><i aria-hidden="true"></i>Border: learning</span><span class="legend-recency"><i aria-hidden="true"></i>Dot: next review</span>`
-      : `<strong>Course structure preview</strong>`;
+      ? `<span class="recency-scale-title">Recency</span><i class="recency-scale" aria-hidden="true"></i>`
+      : `<span class="recency-scale-title">Course structure</span>`;
     legend.setAttribute("aria-label", showsLearnerProgress
-      ? "Your learning is shown by the card border. Your next review is shown by the small dot."
+      ? "Your unlearned cards have gray borders. Reviewed card borders move from white through yellow to red as your reviews become more recent."
       : "Course structure preview. Progress appears after you add and study this course.");
-  }
-
-  function renderScenarioPreviews() {
-    if (!scenarioPreviews) return;
-    const viewBox = [activeBounds.x, activeBounds.y, activeBounds.width, activeBounds.height].join(" ");
-    scenarioPreviews.innerHTML = GRAPH_STATE_SCENARIOS.map((scenario) => {
-      const states = new Map(layout.nodes.map((node) => [
-        node.id,
-        stateForScenario(node.id, cardStates, scenario.id),
-      ]));
-      const edgeMarkup = activeEdges.map((edge) => {
-        const color = recencyColor(states.get(edge.target));
-        return `<path d="${escapeHTML(edge.path)}" stroke="${color}"></path>`;
-      }).join("");
-      const nodeMarkup = layout.nodes.map((node) => {
-        const position = positions.get(node.id) ?? node;
-        const color = recencyColor(states.get(node.id));
-        return `<rect x="${position.x}" y="${position.y}" width="${node.width}" height="${node.height}" rx="14" stroke="${color}"></rect>`;
-      }).join("");
-      return `
-        <button type="button" data-graph-scenario="${scenario.id}" aria-pressed="${stateScenario === scenario.id}">
-          <span><strong>${escapeHTML(scenario.label)}</strong><small>${escapeHTML(scenario.shortLabel)}</small></span>
-          <svg viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <g class="scenario-edges">${edgeMarkup}</g>
-            <g class="scenario-nodes">${nodeMarkup}</g>
-          </svg>
-        </button>`;
-    }).join("");
   }
 
   function applyTransform(next = transform) {
@@ -906,7 +796,7 @@ export function mountGraphView(container, {
       viewport,
       {
         padding: narrow
-          ? { top: 132, right: 20, bottom: 90, left: 20 }
+          ? { top: 108, right: 20, bottom: 90, left: 20 }
           : { top: 100, right: 64, bottom: 70, left: 64 },
         minScale: showEntireGraph ? ENTIRE_GRAPH_MIN_SCALE : MIN_SCALE,
         maxScale: 0.92,
@@ -944,7 +834,6 @@ export function mountGraphView(container, {
     renderEdges();
     renderInspector();
     renderLegend();
-    renderScenarioPreviews();
     requestAnimationFrame(() => {
       if (center && selectedId) centerNode(selectedId, 1);
       else showCrispDefault();
@@ -996,16 +885,6 @@ export function mountGraphView(container, {
   }
 
   on(container, "click", (event) => {
-    const scenario = event.target.closest("[data-graph-scenario]")?.dataset.graphScenario;
-    if (scenario && GRAPH_STATE_SCENARIOS.some((candidate) => candidate.id === scenario)) {
-      stateScenario = scenario;
-      renderEdges();
-      renderNodes();
-      renderInspector();
-      renderLegend();
-      renderScenarioPreviews();
-      return;
-    }
     const action = event.target.closest("[data-graph-action]")?.dataset.graphAction;
     if (action === "back") return onBack();
     if (action === "dismiss") return clearSelection({ restoreFocus: true });
@@ -1021,7 +900,6 @@ export function mountGraphView(container, {
       edgesLayer.setAttribute("height", String(activeBounds.maxY + 120));
       renderNodes();
       renderEdges();
-      renderScenarioPreviews();
       return selectedId ? centerNode(selectedId, 1) : showCrispDefault();
     }
     if (action === "zoom-in" || action === "zoom-out") {
@@ -1235,7 +1113,6 @@ export function mountGraphView(container, {
       }
     }
     setSelected(nodeId);
-    if (geometryChanged) renderScenarioPreviews();
   }
 
   on(workspace, "pointerdown", (event) => {
@@ -1372,7 +1249,6 @@ export function mountGraphView(container, {
   renderNodes();
   renderInspector();
   renderLegend();
-  renderScenarioPreviews();
   requestAnimationFrame(() => selectedId ? centerNode(selectedId, 1) : showCrispDefault());
 
   return () => listeners.splice(0).forEach((dispose) => dispose());

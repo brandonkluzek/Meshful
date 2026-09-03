@@ -6,9 +6,10 @@ import { graphForCatalog } from "../public/study/js/library-view.js";
 import { buildGraphIndex } from "../public/study/js/graph-scope.js";
 import { layoutEntireGraphProjection } from "../public/study/js/graph-view.js";
 
-const [app, graphView] = await Promise.all([
+const [app, graphView, graphProgressState] = await Promise.all([
   readFile(new URL("../public/study/js/app.js", import.meta.url), "utf8"),
   readFile(new URL("../public/study/js/graph-view.js", import.meta.url), "utf8"),
+  readFile(new URL("../public/study/js/graph-progress-state.js", import.meta.url), "utf8"),
 ]);
 
 test("Library graph preview stays inside one course and keeps deck-local learning order", () => {
@@ -55,9 +56,37 @@ test("Library graph preview stays inside one course and keeps deck-local learnin
   assert.equal(overview.edges.length, index.edges.length, "the overview keeps every deck-local edge");
   assert.ok(overview.edges.every((edge) => /^M .* C /.test(edge.path)), "the bounded overview emits renderable paths");
   assert.match(app, /showEntireGraph:\s*true/);
+  assert.match(app, /canStudy:\s*false/);
+  assert.match(app, /progressSource:\s*['"]structure['"]/);
+  assert.match(app, /backAriaLabel:\s*['"]Close graph and return to Library['"]/);
   assert.match(graphView, /nodeLimit = showEntireGraph \? index\.nodeIds\.length/);
   assert.match(graphView, /showEntireGraph\s*\? layoutEntireGraphProjection\(projection\)/);
   assert.match(graphView, /ENTIRE_GRAPH_MIN_SCALE = 0\.01/);
   assert.match(graphView, /minScale: showEntireGraph \? ENTIRE_GRAPH_MIN_SCALE/);
   assert.match(graphView, /if \(showEntireGraph\) \{[\s\S]*setSelected\(result\.match\.id, \{ center: true, preservePath: true \}\)/);
+});
+
+test("production graphs use retained learner records and never synthetic state scenarios", () => {
+  const graphRoute = app.match(/function graphRouteForDeck\(deckId, snapshot\) \{([\s\S]*?)\n\}/)?.[1];
+  const preview = app.match(/async function showDeckPreview\(deckId\) \{([\s\S]*?)\n\}/)?.[1];
+  assert.ok(graphRoute && preview);
+  assert.match(app, /import \{ cardStatesForDeck \} from ['"]\.\/graph-progress-state\.js\?release=v43-real-progress-graph['"]/);
+  assert.match(graphProgressState, /review\.demoSeeded === true/);
+  assert.match(graphProgressState, /scheduleBefore\?\.demoSeeded === true/);
+  assert.match(graphProgressState, /learnednessForReview\(learnerSchedule\)/);
+  assert.match(graphProgressState, /review\.lastRating \?\? retainedLearnerReviews\.at\(-1\)\?\.rating/);
+  assert.match(graphProgressState, /Array\.isArray\(card\.reviewHistory\)/);
+  assert.match(graphRoute, /installedPersonalDeck\(deckId, snapshot\)/);
+  assert.match(graphRoute, /graph\/\$\{personal\.id\}/);
+  assert.match(preview, /graphHref = graphRouteForDeck\(deck\.id, snapshot\)/);
+  assert.match(preview, /View my graph/);
+  assert.match(app, /if \(installed && !installed\.archived\) \{\s*location\.hash = `graph\/\$\{installed\.id\}`;\s*return;/);
+  assert.match(app, /progressSource:\s*['"]learner['"]/);
+
+  assert.doesNotMatch(graphView, /GRAPH_STATE_SCENARIOS|stateForScenario|data-graph-scenario|Compare learner states|Visual preview/);
+  assert.doesNotMatch(graphView, /graph-comparison-bar|data-graph-deck|deckOptions|onDeckChange/);
+  assert.doesNotMatch(graphView, /graph-layout-flag|Review \$\{longLinks\.length\} long links|longPrerequisiteLinks/);
+  assert.doesNotMatch(app, /graphDeckOptions|deckOptions:\s*|onDeckChange:\s*/);
+  assert.match(graphView, /const activeStateFor = \(cardId\) => stateFor\(cardId, cardStates\)/);
+  assert.match(graphView, /again:\s*1,\s*hard:\s*2,\s*good:\s*3,\s*easy:\s*4/);
 });

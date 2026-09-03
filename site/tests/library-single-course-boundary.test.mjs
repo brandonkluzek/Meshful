@@ -4,6 +4,7 @@ import test from "node:test";
 
 import { createMemoryStorage, createStudyStore } from "../public/study/js/store.js";
 import { createWebsiteLocalStore, loadWebsiteLibrary } from "../public/study/js/library-loader.js";
+import { graphForPersonal } from "../public/study/js/library-view.js";
 import { prepareLibraryCatalogResolver as preparePublicLibraryCatalogResolver } from "../public/study/js/library-catalog.js";
 import {
   createCanonicalEngine, createD1Repository, createLearnerService,
@@ -419,7 +420,7 @@ test("a selected-course asset failure commits nothing and an identical retry rem
   assert.equal(tracked.writes(), 1);
 });
 
-test("each of the 72 reviewed courses installs alone and has an initial deck-local root", async () => {
+test("each of the 72 reviewed courses installs alone and its personal graph preserves every active card and internal edge", async () => {
   const catalogSettings = await loadWebsiteLibrary({ indexUrl: INDEX_URL, fetcher: websiteFetcher() });
   assert.equal(catalogSettings.browseCatalog.length, 72);
   for (const summary of catalogSettings.browseCatalog) {
@@ -431,10 +432,29 @@ test("each of the 72 reviewed courses installs alone and has an initial deck-loc
     });
     const installed = add(store, summary.id, `all-courses:${summary.id}`, summary.version);
     const snapshot = store.getSnapshot();
+    const personal = snapshot.personalDecks[installed.deck.id];
+    const activeIds = new Set(personal.cardOrder.filter((id) => personal.cards[id] && !personal.cards[id].archived));
+    const expectedEdges = new Set();
+    for (const id of activeIds) {
+      for (const parentId of personal.cards[id].prerequisiteIds ?? []) {
+        if (activeIds.has(parentId)) expectedEdges.add(`${parentId}->${id}`);
+      }
+    }
+    for (const edge of personal.edges ?? []) {
+      if (activeIds.has(edge.prerequisiteCardId) && activeIds.has(edge.dependentCardId)) {
+        expectedEdges.add(`${edge.prerequisiteCardId}->${edge.dependentCardId}`);
+      }
+    }
+    const graph = graphForPersonal(personal);
+    const graphEdges = new Set(graph.cards.flatMap((card) =>
+      (card.prerequisites ?? []).map((parentId) => `${parentId}->${card.id}`)));
     const availability = store.getStudyAvailability({ deck_id: installed.deck.id });
     assert.equal(Object.keys(snapshot.personalDecks).length, 1, summary.id);
     assert.equal(installed.installation.decks.length, 1, summary.id);
     assert.equal(installed.installation.decks[0].catalog_deck_id, summary.id);
+    assert.equal(graph.cards.length, activeIds.size, `${summary.id} personal graph dropped cards`);
+    assert.equal(graph.rootCardIds.length, activeIds.size, `${summary.id} personal graph dropped roots`);
+    assert.deepEqual(graphEdges, expectedEdges, `${summary.id} personal graph changed internal edges`);
     assert.ok(availability.decks[0].eligible_new_count > 0, `${summary.id} has no deck-local root`);
   }
 });

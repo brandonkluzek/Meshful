@@ -848,8 +848,8 @@ svg {
   flex: 0 0 42px;
   color: var(--ink-0);
   background: currentColor;
-  -webkit-mask: url("/meshful-header-mark.svg?release=v40-learner-graph") center / contain no-repeat;
-  mask: url("/meshful-header-mark.svg?release=v40-learner-graph") center / contain no-repeat;
+  -webkit-mask: url("/meshful-header-mark.svg?release=v43-real-progress-graph") center / contain no-repeat;
+  mask: url("/meshful-header-mark.svg?release=v43-real-progress-graph") center / contain no-repeat;
 }
 
 .primary-nav {
@@ -5216,11 +5216,16 @@ body[data-route="graph"] .main { min-height: 100dvh; }
 }
 
 .graph-node[data-progress-source].is-traced {
+  color: #fff;
+  background: #272b31;
+  opacity: 1;
   box-shadow: 0 0 0 1px #c4cad2, 0 7px 18px rgba(0, 0, 0, 0.24);
 }
 
 .graph-node[data-progress-source].is-selected {
   color: #fff;
+  background: #272b31;
+  opacity: 1;
   outline: 2px solid #f2f3f4;
   outline-offset: 3px;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38);
@@ -5242,4 +5247,110 @@ body[data-route="graph"] .main { min-height: 100dvh; }
     justify-content: flex-end;
     flex-wrap: wrap;
   }
+}
+
+/* Graph revision 18: real learner progress, complete-deck spacing, and an
+   opaque selected relationship neighborhood. This final block intentionally
+   wins over the retired comparison-preview styling above. */
+.graph-page {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.graph-workspace .graph-search {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  width: min(290px, calc(100vw - 40px));
+  margin: 0;
+}
+
+.graph-edge,
+.graph-edge.is-pulsing {
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  opacity: 0.78;
+}
+
+.graph-edge.is-muted { opacity: 0.34; }
+.graph-edge.is-traced {
+  stroke-width: 3.25;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(239, 200, 92, 0.24));
+}
+
+.graph-edges marker path {
+  fill: #c8c3b7;
+  fill: context-stroke;
+}
+
+.graph-node,
+.graph-node[data-progress-source="learner"],
+.graph-node[data-progress-source="learner"][data-learning="learning"],
+.graph-node[data-progress-source="learner"][data-learning="established"] {
+  color: #f2f3f4;
+  background: #1d2024;
+  border-radius: 17px;
+  border-style: solid;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.24), 0 0 14px rgba(239, 200, 92, 0.07);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.graph-node[data-learning="unseen"],
+.graph-node[data-progress-source="learner"][data-learning="unseen"] {
+  color: #c3c8cf;
+  background: #181b1f;
+  border-color: #626a75;
+  border-style: solid;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.graph-node.is-muted,
+.graph-node[data-progress-source].is-muted {
+  color: #8e949d;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.graph-node.is-traced,
+.graph-node.is-selected {
+  color: #ffffff;
+  background: #272b31;
+  opacity: 1;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3), 0 0 18px rgba(239, 200, 92, 0.12);
+}
+
+.graph-node[data-progress-source].is-traced,
+.graph-node[data-progress-source].is-selected {
+  color: #ffffff;
+  background: #272b31;
+  opacity: 1;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3), 0 0 18px rgba(239, 200, 92, 0.12);
+}
+
+.graph-node span {
+  transition: opacity 120ms ease;
+}
+
+.graph-world[data-zoom="overview"] .graph-node span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.graph-structure-note {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 720px) {
+  .graph-workspace .graph-search {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: min(250px, calc(100vw - 132px));
+    margin: 0;
+  }
+  .graph-workspace { grid-row: auto; }
 }

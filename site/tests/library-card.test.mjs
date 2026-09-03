@@ -23,7 +23,7 @@ test("Library browse cards keep the count and actions without crowding the grid 
   assert.doesNotMatch(template, />Available<|In My Decks|class="status-pill"/);
   assert.match(app, /dialog-deck-count/);
   assert.match(app, /Preview graph/);
-  assert.match(app, /#library-graph\//);
+  assert.match(app, /graphHref = graphRouteForDeck\(deck\.id, snapshot\)/);
   const preview = app.match(/function showDeckPreview\(deckId\) \{([\s\S]*?)\n\}/)?.[1];
   assert.ok(preview, "Library preview renderer remains available");
   assert.doesNotMatch(preview, /evidence-row-dialog|Edition |Adds .*prerequisite|<th scope="col">Module<\/th>/);

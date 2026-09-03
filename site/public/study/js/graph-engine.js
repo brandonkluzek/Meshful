@@ -808,6 +808,35 @@ function undirectedNeighbors(graph) {
   return neighbors;
 }
 
+function weakComponentKeys(graph, neighbors) {
+  const seen = new Set();
+  const components = [];
+  const orderedIds = graph.nodes.map((node) => node.id).sort(compareIds);
+  for (const start of orderedIds) {
+    if (seen.has(start)) continue;
+    const queue = [start];
+    const members = [];
+    seen.add(start);
+    for (let index = 0; index < queue.length; index += 1) {
+      const current = queue[index];
+      members.push(current);
+      for (const next of [...neighbors.get(current)].sort(compareIds)) {
+        if (seen.has(next)) continue;
+        seen.add(next);
+        queue.push(next);
+      }
+    }
+    members.sort(compareIds);
+    components.push(members);
+  }
+  components.sort((left, right) =>
+    right.length - left.length || compareIds(left[0], right[0]),
+  );
+  return new Map(components.flatMap((members, index) =>
+    members.map((id) => [id, `component-${index}`]),
+  ));
+}
+
 function graphDistances(start, neighbors) {
   const distances = new Map([[start, 0]]);
   const queue = [start];
@@ -829,6 +858,18 @@ function graphDistances(start, neighbors) {
 // Farthest-point seeds spread through the prerequisite topology; multi-source
 // assignment then keeps closely related cards in the same visual neighborhood.
 function graphGroupKeys(graph) {
+  const neighbors = undirectedNeighbors(graph);
+  const componentKeys = weakComponentKeys(graph, neighbors);
+  const componentCount = new Set(componentKeys.values()).size;
+  const componentSizes = new Map();
+  for (const key of componentKeys.values()) {
+    componentSizes.set(key, (componentSizes.get(key) ?? 0) + 1);
+  }
+  const largestComponent = Math.max(0, ...componentSizes.values());
+  if (componentCount > 1 && largestComponent <= graph.nodes.length * 0.45) {
+    return { keys: componentKeys, inferred: true };
+  }
+
   const explicit = new Map(graph.nodes.map((node) => [node.id, explicitGraphGroupKey(node)]));
   const explicitKeys = new Set([...explicit.values()].filter(Boolean));
   if (explicitKeys.size > 1 || graph.nodes.length < 24) {
@@ -839,7 +880,6 @@ function graphGroupKeys(graph) {
   }
 
   const ordered = [...graph.nodes].sort((a, b) => compareIds(a.id, b.id));
-  const neighbors = undirectedNeighbors(graph);
   const targetGroups = Math.max(2, Math.min(12, Math.ceil(ordered.length / 20)));
   const firstSeed = [...ordered].sort((left, right) =>
     neighbors.get(right.id).size - neighbors.get(left.id).size || compareIds(left.id, right.id),
@@ -946,9 +986,7 @@ function webNodePositions(graph, metadata, options) {
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(node);
   }
-  const groupOrder = grouping.inferred
-    ? relationshipOrderedGroups(groups, graph, groupKeys)
-    : [...groups.keys()].sort(compareIds);
+  const groupOrder = relationshipOrderedGroups(groups, graph, groupKeys);
   const groupEntries = groupOrder.map((key) => [key, groups.get(key)]);
   const nodeArea = (options.nodeWidth + options.rowGap * 0.7) *
     (options.nodeHeight + options.rowGap * 0.7);
@@ -1056,6 +1094,68 @@ function webNodePositions(graph, metadata, options) {
     }
   }
 
+  // Open modest corridors for prerequisite strands before the final collision
+  // pass. This is deliberately bounded and deterministic: it moves only cards
+  // that sit inside the middle of an unrelated edge's direct corridor, while
+  // sharing a small counter-force across that edge's endpoints. The router can
+  // then use a gentle S instead of taking an extreme detour through another
+  // card. Forces are capped so dense decks expand rather than explode.
+  const corridorPasses = graph.nodes.length > 320 ? 4 : 7;
+  for (let pass = 0; pass < corridorPasses; pass += 1) {
+    const corridorForces = centers.map(() => ({ x: 0, y: 0 }));
+    let conflicts = 0;
+    for (const edge of springs) {
+      const source = centers[edge.source];
+      const target = centers[edge.target];
+      const dx = target.x - source.x;
+      const dy = target.y - source.y;
+      const lengthSquared = dx * dx + dy * dy;
+      if (lengthSquared < 1) continue;
+      const length = Math.sqrt(lengthSquared);
+      const normal = { x: -dy / length, y: dx / length };
+      const halfExtent =
+        Math.abs(normal.x) * options.nodeWidth / 2 +
+        Math.abs(normal.y) * options.nodeHeight / 2;
+      const clearance = halfExtent + 14;
+      for (let blocker = 0; blocker < centers.length; blocker += 1) {
+        if (blocker === edge.source || blocker === edge.target) continue;
+        const point = centers[blocker];
+        const amount = ((point.x - source.x) * dx + (point.y - source.y) * dy) /
+          lengthSquared;
+        if (amount <= 0.1 || amount >= 0.9) continue;
+        const closest = {
+          x: source.x + dx * amount,
+          y: source.y + dy * amount,
+        };
+        const signedDistance =
+          (point.x - closest.x) * normal.x +
+          (point.y - closest.y) * normal.y;
+        if (Math.abs(signedDistance) >= clearance) continue;
+        conflicts += 1;
+        const direction = signedDistance === 0
+          ? (stableUnit(`${orderedNodes[blocker].id}:${orderedNodes[edge.source].id}:${orderedNodes[edge.target].id}`) < 0.5 ? -1 : 1)
+          : Math.sign(signedDistance);
+        const push = Math.min(18, (clearance - Math.abs(signedDistance)) * 0.22);
+        const fx = normal.x * direction * push;
+        const fy = normal.y * direction * push;
+        corridorForces[blocker].x += fx;
+        corridorForces[blocker].y += fy;
+        corridorForces[edge.source].x -= fx * 0.1;
+        corridorForces[edge.source].y -= fy * 0.1;
+        corridorForces[edge.target].x -= fx * 0.1;
+        corridorForces[edge.target].y -= fy * 0.1;
+      }
+    }
+    for (let index = 0; index < centers.length; index += 1) {
+      const force = corridorForces[index];
+      const magnitude = Math.hypot(force.x, force.y);
+      const scale = magnitude > 22 ? 22 / magnitude : 1;
+      centers[index].x += force.x * scale;
+      centers[index].y += force.y * scale;
+    }
+    if (conflicts === 0) break;
+  }
+
   for (let pass = 0; pass < 260; pass += 1) {
     let collisions = 0;
     for (let first = 0; first < centers.length; first += 1) {
@@ -1109,6 +1209,24 @@ function webNodePositions(graph, metadata, options) {
       point.x = midpoint + (point.x - midpoint) * expansion;
     });
   }
+
+  // Give dense prerequisite webs a little more breathing room without making
+  // sparse decks feel empty. This uniform center scaling preserves the web's
+  // topology and aspect while reducing how often a strand must squeeze past a
+  // full-size card. The cap keeps Fit useful on the largest catalog courses.
+  const edgeDensity = graph.edges.length / Math.max(1, graph.nodes.length);
+  const spacingScale = 1 + Math.min(
+    0.045,
+    Math.max(0, (edgeDensity - 0.8) * 0.03),
+  );
+  const spacingMidX = (Math.min(...centers.map((point) => point.x)) +
+    Math.max(...centers.map((point) => point.x))) / 2;
+  const spacingMidY = (Math.min(...centers.map((point) => point.y)) +
+    Math.max(...centers.map((point) => point.y))) / 2;
+  centers.forEach((point) => {
+    point.x = spacingMidX + (point.x - spacingMidX) * spacingScale;
+    point.y = spacingMidY + (point.y - spacingMidY) * spacingScale;
+  });
 
   const minimumX = Math.min(...centers.map((point) => point.x - options.nodeWidth / 2));
   const minimumY = Math.min(...centers.map((point) => point.y - options.nodeHeight / 2));
@@ -1766,6 +1884,8 @@ const WEB_CURVE_AMPLITUDES = Object.freeze([
   0.1, -0.1,
   0.15, -0.15,
   0.21, -0.21,
+  0.29, -0.29,
+  0.38, -0.38,
 ]);
 
 function rectangleBoundaryPoint(node, toward) {
@@ -1808,7 +1928,7 @@ function routeCurvedEdges(graph, nodes, metadata) {
     const scoreSamples = graph.nodes.length > 200 ? 18 : 26;
     const candidates = amplitudes.map((amplitude, curveRank) => {
       const bend = Math.sign(amplitude) * Math.min(
-        180,
+        300,
         Math.max(12, distance * Math.abs(amplitude)),
       );
       const controlA = {
@@ -1862,7 +1982,10 @@ function routeCurvedEdges(graph, nodes, metadata) {
   });
   // In unusually dense graphs, node clearance dominates: a locally attractive
   // crossing can otherwise steer a curve through several unrelated cards.
-  const useCrossingRefinement = edgeSpecs.length <= graph.nodes.length * 2;
+  const useCrossingRefinement = edgeSpecs.length <= Math.max(
+    graph.nodes.length * 2,
+    360,
+  );
   const selectedRoutes = [];
   for (const spec of selectionOrder) {
     const candidates = spec.candidates.map((candidate) => {
@@ -1887,14 +2010,16 @@ function routeCurvedEdges(graph, nodes, metadata) {
     });
     const best = candidates.sort(useCrossingRefinement
       ? (left, right) =>
-        left.drawingCost - right.drawingCost ||
         left.nodeHits - right.nodeHits ||
+        Math.floor(left.curveRank / 2) - Math.floor(right.curveRank / 2) ||
         left.crossings - right.crossings ||
-        Math.abs(left.curveRank) - Math.abs(right.curveRank) ||
+        left.drawingCost - right.drawingCost ||
+        left.curveRank - right.curveRank ||
         left.length - right.length
       : (left, right) =>
         left.nodeHits - right.nodeHits ||
-        Math.abs(left.curveRank) - Math.abs(right.curveRank) ||
+        Math.floor(left.curveRank / 2) - Math.floor(right.curveRank / 2) ||
+        left.curveRank - right.curveRank ||
         left.length - right.length,
     )[0];
     selected.set(spec.id, best);

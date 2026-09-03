@@ -10,7 +10,7 @@ import {
   resolveAccountPersistencePolicy,
 } from '../integration/account-persistence-release.mjs';
 
-const WEBSITE_ASSET_REVISION = 'v40-learner-graph';
+const WEBSITE_ASSET_REVISION = 'v43-real-progress-graph';
 import { selectWebsiteEntry } from '../integration/site-selection.mjs';
 
 export const dynamic = 'force-dynamic';
