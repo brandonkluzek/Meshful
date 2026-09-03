@@ -7,7 +7,7 @@
     "release/validation.json"
   ],
   "file_count": 604,
-  "total_bytes": 92862885,
+  "total_bytes": 92862886,
   "files": [
     {
       "path": ".github/CODEOWNERS",
@@ -126,8 +126,8 @@
     },
     {
       "path": "docs/RELEASES.md",
-      "bytes": 2637,
-      "sha256": "390a3ff819d162e39f76be37a0c299c4590d442a665d3e56fb430fd0e7e73e2b"
+      "bytes": 2638,
+      "sha256": "1a4b790ac5eb4cdbda04d1435d1afad6020f1da4dfcb7361ba445d214fd8bf36"
     },
     {
       "path": "package.json",
