@@ -7,7 +7,7 @@
     "release/validation.json"
   ],
   "file_count": 599,
-  "total_bytes": 92772911,
+  "total_bytes": 92773149,
   "files": [
     {
       "path": ".github/CODEOWNERS",
@@ -46,8 +46,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 1103,
-      "sha256": "ea2a177af4e57d4b8d62c4750443f55513cb136b051b29d17f4a812191085cf8"
+      "bytes": 1341,
+      "sha256": "27228e98a4cf462c2d10fc30574b96a1aa44093cf07280bba9ef0c22fc3ab8e2"
     },
     {
       "path": ".gitignore",

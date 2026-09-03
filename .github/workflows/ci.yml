@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Use Node.js 22.13
         uses: actions/setup-node@v7
@@ -42,6 +42,11 @@ jobs:
 
       - name: Run complete test suite
         run: npm test
+        env:
+          # Keep calendar-relative assertions on Meshful's release timezone and
+          # avoid GitHub's generic "runner" username becoming a scan keyword.
+          TZ: America/Chicago
+          HOME: /tmp/meshful-ci-home
 
       - name: Run focused WebMCP tests
         run: npm run verify:webmcp
