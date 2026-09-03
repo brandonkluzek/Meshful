@@ -837,7 +837,7 @@ svg {
 }
 
 .brand-copy strong {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 670;
 }
 
@@ -1553,7 +1553,7 @@ svg {
   min-height: 36px;
   padding: 0 12px;
   color: var(--ink-2);
-  background: transparent;
+  background: var(--surface-1);
   border: 1px solid var(--line);
   border-radius: 99px;
   font-size: 13px;
@@ -1919,9 +1919,15 @@ svg {
   margin: 4px 0 8px;
 }
 
-.deck-card .mastery-row {
+.deck-card > .mastery-row {
+  margin-top: auto;
+  padding-top: 24px;
   flex-wrap: wrap;
   gap: 6px 12px;
+}
+
+.deck-card .card-actions {
+  margin-top: 0;
 }
 
 .session-shell {
@@ -4699,9 +4705,9 @@ body[data-route="graph"] .main { min-height: 100dvh; }
     transform: none !important;
   }
 }
-/* Final local graph cascade. Keep these rules last while this isolated pass is
+/* Final local deck-action and graph cascade. Keep these rules last while this isolated pass is
    reviewed so older graph experiments cannot leak back into the surface. */
-.deck-card .card-actions a[href^="#graph/"] {
+.deck-card .card-actions .button:not(.button-primary):not(.button-danger) {
   color: #f6f7f8;
   background: #2b2f35;
   border-color: #7e8691;

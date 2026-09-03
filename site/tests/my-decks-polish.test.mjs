@@ -29,9 +29,21 @@ test("My Decks keeps scheduling jargon out of prominent deck cards", () => {
   assert.doesNotMatch(card, /Example progress|Saved example/);
   assert.match(card, /<a class="button button-sm" href="#graph\//);
   assert.doesNotMatch(card, /button button-sm button-quiet" href="#graph\//);
-  assert.match(css, /\.deck-card \.card-actions \.button\s*\{[\s\S]*color:\s*var\(--ink-0\);[\s\S]*background:\s*var\(--surface-2\);[\s\S]*border-color:\s*var\(--line-strong\);[\s\S]*opacity:\s*1;/);
   assert.match(css, /\.mastery-row span\s*\{[\s\S]*color:\s*var\(--ink-1\);[\s\S]*font-size:\s*14px;/);
   assert.match(css, /\.card-facts\s*\{[\s\S]*color:\s*var\(--ink-1\);[\s\S]*font-size:\s*14px;/);
+});
+
+test("My Decks bottom-aligns metadata and gives Graph and Archive one bright secondary surface", () => {
+  const card = sourceBetween("function personalDeckCard", "function renderLibrary");
+
+  assert.match(card, /button button-sm button-primary[^>]*data-start-deck/);
+  assert.match(card, /href="#graph\//);
+  assert.match(card, /button button-sm" type="button" data-request-archive/);
+  assert.match(css, /\.deck-card > \.mastery-row\s*\{[^}]*margin-top:\s*auto;[^}]*padding-top:\s*24px;[^}]*flex-wrap:\s*wrap;[^}]*gap:\s*6px 12px;/s);
+  assert.match(css, /\.deck-card \.card-actions\s*\{[^}]*margin-top:\s*0;/s);
+  assert.match(css, /\.deck-card \.card-actions \.button:not\(\.button-primary\):not\(\.button-danger\)\s*\{[^}]*color:\s*#f6f7f8;[^}]*background:\s*#2b2f35;[^}]*border-color:\s*#7e8691;/s);
+  assert.match(css, /\.deck-card \.card-actions \.button\.button-primary\s*\{[^}]*color:\s*var\(--paper-ink\);[^}]*background:\s*var\(--paper\);[^}]*border-color:\s*var\(--paper\);/s);
+  assert.doesNotMatch(css, /\.deck-card \.card-actions a\[href\^="#graph\/"\]/);
 });
 
 test("archived empty state uses deck imagery and direct restore copy", () => {

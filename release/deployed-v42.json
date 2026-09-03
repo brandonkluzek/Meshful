@@ -1,0 +1,65 @@
+{
+  "schema_version": "meshful.deployed-source.v1",
+  "observed_at": "2026-09-03",
+  "sites": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "saved_version": 42,
+    "version_id": "appgprj_6a9334b99f20819195ece80ebe97016b~appgver_c7665147027c8191b042475e53028c76",
+    "deployment_id": "appgdep_6a99a901dc1081918f0076dcc84aa75f",
+    "environment_revision": 2,
+    "deployment_status": "succeeded",
+    "deployment_updated_at": "2026-09-03T17:06:37.804574Z",
+    "public_url": "https://meshful.ai",
+    "access_mode": "public"
+  },
+  "source": {
+    "commit": "dd578874933241eb8d679f10e3d5726c2ad6b855",
+    "tree": "c6bddcda6f3224b9c76163d0f1b8f9367b68e934",
+    "stored_archive_sha256": "cdf19271608a79a160ee2675e39340061da6f8b94331b035d7157836c5ca46b8",
+    "sites_content_hash": "sha256:2cfc09b89c27f425074d0ac68c82365fa30796bdad62daad170f8ee4523f91dd",
+    "stored_archive_files": 425,
+    "stored_archive_bytes": 92528640,
+    "repository_path": "site"
+  },
+  "live_runtime_sha256": {
+    "site/public/study/js/webmcp.js": "aadd6c476bb54ff83fb7c121d7a3723b36c95b2b8357003652b2c4a08892ad08",
+    "site/public/study/js/deck-build-guide.js": "6444795b10e082b119e8987c4a7bb4ce549d1dcb8e6923060c1542fab3280138",
+    "site/public/study/js/grading-guide.js": "93a139c32205b224fccf6458e7cf91f200cc3aa7e182ef33830878b9b2119d12",
+    "site/public/study/js/store.js": "351798678488325d903bf5a1d092ebcb6843b1696426cf5b4f7ddfa2f2f3634f",
+    "site/public/study/js/app.js": "8512be2afd37f425e42d8abc9cd1746ec579ad085e80c8915bb6b03424d93b5b"
+  },
+  "validation": {
+    "focused_tests_passed": 64,
+    "focused_tests_failed": 0,
+    "predeploy_tests_passed": 196,
+    "predeploy_tests_failed": 0,
+    "d1_and_selection_tests_passed": 10,
+    "d1_and_selection_tests_failed": 0,
+    "lint": "passed",
+    "build": "passed",
+    "dist_hosting_and_migration_parity": "passed",
+    "compiled_worker_desktop": "passed at 1075x750",
+    "compiled_worker_mobile": "passed at 390x844",
+    "public_live_wide": "passed at 1902x1061 with zero console errors",
+    "public_live_mobile": "passed at 390x844 with zero console errors",
+    "signed_in_account_load": "passed read-only",
+    "live_native_webmcp_tools": 13,
+    "live_runtime_hash_parity": "passed",
+    "production_learner_writes_performed": false
+  },
+  "included": [
+    "canonical Reveal and Skip for guest and signed-in Study",
+    "manual self-grading with Again, Hard, Good, and Easy",
+    "simplified and continuous Study flow",
+    "first-run and activity copy",
+    "mobile and nonfunctional-control fixes",
+    "compact 13-tool WebMCP discovery metadata",
+    "conflict-free Graph and My Decks visual polish"
+  ],
+  "excluded_successors": [
+    "permanent deletion",
+    "demo and privacy v42 work in progress",
+    "later Graph v5 and perfection work",
+    "unfinished cosmetic work"
+  ]
+}

@@ -1375,25 +1375,12 @@ async function submitNonAnswerCard(control, context) {
         !current.current_card || localReviewedCard(snapshot.personalDecks?.[session.deckId], current.current_card.card_id)?.id !== session.currentCardId) {
       throw new Error("This card changed. Reload it before continuing.");
     }
-    const result = await uiMutation("submitGrade", {
+    const result = await uiMutation("submitNonAnswerGrade", {
       session_id: session.id,
       expected_session_revision: current.session.session_revision,
       card_id: current.current_card.card_id,
       expected_card_revision: current.current_card.card_revision,
       attempt_kind: action,
-      answer_text: null,
-      answer_origin: "website",
-      rating: "again",
-      rubric_evidence: (current.current_card.required_concepts ?? []).map((item) => ({
-        rubric_item_id: item.rubric_item_id,
-        status: "missed",
-        note: action === "reveal" ? "Answer revealed before responding." : "Skipped before answering.",
-      })),
-      feedback: action === "reveal"
-        ? "You revealed this card before answering. Review the definition and try it again."
-        : "You skipped this card before answering. It was marked Again.",
-      misconceptions: [],
-      confidence: 1,
       idempotency_key: actionId(`${action}-card`),
     }, context);
     if (!result || !isViewCurrent(context)) return;

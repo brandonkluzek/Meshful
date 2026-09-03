@@ -760,7 +760,9 @@ serialTest("a dismissed help nudge stays quiet after the next card in the same s
 
 serialTest("Reveal and Skip obey independent capabilities and keep distinct committed presentation", async () => {
   const capabilityStore = createStudyStore({ catalog: [], storage: createMemoryStorage() });
-  const capabilities = capabilityStore.getSnapshot().capabilities ?? {};
+  const capabilities = capabilityStore.inspectAppState().capabilities ?? {};
+  assert.equal(capabilities.revealed_attempts, true);
+  assert.equal(capabilities.skipped_attempts, true);
   for (const action of ["reveal", "skip"]) {
     const fixture = freshFixture(2, `${action}-capability`);
     const selector = action === "reveal" ? "[data-reveal-answer]" : "[data-skip-card]";
@@ -769,14 +771,7 @@ serialTest("Reveal and Skip obey independent capabilities and keep distinct comm
       const before = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
       const scene = ui.view.querySelector("[data-study-card-scene]");
       const control = ui.view.querySelector(selector);
-      if (capabilities[capability] !== true) {
-        assert.ok(!control || control.disabled === true || control.hasAttribute("disabled") || control.getAttribute("aria-disabled") === "true");
-        assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), before);
-        assert.equal(scene.classList.contains("is-flipped"), false);
-        assert.equal(scene.querySelector("[data-study-definition]").textContent, "");
-        return;
-      }
-
+      assert.equal(capabilities[capability], true);
       assert.ok(control);
       await ui.click(selector);
       await ui.flush();
@@ -808,7 +803,14 @@ serialTest("Reveal and Skip obey independent capabilities and keep distinct comm
       assert.equal(persisted.reviewsApplied, 1);
       assert.equal(persisted.history.filter((event) => event.transition === "grade_submitted").length, 1);
       assert.equal(persisted.history.at(-1).attempt_kind, action);
+      assert.equal(persisted.history.at(-1).answer_revealed, action === "reveal");
       assert.equal(persisted.history.at(-1).rating, "again");
+      for (const forbidden of ["answer_text", "answer_origin", "rubric_evidence", "feedback", "misconceptions", "confidence"]) {
+        assert.equal(Object.hasOwn(persisted.history.at(-1), forbidden), false, `${action} must not fabricate ${forbidden}`);
+      }
+      const receipt = Object.values(committed.actionReceipts)
+        .find((candidate) => candidate.result?.receipt?.operation === "submit_non_answer_grade");
+      assert.ok(receipt, `${action} has a typed non-answer receipt`);
       if (action === "reveal") {
         assert.equal(scene.classList.contains("is-flipped"), true);
         assert.match(scene.querySelector("[data-study-definition]").textContent, /PRIVATE.?DEFINITION.?1/);
@@ -837,14 +839,11 @@ serialTest("Reveal and Skip obey independent capabilities and keep distinct comm
 
 serialTest("one confirmed non-answer warning covers Reveal and Skip for that session", async () => {
   const capabilityStore = createStudyStore({ catalog: [], storage: createMemoryStorage() });
-  const capabilities = capabilityStore.getSnapshot().capabilities ?? {};
+  const capabilities = capabilityStore.inspectAppState().capabilities ?? {};
+  assert.equal(capabilities.revealed_attempts, true);
+  assert.equal(capabilities.skipped_attempts, true);
   const fixture = freshFixture(3, "shared-nonanswer-warning");
   await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}` }, async (ui) => {
-    if (capabilities.revealed_attempts !== true || capabilities.skipped_attempts !== true) {
-      assert.equal(ui.view.querySelector("[data-study-nonanswer-warning]"), null);
-      return;
-    }
-
     const before = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
     await ui.click("[data-reveal-answer]");
     await ui.flush();
@@ -907,6 +906,9 @@ serialTest("session presentation exposes readable controls and a reduced-motion 
   assert.match(app, /if \(view\.querySelector\("\[data-study-nonanswer-warning\]"\)\) \{[\s\S]*?event\.preventDefault\(\);[\s\S]*?closeStudyNonAnswerConfirmation\(\{ restoreFocus: true \}\)/);
   assert.doesNotMatch(app.match(/function showStudyNonAnswerConfirmation[\s\S]*?\n\}/)?.[0] ?? "", /deckDialogContent|showModal/);
   assert.match(app, /attempt_kind: action/);
+  assert.match(app, /uiMutation\("submitNonAnswerGrade", \{/);
+  const nonAnswerSource = app.match(/async function submitNonAnswerCard[\s\S]*?\n\}/)?.[0] ?? "";
+  assert.doesNotMatch(nonAnswerSource, /answer_text|answer_origin|rubric_evidence|feedback:|misconceptions|confidence:/);
   assert.match(app, /if \(presentationAction === "skip"\)[\s\S]*Moving to the next card without revealing the answer\.[\s\S]*scene\.classList\.add\("is-departing"\);/);
   assert.match(app, /renderDefinition\(definition,[\s\S]*revealStudyCardFaces\(scene\);[\s\S]*data-study-advance-pending/);
   assert.match(app, /next\.dataset\.advanceStudyCard = "true";[\s\S]*next\.textContent = nextLabel;[\s\S]*actions\.replaceChildren\(next\);[\s\S]*actions\.classList\.add\("has-study-next"\);/);

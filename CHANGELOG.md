@@ -12,6 +12,16 @@ version numbers follow the package version until tagged releases begin.
 - Citation, support, conduct, architecture, and release-process documentation
 - A visual project header and public-release status in the README
 
+## 0.1.2 - 2026-09-03
+
+### Changed
+
+- Reveal and Skip now record their distinct non-answer semantics atomically in
+  both guest and signed-in study sessions
+- Account-backed grading preserves the same retry-safe scheduling and receipt
+  boundary for answer, reveal, skip, and manual self-grading actions
+- The public source mirror now matches the exact deployed Sites v42 tree
+
 ## 0.1.1 - 2026-09-03
 
 ### Added

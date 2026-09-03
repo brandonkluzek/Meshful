@@ -11,12 +11,12 @@ under `site/` is not promoted merely because it builds locally.
 
 ## Current deployed boundary
 
-The current public product snapshot is Sites v41:
+The current public product snapshot is Sites v42:
 
-- public repository mirror commit: `e0fdc27546aba38a43bf5f0eb04291b6d4e4321f`
-- Website source commit: `7e1e443d4a3e92b156c591443b36f3ad35dd325c`
-- Website source tree: `37669128d41bf03ba7a1db64ef4d6ba27518d8a6`
-- deployment and live-asset receipt: [`release/deployed-v41.json`](../release/deployed-v41.json)
+- public repository mirror commit: recorded by the following metadata commit
+- Website source commit: `dd578874933241eb8d679f10e3d5726c2ad6b855`
+- Website source tree: `c6bddcda6f3224b9c76163d0f1b8f9367b68e934`
+- deployment and live-asset receipt: [`release/deployed-v42.json`](../release/deployed-v42.json)
 
 The repository manifest records the SHA-256 and byte length of every admitted
 tracked file. Generated output, environment files, databases, logs, private

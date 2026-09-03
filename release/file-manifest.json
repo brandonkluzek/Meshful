@@ -6,8 +6,8 @@
     "release/file-manifest.sha256",
     "release/validation.json"
   ],
-  "file_count": 604,
-  "total_bytes": 92862886,
+  "file_count": 607,
+  "total_bytes": 92905342,
   "files": [
     {
       "path": ".github/CODEOWNERS",
@@ -56,8 +56,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1601,
-      "sha256": "552ba3a36fd4d90d690491cf909dde6d289d61e675e7ec4b82b084ca11bd96a2"
+      "bytes": 1979,
+      "sha256": "797ee3e2c2664197e934d5883f3002a132aac975bef1eabc43d51803636b2e70"
     },
     {
       "path": "CITATION.cff",
@@ -102,7 +102,7 @@
     {
       "path": "README.md",
       "bytes": 8285,
-      "sha256": "8d06b905da0f448d509c340a8180c2dbc6ca1619c279dc1fa9000e6d618c7064"
+      "sha256": "daf3681106b74540e7f4f3edaa711c65438aa216d6c6772263760d7041fe3c4a"
     },
     {
       "path": "SECURITY.md",
@@ -126,8 +126,8 @@
     },
     {
       "path": "docs/RELEASES.md",
-      "bytes": 2638,
-      "sha256": "1a4b790ac5eb4cdbda04d1435d1afad6020f1da4dfcb7361ba445d214fd8bf36"
+      "bytes": 2637,
+      "sha256": "cc12cb4e868366714855622ad6c8186c7e0765954898e1673589648a1310fc0a"
     },
     {
       "path": "package.json",
@@ -143,6 +143,11 @@
       "path": "release/deployed-v41.json",
       "bytes": 2230,
       "sha256": "002a5f2109a176dcfa250e9d8290396e79a7e7dd70eeab884135fbefb535d2b9"
+    },
+    {
+      "path": "release/deployed-v42.json",
+      "bytes": 2863,
+      "sha256": "73de200c64e36ceef47034d670ad7bebff5096d4e598f6e5e3b15270c0ea3c70"
     },
     {
       "path": "scripts/build-file-manifest.mjs",
@@ -691,8 +696,8 @@
     },
     {
       "path": "site/integration/SELECTED_INPUTS.json",
-      "bytes": 34640,
-      "sha256": "b6130386518bfbfbfd7da7396599618930c488fd9d0300536d03e8058e972b56"
+      "bytes": 39933,
+      "sha256": "74bac086a0f7fda994d44c50dc201c692693cbb4ddfc1a94d2768ecdd127a277"
     },
     {
       "path": "site/integration/account-persistence-release.mjs",
@@ -1026,8 +1031,8 @@
     },
     {
       "path": "site/integration/backend/v7/src/canonical-engine.mjs",
-      "bytes": 28710,
-      "sha256": "100890c27809c5c8fd891e36855198d99d2d8162168569fb87cdd7617b6303b9"
+      "bytes": 31187,
+      "sha256": "e763274c8d451266a44423dfa221837895fb973c507eda4b8a46063856b11fa8"
     },
     {
       "path": "site/integration/backend/v7/src/d1-repository.mjs",
@@ -1036,8 +1041,8 @@
     },
     {
       "path": "site/integration/backend/v7/src/durable-client.mjs",
-      "bytes": 19692,
-      "sha256": "43ef020efb976d3ca816912208f0dae30a0513107c740ecca976e5416fe1a8b7"
+      "bytes": 19772,
+      "sha256": "c663a03e9da8bb914ffe69908287eda7c81cc3577aeab89d604f694ee8cb14a9"
     },
     {
       "path": "site/integration/backend/v7/src/http-handler.mjs",
@@ -1051,8 +1056,8 @@
     },
     {
       "path": "site/integration/backend/v7/src/learner-service.mjs",
-      "bytes": 19822,
-      "sha256": "ef2b265d7d7ca18631d089d6a7d484220efbe26ddf90a17aabd007593193aa12"
+      "bytes": 19851,
+      "sha256": "3577de71e273215f5c9ff20f964d77a398cf4f4b37a5fbec2abf6945b6fe3b17"
     },
     {
       "path": "site/integration/backend/v7/src/writer-client.mjs",
@@ -1091,8 +1096,8 @@
     },
     {
       "path": "site/integration/core/js/store.js",
-      "bytes": 226440,
-      "sha256": "289dc8f435f1d4a791671ea8a9e2e1f45b5e9b9c400c68d9d60651024a148d06"
+      "bytes": 231582,
+      "sha256": "351798678488325d903bf5a1d092ebcb6843b1696426cf5b4f7ddfa2f2f3634f"
     },
     {
       "path": "site/integration/core/js/streak.js",
@@ -1276,8 +1281,8 @@
     },
     {
       "path": "site/public/study/backend/v7/src/durable-client.mjs",
-      "bytes": 19692,
-      "sha256": "43ef020efb976d3ca816912208f0dae30a0513107c740ecca976e5416fe1a8b7"
+      "bytes": 19772,
+      "sha256": "c663a03e9da8bb914ffe69908287eda7c81cc3577aeab89d604f694ee8cb14a9"
     },
     {
       "path": "site/public/study/backend/v7/src/writer-client.mjs",
@@ -2421,8 +2426,8 @@
     },
     {
       "path": "site/public/study/js/account-runtime.js",
-      "bytes": 42727,
-      "sha256": "3796cb59e380c3fc2209a8164e7560b78978b12d90fb065732eb9ab7aad4b3de"
+      "bytes": 42802,
+      "sha256": "19cb1a00ff09cbe2365b39e590648b90b15d488bcb3a85edc2105f068035f709"
     },
     {
       "path": "site/public/study/js/account-snapshot.js",
@@ -2431,8 +2436,8 @@
     },
     {
       "path": "site/public/study/js/app.js",
-      "bytes": 130396,
-      "sha256": "eb2777e9f0a065d4e60579a276c12b710498acaf4a9e7e8093f41bbbcac0e938"
+      "bytes": 129802,
+      "sha256": "8512be2afd37f425e42d8abc9cd1746ec579ad085e80c8915bb6b03424d93b5b"
     },
     {
       "path": "site/public/study/js/browser-workspace.js",
@@ -2521,8 +2526,8 @@
     },
     {
       "path": "site/public/study/js/store.js",
-      "bytes": 226440,
-      "sha256": "289dc8f435f1d4a791671ea8a9e2e1f45b5e9b9c400c68d9d60651024a148d06"
+      "bytes": 231582,
+      "sha256": "351798678488325d903bf5a1d092ebcb6843b1696426cf5b4f7ddfa2f2f3634f"
     },
     {
       "path": "site/public/study/js/streak.js",
@@ -2541,8 +2546,8 @@
     },
     {
       "path": "site/public/study/styles.css",
-      "bytes": 103005,
-      "sha256": "7fd2e7668dc9e1fecb24f6baec44e0e60cd65c87c19f24b7ce2ab2a8a84e3d1b"
+      "bytes": 103146,
+      "sha256": "1bd93472c870cd68935a3d2c262308143105ed2343c9f5b2000fe24e886c5938"
     },
     {
       "path": "site/public/study/vendor/katex/LICENSE",
@@ -2875,6 +2880,11 @@
       "sha256": "cc14d311ef4213890f70c1e4b71c65fad5157304372d6cd05ae7162625cacb4d"
     },
     {
+      "path": "site/tests/account-nonanswer-d1.test.mjs",
+      "bytes": 8049,
+      "sha256": "a3956c3a9c39d96e16fc3d19b22d7afc79e3ab5dfbd16a61a6b70311b6133001"
+    },
+    {
       "path": "site/tests/account-runtime-busy.test.mjs",
       "bytes": 9466,
       "sha256": "54dbb8cc96a8cd5d0ab1b7843923003f7196da0bfa4d767cb67e7936269c2874"
@@ -2887,7 +2897,7 @@
     {
       "path": "site/tests/account-wrapper.test.mjs",
       "bytes": 21611,
-      "sha256": "b6c4e2d5ace87eedd911d7ac47922f8868be64c5a5d62f82b66f0856c532be14"
+      "sha256": "43a3fbd937c3f4f73c94bfdb5398239e9a2a656c430aac3f7b5cae52f1358751"
     },
     {
       "path": "site/tests/account-writer-bridge.test.mjs",
@@ -2907,7 +2917,7 @@
     {
       "path": "site/tests/branding.test.mjs",
       "bytes": 3605,
-      "sha256": "e9a8fcaafbcb608d079e64d44f90cb3d9b4fe065c2d576a1d2c6bad7da6e8faa"
+      "sha256": "70f143ce2026b25c67ab9c3490ec542368fbbb8152dec1dda685172b9df7ce12"
     },
     {
       "path": "site/tests/catalog-release-routing.test.mjs",
@@ -2941,8 +2951,8 @@
     },
     {
       "path": "site/tests/library-card.test.mjs",
-      "bytes": 8701,
-      "sha256": "969ba0ece66bd528e99bfadb7c86d0ec85952a68091b86001793520ea1dc1c32"
+      "bytes": 8951,
+      "sha256": "50924f73a5a6423bdfc0238238a58b09cbdc950dbf994f11e500fa6640187e43"
     },
     {
       "path": "site/tests/library-graph-preview.test.mjs",
@@ -2986,8 +2996,13 @@
     },
     {
       "path": "site/tests/my-decks-polish.test.mjs",
-      "bytes": 7872,
-      "sha256": "4e6e9a624a865b1dc71399ab7c25170a1c10c58ec4b213a55666944239e7635e"
+      "bytes": 8749,
+      "sha256": "c1279ad43975c4b24edfda8cdf7da661a7813260a9e88b649cd4a1764cadd13f"
+    },
+    {
+      "path": "site/tests/non-answer-grade.test.mjs",
+      "bytes": 9163,
+      "sha256": "d2b217f909ba2ae64ba6243fb1e1bf807ea0648d2f84c59af9b3de67db5723d4"
     },
     {
       "path": "site/tests/preferred-demo-continuous.test.mjs",
@@ -2996,8 +3011,8 @@
     },
     {
       "path": "site/tests/release-selection.test.mjs",
-      "bytes": 23674,
-      "sha256": "b2dd7b891be4f24bb50b6788cef866cef887385589b9250343cde9ddf031b6a7"
+      "bytes": 26198,
+      "sha256": "e3a5fe6dd0f70ecc5e0385e3352431757af205bf6c673c803075f12f73211168"
     },
     {
       "path": "site/tests/startup-view-state.test.mjs",
@@ -3006,8 +3021,8 @@
     },
     {
       "path": "site/tests/study-card-ui-successor.test.mjs",
-      "bytes": 50147,
-      "sha256": "c1ba3a4bf0f9a100846014e744c5dcc7009fd057f25206e3e50d1e0f32368975"
+      "bytes": 50635,
+      "sha256": "c84d3cb313412823f749fbfd319337af5f989a99295218d7e1e1d830cae07eb4"
     },
     {
       "path": "site/tests/study-home-polish.test.mjs",

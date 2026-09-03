@@ -36,7 +36,9 @@ test("Library browse cards keep the count and actions without crowding the grid 
   assert.match(css, /\.library-card \.card-actions > :last-child\s*\{\s*flex:\s*0 0 104px;\s*white-space:\s*nowrap;/);
   assert.match(css, /\.library-card \.card-actions \.button\s*\{\s*min-height:\s*40px;\s*font-size:\s*14px;/);
   assert.match(css, /\.filter-pills\[aria-label="Library subjects"\]\s*\{\s*margin-bottom:\s*22px;/);
-  assert.match(css, /\.filter-pill\s*\{[\s\S]*min-height:\s*36px;[\s\S]*font-size:\s*13px;/);
+  assert.match(css, /\.filter-pill\s*\{[\s\S]*min-height:\s*36px;[\s\S]*background:\s*var\(--surface-1\);[\s\S]*font-size:\s*13px;/);
+  assert.doesNotMatch(css, /\.filter-pill\s*\{[^}]*background:\s*transparent;/s);
+  assert.match(css, /\.filter-pill:hover,\s*\.filter-pill\[aria-pressed="true"\]\s*\{[^}]*background:\s*var\(--surface-2\);/s);
   assert.match(css, /\.library-evidence-filter\s*\{[^}]*margin-bottom:\s*22px;/s);
   assert.match(css, /\.dialog-actions\s*\{[^}]*flex-wrap:\s*wrap;/s);
   assert.match(css, /\.term-table\s*\{[^}]*font-size:\s*14px;/s);

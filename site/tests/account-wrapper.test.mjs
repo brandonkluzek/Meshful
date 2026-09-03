@@ -113,7 +113,7 @@ test("the generated server owns the mutually exclusive browser entry selection",
     readFile(new URL("../public/meshful-header-mark.svg", import.meta.url), "utf8"),
   ]);
   assert.match(styles, /\.brand-mark\s*\{[^}]*width:\s*42px;[^}]*height:\s*42px;/s);
-  assert.match(styles, /\.brand-copy strong\s*\{[^}]*font-size:\s*18px;/s);
+  assert.match(styles, /\.brand-copy strong\s*\{[^}]*font-size:\s*20px;/s);
   assert.equal([...mark.matchAll(/<use href="#arrow"/g)].length, 2);
   assert.match(mark, /r="1\.65"/);
   assert.match(mark, /r="1\.75"/);

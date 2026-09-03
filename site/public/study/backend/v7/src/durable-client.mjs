@@ -7,12 +7,14 @@ import { requestIdentity } from "../../v2/src/request-identity.mjs";
 
 const WRITE_METHODS = Object.freeze({
   ...V3_WRITE_METHODS,
+  submit_non_answer_grade: "submitNonAnswerGrade",
   submit_self_grade: "submitSelfGrade",
   set_deck_archived: "setDeckArchived",
 });
 const STUDY_WRITE_OPERATIONS = new Set([
   "start_study_session",
   "submit_grade",
+  "submit_non_answer_grade",
   "submit_self_grade",
   "finish_study_session",
 ]);

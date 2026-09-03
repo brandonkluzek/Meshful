@@ -13,6 +13,7 @@ import { assertJsonTextBudget } from "../../v2/src/json-budget.mjs";
 export const READ_METHODS = V3_READ_METHODS;
 export const WRITE_METHODS = Object.freeze({
   ...V3_WRITE_METHODS,
+  submit_non_answer_grade: "submitNonAnswerGrade",
   submit_self_grade: "submitSelfGrade",
   set_deck_archived: "setDeckArchived",
 });
@@ -63,10 +64,33 @@ const SELF_GRADE_SCHEMA = {
     "expected_session_revision", "rating", "idempotency_key",
   ],
 };
+const NON_ANSWER_GRADE_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    session_id: {
+      type: "string", minLength: 1, maxLength: 257,
+      pattern: "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+    },
+    card_id: {
+      type: "string", minLength: 3, maxLength: 257,
+      pattern: "^[a-z0-9](?:[a-z0-9_-]{0,127})\\.[a-z0-9](?:[a-z0-9_.-]{0,127})$",
+    },
+    expected_card_revision: { type: "integer", minimum: 1 },
+    expected_session_revision: { type: "integer", minimum: 1 },
+    attempt_kind: { enum: ["reveal", "skip"] },
+    idempotency_key: { type: "string", minLength: 1, maxLength: 128 },
+  },
+  required: [
+    "session_id", "card_id", "expected_card_revision",
+    "expected_session_revision", "attempt_kind", "idempotency_key",
+  ],
+};
 
 function inputSchema(operation, schemas) {
   if (operation === "add_library_deck") return INSTALL_SCHEMA;
   if (operation === "set_deck_archived") return ARCHIVE_SCHEMA;
+  if (operation === "submit_non_answer_grade") return NON_ANSWER_GRADE_SCHEMA;
   if (operation === "submit_self_grade") return SELF_GRADE_SCHEMA;
   return schemas[operation].input;
 }
@@ -120,6 +144,33 @@ function validateSelfGradeResult(result, args) {
     && result.receipt.idempotency_key === args.idempotency_key
     && result.receipt.replayed === false,
   "ENGINE_INVARIANT", "Self-grade receipt differs from the committed action", 503);
+}
+
+function validateNonAnswerGradeResult(result, args) {
+  assertJson(result);
+  exactKeys(result, [
+    "review_id", "session_id", "card_id", "card_revision", "attempt_kind",
+    "answer_revealed", "rating", "schedule", "reviewed_card", "session",
+    "next_card", "receipt",
+  ], [
+    "review_id", "session_id", "card_id", "card_revision", "attempt_kind",
+    "answer_revealed", "rating", "schedule", "session", "receipt",
+  ], "non-answer grade result");
+  requireThat(result.session_id === args.session_id
+    && result.card_id === args.card_id
+    && result.card_revision === args.expected_card_revision
+    && result.attempt_kind === args.attempt_kind
+    && result.answer_revealed === (args.attempt_kind === "reveal")
+    && result.rating === "again",
+  "ENGINE_INVARIANT", "Non-answer result differs from the committed learner action", 503);
+  requireThat(args.attempt_kind === "reveal"
+    ? result.reviewed_card?.card_id === args.card_id
+    : !Object.hasOwn(result, "reviewed_card"),
+  "ENGINE_INVARIANT", "Reveal/Skip definition exposure differs from the committed learner action", 503);
+  requireThat(result.receipt?.operation === "submit_non_answer_grade"
+    && result.receipt.idempotency_key === args.idempotency_key
+    && result.receipt.replayed === false,
+  "ENGINE_INVARIANT", "Non-answer receipt differs from the committed action", 503);
 }
 
 function validateSelectedCourseInstall(result, args, beforeDeckIds, store) {
@@ -311,7 +362,7 @@ export async function createCanonicalEngine({
   const defaultCatalogRef = frozenClone(resolver.constructorCatalogRef);
   const schemas = clone(toolSchemas);
   for (const name of [...Object.keys(READ_METHODS), ...Object.keys(WRITE_METHODS)]) {
-    if (["add_library_deck", "set_deck_archived", "submit_self_grade"].includes(name)) continue;
+    if (["add_library_deck", "set_deck_archived", "submit_non_answer_grade", "submit_self_grade"].includes(name)) continue;
     requireThat(schemas[name]?.input && schemas[name]?.output,
       "CONTRACT_UNSUPPORTED", `Missing canonical schema: ${name}`, 503);
     checkSchema(schemas[name].input);
@@ -458,7 +509,7 @@ export async function createCanonicalEngine({
       });
       const { resolved, storage, createStore, constructorCatalogRef } = opened;
       let { store } = opened;
-      const before = ["submit_grade", "submit_self_grade"].includes(operation)
+      const before = ["submit_grade", "submit_non_answer_grade", "submit_self_grade"].includes(operation)
         ? reviewBefore(store, args) : null;
       const beforeInstallDeckIds = operation === "add_library_deck"
         ? new Set(Object.keys(store.getSnapshot().personalDecks)) : null;
@@ -498,7 +549,7 @@ export async function createCanonicalEngine({
       requireThat(stateJson !== null && stateJson !== priorJson && result.receipt?.replayed !== true,
         "LEGACY_REQUEST_REQUIRES_REFRESH", "This browser receipt has no durable request proof; recover without grading again", 409);
       const events = [];
-      if (["submit_grade", "submit_self_grade"].includes(operation)) {
+      if (["submit_grade", "submit_non_answer_grade", "submit_self_grade"].includes(operation)) {
         requireThat(before, "ENGINE_INVARIANT", "Canonical grade has no original card", 503);
         const after = reviewAfter(store, before);
         requireThat(after.history?.reviewId === result.review_id && after.count === before.historyLength + 1,
@@ -533,6 +584,7 @@ export async function createCanonicalEngine({
         validateSelectedCourseInstall(result, args, beforeInstallDeckIds, store);
       }
       if (operation === "set_deck_archived") validateArchiveResult(result, args);
+      if (operation === "submit_non_answer_grade") validateNonAnswerGradeResult(result, args);
       if (operation === "submit_self_grade") validateSelfGradeResult(result, args);
       if (["add_library_deck", "set_deck_archived"].includes(operation)) {
         result.receipt = {
@@ -544,7 +596,7 @@ export async function createCanonicalEngine({
           replayed: false,
           committed_at: now,
         };
-      } else if (operation !== "submit_self_grade") {
+      } else if (!["submit_non_answer_grade", "submit_self_grade"].includes(operation)) {
         validateSchema(schemas[operation].output, result, "result");
       }
       return { stateJson, catalogRef: constructorCatalogRef, result, events };

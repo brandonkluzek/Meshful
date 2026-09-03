@@ -24,7 +24,7 @@ test('Meshful uses the approved matched-arcs M without adding a header tagline',
   assert.match(page, /<span class="brand-mark" aria-hidden="true"><\/span>/);
   assert.doesNotMatch(page, /TODO\(brand\)/);
   assert.match(styles, /mask: url\("\/meshful-header-mark\.svg\?release=v40-learner-graph"\)/);
-  assert.match(styles, /\.brand-copy strong \{[\s\S]*?font-size: 18px;/);
+  assert.match(styles, /\.brand-copy strong \{[\s\S]*?font-size: 20px;/);
   assert.match(styles, /\.brand-mark \{[\s\S]*?width: 42px;[\s\S]*?height: 42px;[\s\S]*?flex: 0 0 42px;/);
   assert.doesNotMatch(page, /TermMesh/);
   assert.doesNotMatch(page, /<small>Connect terms\. Build understanding\.<\/small>/);

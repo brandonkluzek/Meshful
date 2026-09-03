@@ -55,6 +55,17 @@ const FSRS6_DECAY = -FSRS6_DEFAULT_WEIGHTS[20];
 const FSRS6_FACTOR = FSRS6_TARGET_RETENTION ** (1 / FSRS6_DECAY) - 1;
 const FSRS6_RATING_VALUES = Object.freeze({ again: 1, hard: 2, good: 3, easy: 4 });
 const VIEW_ROUTES = Object.freeze(["study", "decks", "library", "graph", "session"]);
+const STORE_CAPABILITIES = Object.freeze({
+  library: true,
+  personal_decks: true,
+  dependency_graph: true,
+  protected_definition_study: true,
+  self_grading: true,
+  revealed_attempts: true,
+  skipped_attempts: true,
+  preview_apply_authoring: true,
+  hard_delete: false,
+});
 export class StudyStoreError extends Error {
   constructor(code, message, details = undefined) {
     super(message);
@@ -297,15 +308,7 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
       streak: projectStreak(state.streak, now(), { timeZone }),
       recent_activity: state.activity.slice(-20).reverse(),
       scheduler: schedulerMetadata(),
-      capabilities: {
-        library: true,
-        personal_decks: true,
-        dependency_graph: true,
-        protected_definition_study: true,
-        self_grading: true,
-        preview_apply_authoring: true,
-        hard_delete: false,
-      },
+      capabilities: STORE_CAPABILITIES,
     });
   }
 
@@ -1811,6 +1814,124 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     });
   }
 
+  // Private Website operation for an explicitly confirmed Reveal or Skip.
+  // Both are non-answer attempts and therefore take one fixed Again transition
+  // without manufacturing learner text, rubric evidence, tutor feedback or
+  // model confidence.
+  function submitNonAnswerGrade(rawArgs = {}) {
+    const args = objectArgs(rawArgs);
+    assertClosedFields(args, [
+      "session_id",
+      "expected_session_revision",
+      "card_id",
+      "expected_card_revision",
+      "attempt_kind",
+      "idempotency_key",
+    ], "non-answer grade");
+    const sessionId = requireId(args.session_id, "session_id");
+    const submittedCardId = requireId(args.card_id, "card_id");
+    const expectedCardRevision = boundedInteger(args.expected_card_revision, "expected_card_revision", 1, Number.MAX_SAFE_INTEGER);
+    const expectedSessionRevision = boundedInteger(args.expected_session_revision, "expected_session_revision", 1, Number.MAX_SAFE_INTEGER);
+    const attemptKind = enumValue(args.attempt_kind, "attempt_kind", ["reveal", "skip"]);
+    const rating = "again";
+    const answerRevealed = attemptKind === "reveal";
+    return withTargetWrite("submit_non_answer_grade", args, (nextState, committedAt) => {
+      const session = requireActiveSession(nextState, sessionId);
+      checkRevision(session.revision, expectedSessionRevision, "session");
+      if (session.phase !== "awaiting_answer") {
+        fail("INVALID_SESSION_PHASE", "A non-answer grade can only be submitted for an unanswered current card");
+      }
+      const deck = requirePersonalDeck(nextState, session.deckId, { allowArchived: false });
+      const internalCardId = resolveSubmittedCardId(deck, submittedCardId);
+      if (session.currentCardId !== internalCardId) {
+        fail("CARD_MISMATCH", "card_id is not the session's current card");
+      }
+      const card = requireCard(deck, internalCardId);
+      const externalCardId = qualifiedCardId(deck, internalCardId);
+      const cardRevision = Number(card.contentRevision ?? 1);
+      checkRevision(cardRevision, expectedCardRevision, "card");
+      assertStudyCardEligible(deck, card, nextState, catalogDecks);
+      const before = jsonClone(card.review);
+      const after = scheduleReview(reviewWithRecallEvidence(card), rating, new Date(committedAt));
+      const reviewId = `review-${stableHash({ sessionId, internalCardId, committedAt, idempotencyKey: args.idempotency_key })}`;
+      const assessment = {
+        attempt_kind: attemptKind,
+        answer_revealed: answerRevealed,
+        rating,
+      };
+      card.review = after;
+      card.reviewHistory = [...(card.reviewHistory ?? []), {
+        reviewId,
+        cardRevision,
+        submittedAt: committedAt,
+        ...jsonClone(assessment),
+        scheduleBefore: before,
+        scheduleAfter: after,
+      }];
+      card.updatedAt = committedAt;
+      deck.revision += 1;
+      deck.updatedAt = committedAt;
+      session.history.push({
+        cardId: internalCardId,
+        cardRevision,
+        transition: "grade_submitted",
+        reviewId,
+        at: committedAt,
+        ...jsonClone(assessment),
+      });
+      session.reviewsApplied += 1;
+      session.cursor += 1;
+      session.queue = [
+        ...session.queue.slice(0, session.cursor),
+        ...session.queue.slice(session.cursor).filter(id =>
+          isStudyCardEligible(deck, deck.cards[id], nextState, catalogDecks)),
+      ];
+      session.currentCardId = session.queue[session.cursor] ?? null;
+      session.updatedAt = committedAt;
+      session.revision += 1;
+      if (session.currentCardId) {
+        session.phase = "awaiting_answer";
+      } else {
+        session.phase = "complete";
+        session.status = "completed";
+        session.finishedAt = committedAt;
+        if (nextState.activeSessionId === session.id) nextState.activeSessionId = null;
+      }
+      updateStreak(nextState, new Date(committedAt), timeZone);
+      recordActivity(nextState, {
+        type: "grade_submitted",
+        reviewId,
+        deckId: deck.id,
+        sessionId: session.id,
+        cardId: externalCardId,
+        attemptKind,
+        answerRevealed,
+        rating,
+        at: committedAt,
+      });
+      return {
+        review_id: reviewId,
+        session_id: session.id,
+        card_id: externalCardId,
+        card_revision: cardRevision,
+        attempt_kind: attemptKind,
+        answer_revealed: answerRevealed,
+        rating,
+        schedule: {
+          previous: targetScheduleSummary(before, new Date(committedAt)),
+          next: targetScheduleSummary(after, new Date(committedAt)),
+        },
+        ...(attemptKind === "reveal"
+          ? { reviewed_card: agentFacingCard(deck, card, new Date(committedAt)) }
+          : {}),
+        session: targetSessionSummary(session, deck),
+        ...(session.currentCardId
+          ? { next_card: agentFacingCard(deck, requireCard(deck, session.currentCardId), new Date(committedAt)) }
+          : {}),
+      };
+    });
+  }
+
   // Private Website operation for a learner who reveals the definition and
   // chooses an FSRS bucket directly. This intentionally does not manufacture
   // an answer, rubric evidence, tutor feedback or model confidence.
@@ -2117,6 +2238,7 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     startStudySession,
     getStudySession,
     submitGrade,
+    submitNonAnswerGrade,
     submitSelfGrade,
     inspectStudySession,
     captureAnswer,
@@ -2129,7 +2251,11 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     seedMasteredDemoDeck,
     getSnapshot: () => {
       refreshStateFromStorage();
-      return { ...jsonClone(state), streak: projectStreak(state.streak, now(), { timeZone }) };
+      return {
+        ...jsonClone(state),
+        streak: projectStreak(state.streak, now(), { timeZone }),
+        capabilities: jsonClone(STORE_CAPABILITIES),
+      };
     },
     getCatalogSnapshot: () => jsonClone([...catalogDecks.values()]),
     schedulerMetadata,

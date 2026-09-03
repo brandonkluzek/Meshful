@@ -19,13 +19,14 @@ const WRITE_OPERATIONS = Object.freeze({
   updateCards: "update_cards",
   startStudySession: "start_study_session",
   submitGrade: "submit_grade",
+  submitNonAnswerGrade: "submit_non_answer_grade",
   submitSelfGrade: "submit_self_grade",
   finishStudySession: "finish_study_session",
   addLibraryDeck: "add_library_deck",
   setDeckArchived: "set_deck_archived",
 });
 const STUDY_WRITES = new Set([
-  "startStudySession", "submitGrade", "submitSelfGrade", "finishStudySession",
+  "startStudySession", "submitGrade", "submitNonAnswerGrade", "submitSelfGrade", "finishStudySession",
 ]);
 const STATE_BUSY_RETRY_DELAYS_MS = Object.freeze([75, 200]);
 const copy = (value) => structuredClone(value);

@@ -37,9 +37,13 @@ function effectiveV7RuntimeFiles() {
     selection.backend_v7_writer_successor.runtime_selected_files,
     selection.post_v35_successors.backend_v7_account_command_recovery.runtime_file_overrides,
   );
-  return applyOverrides(
+  const selfGrading = applyOverrides(
     recovered,
     selection.post_v35_successors.manual_self_grading_v1.runtime_file_overrides,
+  );
+  return applyOverrides(
+    selfGrading,
+    selection.post_v35_successors.release_v42_non_answer_grade_v1.runtime_file_overrides,
   );
 }
 
@@ -48,9 +52,13 @@ function effectiveV7BrowserFiles() {
     selection.backend_v7_writer_successor.browser_files,
     selection.post_v35_successors.backend_v7_account_command_recovery.browser_file_overrides,
   );
-  return applyOverrides(
+  const selfGrading = applyOverrides(
     recovered,
     selection.post_v35_successors.manual_self_grading_v1.backend_browser_file_overrides,
+  );
+  return applyOverrides(
+    selfGrading,
+    selection.post_v35_successors.release_v42_non_answer_grade_v1.backend_browser_file_overrides,
   );
 }
 
@@ -66,9 +74,13 @@ function effectiveStartupBrowserFiles() {
     effectiveRecoveredBrowserFiles(),
     selection.post_v35_successors.empty_account_snapshot.file_overrides,
   );
-  return applyOverrides(
+  const selfGrading = applyOverrides(
     startup,
     selection.post_v35_successors.manual_self_grading_v1.startup_file_overrides,
+  );
+  return applyOverrides(
+    selfGrading,
+    selection.post_v35_successors.release_v42_non_answer_grade_v1.startup_file_overrides,
   );
 }
 
@@ -80,16 +92,28 @@ function effectiveAccountFocusedTests() {
 }
 
 function effectiveReleaseBrowserFiles() {
-  return applyOverrides(
+  const v40 = applyOverrides(
     selection.post_v35_successors.manual_self_grading_v1.browser_files,
     selection.post_v35_successors.release_v40_candidate.browser_file_overrides,
+  );
+  const visualPolish = applyOverrides(
+    v40,
+    selection.post_v35_successors.release_v42_visual_polish.browser_file_overrides,
+  );
+  return applyOverrides(
+    visualPolish,
+    selection.post_v35_successors.release_v42_non_answer_grade_v1.browser_file_overrides,
   );
 }
 
 function effectiveReleaseFocusedTests() {
-  return applyOverrides(
+  const v40 = applyOverrides(
     selection.post_v35_successors.manual_self_grading_v1.focused_tests,
     selection.post_v35_successors.release_v40_candidate.focused_test_overrides,
+  );
+  return applyOverrides(
+    v40,
+    selection.post_v35_successors.release_v42_non_answer_grade_v1.focused_test_overrides,
   );
 }
 
@@ -233,6 +257,30 @@ test("the source allowlist retains exact Accounts and Backend successor bytes", 
   });
   assert.equal(releaseCandidate.d1_migration_change, false);
   assert.equal(releaseCandidate.public_webmcp_tool_change, false);
+  const visualPolish = selection.post_v35_successors.release_v42_visual_polish;
+  assert.equal(visualPolish.predecessor_commit, "7e1e443d4a3e92b156c591443b36f3ad35dd325c");
+  assert.deepEqual(visualPolish.contract, {
+    inactive_filter_surface: "surface-1",
+    active_filter_surface: "surface-2",
+    brand_wordmark_px: 20,
+    deck_metadata_bottom_aligned: true,
+    graph_archive_secondary_surface_equal: true,
+  });
+  assert.equal(visualPolish.d1_migration_change, false);
+  assert.equal(visualPolish.public_webmcp_tool_change, false);
+  const nonAnswerGrade = selection.post_v35_successors.release_v42_non_answer_grade_v1;
+  assert.equal(nonAnswerGrade.predecessor_commit, "7e1e443d4a3e92b156c591443b36f3ad35dd325c");
+  assert.deepEqual(nonAnswerGrade.contract, {
+    attempt_kinds: ["reveal", "skip"],
+    fixed_rating: "again",
+    reveal_answer_revealed: true,
+    skip_answer_revealed: false,
+    fabricated_evidence_fields_absent: true,
+    exactly_once_receipt: "submit_non_answer_grade",
+    skip_omits_reviewed_card: true,
+  });
+  assert.equal(nonAnswerGrade.d1_migration_change, false);
+  assert.equal(nonAnswerGrade.public_webmcp_tool_change, false);
   const effectiveRuntime = effectiveV7RuntimeFiles();
   const effectiveBrowser = effectiveV7BrowserFiles();
   for (const item of [
@@ -256,6 +304,8 @@ test("the source allowlist retains exact Accounts and Backend successor bytes", 
     ...graphSuccessor.runtime_files,
     ...graphSuccessor.focused_tests,
     ...releaseCandidate.selected_files,
+    ...visualPolish.focused_tests,
+    ...nonAnswerGrade.focused_tests,
   ]) {
     assert.equal(await digest(item.path), item.sha256, item.path);
   }
@@ -331,6 +381,8 @@ test("every selected Backend runtime and browser import resolves inside the cand
       .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
     ...selection.post_v35_successors.graph_learner_progress_v1.focused_tests
       .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
+    ...selection.post_v35_successors.release_v42_non_answer_grade_v1.focused_tests
+      .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
   ]) {
     const source = await text(item.path);
     for (const match of source.matchAll(/\bfrom\s+["'](\.[^"']+)["']/g)) {
@@ -345,11 +397,14 @@ test("canonical mirrors, asset identity, budget, and 13 WebMCP schemas are froze
   const pins = selection.canonical_runtime;
   const webmcpSuccessor = selection.post_v35_successors.canonical_webmcp_copy;
   const selfGradingStore = selection.post_v35_successors.manual_self_grading_v1.canonical_store;
+  const nonAnswerStore = selection.post_v35_successors.release_v42_non_answer_grade_v1.canonical_store;
   for (const relative of ["integration/core/js/library-catalog.js", "public/study/js/library-catalog.js"])
     assert.equal(await digest(relative), pins.library_catalog_sha256, relative);
   assert.equal(selfGradingStore.predecessor_sha256, pins.store_sha256);
-  for (const relative of selfGradingStore.mirror_paths)
-    assert.equal(await digest(relative), selfGradingStore.sha256, relative);
+  assert.equal(nonAnswerStore.predecessor_sha256, selfGradingStore.sha256);
+  assert.deepEqual(nonAnswerStore.mirror_paths, selfGradingStore.mirror_paths);
+  for (const relative of nonAnswerStore.mirror_paths)
+    assert.equal(await digest(relative), nonAnswerStore.sha256, relative);
   for (const relative of ["integration/core/js/streak.js", "public/study/js/streak.js"])
     assert.equal(await digest(relative), pins.streak_sha256, relative);
   assert.equal(pins.webmcp_sha256,
