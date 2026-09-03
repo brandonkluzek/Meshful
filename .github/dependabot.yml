@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+
+# Application dependencies are updated in the Website source, validated,
+# deployed, and then mirrored here with a deployment receipt. Automatic npm
+# pull requests in this repository would break that source/live parity.

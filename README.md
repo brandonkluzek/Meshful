@@ -2,6 +2,18 @@
 
 **Learn through conversation. Keep progress in one dependable study system.**
 
+<p align="center">
+  <a href="https://meshful.ai">
+    <img src="site/public/meshful-social-card-1200x630.png" alt="Meshful — learn through conversation" width="720">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/brandonkluzek/Meshful/actions/workflows/ci.yml"><img src="https://github.com/brandonkluzek/Meshful/actions/workflows/ci.yml/badge.svg" alt="Continuous integration"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/software-Apache--2.0-blue.svg" alt="Software license: Apache 2.0"></a>
+  <a href="https://meshful.ai"><img src="https://img.shields.io/badge/live-meshful.ai-5b4eff.svg" alt="Live site: meshful.ai"></a>
+</p>
+
 Meshful is a chat-led learning workspace where a learner answers in their own
 words, an AI agent evaluates the meaning of the answer, and the website records
 one deterministic review. The site owns decks, sessions, scheduling, and saved
@@ -10,6 +22,18 @@ WebMCP tools without maintaining a separate copy of learner state.
 
 - [Open Meshful](https://meshful.ai)
 - [View the source](https://github.com/brandonkluzek/Meshful)
+
+## Project status
+
+Meshful is a public working project. The `site/` directory is an exact,
+manifest-verified mirror of the source deployed as Sites v39. The deployment
+identity, source commit, live asset hashes, and validation results are recorded
+in [`release/deployed-v39.json`](release/deployed-v39.json).
+
+Repository-level documentation, governance, and automation may advance between
+product deployments. Product changes enter `site/` only from a validated,
+deployed source receipt so the public code does not silently drift away from
+the live application. See the [release process](docs/RELEASES.md).
 
 ## How Meshful works
 
@@ -78,6 +102,9 @@ WebMCP support is optional and registration is skipped cleanly when
 `document.modelContext` is absent.
 
 ## Architecture
+
+See the [architecture overview](docs/ARCHITECTURE.md) for the responsibility
+boundary, request flows, and repository map.
 
 - `site/public/study/` contains the browser application, WebMCP registration,
   deterministic store, and versioned Deck Library runtime.
@@ -159,6 +186,13 @@ attribution requirements.
 Issues and focused pull requests are welcome. Please preserve the
 learner/agent/site authority boundary, include tests for state-changing
 behavior, and run `npm run verify` before opening a pull request.
+
+- [Contribution guide](CONTRIBUTING.md)
+- [Support and issue routing](SUPPORT.md)
+- [Security policy](SECURITY.md)
+- [Code of conduct](CODE_OF_CONDUCT.md)
+- [Changelog](CHANGELOG.md)
+- [Citation metadata](CITATION.cff)
 
 Meshful began from an experimental local study-engine foundation and was
 meaningfully extended into this hosted WebMCP product.

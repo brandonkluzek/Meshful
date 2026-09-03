@@ -1,0 +1,64 @@
+name: Bug report
+description: Report reproducible behavior in Meshful or its public build.
+title: "Bug: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Meshful. Remove credentials, learner data, account identifiers, and private course material before submitting.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Product area
+      options:
+        - Deck Library
+        - My Decks
+        - Study
+        - Graph
+        - Signed-in account storage
+        - WebMCP agent interaction
+        - Local build or tests
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and why it appears incorrect.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser and version, operating system, and whether you were signed in. Do not include account identifiers.
+      placeholder: Firefox 142, macOS 16, signed out
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Add screenshots or logs only after removing personal or security-sensitive data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, learner data, account identifiers, and private material from this report.
+          required: true

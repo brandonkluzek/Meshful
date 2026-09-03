@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a focused improvement to the learner or contributor experience.
+title: "Feature: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What learner or contributor problem should Meshful solve?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the observable result rather than a particular implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Authority and state boundary
+      description: Should the learner, agent, or site own the decision and resulting state?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: This request contains no credentials, learner data, account identifiers, or private material.
+          required: true

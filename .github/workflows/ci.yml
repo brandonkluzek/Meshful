@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify public release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 22.13
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22.13.0
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install exact dependencies
+        run: npm --prefix site ci
+
+      - name: Verify release manifest and public-data boundary
+        run: npm run check
+
+      - name: Lint
+        run: npm --prefix site run lint
+
+      - name: Run complete test suite
+        run: npm test
+
+      - name: Run focused WebMCP tests
+        run: npm run verify:webmcp
+
+      - name: Build production application
+        run: npm run build
+
+      - name: Confirm tracked files remain unchanged
+        run: git diff --exit-code

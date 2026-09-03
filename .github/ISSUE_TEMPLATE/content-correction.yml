@@ -1,0 +1,65 @@
+name: Deck Library correction
+description: Propose a factual, wording, source, or prerequisite correction.
+title: "Content: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The public Deck Library is AI-reviewed educational content, not human-certified course material. Specific, sourced corrections are welcome.
+  - type: input
+    id: course
+    attributes:
+      label: Course
+      placeholder: Linear Algebra I
+    validations:
+      required: true
+  - type: input
+    id: card
+    attributes:
+      label: Card or concept identifier
+      description: Include the visible term and stable card identifier when available.
+    validations:
+      required: true
+  - type: dropdown
+    id: correction_type
+    attributes:
+      label: Correction type
+      options:
+        - Factual or mathematical error
+        - Ambiguous wording
+        - Missing qualifier or accepted variant
+        - Prerequisite relationship
+        - Source or provenance
+        - Formatting or rendering
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current content or behavior
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed correction
+      description: Explain the exact change and why it is more accurate.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting sources
+      description: Prefer authoritative, stable sources and include direct links.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights and privacy
+      options:
+        - label: My proposed wording is original or I have authority to submit it under CC BY 4.0.
+          required: true
+        - label: This report contains no private course material or learner data.
+          required: true

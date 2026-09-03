@@ -1,0 +1,6 @@
+* @brandonkluzek
+
+# Product-source changes must preserve the deployed-source receipt.
+/site/ @brandonkluzek
+/release/ @brandonkluzek
+/LICENSE* @brandonkluzek

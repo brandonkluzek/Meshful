@@ -17,4 +17,4 @@ will acknowledge the report, investigate it, and coordinate disclosure after a
 fix or risk decision is available.
 
 General product bugs that do not expose sensitive information may use the
-public issue tracker after the repository becomes public.
+[public issue tracker](https://github.com/brandonkluzek/Meshful/issues/new/choose).
