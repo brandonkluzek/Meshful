@@ -22,10 +22,10 @@ const POINTER_TAP_SLOP = 8;
 const ENTIRE_GRAPH_MIN_SCALE = 0.01;
 
 const GRAPH_STATE_SCENARIOS = Object.freeze([
-  Object.freeze({ id: "actual", label: "My progress", shortLabel: "Actual" }),
-  Object.freeze({ id: "unseen", label: "Unlearned", shortLabel: "0% learned" }),
-  Object.freeze({ id: "mixed", label: "In progress", shortLabel: "Mixed" }),
-  Object.freeze({ id: "recent", label: "Recently reviewed", shortLabel: "Recent" }),
+  Object.freeze({ id: "actual", label: "Course map", shortLabel: "Structure" }),
+  Object.freeze({ id: "unseen", label: "Not started", shortLabel: "Example" }),
+  Object.freeze({ id: "mixed", label: "In progress", shortLabel: "Example" }),
+  Object.freeze({ id: "recent", label: "Recently reviewed", shortLabel: "Example" }),
 ]);
 
 export function graphNodeLimitForWidth(width) {
@@ -65,13 +65,17 @@ export function graphLayoutOptionsForWidth(width) {
   };
 }
 
-export function layoutForGraphProjection(projection, { viewportWidth = Infinity } = {}) {
+export function layoutForGraphProjection(projection, {
+  viewportWidth = Infinity,
+  nodeHeight = null,
+} = {}) {
   if (!projection?.nodes || !projection?.edges) {
     throw new TypeError("A graph projection with nodes and edges is required.");
   }
+  const responsiveOptions = graphLayoutOptionsForWidth(viewportWidth);
   return layoutGraph(
     { nodes: projection.nodes, edges: projection.edges },
-    graphLayoutOptionsForWidth(viewportWidth),
+    Number.isFinite(nodeHeight) ? { ...responsiveOptions, nodeHeight } : responsiveOptions,
   );
 }
 
@@ -248,6 +252,10 @@ function titleCase(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
+function learningLabel(state) {
+  return state.learning === "unseen" ? "Not started" : titleCase(state.learning);
+}
+
 function stateFor(cardId, cardStates) {
   const value = cardStates?.[cardId] ?? cardStates?.get?.(cardId) ?? {};
   const reviewCount = Number(value.reviewCount ?? value.reviews ?? value.reps ?? 0);
@@ -257,11 +265,16 @@ function stateFor(cardId, cardStates) {
   const lastReviewedAt = reviewCount > 0 && lastReviewedRaw
     ? new Date(lastReviewedRaw)
     : null;
+  const learnedness = Number(value.learnedness);
   const now = Date.now();
   const daysUntilDue = dueAt && Number.isFinite(dueAt.valueOf())
     ? (dueAt.valueOf() - now) / 86_400_000
     : null;
-  const learning = reviewCount === 0 ? "unseen" : reviewCount < 3 ? "learning" : "established";
+  const learning = reviewCount === 0
+    ? "unseen"
+    : Number.isFinite(learnedness)
+      ? learnedness >= 0.6 ? "established" : "learning"
+      : reviewCount < 3 ? "learning" : "established";
   const freshness = daysUntilDue === null
     ? "new"
     : daysUntilDue <= 0
@@ -272,6 +285,7 @@ function stateFor(cardId, cardStates) {
   return {
     ...value,
     reviewCount,
+    learnedness: Number.isFinite(learnedness) ? learnedness : null,
     dueAt,
     lastReviewedAt: lastReviewedAt && Number.isFinite(lastReviewedAt.valueOf())
       ? lastReviewedAt
@@ -365,21 +379,18 @@ function recencyColor(state) {
   return "#f3f0e8";
 }
 
-function formatLastReviewed(state) {
-  if (!state.lastReviewedAt) return "Not reviewed";
-  const ageDays = Math.max(0, Math.floor((Date.now() - state.lastReviewedAt.valueOf()) / 86_400_000));
-  if (ageDays === 0) return "Reviewed today";
-  if (ageDays === 1) return "Reviewed yesterday";
-  return `Reviewed ${ageDays} days ago`;
+function ratingValue(value) {
+  if (Number.isInteger(Number(value)) && Number(value) >= 1 && Number(value) <= 4) return Number(value);
+  return ({ again: 1, hard: 2, good: 3, easy: 4 })[String(value ?? "").toLowerCase()] ?? null;
 }
 
 function ratingLabel(value) {
-  return ({ 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" })[Number(value)] ?? String(value ?? "—");
+  return ({ 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" })[ratingValue(value)] ?? "—";
 }
 
 function retainedReviews(state) {
   return (Array.isArray(state.reviewHistory) ? state.reviewHistory : [])
-    .filter((review) => review && Number.isFinite(Number(review.rating)))
+    .filter((review) => review && ratingValue(review.rating) !== null)
     .sort((a, b) => new Date(a.submittedAt ?? 0) - new Date(b.submittedAt ?? 0));
 }
 
@@ -387,11 +398,6 @@ function formatReviewMoment(value) {
   const date = value ? new Date(value) : null;
   if (!date || !Number.isFinite(date.valueOf())) return "Date unavailable";
   return new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric" }).format(date);
-}
-
-function longPrerequisiteLinks(edges, nodeWidth) {
-  const threshold = Math.max(560, nodeWidth * 3.35);
-  return edges.filter((edge) => Number(edge.directDistance) > threshold);
 }
 
 function readPins(storageKey, storage) {
@@ -423,18 +429,18 @@ function iconPath(name) {
 export function mountGraphView(container, {
   deck,
   cardStates = {},
-  deckOptions = [],
+  progressSource = "structure",
   focusCardId = null,
   pulseCardId = null,
   storage = undefined,
   canStudy = true,
   onBack = () => {},
-  onDeckChange = () => {},
   onStudy = () => {},
   backAriaLabel = "Close graph and return to My Decks",
   showEntireGraph = false,
 } = {}) {
   if (!deck?.cards?.length) throw new Error("A deck with cards is required for the graph view.");
+  const showsLearnerProgress = progressSource === "learner";
 
   const index = buildGraphIndex(deck);
   const fullGraph = { nodes: index.nodes, edges: index.edges };
@@ -488,6 +494,7 @@ export function mountGraphView(container, {
       ? layoutEntireGraphProjection(projection)
       : layoutForGraphProjection(projection, {
           viewportWidth: container.getBoundingClientRect().width || window.innerWidth,
+          nodeHeight: showsLearnerProgress ? 72 : null,
         });
     nodeById = new Map(layout.nodes.map((node) => [node.id, node]));
     cardById = new Map(projection.nodes.map((card) => [card.id, card]));
@@ -539,19 +546,9 @@ export function mountGraphView(container, {
   let searchQuery = "";
   let stateScenario = "actual";
   const activeStateFor = (cardId) => stateForScenario(cardId, cardStates, stateScenario);
-  const deckChoices = (Array.isArray(deckOptions) ? deckOptions : [])
-    .filter((candidate) => candidate?.id && candidate?.title);
-  if (!deckChoices.some((candidate) => candidate.id === deck.id)) {
-    deckChoices.unshift({ id: deck.id, title: deck.title });
-  }
-  const deckChoiceMarkup = deckChoices.map((candidate) => {
-    const suffix = candidate.label ? ` · ${candidate.label}` : "";
-    return `
-    <option value="${escapeHTML(candidate.id)}"${candidate.id === deck.id ? " selected" : ""}>${escapeHTML(candidate.title + suffix)}</option>`;
-  }).join("");
 
   container.innerHTML = `
-    <section class="graph-page" aria-label="${escapeHTML(deck.title)} prerequisite graph">
+    <section class="graph-page${showsLearnerProgress ? "" : " has-comparison"}" aria-label="${escapeHTML(deck.title)} prerequisite graph">
       <div class="graph-toolbar">
         <button class="graph-back" type="button" data-graph-action="back" aria-label="${escapeHTML(backAriaLabel)}"><span aria-hidden="true">×</span> Close</button>
         <div class="graph-title">
@@ -566,13 +563,9 @@ export function mountGraphView(container, {
           <button type="button" data-graph-action="reset" data-action="reset-graph">Reset</button>
         </div>
       </div>
-      <div class="graph-comparison-bar" aria-label="Graph comparison controls">
-        <label class="graph-deck-picker">
-          <span>Deck · all ${index.nodes.length} cards</span>
-          <select data-graph-deck aria-label="Choose a real deck">${deckChoiceMarkup}</select>
-        </label>
-        <div class="graph-scenario-previews" data-graph-scenarios aria-label="Compare learner states"></div>
-      </div>
+      ${showsLearnerProgress ? "" : `<div class="graph-comparison-bar" aria-label="Course graph examples">
+        <div class="graph-scenario-previews" data-graph-scenarios aria-label="Preview possible learning states"></div>
+      </div>`}
       <div class="graph-workspace" data-graph-workspace role="application" aria-label="Draggable and zoomable prerequisite map">
         <div class="graph-search">
           <label class="search-field">
@@ -581,7 +574,6 @@ export function mountGraphView(container, {
             <input type="search" placeholder="Find a term" data-graph-search autocomplete="off" />
           </label>
         </div>
-        <p class="graph-layout-flag" data-graph-layout-flag role="status" hidden></p>
         <div class="graph-grid"></div>
         <div class="graph-world" data-graph-world>
           <svg class="graph-edges" width="${activeBounds.maxX + 120}" height="${activeBounds.maxY + 120}" aria-hidden="true" data-graph-edges></svg>
@@ -599,10 +591,8 @@ export function mountGraphView(container, {
   const inspector = container.querySelector("[data-graph-inspector]");
   const legend = container.querySelector("[data-graph-legend]");
   const search = container.querySelector("[data-graph-search]");
-  const deckPicker = container.querySelector("[data-graph-deck]");
   const scenarioPreviews = container.querySelector("[data-graph-scenarios]");
   const scopeNote = container.querySelector("[data-graph-scope]");
-  const layoutFlag = container.querySelector("[data-graph-layout-flag]");
   const listeners = [];
   const edgeElements = new Map();
   const edgeGradients = new Map();
@@ -637,17 +627,7 @@ export function mountGraphView(container, {
     };
   }
 
-  function renderLayoutFlag() {
-    const longLinks = longPrerequisiteLinks(activeEdges, layout.nodes[0]?.width ?? 174);
-    layoutFlag.hidden = longLinks.length === 0;
-    layoutFlag.textContent = longLinks.length ? `Review ${longLinks.length} long links` : "";
-    layoutFlag.title = longLinks.length
-      ? "Layout check: these direct prerequisites span more than about three card widths and may need author review."
-      : "";
-  }
-
   function renderEdges() {
-    renderLayoutFlag();
     const traced = tracedIds();
     if (!edgeDefinitions) {
       edgeDefinitions = document.createElementNS(SVG_NS, "defs");
@@ -678,7 +658,7 @@ export function mountGraphView(container, {
           endStop.setAttribute("offset", "100%");
           gradient.append(startStop, endStop);
           edgeDefinitions.append(gradient);
-          edgeGradients.set(edge.id, { gradient, startStop, endStop });
+          edgeGradients.set(edge.id, { gradient, gradientId, startStop, endStop });
           path.style.stroke = `url(#${gradientId})`;
           edgeElements.set(edge.id, path);
         }
@@ -713,6 +693,8 @@ export function mountGraphView(container, {
         traced.edges.has(edge.id) ? "is-traced" : "",
       ].filter(Boolean).join(" ");
       if (path.getAttribute("class") !== className) path.setAttribute("class", className);
+      const stroke = traced.edges.has(edge.id) ? "#e0e3e7" : `url(#${paint?.gradientId})`;
+      if (path.style.stroke !== stroke) path.style.stroke = stroke;
     }
   }
 
@@ -732,7 +714,6 @@ export function mountGraphView(container, {
         button = document.createElement("button");
         button.type = "button";
         button.dataset.nodeId = node.id;
-        button.innerHTML = `<span>${escapeHTML(node.term)}</span>`;
         nodeElements.set(node.id, button);
       }
       button.className = [
@@ -746,12 +727,18 @@ export function mountGraphView(container, {
       button.dataset.learning = state.learning;
       button.dataset.freshness = state.freshness;
       button.dataset.scenario = stateScenario;
+      button.dataset.progressSource = showsLearnerProgress ? "learner" : "structure";
       button.setAttribute("aria-pressed", String(selectedId === node.id));
       button.style.transform = `translate(${Math.round(position.x)}px, ${Math.round(position.y)}px)`;
       button.style.width = `${node.width}px`;
       button.style.minHeight = `${node.height}px`;
-      button.style.borderColor = recencyColor(state);
-      button.setAttribute("aria-label", `${node.term}. Learning: ${titleCase(state.learning)}. ${formatLastReviewed(state)}. ${formatDue(state)}.`);
+      button.style.borderColor = "";
+      button.setAttribute("aria-label", showsLearnerProgress
+        ? `${node.term}. Your learning: ${learningLabel(state)}. Your next review: ${formatDue(state)}.`
+        : `${node.term}. Course structure preview.`);
+      button.innerHTML = `<span>${escapeHTML(node.term)}</span>${showsLearnerProgress
+        ? `<small class="node-progress-label">${escapeHTML(learningLabel(state))}</small><i class="node-recency" aria-hidden="true"></i>`
+        : ""}`;
       orderedButtons.push(button);
     }
     if (renderedNodeLayout !== layout) {
@@ -781,13 +768,33 @@ export function mountGraphView(container, {
     const history = retainedReviews(state);
     const recent = history.slice(-5).reverse();
     const average = history.length
-      ? (history.reduce((sum, review) => sum + Number(review.rating), 0) / history.length).toFixed(1)
+      ? (history.reduce((sum, review) => sum + ratingValue(review.rating), 0) / history.length).toFixed(1)
       : null;
     const latestRating = state.lastRating ?? recent[0]?.rating ?? null;
     const recentMarkup = recent.length
       ? recent.map((review) => `
           <li><strong>${escapeHTML(ratingLabel(review.rating))}</strong><span>${escapeHTML(formatReviewMoment(review.submittedAt))}</span></li>`).join("")
       : `<li class="is-empty"><span>${latestRating === null ? "No retained score history yet" : `Latest rating: ${escapeHTML(ratingLabel(latestRating))}`}</span></li>`;
+    const scenarioMarkup = !showsLearnerProgress && stateScenario !== "actual"
+      ? `<p class="inspector-preview-note">Visual example · ${escapeHTML(GRAPH_STATE_SCENARIOS.find((scenario) => scenario.id === stateScenario)?.label ?? stateScenario)}</p>`
+      : "";
+    const progressMarkup = showsLearnerProgress
+      ? `<div class="inspector-state" data-progress-source="learner">
+        <div><strong>${escapeHTML(learningLabel(state))}</strong><span>Your learning</span></div>
+        <div><strong>${escapeHTML(formatDue(state))}</strong><span>Next review</span></div>
+      </div>`
+      : `<p class="graph-structure-note">Course structure preview. Add this course and study to see your progress here.</p>`;
+    const reviewsMarkup = showsLearnerProgress
+      ? `<details class="inspector-disclosure inspector-reviews">
+        <summary>Reviews <span>${state.reviewCount} total</span></summary>
+        <div class="inspector-review-summary">
+          <span><strong>${latestRating === null ? "—" : escapeHTML(ratingLabel(latestRating))}</strong>Latest score</span>
+          <span><strong>${average ?? "—"}</strong>Average retained</span>
+          <span><strong>${escapeHTML(formatDue(state))}</strong>Next review</span>
+        </div>
+        <ol class="inspector-review-history">${recentMarkup}</ol>
+      </details>`
+      : "";
     inspector.innerHTML = `
       <div class="graph-inspector-header" data-inspector-drag-handle>
         <div>
@@ -797,24 +804,13 @@ export function mountGraphView(container, {
         <button class="icon-button graph-inspector-close" type="button" data-graph-action="dismiss" aria-label="Close card info">×</button>
       </div>
       <div class="graph-inspector-body">
-      ${stateScenario === "actual" ? "" : `<p class="inspector-preview-note">Visual preview · ${escapeHTML(GRAPH_STATE_SCENARIOS.find((scenario) => scenario.id === stateScenario)?.label ?? stateScenario)}</p>`}
-      <div class="inspector-state">
-        <div><strong>${escapeHTML(titleCase(state.learning))}</strong><span>Learning</span></div>
-        <div><strong>${escapeHTML(formatLastReviewed(state))}</strong><span>Recency</span></div>
-      </div>
+      ${scenarioMarkup}
+      ${progressMarkup}
       <details class="inspector-disclosure inspector-definition">
         <summary>Definition</summary>
         <div class="inspector-definition-content" data-graph-definition></div>
       </details>
-      <details class="inspector-disclosure inspector-reviews">
-        <summary>Reviews <span>${state.reviewCount} total</span></summary>
-        <div class="inspector-review-summary">
-          <span><strong>${latestRating === null ? "—" : escapeHTML(ratingLabel(latestRating))}</strong>Latest score</span>
-          <span><strong>${average ?? "—"}</strong>Average retained</span>
-          <span><strong>${escapeHTML(formatDue(state))}</strong>Next review</span>
-        </div>
-        <ol class="inspector-review-history">${recentMarkup}</ol>
-      </details>
+      ${reviewsMarkup}
       <ul class="inspector-list">
         <li><span>Direct prerequisites</span><strong>${directUpstream.nodeIds.length}</strong></li>
         <li><span>Direct dependents</span><strong>${directDownstream.nodeIds.length}</strong></li>
@@ -833,24 +829,22 @@ export function mountGraphView(container, {
   }
 
   function renderLegend() {
-    legend.innerHTML = `
-      <span class="recency-scale-title">Recency</span>
-      <i class="recency-scale" aria-hidden="true"></i>`;
-    legend.setAttribute(
-      "aria-label",
-      "Gray borders are unlearned. Reviewed card borders move from white through yellow to red as reviews become more recent.",
-    );
+    legend.innerHTML = showsLearnerProgress
+      ? `<strong>Your progress</strong><span class="legend-learning"><i aria-hidden="true"></i>Border: learning</span><span class="legend-recency"><i aria-hidden="true"></i>Dot: next review</span>`
+      : `<strong>Course structure preview</strong>`;
+    legend.setAttribute("aria-label", showsLearnerProgress
+      ? "Your learning is shown by the card border. Your next review is shown by the small dot."
+      : "Course structure preview. Progress appears after you add and study this course.");
   }
 
   function renderScenarioPreviews() {
+    if (!scenarioPreviews) return;
     const viewBox = [activeBounds.x, activeBounds.y, activeBounds.width, activeBounds.height].join(" ");
     scenarioPreviews.innerHTML = GRAPH_STATE_SCENARIOS.map((scenario) => {
       const states = new Map(layout.nodes.map((node) => [
         node.id,
         stateForScenario(node.id, cardStates, scenario.id),
       ]));
-      const learned = [...states.values()].filter((state) => state.learning !== "unseen").length;
-      const percent = Math.round((learned / Math.max(1, layout.nodes.length)) * 100);
       const edgeMarkup = activeEdges.map((edge) => {
         const color = recencyColor(states.get(edge.target));
         return `<path d="${escapeHTML(edge.path)}" stroke="${color}"></path>`;
@@ -862,7 +856,7 @@ export function mountGraphView(container, {
       }).join("");
       return `
         <button type="button" data-graph-scenario="${scenario.id}" aria-pressed="${stateScenario === scenario.id}">
-          <span><strong>${escapeHTML(scenario.label)}</strong><small>${scenario.id === "actual" ? `${percent}% learned` : scenario.shortLabel}</small></span>
+          <span><strong>${escapeHTML(scenario.label)}</strong><small>${escapeHTML(scenario.shortLabel)}</small></span>
           <svg viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
             <g class="scenario-edges">${edgeMarkup}</g>
             <g class="scenario-nodes">${nodeMarkup}</g>
@@ -912,7 +906,7 @@ export function mountGraphView(container, {
       viewport,
       {
         padding: narrow
-          ? { top: 108, right: 20, bottom: 90, left: 20 }
+          ? { top: 132, right: 20, bottom: 90, left: 20 }
           : { top: 100, right: 64, bottom: 70, left: 64 },
         minScale: showEntireGraph ? ENTIRE_GRAPH_MIN_SCALE : MIN_SCALE,
         maxScale: 0.92,
@@ -1055,10 +1049,6 @@ export function mountGraphView(container, {
       setSelected(nodeId);
       if (event.detail === 0) focusNode(nodeId);
     }
-  });
-
-  on(deckPicker, "change", () => {
-    if (deckPicker.value && deckPicker.value !== deck.id) onDeckChange(deckPicker.value);
   });
 
   on(window, "keydown", (event) => {

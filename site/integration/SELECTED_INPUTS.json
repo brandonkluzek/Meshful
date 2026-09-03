@@ -312,7 +312,7 @@
   "post_v35_successors": {
     "captured_on": "2026-09-03",
     "backend_v7_account_command_recovery": {
-      "receipt_scope": "selected-file-overrides-only",
+      "receipt_scope": "selected-file-override-and-focused-test",
       "predecessor_selection": "backend_v7_writer_successor",
       "predecessor_source_manifest_sha256": "f2eddbc8c577c214513bb341f10849ef65e2d39aaf56ccee37f42a8515ff0a6d",
       "predecessor_source_payload_sha256": "7f1978ce77ca218fe7467477fc4911ca7220e26d1ea656fd09cb65f695315522",
@@ -386,6 +386,143 @@
         }
       ]
     },
+    "browser_account_command_queue": {
+      "receipt_scope": "selected-file-overrides-only",
+      "predecessor_selection": "browser_account_recovery",
+      "source_commit": "f2a08f3c865667352e498fd2d7363969b3706637",
+      "source_handoff_sha256": "c8be36d1ff22e50a009cf2d041c27f61932d112a174b122584368592b17a1ad3",
+      "file_overrides": [
+        {
+          "path": "public/study/accounts/browser-study-session.mjs",
+          "predecessor_sha256": "c02435cefa9b6aaa7a8d2c724f725f9743eab026bd26476ed9b06d6283f5ebad",
+          "sha256": "d243f28cb899320e744d1469b5b17cdcab866974713a880e6f0883f12d58894a"
+        }
+      ],
+      "focused_tests": [
+        {
+          "path": "tests/account-runtime-v6.test.mjs",
+          "predecessor_sha256": "85f1ac6d3c0c468d7f3d44c1e4b4826c9cba57a335739499a31284d954fd2b97",
+          "source_sha256": "0c92e6ef4fd4fd07e4bd6aa3e338e5de4616af1f236d98fb0f9ae24d48876196",
+          "sha256": "0c92e6ef4fd4fd07e4bd6aa3e338e5de4616af1f236d98fb0f9ae24d48876196",
+          "integration": "byte-exact"
+        }
+      ],
+      "d1_migration_change": false,
+      "public_webmcp_tool_change": false
+    },
+    "empty_account_snapshot": {
+      "receipt_scope": "selected-file-override-and-focused-test",
+      "predecessor_selection": "browser_account_command_queue",
+      "source_commit": "37a801c48f1edcd1aa5c51afb199ad0fd5957486",
+      "file_overrides": [
+        {
+          "path": "public/study/js/account-runtime.js",
+          "predecessor_sha256": "b80bb0627ab1b32986959e86aa837a0b57d8cffd83c1ad664f0eb1682a1fc468",
+          "sha256": "dbb62775f3830bf099f1e1de0116f663de6e1aca7d6dd6b5c3bf2ede5cb6054f"
+        }
+      ],
+      "focused_tests": [
+        {
+          "path": "tests/account-runtime-v6.test.mjs",
+          "predecessor_sha256": "0c92e6ef4fd4fd07e4bd6aa3e338e5de4616af1f236d98fb0f9ae24d48876196",
+          "source_sha256": "9efef58d5c75b47230fabdf5a4129279638fdeccf7c4de48046d3e59eaedf3b9",
+          "sha256": "9efef58d5c75b47230fabdf5a4129279638fdeccf7c4de48046d3e59eaedf3b9",
+          "integration": "byte-exact"
+        }
+      ],
+      "contract": {
+        "null_catalog_ref_requires_revision_zero": true,
+        "null_catalog_ref_requires_null_state": true
+      },
+      "d1_migration_change": false,
+      "public_webmcp_tool_change": false
+    },
+    "manual_self_grading_v1": {
+      "receipt_scope": "private-website-operation-and-focused-tests",
+      "predecessor_selection": "post-v35 account and backend successors at c690d19",
+      "runtime_file_overrides": [
+        {
+          "path": "integration/backend/v7/src/canonical-engine.mjs",
+          "predecessor_sha256": "a9bd41627cbb3e43f08faa48b7f66a40cc3b5dc677ff85c660661263c2046be0",
+          "sha256": "100890c27809c5c8fd891e36855198d99d2d8162168569fb87cdd7617b6303b9"
+        },
+        {
+          "path": "integration/backend/v7/src/durable-client.mjs",
+          "predecessor_sha256": "0ded48603a54f76e61667518f11a98816b1e887e75d747e727b615b5381b3006",
+          "sha256": "43ef020efb976d3ca816912208f0dae30a0513107c740ecca976e5416fe1a8b7"
+        },
+        {
+          "path": "integration/backend/v7/src/learner-service.mjs",
+          "predecessor_sha256": "43d6c2d89163419ae93454559ee4f8acdd752470f74e85a50cde956d89c3de80",
+          "sha256": "ef2b265d7d7ca18631d089d6a7d484220efbe26ddf90a17aabd007593193aa12"
+        }
+      ],
+      "backend_browser_file_overrides": [
+        {
+          "path": "public/study/backend/v7/src/durable-client.mjs",
+          "predecessor_sha256": "0ded48603a54f76e61667518f11a98816b1e887e75d747e727b615b5381b3006",
+          "sha256": "43ef020efb976d3ca816912208f0dae30a0513107c740ecca976e5416fe1a8b7"
+        }
+      ],
+      "canonical_store": {
+        "predecessor_sha256": "2d71521457b90075ad205de8eaea9d6dcc544968d97752dd7838da1ccfe901f9",
+        "sha256": "289dc8f435f1d4a791671ea8a9e2e1f45b5e9b9c400c68d9d60651024a148d06",
+        "mirror_paths": [
+          "integration/core/js/store.js",
+          "public/study/js/store.js"
+        ]
+      },
+      "startup_file_overrides": [
+        {
+          "path": "public/study/js/account-runtime.js",
+          "predecessor_sha256": "dbb62775f3830bf099f1e1de0116f663de6e1aca7d6dd6b5c3bf2ede5cb6054f",
+          "sha256": "3796cb59e380c3fc2209a8164e7560b78978b12d90fb065732eb9ab7aad4b3de"
+        }
+      ],
+      "browser_files": [
+        {
+          "path": "public/study/js/app.js",
+          "predecessor_sha256": "f1a21a8833d8cd3dc30977e82f09ea6006dca9a5a873099acb141859519b4e59",
+          "sha256": "85c8d64df4d495759e34a247a0618ca11c1b7234476878e36e95e51999a0243f"
+        },
+        {
+          "path": "public/study/styles.css",
+          "predecessor_sha256": "458d962d8c8f56ffe13812b790a7d96565de64806dc754b443225013ce6056d6",
+          "sha256": "7507c5a38e741d28912808192ff60c10fa390ea7593f4228b51def5e8bcc6941"
+        }
+      ],
+      "focused_tests": [
+        {
+          "path": "tests/account-command-writer-independence.test.mjs",
+          "predecessor_sha256": "196ad811f5e34ee697d50356f645095642a5462316e01a3502465bc1b4791e20",
+          "sha256": "3c3c38ae1861b6011fa4f6aceb9d9abcd6810d1c0f59943f64e68acac807563b"
+        },
+        {
+          "path": "tests/library-single-course-boundary.test.mjs",
+          "predecessor_sha256": "b19f6e5c336d2b1e0a1d5cade5539b6b2b28f7d9f78f9a8f9a92132c3fc294cc",
+          "sha256": "87213866ec394b835605fc7f1f1444fb7352d1354716f2476efb1cb3a45e84fc"
+        },
+        {
+          "path": "tests/manual-self-grade.test.mjs",
+          "predecessor_sha256": null,
+          "sha256": "f9ddcc371ff237b8d394a5edac9876032fd3a7403cfaa993387a4062a9c173eb"
+        },
+        {
+          "path": "tests/study-card-ui-successor.test.mjs",
+          "predecessor_sha256": "a1fc09c68d11cc135db38dcde66c43e35b9110ac7c551a72456b2a4eb02b0c9f",
+          "sha256": "76bd6f216df06512d979b04652d40e44ee84b02293eb5c3854f4e1ee3fe54918"
+        }
+      ],
+      "contract": {
+        "rating_buckets": ["again", "hard", "good", "easy"],
+        "answer_revealed": true,
+        "agent_evidence_fields_absent": true,
+        "exactly_once_receipt": "submit_self_grade",
+        "cancel_is_presentation_only": true
+      },
+      "d1_migration_change": false,
+      "public_webmcp_tool_change": false
+    },
     "graph_revision_16": {
       "source_archive_sha256": "0f10ad36429f325ce6a02841a4f26f2f79a1e490823659b690e554ef1a8aad2",
       "source_checksums_sha256": "36e549bd583bccfdfa6b5cda4a0b9d6c4e9430e7cc315eddb0b4bf1d6db64971",
@@ -442,6 +579,93 @@
         "rejected-edge-router",
         "rejected-multilevel-layout"
       ],
+      "d1_migration_change": false,
+      "public_webmcp_tool_change": false
+    },
+    "graph_learner_progress_v1": {
+      "receipt_scope": "learner-progress-graph-successor",
+      "predecessor_selection": "graph_revision_16",
+      "source_commit": "6a18f658f832f8beea9e9afa55b4f11e689712ad",
+      "source_patch_sha256": "a74615fb887adfba95790c17e6b9d2ccd5accc686fcf70f0a7e2c0c44c4a0bc0",
+      "asset_query_token": "v40-learner-graph",
+      "graph_query_revision": "graph-revision-17",
+      "runtime_files": [
+        {
+          "path": "public/study/js/graph-view.js",
+          "sha256": "90a2231d03e16e2b50817b8642886832a3e3a463e399b96381d2699332c517c6"
+        },
+        {
+          "path": "public/study/js/graph-progress-state.js",
+          "sha256": "6990dfe71a807282715c544b204f033d5aedc99a6900aeeb1a2be95a4e60b468"
+        },
+        {
+          "path": "public/study/js/library-view.js",
+          "sha256": "43ac764de4bf75546b27905cb9681157e0f7449fe94966a9264cd264b9538899"
+        }
+      ],
+      "focused_tests": [
+        {
+          "path": "tests/graph-progress-state.test.mjs",
+          "sha256": "1c6518cd263eb688234e85fb874a13345b85b9968a84f735cfe37fe9447b418c"
+        },
+        {
+          "path": "tests/graph-mobile.test.mjs",
+          "sha256": "ab5004239245b3f955f88a4cc93ad3693e4ef72825eba43ae60f091e833818f6"
+        },
+        {
+          "path": "tests/graph-curves.test.mjs",
+          "sha256": "9a881b96c20161b442e01b874784057b9e1f271626348cc7c7644d47afb2f1a9"
+        },
+        {
+          "path": "tests/library-graph-preview.test.mjs",
+          "sha256": "478bf7d15719da01b695c554165a05cc2df256281addbfb8619808901e626b88"
+        }
+      ],
+      "contract": {
+        "personal_progress_source": "learner",
+        "library_progress_source": "structure",
+        "example_progress_excluded": true,
+        "library_can_study": false,
+        "personal_can_study": true
+      },
+      "d1_migration_change": false,
+      "public_webmcp_tool_change": false
+    },
+    "release_v40_candidate": {
+      "receipt_scope": "final-browser-surface-and-held-reveal-successor",
+      "predecessor_commit": "48cbd6d24754173d889fe4fbdea103e95e72562e",
+      "browser_file_overrides": [
+        {
+          "path": "public/study/js/app.js",
+          "predecessor_sha256": "85c8d64df4d495759e34a247a0618ca11c1b7234476878e36e95e51999a0243f",
+          "sha256": "eb2777e9f0a065d4e60579a276c12b710498acaf4a9e7e8093f41bbbcac0e938"
+        },
+        {
+          "path": "public/study/styles.css",
+          "predecessor_sha256": "7507c5a38e741d28912808192ff60c10fa390ea7593f4228b51def5e8bcc6941",
+          "sha256": "7fd2e7668dc9e1fecb24f6baec44e0e60cd65c87c19f24b7ce2ab2a8a84e3d1b"
+        }
+      ],
+      "selected_files": [
+        {
+          "path": "app/page.tsx",
+          "sha256": "a4f48ee56101ee87fd51bf4833bf57938721f16e67f2f788be6966393572e79c"
+        }
+      ],
+      "focused_test_overrides": [
+        {
+          "path": "tests/study-card-ui-successor.test.mjs",
+          "predecessor_sha256": "76bd6f216df06512d979b04652d40e44ee84b02293eb5c3854f4e1ee3fe54918",
+          "sha256": "c1ba3a4bf0f9a100846014e744c5dcc7009fd057f25206e3e50d1e0f32368975"
+        }
+      ],
+      "contract": {
+        "public_heading": "Deck Library",
+        "committed_reveal_survives_reload": true,
+        "advance_is_presentation_only": true,
+        "canonical_session_queue_unchanged": true,
+        "pending_marker_contains_no_definition_or_answer": true
+      },
       "d1_migration_change": false,
       "public_webmcp_tool_change": false
     }

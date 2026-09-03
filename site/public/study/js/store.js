@@ -302,6 +302,7 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
         personal_decks: true,
         dependency_graph: true,
         protected_definition_study: true,
+        self_grading: true,
         preview_apply_authoring: true,
         hard_delete: false,
       },
@@ -1810,6 +1811,110 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     });
   }
 
+  // Private Website operation for a learner who reveals the definition and
+  // chooses an FSRS bucket directly. This intentionally does not manufacture
+  // an answer, rubric evidence, tutor feedback or model confidence.
+  function submitSelfGrade(rawArgs = {}) {
+    const args = objectArgs(rawArgs);
+    const sessionId = requireId(args.session_id, "session_id");
+    const submittedCardId = requireId(args.card_id, "card_id");
+    const expectedCardRevision = boundedInteger(args.expected_card_revision, "expected_card_revision", 1, Number.MAX_SAFE_INTEGER);
+    const expectedSessionRevision = boundedInteger(args.expected_session_revision, "expected_session_revision", 1, Number.MAX_SAFE_INTEGER);
+    const rating = enumValue(args.rating, "rating", ["again", "hard", "good", "easy"]);
+    return withTargetWrite("submit_self_grade", args, (nextState, committedAt) => {
+      const session = requireActiveSession(nextState, sessionId);
+      checkRevision(session.revision, expectedSessionRevision, "session");
+      if (session.phase !== "awaiting_answer") {
+        fail("INVALID_SESSION_PHASE", "A self-grade can only be submitted for an unanswered current card");
+      }
+      const deck = requirePersonalDeck(nextState, session.deckId, { allowArchived: false });
+      const internalCardId = resolveSubmittedCardId(deck, submittedCardId);
+      if (session.currentCardId !== internalCardId) {
+        fail("CARD_MISMATCH", "card_id is not the session's current card");
+      }
+      const card = requireCard(deck, internalCardId);
+      const externalCardId = qualifiedCardId(deck, internalCardId);
+      const cardRevision = Number(card.contentRevision ?? 1);
+      checkRevision(cardRevision, expectedCardRevision, "card");
+      assertStudyCardEligible(deck, card, nextState, catalogDecks);
+      const before = jsonClone(card.review);
+      const after = scheduleReview(reviewWithRecallEvidence(card), rating, new Date(committedAt));
+      const reviewId = `review-${stableHash({ sessionId, internalCardId, committedAt, idempotencyKey: args.idempotency_key })}`;
+      const assessment = {
+        grading_mode: "self",
+        answer_revealed: true,
+        rating,
+      };
+      card.review = after;
+      card.reviewHistory = [...(card.reviewHistory ?? []), {
+        reviewId,
+        cardRevision,
+        submittedAt: committedAt,
+        ...jsonClone(assessment),
+        scheduleBefore: before,
+        scheduleAfter: after,
+      }];
+      card.updatedAt = committedAt;
+      deck.revision += 1;
+      deck.updatedAt = committedAt;
+      session.history.push({
+        cardId: internalCardId,
+        cardRevision,
+        transition: "grade_submitted",
+        reviewId,
+        at: committedAt,
+        ...jsonClone(assessment),
+      });
+      session.reviewsApplied += 1;
+      session.cursor += 1;
+      session.queue = [
+        ...session.queue.slice(0, session.cursor),
+        ...session.queue.slice(session.cursor).filter(id =>
+          isStudyCardEligible(deck, deck.cards[id], nextState, catalogDecks)),
+      ];
+      session.currentCardId = session.queue[session.cursor] ?? null;
+      session.updatedAt = committedAt;
+      session.revision += 1;
+      if (session.currentCardId) {
+        session.phase = "awaiting_answer";
+      } else {
+        session.phase = "complete";
+        session.status = "completed";
+        session.finishedAt = committedAt;
+        if (nextState.activeSessionId === session.id) nextState.activeSessionId = null;
+      }
+      updateStreak(nextState, new Date(committedAt), timeZone);
+      recordActivity(nextState, {
+        type: "grade_submitted",
+        gradingMode: "self",
+        reviewId,
+        deckId: deck.id,
+        sessionId: session.id,
+        cardId: externalCardId,
+        rating,
+        at: committedAt,
+      });
+      return {
+        review_id: reviewId,
+        session_id: session.id,
+        card_id: externalCardId,
+        card_revision: cardRevision,
+        grading_mode: "self",
+        answer_revealed: true,
+        rating,
+        schedule: {
+          previous: targetScheduleSummary(before, new Date(committedAt)),
+          next: targetScheduleSummary(after, new Date(committedAt)),
+        },
+        reviewed_card: agentFacingCard(deck, card, new Date(committedAt)),
+        session: targetSessionSummary(session, deck),
+        ...(session.currentCardId
+          ? { next_card: agentFacingCard(deck, requireCard(deck, session.currentCardId), new Date(committedAt)) }
+          : {}),
+      };
+    });
+  }
+
   function finishTargetStudySession(rawArgs = {}) {
     const args = objectArgs(rawArgs);
     const sessionId = requireId(args.session_id, "session_id");
@@ -2012,6 +2117,7 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     startStudySession,
     getStudySession,
     submitGrade,
+    submitSelfGrade,
     inspectStudySession,
     captureAnswer,
     previewReview,

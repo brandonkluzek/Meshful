@@ -148,8 +148,8 @@ function createSharedBrowser() {
   return { createTab, lockRequests, holders, bytes };
 }
 
-function createServer() {
-  let durableRevision = 0;
+function createServer({ catalogRef = CATALOG_REF, initialDurableRevision = 0 } = {}) {
+  let durableRevision = initialDurableRevision;
   let state = { personalDecks: {}, sessions: {}, activeSessionId: null, activity: [], revision: 0 };
   const receipts = new Map();
   const calls = [];
@@ -161,7 +161,7 @@ function createServer() {
       snapshot_encoding: "canonical-json.v1",
       account_binding: "account-A",
       durable_revision: durableRevision,
-      catalog_ref: CATALOG_REF,
+      catalog_ref: catalogRef,
       state_json: durableRevision === 0 ? null : JSON.stringify(state),
     };
   }
@@ -336,7 +336,7 @@ function createRuntimeFor(tab, server, onStudySuperseded = () => {}, onStudyRele
       return parsed;
     },
     fetchImpl: server.fetchImpl,
-    storageOptions: { siteId: "site-A" },
+    storageOptions: { siteId: "site-A", accountCommandWaitMs: 100 },
     onStudySuperseded,
   });
 }
@@ -375,6 +375,24 @@ const finishArgs = (idempotencyKey) => ({
   disposition: "end",
   expected_session_revision: 1,
   idempotency_key: idempotencyKey,
+});
+
+test("a newly provisioned empty account accepts the server's null catalog reference", async () => {
+  const browser = createSharedBrowser();
+  const runtime = createRuntimeFor(browser.createTab("A"), createServer({ catalogRef: null }));
+
+  const connected = await runtime.connect();
+
+  assert.deepEqual(connected.store.getSnapshot().personalDecks, {});
+  assert.equal(connected.store.getSnapshot().revision, 0);
+  runtime.dispose();
+
+  const nonemptyRuntime = createRuntimeFor(browser.createTab("B"), createServer({
+    catalogRef: null,
+    initialDurableRevision: 1,
+  }));
+  await assert.rejects(nonemptyRuntime.connect(), (error) => error?.code === "INVALID_ACCOUNT_RESPONSE");
+  nonemptyRuntime.dispose();
 });
 
 test("a short account command bypasses active Study while explicit takeover still freezes only old Study", async () => {
@@ -495,6 +513,117 @@ test("a short account command bypasses active Study while explicit takeover stil
   assert.equal(sessionB.isStudyCurrent(), false);
   runtimeA.dispose();
   runtimeB.dispose();
+});
+
+test("two overlapping Add commands queue and rehydrate under one account session", async () => {
+  const browser = createSharedBrowser();
+  const server = createServer();
+  const runtime = createRuntimeFor(browser.createTab("queued-adds"), server);
+  const session = await runtime.connect();
+  const held = server.holdNext("add_library_deck");
+
+  const first = session.store.addLibraryDeck({
+    library_deck_id: "library:math",
+    expected_catalog_version: "release-v2",
+    client_action_id: "add:queued-first",
+  });
+  await held.entered;
+
+  let secondSettled = false;
+  const second = session.store.addLibraryDeck({
+    library_deck_id: "library:physics",
+    expected_catalog_version: "release-v2",
+    client_action_id: "add:queued-second",
+  }).then((value) => {
+    secondSettled = true;
+    return value;
+  }, (error) => {
+    secondSettled = true;
+    throw error;
+  });
+  await Promise.resolve();
+
+  assert.equal(secondSettled, false, "the second Add waits for the first short command");
+  assert.equal(browser.lockRequests.at(-1).name.endsWith(":account-command-queue"), true);
+  assert.equal(browser.lockRequests.at(-1).options.ifAvailable, undefined,
+    "the outer short-command lock queues instead of failing immediately");
+  assert.ok(browser.lockRequests.at(-1).options.signal instanceof AbortSignal,
+    "the queued Add remains cancellable at an account boundary");
+
+  held.release();
+  const [firstResult, secondResult] = await Promise.all([first, second]);
+  assert.equal(firstResult.receipt.replayed, false);
+  assert.equal(secondResult.receipt.replayed, false);
+  const adds = server.calls.filter((call) => call.path.endsWith("/commands") &&
+    JSON.parse(call.body).operation === "add_library_deck").map((call) => JSON.parse(call.body));
+  assert.deepEqual(adds.map((command) => command.request_id), [
+    "add:queued-first",
+    "add:queued-first",
+    "add:queued-second",
+  ], "the successor lease may replay the settled exact key before its new Add");
+  assert.deepEqual(adds.map((command) => command.expected_revision), [0, 0, 1],
+    "the exact replay is idempotent and the queued Add uses the new durable head");
+  assert.equal(server.state().durableRevision, 2);
+  assert.equal(session.getRecovery().command, null);
+  assert.deepEqual(session.getRecovery().commands, []);
+  runtime.dispose();
+});
+
+test("a queued short command is cancelled by its account boundary", async () => {
+  const browser = createSharedBrowser();
+  const server = createServer();
+  const runtimeA = createRuntimeFor(browser.createTab("queue-owner"), server);
+  const runtimeB = createRuntimeFor(browser.createTab("queue-cancelled"), server);
+  const [sessionA, sessionB] = await Promise.all([runtimeA.connect(), runtimeB.connect()]);
+  const held = server.holdNext("add_library_deck");
+  const first = sessionA.store.addLibraryDeck({
+    library_deck_id: "library:math",
+    expected_catalog_version: "release-v2",
+    client_action_id: "add:boundary-owner",
+  });
+  await held.entered;
+
+  const queued = sessionB.store.addLibraryDeck({
+    library_deck_id: "library:physics",
+    expected_catalog_version: "release-v2",
+    client_action_id: "add:boundary-cancelled",
+  });
+  await Promise.resolve();
+  runtimeB.dispose();
+  await assert.rejects(queued, (error) => error?.code === "ACCOUNT_CHANGED");
+
+  held.release();
+  await first;
+  assert.equal(server.state().durableRevision, 1,
+    "the cancelled queue entry never prepares or posts a durable command");
+  runtimeA.dispose();
+});
+
+test("the short-command queue fails closed after its bounded wait", async () => {
+  const browser = createSharedBrowser();
+  const server = createServer();
+  const runtime = createRuntimeFor(browser.createTab("queue-timeout"), server);
+  const session = await runtime.connect();
+  const held = server.holdNext("add_library_deck");
+  const first = session.store.addLibraryDeck({
+    library_deck_id: "library:math",
+    expected_catalog_version: "release-v2",
+    client_action_id: "add:timeout-owner",
+  });
+  await held.entered;
+
+  await assert.rejects(session.store.addLibraryDeck({
+    library_deck_id: "library:physics",
+    expected_catalog_version: "release-v2",
+    client_action_id: "add:timeout-waiter",
+  }), (error) => error?.code === "ACCOUNT_LEASE_BUSY");
+
+  held.release();
+  await first;
+  assert.equal(server.state().durableRevision, 1);
+  assert.equal(server.calls.filter((call) => call.path.endsWith("/commands") &&
+    JSON.parse(call.body).request_id === "add:timeout-waiter").length, 0);
+  runtime.dispose();
 });
 
 test("only Study and short account commands may overlap; whole-state claims exclude both lanes", async () => {

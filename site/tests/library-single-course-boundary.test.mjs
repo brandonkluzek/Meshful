@@ -496,19 +496,45 @@ test("the selected hosted D1 command persists one course and starts it without a
   const started = await service.command(learner, command("start_study_session", startArgs, 1), writerGrant);
   assert.equal(started.durable_revision, 2);
   assert.ok(started.result.current_card);
+  const selfGradeArgs = {
+    session_id: started.result.session.session_id,
+    expected_session_revision: started.result.session.session_revision,
+    card_id: started.result.current_card.card_id,
+    expected_card_revision: started.result.current_card.card_revision,
+    rating: "good",
+    idempotency_key: "single-course-d1:self-grade-algorithms",
+  };
+  await assert.rejects(service.command(learner, command("submit_self_grade", selfGradeArgs, 2)),
+    (error) => error?.code === "WRITER_GRANT_REQUIRED");
+  const selfGraded = await service.command(learner,
+    command("submit_self_grade", selfGradeArgs, 2), writerGrant);
+  assert.equal(selfGraded.durable_revision, 3);
+  assert.equal(selfGraded.result.grading_mode, "self");
+  assert.equal(selfGraded.result.answer_revealed, true);
+  assert.equal(selfGraded.result.rating, "good");
+  assert.equal(selfGraded.result.receipt.operation, "submit_self_grade");
+  for (const field of ["answer_id", "answer_text", "answer_origin", "rubric_evidence", "feedback", "confidence"]) {
+    assert.equal(Object.hasOwn(selfGraded.result, field), false);
+  }
+  assert.equal((await service.command(learner,
+    command("submit_self_grade", selfGradeArgs, 2), writerGrant)).result.receipt.replayed, true);
   const beforeArchive = JSON.parse((await service.getState(learner)).state_json);
   const beforeArchiveRevision = beforeArchive.revision;
   const activeSession = beforeArchive.sessions[started.result.session.session_id];
+  assert.equal(activeSession.reviewsApplied, 1);
+  assert.equal(activeSession.history.at(-1).grading_mode, "self");
+  assert.equal(activeSession.history.at(-1).answer_revealed, true);
+  assert.equal(Object.hasOwn(activeSession.history.at(-1), "answer_text"), false);
   const savedQueue = structuredClone(activeSession.queue);
   const archiveArgs = {
     deck_id: installed.result.deck.id,
     archived: true,
-    expected_revision: installed.result.deck.revision,
+    expected_revision: installed.result.deck.revision + 1,
     client_action_id: "single-course-d1:archive-active-algorithms",
   };
   const archived = await service.command(learner,
-    command("set_deck_archived", archiveArgs, 2));
-  assert.equal(archived.durable_revision, 3);
+    command("set_deck_archived", archiveArgs, 3));
+  assert.equal(archived.durable_revision, 4);
   assert.equal(archived.result.deck.archived, true);
   const afterArchive = JSON.parse((await service.getState(learner)).state_json);
   assert.equal(afterArchive.revision, beforeArchiveRevision + 1,
@@ -524,7 +550,7 @@ test("the selected hosted D1 command persists one course and starts it without a
     "study_paused", "deck_archived",
   ]);
   assert.equal((await service.command(learner,
-    command("set_deck_archived", archiveArgs, 2))).result.receipt.replayed, true);
+    command("set_deck_archived", archiveArgs, 3))).result.receipt.replayed, true);
 
   const restoreArgs = {
     deck_id: archiveArgs.deck_id,
@@ -533,8 +559,8 @@ test("the selected hosted D1 command persists one course and starts it without a
     client_action_id: "single-course-d1:restore-algorithms",
   };
   const restored = await service.command(learner,
-    command("set_deck_archived", restoreArgs, 3));
-  assert.equal(restored.durable_revision, 4);
+    command("set_deck_archived", restoreArgs, 4));
+  assert.equal(restored.durable_revision, 5);
   assert.equal(restored.result.deck.archived, false);
   assert.equal(Object.keys(JSON.parse((await service.getState(learner)).state_json).personalDecks).length, 1);
   assert.equal((await service.getWriterGrant(learner)).writer_epoch, 1);

@@ -1,7 +1,7 @@
 // Selected only by the generated server page after it verifies the signed-in
 // request and both DB and ASSETS bindings. Never load it alongside the
 // browser-local start.js; initializeWebsite itself rejects a second selection.
-import { initializePrivateAccountWebsite } from "./account-entry.js?release=v39-catalog-graph";
+import { initializePrivateAccountWebsite } from "./account-entry.js?release=v40-learner-graph";
 import { createDurableClient } from "../backend/v7/src/durable-client.mjs";
 import { createStudyWriterClient, generateWriterToken } from "../backend/v7/src/writer-client.mjs";
 import { createAccountSessionController } from "../accounts/browser-study-session.mjs";

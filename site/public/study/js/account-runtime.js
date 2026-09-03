@@ -19,11 +19,14 @@ const WRITE_OPERATIONS = Object.freeze({
   updateCards: "update_cards",
   startStudySession: "start_study_session",
   submitGrade: "submit_grade",
+  submitSelfGrade: "submit_self_grade",
   finishStudySession: "finish_study_session",
   addLibraryDeck: "add_library_deck",
   setDeckArchived: "set_deck_archived",
 });
-const STUDY_WRITES = new Set(["startStudySession", "submitGrade", "finishStudySession"]);
+const STUDY_WRITES = new Set([
+  "startStudySession", "submitGrade", "submitSelfGrade", "finishStudySession",
+]);
 const STATE_BUSY_RETRY_DELAYS_MS = Object.freeze([75, 200]);
 const copy = (value) => structuredClone(value);
 
@@ -182,10 +185,11 @@ export function createAccountRuntime({
   }
 
   function validateStateData(data, session = null) {
+    const empty = data?.durable_revision === 0 && data?.state_json === null;
     if (typeof data?.account_binding !== "string" || !data.account_binding ||
       !Number.isSafeInteger(data.durable_revision) || data.durable_revision < 0 ||
       !(data.state_json === null || typeof data.state_json === "string") ||
-      !object(data.catalog_ref)) {
+      !(object(data.catalog_ref) || (data.catalog_ref === null && empty))) {
       fail("INVALID_ACCOUNT_RESPONSE", "The account snapshot was incomplete.");
     }
     if (session && data.account_binding !== session.binding) {

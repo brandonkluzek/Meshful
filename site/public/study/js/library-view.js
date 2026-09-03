@@ -1,4 +1,4 @@
-import { courseDescription } from "./library-descriptions.js?release=v39-catalog-graph";
+import { courseDescription } from "./library-descriptions.js?release=v40-learner-graph";
 
 function normalizedSearchText(values) {
   return values

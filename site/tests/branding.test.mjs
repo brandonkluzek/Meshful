@@ -23,7 +23,7 @@ test('Meshful uses the approved matched-arcs M without adding a header tagline',
   assert.match(page, /aria-label="Meshful home"/);
   assert.match(page, /<span class="brand-mark" aria-hidden="true"><\/span>/);
   assert.doesNotMatch(page, /TODO\(brand\)/);
-  assert.match(styles, /mask: url\("\/meshful-header-mark\.svg\?release=v39-catalog-graph"\)/);
+  assert.match(styles, /mask: url\("\/meshful-header-mark\.svg\?release=v40-learner-graph"\)/);
   assert.match(styles, /\.brand-copy strong \{[\s\S]*?font-size: 18px;/);
   assert.match(styles, /\.brand-mark \{[\s\S]*?width: 42px;[\s\S]*?height: 42px;[\s\S]*?flex: 0 0 42px;/);
   assert.doesNotMatch(page, /TermMesh/);
@@ -49,7 +49,7 @@ test('document and social metadata consistently use Meshful', () => {
   assert.equal([...layout.matchAll(/Study tools for your AI agent\./g)].length, 3);
   assert.match(layout, /process\.env\.SITE_ORIGIN \?\? 'https:\/\/meshful\.ai'/);
   assert.equal([...layout.matchAll(/versionedAsset\('\/meshful-social-card-1200x630\.png'\)/g)].length, 2);
-  assert.match(layout, /const assetRevision = 'v39-catalog-graph'/);
+  assert.match(layout, /const assetRevision = 'v40-learner-graph'/);
   assert.match(layout, /href=\{versionedAsset\('\/favicon-32\.png'\)\} sizes="32x32"/);
   assert.match(layout, /href=\{versionedAsset\('\/favicon-16\.png'\)\} sizes="16x16"/);
   assert.match(layout, /href=\{versionedAsset\('\/apple-touch-icon\.png'\)\} sizes="180x180"/);

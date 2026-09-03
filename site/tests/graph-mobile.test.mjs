@@ -111,7 +111,11 @@ function dataKey(name) {
   return name.slice(5).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 }
 
-function withGraph(callback) {
+function withGraph(callback, {
+  showEntireGraph = false,
+  progressSource = "structure",
+  cardStates = {},
+} = {}) {
   const document = { captures: new Map(), activeElement: null };
   document.createElement = (tag) => new ElementDouble(tag, document);
   document.createElementNS = (_, tag) => document.createElement(tag);
@@ -147,6 +151,9 @@ function withGraph(callback) {
         cards: ["a", "b", "c", "d"].map((id) => ({ id, term: "Term " + id })),
         edges: [{ id: "a-c", source: "a", target: "c" }, { id: "b-d", source: "b", target: "d" }],
       },
+      showEntireGraph,
+      progressSource,
+      cardStates,
       onBack: () => { exits++; },
       onStudy: () => { studies++; },
     });
@@ -206,6 +213,7 @@ test("selection reuses connector and card elements and only updates their state"
     assert.equal(edgesLayer.replaceChildrenCount, replacements);
     assert.equal(container.querySelector("[data-graph-nodes]").replaceChildrenCount, nodeReplacements);
     assert.equal(edge.classList.contains("is-traced"), true);
+    assert.equal(edge.style.stroke, "#e0e3e7");
     dispatch(action("dismiss"), "click");
     assert.strictEqual(edgesLayer.querySelector('[data-edge-id="a-c"]'), edge);
     assert.strictEqual(node("a"), card);
@@ -213,6 +221,7 @@ test("selection reuses connector and card elements and only updates their state"
     assert.equal(edgesLayer.replaceChildrenCount, replacements);
     assert.equal(container.querySelector("[data-graph-nodes]").replaceChildrenCount, nodeReplacements);
     assert.equal(edge.classList.contains("is-traced"), false);
+    assert.match(edge.style.stroke, /^url\(#graph-edge-paint-/);
   });
 });
 
@@ -227,7 +236,10 @@ test("the mounted graph keeps the full deck, comparison states, and visible cont
     assert.equal(marker.getAttribute("markerWidth"), "13");
     assert.equal(marker.querySelector("path").getAttribute("d"), "M 0 0 L 14 4.5 L 0 9 z");
     assert.equal(node("a").dataset.learning, "unseen");
-    assert.equal(node("a").style.borderColor, "#626a75");
+    assert.equal(node("a").dataset.progressSource, "structure");
+    assert.equal(node("a").style.borderColor, "");
+    assert.equal(container.querySelector(".graph-deck-picker"), null);
+    assert.equal(container.querySelector(".graph-layout-flag"), null);
 
     select("a");
     assert.equal(edgesLayer.querySelector('[data-edge-id="a-c"]').classList.contains("is-traced"), true);
@@ -235,6 +247,83 @@ test("the mounted graph keeps the full deck, comparison states, and visible cont
     assert.equal(node("b").classList.contains("is-muted"), true);
     assert.equal(node("b").dataset.learning, "unseen");
   });
+});
+
+test("saved-deck graphs show real learner progress without Library comparison controls", () => {
+  withGraph(({ node, select, inspector, container }) => {
+    assert.equal(container.querySelector(".graph-comparison-bar"), null);
+    assert.equal(container.querySelectorAll("[data-graph-scenario]").length, 0);
+    assert.equal(container.querySelector(".graph-deck-picker"), null);
+    assert.equal(container.querySelector(".graph-layout-flag"), null);
+    assert.equal(node("a").dataset.progressSource, "learner");
+    assert.equal(node("a").dataset.learning, "learning");
+    assert.match(node("a").getAttribute("aria-label"), /Your learning: Learning/);
+    assert.match(node("a").innerHTML, /node-progress-label[^>]*>Learning</);
+    select("a");
+    assert.match(inspector.innerHTML, /Your learning/);
+    assert.match(inspector.innerHTML, /Next review/);
+    assert.match(inspector.innerHTML, /inspector-reviews/);
+    assert.match(inspector.innerHTML, />Good</);
+    assert.match(inspector.innerHTML, />3\.0</);
+    assert.match(container.querySelector("[data-graph-legend]").innerHTML, /Your progress/);
+    assert.equal(node("b").dataset.learning, "learning");
+    assert.equal(node("c").dataset.learning, "established");
+  }, {
+    progressSource: "learner",
+    cardStates: {
+      a: {
+        reviewCount: 1,
+        learnedness: 0.25,
+        dueAt: "2099-01-01T00:00:00.000Z",
+        lastRating: "good",
+        reviewHistory: [{ rating: "good", submittedAt: "2026-09-03T15:00:00.000Z" }],
+      },
+      b: { reviewCount: 8, learnedness: 0.2 },
+      c: { reviewCount: 2, learnedness: 0.8 },
+    },
+  });
+});
+
+test("search and zoom preserve the current saved deck and select the requested term", () => {
+  withGraph(({ container, node, action, dispatch, world }) => {
+    assert.match(container.innerHTML, /Mobile graph/);
+    const search = container.querySelector("[data-graph-search]");
+    search.value = "Term d";
+    dispatch(search, "input");
+    assert.equal(node("a").classList.contains("is-search-muted"), true);
+    assert.equal(node("d").classList.contains("is-search-muted"), false);
+    dispatch(search, "keydown", { key: "Enter" });
+    assert.equal(node("d").getAttribute("aria-pressed"), "true");
+    const selectedTransform = world.style.transform;
+    dispatch(action("zoom-in"), "click");
+    assert.notEqual(world.style.transform, selectedTransform);
+    const zoomedTransform = world.style.transform;
+    dispatch(action("zoom-out"), "click");
+    assert.notEqual(world.style.transform, zoomedTransform);
+    assert.match(container.innerHTML, /Mobile graph/);
+  }, { progressSource: "learner" });
+});
+
+test("Library graphs stay structure-only while retaining full-width scenario previews", () => {
+  withGraph(({ node, select, inspector, container, dispatch }) => {
+    const comparison = container.querySelector(".graph-comparison-bar");
+    assert.ok(comparison);
+    assert.equal(comparison.children.length, 1);
+    assert.ok(comparison.children[0].classList.contains("graph-scenario-previews"));
+    assert.equal(container.querySelectorAll("[data-graph-scenario]").length, 4);
+    assert.equal(container.querySelector(".graph-deck-picker"), null);
+    assert.equal(container.querySelector(".graph-layout-flag"), null);
+    assert.equal(node("a").getAttribute("aria-label"), "Term a. Course structure preview.");
+    assert.doesNotMatch(node("a").innerHTML, /node-progress-label/);
+    select("a");
+    assert.match(inspector.innerHTML, /Course structure preview/);
+    assert.doesNotMatch(inspector.innerHTML, /Your learning/);
+    assert.doesNotMatch(inspector.innerHTML, /inspector-reviews/);
+    assert.match(container.querySelector("[data-graph-legend]").innerHTML, /Course structure preview/);
+    dispatch(container.querySelector('[data-graph-scenario="mixed"]'), "click");
+    assert.equal(container.querySelector('[data-graph-scenario="mixed"]').getAttribute("aria-pressed"), "true");
+    assert.equal(node("a").dataset.scenario, "mixed");
+  }, { showEntireGraph: true });
 });
 
 test("a drag that returns to its origin skips connector rerouting and persistence", () => {
@@ -438,4 +527,19 @@ test("mobile graph styles keep close controls and sheet scroll within the viewpo
   assert.match(css, /\.graph-edge,\s*\.graph-edge\.is-pulsing \{[^}]*stroke-width: 2\.8;/);
   assert.match(css, /\.graph-edge\.is-traced \{[^}]*stroke-width: 3\.25;/);
   assert.match(css, /\.graph-world\[data-zoom="overview"\] \.graph-node span \{\s*opacity: 0;\s*visibility: hidden;/);
+  assert.match(css, /\.graph-world\[data-zoom="overview"\] \.graph-node\[data-progress-source="learner"\] \.node-progress-label \{\s*opacity: 0;\s*visibility: hidden;/);
+  assert.match(css, /\.graph-page\.has-comparison \{\s*grid-template-rows: auto auto minmax\(0, 1fr\);/);
+  assert.match(css, /body\[data-route="graph"\] \.graph-page \{\s*grid-template-rows: auto minmax\(0, 1fr\);/);
+  assert.match(css, /body\[data-route="graph"\] \.graph-page\.has-comparison \{\s*grid-template-rows: auto auto minmax\(0, 1fr\);/);
+  assert.match(css, /\.graph-comparison-bar \{[^}]*grid-template-columns: minmax\(0, 1fr\);/);
+  assert.doesNotMatch(css, /\.graph-deck-picker/);
+  assert.doesNotMatch(css, /\.graph-layout-flag/);
+});
+
+test("app routes saved and Library graphs through distinct progress sources", async () => {
+  const app = await readFile(new URL("../public/study/js/app.js", import.meta.url), "utf8");
+  assert.match(app, /mountGraphView\(view, \{\s*deck,\s*cardStates: \{\},\s*progressSource: "structure"/);
+  assert.match(app, /cardStates: cardStatesForDeck[\s\S]*?progressSource: "learner"/);
+  assert.doesNotMatch(app, /deckOptions: graphDeckOptions/);
+  assert.doesNotMatch(app, /onDeckChange:/);
 });

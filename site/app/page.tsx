@@ -10,7 +10,7 @@ import {
   resolveAccountPersistencePolicy,
 } from '../integration/account-persistence-release.mjs';
 
-const WEBSITE_ASSET_REVISION = 'v39-catalog-graph';
+const WEBSITE_ASSET_REVISION = 'v40-learner-graph';
 import { selectWebsiteEntry } from '../integration/site-selection.mjs';
 
 export const dynamic = 'force-dynamic';
@@ -113,7 +113,7 @@ export default async function Home() {
         <nav class="primary-nav" aria-label="Primary">
           <a href="#study" data-nav="study">Study</a>
           <a href="#decks" data-nav="decks">My Decks</a>
-          <a href="#library" data-nav="library">Library</a>
+          <a href="#library" data-nav="library">Deck Library</a>
         </nav>
 
         <div class="topbar-actions">
@@ -143,7 +143,7 @@ export default async function Home() {
         </a>
         <a href="#library" data-nav="library">
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 4.5a2 2 0 0 1 2-2H9v14H5.5a2 2 0 0 0-2 1.5V4.5ZM16.5 4.5a2 2 0 0 0-2-2H11v14h3.5a2 2 0 0 1 2 1.5V4.5Z" /></svg>
-          <span>Library</span>
+          <span>Deck Library</span>
         </a>
       </nav>
     </div>

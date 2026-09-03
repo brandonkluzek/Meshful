@@ -32,7 +32,11 @@ function exactLock(lock, name) {
 export function createAccountSessionController(options = {}) {
   const siteId = opaqueId(options.siteId);
   const limits = storageLimits(options.limits);
+  const accountCommandWaitMs = options.accountCommandWaitMs ?? 5_000;
   if (typeof options.onInvalidate !== 'function') fail('INVALID_INVALIDATION_SINK');
+  if (!Number.isSafeInteger(accountCommandWaitMs) || accountCommandWaitMs < 1 || accountCommandWaitMs > 30_000) {
+    fail('INVALID_STORAGE_CONFIGURATION');
+  }
 
   let locks;
   let storage;
@@ -251,14 +255,14 @@ export function createAccountSessionController(options = {}) {
     if (!study && !accountCommand && kind !== 'claim') fail('INVALID_STORAGE_CONFIGURATION');
     if (study && typeof onSuperseded !== 'function') fail('INVALID_STUDY_INVALIDATION_SINK');
     // Claims retain the historical whole-state writer boundary. Account
-    // commands may overlap Study, but each lane remains single-writer locally;
-    // D1's durable revision compare-and-swap resolves cross-lane races.
+    // commands may overlap Study and queue behind their own short lane; D1's
+    // durable revision compare-and-swap still resolves cross-lane races.
     if ([...writers].some((writer) => {
       if (writer.closed) return false;
-      // Study and a short account command are the only permitted overlap.
-      // Claims still exclude every writer because they replace whole state.
+      // Study/account-command overlap and account-command serialization are
+      // the only permitted combinations. Claims still exclude every writer.
       return !((study && writer.kind === 'account-command') ||
-        (accountCommand && writer.kind === 'study'));
+        (accountCommand && ['study', 'account-command'].includes(writer.kind)));
     })) {
       fail(study ? 'STUDY_LEASE_BUSY' : 'ACCOUNT_LEASE_BUSY');
     }
@@ -272,9 +276,16 @@ export function createAccountSessionController(options = {}) {
     });
     // Retain the historical Study lock name while separating short commands.
     const lockName = accountCommand ? `${namespace}:account-command` : `${namespace}:writer`;
-    // A claim spans both lanes in this fixed order. Ordinary Study and account
-    // commands each retain one lock and therefore remain able to overlap.
-    const secondaryLockName = kind === 'claim' ? `${namespace}:account-command` : null;
+    // Queue short commands on a dedicated outer lock, then acquire the existing
+    // lane lock fail-fast. Claims never take the queue lock, so they keep their
+    // historical writer -> account-command order and remain exclusive.
+    const queueLockName = accountCommand ? `${namespace}:account-command-queue` : null;
+    const requestLockName = queueLockName ?? lockName;
+    // A claim spans both authority lanes in this fixed order. Study never takes
+    // the account-command queue or lane and therefore remains able to overlap.
+    const secondaryLockName = kind === 'claim' || accountCommand
+      ? `${namespace}:account-command`
+      : null;
     const intentKey = study ? `${namespace}:study-intent` : null;
     const leaseId = opaqueId(nonce());
     const intentMarker = study ? `v1:${opaqueId(nonce())}` : null;
@@ -290,6 +301,7 @@ export function createAccountSessionController(options = {}) {
     const aborter = new AbortController();
     const presentationTickets = new WeakSet();
     let presentationGeneration = 0;
+    let accountCommandWaitTimer = null;
 
     const state = {
       kind,
@@ -302,6 +314,10 @@ export function createAccountSessionController(options = {}) {
       intentMarker,
       close(code) {
         if (state.closed) return;
+        if (accountCommandWaitTimer !== null) {
+          clearTimeout(accountCommandWaitTimer);
+          accountCommandWaitTimer = null;
+        }
         state.active = false;
         state.closed = true;
         presentationGeneration += 1;
@@ -539,15 +555,18 @@ export function createAccountSessionController(options = {}) {
     }
 
     // Register the native request before signaling takeover. Claims hold the
-    // historical writer lock before fail-fast acquisition of account-command;
-    // no writer ever acquires those names in the opposite order.
+    // historical writer lock before fail-fast acquisition of account-command.
+    // Short commands queue on their private outer lock and then acquire only
+    // account-command, so no writer acquires claim locks in the opposite order.
     let request;
     try {
       const requestOptions = study
         ? { mode: 'exclusive', signal: aborter.signal }
-        : { mode: 'exclusive', ifAvailable: true };
+        : accountCommand
+          ? { mode: 'exclusive', signal: aborter.signal }
+          : { mode: 'exclusive', ifAvailable: true };
       const failedOpen = (code) => Object.freeze({ failedOpen: code });
-      request = lockRequest.call(locks, lockName, requestOptions, async (lock) => {
+      request = lockRequest.call(locks, requestLockName, requestOptions, async (lock) => {
         await armed.promise;
         if (state.closed || !checkBound(accountBinding, ticket)) {
           return failedOpen('ACCOUNT_CHANGED');
@@ -555,7 +574,7 @@ export function createAccountSessionController(options = {}) {
         if (lock === null) {
           return failedOpen(study ? 'ACCOUNT_LOCKS_UNAVAILABLE' : 'ACCOUNT_LEASE_BUSY');
         }
-        if (!exactLock(lock, lockName)) {
+        if (!exactLock(lock, requestLockName)) {
           return failedOpen('ACCOUNT_LOCKS_UNAVAILABLE');
         }
         if (study && get(intentKey) !== intentMarker) {
@@ -572,6 +591,10 @@ export function createAccountSessionController(options = {}) {
             if (secondaryLock === null) return failedOpen('ACCOUNT_LEASE_BUSY');
             if (!exactLock(secondaryLock, secondaryLockName)) {
               return failedOpen('ACCOUNT_LOCKS_UNAVAILABLE');
+            }
+            if (accountCommandWaitTimer !== null) {
+              clearTimeout(accountCommandWaitTimer);
+              accountCommandWaitTimer = null;
             }
             state.active = true;
             opened.resolve(lease);
@@ -597,6 +620,11 @@ export function createAccountSessionController(options = {}) {
       if (state.closed) {
         armed.resolve();
         return opened.promise;
+      }
+      if (accountCommand) {
+        accountCommandWaitTimer = setTimeout(() => {
+          if (!state.active && !state.closed) state.close('ACCOUNT_LEASE_BUSY');
+        }, accountCommandWaitMs);
       }
     } catch {
       armed.resolve();

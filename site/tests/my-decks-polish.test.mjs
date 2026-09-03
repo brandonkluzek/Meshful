@@ -87,6 +87,13 @@ test("archived cards expose Restore, Graph, and an honest unavailable Delete act
   assert.match(css, /\.archive-confirmation\s*\{[\s\S]*background:\s*#202329;[\s\S]*border-top:\s*1px solid #4a505b/);
   assert.match(css, /\.archive-confirmation \.archive-confirm-button[\s\S]*background:\s*#343943;[\s\S]*border-color:\s*#68707d/);
   assert.match(css, /\.archive-confirmation\.delete-unavailable[\s\S]*background:\s*#2b1919;[\s\S]*border-top-color:\s*#713d3a/);
+  assert.match(css, /\.archive-confirmation\s*\{[\s\S]*min-height:\s*128px;[\s\S]*align-items:\s*stretch;[\s\S]*flex-direction:\s*column;[\s\S]*padding:\s*18px 20px 20px;/);
+  assert.match(css, /\.archive-confirmation > div:last-child\s*\{[\s\S]*justify-content:\s*flex-end;/);
+  assert.match(css, /\.toast-region\s*\{[\s\S]*bottom:\s*34px;[\s\S]*left:\s*50%;[\s\S]*width:\s*min\(460px, calc\(100vw - 40px\)\);[\s\S]*transform:\s*translateX\(-50%\);/);
+  assert.match(css, /\.toast\s*\{[\s\S]*min-height:\s*58px;[\s\S]*font-size:\s*14px;/);
+  assert.match(css, /\.toast-action\s*\{[\s\S]*min-height:\s*40px;[\s\S]*padding:\s*0 16px;[\s\S]*font-size:\s*14px;/);
+  assert.match(css, /\.toast-action\s*\{\s*min-height:\s*44px;\s*\}/);
+  assert.doesNotMatch(css, /\.archive-confirmation\s*\{[^}]*align-items:\s*flex-start;/s);
 });
 
 test("last-studied labels stay human and calendar-relative", () => {

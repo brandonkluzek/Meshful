@@ -9,6 +9,7 @@ import { assertJsonTextBudget } from "../../v2/src/json-budget.mjs";
 const STUDY_WRITE_OPERATIONS = new Set([
   "start_study_session",
   "submit_grade",
+  "submit_self_grade",
   "finish_study_session",
 ]);
 

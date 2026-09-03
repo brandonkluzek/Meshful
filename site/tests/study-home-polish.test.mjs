@@ -60,11 +60,26 @@ test("Study hero leads with due reviews and weekly activity without readiness ja
   assert.match(css, /\.study-hero-copy h2\s*\{[\s\S]*font-size:\s*clamp\(25px, 3vw, 32px\);/);
   assert.match(css, /\.study-title-line\s*\{[\s\S]*margin-bottom:\s*18px;/);
   assert.match(css, /\.study-title-line\.has-session-progress\s*\{[\s\S]*margin-bottom:\s*7px;/);
+  assert.match(home, /class="button button-primary study-hero-action"/);
+  assert.match(css, /\.button\.study-hero-action\s*\{[\s\S]*display:\s*inline-flex;/);
+  assert.match(css, /\.button\.study-hero-action\s*\{[\s\S]*min-width:\s*190px;/);
+  assert.match(css, /\.button\.study-hero-action\s*\{[\s\S]*min-height:\s*50px;/);
+  assert.match(css, /\.button\.study-hero-action\s*\{[\s\S]*padding:\s*0 22px;/);
+  assert.match(css, /\.button\.study-hero-action\s*\{[\s\S]*gap:\s*10px;/);
+  assert.match(css, /\.button\.study-hero-action\s*\{[\s\S]*font-size:\s*16px;/);
+  assert.match(css, /\.button\.study-hero-action svg\s*\{[\s\S]*width:\s*18px;[\s\S]*height:\s*18px;/);
   assert.match(home, /<h2>Choose a deck<\/h2>/);
   assert.doesNotMatch(home, /<h2>Your queue<\/h2>/);
   assert.match(css, /\.section-heading h2\s*\{[\s\S]*font-size:\s*20px;/);
   assert.match(css, /\.section-heading a\s*\{[\s\S]*min-height:\s*44px;[\s\S]*font-size:\s*15px;/);
   assert.doesNotMatch(app, /new ready|awaiting prerequisites|No new cards ready/i);
+});
+
+test("Study deck rows keep their compact action separate from the hero CTA", () => {
+  const row = sourceBetween("function queueRow", "function renderMyDecks");
+
+  assert.match(row, /class="button button-sm"/);
+  assert.doesNotMatch(row, /study-hero-action/);
 });
 
 test("fresh and fully archived learners get one clear Library path without starting a session", () => {
@@ -84,11 +99,11 @@ test("fresh and fully archived learners get one clear Library path without start
   assert.match(css, /@media \(max-width: 720px\)[\s\S]*\.empty-actions\s*\{[\s\S]*flex-direction:\s*column;/);
 });
 
-test("the catalog uses the concise user-facing Library name", () => {
+test("the catalog uses the public Deck Library name", () => {
   const libraryView = sourceBetween("function renderLibrary", "function installedPersonalDeck");
   const myDecksView = sourceBetween("function renderMyDecks", "function personalDeckCard");
 
-  assert.match(libraryView, /<h1>Library<\/h1>/);
+  assert.match(libraryView, /<h1>Deck Library<\/h1>/);
   assert.match(libraryView, /Search the Library/);
   assert.match(libraryView, /placeholder="Search courses, subjects, or terms"/);
   assert.match(libraryView, /type="search"[\s\S]*autocapitalize="none"[\s\S]*enterkeyhint="search"[\s\S]*spellcheck="false"/);
@@ -99,7 +114,7 @@ test("the catalog uses the concise user-facing Library name", () => {
   assert.match(myDecksView, /aria-label="Open Library to add decks">Library/);
   assert.doesNotMatch(app, /Find prerequisite in Library/);
   assert.match(app, /Close graph and return to Library/);
-  assert.doesNotMatch(app, /Deck Library/);
+  assert.match(app, /<h1>Deck Library<\/h1>/);
 });
 
 test("Library search updates results without replacing the focused input", () => {

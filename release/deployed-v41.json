@@ -1,0 +1,56 @@
+{
+  "schema_version": "meshful.deployed-source.v1",
+  "observed_at": "2026-09-03",
+  "sites": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "saved_version": 41,
+    "release_tag": "sites-v41",
+    "version_id": "appgprj_6a9334b99f20819195ece80ebe97016b~appgver_1a5268a72b448191a4cfb6b19f5592b6",
+    "deployment_id": "appgdep_6a999d378a788191abea7d3380cc4ff8",
+    "provider_deployment": "site---6a9334b99f20819195ece80ebe97016b",
+    "environment_revision": 2,
+    "deployment_status": "succeeded",
+    "public_url": "https://meshful.ai",
+    "provider_url": "https://adaptive-study-lab.brandonkluzek.chatgpt.site",
+    "bindings": {
+      "d1": "DB",
+      "r2": null,
+      "account_persistence": "policy-gated"
+    }
+  },
+  "source": {
+    "commit": "7e1e443d4a3e92b156c591443b36f3ad35dd325c",
+    "tree": "37669128d41bf03ba7a1db64ef4d6ba27518d8a6",
+    "stored_archive_sha256": "20bfc946360c085aeff711f903b2429227dabe99db10b05659da3af0e216ef2b",
+    "stored_archive_files": 413,
+    "stored_archive_bytes": 92231680,
+    "repository_path": "site"
+  },
+  "live_runtime_sha256": {
+    "site/public/study/js/webmcp.js": "aadd6c476bb54ff83fb7c121d7a3723b36c95b2b8357003652b2c4a08892ad08",
+    "site/public/study/js/deck-build-guide.js": "6444795b10e082b119e8987c4a7bb4ce549d1dcb8e6923060c1542fab3280138",
+    "site/public/study/js/grading-guide.js": "93a139c32205b224fccf6458e7cf91f200cc3aa7e182ef33830878b9b2119d12",
+    "site/public/study/js/store.js": "289dc8f435f1d4a791671ea8a9e2e1f45b5e9b9c400c68d9d60651024a148d06"
+  },
+  "validation": {
+    "predeploy_tests_passed": 185,
+    "predeploy_tests_failed": 0,
+    "focused_release_and_metadata_passed": 55,
+    "focused_release_and_metadata_failed": 0,
+    "lint": "passed",
+    "build": "passed",
+    "worker_fetch_export": "passed",
+    "public_signed_out_reload": "passed",
+    "public_deck_library_courses": 72,
+    "live_native_webmcp_tools": 13,
+    "live_runtime_hash_parity": "passed",
+    "public_home_status": 200,
+    "provider_home_status": 200,
+    "anonymous_state_read": 401,
+    "production_learner_writes_performed": false
+  },
+  "excluded_successors": [
+    "post-v41 demo-mode experiment",
+    "post-v41 privacy-copy experiment"
+  ]
+}

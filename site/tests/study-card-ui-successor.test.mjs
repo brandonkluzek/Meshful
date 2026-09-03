@@ -245,12 +245,13 @@ async function withApp({ storage, hash, reducedMotion = false, mobile = false, a
     requestAnimationFrame: (handler) => schedule(handler),
     confirm: () => { throw new Error("This focused test never authorizes a browser mutation prompt."); },
   };
-  const previous = new Map([...Object.keys(globals), "localStorage", "navigator"].map((name) => [
+  const previous = new Map([...Object.keys(globals), "localStorage", "sessionStorage", "navigator"].map((name) => [
     name,
     Object.getOwnPropertyDescriptor(globalThis, name),
   ]));
   Object.assign(globalThis, globals);
   Object.defineProperty(globalThis, "localStorage", { configurable: true, value: storage });
+  Object.defineProperty(globalThis, "sessionStorage", { configurable: true, value: storage });
   Object.defineProperty(globalThis, "navigator", { configurable: true, value: navigator });
 
   async function flush(duration = 0) {
@@ -299,6 +300,20 @@ async function withApp({ storage, hash, reducedMotion = false, mobile = false, a
           workItems.push(work);
         }
         return Promise.all(workItems);
+      },
+      keydown({ key = " ", code = "Space", repeat = false, target = document.body } = {}) {
+        const event = {
+          key,
+          code,
+          repeat,
+          target,
+          defaultPrevented: false,
+          propagationStopped: false,
+          preventDefault() { this.defaultPrevented = true; },
+          stopPropagation() { this.propagationStopped = true; },
+        };
+        for (const listener of document.body.listeners.get("keydown") ?? []) listener(event);
+        return event;
       },
       async settleEvents() {
         await Promise.all(pendingEvents);
@@ -458,7 +473,17 @@ for (const rating of ["again", "hard", "good", "easy"]) {
       assert.equal(ui.view.querySelector("[data-session-completion]"), null);
       assert.equal((await settleCommittedReveal(ui, pending)).ok, true);
       const committedBytes = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
-      assert.equal(ui.view.querySelector("[data-advance-study-card]")?.textContent, "Next card");
+      const back = scene.querySelector(".study-card-back");
+      assert.equal(back.querySelector(".study-card-kicker"), null);
+      assert.doesNotMatch(back.textContent, /Canonical answer/);
+      assert.equal(back.querySelector("[data-study-reviewed-term]")?.textContent.trim(), "Term 1");
+      const actions = ui.view.querySelector(".study-control-actions");
+      assert.equal(actions.querySelector("[data-reveal-answer]"), null);
+      assert.equal(actions.querySelector("[data-skip-card]"), null);
+      assert.equal(actions.querySelector("[data-show-study-help]"), null);
+      assert.equal(actions.querySelectorAll("button").length, 1);
+      assert.equal(actions.querySelector("[data-advance-study-card]")?.textContent, "Next card");
+      assert.equal(actions.classList.contains("has-study-next"), true);
       await ui.flush(60_000);
       assert.equal(ui.view.querySelector("[data-study-card-scene]"), scene);
       assert.equal(departures, 0);
@@ -475,9 +500,92 @@ for (const rating of ["again", "hard", "good", "easy"]) {
   });
 }
 
-serialTest("the final definition waits for Finish session without another stored change", async () => {
-  const fixture = freshFixture(1, "final-reveal");
+serialTest("a committed definition survives reload until one explicit Next card", async () => {
+  const fixture = freshFixture(2, "reload-held-reveal");
+  const hash = `#session/${fixture.opened.session.session_id}`;
+  let committedBytes;
+
+  await withApp({ storage: fixture.storage, hash }, async (ui) => {
+    const pending = ui.execute("submit_grade", gradeInput(fixture.opened, "reload-held-reveal"));
+    await settleMicrotasks();
+    assert.equal((await settleCommittedReveal(ui, pending)).ok, true);
+    committedBytes = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
+    assert.equal(ui.view.querySelector("[data-study-card-scene]")?.dataset.cardId, `${fixture.deckId}.term1`);
+    assert.match(ui.view.querySelector("[data-study-definition]")?.textContent ?? "", /PRIVATE.?DEFINITION.?1/);
+  });
+
+  await withApp({ storage: fixture.storage, hash }, async (ui) => {
+    const reloadedScene = ui.view.querySelector("[data-study-card-scene]");
+    assert.equal(reloadedScene?.dataset.cardId, `${fixture.deckId}.term1`);
+    assert.equal(reloadedScene?.classList.contains("is-flipped"), true);
+    assert.match(reloadedScene?.querySelector("[data-study-definition]")?.textContent ?? "", /PRIVATE.?DEFINITION.?1/);
+    assert.equal(ui.view.querySelector("[data-advance-study-card]")?.textContent, "Next card");
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), committedBytes, "reload is presentation-only");
+    await advanceCommittedReveal(ui);
+    assert.equal(ui.view.querySelector("[data-study-card-scene]")?.dataset.cardId, `${fixture.deckId}.term2`);
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), committedBytes, "Next card remains presentation-only");
+  });
+
+  await withApp({ storage: fixture.storage, hash }, async (ui) => {
+    const departedScene = ui.view.querySelector("[data-study-card-scene]");
+    assert.equal(departedScene?.dataset.cardId, `${fixture.deckId}.term2`);
+    assert.equal(departedScene?.classList.contains("is-flipped"), false);
+    assert.equal(departedScene?.querySelector("[data-study-definition]")?.textContent.trim(), "");
+    assert.deepEqual(ui.errors, []);
+  });
+});
+
+serialTest("Space is inert before reveal and advances one committed back exactly once", async () => {
+  const fixture = freshFixture(2, "space-next");
   await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}` }, async (ui) => {
+    const promptScene = ui.view.querySelector("[data-study-card-scene]");
+    const initialBytes = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
+    const beforeReveal = ui.keydown();
+    assert.equal(beforeReveal.defaultPrevented, false);
+    assert.equal(ui.view.querySelector("[data-study-card-scene]"), promptScene);
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), initialBytes);
+
+    const pending = ui.execute("submit_grade", gradeInput(fixture.opened, "space-next"));
+    await settleMicrotasks();
+    assert.equal((await settleCommittedReveal(ui, pending)).ok, true);
+    const committedBytes = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
+    const revealedScene = ui.view.querySelector("[data-study-card-scene]");
+    let departures = 0;
+    const add = revealedScene.classList.add;
+    revealedScene.classList.add = (...names) => {
+      departures += names.filter((name) => name === "is-departing").length;
+      add(...names);
+    };
+
+    const space = ui.keydown();
+    assert.equal(space.defaultPrevented, true);
+    assert.equal(departures, 1);
+    const repeat = ui.keydown({ repeat: true });
+    assert.equal(repeat.defaultPrevented, false);
+    assert.equal(departures, 1);
+    await ui.flush(500);
+
+    const nextScene = ui.view.querySelector("[data-study-card-scene]");
+    assert.notEqual(nextScene, revealedScene);
+    assert.equal(nextScene.querySelector(".study-term")?.textContent.trim(), "Term 2");
+    assert.equal(nextScene.querySelector("[data-study-definition]")?.textContent.trim(), "");
+    assert.doesNotMatch(ui.view.textContent, /PRIVATE.?DEFINITION.?1/);
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), committedBytes, "Space is presentation-only");
+
+    const secondSpace = ui.keydown();
+    assert.equal(secondSpace.defaultPrevented, false);
+    assert.equal(ui.view.querySelector("[data-study-card-scene]"), nextScene);
+    assert.equal(departures, 1);
+    assert.deepEqual(ui.errors, []);
+  });
+});
+
+serialTest("the final definition survives reload until one explicit Finish session", async () => {
+  const fixture = freshFixture(1, "final-reveal");
+  const hash = `#session/${fixture.opened.session.session_id}`;
+  let committedBytes;
+
+  await withApp({ storage: fixture.storage, hash }, async (ui) => {
     const scene = ui.view.querySelector("[data-study-card-scene]");
     const pending = ui.execute("submit_grade", gradeInput(fixture.opened, "final-reveal"));
     await settleMicrotasks();
@@ -485,22 +593,112 @@ serialTest("the final definition waits for Finish session without another stored
     assert.match(scene.querySelector("[data-study-definition]").textContent, /PRIVATE.?DEFINITION.?1/);
     assert.equal(ui.view.querySelector("[data-session-completion]"), null);
     assert.equal((await settleCommittedReveal(ui, pending)).ok, true);
-    const committedBytes = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
+    committedBytes = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
     assert.equal(ui.view.querySelector("[data-advance-study-card]")?.textContent, "Finish session");
     await ui.flush(60_000);
     assert.equal(ui.view.querySelector("[data-study-card-scene]"), scene);
     assert.equal(ui.view.querySelector("[data-session-completion]"), null);
+  });
+
+  await withApp({ storage: fixture.storage, hash }, async (ui) => {
+    const reloadedScene = ui.view.querySelector("[data-study-card-scene]");
+    assert.equal(reloadedScene?.dataset.cardId, `${fixture.deckId}.term1`);
+    assert.equal(reloadedScene?.classList.contains("is-flipped"), true);
+    assert.match(reloadedScene?.querySelector("[data-study-definition]")?.textContent ?? "", /PRIVATE.?DEFINITION.?1/);
+    assert.equal(ui.view.querySelector("[data-advance-study-card]")?.textContent, "Finish session");
+    assert.equal(ui.view.querySelector("[data-session-completion]"), null);
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), committedBytes, "reload is presentation-only");
     await advanceCommittedReveal(ui);
     assert.match(ui.view.querySelector("[data-session-completion]")?.textContent ?? "", /Session complete/);
     assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), committedBytes, "Finish session is presentation-only");
     assert.deepEqual(ui.errors, []);
   });
+
+  await withApp({ storage: fixture.storage, hash }, async (ui) => {
+    assert.match(ui.view.querySelector("[data-session-completion]")?.textContent ?? "", /Session complete/);
+    assert.equal(ui.view.querySelector("[data-study-card-scene]"), null);
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), committedBytes);
+    assert.deepEqual(ui.errors, []);
+  });
 });
 
 for (const host of [
-  { label: "agent desktop", agentHost: true, mobile: false, copy: /Need an agent\?.*Answer this term in ChatGPT or Codex\./i },
-  { label: "standalone Chrome", agentHost: false, mobile: false, copy: /Need an agent\?.*Answer this term in ChatGPT or Codex\./i },
-  { label: "mobile", agentHost: false, mobile: true, copy: /Study on desktop.*Open Meshful in ChatGPT or Codex\./i },
+  { label: "agent desktop", agentHost: true, mobile: false, expected: true },
+  { label: "standalone desktop", agentHost: false, mobile: false, expected: true },
+  { label: "agent-hosted mobile", agentHost: true, mobile: true, expected: true },
+  { label: "standalone mobile", agentHost: false, mobile: true, expected: true },
+]) {
+  serialTest(`manual grading fallback visibility matches ${host.label}`, async () => {
+    const fixture = freshFixture(1, `manual-visibility-${host.label.replaceAll(" ", "-")}`);
+    await withApp({
+      storage: fixture.storage,
+      hash: `#session/${fixture.opened.session.session_id}`,
+      agentHost: host.agentHost,
+      mobile: host.mobile,
+    }, async (ui) => {
+      assert.equal(Boolean(ui.view.querySelector("[data-start-self-grade]")), host.expected);
+      assert.deepEqual(ui.errors, []);
+    });
+  });
+}
+
+serialTest("manual grading reveals the answer and commits one auditable website self-rating", async () => {
+  const fixture = freshFixture(2, "manual-self-grade");
+  await withApp({
+    storage: fixture.storage,
+    hash: `#session/${fixture.opened.session.session_id}`,
+    agentHost: false,
+    mobile: true,
+  }, async (ui) => {
+    const before = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
+    const scene = ui.view.querySelector("[data-study-card-scene]");
+    await ui.click("[data-start-self-grade]");
+    await ui.flush();
+
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), before, "opening the picker is presentation-only");
+    assert.equal(scene.classList.contains("is-flipped"), true);
+    assert.match(scene.querySelector("[data-study-definition]").textContent, /PRIVATE.?DEFINITION.?1/);
+    assert.equal(ui.view.querySelector("[data-card-stack]")?.dataset.studyCardPhase, "manual-grade");
+    const choices = ui.view.querySelectorAll("[data-submit-self-grade]");
+    assert.deepEqual(choices.map((choice) => choice.dataset.submitSelfGrade), ["again", "hard", "good", "easy"]);
+    assert.match(ui.view.querySelector("[data-study-manual-grades]")?.textContent ?? "", /Again.*Forgot it.*Hard.*With effort.*Good.*Remembered.*Easy.*Effortless/is);
+    assert.ok(ui.view.querySelector("[data-cancel-self-grade]"));
+
+    await ui.click("[data-cancel-self-grade]");
+    await ui.settleEvents();
+    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), before, "Back is presentation-only");
+    assert.equal(ui.view.querySelector("[data-study-manual-grades]"), null);
+    assert.equal(ui.view.querySelector("[data-study-card-scene]")?.classList.contains("is-flipped"), false);
+
+    await ui.click("[data-start-self-grade]");
+    await ui.flush();
+
+    await ui.click('[data-submit-self-grade="good"]');
+    await ui.settleEvents();
+    const committed = JSON.parse(fixture.scoped.getItem(LEARNER_STORAGE_KEY));
+    const session = committed.sessions[fixture.opened.session.session_id];
+    const review = session.history.filter((event) => event.transition === "grade_submitted").at(-1);
+    assert.equal(session.reviewsApplied, 1);
+    assert.equal(review.rating, "good");
+    assert.equal(review.grading_mode, "self");
+    assert.equal(review.answer_revealed, true);
+    assert.equal(Object.hasOwn(review, "answer_origin"), false);
+    assert.equal(Object.hasOwn(review, "answer_text"), false);
+    assert.equal(Object.hasOwn(review, "rubric_evidence"), false);
+    assert.equal(Object.hasOwn(review, "feedback"), false);
+    const selfGradeReceipt = Object.values(committed.actionReceipts)
+      .find((receipt) => receipt.result?.receipt?.operation === "submit_self_grade");
+    assert.ok(selfGradeReceipt, "the manual choice has a typed submit_self_grade receipt");
+    assert.equal(ui.view.querySelector("[data-advance-study-card]")?.textContent, "Next card");
+    assert.equal(ui.view.querySelector("[data-study-card-scene]")?.dataset.studyOutcome, "good");
+    assert.deepEqual(ui.errors, []);
+  });
+});
+
+for (const host of [
+  { label: "agent desktop", agentHost: true, mobile: false, copy: /Choose how to grade.*Use your agent for feedback, or choose Grade myself\./i },
+  { label: "standalone Chrome", agentHost: false, mobile: false, copy: /Choose how to grade.*Use your agent for feedback, or choose Grade myself\./i },
+  { label: "mobile", agentHost: false, mobile: true, copy: /Choose how to grade.*Use your agent for feedback, or choose Grade myself\./i },
 ]) {
   serialTest(`delayed help is once-per-session, dismissible, and specific to ${host.label}`, async () => {
     const fixture = freshFixture(1, `help-${host.label.replaceAll(" ", "-")}`);
@@ -685,6 +883,12 @@ serialTest("session presentation exposes readable controls and a reduced-motion 
   assert.match(app, /data-session-progress/);
   assert.match(app, /data-study-live-status aria-live="polite"/);
   assert.match(app, /data-study-agent-help/);
+  assert.match(app, /manualGradeAvailable\(\)/);
+  assert.match(app, /data-start-self-grade>Grade myself<\/button>/);
+  assert.match(app, /gradeButton\("again", "Again", "Forgot it"\)[\s\S]*gradeButton\("hard", "Hard", "With effort"\)[\s\S]*gradeButton\("good", "Good", "Remembered"\)[\s\S]*gradeButton\("easy", "Easy", "Effortless"\)/);
+  assert.match(app, /uiMutation\("submitSelfGrade", \{[\s\S]*rating,[\s\S]*idempotency_key: ui\.manualGrade\.idempotencyKey/);
+  assert.doesNotMatch(app, /No written answer was captured/);
+  assert.match(app, /data-cancel-self-grade/);
   assert.match(app, /data-dismiss-study-help/);
   assert.match(app, /const STUDY_HELP_DELAY_MS = 40_000/);
   assert.match(app, /allowReveal \? '<button[^']*data-reveal-answer>Reveal answer<\/button>'/);
@@ -705,8 +909,12 @@ serialTest("session presentation exposes readable controls and a reduced-motion 
   assert.match(app, /attempt_kind: action/);
   assert.match(app, /if \(presentationAction === "skip"\)[\s\S]*Moving to the next card without revealing the answer\.[\s\S]*scene\.classList\.add\("is-departing"\);/);
   assert.match(app, /renderDefinition\(definition,[\s\S]*revealStudyCardFaces\(scene\);[\s\S]*data-study-advance-pending/);
-  assert.match(app, /next\.dataset\.advanceStudyCard = "true";[\s\S]*next\.textContent = nextLabel;[\s\S]*actions\.replaceChildren\(next\);/);
-  assert.match(app, /const advanceStudyCard = target\.closest\("\[data-advance-study-card\]"\);[\s\S]*scene\?\.classList\.add\("is-departing"\);[\s\S]*queueRender\(delay, null, true\);/);
+  assert.match(app, /next\.dataset\.advanceStudyCard = "true";[\s\S]*next\.textContent = nextLabel;[\s\S]*actions\.replaceChildren\(next\);[\s\S]*actions\.classList\.add\("has-study-next"\);/);
+  assert.match(app, /function advancePresentedStudyCard\(advanceStudyCard\) \{[\s\S]*scene\?\.classList\.add\("is-departing"\);[\s\S]*queueRender\(delay, null, true\);[\s\S]*return true;/);
+  assert.match(app, /const advanceStudyCard = target\.closest\("\[data-advance-study-card\]"\);[\s\S]*advancePresentedStudyCard\(advanceStudyCard\);/);
+  assert.match(app, /const pendingShell = view\.querySelector\("\[data-study-advance-pending\]"\);[\s\S]*\(event\.key === " " \|\| event\.code === "Space"\)[\s\S]*!event\.repeat[\s\S]*advancePresentedStudyCard\(pendingAdvance\);/);
+  assert.match(app, /data-study-reviewed-term/);
+  assert.doesNotMatch(app, /study-card-kicker">Definition|<span>Canonical answer<\/span>/);
   assert.match(app, /if \(!completesReveal && view\.querySelector\("\[data-study-advance-pending\]"\)\) return;/);
   assert.doesNotMatch(app, /await waitForReveal\(1_280\)/);
   assert.match(app, /const helpKey = session\.id;/);
@@ -722,8 +930,18 @@ serialTest("session presentation exposes readable controls and a reduced-motion 
   assert.match(css, /\.session-progress-continuous \.progress-track span\s*\{[^}]*width:\s*32%;[^}]*background:\s*var\(--ink-1\);[^}]*animation:\s*study-continuous-progress 6\.5s linear infinite;/s);
   assert.match(css, /\.session-exit\s*\{[^}]*min-height:\s*(?:44px|2\.75rem)[^}]*min-width:/s);
   assert.match(css, /\.study-control-actions\s*\{[^}]*padding-inline:\s*50px/s);
+  assert.match(css, /\.study-control-actions\.has-study-next,\s*\n\.study-control-actions\.has-manual-grades\s*\{[^}]*padding-inline:\s*0;/s);
   assert.match(css, /\.study-help-button\s*\{[^}]*position:\s*absolute;[^}]*width:\s*44px;[^}]*height:\s*44px;[^}]*color:\s*var\(--ink-1\);[^}]*background:\s*var\(--surface-2\);[^}]*border:\s*1px solid var\(--line-strong\);/s);
   assert.match(css, /\.study-reveal-action,[\s\S]*\.study-skip-action,[\s\S]*\.study-next-action\s*\{[^}]*min-height:\s*44px;/);
+  assert.match(css, /\.study-manual-grade-grid\s*\{[^}]*grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/s);
+  assert.match(css, /\.study-manual-grade\s*\{[^}]*min-height:\s*58px;[^}]*touch-action:\s*manipulation;/s);
+  assert.match(css, /@media \(max-width: 720px\)[\s\S]*\.study-manual-grade-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/s);
+  const cardFootRule = css.match(/\.study-card-foot\s*\{[^}]*\}/s)?.[0] ?? "";
+  assert.match(cardFootRule, /justify-content:\s*flex-start;/);
+  assert.match(cardFootRule, /font-size:\s*clamp\(18px, 2\.2vw, 22px\);/);
+  assert.doesNotMatch(cardFootRule, /text-transform:\s*uppercase/);
+  assert.doesNotMatch(css, /\.study-card-kicker\s*\{/);
+  assert.match(css, /\.study-next-action\s*\{[^}]*min-width:\s*112px;[^}]*animation:\s*study-next-action-arrive 180ms/);
   assert.match(css, /\.study-nonanswer-warning\s*\{[^}]*position:\s*static;[^}]*width:\s*min\(360px, calc\(100% - 24px\)\);[^}]*padding:\s*12px 14px;[^}]*background:\s*var\(--surface-2\);[^}]*box-shadow:\s*0 10px 24px rgba\(0, 0, 0, 0\.2\);/s);
   assert.match(css, /\.study-nonanswer-warning::backdrop\s*\{[^}]*display:\s*none;[^}]*background:\s*transparent;[^}]*backdrop-filter:\s*none;/s);
   assert.match(css, /\.study-card-scene\.is-flipped\.is-departing\s*\{[^}]*transform:[^;}]*rotateY\(180deg\)/s);

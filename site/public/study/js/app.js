@@ -4,14 +4,15 @@ import {
   matchesLibraryQuery,
   graphForCatalog,
   graphForPersonal,
-} from "./library-view.js?release=v39-catalog-graph";
+} from "./library-view.js?release=v40-learner-graph";
 import { captureSearchFieldState, restoreSearchFieldState } from "./search-field-state.js";
 import { prepareAccountStartupShell, showNeutralLoadingShell } from "./startup-view-state.js";
 import { renderDefinition } from "./definition-renderer.js";
 import { createBrowserWorkspace } from "./browser-workspace.js";
 import { createAccountRuntime } from "./account-runtime.js";
 import { calendarRelativeLabel, observeViewClock } from "./view-clock.js";
-import { mountGraphView } from "./graph-view.js?graph-revision-16";
+import { mountGraphView } from "./graph-view.js?graph-revision-17";
+import { cardStatesForDeck } from "./graph-progress-state.js";
 import { isDeckFullyMastered } from "./mastery.js";
 import {
   createStudyStore,
@@ -51,6 +52,7 @@ let catalogSettings = null;
 const loadedLibraryDecks = new Map();
 const getCatalogDeck = (id) => loadedLibraryDecks.get(id) ?? library.find((deck) => deck.id === id);
 const STUDY_HELP_DELAY_MS = 40_000;
+const STUDY_PENDING_REVEAL_STORAGE_KEY = "meshful:study-pending-reveal:v1";
 const STUDY_OUTCOME_LABELS = Object.freeze({
   again: "Again · review soon",
   hard: "Hard · keep working",
@@ -95,6 +97,7 @@ const ui = {
   studyHelpShown: false,
   studyHelpDismissed: false,
   studyNonAnswerAcknowledgedSessions: new Set(),
+  manualGrade: null,
 };
 
 function captureView() {
@@ -109,6 +112,7 @@ function isViewCurrent(context) {
 }
 
 function invalidateAccountView() {
+  clearPendingStudyReveal();
   const keepLoading = accountMode && accountHydrationPending;
   accountSession = null;
   store = null;
@@ -120,6 +124,7 @@ function invalidateAccountView() {
   ui.graphPulse = null;
   ui.revealingUntil = 0;
   ui.emptyStudyDeckId = null;
+  ui.manualGrade = null;
   ui.deleteUnavailableDeckId = null;
   ui.studyNonAnswerAcknowledgedSessions.clear();
   clearTimeout(ui.renderTimer);
@@ -342,12 +347,39 @@ function isMobileStudyViewport() {
   return window.matchMedia?.("(max-width: 720px)")?.matches === true;
 }
 
+function manualGradeAvailable() {
+  return typeof store?.submitSelfGrade === "function";
+}
+
+function manualGradeMatches(session, card) {
+  return session?.status === "active" && session.phase === "awaiting_answer" &&
+    ui.manualGrade?.sessionId === session.id &&
+    ui.manualGrade.sessionRevision === session.revision &&
+    ui.manualGrade.cardId === card?.id;
+}
+
+function manualGradeChoicesMarkup() {
+  const pendingRating = ui.manualGrade?.rating ?? null;
+  const gradeButton = (rating, title, description) => {
+    const selected = pendingRating === rating;
+    return `<button class="study-manual-grade study-manual-grade-${rating}${selected ? " is-pending" : ""}" type="button" data-submit-self-grade="${rating}"${pendingRating ? (selected ? "" : " disabled") : ""}><strong>${title}</strong><span>${selected ? "Try again" : description}</span></button>`;
+  };
+  return `<div class="study-manual-grades" data-study-manual-grades role="group" aria-labelledby="study-manual-grade-title">
+    <p id="study-manual-grade-title">How well did you remember it?</p>
+    <div class="study-manual-grade-grid">
+      ${gradeButton("again", "Again", "Forgot it")}
+      ${gradeButton("hard", "Hard", "With effort")}
+      ${gradeButton("good", "Good", "Remembered")}
+      ${gradeButton("easy", "Easy", "Effortless")}
+    </div>
+    <button class="button button-sm button-quiet study-manual-grade-back" type="button" data-cancel-self-grade${pendingRating ? " disabled" : ""}>Back</button>
+  </div>`;
+}
+
 function studyAgentHelpMarkup() {
   const mobile = isMobileStudyViewport();
-  const heading = mobile ? "Study on desktop" : "Need an agent?";
-  const copy = mobile
-    ? "Open Meshful in ChatGPT or Codex."
-    : "Answer this term in ChatGPT or Codex.";
+  const heading = "Choose how to grade";
+  const copy = "Use your agent for feedback, or choose Grade myself.";
   return `<aside class="study-agent-help" id="study-agent-help" data-study-agent-help role="region" aria-labelledby="study-agent-help-title">
     <div><strong id="study-agent-help-title">${escapeHTML(heading)}</strong><p aria-live="polite">${escapeHTML(copy)}</p></div>
     <div class="study-agent-help-actions">
@@ -601,31 +633,6 @@ function setActiveNav(route) {
   document.body.dataset.route = route.name === "library-graph" ? "graph" : route.name;
 }
 
-function graphDeckOptions(snapshot) {
-  const personalChoices = Object.values(snapshot.personalDecks ?? {})
-    .filter((deck) => deck && !deck.archived)
-    .map((deck) => ({ id: deck.id, title: deck.title, label: "My deck" }));
-  const installedCatalogIds = new Set(
-    Object.values(snapshot.personalDecks ?? {})
-      .filter((deck) => deck && !deck.archived)
-      .map((deck) => deck.source?.catalogDeckId)
-      .filter(Boolean),
-  );
-  const libraryChoices = library
-    .filter((deck) => !installedCatalogIds.has(deck.id))
-    .map((deck) => ({
-      id: deck.id,
-      title: deck.title,
-      label: `${deck.cardCount ?? deck.cards?.length ?? 0} cards`,
-    }));
-  return [...personalChoices, ...libraryChoices];
-}
-
-function graphRouteForDeck(deckId, snapshot) {
-  const personal = snapshot.personalDecks?.[deckId];
-  return personal && !personal.archived ? `graph/${deckId}` : `library-graph/${deckId}`;
-}
-
 function personalDeckArray(snapshot, { archived = false, availability = null } = {}) {
   return Object.values(snapshot.personalDecks ?? {})
     .filter((deck) => Boolean(deck.archived) === archived)
@@ -668,14 +675,6 @@ function metricsForDeck(deck) {
       : 0,
     lastStudied: reviewedDates.at(-1) ?? null,
   };
-}
-
-function cardStatesForDeck(deck) {
-  return Object.fromEntries(Object.entries(deck.cards ?? {}).map(([id, card]) => [id, {
-    reviewCount: card.review?.repetitions ?? 0,
-    dueAt: card.review?.dueAt ?? null,
-    lastReviewedAt: card.review?.lastReviewedAt ?? null,
-  }]));
 }
 
 function readStudyActivity(snapshot) {
@@ -799,7 +798,7 @@ function renderStudyHome(snapshot, availability) {
               <span class="${activeMastered ? "mastery-chip" : "study-active-mastery"}">${activeMastered ? "✓ 100% mastered" : `${activeMetrics.mastery}% mastered`}</span>
             </div>
             ${resumableSession ? `<p>${resumableSession.cursor} of ${resumableSession.queue.length} complete</p>` : ""}
-            <button class="button button-primary" type="button" data-start-deck="${escapeAttribute(active.id)}" ${resumableSession ? `data-resume-session="${escapeAttribute(resumableSession.id)}"` : ""}>
+            <button class="button button-primary study-hero-action" type="button" data-start-deck="${escapeAttribute(active.id)}" ${resumableSession ? `data-resume-session="${escapeAttribute(resumableSession.id)}"` : ""}>
               ${resumableSession ? "Resume studying" : activeExtraPracticeOnly ? "Practice anyway" : "Start studying"} ${icon("arrow")}
             </button>
           </div>
@@ -941,7 +940,7 @@ function renderLibrary(snapshot) {
   return `
     <section class="page">
       <header class="page-heading page-heading-simple">
-        <h1>Library</h1>
+        <h1>Deck Library</h1>
       </header>
       <div class="filter-bar">
         <label class="search-field">
@@ -995,22 +994,33 @@ function libraryCard(deck, snapshot) {
 }
 
 function renderStudySession(snapshot, sessionId, availability) {
-  const session = snapshot.sessions?.[sessionId];
-  if (!session) return notFound("That study session is not available.");
-  const deck = snapshot.personalDecks?.[session.deckId];
+  const canonicalSession = snapshot.sessions?.[sessionId];
+  if (!canonicalSession) return notFound("That study session is not available.");
+  const deck = snapshot.personalDecks?.[canonicalSession.deckId];
   if (!deck) return notFound("The deck for this session is not available.");
-  if (session.status === "paused" && !deck.archived) return renderSessionPaused(snapshot, session, deck, availability);
-  if (["completed", "finished", "abandoned"].includes(session.status)) return renderSessionComplete(snapshot, session, deck, availability);
+  const pendingReveal = pendingStudyRevealFor(snapshot, sessionId);
+  const session = pendingReveal ? {
+    ...canonicalSession,
+    status: "active",
+    phase: "answer_committed",
+    cursor: Math.max(0, canonicalSession.cursor - 1),
+    currentCardId: pendingReveal.cardId,
+  } : canonicalSession;
+  if (!pendingReveal && session.status === "paused" && !deck.archived) return renderSessionPaused(snapshot, session, deck, availability);
+  if (!pendingReveal && ["completed", "finished", "abandoned"].includes(session.status)) return renderSessionComplete(snapshot, session, deck, availability);
   if (session.status !== "active" || deck.archived) return notFound("This study session is no longer active.");
   const card = session.currentCardId ? deck.cards?.[session.currentCardId] : null;
   if (!card || card.archived) return notFound("The current card is not available. Return home to continue.");
-  const revealed = session.phase === "answer_committed";
+  const manualGrading = !pendingReveal && manualGradeMatches(session, card);
+  const revealed = session.phase === "answer_committed" || manualGrading;
   const progress = studySessionProgress(session);
   const helpKey = session.id;
   const allowReveal = studyNonAnswerSupported("reveal", snapshot);
   const allowSkip = studyNonAnswerSupported("skip", snapshot);
+  const pendingOutcome = pendingReveal ? STUDY_OUTCOME_LABELS[pendingReveal.rating] : null;
+  const pendingAdvanceLabel = pendingReveal?.completionState === "completed" ? "Finish session" : "Next card";
   return `
-    <section class="session-shell" data-session-id="${escapeAttribute(session.id)}" data-study-help-key="${escapeAttribute(helpKey)}" data-queue-phase="${escapeAttribute(progress.phase)}">
+    <section class="session-shell" data-session-id="${escapeAttribute(session.id)}" data-study-help-key="${escapeAttribute(helpKey)}" data-queue-phase="${escapeAttribute(progress.phase)}" ${pendingReveal ? 'data-study-advance-pending="true"' : ""}>
       <header class="session-header">
         <span class="session-deck-name" title="${escapeAttribute(deck.title)}">${escapeHTML(deck.title)}</span>
         <div class="session-progress session-progress-${escapeAttribute(progress.phase)}" aria-label="Study progress: ${escapeAttribute(progress.label)}">
@@ -1020,38 +1030,47 @@ function renderStudySession(snapshot, sessionId, availability) {
         <button class="button button-sm button-quiet session-exit" type="button" data-pause-session="${escapeAttribute(session.id)}">Exit</button>
       </header>
       <div class="study-stage">
-        <div class="study-card-stack" data-card-stack data-study-card-phase="${revealed ? "revealed" : "prompt"}">
+        <div class="study-card-stack" data-card-stack data-study-card-phase="${manualGrading ? "manual-grade" : revealed ? "revealed" : "prompt"}" ${pendingReveal ? `data-study-outcome="${escapeAttribute(pendingReveal.rating)}"` : ""}>
           <div class="stack-card" aria-hidden="true"></div>
           <div class="stack-card" aria-hidden="true"></div>
-          <div class="study-card-scene ${revealed ? "is-flipped" : ""}" data-study-card-scene data-card-id="${escapeAttribute(card.id)}">
+          <div class="study-card-scene ${revealed ? "is-flipped" : ""}" data-study-card-scene data-card-id="${escapeAttribute(card.id)}" ${pendingReveal ? `data-study-outcome="${escapeAttribute(pendingReveal.rating)}"` : ""}>
             <article class="study-card-face study-card-front" aria-hidden="${revealed ? "true" : "false"}" ${revealed ? "inert" : ""}>
               <h1 class="study-term">${escapeHTML(card.term)}</h1>
             </article>
             <article class="study-card-face study-card-back" aria-hidden="${revealed ? "false" : "true"}" ${revealed ? "" : "inert"}>
-              <span class="study-card-kicker">Definition</span>
               <div class="study-definition" data-study-definition></div>
-              <footer class="study-card-foot"><span>${escapeHTML(card.term)}</span><span>Canonical answer</span></footer>
+              <footer class="study-card-foot"><span data-study-reviewed-term>${escapeHTML(card.term)}</span></footer>
             </article>
           </div>
-          <div class="study-outcome-badge" data-study-outcome-badge aria-hidden="true" hidden></div>
+          <div class="study-outcome-badge" data-study-outcome-badge aria-hidden="true" ${pendingReveal ? "" : "hidden"}>${pendingOutcome ? escapeHTML(pendingOutcome) : ""}</div>
         </div>
       </div>
       <div class="study-controls">
-        <p class="sr-only" data-study-live-status aria-live="polite">${revealed ? "Definition revealed. Grade saved." : "Card ready. Define the term in chat."}</p>
-        <div class="study-control-actions" role="group" aria-label="Study actions">
-          ${allowReveal ? '<button class="button button-sm study-reveal-action" type="button" data-reveal-answer>Reveal answer</button>' : ""}
-          ${allowSkip ? '<button class="button button-sm button-quiet study-skip-action" type="button" data-skip-card>Skip card</button>' : ""}
-          <button class="study-help-button" type="button" data-show-study-help aria-label="How to answer" title="How to answer" aria-controls="study-agent-help" aria-expanded="${ui.studyHelpShown && !ui.studyHelpDismissed ? "true" : "false"}">?</button>
+        <p class="sr-only" data-study-live-status aria-live="polite">${pendingReveal ? `${escapeHTML(pendingOutcome)}. Review the definition, then ${pendingReveal.completionState === "completed" ? "finish the session" : "continue to the next card"}.` : manualGrading ? "Answer revealed. Choose your grade." : revealed ? "Definition revealed. Grade saved." : "Card ready. Define the term in chat."}</p>
+        <div class="study-control-actions${manualGrading ? " has-manual-grades" : pendingReveal ? " has-study-next" : ""}" role="group" aria-label="Study actions">
+          ${pendingReveal ? `<button class="button button-sm button-primary study-next-action" type="button" data-advance-study-card="true">${pendingAdvanceLabel}</button>` : manualGrading ? manualGradeChoicesMarkup() : `
+            ${manualGradeAvailable() ? '<button class="button button-sm button-primary study-manual-grade-action" type="button" data-start-self-grade>Grade myself</button>' : ""}
+            ${allowReveal ? '<button class="button button-sm study-reveal-action" type="button" data-reveal-answer>Reveal answer</button>' : ""}
+            ${allowSkip ? '<button class="button button-sm button-quiet study-skip-action" type="button" data-skip-card>Skip card</button>' : ""}
+            <button class="study-help-button" type="button" data-show-study-help aria-label="How to answer" title="How to answer" aria-controls="study-agent-help" aria-expanded="${ui.studyHelpShown && !ui.studyHelpDismissed ? "true" : "false"}">?</button>
+          `}
         </div>
       </div>
     </section>`;
 }
 
 function hydrateStudyDefinition(snapshot, sessionId) {
-  const session = snapshot.sessions?.[sessionId];
-  if (session?.status !== "active" || session.phase !== "answer_committed") return;
-  const deck = snapshot.personalDecks?.[session.deckId];
-  const card = session.currentCardId ? deck?.cards?.[session.currentCardId] : null;
+  const canonicalSession = snapshot.sessions?.[sessionId];
+  const pendingReveal = pendingStudyRevealFor(snapshot, sessionId);
+  const session = pendingReveal ? {
+    ...canonicalSession,
+    status: "active",
+    phase: "answer_committed",
+    currentCardId: pendingReveal.cardId,
+  } : canonicalSession;
+  const deck = snapshot.personalDecks?.[session?.deckId];
+  const card = session?.currentCardId ? deck?.cards?.[session.currentCardId] : null;
+  if (session?.status !== "active" || (session.phase !== "answer_committed" && !manualGradeMatches(session, card))) return;
   const definition = view.querySelector("[data-study-definition]");
   if (definition && card) renderDefinition(definition, card.definition);
 }
@@ -1398,6 +1417,109 @@ async function submitNonAnswerCard(control, context) {
   }
 }
 
+function startManualGrade(sessionId) {
+  if (!manualGradeAvailable() || ui.mutationBusy) return;
+  const snapshot = store.getSnapshot();
+  const session = snapshot.sessions?.[sessionId];
+  const deck = snapshot.personalDecks?.[session?.deckId];
+  const card = session?.currentCardId ? deck?.cards?.[session.currentCardId] : null;
+  if (session?.status !== "active" || session.phase !== "awaiting_answer" || !card || card.archived) {
+    toast("This card changed. Open manual grading again before continuing.");
+    return queueRender();
+  }
+  closeStudyNonAnswerConfirmation();
+  clearStudyHelp({ preserveKey: true });
+  ui.studyHelpDismissed = true;
+  ui.manualGrade = {
+    sessionId: session.id,
+    sessionRevision: session.revision,
+    cardId: card.id,
+    idempotencyKey: actionId("self-grade"),
+    rating: null,
+  };
+  const scene = view.querySelector("[data-study-card-scene]");
+  const definition = scene?.querySelector("[data-study-definition]");
+  const actions = view.querySelector(".study-control-actions");
+  const status = view.querySelector("[data-study-live-status]");
+  if (!scene || !definition || !actions || scene.dataset.cardId !== card.id) {
+    return queueRender();
+  }
+  renderDefinition(definition, card.definition);
+  revealStudyCardFaces(scene);
+  scene.classList.add("is-flipped");
+  scene.closest("[data-card-stack]")?.setAttribute("data-study-card-phase", "manual-grade");
+  actions.classList.add("has-manual-grades");
+  actions.innerHTML = manualGradeChoicesMarkup();
+  status?.replaceChildren("Answer revealed. Choose your grade.");
+  actions.querySelector('[data-submit-self-grade="again"]')?.focus();
+}
+
+async function submitManualGrade(control, context) {
+  if (!isViewCurrent(context) || ui.mutationBusy) return;
+  const rating = control.dataset.submitSelfGrade;
+  if (!["again", "hard", "good", "easy"].includes(rating)) return;
+  const snapshot = store.getSnapshot();
+  const session = snapshot.sessions?.[ui.manualGrade?.sessionId];
+  const deck = snapshot.personalDecks?.[session?.deckId];
+  const card = session?.currentCardId ? deck?.cards?.[session.currentCardId] : null;
+  if (!manualGradeMatches(session, card)) {
+    ui.manualGrade = null;
+    toast("This card changed. Open manual grading again before continuing.");
+    return queueRender();
+  }
+  if (ui.manualGrade.rating && ui.manualGrade.rating !== rating) return;
+  ui.manualGrade.rating = rating;
+  const buttons = [...(control.closest("[data-study-manual-grades]")?.querySelectorAll("button") ?? [])];
+  buttons.forEach((button) => { button.disabled = true; });
+  ui.mutationBusy = true;
+  try {
+    const current = await store.getStudySession({ session_id: session.id });
+    if (!isViewCurrent(context)) return;
+    if (current?.session?.session_revision !== session.revision ||
+        !current.current_card || localReviewedCard(deck, current.current_card.card_id)?.id !== card.id) {
+      throw new Error("This card changed. Reload it before continuing.");
+    }
+    const result = await uiMutation("submitSelfGrade", {
+      session_id: session.id,
+      expected_session_revision: current.session.session_revision,
+      card_id: current.current_card.card_id,
+      expected_card_revision: current.current_card.card_revision,
+      rating,
+      idempotency_key: ui.manualGrade.idempotencyKey,
+    }, context);
+    if (!result || !isViewCurrent(context)) return;
+    ui.manualGrade = null;
+    await presentStudyGradeCommit({
+      type: "study_grade_committed",
+      session_id: result.session_id,
+      reviewed_card_id: result.card_id,
+      reviewed_card: result.reviewed_card,
+      session: result.session,
+      ...(result.next_card ? { next_card: result.next_card } : {}),
+      rating: result.rating,
+      presentation_action: "answer",
+      completion_state: result.session?.status === "completed" ? "completed" : "in_progress",
+    }, context, () => !accountMode || context.session.isStudyCurrent());
+  } catch (error) {
+    if (isViewCurrent(context)) {
+      buttons.forEach((button) => {
+        button.disabled = button.dataset.submitSelfGrade !== ui.manualGrade?.rating;
+      });
+      const retryLabel = control.querySelector("span");
+      if (retryLabel) retryLabel.textContent = "Try again";
+      toast(error.message);
+    }
+  } finally {
+    if (isViewCurrent(context)) ui.mutationBusy = false;
+  }
+}
+
+function cancelManualGrade() {
+  if (!ui.manualGrade || ui.manualGrade.rating || ui.mutationBusy) return;
+  ui.manualGrade = null;
+  queueRender();
+}
+
 function toast(message, { actionLabel = null, onAction = null, duration = 3200 } = {}) {
   const context = captureView();
   if (!isViewCurrent(context)) return;
@@ -1520,7 +1642,10 @@ async function render() {
     clearTimeout(ui.librarySearchTimer);
     ui.librarySearchTimer = null;
   }
-  if (route.name !== "session") clearStudyHelp();
+  if (route.name !== "session") {
+    clearStudyHelp();
+    ui.manualGrade = null;
+  }
   if (route.name !== "study") ui.emptyStudyDeckId = null;
   setActiveNav(route);
   const beforeViewSync = store.getSnapshot();
@@ -1548,15 +1673,12 @@ async function render() {
       ui.graphCleanup = mountGraphView(view, {
         deck,
         cardStates: {},
-        deckOptions: graphDeckOptions(snapshot),
+        progressSource: "structure",
         storage: workspace.storage,
         canStudy: false,
         showEntireGraph: true,
         onBack: () => { if (isViewCurrent(context)) location.hash = "library"; },
         backAriaLabel: "Close graph and return to Library",
-        onDeckChange: (deckId) => {
-          if (isViewCurrent(context)) location.hash = graphRouteForDeck(deckId, snapshot);
-        },
       });
     }
   } else if (route.name === "graph") {
@@ -1571,15 +1693,12 @@ async function render() {
       ui.graphCleanup = mountGraphView(view, {
         deck,
         cardStates: cardStatesForDeck({ cards: Object.fromEntries(deck.cards.map((card) => [card.id, card])) }),
-        deckOptions: graphDeckOptions(snapshot),
+        progressSource: "learner",
         focusCardId: deck.rootCardIds[0] ?? null,
         storage: workspace.storage,
         pulseCardId: activePulse,
         canStudy: true,
         onBack: () => { if (isViewCurrent(context)) location.hash = "decks"; },
-        onDeckChange: (deckId) => {
-          if (isViewCurrent(context)) location.hash = graphRouteForDeck(deckId, snapshot);
-        },
         onStudy: (cardId) => {
           const ownerDeckId = deck.cards.find((card) => card.id === cardId)?.ownerDeckId ?? personal.id;
           if (isViewCurrent(context)) return startSession(ownerDeckId);
@@ -1591,11 +1710,19 @@ async function render() {
     if (!isViewCurrent(context)) return;
     view.innerHTML = markup;
     hydrateStudyDefinition(snapshot, route.id);
-    const renderedSession = snapshot.sessions?.[route.id];
+    const canonicalRenderedSession = snapshot.sessions?.[route.id];
+    const pendingReveal = pendingStudyRevealFor(snapshot, route.id);
+    const renderedSession = pendingReveal ? {
+      ...canonicalRenderedSession,
+      status: "active",
+      phase: "answer_committed",
+      currentCardId: pendingReveal.cardId,
+    } : canonicalRenderedSession;
     const renderedDeck = snapshot.personalDecks?.[renderedSession?.deckId];
     const renderedCard = renderedSession?.currentCardId ? renderedDeck?.cards?.[renderedSession.currentCardId] : null;
     if (renderedSession?.status === "active" && renderedCard && !renderedCard.archived) {
-      syncStudyHelp(renderedSession, renderedCard, renderedSession.phase === "answer_committed");
+      syncStudyHelp(renderedSession, renderedCard,
+        renderedSession.phase === "answer_committed" || manualGradeMatches(renderedSession, renderedCard));
     } else {
       clearStudyHelp();
     }
@@ -1718,6 +1845,115 @@ function latestCommittedRating(snapshot, sessionId, reviewedCardId) {
     Object.hasOwn(STUDY_OUTCOME_LABELS, event.rating))?.rating ?? null;
 }
 
+function pendingStudyRevealStorageKey() {
+  const workspaceKey = accountMode
+    ? "account"
+    : `local:${workspace?.recordingId || "default"}`;
+  return `${STUDY_PENDING_REVEAL_STORAGE_KEY}:${workspaceKey}`;
+}
+
+function pendingStudyRevealStorages() {
+  const storages = [];
+  for (const name of ["sessionStorage", "localStorage"]) {
+    try {
+      const candidate = globalThis[name];
+      if (candidate && typeof candidate.getItem === "function" &&
+          typeof candidate.setItem === "function" && typeof candidate.removeItem === "function" &&
+          !storages.includes(candidate)) storages.push(candidate);
+    } catch { /* A blocked browser store may fall back to the next one. */ }
+  }
+  return storages;
+}
+
+function storedPendingStudyReveal() {
+  const key = pendingStudyRevealStorageKey();
+  for (const storage of pendingStudyRevealStorages()) {
+    try {
+      const raw = storage.getItem(key);
+      if (raw === null) continue;
+      try { return JSON.parse(raw); }
+      catch { storage.removeItem(key); }
+    } catch { /* Try the next browser store. */ }
+  }
+  return null;
+}
+
+function clearPendingStudyReveal(expectedSessionId = null) {
+  const key = pendingStudyRevealStorageKey();
+  for (const storage of pendingStudyRevealStorages()) {
+    try {
+      if (expectedSessionId !== null) {
+        const raw = storage.getItem(key);
+        if (raw === null) continue;
+        let value;
+        try { value = JSON.parse(raw); }
+        catch { value = null; }
+        if (value?.sessionId !== expectedSessionId) continue;
+      }
+      storage.removeItem(key);
+    } catch { /* Presentation cleanup must never block canonical study state. */ }
+  }
+}
+
+function rememberPendingStudyReveal(snapshot, value, presentationAction) {
+  if (!["answer", "reveal"].includes(presentationAction)) return;
+  const session = snapshot.sessions?.[value.session_id];
+  const deck = snapshot.personalDecks?.[session?.deckId];
+  const card = localReviewedCard(deck, value.reviewed_card_id);
+  if (!session || !deck || !card) return;
+  const event = [...(session.history ?? [])].reverse().find((item) =>
+    item?.transition === "grade_submitted" && item.cardId === card.id &&
+    Object.hasOwn(STUDY_OUTCOME_LABELS, item.rating));
+  if (!event) return;
+  const completionState = session.status === "completed" ? "completed" : "in_progress";
+  const marker = {
+    version: 1,
+    sessionId: session.id,
+    sessionRevision: session.revision,
+    sessionUpdatedAt: session.updatedAt,
+    deckId: deck.id,
+    cardId: card.id,
+    reviewId: event.reviewId ?? null,
+    rating: event.rating,
+    presentationAction,
+    completionState,
+  };
+  const key = pendingStudyRevealStorageKey();
+  for (const storage of pendingStudyRevealStorages()) {
+    try {
+      storage.setItem(key, JSON.stringify(marker));
+      return;
+    } catch { /* Try the next browser store. */ }
+  }
+}
+
+function pendingStudyRevealFor(snapshot, sessionId) {
+  const marker = storedPendingStudyReveal();
+  if (!marker || marker.version !== 1 || marker.sessionId !== sessionId) return null;
+  const session = snapshot.sessions?.[sessionId];
+  if (!session || Number(session.revision) < Number(marker.sessionRevision)) return null;
+  const invalid = () => {
+    clearPendingStudyReveal(sessionId);
+    return null;
+  };
+  if (Number(session.revision) !== Number(marker.sessionRevision) ||
+      session.updatedAt !== marker.sessionUpdatedAt || session.deckId !== marker.deckId ||
+      !["answer", "reveal"].includes(marker.presentationAction) ||
+      !["completed", "in_progress"].includes(marker.completionState) ||
+      !Object.hasOwn(STUDY_OUTCOME_LABELS, marker.rating) || Number(session.cursor) <= 0) return invalid();
+  const deck = snapshot.personalDecks?.[marker.deckId];
+  const card = deck?.cards?.[marker.cardId];
+  if (!card || card.archived || session.queue?.[session.cursor - 1] !== marker.cardId) return invalid();
+  const event = [...(session.history ?? [])].reverse().find((item) => item?.transition === "grade_submitted");
+  if (!event || event.cardId !== marker.cardId || event.rating !== marker.rating ||
+      (marker.reviewId !== null && event.reviewId !== marker.reviewId)) return invalid();
+  const expectedState = marker.completionState === "completed"
+    ? session.status === "completed" && session.phase === "complete" && !session.currentCardId
+    : session.status === "active" && session.phase === "awaiting_answer" && Boolean(session.currentCardId);
+  if (!expectedState) return invalid();
+  return marker;
+}
+
 function revealStudyCardFaces(scene) {
   const front = scene.querySelector(".study-card-front");
   const back = scene.querySelector(".study-card-back");
@@ -1733,6 +1969,12 @@ async function presentStudyGradeCommit(value, context, studyIsCurrent = () => tr
   const deck = snapshot.personalDecks?.[session?.deckId];
   const card = localReviewedCard(deck, value.reviewed_card_id);
   if (card) ui.graphPulse = { deckId: deck.id, cardId: card.id, at: Date.now() };
+  const presentationAction = ["reveal", "skip"].includes(value.presentation_action)
+    ? value.presentation_action
+    : ["reveal", "skip"].includes(value.attempt_kind)
+      ? value.attempt_kind
+      : "answer";
+  rememberPendingStudyReveal(snapshot, value, presentationAction);
   const scene = view.querySelector("[data-study-card-scene]");
   const definition = scene?.querySelector("[data-study-definition]");
   const status = view.querySelector("[data-study-live-status]");
@@ -1756,11 +1998,6 @@ async function presentStudyGradeCommit(value, context, studyIsCurrent = () => tr
     : latestCommittedRating(snapshot, value.session_id, value.reviewed_card_id) ?? "saved";
   const badge = view.querySelector("[data-study-outcome-badge]");
   const stack = scene.closest("[data-card-stack]");
-  const presentationAction = ["reveal", "skip"].includes(value.presentation_action)
-    ? value.presentation_action
-    : ["reveal", "skip"].includes(value.attempt_kind)
-      ? value.attempt_kind
-      : "answer";
   scene.dataset.studyOutcome = rating;
   if (stack) stack.dataset.studyOutcome = rating;
   if (badge) {
@@ -1800,6 +2037,23 @@ async function presentStudyGradeCommit(value, context, studyIsCurrent = () => tr
   next.dataset.advanceStudyCard = "true";
   next.textContent = nextLabel;
   actions.replaceChildren(next);
+  actions.classList.remove("has-manual-grades");
+  actions.classList.add("has-study-next");
+}
+
+function advancePresentedStudyCard(advanceStudyCard) {
+  const shell = advanceStudyCard?.closest("[data-study-advance-pending]");
+  if (!shell || advanceStudyCard.disabled) return false;
+  clearPendingStudyReveal(shell.dataset.sessionId);
+  shell.removeAttribute("data-study-advance-pending");
+  advanceStudyCard.disabled = true;
+  shell.querySelector("[data-study-live-status]")?.replaceChildren("Loading the next card.");
+  const scene = shell.querySelector("[data-study-card-scene]");
+  const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 280;
+  scene?.classList.add("is-departing");
+  ui.revealingUntil = Date.now() + delay;
+  queueRender(delay, null, true);
+  return true;
 }
 
 async function handleVisibleEffect(effect, metadata = {}) {
@@ -1897,18 +2151,21 @@ document.addEventListener("click", async (event) => {
   }
   const advanceStudyCard = target.closest("[data-advance-study-card]");
   if (advanceStudyCard) {
-    const shell = advanceStudyCard.closest("[data-study-advance-pending]");
-    if (!shell) return;
-    shell.removeAttribute("data-study-advance-pending");
-    advanceStudyCard.disabled = true;
-    shell.querySelector("[data-study-live-status]")?.replaceChildren("Loading the next card.");
-    const scene = shell.querySelector("[data-study-card-scene]");
-    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 280;
-    scene?.classList.add("is-departing");
-    ui.revealingUntil = Date.now() + delay;
-    queueRender(delay, null, true);
+    advancePresentedStudyCard(advanceStudyCard);
     return;
   }
+  const startSelfGrade = target.closest("[data-start-self-grade]");
+  if (startSelfGrade) {
+    const shell = startSelfGrade.closest("[data-session-id]");
+    if (shell) startManualGrade(shell.dataset.sessionId);
+    return;
+  }
+  if (target.closest("[data-cancel-self-grade]")) {
+    cancelManualGrade();
+    return;
+  }
+  const selfGrade = target.closest("[data-submit-self-grade]");
+  if (selfGrade) return submitManualGrade(selfGrade, context);
   const revealAnswer = target.closest("[data-reveal-answer]");
   if (revealAnswer) {
     const shell = revealAnswer.closest("[data-session-id]");
@@ -2214,6 +2471,7 @@ document.addEventListener("click", async (event) => {
       : "Reset study data in this browser? This removes locally saved personal decks, sessions, and review history. Graph layout settings are not cleared by this reset. It does not delete your ChatGPT account or agent conversations.";
     if (confirm(message)) {
       try {
+        clearPendingStudyReveal();
         workspace.reset();
         location.assign(`${location.pathname}${location.search}#study`);
       } catch (error) { toast(error.message); }
@@ -2243,7 +2501,22 @@ window.addEventListener("pageshow", () => armStudyHelpTimer());
 window.addEventListener("focus", () => armStudyHelpTimer());
 
 document.addEventListener("keydown", (event) => {
+  const interactiveTarget = event.target?.closest?.("button, a, input, textarea, select, [contenteditable='true']");
+  const pendingShell = view.querySelector("[data-study-advance-pending]");
+  const pendingAdvance = pendingShell?.querySelector("[data-advance-study-card]");
+  if ((event.key === " " || event.code === "Space") && !event.repeat &&
+      !event.altKey && !event.ctrlKey && !event.metaKey && pendingAdvance && !interactiveTarget) {
+    event.preventDefault();
+    advancePresentedStudyCard(pendingAdvance);
+    return;
+  }
   if (event.key === "Escape") {
+    if (ui.manualGrade && !ui.manualGrade.rating && !ui.mutationBusy) {
+      event.preventDefault();
+      event.stopPropagation();
+      cancelManualGrade();
+      return;
+    }
     if (view.querySelector("[data-study-nonanswer-warning]")) {
       event.preventDefault();
       event.stopPropagation();

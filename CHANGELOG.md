@@ -12,6 +12,21 @@ version numbers follow the package version until tagged releases begin.
 - Citation, support, conduct, architecture, and release-process documentation
 - A visual project header and public-release status in the README
 
+## 0.1.1 - 2026-09-03
+
+### Added
+
+- An atomic manual self-grading path for studying without an agent
+- Learner-specific progress states and retained review history in course graphs
+
+### Changed
+
+- Deck Library naming and course descriptions are clearer throughout the app
+- Account synchronization handles new and empty durable snapshots more safely
+- Committed card reveals survive a reload until the learner advances
+- Study, archive, graph, and mobile controls have focused usability refinements
+- The public source mirror now matches the exact deployed Sites v41 tree
+
 ## 0.1.0 - 2026-09-03
 
 ### Added

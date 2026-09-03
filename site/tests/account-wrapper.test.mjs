@@ -63,7 +63,7 @@ test("the generated server owns the mutually exclusive browser entry selection",
   assert.match(page, /import Script from 'next\/script'/);
   assert.match(page, /id="meshful-study-entry"/);
   assert.match(page, /type="module"/);
-  assert.match(page, /const WEBSITE_ASSET_REVISION = 'v39-catalog-graph'/);
+  assert.match(page, /const WEBSITE_ASSET_REVISION = 'v40-learner-graph'/);
   assert.match(page, /src=\{`\$\{websiteEntry\}\?release=\$\{WEBSITE_ASSET_REVISION\}`\}/);
   assert.match(page, /strategy="afterInteractive"/);
   assert.doesNotMatch(page, /<script\s+type=["']module["']/);
@@ -84,8 +84,7 @@ test("the generated server owns the mutually exclusive browser entry selection",
   assert.match(page, /chatGPTSignOutPath\('\/'\)/);
   assert.match(page, /data-account-signout[^>]*>Sign out</);
   assert.doesNotMatch(page, /Study progress is saved in this browser on this device\./);
-  assert.equal((page.match(/>Library</g) ?? []).length, 2);
-  assert.doesNotMatch(page, />Deck Library</);
+  assert.equal((page.match(/>Deck Library</g) ?? []).length, 2);
   assert.match(page, /chatGPTSignInPath\('\/'\)/);
   assert.match(page, /data-account-signin[^>]*>Sign in with ChatGPT</);
   assert.doesNotMatch(page, /Connecting…|safely saved to your account|available on every device/i);
@@ -365,8 +364,8 @@ test("the account constructor selects the sanitized public Deck Library while re
   assert.match(accountStart, /loadWebsiteLibrary/);
   assert.match(accountStart, /createWebsiteAccountCatalogLoader/);
   assert.match(accountStart, /catalogOptions, loadAccountCatalog/);
-  assert.match(accountStart, /account-entry\.js\?release=v39-catalog-graph/);
-  assert.match(accountEntry, /js\/app\.js\?release=v39-catalog-graph/);
+  assert.match(accountStart, /account-entry\.js\?release=v40-learner-graph/);
+  assert.match(accountEntry, /js\/app\.js\?release=v40-learner-graph/);
   assert.match(accountEntry, /loadAccountCatalog\(\{[\s\S]*storedStateJson,[\s\S]*constructorCatalogRef:[\s\S]*check,/);
   assert.match(catalogLoader, /prepareLibraryCatalogResolver/);
   assert.match(catalogLoader, /intent:\s*\{ kind: "query", operation: "hydrate_confirmed_state", args: \{\} \}/);
@@ -381,7 +380,7 @@ test("offline math styling is shipped locally and the correct initialization ent
   assert.match(layout, /<body suppressHydrationWarning>/);
   const entry = await readFile(new URL("../public/study/js/start.js", import.meta.url), "utf8");
   assert.match(entry, /await initializeWebsite\(\)/);
-  assert.match(entry, /app\.js\?release=v39-catalog-graph/);
+  assert.match(entry, /app\.js\?release=v40-learner-graph/);
   assert.doesNotMatch(entry, /account-start|createDurableClient/);
   const accountEntry = await readFile(new URL("../public/study/integration/account-start.js", import.meta.url), "utf8");
   assert.match(accountEntry, /initializePrivateAccountWebsite/);

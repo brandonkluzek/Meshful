@@ -33,16 +33,63 @@ function applyOverrides(base, overrides) {
 }
 
 function effectiveV7RuntimeFiles() {
-  return applyOverrides(
+  const recovered = applyOverrides(
     selection.backend_v7_writer_successor.runtime_selected_files,
     selection.post_v35_successors.backend_v7_account_command_recovery.runtime_file_overrides,
+  );
+  return applyOverrides(
+    recovered,
+    selection.post_v35_successors.manual_self_grading_v1.runtime_file_overrides,
   );
 }
 
 function effectiveV7BrowserFiles() {
-  return applyOverrides(
+  const recovered = applyOverrides(
     selection.backend_v7_writer_successor.browser_files,
     selection.post_v35_successors.backend_v7_account_command_recovery.browser_file_overrides,
+  );
+  return applyOverrides(
+    recovered,
+    selection.post_v35_successors.manual_self_grading_v1.backend_browser_file_overrides,
+  );
+}
+
+function effectiveRecoveredBrowserFiles() {
+  return applyOverrides(
+    selection.post_v35_successors.browser_account_recovery.files,
+    selection.post_v35_successors.browser_account_command_queue.file_overrides,
+  );
+}
+
+function effectiveStartupBrowserFiles() {
+  const startup = applyOverrides(
+    effectiveRecoveredBrowserFiles(),
+    selection.post_v35_successors.empty_account_snapshot.file_overrides,
+  );
+  return applyOverrides(
+    startup,
+    selection.post_v35_successors.manual_self_grading_v1.startup_file_overrides,
+  );
+}
+
+function effectiveAccountFocusedTests() {
+  return applyOverrides(
+    selection.post_v35_successors.browser_account_command_queue.focused_tests,
+    selection.post_v35_successors.empty_account_snapshot.focused_tests,
+  );
+}
+
+function effectiveReleaseBrowserFiles() {
+  return applyOverrides(
+    selection.post_v35_successors.manual_self_grading_v1.browser_files,
+    selection.post_v35_successors.release_v40_candidate.browser_file_overrides,
+  );
+}
+
+function effectiveReleaseFocusedTests() {
+  return applyOverrides(
+    selection.post_v35_successors.manual_self_grading_v1.focused_tests,
+    selection.post_v35_successors.release_v40_candidate.focused_test_overrides,
   );
 }
 
@@ -109,6 +156,83 @@ test("the source allowlist retains exact Accounts and Backend successor bytes", 
       predecessor_sha256: "ed3d75a1220c6d36d580564865daf77a7c6efcb0984d410e6262f9cc8aa28741",
     },
   ]);
+  const queueSuccessor = selection.post_v35_successors.browser_account_command_queue;
+  assert.equal(queueSuccessor.predecessor_selection, "browser_account_recovery");
+  assert.equal(queueSuccessor.source_commit, "f2a08f3c865667352e498fd2d7363969b3706637");
+  assert.equal(queueSuccessor.source_handoff_sha256,
+    "c8be36d1ff22e50a009cf2d041c27f61932d112a174b122584368592b17a1ad3");
+  assert.deepEqual(queueSuccessor.file_overrides, [{
+    path: "public/study/accounts/browser-study-session.mjs",
+    predecessor_sha256: "c02435cefa9b6aaa7a8d2c724f725f9743eab026bd26476ed9b06d6283f5ebad",
+    sha256: "d243f28cb899320e744d1469b5b17cdcab866974713a880e6f0883f12d58894a",
+  }]);
+  assert.deepEqual(queueSuccessor.focused_tests, [{
+    path: "tests/account-runtime-v6.test.mjs",
+    predecessor_sha256: "85f1ac6d3c0c468d7f3d44c1e4b4826c9cba57a335739499a31284d954fd2b97",
+    source_sha256: "0c92e6ef4fd4fd07e4bd6aa3e338e5de4616af1f236d98fb0f9ae24d48876196",
+    sha256: "0c92e6ef4fd4fd07e4bd6aa3e338e5de4616af1f236d98fb0f9ae24d48876196",
+    integration: "byte-exact",
+  }]);
+  assert.equal(queueSuccessor.d1_migration_change, false);
+  assert.equal(queueSuccessor.public_webmcp_tool_change, false);
+  const emptyAccountSuccessor = selection.post_v35_successors.empty_account_snapshot;
+  assert.equal(emptyAccountSuccessor.predecessor_selection, "browser_account_command_queue");
+  assert.equal(emptyAccountSuccessor.source_commit, "37a801c48f1edcd1aa5c51afb199ad0fd5957486");
+  assert.deepEqual(emptyAccountSuccessor.file_overrides, [{
+    path: "public/study/js/account-runtime.js",
+    predecessor_sha256: "b80bb0627ab1b32986959e86aa837a0b57d8cffd83c1ad664f0eb1682a1fc468",
+    sha256: "dbb62775f3830bf099f1e1de0116f663de6e1aca7d6dd6b5c3bf2ede5cb6054f",
+  }]);
+  assert.deepEqual(emptyAccountSuccessor.focused_tests, [{
+    path: "tests/account-runtime-v6.test.mjs",
+    predecessor_sha256: "0c92e6ef4fd4fd07e4bd6aa3e338e5de4616af1f236d98fb0f9ae24d48876196",
+    source_sha256: "9efef58d5c75b47230fabdf5a4129279638fdeccf7c4de48046d3e59eaedf3b9",
+    sha256: "9efef58d5c75b47230fabdf5a4129279638fdeccf7c4de48046d3e59eaedf3b9",
+    integration: "byte-exact",
+  }]);
+  assert.deepEqual(emptyAccountSuccessor.contract, {
+    null_catalog_ref_requires_revision_zero: true,
+    null_catalog_ref_requires_null_state: true,
+  });
+  assert.equal(emptyAccountSuccessor.d1_migration_change, false);
+  assert.equal(emptyAccountSuccessor.public_webmcp_tool_change, false);
+  const selfGradingSuccessor = selection.post_v35_successors.manual_self_grading_v1;
+  assert.deepEqual(selfGradingSuccessor.contract, {
+    rating_buckets: ["again", "hard", "good", "easy"],
+    answer_revealed: true,
+    agent_evidence_fields_absent: true,
+    exactly_once_receipt: "submit_self_grade",
+    cancel_is_presentation_only: true,
+  });
+  assert.equal(selfGradingSuccessor.d1_migration_change, false);
+  assert.equal(selfGradingSuccessor.public_webmcp_tool_change, false);
+  const graphSuccessor = selection.post_v35_successors.graph_learner_progress_v1;
+  assert.equal(graphSuccessor.predecessor_selection, "graph_revision_16");
+  assert.equal(graphSuccessor.source_commit, "6a18f658f832f8beea9e9afa55b4f11e689712ad");
+  assert.equal(graphSuccessor.source_patch_sha256,
+    "a74615fb887adfba95790c17e6b9d2ccd5accc686fcf70f0a7e2c0c44c4a0bc0");
+  assert.equal(graphSuccessor.asset_query_token, "v40-learner-graph");
+  assert.equal(graphSuccessor.graph_query_revision, "graph-revision-17");
+  assert.deepEqual(graphSuccessor.contract, {
+    personal_progress_source: "learner",
+    library_progress_source: "structure",
+    example_progress_excluded: true,
+    library_can_study: false,
+    personal_can_study: true,
+  });
+  assert.equal(graphSuccessor.d1_migration_change, false);
+  assert.equal(graphSuccessor.public_webmcp_tool_change, false);
+  const releaseCandidate = selection.post_v35_successors.release_v40_candidate;
+  assert.equal(releaseCandidate.predecessor_commit, "48cbd6d24754173d889fe4fbdea103e95e72562e");
+  assert.deepEqual(releaseCandidate.contract, {
+    public_heading: "Deck Library",
+    committed_reveal_survives_reload: true,
+    advance_is_presentation_only: true,
+    canonical_session_queue_unchanged: true,
+    pending_marker_contains_no_definition_or_answer: true,
+  });
+  assert.equal(releaseCandidate.d1_migration_change, false);
+  assert.equal(releaseCandidate.public_webmcp_tool_change, false);
   const effectiveRuntime = effectiveV7RuntimeFiles();
   const effectiveBrowser = effectiveV7BrowserFiles();
   for (const item of [
@@ -125,7 +249,13 @@ test("the source allowlist retains exact Accounts and Backend successor bytes", 
     ...effectiveRuntime,
     ...effectiveBrowser,
     selection.backend_v7_writer_successor.packaged_migration,
-    ...selection.post_v35_successors.browser_account_recovery.files,
+    ...effectiveStartupBrowserFiles(),
+    ...effectiveAccountFocusedTests(),
+    ...effectiveReleaseBrowserFiles(),
+    ...effectiveReleaseFocusedTests(),
+    ...graphSuccessor.runtime_files,
+    ...graphSuccessor.focused_tests,
+    ...releaseCandidate.selected_files,
   ]) {
     assert.equal(await digest(item.path), item.sha256, item.path);
   }
@@ -190,7 +320,17 @@ test("every selected Backend runtime and browser import resolves inside the cand
       .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
     ...effectiveV7RuntimeFiles(),
     ...effectiveV7BrowserFiles(),
-    ...selection.post_v35_successors.browser_account_recovery.files,
+    ...effectiveStartupBrowserFiles(),
+    ...effectiveAccountFocusedTests()
+      .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
+    ...effectiveReleaseBrowserFiles()
+      .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
+    ...effectiveReleaseFocusedTests()
+      .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
+    ...selection.post_v35_successors.graph_learner_progress_v1.runtime_files
+      .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
+    ...selection.post_v35_successors.graph_learner_progress_v1.focused_tests
+      .filter(({ path: selectedPath }) => selectedPath.endsWith(".mjs")),
   ]) {
     const source = await text(item.path);
     for (const match of source.matchAll(/\bfrom\s+["'](\.[^"']+)["']/g)) {
@@ -204,10 +344,12 @@ test("every selected Backend runtime and browser import resolves inside the cand
 test("canonical mirrors, asset identity, budget, and 13 WebMCP schemas are frozen", async () => {
   const pins = selection.canonical_runtime;
   const webmcpSuccessor = selection.post_v35_successors.canonical_webmcp_copy;
+  const selfGradingStore = selection.post_v35_successors.manual_self_grading_v1.canonical_store;
   for (const relative of ["integration/core/js/library-catalog.js", "public/study/js/library-catalog.js"])
     assert.equal(await digest(relative), pins.library_catalog_sha256, relative);
-  for (const relative of ["integration/core/js/store.js", "public/study/js/store.js"])
-    assert.equal(await digest(relative), pins.store_sha256, relative);
+  assert.equal(selfGradingStore.predecessor_sha256, pins.store_sha256);
+  for (const relative of selfGradingStore.mirror_paths)
+    assert.equal(await digest(relative), selfGradingStore.sha256, relative);
   for (const relative of ["integration/core/js/streak.js", "public/study/js/streak.js"])
     assert.equal(await digest(relative), pins.streak_sha256, relative);
   assert.equal(pins.webmcp_sha256,

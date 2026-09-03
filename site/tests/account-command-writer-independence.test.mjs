@@ -120,19 +120,30 @@ test("v7 sends Study writer proof only for Study commands, never Add, Archive, o
     deck_id: "deck-other",
     idempotency_key: "study-lane:start",
   });
+  await client.submitSelfGrade({
+    session_id: "session-1",
+    card_id: "deck-other.card-1",
+    expected_card_revision: 1,
+    expected_session_revision: 1,
+    rating: "good",
+    idempotency_key: "study-lane:self-grade",
+  });
 
   assert.deepEqual(commands.map(({ command }) => command.operation), [
     "add_library_deck",
     "set_deck_archived",
     "set_deck_archived",
     "start_study_session",
+    "submit_self_grade",
   ]);
   for (const request of commands.slice(0, 3)) {
     assert.equal(headerValue(request, "x-meshful-writer-epoch"), null);
     assert.equal(headerValue(request, "x-meshful-writer-token"), null);
   }
-  assert.equal(headerValue(commands[3], "x-meshful-writer-epoch"), "7");
-  assert.equal(headerValue(commands[3], "x-meshful-writer-token"), WRITER.token);
+  for (const request of commands.slice(3)) {
+    assert.equal(headerValue(request, "x-meshful-writer-epoch"), "7");
+    assert.equal(headerValue(request, "x-meshful-writer-token"), WRITER.token);
+  }
   assert.equal(recovery.read(), null);
 });
 

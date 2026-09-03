@@ -26,9 +26,9 @@ WebMCP tools without maintaining a separate copy of learner state.
 ## Project status
 
 Meshful is a public working project. The `site/` directory is an exact,
-manifest-verified mirror of the source deployed as Sites v39. The deployment
+manifest-verified mirror of the source deployed as Sites v41. The deployment
 identity, source commit, live asset hashes, and validation results are recorded
-in [`release/deployed-v39.json`](release/deployed-v39.json).
+in [`release/deployed-v41.json`](release/deployed-v41.json).
 
 Repository-level documentation, governance, and automation may advance between
 product deployments. Product changes enter `site/` only from a validated,

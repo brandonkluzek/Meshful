@@ -132,5 +132,6 @@ test("Library treats archived installed courses as an exact unarchive action", (
   assert.match(clicks, /client_action_id: actionId\("unarchive-library-deck"\)/);
   assert.doesNotMatch(confirmation, /prerequisite|cascade|dependent course/i);
   assert.match(css, /\.sheet-dialog:has\(\.library-unarchive-dialog\)\s*\{[^}]*width:\s*min\(600px, calc\(100vw - 30px\)\);/s);
+  assert.match(css, /\.sheet-dialog:has\(\.library-unarchive-dialog\)::backdrop\s*\{[^}]*background:\s*rgba\(7, 8, 10, 0\.58\);[^}]*backdrop-filter:\s*blur\(8px\);/s);
   assert.match(css, /\.library-unarchive-dialog \.dialog-actions\s*\{[^}]*margin-top:\s*14px;[^}]*padding-top:\s*14px;/s);
 });
