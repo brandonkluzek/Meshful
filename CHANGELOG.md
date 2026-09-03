@@ -12,6 +12,17 @@ version numbers follow the package version until tagged releases begin.
 - Citation, support, conduct, architecture, and release-process documentation
 - A visual project header and public-release status in the README
 
+## 0.1.3 - 2026-09-03
+
+### Changed
+
+- The prerequisite graph now presents real learner progress through the accepted
+  Graph v5 interaction and visual model
+- Graph rendering, progress state, mobile behavior, and Deck Library previews
+  share the same validated 72-course catalog boundary
+- The public source mirror now matches the exact Graph v43 release deployed as
+  Sites version 44
+
 ## 0.1.2 - 2026-09-03
 
 ### Changed

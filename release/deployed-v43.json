@@ -1,0 +1,61 @@
+{
+  "schema_version": "meshful.deployed-source.v1",
+  "observed_at": "2026-09-03",
+  "sites": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "saved_version": 44,
+    "version_id": "appgprj_6a9334b99f20819195ece80ebe97016b~appgver_418851243ae08191aa9ee879627d6bd0",
+    "deployment_id": "appgdep_6a99b1f3e9388191b2ec98b968242b20",
+    "deployment_status": "succeeded",
+    "deployment_updated_at": "2026-09-03T17:44:34.142039Z",
+    "public_url": "https://meshful.ai",
+    "access_mode": "public"
+  },
+  "source": {
+    "commit": "23f73b3e39839a36296e8bd3f254ff79612e7a40",
+    "tree": "381f962996de642d3bc983831030489b9316c189",
+    "stored_archive_sha256": "5bbb5e115b691b98cb3219ec04763c70e0bdeed9d0dfd467f7cdcf3f2b8afd5e",
+    "sites_content_hash": "sha256:8a07699281e0a0fc89993677f80919149c9ae1df99354a9dc1b3077170b4ed0c",
+    "stored_archive_files": 425,
+    "stored_archive_bytes": 92068466,
+    "repository_path": "site"
+  },
+  "live_runtime_sha256": {
+    "site/public/study/js/app.js": "3ec6fcbab172de22e53ff68124dd6fa57e79a8cc24cb98765a5046f206a474ac",
+    "site/public/study/js/graph-engine.js": "997570f1228ea04eb245f75df042857315ab6c76b3cbc0358384c96f1d3491c3",
+    "site/public/study/js/graph-progress-state.js": "39cc5a9c108619baecfdab80e122425d9196f74355e9bbdd073df1af89cbe11d",
+    "site/public/study/js/graph-view.js": "704f8ebc61dbbec53734f0b494a375ce932ca35c9fc9d42d3401a6134587479d",
+    "site/public/study/js/library-view.js": "11eb60d83e82b06c812e84f67bc38c4834a3fa06efae42ed59bd7c8c4015477b",
+    "site/public/study/js/start.js": "7ccc97743a17c7197bb303a6c6c5ae5879a025058aa7a717f5266958de3e09af",
+    "site/public/study/styles.css": "97e4741cc3c1af8ec245bf7087de3b9c411e7a0b9e0935d3411e20e5f2c3e8c9",
+    "site/public/study/integration/account-entry.js": "e46f41a3e3b1df18e85764a0621a7b72a7d4b1abad9194952d404ccc09314746",
+    "site/public/study/integration/account-start.js": "3c6cbbd04129a3f693c77d44de49caaf3009ceebdfd78477c862d48670c93c55"
+  },
+  "validation": {
+    "graph_and_catalog_tests_passed": 44,
+    "graph_and_catalog_tests_failed": 0,
+    "release_account_and_branding_tests_passed": 17,
+    "release_account_and_branding_tests_failed": 0,
+    "deck_library_integrity": "72/72 decks, 9988/9988 cards, 16942/16942 internal edges",
+    "v42_grading_and_d1_preservation_tests_passed": 37,
+    "v42_grading_and_d1_preservation_tests_failed": 0,
+    "lint": "passed",
+    "build": "passed",
+    "compiled_worker_desktop_and_mobile": "passed with zero console errors",
+    "public_live_desktop_and_mobile": "passed with zero console errors",
+    "signed_in_account_load": "passed read-only",
+    "live_native_webmcp_tools": 13,
+    "live_runtime_hash_parity": "passed",
+    "production_learner_writes_performed": false
+  },
+  "included": [
+    "the exact deployed Sites v42 product boundary",
+    "the accepted Graph v5 progress overlay",
+    "Graph v5 CSS and release-provenance reconciliation"
+  ],
+  "excluded_successors": [
+    "demo and privacy work in progress",
+    "permanent deck deletion",
+    "unrelated cosmetic work"
+  ]
+}
