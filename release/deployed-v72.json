@@ -1,0 +1,65 @@
+{
+  "schema_version": "meshful.deployed-source.v1",
+  "observed_at": "2026-09-04T07:21:42.254771Z",
+  "sites": {
+    "project_id": "appgprj_6a9334b99f20819195ece80ebe97016b",
+    "saved_version": 72,
+    "version_id": "appgprj_6a9334b99f20819195ece80ebe97016b~appgver_dc1b8d97f63c819194e5618a572906fb",
+    "deployment_id": "appgdep_6a9a717b8eac819188ff0086f74a358f",
+    "provider_deployment_id": "site---6a9334b99f20819195ece80ebe97016b",
+    "deployment_status": "succeeded",
+    "deployment_updated_at": "2026-09-04T07:21:42.254771Z",
+    "provider_url": "https://adaptive-study-lab.brandonkluzek.chatgpt.site",
+    "public_url": "https://meshful.ai",
+    "access_mode": "public",
+    "release_token": "v72-guest-study-reset"
+  },
+  "source": {
+    "commit": "3c8c19de1eba096f3825b6b4ce4132df3a9504b7",
+    "tree": "f71eb56045c05f9af822ed0d0f0d4994ba30c870",
+    "stored_archive_sha256": "522d94b1281e87d9165cb711b621c1e7f43e378ae9e84aeefb824f323fc8bdd2",
+    "sites_content_hash": "sha256:55493da7e44b1af57eebf4a202c0fe8d2db9785739f493cb596d6d5f535c614a",
+    "stored_archive_files": 415,
+    "stored_archive_bytes": 92610560,
+    "repository_path": "site"
+  },
+  "live_runtime_sha256": {
+    "site/public/study/js/app.js": "5e5efea9a21e8082ac606bbd4d5f49eb4a19e881ca5735078db2c8977ba43968",
+    "site/public/study/js/start.js": "f29ae259be9167554dad4d3c13543b86330b01ac5fa7e8a7abdbbf16902d2ef5",
+    "site/public/study/styles.css": "16531ac3574285ebc31268116b9530a4c49d4cd7d459c7ecde4a8739683620c8",
+    "site/public/study/integration/account-entry.js": "90a6a26cd8de54a2cb22f80a0f605918c64978ac0e2ae0ad1712c27f3485d91d",
+    "site/public/study/integration/account-start.js": "f4442cb7cd0f6c86661705479c7b0e4eaee2e79cfe297efa024c7d1c556c1955",
+    "site/public/study/js/graph-view.js": "7fc6d2c2905cd26f4212c5a6661ec6a7d28afd130eb7680d43b704878f1f7b2f",
+    "site/public/study/js/library-view.js": "1d8b6da0289860d1d97016cb88b5f4917250d76998d7640e19964b853a981c65",
+    "site/public/study/js/library-loader.js": "14750be6829b71dc8c710a331b95461588335438c3fd4445eb16784282306fea",
+    "site/public/study/js/browser-workspace.js": "1ce9b4d34cc1b42ce94250bcb26638026584064a925954b8c399178ccdff8b80"
+  },
+  "validation": {
+    "deployment_status": "succeeded",
+    "public_release_token": "observed",
+    "live_native_webmcp_tools": 13,
+    "live_runtime_hash_parity": "passed",
+    "release_manifest": "passed",
+    "lint": "passed",
+    "complete_tests_passed": 231,
+    "complete_tests_failed": 0,
+    "focused_webmcp_tests_passed": 6,
+    "focused_webmcp_tests_failed": 0,
+    "production_build": "passed",
+    "production_learner_writes_performed": false,
+    "github_actions_gate": "recorded by the matching public main run"
+  },
+  "included": [
+    "the exact deployed Sites v72 product boundary",
+    "isolated demo mode and account recovery improvements",
+    "privacy controls, account deletion, and confirmed guest study reset",
+    "current Meshful identity artwork and learner-interface polish"
+  ],
+  "license_boundary": {
+    "active_library_release": "2026-09-03.public-sanitized.v4",
+    "active_library_rights_status": "cc-by-4.0",
+    "retained_compatibility_release": "2026-08-30.reviewed-72.v1",
+    "retained_compatibility_rights_status": "not-cleared",
+    "retained_compatibility_reuse_license_granted": false
+  }
+}

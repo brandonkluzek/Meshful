@@ -19,10 +19,16 @@ const entries = new Map(manifest.files.map((entry) => [entry.path, entry]));
 const secretPatterns = [
   /(?<![A-Za-z0-9])sk-[A-Za-z0-9_-]{20,}/,
   /(?<![A-Za-z0-9])gh[pousr]_[A-Za-z0-9]{20,}/,
+  /(?<![A-Z0-9])AKIA[A-Z0-9]{16}(?![A-Z0-9])/,
+  /(?<![A-Za-z0-9])npm_[A-Za-z0-9]{30,}/,
+  /(?<![A-Za-z0-9])xox[baprs]-[A-Za-z0-9-]{20,}/,
+  /\bBearer\s+[A-Za-z0-9._~+/=-]{24,}/i,
+  /\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b/,
   /-----BEGIN [A-Z ]*PRIVATE KEY-----/,
 ];
 const privatePrefix = ['/', 'Users', '/'].join('');
 const forbiddenPath = /(^|\/)(node_modules|\.next|\.vinext|dist|out|\.wrangler|outputs|work|coverage)(\/|$)|(^|\/)\.env($|\.)|\.(sqlite|sqlite3|db|pem|key|log)$/;
+if (tracked.includes('release/validation.json')) throw new Error('Ephemeral validation output must not be tracked');
 let totalBytes = 0;
 for (const path of admitted) {
   const entry = entries.get(path);
@@ -40,7 +46,7 @@ for (const path of admitted) {
   const digest = createHash('sha256').update(bytes).digest('hex');
   if (entry.bytes !== bytes.length || entry.sha256 !== digest) throw new Error(`Manifest mismatch: ${path}`);
   totalBytes += bytes.length;
-  if (/\.(md|json|js|mjs|ts|tsx|css|html|svg|txt|cff|yaml|yml)$/.test(path)) {
+  if (/\.(md|json|js|mjs|ts|tsx|css|html|svg|txt|cff|yaml|yml|sql|toml|xml|lock)$/.test(path)) {
     const text = bytes.toString('utf8');
     if (text.includes(privatePrefix)) throw new Error(`Private absolute path found: ${path}`);
     for (const pattern of secretPatterns) if (pattern.test(text)) throw new Error(`Credential-like token found: ${path}`);

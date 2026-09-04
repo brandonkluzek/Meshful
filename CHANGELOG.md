@@ -12,6 +12,22 @@ version numbers follow the package version until tagged releases begin.
 - Citation, support, conduct, architecture, and release-process documentation
 - A visual project header and public-release status in the README
 
+## 0.1.4 - 2026-09-04
+
+### Added
+
+- An isolated showcase demo with realistic study history
+- Account and local-study-data deletion flows, including a confirmed guest reset
+- Updated Meshful identity artwork and privacy controls
+
+### Changed
+
+- Account recovery, study handoff, manual grading, mobile headers, and graph
+  views are clearer and more resilient
+- Demo entry now lives in the Account panel and permanent deck deletion remains
+  hidden from the learner-facing interface
+- The public source mirror now exactly matches the deployed Sites v72 tree
+
 ## 0.1.3 - 2026-09-03
 
 ### Changed

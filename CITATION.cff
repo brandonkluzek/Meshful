@@ -8,8 +8,8 @@ abstract: >-
 authors:
   - family-names: Kluzek
     given-names: Brandon
-version: 0.1.0
-date-released: 2026-09-03
+version: 0.1.4
+date-released: 2026-09-04
 repository-code: "https://github.com/brandonkluzek/Meshful"
 url: "https://meshful.ai"
 license: Apache-2.0

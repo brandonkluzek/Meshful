@@ -4,7 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const excluded = new Set(['release/file-manifest.json', 'release/file-manifest.sha256', 'release/validation.json']);
+const excluded = new Set(['release/file-manifest.json', 'release/file-manifest.sha256']);
 const paths = execFileSync('git', ['ls-files', '-z'], { cwd: root }).toString('utf8').split('\0').filter(Boolean)
   .filter((path) => !excluded.has(path)).sort();
 const files = [];

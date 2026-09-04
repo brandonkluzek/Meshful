@@ -11,12 +11,12 @@ under `site/` is not promoted merely because it builds locally.
 
 ## Current deployed boundary
 
-The current public product snapshot is Graph v43, deployed as Sites version 44:
+The current public product snapshot is v72, deployed as Sites version 72:
 
-- public repository mirror commit: `8e509c415eebd5131e88fbb1766e175c444d2806`
-- Website source commit: `23f73b3e39839a36296e8bd3f254ff79612e7a40`
-- Website source tree: `381f962996de642d3bc983831030489b9316c189`
-- deployment and live-asset receipt: [`release/deployed-v43.json`](../release/deployed-v43.json)
+- public repository mirror commit: `f211a9d31ddef43cfb74f9392337e043f6d6d242`
+- Website source commit: `3c8c19de1eba096f3825b6b4ce4132df3a9504b7`
+- Website source tree: `f71eb56045c05f9af822ed0d0f0d4994ba30c870`
+- deployment and live-asset receipt: [`release/deployed-v72.json`](../release/deployed-v72.json)
 
 The repository manifest records the SHA-256 and byte length of every admitted
 tracked file. Generated output, environment files, databases, logs, private

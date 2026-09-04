@@ -1,10 +1,13 @@
 # Creative Commons Attribution 4.0 International
 
-The owner-controlled documentation, brand artwork, and sanitized academic
-Deck Library identified in [the license map](README.md) are licensed under the
-Creative Commons Attribution 4.0 International license. The Deck Library retains
-its release-specific notice in `library/CONTENT-LICENSE-NOTICE.md`. Generated
-public example deck content is separately dedicated under CC0 1.0 Universal.
+The owner-controlled documentation, brand artwork, and public-approved
+sanitized academic Deck Library releases identified in [the license
+map](README.md) are licensed under the Creative Commons Attribution 4.0
+International license. Release-specific approval and rights status are recorded
+in `site/public/study/data/library-releases.json` and the corresponding runtime
+indexes. The retained `2026-08-30.reviewed-72.v1` compatibility release is
+outside this grant pending clearance. Generated public example deck content is
+separately dedicated under CC0 1.0 Universal.
 
 Copyright 2026 Brandon Kluzek.
 

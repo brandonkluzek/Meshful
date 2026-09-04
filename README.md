@@ -26,10 +26,10 @@ WebMCP tools without maintaining a separate copy of learner state.
 ## Project status
 
 Meshful is a public working project. The `site/` directory is an exact,
-manifest-verified mirror of the Graph v43 release deployed as Sites version 44.
+manifest-verified mirror of the v72 release deployed as Sites version 72.
 The deployment identity, source commit, live asset hashes, and validation
 results are recorded in
-[`release/deployed-v43.json`](release/deployed-v43.json).
+[`release/deployed-v72.json`](release/deployed-v72.json).
 
 Repository-level documentation, governance, and automation may advance between
 product deployments. Product changes enter `site/` only from a validated,
@@ -115,7 +115,7 @@ boundary, request flows, and repository map.
   and Study-writer implementation for Cloudflare D1.
 - `site/app/` packages the learner API and the page that hosts the study
   workspace.
-- `site/drizzle/` contains the three applied D1 schema migrations.
+- `site/drizzle/` contains the four applied D1 schema migrations.
 - `site/tests/` verifies the selected sources, browser behavior, WebMCP metadata,
   account boundaries, and deployment composition.
 
@@ -175,9 +175,11 @@ of human subject-matter certification or measured learning outcomes. Its
 versioned manifests and course files under `site/public/study/data/` make the
 shipped collection inspectable and replaceable as future releases are added.
 
-Software is licensed under [Apache License 2.0](LICENSE). The Deck Library,
-owner-controlled documentation, and brand artwork are licensed under
-[CC BY 4.0](LICENSES/CC-BY-4.0.md). The three small generated example decks are
+Software is licensed under [Apache License 2.0](LICENSE). The active sanitized
+Deck Library release, owner-controlled documentation, and brand artwork are
+licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.md). One older compatibility
+bundle remains in the deployed snapshot but is explicitly outside that content
+license pending clearance. The three small generated example decks are
 dedicated under [CC0 1.0](LICENSES/CC0-1.0.md). See
 [LICENSES/README.md](LICENSES/README.md) for the file-level license map and
 attribution requirements.
