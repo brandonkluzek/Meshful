@@ -10,7 +10,7 @@ import {
   resolveAccountPersistencePolicy,
 } from '../integration/account-persistence-release.mjs';
 
-const WEBSITE_ASSET_REVISION = 'v43-real-progress-graph';
+const WEBSITE_ASSET_REVISION = 'v72-guest-study-reset';
 import { selectWebsiteEntry } from '../integration/site-selection.mjs';
 
 export const dynamic = 'force-dynamic';
@@ -77,19 +77,20 @@ export default async function Home() {
       </div>
       <p class="account-auth-state"><span aria-hidden="true">✓</span> Signed in with ChatGPT</p>
       <div class="account-storage-card">
-        <div><strong>Study data</strong><span data-account-storage-state>Saved in this browser</span></div>
-        <p data-account-storage-note>ChatGPT sign-in identifies you, but study data does not sync between devices yet.</p>
+        <div><strong>Study data</strong><span data-account-storage-state>Checking account…</span></div>
+        <p data-account-storage-note>Confirming your saved decks and progress.</p>
       </div>
       <button class="account-menu-row" type="button" data-open-settings>Data &amp; privacy <span aria-hidden="true">→</span></button>
-      <a class="account-menu-row" data-account-signout href="${signOutPath}" target="_top">Sign out</a>
-      <p class="account-note">Signing out does not clear data saved in this browser.</p>`
+      <a class="account-menu-row" href="/?demo=showcase#study" data-demo-enter aria-label="Open demo mode with artificial study history" aria-pressed="false">Demo mode <span aria-hidden="true">→</span></a>
+      <a class="account-menu-row" data-account-signout href="${signOutPath}" target="_top">Sign out</a>`
     : `<div class="account-storage-card">
         <div><strong>Study data</strong><span data-account-storage-state>Saved in this browser</span></div>
         <p data-account-storage-note>Decks, reviews, and progress stay in this browser.</p>
       </div>
       <a class="button button-primary account-signin" data-account-signin href="${signInPath}" target="_top">Sign in with ChatGPT</a>
       <p class="account-note">Use a separate browser profile on a shared device.</p>
-      <button class="account-menu-row" type="button" data-open-settings>Data &amp; privacy <span aria-hidden="true">→</span></button>`;
+      <button class="account-menu-row" type="button" data-open-settings>Data &amp; privacy <span aria-hidden="true">→</span></button>
+      <a class="account-menu-row" href="/?demo=showcase#study" data-demo-enter aria-label="Open demo mode with artificial study history" aria-pressed="false">Demo mode <span aria-hidden="true">→</span></a>`;
   const unavailableView = accountBackendUnavailable
     ? `<section class="page"><div class="empty-state"><div class="empty-state-inner">
         <p class="eyebrow">Account unavailable</p>
@@ -117,6 +118,9 @@ export default async function Home() {
         </nav>
 
         <div class="topbar-actions">
+          <div class="demo-mode-status" data-demo-status role="status" aria-label="Demo mode active" hidden>
+            <a class="demo-mode-exit" href="/#study" data-demo-exit aria-label="Exit demo mode and return to your saved study data">Exit Demo</a>
+          </div>
           <button class="account-trigger" type="button" data-action="open-account" aria-label="Open account">
             ${accountTrigger}
           </button>
@@ -171,7 +175,10 @@ export default async function Home() {
         <section class="settings-section" aria-label="Study data">
           <div class="settings-row"><span data-storage-label>Study data</span><span data-storage-state>Saved in this browser</span></div>
           <p class="account-note" data-storage-note>Decks, reviews, and progress stay in this browser and do not sync between devices yet.</p>
-          <button class="button button-danger" type="button" data-reset-local>Reset study data</button>
+          ${user
+            ? `<button class="button button-danger" type="button" data-request-delete-account>Delete my data</button>`
+            : `<button class="button button-danger" type="button" data-request-delete-local>Reset study data</button>
+              <div data-delete-local-confirmation></div>`}
           <p class="account-note">Your full chat is not copied into Meshful.</p>
         </section>
       </div>

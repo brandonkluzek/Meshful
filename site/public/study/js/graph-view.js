@@ -6,12 +6,12 @@ import {
   semanticZoomLevel,
   traceDownstream,
   traceUpstream,
-} from "./graph-engine.js?graph-revision-18";
+} from "./graph-engine.js?graph-revision-19";
 import {
   buildGraphIndex,
   chooseDefaultGraphProjection,
   findDependencyPath,
-} from "./graph-scope.js?graph-revision-18";
+} from "./graph-scope.js?graph-revision-19";
 import { renderDefinition } from "./definition-renderer.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";

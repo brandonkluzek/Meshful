@@ -227,6 +227,12 @@ async function withApp({ storage, hash, reducedMotion = false, mobile = false, a
       hash = next;
       schedule(() => Promise.all((window.listeners.get("hashchange") ?? []).map((listener) => listener())));
     },
+    replace(value) {
+      const next = value.startsWith("#") ? value : new URL(value, this.href).hash;
+      if (!next || next === hash) return;
+      hash = next;
+      schedule(() => Promise.all((window.listeners.get("hashchange") ?? []).map((listener) => listener())));
+    },
     assign() {},
     reload() {},
   };
@@ -433,23 +439,72 @@ function readCurrent(fixture) {
 serialTest("session header uses the canonical due segment and then a separate continuous counter", async () => {
   const fixture = dueThenContinuousFixture();
   await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}` }, async (ui) => {
-    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "1 of 2 due");
+    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "1 / 2 due");
 
     let current = readCurrent(fixture);
     let pending = ui.execute("submit_grade", gradeInput(current, "due:1"));
     await settleMicrotasks();
     await settleCommittedReveal(ui, pending);
-    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "1 of 2 due");
+    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "1 / 2 due");
     await advanceCommittedReveal(ui);
-    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "2 of 2 due");
+    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "2 / 2 due");
 
     current = readCurrent(fixture);
     pending = ui.execute("submit_grade", gradeInput(current, "due:2"));
     await settleMicrotasks();
     await settleCommittedReveal(ui, pending);
-    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "2 of 2 due");
+    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "2 / 2 due");
     await advanceCommittedReveal(ui);
-    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "Continuous · 1");
+    assert.equal(ui.view.querySelector("[data-session-progress]")?.textContent.trim(), "1 / 1 extra");
+    assert.deepEqual(ui.errors, []);
+  });
+});
+
+serialTest("stale session routes return to Study and switching decks requires an explicit interruption", async () => {
+  const storage = createMemoryStorage();
+  const scoped = createBrowserWorkspace(SEARCH, () => storage).storage;
+  let seeded = createStudyStore({ catalog: [], storage: scoped });
+  seedDeck(seeded, "ended-session", 1);
+  seedDeck(seeded, "active-session", 1);
+  seedDeck(seeded, "next-deck", 1);
+  const ended = seeded.startStudySession({ deck_id: "ended-session", limit: 1, idempotency_key: "start:ended" });
+  const staleState = JSON.parse(scoped.getItem(LEARNER_STORAGE_KEY));
+  Object.assign(staleState.sessions[ended.session.session_id], {
+    status: "completed",
+    queue: [],
+    cursor: 0,
+    currentCardId: null,
+    phase: "applied",
+    reviewsApplied: 0,
+    finishedAt: new Date().toISOString(),
+  });
+  staleState.activeSessionId = null;
+  scoped.setItem(LEARNER_STORAGE_KEY, JSON.stringify(staleState));
+  seeded = createStudyStore({ catalog: [], storage: scoped });
+  const active = seeded.startStudySession({ deck_id: "active-session", limit: 1, idempotency_key: "start:active" });
+
+  await withApp({ storage, hash: `#session/${ended.session.session_id}`, agentHost: false }, async (ui) => {
+    assert.equal(ui.location.hash, "#study");
+    assert.equal(ui.document.body.dataset.route, "study");
+    assert.doesNotMatch(ui.view.textContent, /Another study session is active/);
+    assert.match(ui.view.textContent, /Return to study/);
+    assert.doesNotMatch(ui.view.textContent, /Required prerequisites|Another session is active/);
+
+    await ui.click('[data-start-deck="next-deck"]');
+    await ui.settleEvents();
+    const dialog = ui.document.querySelector("[data-deck-dialog]");
+    assert.equal(dialog.open, true);
+    assert.match(dialog.textContent, /Interrupt and switch decks/);
+    assert.match(dialog.textContent, /Your place .* will be saved/);
+    assert.match(dialog.textContent, /Interrupt and study this deck/);
+
+    await ui.click("[data-confirm-study-interrupt]");
+    await ui.settleEvents();
+    const committed = createStudyStore({ catalog: [], storage: scoped }).getSnapshot();
+    assert.equal(committed.sessions[active.session.session_id].status, "paused");
+    assert.equal(committed.sessions[committed.activeSessionId].deckId, "next-deck");
+    assert.match(ui.location.hash, /^#session\//);
+    assert.doesNotMatch(ui.location.hash, new RegExp(ended.session.session_id));
     assert.deepEqual(ui.errors, []);
   });
 });
@@ -637,10 +692,35 @@ for (const host of [
       mobile: host.mobile,
     }, async (ui) => {
       assert.equal(Boolean(ui.view.querySelector("[data-start-self-grade]")), host.expected);
+      assert.equal(ui.view.querySelector(".session-shell")?.dataset.studyMode, host.agentHost ? "agent" : "standalone");
       assert.deepEqual(ui.errors, []);
     });
   });
 }
+
+serialTest("agent-led WebMCP study offers opt-in grades while hiding extra prompt actions", async () => {
+  const fixture = freshFixture(2, "agent-prompt-controls");
+  await withApp({
+    storage: fixture.storage,
+    hash: `#session/${fixture.opened.session.session_id}`,
+    agentHost: true,
+  }, async (ui) => {
+    assert.ok(ui.view.querySelector(".study-controls"));
+    assert.ok(ui.view.querySelector("[aria-label='Study actions']"));
+    assert.equal(ui.view.querySelector("[data-start-self-grade]")?.textContent, "Show grades");
+    assert.equal(ui.view.querySelector("[data-reveal-answer]"), null);
+    assert.equal(ui.view.querySelector("[data-skip-card]"), null);
+    assert.equal(ui.view.querySelector("[data-show-study-help]"), null);
+    await ui.flush(60_000);
+    assert.equal(ui.view.querySelector("[data-study-agent-help]"), null);
+
+    const pending = ui.execute("submit_grade", gradeInput(fixture.opened, "agent-prompt-controls"));
+    await settleMicrotasks();
+    assert.equal((await settleCommittedReveal(ui, pending)).ok, true);
+    assert.equal(ui.view.querySelector("[data-advance-study-card]")?.textContent, "Next card");
+    assert.deepEqual(ui.errors, []);
+  });
+});
 
 serialTest("manual grading reveals the answer and commits one auditable website self-rating", async () => {
   const fixture = freshFixture(2, "manual-self-grade");
@@ -662,16 +742,7 @@ serialTest("manual grading reveals the answer and commits one auditable website 
     const choices = ui.view.querySelectorAll("[data-submit-self-grade]");
     assert.deepEqual(choices.map((choice) => choice.dataset.submitSelfGrade), ["again", "hard", "good", "easy"]);
     assert.match(ui.view.querySelector("[data-study-manual-grades]")?.textContent ?? "", /Again.*Forgot it.*Hard.*With effort.*Good.*Remembered.*Easy.*Effortless/is);
-    assert.ok(ui.view.querySelector("[data-cancel-self-grade]"));
-
-    await ui.click("[data-cancel-self-grade]");
-    await ui.settleEvents();
-    assert.equal(fixture.scoped.getItem(LEARNER_STORAGE_KEY), before, "Back is presentation-only");
-    assert.equal(ui.view.querySelector("[data-study-manual-grades]"), null);
-    assert.equal(ui.view.querySelector("[data-study-card-scene]")?.classList.contains("is-flipped"), false);
-
-    await ui.click("[data-start-self-grade]");
-    await ui.flush();
+    assert.equal(ui.view.querySelector("[data-cancel-self-grade]"), null);
 
     await ui.click('[data-submit-self-grade="good"]');
     await ui.settleEvents();
@@ -696,7 +767,6 @@ serialTest("manual grading reveals the answer and commits one auditable website 
 });
 
 for (const host of [
-  { label: "agent desktop", agentHost: true, mobile: false, copy: /Choose how to grade.*Use your agent for feedback, or choose Grade myself\./i },
   { label: "standalone Chrome", agentHost: false, mobile: false, copy: /Choose how to grade.*Use your agent for feedback, or choose Grade myself\./i },
   { label: "mobile", agentHost: false, mobile: true, copy: /Choose how to grade.*Use your agent for feedback, or choose Grade myself\./i },
 ]) {
@@ -725,22 +795,9 @@ for (const host of [
   });
 }
 
-serialTest("desktop help copy is identical in agent-hosted and standalone Chrome contexts", async () => {
-  const copies = [];
-  for (const agentHost of [true, false]) {
-    const fixture = freshFixture(1, `same-desktop-help-${agentHost}`);
-    await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}`, agentHost }, async (ui) => {
-      ui.click("[data-show-study-help]");
-      await ui.settleEvents();
-      copies.push(ui.document.querySelector("[data-study-agent-help]")?.textContent.replace(/\s+/g, " ").trim());
-    });
-  }
-  assert.equal(copies[0], copies[1]);
-});
-
 serialTest("a dismissed help nudge stays quiet after the next card in the same session", async () => {
   const fixture = freshFixture(2, "help-once-per-session");
-  await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}` }, async (ui) => {
+  await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}`, agentHost: false }, async (ui) => {
     const firstScene = ui.view.querySelector("[data-study-card-scene]");
     ui.click("[data-show-study-help]");
     await ui.settleEvents();
@@ -748,9 +805,10 @@ serialTest("a dismissed help nudge stays quiet after the next card in the same s
     ui.click("[data-dismiss-study-help]");
     await ui.settleEvents();
 
-    const pending = ui.execute("submit_grade", gradeInput(fixture.opened, "help-once-per-session"));
-    await settleMicrotasks();
-    await settleCommittedReveal(ui, pending);
+    await ui.click("[data-start-self-grade]");
+    await ui.flush();
+    await ui.click('[data-submit-self-grade="good"]');
+    await ui.settleEvents();
     await advanceCommittedReveal(ui);
     assert.notEqual(ui.view.querySelector("[data-study-card-scene]"), firstScene);
     await ui.flush(40_000);
@@ -767,7 +825,7 @@ serialTest("Reveal and Skip obey independent capabilities and keep distinct comm
     const fixture = freshFixture(2, `${action}-capability`);
     const selector = action === "reveal" ? "[data-reveal-answer]" : "[data-skip-card]";
     const capability = action === "reveal" ? "revealed_attempts" : "skipped_attempts";
-    await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}` }, async (ui) => {
+    await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}`, agentHost: false }, async (ui) => {
       const before = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
       const scene = ui.view.querySelector("[data-study-card-scene]");
       const control = ui.view.querySelector(selector);
@@ -843,7 +901,7 @@ serialTest("one confirmed non-answer warning covers Reveal and Skip for that ses
   assert.equal(capabilities.revealed_attempts, true);
   assert.equal(capabilities.skipped_attempts, true);
   const fixture = freshFixture(3, "shared-nonanswer-warning");
-  await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}` }, async (ui) => {
+  await withApp({ storage: fixture.storage, hash: `#session/${fixture.opened.session.session_id}`, agentHost: false }, async (ui) => {
     const before = fixture.scoped.getItem(LEARNER_STORAGE_KEY);
     await ui.click("[data-reveal-answer]");
     await ui.flush();
@@ -883,15 +941,19 @@ serialTest("session presentation exposes readable controls and a reduced-motion 
   assert.match(app, /data-study-live-status aria-live="polite"/);
   assert.match(app, /data-study-agent-help/);
   assert.match(app, /manualGradeAvailable\(\)/);
-  assert.match(app, /data-start-self-grade>Grade myself<\/button>/);
+  assert.match(app, /data-start-self-grade aria-expanded="false" aria-controls="study-manual-grade-options">Show grades<\/button>/);
   assert.match(app, /gradeButton\("again", "Again", "Forgot it"\)[\s\S]*gradeButton\("hard", "Hard", "With effort"\)[\s\S]*gradeButton\("good", "Good", "Remembered"\)[\s\S]*gradeButton\("easy", "Easy", "Effortless"\)/);
   assert.match(app, /uiMutation\("submitSelfGrade", \{[\s\S]*rating,[\s\S]*idempotency_key: ui\.manualGrade\.idempotencyKey/);
   assert.doesNotMatch(app, /No written answer was captured/);
-  assert.match(app, /data-cancel-self-grade/);
+  assert.doesNotMatch(app, /data-cancel-self-grade|study-manual-grade-back|Hide grades/);
   assert.match(app, /data-dismiss-study-help/);
   assert.match(app, /const STUDY_HELP_DELAY_MS = 40_000/);
   assert.match(app, /allowReveal \? '<button[^']*data-reveal-answer>Reveal answer<\/button>'/);
-  assert.match(app, /allowSkip \? '<button[^']*data-skip-card>Skip card<\/button>'/);
+  assert.match(app, /allowSkip \? `<button[^`]*data-skip-card aria-label="Skip card" title="Skip card" data-tooltip="Skip card">\$\{icon\("skip"\)\}<\/button>`/);
+  assert.match(app, /let agentStudyToolsReady = typeof document\.modelContext\?\.registerTool === "function";/);
+  assert.match(app, /const showStudyControls = pendingReveal \|\| manualGrading \|\| manualGradeAvailable\(\) \|\| !agentLedStudy;/);
+  assert.match(app, /\$\{showStudyControls \? `<div class="study-controls">[\s\S]*?` : ""\}/);
+  assert.match(app, /registeredToolNames\.includes\("submit_grade"\)/);
   assert.doesNotMatch(app, /Reveal \/ skip/);
   assert.match(app, /data-show-study-help aria-label="How to answer" title="How to answer" aria-controls="study-agent-help" aria-expanded=/);
   assert.match(app, /role="group" aria-label="Study actions"/);
@@ -923,20 +985,40 @@ serialTest("session presentation exposes readable controls and a reduced-motion 
   assert.match(app, /document\.addEventListener\("visibilitychange",[\s\S]*if \(document\.hidden\) pauseStudyHelpTimer\(\);[\s\S]*else armStudyHelpTimer\(\);/);
   assert.match(app, /data-study-outcome/);
   assert.match(app, /data-session-completion/);
-  assert.match(app, /label: `Continuous · \$\{position\}`/);
+  assert.match(app, /label: `\$\{position\} \/ \$\{continuousTotal\} extra`/);
+  assert.match(app, /class="deck-dialog-inner study-takeover-dialog"/);
+  assert.match(app, /This ends study on the other device and continues it here\./);
+  assert.doesNotMatch(app, /<p class="eyebrow">Study active elsewhere<\/p>/);
+  assert.doesNotMatch(app, /study-session-active-label/);
 
   assert.match(css, /\.session-deck-name\s*\{[^}]*font-size:\s*(?:16px|1rem|clamp\([^;]*16px\))/s);
   assert.match(css, /\.session-progress strong\s*\{[^}]*font-size:\s*(?:15px|0\.9375rem|clamp\([^;]*15px\))/s);
   assert.match(css, /\[data-session-progress\]\[data-progress-mode="continuous"\]\s*\{[^}]*color:\s*var\(--ink-1\);[^}]*background:\s*transparent;[^}]*border:\s*0;[^}]*border-radius:\s*0;[^}]*box-shadow:\s*none;/s);
   assert.match(css, /\[data-session-progress\]\[data-progress-mode="continuous"\]::before\s*\{[^}]*display:\s*none;[^}]*content:\s*none;/s);
-  assert.match(css, /\.session-progress-continuous \.progress-track span\s*\{[^}]*width:\s*32%;[^}]*background:\s*var\(--ink-1\);[^}]*animation:\s*study-continuous-progress 6\.5s linear infinite;/s);
-  assert.match(css, /\.session-exit\s*\{[^}]*min-height:\s*(?:44px|2\.75rem)[^}]*min-width:/s);
+  assert.match(css, /\.session-progress-continuous \.progress-track span\s*\{[^}]*width:\s*var\(--progress\);[^}]*linear-gradient\([^}]*#d06760[^}]*animation:\s*none;[^}]*transform:\s*none;/s);
+  assert.match(css, /\.session-progress \.progress-track\s*\{[^}]*height:\s*6px;/s);
+  assert.match(css, /\.session-exit\s*\{[^}]*min-height:\s*48px[^}]*min-width:\s*80px/s);
+  assert.match(css, /\.sheet-dialog:has\(\.study-takeover-dialog\)\s*\{[^}]*width:\s*min\(520px, calc\(100vw - 30px\)\);/s);
+  assert.match(css, /\.study-takeover-dialog \.icon-button\s*\{[^}]*width:\s*44px;[^}]*height:\s*44px;[^}]*font-size:\s*24px;/s);
+  assert.doesNotMatch(css, /\.study-hero-copy \.study-session-active-label/);
   assert.match(css, /\.study-control-actions\s*\{[^}]*padding-inline:\s*50px/s);
   assert.match(css, /\.study-control-actions\.has-study-next,\s*\n\.study-control-actions\.has-manual-grades\s*\{[^}]*padding-inline:\s*0;/s);
   assert.match(css, /\.study-help-button\s*\{[^}]*position:\s*absolute;[^}]*width:\s*44px;[^}]*height:\s*44px;[^}]*color:\s*var\(--ink-1\);[^}]*background:\s*var\(--surface-2\);[^}]*border:\s*1px solid var\(--line-strong\);/s);
   assert.match(css, /\.study-reveal-action,[\s\S]*\.study-skip-action,[\s\S]*\.study-next-action\s*\{[^}]*min-height:\s*44px;/);
+  assert.match(css, /\.study-skip-action\s*\{[^}]*width:\s*44px;[^}]*height:\s*44px;[^}]*min-width:\s*44px;[^}]*min-height:\s*44px;[^}]*background:\s*#171314;[^}]*border-color:\s*rgba\(208, 103, 96, 0\.58\);/s);
+  assert.match(css, /\.study-skip-action svg\s*\{[^}]*width:\s*21px;[^}]*stroke:\s*currentColor;/s);
+  assert.match(css, /\.study-skip-action::after\s*\{[^}]*content:\s*attr\(data-tooltip\);[^}]*opacity:\s*0;/s);
+  assert.match(css, /\.button\.study-skip-action:hover:not\(:disabled\),[\s\S]*\.button\.study-skip-action:focus-visible\s*\{[^}]*background:\s*#241718;[^}]*border-color:\s*rgba\(218, 112, 104, 0\.82\);/s);
+  assert.match(css, /\.study-skip-action:hover::after,[\s\S]*\.study-skip-action:focus-visible::after\s*\{[^}]*opacity:\s*1;/s);
+  assert.match(css, /@media \(min-width: 721px\) and \(min-height: 760px\)[\s\S]*\.session-shell \.study-session-body\s*\{[^}]*display:\s*flex;[^}]*flex:\s*1;[^}]*justify-content:\s*flex-start;/s);
+  assert.match(css, /@media \(min-width: 721px\) and \(min-height: 760px\)[\s\S]*\.session-shell \.study-stage\s*\{[^}]*padding:\s*0 0 18px;/s);
   assert.match(css, /\.study-manual-grade-grid\s*\{[^}]*grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/s);
   assert.match(css, /\.study-manual-grade\s*\{[^}]*min-height:\s*58px;[^}]*touch-action:\s*manipulation;/s);
+  assert.match(css, /\.study-manual-grade-again\s*\{[^}]*color:\s*#ffe2e3;[^}]*background:\s*#351d20;[^}]*border-color:\s*#d46d70;/s);
+  assert.match(css, /\.study-manual-grade-hard\s*\{[^}]*color:\s*#ffedcf;[^}]*background:\s*#352817;[^}]*border-color:\s*#d69b4b;/s);
+  assert.match(css, /\.study-manual-grade-good\s*\{[^}]*color:\s*#dff6e8;[^}]*background:\s*#193326;[^}]*border-color:\s*#59a777;/s);
+  assert.match(css, /\.study-manual-grade-easy\s*\{[^}]*color:\s*#e0f2ff;[^}]*background:\s*#182f3d;[^}]*border-color:\s*#5598c2;/s);
+  assert.doesNotMatch(css, /\.study-manual-grade-back/);
   assert.match(css, /@media \(max-width: 720px\)[\s\S]*\.study-manual-grade-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/s);
   const cardFootRule = css.match(/\.study-card-foot\s*\{[^}]*\}/s)?.[0] ?? "";
   assert.match(cardFootRule, /justify-content:\s*flex-start;/);

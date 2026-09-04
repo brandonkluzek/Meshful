@@ -16,6 +16,7 @@ const v2Migration = new URL(
   import.meta.url,
 );
 const writerMigration = new URL("../drizzle/0002_meshful_study_writer_grants.sql", import.meta.url);
+const deletionMigration = new URL("../drizzle/0003_meshful_privacy_deletion.sql", import.meta.url);
 const releaseRoots = new Map([
   [LIBRARY_RELEASE, new URL(`../public/study/data/library-runtime/${LIBRARY_RELEASE}/`, import.meta.url)],
   [PREVIOUS_LIBRARY_RELEASE,
@@ -47,7 +48,8 @@ function libraryAssets() {
 }
 
 test("Website composes trusted Accounts, Backend v7 and SQLite without provisioning unknown identities", async (t) => {
-  const database = new SqliteD1().applyMigration().applyMigration(v2Migration).applyMigration(writerMigration);
+  const database = new SqliteD1().applyMigration().applyMigration(v2Migration)
+    .applyMigration(writerMigration).applyMigration(deletionMigration);
   t.after(() => database.close());
 
   const issuer = `urn:meshful:sites:${accountSiteConfig.siteId}`;

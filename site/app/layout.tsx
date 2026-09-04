@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 const siteOrigin = process.env.SITE_ORIGIN ?? 'https://meshful.ai';
-const assetRevision = 'v43-real-progress-graph';
+const assetRevision = 'v72-guest-study-reset';
 const versionedAsset = (path: string) => `${path}?release=${assetRevision}`;
 
 export const metadata: Metadata = {
@@ -36,7 +36,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#101114" />
-        <link rel="icon" href={versionedAsset('/favicon.svg')} type="image/svg+xml" />
         <link rel="icon" href={versionedAsset('/favicon-32.png')} sizes="32x32" type="image/png" />
         <link rel="icon" href={versionedAsset('/favicon-16.png')} sizes="16x16" type="image/png" />
         <link rel="apple-touch-icon" href={versionedAsset('/apple-touch-icon.png')} sizes="180x180" />

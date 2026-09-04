@@ -205,6 +205,129 @@ test("a remotely paused same-deck session is a truthful terminal Study conflict"
   assert.equal(recovery.read(), null);
 });
 
+test("an active-session start conflict clears its draft before the next Grade", async () => {
+  const recovery = memoryOutbox();
+  const operations = [];
+  let durableRevision = 4;
+  const client = createDurableClient({
+    outbox: recovery.outbox,
+    writerGrant: WRITER,
+    fetchImpl: async (url, init = {}) => {
+      const path = new URL(url, "https://meshful.test").pathname;
+      if (path.endsWith("/state")) {
+        return json({ ok: true, data: stateData("account-A", durableRevision) });
+      }
+      assert.ok(path.endsWith("/commands"));
+      const command = JSON.parse(init.body);
+      operations.push(command.operation);
+      if (command.operation === "start_study_session") {
+        return json({ ok: false, error: {
+          code: "ACTIVE_SESSION_EXISTS",
+          message: "the account already has an active session",
+        } }, 409);
+      }
+      assert.equal(command.operation, "submit_grade");
+      assert.equal(command.expected_revision, durableRevision);
+      durableRevision += 1;
+      return json({ ok: true, data: commandResult(command, durableRevision) });
+    },
+  });
+
+  await client.load();
+  await assert.rejects(client.startStudySession({
+    deck_id: "deck-A",
+    idempotency_key: "start:already-active",
+  }), (error) => error?.code === "ACTIVE_SESSION_EXISTS" && error?.status === 409);
+  assert.equal(client.getPending(), null,
+    "a confirmed active-session conflict cannot stay ahead of a later Grade");
+  assert.equal(recovery.read(), null);
+
+  const graded = await client.submitGrade({
+    session_id: "session-A",
+    card_id: "card-A",
+    expected_card_revision: 1,
+    expected_session_revision: 1,
+    answer_text: "answer",
+    answer_origin: "chat",
+    rating: "good",
+    rubric_evidence: [],
+    feedback: "correct",
+    misconceptions: [],
+    confidence: 0.9,
+    idempotency_key: "grade:after-active-session-conflict",
+  });
+  assert.equal(graded.receipt.idempotency_key, "grade:after-active-session-conflict");
+  assert.deepEqual(operations, ["start_study_session", "submit_grade"]);
+  assert.equal(client.getPending(), null);
+  assert.equal(recovery.read(), null);
+});
+
+test("an unexpected active-session conflict on a Grade remains recoverable", async () => {
+  const recovery = memoryOutbox();
+  const client = createDurableClient({
+    outbox: recovery.outbox,
+    writerGrant: WRITER,
+    fetchImpl: async (url, init = {}) => {
+      const path = new URL(url, "https://meshful.test").pathname;
+      if (path.endsWith("/state")) {
+        return json({ ok: true, data: stateData("account-A", 4) });
+      }
+      assert.equal(JSON.parse(init.body).operation, "submit_grade");
+      return json({ ok: false, error: {
+        code: "ACTIVE_SESSION_EXISTS",
+        message: "unexpected conflict for this operation",
+      } }, 409);
+    },
+  });
+
+  await client.load();
+  await assert.rejects(client.submitGrade({
+    session_id: "session-A",
+    card_id: "card-A",
+    expected_card_revision: 1,
+    expected_session_revision: 1,
+    answer_text: "answer",
+    answer_origin: "chat",
+    rating: "good",
+    rubric_evidence: [],
+    feedback: "correct",
+    misconceptions: [],
+    confidence: 0.9,
+    idempotency_key: "grade:unexpected-active-session-conflict",
+  }), (error) => error?.code === "ACTIVE_SESSION_EXISTS" && error?.status === 409);
+  assert.equal(client.getPending().command.operation, "submit_grade");
+  assert.equal(recovery.read().command.operation, "submit_grade",
+    "only a rejected start may be cleared by ACTIVE_SESSION_EXISTS");
+});
+
+test("the integrated v8 Study client retries only its initial SERVICE_BUSY state load", async () => {
+  const recovery = memoryOutbox();
+  const waits = [];
+  let stateReads = 0;
+  const client = createDurableClient({
+    outbox: recovery.outbox,
+    writerGrant: WRITER,
+    randomImpl: () => 0,
+    sleepImpl: async (delay) => { waits.push(delay); },
+    fetchImpl: async () => {
+      stateReads += 1;
+      if (stateReads < 3) {
+        return json({ ok: false, error: {
+          code: "SERVICE_BUSY",
+          message: "retry the initial read",
+        } }, 503);
+      }
+      return json({ ok: true, data: stateData("account-A", 0) });
+    },
+  });
+
+  await client.load();
+  assert.equal(stateReads, 3);
+  assert.deepEqual(waits, [60, 160]);
+  assert.equal(client.getPending(), null);
+  assert.equal(recovery.read(), null);
+});
+
 function uncertainArchiveFixture() {
   const recovery = memoryOutbox();
   const requests = [];

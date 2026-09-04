@@ -72,7 +72,7 @@ test("My Decks labels the reversible action as Archive and sends it through conf
   assert.match(card, /\$\{icon\("archive"\)\} Archive/);
   assert.match(card, /button button-sm" type="button" data-request-archive/);
   assert.match(card, />Archive this deck\?<\/strong>/);
-  assert.match(card, />You can restore it anytime\.<\/span>/);
+  assert.match(card, /You can restore it anytime\./);
   assert.doesNotMatch(card, /Remove|not yet supported for account-backed decks/);
   assert.match(card, /class="card-actions"\$\{showingCardDialog \? ' inert aria-hidden="true"'/);
   assert.match(card, /aria-describedby="archive-description-\$\{escapeAttribute\(deck\.id\)\}"/);
@@ -80,25 +80,41 @@ test("My Decks labels the reversible action as Archive and sends it through conf
   assert.equal([...clicks.matchAll(/uiMutation\("setDeckArchived"/g)].length, 4);
 });
 
-test("archived cards expose Restore, Graph, and an honest unavailable Delete action", () => {
+test("a confirmed Archive leaves the redundant account refresh off the visible response path", () => {
+  const mutation = sourceBetween("async function uiMutation", "function escapeHTML");
+  const decks = sourceBetween("function presentedPersonalDecks", "function metricsForDeck");
+  const clicks = sourceBetween('document.addEventListener("click"', 'document.addEventListener("input"');
+  const archive = clicks.slice(clicks.indexOf('const archiveConfirm = target.closest("[data-confirm-archive]")'),
+    clicks.indexOf('const archive = target.closest("[data-archive-deck]")'));
+
+  assert.match(mutation, /\{ deferAccountRefresh = false \} = \{\}/);
+  assert.match(mutation, /accountMode && !deferAccountRefresh/);
+  assert.match(mutation, /ui\.confirmedArchivePresentations\.set\(deckId/);
+  assert.match(mutation, /context\.session\.refresh\(context\.ticket\)\.then/);
+  assert.match(mutation, /ui\.confirmedArchivePresentations\.delete\(deckId\)/);
+  assert.match(decks, /presentedPersonalDecks\(snapshot\)/);
+  assert.match(decks, /confirmed \? \{ \.\.\.deck, archived: confirmed\.archived, revision: confirmed\.revision \} : deck/);
+  assert.match(archive, /archiveConfirm\.disabled = true/);
+  assert.match(archive, /archiveConfirm\.textContent = "Archiving…"/);
+  assert.match(archive, /\{ deferAccountRefresh: true \}/);
+  assert.match(archive, /presentConfirmedArchive\(result, context\)/);
+  assert.ok(archive.indexOf("presentConfirmedArchive(result, context)") < archive.indexOf("toast(`${result.deck.title} archived`"));
+});
+
+test("archived cards expose Restore and Graph without deck deletion controls", () => {
   const card = sourceBetween("function personalDeckCard", "function renderLibrary");
   const clicks = sourceBetween('document.addEventListener("click"', 'document.addEventListener("input"');
 
   assert.match(card, /deck\.archived[\s\S]*button button-sm button-primary[\s\S]*Restore/);
   assert.match(card, /deck\.archived[\s\S]*href="#graph\//);
-  assert.match(card, /button button-sm button-danger[\s\S]*data-delete-unavailable[\s\S]*>Delete<\/button>/);
-  assert.doesNotMatch(card, /aria-label="Delete .* permanently"/);
-  assert.match(card, /Delete unavailable/);
-  assert.match(card, /This deck stays archived\. No data was deleted\./);
-  assert.match(card, /data-close-delete-unavailable>Cancel<\/button>/);
-  assert.match(clicks, /data-delete-unavailable[\s\S]*ui\.deleteUnavailableDeckId/);
-  assert.doesNotMatch(clicks, /uiMutation\("(?:delete|hardDelete|deleteDeck)/);
+  assert.doesNotMatch(card, /data-request-delete|>Delete<\/button>/);
+  assert.match(clicks, /uiMutation\("deleteDeck"/);
   assert.match(css, /\.deck-card \.card-actions \.button\.button-primary[\s\S]*background:\s*var\(--paper\)/);
   assert.match(css, /\.deck-card \.card-actions \.button\.button-danger[\s\S]*background:\s*#2b1e1b/);
   assert.match(css, /\.archive-confirmation \.archive-cancel-button[\s\S]*background:\s*#15171c/);
   assert.match(css, /\.archive-confirmation\s*\{[\s\S]*background:\s*#202329;[\s\S]*border-top:\s*1px solid #4a505b/);
   assert.match(css, /\.archive-confirmation \.archive-confirm-button[\s\S]*background:\s*#343943;[\s\S]*border-color:\s*#68707d/);
-  assert.match(css, /\.archive-confirmation\.delete-unavailable[\s\S]*background:\s*#2b1919;[\s\S]*border-top-color:\s*#713d3a/);
+  assert.match(css, /\.archive-confirmation\.delete-confirmation[\s\S]*min-height:\s*0;[\s\S]*flex-direction:\s*row;[\s\S]*padding:\s*11px 14px;[\s\S]*background:\s*#2b1919;/);
   assert.match(css, /\.archive-confirmation\s*\{[\s\S]*min-height:\s*128px;[\s\S]*align-items:\s*stretch;[\s\S]*flex-direction:\s*column;[\s\S]*padding:\s*18px 20px 20px;/);
   assert.match(css, /\.archive-confirmation > div:last-child\s*\{[\s\S]*justify-content:\s*flex-end;/);
   assert.match(css, /\.toast-region\s*\{[\s\S]*bottom:\s*34px;[\s\S]*left:\s*50%;[\s\S]*width:\s*min\(460px, calc\(100vw - 40px\)\);[\s\S]*transform:\s*translateX\(-50%\);/);

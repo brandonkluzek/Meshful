@@ -70,7 +70,7 @@ test("production graphs use retained learner records and never synthetic state s
   const graphRoute = app.match(/function graphRouteForDeck\(deckId, snapshot\) \{([\s\S]*?)\n\}/)?.[1];
   const preview = app.match(/async function showDeckPreview\(deckId\) \{([\s\S]*?)\n\}/)?.[1];
   assert.ok(graphRoute && preview);
-  assert.match(app, /import \{ cardStatesForDeck \} from ['"]\.\/graph-progress-state\.js\?release=v43-real-progress-graph['"]/);
+  assert.match(app, /import \{ cardStatesForDeck \} from ['"]\.\/graph-progress-state\.js\?release=v47-graph-default-overview['"]/);
   assert.match(graphProgressState, /review\.demoSeeded === true/);
   assert.match(graphProgressState, /scheduleBefore\?\.demoSeeded === true/);
   assert.match(graphProgressState, /learnednessForReview\(learnerSchedule\)/);
@@ -82,6 +82,7 @@ test("production graphs use retained learner records and never synthetic state s
   assert.match(preview, /View my graph/);
   assert.match(app, /if \(installed && !installed\.archived\) \{\s*location\.hash = `graph\/\$\{installed\.id\}`;\s*return;/);
   assert.match(app, /progressSource:\s*['"]learner['"]/);
+  assert.doesNotMatch(app, /focusCardId:\s*deck\.rootCardIds\[0\]/, "personal graphs open on the full-deck overview");
 
   assert.doesNotMatch(graphView, /GRAPH_STATE_SCENARIOS|stateForScenario|data-graph-scenario|Compare learner states|Visual preview/);
   assert.doesNotMatch(graphView, /graph-comparison-bar|data-graph-deck|deckOptions|onDeckChange/);

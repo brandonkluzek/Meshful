@@ -10,12 +10,16 @@ import {
 import { capacityForSchemas, MAX_HYDRATED_NODES } from "../../v2/src/capacity.mjs";
 import { assertJsonTextBudget } from "../../v2/src/json-budget.mjs";
 
-export const READ_METHODS = V3_READ_METHODS;
+export const READ_METHODS = Object.freeze({
+  ...V3_READ_METHODS,
+  get_deck_deletion_impact: "getDeckDeletionImpact",
+});
 export const WRITE_METHODS = Object.freeze({
   ...V3_WRITE_METHODS,
   submit_non_answer_grade: "submitNonAnswerGrade",
   submit_self_grade: "submitSelfGrade",
   set_deck_archived: "setDeckArchived",
+  delete_deck: "deleteDeck",
 });
 export { STORAGE_KEY };
 
@@ -41,6 +45,53 @@ const ARCHIVE_SCHEMA = {
     client_action_id: { type: "string", minLength: 1, maxLength: 128 },
   },
   required: ["deck_id", "archived", "expected_revision", "client_action_id"],
+};
+const DELETION_IMPACT_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    deck_id: { type: "string", minLength: 1, maxLength: 160 },
+  },
+  required: ["deck_id"],
+};
+const DELETION_IMPACT_OUTPUT_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    ok: { const: true }, can_delete: { type: "boolean" },
+    blocker: { oneOf: [{ type: "string", minLength: 1, maxLength: 128 }, { type: "null" }] },
+    impact_digest: { type: "string", minLength: 1, maxLength: 128 },
+    deck_id: { type: "string", minLength: 1, maxLength: 160 },
+    deck_instance_id: { type: "string", minLength: 1, maxLength: 257 },
+    deck_revision: { type: "integer", minimum: 1 },
+    app_revision: { type: "integer", minimum: 0 },
+    title: { type: "string", minLength: 1, maxLength: 300 },
+    card_count: { type: "integer", minimum: 0 },
+    review_count: { type: "integer", minimum: 0 },
+    session_count: { type: "integer", minimum: 0 },
+    source_kind: { type: "string", minLength: 1, maxLength: 128 },
+    library_deck_id: { oneOf: [{ type: "string", minLength: 1, maxLength: 160 }, { type: "null" }] },
+    archived: { type: "boolean" },
+    active_session_id: { oneOf: [{ type: "string", minLength: 1, maxLength: 257 }, { type: "null" }] },
+  },
+  required: ["ok", "can_delete", "blocker", "impact_digest", "deck_id", "deck_instance_id",
+    "deck_revision", "app_revision", "title", "card_count", "review_count", "session_count",
+    "source_kind", "library_deck_id", "archived", "active_session_id"],
+};
+const DELETE_DECK_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    deck_id: { type: "string", minLength: 1, maxLength: 160 },
+    deck_instance_id: { type: "string", minLength: 1, maxLength: 257 },
+    expected_revision: { type: "integer", minimum: 1 },
+    expected_app_revision: { type: "integer", minimum: 0 },
+    expected_impact_digest: { type: "string", minLength: 1, maxLength: 128 },
+    confirm_permanent_deletion: { const: true },
+    idempotency_key: { type: "string", minLength: 1, maxLength: 128 },
+  },
+  required: ["deck_id", "deck_instance_id", "expected_revision", "expected_app_revision",
+    "expected_impact_digest", "confirm_permanent_deletion", "idempotency_key"],
 };
 const SELF_GRADE_SCHEMA = {
   type: "object",
@@ -88,8 +139,10 @@ const NON_ANSWER_GRADE_SCHEMA = {
 };
 
 function inputSchema(operation, schemas) {
+  if (operation === "get_deck_deletion_impact") return DELETION_IMPACT_SCHEMA;
   if (operation === "add_library_deck") return INSTALL_SCHEMA;
   if (operation === "set_deck_archived") return ARCHIVE_SCHEMA;
+  if (operation === "delete_deck") return DELETE_DECK_SCHEMA;
   if (operation === "submit_non_answer_grade") return NON_ANSWER_GRADE_SCHEMA;
   if (operation === "submit_self_grade") return SELF_GRADE_SCHEMA;
   return schemas[operation].input;
@@ -99,6 +152,21 @@ function actionIdentity(operation, args) {
   return ["add_library_deck", "set_deck_archived"].includes(operation)
     ? args.client_action_id
     : args.idempotency_key;
+}
+
+function validateDeckDeletionResult(result, args) {
+  assertJson(result);
+  exactKeys(result, ["deleted_deck_id", "deleted_deck_instance_id", "app_revision",
+    "visible_effect", "receipt"], undefined, "deck deletion result");
+  requireThat(result.deleted_deck_id === args.deck_id
+    && result.deleted_deck_instance_id === args.deck_instance_id
+    && Number.isSafeInteger(result.app_revision)
+    && result.visible_effect?.type === "deck_deleted"
+    && result.visible_effect.deck_id === args.deck_id
+    && result.receipt?.operation === "delete_deck"
+    && result.receipt.idempotency_key === args.idempotency_key
+    && result.receipt.replayed === false,
+  "ENGINE_INVARIANT", "Deck deletion result differs from the confirmed target", 503);
 }
 
 function validateArchiveResult(result, args) {
@@ -362,7 +430,8 @@ export async function createCanonicalEngine({
   const defaultCatalogRef = frozenClone(resolver.constructorCatalogRef);
   const schemas = clone(toolSchemas);
   for (const name of [...Object.keys(READ_METHODS), ...Object.keys(WRITE_METHODS)]) {
-    if (["add_library_deck", "set_deck_archived", "submit_non_answer_grade", "submit_self_grade"].includes(name)) continue;
+    if (["get_deck_deletion_impact", "add_library_deck", "set_deck_archived", "delete_deck",
+      "submit_non_answer_grade", "submit_self_grade"].includes(name)) continue;
     requireThat(schemas[name]?.input && schemas[name]?.output,
       "CONTRACT_UNSUPPORTED", `Missing canonical schema: ${name}`, 503);
     checkSchema(schemas[name].input);
@@ -499,7 +568,8 @@ export async function createCanonicalEngine({
       requireThat(!record?.stateJson || storage.getItem(STORAGE_KEY) === record.stateJson,
         "STATE_MIGRATION_REQUIRED", "Claim/migrate the preserved state before querying", 409);
       const result = store[method](clone(args), { source: "webmcp", tool_name: operation });
-      validateSchema(schemas[operation].output, result, "result");
+      validateSchema(operation === "get_deck_deletion_impact"
+        ? DELETION_IMPACT_OUTPUT_SCHEMA : schemas[operation].output, result, "result");
       return result;
     },
     async transition(record, { operation, args, requestId, now }) {
@@ -545,9 +615,20 @@ export async function createCanonicalEngine({
       const result = operation === "add_library_deck"
         ? store[method](clone(args))
         : store[method](clone(args), { source: "webmcp", tool_name: operation });
-      const stateJson = storage.getItem(STORAGE_KEY);
+      let stateJson = storage.getItem(STORAGE_KEY);
       requireThat(stateJson !== null && stateJson !== priorJson && result.receipt?.replayed !== true,
         "LEGACY_REQUEST_REQUIRES_REFRESH", "This browser receipt has no durable request proof; recover without grading again", 409);
+      if (operation === "delete_deck") {
+        // The D1-only destructive receipt owns replay. Do not put the deleted
+        // instance identifier back into the replacement learner snapshot.
+        const replacement = JSON.parse(stateJson);
+        const receiptKey = `webmcp:${requestId}`;
+        delete replacement.actionReceipts[receiptKey];
+        replacement.actionReceiptOrder = replacement.actionReceiptOrder
+          .filter((key) => key !== receiptKey);
+        stateJson = JSON.stringify(replacement);
+        storage.setItem(STORAGE_KEY, stateJson);
+      }
       const events = [];
       if (["submit_grade", "submit_non_answer_grade", "submit_self_grade"].includes(operation)) {
         requireThat(before, "ENGINE_INVARIANT", "Canonical grade has no original card", 503);
@@ -584,14 +665,17 @@ export async function createCanonicalEngine({
         validateSelectedCourseInstall(result, args, beforeInstallDeckIds, store);
       }
       if (operation === "set_deck_archived") validateArchiveResult(result, args);
+      if (operation === "delete_deck") validateDeckDeletionResult(result, args);
       if (operation === "submit_non_answer_grade") validateNonAnswerGradeResult(result, args);
       if (operation === "submit_self_grade") validateSelfGradeResult(result, args);
-      if (["add_library_deck", "set_deck_archived"].includes(operation)) {
+      if (["add_library_deck", "set_deck_archived", "delete_deck"].includes(operation)) {
         result.receipt = {
           ...result.receipt,
           transaction_id: operation === "add_library_deck"
             ? `durable-install:${requestId}`
-            : `durable-archive:${requestId}`,
+            : operation === "set_deck_archived"
+              ? `durable-archive:${requestId}`
+              : `durable-deletion:${requestId}`,
           idempotency_key: requestId,
           replayed: false,
           committed_at: now,

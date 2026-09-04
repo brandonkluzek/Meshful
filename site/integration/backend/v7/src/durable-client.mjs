@@ -10,6 +10,8 @@ const WRITE_METHODS = Object.freeze({
   submit_non_answer_grade: "submitNonAnswerGrade",
   submit_self_grade: "submitSelfGrade",
   set_deck_archived: "setDeckArchived",
+  delete_deck: "deleteDeck",
+  delete_my_data: "deleteMyData",
 });
 const STUDY_WRITE_OPERATIONS = new Set([
   "start_study_session",
@@ -25,8 +27,24 @@ const TERMINAL_UNCOMMITTED_ARCHIVE_CODES = new Set([
   "STALE_REVISION",
   "DECK_IN_ACTIVE_SESSION",
 ]);
-const TERMINAL_UNCOMMITTED_STUDY_CODES = new Set([
-  "SESSION_NOT_ACTIVE",
+const TERMINAL_UNCOMMITTED_STUDY_CODES_BY_OPERATION = Object.freeze({
+  start_study_session: new Set(["ACTIVE_SESSION_EXISTS"]),
+  submit_grade: new Set(["SESSION_NOT_ACTIVE"]),
+  submit_non_answer_grade: new Set(["SESSION_NOT_ACTIVE"]),
+  submit_self_grade: new Set(["SESSION_NOT_ACTIVE"]),
+  finish_study_session: new Set(["SESSION_NOT_ACTIVE"]),
+});
+const INITIAL_STATE_RETRY_DELAYS_MS = Object.freeze([75, 200]);
+const TERMINAL_UNCOMMITTED_DELETE_CODES = new Set([
+  "INVALID_TOOL_INPUT",
+  "REQUEST_ID_MISMATCH",
+  "DECK_NOT_FOUND",
+  "DECK_NOT_ARCHIVED",
+  "DECK_INSTANCE_CHANGED",
+  "DECK_IN_ACTIVE_SESSION",
+  "DELETION_IMPACT_CHANGED",
+  "DELETION_CONFIRMATION_REQUIRED",
+  "DELETION_CONFIRMATION_INVALID",
 ]);
 
 /**
@@ -41,11 +59,15 @@ const TERMINAL_UNCOMMITTED_STUDY_CODES = new Set([
  */
 export function createDurableClient({
   fetchImpl = globalThis.fetch, baseUrl = "/api/learner/v2", outbox, writerGrant,
+  sleepImpl = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds)),
+  randomImpl = Math.random,
 } = {}) {
   requireThat(typeof fetchImpl === "function" && typeof baseUrl === "string" && baseUrl.length > 0,
     "CLIENT_CONFIGURATION", "A fetch implementation and API base URL are required");
   requireThat(outbox && typeof outbox.read === "function" && typeof outbox.write === "function",
     "OUTBOX_REQUIRED", "Explicit synchronous recovery storage is required");
+  requireThat(typeof sleepImpl === "function" && typeof randomImpl === "function",
+    "CLIENT_CONFIGURATION", "Retry timing capabilities are invalid");
   const fixedWriterGrant = writerGrant == null ? null : validateWriterGrant(writerGrant);
   const prefix = baseUrl.replace(/\/+$/, "");
   let pending;
@@ -128,7 +150,26 @@ export function createDurableClient({
   async function load() {
     requireOriginalAccount();
     const sequence = ++loadSequence;
-    const data = await request("/state");
+    const initial = accountBinding === null;
+    let data;
+    for (let attempt = 0; ; attempt += 1) {
+      try {
+        data = await request("/state");
+        break;
+      } catch (error) {
+        if (!initial || error?.code !== "SERVICE_BUSY" || error?.status !== 503
+          || attempt >= INITIAL_STATE_RETRY_DELAYS_MS.length) throw error;
+        const random = Number(randomImpl());
+        requireThat(Number.isFinite(random) && random >= 0 && random < 1,
+          "CLIENT_CONFIGURATION", "Retry jitter source is invalid");
+        const base = INITIAL_STATE_RETRY_DELAYS_MS[attempt];
+        const delay = Math.round(base * (0.8 + random * 0.4));
+        await sleepImpl(delay);
+        requireThat(sequence === loadSequence, "STALE_CLIENT_RESPONSE",
+          "A newer state load superseded this retry", 409);
+        requireOriginalAccount();
+      }
+    }
     requireThat(sequence === loadSequence, "STALE_CLIENT_RESPONSE",
       "A newer state load superseded this response", 409);
     if (typeof data.account_binding !== "string" || data.account_binding.length === 0 ||
@@ -274,6 +315,12 @@ export function createDurableClient({
     if (original.command.operation === "set_deck_archived") {
       validateArchiveSuccess(data.result, original.command.args, original.command.request_id);
     }
+    if (original.command.operation === "delete_deck") {
+      validateDeckDeletionSuccess(data.result, original.command.args, original.command.request_id);
+    }
+    if (original.command.operation === "delete_my_data") {
+      validateAccountDeletionSuccess(data.result, original.command.request_id);
+    }
     rememberRevision(original.accountBinding, data.durable_revision);
     commitConfirmed = true;
     recoveryStatus = "committed-outbox-pending";
@@ -385,8 +432,11 @@ function isDefiniteUncommittedRejection(error, draft) {
   if (draft?.command?.operation === "set_deck_archived") {
     return TERMINAL_UNCOMMITTED_ARCHIVE_CODES.has(error?.code);
   }
-  return STUDY_WRITE_OPERATIONS.has(draft?.command?.operation) &&
-    TERMINAL_UNCOMMITTED_STUDY_CODES.has(error?.code);
+  if (["delete_deck", "delete_my_data"].includes(draft?.command?.operation)) {
+    return TERMINAL_UNCOMMITTED_DELETE_CODES.has(error?.code);
+  }
+  const codes = TERMINAL_UNCOMMITTED_STUDY_CODES_BY_OPERATION[draft?.command?.operation];
+  return codes instanceof Set && codes.has(error?.code);
 }
 
 function isDurableRace(error) {
@@ -416,6 +466,32 @@ function validateArchiveSuccess(result, args, requestId) {
     && receipt.transaction_id === `durable-archive:${requestId}`;
   requireThat(valid, "INVALID_SERVER_RESPONSE",
     "The Archive response did not match the preserved request; keep and retry the exact recovery draft", 502);
+}
+
+function validateDeckDeletionSuccess(result, args, requestId) {
+  const receipt = result.receipt;
+  const valid = result.deleted_deck_id === args.deck_id
+    && result.deleted_deck_instance_id === args.deck_instance_id
+    && isObject(result.visible_effect)
+    && result.visible_effect.type === "deck_deleted"
+    && result.visible_effect.deck_id === args.deck_id
+    && receipt?.operation === "delete_deck"
+    && receipt.idempotency_key === requestId
+    && receipt.transaction_id === `durable-deletion:${requestId}`;
+  requireThat(valid, "INVALID_SERVER_RESPONSE",
+    "The deletion response did not match the confirmed deck instance; keep the exact recovery draft", 502);
+}
+
+function validateAccountDeletionSuccess(result, requestId) {
+  const receipt = result.receipt;
+  const valid = result.browser_cleanup_required === true
+    && result.retained?.sign_in_binding === true
+    && result.retained?.immutable_library_catalog === true
+    && receipt?.operation === "delete_my_data"
+    && receipt.idempotency_key === requestId
+    && receipt.transaction_id === `durable-account-deletion:${requestId}`;
+  requireThat(valid, "INVALID_SERVER_RESPONSE",
+    "The account deletion response was incomplete; keep the exact recovery draft", 502);
 }
 
 function actionIdentity(operation, args) {

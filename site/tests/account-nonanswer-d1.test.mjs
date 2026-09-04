@@ -13,6 +13,7 @@ import { accountSiteConfig, createPreparedSiteEndpoint } from "../integration/si
 
 const v2Migration = new URL("../integration/backend/v2/migrations/0002_fragmented_storage.sql", import.meta.url);
 const writerMigration = new URL("../drizzle/0002_meshful_study_writer_grants.sql", import.meta.url);
+const deletionMigration = new URL("../drizzle/0003_meshful_privacy_deletion.sql", import.meta.url);
 const releaseRoots = new Map([
   [LIBRARY_RELEASE, new URL(`../public/study/data/library-runtime/${LIBRARY_RELEASE}/`, import.meta.url)],
   [PREVIOUS_LIBRARY_RELEASE, new URL(`../public/study/data/library-runtime/${PREVIOUS_LIBRARY_RELEASE}/`, import.meta.url)],
@@ -67,7 +68,8 @@ function nonAnswerArgs(current, attemptKind, idempotencyKey) {
 }
 
 test("signed-in Reveal and Skip commit atomically through Accounts, HTTP, writer grant and D1", async (t) => {
-  const database = new SqliteD1().applyMigration().applyMigration(v2Migration).applyMigration(writerMigration);
+  const database = new SqliteD1().applyMigration().applyMigration(v2Migration)
+    .applyMigration(writerMigration).applyMigration(deletionMigration);
   t.after(() => database.close());
   const repository = createD1Repository(database);
   const issuer = `urn:meshful:sites:${accountSiteConfig.siteId}`;

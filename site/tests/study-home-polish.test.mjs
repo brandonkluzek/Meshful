@@ -28,12 +28,17 @@ test("Study activity keeps the useful signal without visible audit copy", () => 
   assert.doesNotMatch(activityPanel, /counted separately|Last 7 days|Lifetime completeness|retained review records|legacy entries|data-activity-examples|data-activity-legacy/i);
   assert.doesNotMatch(activityDay, /example_review_count|example reviews|counted separately/i);
   assert.match(activityDay, /const dateLabel = formatDate\(day\.date, day\.date\)/);
+  assert.match(activityDay, /const weeklyShare = weeklyReviewCount > 0 \? day\.review_count \/ weeklyReviewCount : 0/);
+  assert.match(activityDay, /Math\.sqrt\(weeklyShare \* 4\)/);
+  assert.match(activityDay, /data-week-share="\$\{weeklyShare\.toFixed\(4\)\}"/);
+  assert.match(activityPanel, /activityDay\(day, activity\.review_count\)/);
   assert.match(activityDay, /data-activity-tooltip="\$\{escapeAttribute\(dateLabel\)\} · \$\{reviewLabel\}"/);
   assert.match(css, /\.activity-heading div > span\s*\{\s*font-size:\s*17px;/);
   assert.match(css, /\.activity-streak svg\s*\{[\s\S]*width:\s*26px;[\s\S]*height:\s*26px;/);
   assert.match(css, /\.activity-heading \.activity-streak strong\s*\{[\s\S]*font-size:\s*24px;/);
   assert.match(css, /\.activity-day \.activity-dot\s*\{[\s\S]*width:\s*min\(34px, 100%\)/);
   assert.match(css, /\.activity-day span:last-child\s*\{\s*color:\s*var\(--ink-2\);\s*font-size:\s*12px;/);
+  assert.match(css, /\.activity-day\[data-week-share\] \.activity-dot\s*\{[\s\S]*background:\s*hsl\(138 28% var\(--activity-fill-lightness\)\);[\s\S]*border-color:\s*hsl\(138 34% var\(--activity-border-lightness\)\);/);
   assert.doesNotMatch(css, /\.activity-examples/);
 });
 
@@ -88,13 +93,15 @@ test("fresh and fully archived learners get one clear Library path without start
 
   assert.match(emptyBranch, /data-empty-study-home/);
   assert.match(emptyBranch, /title: hasArchived \? "No active decks" : "You have no decks yet"/);
-  assert.match(emptyBranch, /start studying when you are ready/);
-  assert.match(emptyBranch, /course from the Library/);
+  assert.match(emptyBranch, /Browse the Library or use your agent to create a deck\./);
+  assert.match(emptyBranch, /iconName: "deck"/);
   assert.match(emptyBranch, /href="#library">Browse Library</);
   assert.match(emptyBranch, /hasArchived[\s\S]*href="#decks" data-deck-status="archived">View archived decks/);
   assert.match(emptyBranch, /activity\?\.review_count > 0/);
   assert.doesNotMatch(emptyBranch, /data-start-deck|startStudySession|seedDemoState|seedMasteredDemoDeck/);
   assert.match(css, /\[data-empty-study-home\] \.empty-state/);
+  assert.match(css, /\[data-empty-study-home\] \.empty-icon\s*\{[\s\S]*width:\s*68px;[\s\S]*height:\s*68px;/);
+  assert.match(css, /\[data-empty-study-home\] \.empty-icon svg\s*\{[\s\S]*width:\s*32px;/);
   assert.match(css, /\.empty-actions\s*\{[\s\S]*display:\s*flex;[\s\S]*flex-wrap:\s*wrap;[\s\S]*gap:\s*10px;/);
   assert.match(css, /@media \(max-width: 720px\)[\s\S]*\.empty-actions\s*\{[\s\S]*flex-direction:\s*column;/);
 });
@@ -151,8 +158,13 @@ test("Study deck rows stay concise, show truthful due counts, and reward mastery
   assert.match(css, /\.queue-row\.is-mastered\s*\{[\s\S]*position:\s*relative;[\s\S]*border-width:\s*2px;[\s\S]*border-color:\s*#c6a65b;/);
   assert.match(css, /\.deck-card\.is-mastered\s*\{[\s\S]*position:\s*relative;[\s\S]*border-width:\s*2px;[\s\S]*border-color:\s*#c6a65b;/);
   assert.doesNotMatch(css, /mastered-shine|animation:\s*mastered-shine/);
-  assert.match(css, /\.queue-row\.is-mastered::after,[\s\S]*\.deck-card\.is-mastered::after\s*\{[\s\S]*inset:\s*-2px;[\s\S]*padding:\s*3px;[\s\S]*conic-gradient\([\s\S]*pointer-events:\s*none;[\s\S]*mask-composite:\s*exclude;[\s\S]*animation:\s*mastered-border-travel 4\.2s linear infinite;/);
-  assert.match(css, /@keyframes mastered-border-travel\s*\{[\s\S]*--mastery-border-angle:\s*360deg;/);
+  assert.match(css, /\.queue-row\.is-mastered::after,[\s\S]*\.deck-card\.is-mastered::after\s*\{[\s\S]*inset:\s*-2px;[\s\S]*padding:\s*3px;[\s\S]*conic-gradient\([\s\S]*pointer-events:\s*none;[\s\S]*mask-composite:\s*exclude;/);
+  assert.match(css, /\.queue-row\.is-mastered::after\s*\{[^}]*animation:\s*mastered-border-travel-row 4\.8s linear infinite;/s);
+  assert.match(css, /\.deck-card\.is-mastered::after\s*\{[^}]*animation:\s*mastered-border-travel-card 5\.8s linear infinite;/s);
+  assert.match(css, /@keyframes mastered-border-travel-row\s*\{[\s\S]*24%\s*\{\s*--mastery-border-angle:\s*88deg;\s*\}[\s\S]*26%\s*\{\s*--mastery-border-angle:\s*92deg;\s*\}[\s\S]*74%\s*\{\s*--mastery-border-angle:\s*268deg;\s*\}[\s\S]*76%\s*\{\s*--mastery-border-angle:\s*272deg;\s*\}[\s\S]*100%\s*\{\s*--mastery-border-angle:\s*360deg;\s*\}/);
+  assert.doesNotMatch(css, /23%\s*\{\s*--mastery-border-angle:\s*84deg;/);
+  assert.match(css, /@keyframes mastered-border-travel-card\s*\{[\s\S]*14%\s*\{\s*--mastery-border-angle:\s*48deg;\s*\}[\s\S]*37%\s*\{\s*--mastery-border-angle:\s*132deg;\s*\}[\s\S]*63%\s*\{\s*--mastery-border-angle:\s*228deg;\s*\}[\s\S]*86%\s*\{\s*--mastery-border-angle:\s*312deg;\s*\}[\s\S]*100%\s*\{\s*--mastery-border-angle:\s*360deg;\s*\}/);
+  assert.doesNotMatch(css, /60%\s*\{\s*--mastery-border-angle:\s*72deg;/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.queue-row\.is-mastered::after,[\s\S]*\.deck-card\.is-mastered::after\s*\{[\s\S]*--mastery-border-angle:\s*32deg;[\s\S]*animation:\s*none !important;/);
   assert.match(css, /\.queue-row\.is-mastered:hover,[\s\S]*\.queue-row\.is-mastered:focus-within/);
   assert.match(css, /\.queue-row\.is-mastered:focus-within,[\s\S]*\.deck-card\.is-mastered:focus-within\s*\{[\s\S]*outline:\s*2px solid/);
@@ -184,11 +196,28 @@ test("a confirmed account reconnect restores the cleared account dialog safely",
   assert.match(restore, /accountDialog\.replaceChildren\(\.\.\.trustedAccountDialogContent\.map\(\(node\) => node\.cloneNode\(true\)\)\);/);
   assert.match(restore, /const fallback = document\.createElement\("template"\);/);
   assert.match(restore, /Signed in with ChatGPT/);
-  assert.match(restore, /Synced to your account/);
+  assert.match(restore, /account-save-status/);
+  assert.match(restore, />Saved to account<\/span>/);
   assert.match(restore, /accountDialog\.replaceChildren\(fallback\.content\.cloneNode\(true\)\);/);
   assert.doesNotMatch(restore, /accountDialog\.innerHTML/);
-  assert.match(reconnect, /accountSession = connected;\s*restoreConnectedAccountDialog\(connected\.accountBinding\);\s*store = connected\.store;/);
+  assert.match(reconnect, /accountSession = connected;[\s\S]*restoreConnectedAccountDialog\(connected\.accountBinding\);\s*store = connected\.store;/);
   assert.match(accountClick, /restoreConnectedAccountDialog\(accountSession\?\.accountBinding\);\s*showAccountSettings\(\);/);
+});
+
+test("the account dialog remains available during a failed account startup without restoring stale identity", () => {
+  const unavailable = sourceBetween("function showUnavailableAccountDialog", "function showAccountSettings");
+  const clickHandler = sourceBetween('document.addEventListener("click"', "const context = captureView()");
+  const accountClick = clickHandler.slice(clickHandler.indexOf("if (target.closest(\"[data-action='open-account']\"))"));
+
+  assert.match(unavailable, /<h2 id="account-title">Account<\/h2>/);
+  assert.match(unavailable, /Account details are temporarily unavailable\. Retry to reconnect\./);
+  assert.match(unavailable, /data-close-account/);
+  assert.match(unavailable, /data-retry-startup>Retry/);
+  assert.doesNotMatch(unavailable, /trustedAccountDialogContent|restoreConnectedAccountDialog|accountBinding|Signed in with ChatGPT/);
+  assert.match(accountClick, /if \(ui\.failed && accountMode\) showUnavailableAccountDialog\(\);/);
+  assert.match(accountClick, /return accountDialog\?\.showModal\(\);/);
+  assert.ok(clickHandler.indexOf("[data-action='open-account']") < clickHandler.indexOf("if (ui.failed) return;"));
+  assert.ok(clickHandler.indexOf("[data-close-account]") < clickHandler.indexOf("if (ui.failed) return;"));
 });
 
 test("initial account hydration keeps the neutral loading shell instead of flashing reconnect", () => {

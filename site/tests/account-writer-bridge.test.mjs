@@ -9,6 +9,7 @@ const CATALOG_REF = Object.freeze({ version: "release", digest: "sha256:" + "a".
 function browserPrimitives() {
   const bytes = new Map();
   return {
+    bytes,
     storage: {
       getItem: (key) => bytes.get(String(key)) ?? null,
       setItem: (key, value) => bytes.set(String(key), String(value)),
@@ -32,7 +33,7 @@ function snapshotData(revision = 0, raw = null) {
   };
 }
 
-function createHarness({ active = false, submitError = null } = {}) {
+function createHarness({ active = false, submitError = null, persistedClaim = false } = {}) {
   const calls = [];
   const claimRequests = [];
   const durableGrants = [];
@@ -40,6 +41,19 @@ function createHarness({ active = false, submitError = null } = {}) {
   let writerEpoch = active ? 4 : 0;
   let durableRevision = 0;
   const primitives = browserPrimitives();
+  const claimKey = "meshful:accounts:v2:site:account:account-A:claim";
+  if (persistedClaim) {
+    primitives.storage.setItem(claimKey, JSON.stringify({
+      accountBinding: "account-A",
+      request: {
+        request_id: "claim:reconnect",
+        expected_revision: 0,
+        source_id: "browser-source",
+        catalog_ref: CATALOG_REF,
+        raw_state_json: "{\"revision\":0}",
+      },
+    }));
+  }
   const fetchImpl = async (url, options = {}) => {
     const path = new URL(url, "https://meshful.ai").pathname;
     if (path.endsWith("/state")) return Response.json({ ok: true, data: snapshotData(durableRevision) });
@@ -129,7 +143,7 @@ function createHarness({ active = false, submitError = null } = {}) {
       prepare: ({ rawStateJson }) => ({ sourceId: "browser-source", rawStateJson, catalogRef: CATALOG_REF }),
     },
   });
-  return { runtime, calls, claimRequests, durableGrants };
+  return { runtime, calls, claimRequests, durableGrants, primitives, claimKey };
 }
 
 test("the account bridge acquires, validates, and releases the server writer inside the native lease", async () => {
@@ -192,5 +206,31 @@ test("an explicit local-data claim carries the same server writer grant and pres
   assert.equal(harness.claimRequests[0].headers.get("x-meshful-writer-token"), "b".repeat(64));
   assert.equal(harness.claimRequests[0].body.raw_state_json, "{\"revision\":0}");
   assert.deepEqual(harness.calls, ["status", "acquire", "validate", "release"]);
+  harness.runtime.dispose();
+});
+
+test("reconnect discovers a persisted local-data claim and an explicit retry clears it only after confirmation", async () => {
+  const harness = createHarness({ persistedClaim: true });
+  const session = await harness.runtime.connect();
+  assert.deepEqual(session.getRecovery().claim, { pending: true });
+  assert.equal(harness.claimRequests.length, 0, "reconnect does not upload browser data without confirmation");
+
+  await session.retryLocalClaim();
+  assert.equal(harness.claimRequests.length, 1);
+  assert.equal(harness.claimRequests[0].body.request_id, "claim:reconnect");
+  assert.equal(harness.primitives.storage.getItem(harness.claimKey), null);
+  assert.equal(session.getRecovery().claim, null);
+  assert.deepEqual(harness.calls, ["status", "acquire", "validate", "release"]);
+  harness.runtime.dispose();
+});
+
+test("a blocked reconnect retry never takes over an active writer and preserves the persisted local-data claim", async () => {
+  const harness = createHarness({ active: true, persistedClaim: true });
+  const session = await harness.runtime.connect();
+  await assert.rejects(session.retryLocalClaim(), (error) => error?.code === "WRITER_ALREADY_ACTIVE");
+  assert.equal(harness.claimRequests.length, 0);
+  assert.notEqual(harness.primitives.storage.getItem(harness.claimKey), null);
+  assert.deepEqual(session.getRecovery().claim, { pending: true });
+  assert.deepEqual(harness.calls, ["status"]);
   harness.runtime.dispose();
 });

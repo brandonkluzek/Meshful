@@ -17,31 +17,38 @@ test("the Sites package declares the reviewed logical D1 binding", async () => {
   });
 });
 
-test("the exact Backend v1, v2, and writer-grant migrations are journaled in order", async () => {
+test("the exact Backend v1, v2, writer-grant, and privacy migrations are journaled in order", async () => {
   const migrations = [
     ["drizzle/0000_meshful_learner_data.sql", "d340074b78317d6cbb95d8b02a2b623a3614dacb6b87ee71dc41f44da5f32eb3", 9],
     ["drizzle/0001_meshful_fragmented_storage.sql", "6644a87087193b85df28964637600d5b2ee3e5562881bc31c46969741ecc7e78", 31],
     ["drizzle/0002_meshful_study_writer_grants.sql", "1f0d0faa172abc03e9d1bed83b779cb52ad612bbe0f9b80ad9de75a5afd78d11", 5],
+    ["drizzle/0003_meshful_privacy_deletion.sql", "f18026e861bc96ce45ad81827845b276e6a75ca1b9cf412481ccc89b9c026d51", 23],
   ];
   for (const [path, expected, breakpoints] of migrations) {
     assert.equal(await digest(path), expected);
     assert.equal((await text(path)).match(/^--> statement-breakpoint$/gm)?.length ?? 0, breakpoints);
   }
-  assert.equal(await digest("drizzle/meta/_journal.json"), "20412ef2b8bf9b637aa4fde54f3fa5e22bd577561152c0926ce3b6608bafbc91");
+  assert.equal(await digest("drizzle/meta/_journal.json"), "b5d720c49b033bee6cda8a09cd0ecc8eff889f2414c0c5174ca8bf225668aa18");
   const journal = JSON.parse(await text("drizzle/meta/_journal.json"));
   assert.equal(journal.dialect, "sqlite");
   assert.deepEqual(journal.entries.map(({ idx, tag }) => ({ idx, tag })), [
     { idx: 0, tag: "0000_meshful_learner_data" },
     { idx: 1, tag: "0001_meshful_fragmented_storage" },
     { idx: 2, tag: "0002_meshful_study_writer_grants" },
+    { idx: 3, tag: "0003_meshful_privacy_deletion" },
   ]);
 });
 
-test("the packaged schema retains every table, trigger, and deferred receipt FK", async () => {
-  const sql = `${await text("drizzle/0000_meshful_learner_data.sql")}\n${await text("drizzle/0001_meshful_fragmented_storage.sql")}\n${await text("drizzle/0002_meshful_study_writer_grants.sql")}`;
-  assert.equal([...sql.matchAll(/^CREATE TABLE\s+(\w+)/gm)].length, 15);
-  assert.equal([...sql.matchAll(/^CREATE TRIGGER\s+(\w+)/gm)].length, 25);
+test("the packaged schema retains every table, guard replacement, and deferred receipt FK", async () => {
+  const sql = `${await text("drizzle/0000_meshful_learner_data.sql")}\n${await text("drizzle/0001_meshful_fragmented_storage.sql")}\n${await text("drizzle/0002_meshful_study_writer_grants.sql")}\n${await text("drizzle/0003_meshful_privacy_deletion.sql")}`;
+  assert.equal([...sql.matchAll(/^CREATE TABLE\s+(\w+)/gm)].length, 19);
+  assert.equal([...sql.matchAll(/^CREATE TRIGGER\s+(\w+)/gm)].length, 34);
   assert.match(sql, /FOREIGN KEY\s*\(principal_id,\s*response_document_id\)[\s\S]*?REFERENCES\s+meshful_v2_documents\s*\(principal_id,\s*document_id\)[\s\S]*?DEFERRABLE\s+INITIALLY\s+DEFERRED/i);
+  const deletion = await text("drizzle/0003_meshful_privacy_deletion.sql");
+  assert.equal((deletion.match(/^DROP TRIGGER\s+/gm) ?? []).length, 9);
+  assert.equal((deletion.match(/^CREATE TRIGGER\s+/gm) ?? []).length, 9);
+  assert.match(deletion, /meshful_data_deletion_authorizations/);
+  assert.match(deletion, /meshful_retired_deck_instances/);
 });
 
 test("the Sites migration avoids remote D1 trigger-splitter hazards", async () => {

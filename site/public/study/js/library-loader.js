@@ -1,6 +1,6 @@
 import { admitLibraryCatalogArtifact, prepareLibraryCatalog, prepareLibraryCatalogResolver } from "./library-catalog.js";
 import { CATALOG as LEGACY_EXAMPLES } from "../data/catalog.js";
-import { createStudyStore } from "./store.js";
+import { createStudyStore } from "./store.js?release=v59-study-session";
 
 const INDEX_FORMAT = "meshful-website-library-releases.v1";
 const LEARNER_STORAGE_KEY = "adaptive-study-lab:web-state:v1";

@@ -131,7 +131,37 @@ export function createLearnerHandler({ service, authenticate, authenticationFail
       }
       else if (request.method === "POST" && path === `${prefix}/commands`) {
         const input = await readJson(request, maxBodyBytes);
-        result = await service.command(context, input, writerGrant(request, { required: false }));
+        if (input?.operation === "delete_deck" && input.args
+          && typeof input.args === "object" && !Array.isArray(input.args)) {
+          const { confirmation_token, ...args } = input.args;
+          result = await service.deleteDeck(context, {
+            request_id: input.request_id,
+            expected_revision: input.expected_revision,
+            args,
+            confirmation_token,
+          });
+        } else if (input?.operation === "delete_my_data" && input.args
+          && typeof input.args === "object" && !Array.isArray(input.args)) {
+          result = await service.deleteAccountData(context, {
+            request_id: input.request_id,
+            expected_revision: input.expected_revision,
+            ...input.args,
+          });
+        } else {
+          result = await service.command(context, input, writerGrant(request, { required: false }));
+        }
+      }
+      else if (request.method === "POST" && path === `${prefix}/deletions/deck/preview`) {
+        result = await service.previewDeckDeletion(context, await readJson(request, maxBodyBytes));
+      }
+      else if (request.method === "POST" && path === `${prefix}/deletions/deck/confirm`) {
+        result = await service.deleteDeck(context, await readJson(request, maxBodyBytes));
+      }
+      else if (request.method === "POST" && path === `${prefix}/deletions/account/preview`) {
+        result = await service.previewAccountDeletion(context, await readJson(request, maxBodyBytes));
+      }
+      else if (request.method === "POST" && path === `${prefix}/deletions/account/confirm`) {
+        result = await service.deleteAccountData(context, await readJson(request, maxBodyBytes));
       }
       else if (request.method === "POST" && path === `${prefix}/queries`) result = await service.query(context, await readJson(request, maxBodyBytes));
       else if (request.method === "POST" && path === `${prefix}/claims`) {

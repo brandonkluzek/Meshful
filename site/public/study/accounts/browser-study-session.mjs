@@ -47,7 +47,8 @@ export function createAccountSessionController(options = {}) {
     locks = Object.hasOwn(options, 'locks') ? options.locks : globalThis.navigator?.locks;
     storage = Object.hasOwn(options, 'storage') ? options.storage : globalThis.localStorage;
     events = options.eventTarget ?? globalThis.window;
-    if (!storage || typeof storage.getItem !== 'function' || typeof storage.setItem !== 'function') {
+    if (!storage || typeof storage.getItem !== 'function' || typeof storage.setItem !== 'function' ||
+        typeof storage.removeItem !== 'function') {
       fail('ACCOUNT_STORAGE_UNAVAILABLE');
     }
     if (!events || typeof events.addEventListener !== 'function' || typeof events.removeEventListener !== 'function') {
@@ -98,6 +99,15 @@ export function createAccountSessionController(options = {}) {
     try { synchronous(storage.setItem(key, raw)); }
     catch { retireAccount('storage-unavailable'); fail('ACCOUNT_STORAGE_UNAVAILABLE'); }
     if (get(key) !== raw) {
+      retireAccount('storage-unavailable');
+      fail('ACCOUNT_STORAGE_UNCONFIRMED');
+    }
+  }
+
+  function remove(key) {
+    try { synchronous(storage.removeItem(key)); }
+    catch { retireAccount('storage-unavailable'); fail('ACCOUNT_STORAGE_UNAVAILABLE'); }
+    if (get(key) !== null) {
       retireAccount('storage-unavailable');
       fail('ACCOUNT_STORAGE_UNCONFIRMED');
     }
@@ -238,6 +248,10 @@ export function createAccountSessionController(options = {}) {
     const discovered = Object.freeze({
       study: inspect(`${namespace}:outbox`),
       accountCommand: inspect(`${namespace}:account-command-outbox`),
+      claim: (() => {
+        const raw = get(`${namespace}:claim`);
+        return raw === null ? null : codec.claim(raw);
+      })(),
     });
     if (!checkBound(accountBinding, ticket)) fail('ACCOUNT_CHANGED');
     return discovered;
@@ -440,6 +454,10 @@ export function createAccountSessionController(options = {}) {
           codec.claim(raw);
           if (raw !== next) fail('ACCOUNT_CLAIM_CONFLICT');
         } else write(keys.claim, next);
+      }),
+      clear: () => guarded(() => {
+        if (state.tasks.size === 0) fail('ACCOUNT_MUTATION_REQUIRED');
+        remove(keys.claim);
       }),
     });
 
@@ -685,6 +703,49 @@ export function createAccountSessionController(options = {}) {
     }
   }
 
+  function deletePrincipalBrowserData({ accountBinding, ticket, receipt } = {}) {
+    if (!checkBound(accountBinding, ticket)) fail('ACCOUNT_CHANGED');
+    if (receipt?.operation !== 'delete_my_data' || typeof receipt?.replayed !== 'boolean' ||
+        typeof receipt?.idempotency_key !== 'string' || !receipt.idempotency_key) {
+      fail('ACCOUNT_DELETION_RECEIPT_REQUIRED');
+    }
+    const namespace = `${prefix}:account:${encodeURIComponent(accountBinding)}`;
+    let entries;
+    try {
+      const length = synchronous(storage.length);
+      if (!Number.isSafeInteger(length) || length < 0 || typeof storage.key !== 'function' ||
+          typeof storage.removeItem !== 'function') fail('ACCOUNT_STORAGE_UNAVAILABLE');
+      entries = [];
+      for (let index = 0; index < length; index += 1) {
+        const key = synchronous(storage.key(index));
+        if (typeof key === 'string' && key.startsWith(`${namespace}:`)) {
+          entries.push([key, synchronous(storage.getItem(key))]);
+        }
+      }
+      for (const [key] of entries) {
+        synchronous(storage.removeItem(key));
+        if (synchronous(storage.getItem(key)) !== null) fail('ACCOUNT_STORAGE_UNCONFIRMED');
+      }
+    } catch (error) {
+      let restored = true;
+      for (const [key, value] of entries ?? []) {
+        if (value === null) continue;
+        try {
+          synchronous(storage.setItem(key, value));
+          if (synchronous(storage.getItem(key)) !== value) restored = false;
+        } catch { restored = false; }
+      }
+      if (!restored) {
+        retireAccount('storage-rollback-failed');
+        fail('ACCOUNT_STORAGE_ROLLBACK_FAILED');
+      }
+      if (error instanceof AccountStorageError) throw error;
+      fail('ACCOUNT_STORAGE_UNAVAILABLE');
+    }
+    beginEpoch({ broadcast: true });
+    return Object.freeze({ accountBinding, removedKeys: entries.length });
+  }
+
   function dispose() {
     if (disposed) return;
     disposed = true;
@@ -696,6 +757,6 @@ export function createAccountSessionController(options = {}) {
 
   return Object.freeze({
     beginEpoch, bindPrincipal, browse, inspectRecoveries, acquireStudy, runExclusiveMutation,
-    executionGuard, dispose, limits,
+    deletePrincipalBrowserData, executionGuard, dispose, limits,
   });
 }

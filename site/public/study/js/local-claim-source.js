@@ -13,6 +13,15 @@ export function createLocalClaimSource({ siteId, storage, locks, catalogRef,
   function read() {
     const raw = storage.getItem(LEARNER_STORAGE_KEY);
     if (typeof raw !== "string" || !raw) fail("There is no saved browser workspace to copy.");
+    let state;
+    try { state = JSON.parse(raw); }
+    catch { fail("This browser’s study data could not be read."); }
+    const hasDecks = state?.personalDecks && Object.keys(state.personalDecks).length > 0;
+    const hasSessions = state?.sessions && Object.keys(state.sessions).length > 0;
+    const hasProgress = Array.isArray(state?.activity) && state.activity.length > 0;
+    if (!hasDecks && !hasSessions && !hasProgress) {
+      fail("This browser has no decks or progress to add.");
+    }
     return raw;
   }
   return Object.freeze({

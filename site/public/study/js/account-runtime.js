@@ -24,6 +24,8 @@ const WRITE_OPERATIONS = Object.freeze({
   finishStudySession: "finish_study_session",
   addLibraryDeck: "add_library_deck",
   setDeckArchived: "set_deck_archived",
+  deleteDeck: "delete_deck",
+  deleteMyData: "delete_my_data",
 });
 const STUDY_WRITES = new Set([
   "startStudySession", "submitGrade", "submitNonAnswerGrade", "submitSelfGrade", "finishStudySession",
@@ -32,10 +34,16 @@ const STATE_BUSY_RETRY_DELAYS_MS = Object.freeze([75, 200]);
 const copy = (value) => structuredClone(value);
 
 export class AccountRuntimeError extends Error {
-  constructor(code, message) { super(message); this.name = "AccountRuntimeError"; this.code = code; }
+  constructor(code, message, { status = null, retryable = false } = {}) {
+    super(message);
+    this.name = "AccountRuntimeError";
+    this.code = code;
+    this.status = status;
+    this.retryable = retryable === true;
+  }
 }
 
-const fail = (code, message) => { throw new AccountRuntimeError(code, message); };
+const fail = (code, message, details) => { throw new AccountRuntimeError(code, message, details); };
 const object = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
 const changed = () => fail("ACCOUNT_CHANGED", "Account access changed. Reconnect before continuing; saved work has not been reset.");
 const operationId = (args) => args?.client_action_id ?? args?.idempotency_key ?? null;
@@ -62,12 +70,15 @@ export function createAccountRuntime({
   generateWriterToken = null, hydrateSnapshot, storageOptions,
   fetchImpl = globalThis.fetch, baseUrl = "/api/learner/v2", localClaimSource = null,
   onInvalidate = () => {}, onStudySuperseded = () => {}, onReplay = () => {},
+  onAccountDataDeleted = () => {},
   makeId = () => globalThis.crypto.randomUUID(),
+  random = Math.random,
   wait = (delay) => new Promise((resolve) => setTimeout(resolve, delay)),
   schedule = (work, delay) => setTimeout(work, delay),
 } = {}) {
   if (![createSessionController, createDurableClient, hydrateSnapshot, fetchImpl, onInvalidate,
-    onStudySuperseded, onReplay, makeId, wait, schedule].every((fn) => typeof fn === "function")) {
+    onStudySuperseded, onReplay, onAccountDataDeleted, makeId, random, wait, schedule]
+    .every((fn) => typeof fn === "function")) {
     fail("ACCOUNT_CONFIGURATION", "The private account integration is incomplete.");
   }
   const serverWriterEnabled = typeof createStudyWriterClient === "function" &&
@@ -148,10 +159,30 @@ export function createAccountRuntime({
       const error = { status: response.status, code: payload?.error?.code };
       retireOnAuthError(error, session);
       fail(payload?.error?.code ?? "ACCOUNT_REQUEST_FAILED",
-        payload?.error?.message ?? "The account request could not be confirmed. Recovery data was preserved.");
+        payload?.error?.message ?? "The account request could not be confirmed. Recovery data was preserved.", {
+          status: response.status,
+          retryable: payload?.error?.retryable === true,
+        });
     }
     if (!object(payload.data)) fail("INVALID_ACCOUNT_RESPONSE", "The account response was incomplete.");
     return payload.data;
+  }
+
+  async function requestStateWithBusyRetry({ session = null, check }) {
+    for (let attempt = 0; ; attempt += 1) {
+      try {
+        return await request("/state", { session, check });
+      } catch (error) {
+        if (error?.code !== "SERVICE_BUSY" || error?.retryable !== true ||
+            attempt >= STATE_BUSY_RETRY_DELAYS_MS.length) throw error;
+        const unit = Number(random());
+        if (!Number.isFinite(unit) || unit < 0 || unit >= 1) {
+          fail("ACCOUNT_CONFIGURATION", "The retry jitter source returned an invalid value.");
+        }
+        const base = STATE_BUSY_RETRY_DELAYS_MS[attempt];
+        await wait(Math.round(base * (0.8 + unit * 0.4)));
+      }
+    }
   }
 
   function readConfirmedProjection(session, field, args, label, unavailableCode) {
@@ -249,20 +280,10 @@ export function createAccountRuntime({
     const sequence = ++session.loadSequence;
     let data = providedData;
     if (data === undefined) {
-      for (let attempt = 0; ; attempt += 1) {
+      data = await requestStateWithBusyRetry({ session, check: () => {
         assertSession(session, ticket);
         if (sequence !== session.loadSequence) fail("STALE_ACCOUNT_SNAPSHOT", "A newer account snapshot is already available.");
-        try {
-          data = await request("/state", { session, check: () => {
-            assertSession(session, ticket);
-            if (sequence !== session.loadSequence) fail("STALE_ACCOUNT_SNAPSHOT", "A newer account snapshot is already available.");
-          } });
-          break;
-        } catch (error) {
-          if (error?.code !== "SERVICE_BUSY" || attempt >= STATE_BUSY_RETRY_DELAYS_MS.length) throw error;
-          await wait(STATE_BUSY_RETRY_DELAYS_MS[attempt]);
-        }
-      }
+      } });
     }
     return adoptSnapshot(session, ticket, data, sequence, job);
   }
@@ -769,6 +790,7 @@ export function createAccountRuntime({
           return { access, writerTicket, saved, draft, expectedDigest, serverWriter };
         },
         mutate: async (_access, prepared) => {
+          let writerReleased = false;
           try {
             if (!prepared.saved) prepared.access.claim.write(prepared.draft);
             session.claimPending = true;
@@ -784,24 +806,30 @@ export function createAccountRuntime({
             }
             await validateServerWriter(session, prepared.access, prepared.writerTicket,
               prepared.serverWriter);
-            return data;
-          } finally {
             await releaseServerWriter(session, prepared.access, prepared.writerTicket,
               prepared.serverWriter);
+            writerReleased = true;
+            prepared.access.claim.clear();
+            return data;
+          } finally {
+            if (!writerReleased) {
+              await releaseServerWriter(session, prepared.access, prepared.writerTicket,
+                prepared.serverWriter);
+            }
           }
         },
       });
       session.minimumRevision = Math.max(session.minimumRevision, data.durable_revision);
+      session.claimPending = false;
       await refresh(session);
       assertSession(session);
-      session.claimPending = false;
       return data.result;
     } finally { session.claimSending = false; }
   }
 
   async function connect({ broadcast = false } = {}) {
     const discovery = controller.beginEpoch({ broadcast });
-    const initial = await request("/state", { check: () => assertDiscovery(discovery) });
+    const initial = await requestStateWithBusyRetry({ check: () => assertDiscovery(discovery) });
     validateStateData(initial);
     const accountTicket = controller.bindPrincipal(initial.account_binding, discovery);
     const browse = controller.browse({ accountBinding: initial.account_binding, ticket: accountTicket });
@@ -832,6 +860,7 @@ export function createAccountRuntime({
       claimPending: false,
       claimPreparing: false,
       claimSending: false,
+      accountCleanupReceipt: null,
     };
     current = session;
     try {
@@ -845,6 +874,7 @@ export function createAccountRuntime({
         assertSession(session, browseTicket);
         setCommandRecovery(session, "study", discovered.study);
         setCommandRecovery(session, "account-command", discovered.accountCommand);
+        session.claimPending = discovered.claim !== null;
       }
     } catch (error) {
       if (current === session) current = null;
@@ -901,8 +931,115 @@ export function createAccountRuntime({
           commandLane: session.commandRecoveryLane,
           commands,
           claim: session.claimPending ? { pending: true } : null,
+          browserCleanup: session.accountCleanupReceipt ? { pending: true } : null,
           unchecked: true,
         };
+      },
+      async previewDeckDeletion(deckId) {
+        assertSession(session);
+        if (typeof deckId !== "string" || !deckId) {
+          fail("INVALID_INPUT", "Choose one personal deck to delete.");
+        }
+        const ticket = session.browse.executionGuard.capture();
+        const data = await request("/deletions/deck/preview", {
+          session, binding: session.binding, body: { deck_id: deckId },
+          check: () => assertSession(session, ticket),
+        });
+        if (data.account_binding !== session.binding || data.durable_revision !== session.revision ||
+            !object(data.impact) || data.impact.deck_id !== deckId || data.impact.can_delete !== true ||
+            typeof data.impact.impact_digest !== "string" ||
+            typeof data.confirmation?.token !== "string" ||
+            !/^[a-f0-9]{64}$/.test(data.confirmation.token) ||
+            typeof data.confirmation.expires_at !== "string") {
+          fail("INVALID_ACCOUNT_RESPONSE", "The deck deletion preview was incomplete.");
+        }
+        const preview = Object.freeze({ accountBinding: session.binding,
+          durableRevision: data.durable_revision, expiresAt: data.confirmation.expires_at,
+          impact: Object.freeze(copy(data.impact)) });
+        previews.set(preview, { kind: "deck-deletion", session,
+          token: data.confirmation.token });
+        return preview;
+      },
+      async confirmDeckDeletion(preview) {
+        assertSession(session);
+        const saved = previews.get(preview);
+        if (!saved || saved.kind !== "deck-deletion" || saved.session !== session ||
+            preview.accountBinding !== session.binding || preview.durableRevision !== session.revision) {
+          fail("DELETION_IMPACT_CHANGED", "The account or deck changed. Review deletion again.");
+        }
+        const impact = preview.impact;
+        const result = await shortWrite(session, "deleteDeck", {
+          deck_id: impact.deck_id,
+          deck_instance_id: impact.deck_instance_id,
+          expected_revision: impact.deck_revision,
+          expected_app_revision: impact.app_revision,
+          expected_impact_digest: impact.impact_digest,
+          confirm_permanent_deletion: true,
+          confirmation_token: saved.token,
+          idempotency_key: `delete-deck:${makeId()}`,
+        });
+        previews.delete(preview);
+        await refresh(session);
+        return result;
+      },
+      async previewAccountDataDeletion() {
+        assertSession(session);
+        const ticket = session.browse.executionGuard.capture();
+        const data = await request("/deletions/account/preview", {
+          session, binding: session.binding, body: {},
+          check: () => assertSession(session, ticket),
+        });
+        if (data.account_binding !== session.binding || data.durable_revision !== session.revision ||
+            !object(data.impact) || data.impact.account_binding !== session.binding ||
+            typeof data.impact.impact_digest !== "string" ||
+            typeof data.confirmation?.token !== "string" ||
+            !/^[a-f0-9]{64}$/.test(data.confirmation.token) ||
+            typeof data.confirmation.expires_at !== "string") {
+          fail("INVALID_ACCOUNT_RESPONSE", "The account deletion preview was incomplete.");
+        }
+        const preview = Object.freeze({ accountBinding: session.binding,
+          durableRevision: data.durable_revision, expiresAt: data.confirmation.expires_at,
+          impact: Object.freeze(copy(data.impact)) });
+        previews.set(preview, { kind: "account-deletion", session,
+          token: data.confirmation.token });
+        return preview;
+      },
+      async confirmAccountDataDeletion(preview) {
+        assertSession(session);
+        const saved = previews.get(preview);
+        if (!saved || saved.kind !== "account-deletion" || saved.session !== session ||
+            preview.accountBinding !== session.binding || preview.durableRevision !== session.revision) {
+          fail("DELETION_IMPACT_CHANGED", "The account data changed. Review deletion again.");
+        }
+        const result = await shortWrite(session, "deleteMyData", {
+          expected_impact_digest: preview.impact.impact_digest,
+          confirmation_token: saved.token,
+          confirm_permanent_deletion: true,
+          idempotency_key: `delete-my-data:${makeId()}`,
+        });
+        previews.delete(preview);
+        session.accountCleanupReceipt = copy(result.receipt);
+        try {
+          await onAccountDataDeleted({ accountBinding: session.binding, result: copy(result) });
+          controller.deletePrincipalBrowserData({ accountBinding: session.binding,
+            ticket: session.accountTicket, receipt: result.receipt });
+          session.accountCleanupReceipt = null;
+        } catch {
+          fail("ACCOUNT_BROWSER_CLEANUP_PENDING",
+            "Account data was deleted from Meshful, but this browser could not be cleared. Keep this tab open and retry browser cleanup.");
+        }
+        return result;
+      },
+      async retryAccountBrowserCleanup() {
+        assertSession(session);
+        if (!session.accountCleanupReceipt) {
+          fail("NO_PENDING_ACCOUNT_CLEANUP", "There is no pending browser cleanup.");
+        }
+        await onAccountDataDeleted({ accountBinding: session.binding, result: null });
+        const removed = controller.deletePrincipalBrowserData({ accountBinding: session.binding,
+          ticket: session.accountTicket, receipt: session.accountCleanupReceipt });
+        session.accountCleanupReceipt = null;
+        return removed;
       },
       retryPending: () => recoverPending(session),
       async previewLocalClaim() {

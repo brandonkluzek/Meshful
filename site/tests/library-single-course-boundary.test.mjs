@@ -41,6 +41,7 @@ const INDEX_URL = new URL("https://meshful.test/study/data/library-releases.json
 const publicRoot = new URL("../public/", import.meta.url);
 const v2Migration = new URL("../integration/backend/v2/migrations/0002_fragmented_storage.sql", import.meta.url);
 const writerMigration = new URL("../drizzle/0002_meshful_study_writer_grants.sql", import.meta.url);
+const deletionMigration = new URL("../drizzle/0003_meshful_privacy_deletion.sql", import.meta.url);
 const releaseRoots = new Map([
   [LIBRARY_RELEASE, new URL(`../public/study/data/library-runtime/${LIBRARY_RELEASE}/`, import.meta.url)],
   [PREVIOUS_LIBRARY_RELEASE, new URL(`../public/study/data/library-runtime/${PREVIOUS_LIBRARY_RELEASE}/`, import.meta.url)],
@@ -472,7 +473,8 @@ test("the selected hosted D1 command persists one course and starts it without a
     expectedCatalogPins: BACKEND_EXPECTED_CATALOG_PINS,
     expectedResolutionBudget: LIBRARY_RESOLUTION_BUDGET,
   });
-  const database = new SqliteD1().applyMigration().applyMigration(v2Migration).applyMigration(writerMigration);
+  const database = new SqliteD1().applyMigration().applyMigration(v2Migration)
+    .applyMigration(writerMigration).applyMigration(deletionMigration);
   t.after(() => database.close());
   const service = createLearnerService({
     repository: createD1Repository(database), engine, clock: () => NOW,

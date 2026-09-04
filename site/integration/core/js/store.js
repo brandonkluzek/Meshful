@@ -22,6 +22,13 @@ const FSRS6_STABILITY_MIN = 0.001;
 const FSRS6_DIFFICULTY_MIN = 1;
 const FSRS6_DIFFICULTY_MAX = 10;
 const STUDY_ELIGIBILITY_POLICY_VERSION = "deck-local-v1";
+const SHOWCASE_DEMO_DECKS = Object.freeze([
+  Object.freeze({ catalogId: "academic-reviewed-v1:applied-statistics-i", profile: "established", archived: false }),
+  Object.freeze({ catalogId: "academic-reviewed-v1:linear-algebra-i", profile: "building", archived: false }),
+  Object.freeze({ catalogId: "academic-reviewed-v1:algorithms-i", profile: "started", archived: false }),
+  Object.freeze({ catalogId: "academic-reviewed-v1:mechanics-i", profile: "mastered", archived: false }),
+  Object.freeze({ catalogId: "academic-reviewed-v1:analytical-chemistry", profile: "established", archived: true }),
+]);
 
 // FSRS-6 default parameters published by the Open Spaced Repetition project.
 // Formula names and indices below follow the project's algorithm specification
@@ -64,7 +71,7 @@ const STORE_CAPABILITIES = Object.freeze({
   revealed_attempts: true,
   skipped_attempts: true,
   preview_apply_authoring: true,
-  hard_delete: false,
+  hard_delete: true,
 });
 export class StudyStoreError extends Error {
   constructor(code, message, details = undefined) {
@@ -91,6 +98,12 @@ export function createMemoryStorage(initial = {}) {
     },
     clear() {
       values.clear();
+    },
+    key(index) {
+      return [...values.keys()][index] ?? null;
+    },
+    get length() {
+      return values.size;
     },
     dump() {
       return Object.fromEntries(values);
@@ -444,7 +457,9 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
 
     return withWrite("add_library_deck", args, (nextState) => {
       if (catalogDeck.libraryBase) {
-        return installSelectedLibraryDeck(nextState, catalogDeck, now().toISOString());
+        return installSelectedLibraryDeck(
+          nextState, catalogDeck, now().toISOString(), args.client_action_id,
+        );
       }
       const existing = Object.values(nextState.personalDecks).find(
         (deck) => deck.source?.catalogDeckId === catalogId,
@@ -465,7 +480,12 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
 
       const installedAt = now().toISOString();
       const personalId = uniqueDeckId(nextState, personalDeckIdBase(catalogDeck));
-      const deck = personalDeckFromCatalog(catalogDeck, personalId, installedAt);
+      const deck = personalDeckFromCatalog(
+        catalogDeck,
+        personalId,
+        installedAt,
+        newDeckInstanceId(personalId, installedAt, args.client_action_id, nextState.revision),
+      );
       nextState.personalDecks[personalId] = deck;
       nextState.view.selectedDeckId = personalId;
       recordActivity(nextState, {
@@ -540,6 +560,121 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
         visible_effect: { type: archived ? "deck_archived" : "deck_restored", deck_id: deckId },
       };
     });
+  }
+
+  function getDeckDeletionImpact(rawArgs = {}) {
+    refreshStateFromStorage();
+    const args = objectArgs(rawArgs);
+    const deckId = requireId(args.deck_id, "deck_id");
+    const deck = requirePersonalDeck(state, deckId, { allowArchived: true });
+    const ownedSessions = Object.values(state.sessions).filter((session) => session.deckId === deckId);
+    const activeSession = ownedSessions.find((session) => session.status === "active") ?? null;
+    const reviewCount = deck.cardOrder.reduce((total, cardId) =>
+      total + (Array.isArray(deck.cards[cardId]?.reviewHistory)
+        ? deck.cards[cardId].reviewHistory.length
+        : 0), 0);
+    const impact = {
+      deck_id: deck.id,
+      deck_instance_id: deck.deckInstanceId,
+      deck_revision: deck.revision,
+      app_revision: state.revision,
+      title: deck.title,
+      card_count: deck.cardOrder.filter((cardId) => Boolean(deck.cards[cardId])).length,
+      review_count: reviewCount,
+      session_count: ownedSessions.length,
+      source_kind: deck.source?.kind ?? "unknown",
+      library_deck_id: deck.source?.catalogDeckId ?? null,
+      archived: deck.archived,
+      active_session_id: activeSession?.id ?? null,
+    };
+    return jsonClone({
+      ok: true,
+      can_delete: deck.archived && activeSession === null,
+      blocker: !deck.archived ? "DECK_NOT_ARCHIVED"
+        : activeSession ? "DECK_IN_ACTIVE_SESSION" : null,
+      impact_digest: `fnv1a-${stableHash(impact)}`,
+      ...impact,
+    });
+  }
+
+  function deleteDeck(rawArgs = {}) {
+    const args = objectArgs(rawArgs);
+    if (args.confirm_permanent_deletion !== true) {
+      fail("DELETION_CONFIRMATION_REQUIRED", "Confirm permanent deletion after reviewing its exact impact");
+    }
+    const deckId = requireId(args.deck_id, "deck_id");
+    const deckInstanceId = requireId(args.deck_instance_id, "deck_instance_id");
+    const expectedRevision = boundedInteger(
+      args.expected_revision,
+      "expected_revision",
+      1,
+      Number.MAX_SAFE_INTEGER,
+    );
+    const expectedAppRevision = boundedInteger(
+      args.expected_app_revision,
+      "expected_app_revision",
+      0,
+      Number.MAX_SAFE_INTEGER,
+    );
+    const expectedImpactDigest = requiredString(
+      args.expected_impact_digest,
+      "expected_impact_digest",
+      128,
+    );
+
+    const result = withTargetWrite("delete_deck", args, (nextState) => {
+      if (state.revision !== expectedAppRevision) {
+        fail("STALE_APP_REVISION", "Learner data changed after deletion was reviewed", {
+          expected: expectedAppRevision,
+          actual: state.revision,
+        });
+      }
+      const deck = requirePersonalDeck(nextState, deckId, { allowArchived: true });
+      if (deck.deckInstanceId !== deckInstanceId) {
+        fail("DECK_INSTANCE_CHANGED", "This deck was replaced after deletion was reviewed");
+      }
+      if (!deck.archived) {
+        fail("DECK_NOT_ARCHIVED", "Archive this deck before deleting it permanently");
+      }
+      checkRevision(deck.revision, expectedRevision, "deck");
+      const impact = getDeckDeletionImpact({ deck_id: deckId });
+      if (impact.impact_digest !== expectedImpactDigest) {
+        fail("DELETION_IMPACT_CHANGED", "The deck deletion impact changed; review it again");
+      }
+      const ownedSessions = Object.values(nextState.sessions)
+        .filter((session) => session.deckId === deckId);
+      const activeSession = ownedSessions.find((session) => session.status === "active");
+      if (activeSession) {
+        fail("DECK_IN_ACTIVE_SESSION", "Pause or finish the active session before deleting this deck", {
+          active_session_id: activeSession.id,
+          active_session_revision: activeSession.revision,
+        });
+      }
+
+      const sessionIds = new Set(ownedSessions.map((session) => session.id));
+      for (const sessionId of sessionIds) delete nextState.sessions[sessionId];
+      if (sessionIds.has(nextState.activeSessionId)) nextState.activeSessionId = null;
+      nextState.activity = nextState.activity.filter((event) =>
+        event?.deckId !== deckId && !sessionIds.has(event?.sessionId));
+      delete nextState.personalDecks[deckId];
+      if (nextState.view.selectedDeckId === deckId) nextState.view.selectedDeckId = null;
+      for (const [receiptId, receipt] of Object.entries(nextState.actionReceipts)) {
+        if (resultBelongsToDeck(receipt?.result, deckId, sessionIds)) {
+          delete nextState.actionReceipts[receiptId];
+        }
+      }
+      nextState.actionReceiptOrder = nextState.actionReceiptOrder
+        .filter((receiptId) => hasOwn(nextState.actionReceipts, receiptId));
+      nextState.streak = streakFromRetainedReviews(nextState, timeZone);
+      return {
+        deleted_deck_id: deckId,
+        deleted_deck_instance_id: deckInstanceId,
+        app_revision: state.revision + 1,
+        visible_effect: { type: "deck_deleted", deck_id: deckId },
+      };
+    });
+    clearEphemeralPreviews();
+    return result;
   }
 
   function inspectDeckGraph(rawArgs = {}) {
@@ -2156,6 +2291,106 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     });
   }
 
+  function seedShowcaseDemo() {
+    const args = { client_action_id: "seed-showcase-demo:v2" };
+    return withWrite("seed_showcase_demo", args, (nextState) => {
+      const decks = SHOWCASE_DEMO_DECKS.map((spec) => {
+        const deck = Object.values(nextState.personalDecks).find(
+          (candidate) => candidate.source?.catalogDeckId === spec.catalogId,
+        );
+        return { ...spec, deck };
+      });
+      if (decks.some(({ deck }) => !deck)) {
+        fail("DEMO_DECKS_MISSING", "The complete demo course set must be installed before its history is created");
+      }
+      const hasLearnerHistory =
+        Object.keys(nextState.sessions).length > 0 ||
+        Object.values(nextState.personalDecks).some((deck) =>
+          deck.cardOrder.some((id) => deck.cards[id]?.review?.repetitions > 0),
+        ) ||
+        nextState.activity.some((event) => event.type !== "deck_added");
+      if (hasLearnerHistory) {
+        fail("DEMO_SEED_NOT_EMPTY", "Demo history can only be created in a new isolated demo workspace");
+      }
+
+      const seededAt = now();
+      const profiles = {
+        mastered: { introducedRatio: 1, dueRatio: 0, repetitions: 24, stabilityDays: 180, difficulty: 1, intervalDays: 180 },
+        established: { introducedRatio: 0.9, dueRatio: 0.03, repetitions: 8, stabilityDays: 45, difficulty: 2.8, intervalDays: 30 },
+        building: { introducedRatio: 0.72, dueRatio: 0.06, repetitions: 5, stabilityDays: 18, difficulty: 4.2, intervalDays: 14 },
+        started: { introducedRatio: 0.55, dueRatio: 0.09, repetitions: 4, stabilityDays: 12, difficulty: 4.8, intervalDays: 7 },
+      };
+      const summaries = [];
+      for (const { deck, profile: profileName, archived } of decks) {
+        const profile = profiles[profileName];
+        const activeCards = deck.cardOrder.map((id) => deck.cards[id]).filter((card) => card && !card.archived);
+        let seededReviews = 0;
+        activeCards.forEach((card, index) => {
+          const sample = Number.parseInt(stableHash({ demo: deck.id, card: card.id }), 36) / 0xffffffff;
+          if (sample >= profile.introducedRatio) return;
+          const mastered = profileName === "mastered";
+          const repetitions = mastered ? profile.repetitions : Math.max(1, profile.repetitions - (index % 3));
+          const intervalDays = mastered ? profile.intervalDays : Math.max(1, profile.intervalDays - (index % 4));
+          const dueSample = Number.parseInt(stableHash({ demo_due: deck.id, card: card.id }), 36) / 0xffffffff;
+          const dueNow = !mastered && dueSample < profile.dueRatio;
+          const elapsedDays = mastered
+            ? 3
+            : dueNow
+              ? intervalDays + 1 + (index % 3)
+              : Math.max(1, intervalDays - 1 - (index % Math.max(1, Math.min(3, intervalDays - 1))));
+          const lastReviewedAt = new Date(seededAt.getTime() - elapsedDays * DAY_MS);
+          const dueAt = new Date(lastReviewedAt.getTime() + intervalDays * DAY_MS);
+          card.review = {
+            algorithm: FSRS6_ALGORITHM_ID,
+            exactFsrs: false,
+            coreFormulaExact: true,
+            showcaseSeeded: true,
+            repetitions,
+            lapses: mastered ? 0 : index % 9 === 0 ? 1 : 0,
+            stabilityDays: mastered ? profile.stabilityDays : Math.max(1, profile.stabilityDays - (index % 5)),
+            difficulty: mastered ? profile.difficulty : Math.min(9.5, profile.difficulty + (index % 4) * 0.35),
+            intervalDays,
+            dueAt: dueAt.toISOString(),
+            lastReviewedAt: lastReviewedAt.toISOString(),
+            lastRating: mastered ? "easy" : index % 7 === 0 ? "hard" : "good",
+          };
+          card.updatedAt = seededAt.toISOString();
+          seededReviews += 1;
+        });
+        deck.archived = archived;
+        deck.revision += 1;
+        deck.updatedAt = seededAt.toISOString();
+        summaries.push({ deck_id: deck.id, profile: profileName, archived, seeded_cards: seededReviews });
+      }
+
+      nextState.sessions = {};
+      nextState.activeSessionId = null;
+      nextState.activity = [];
+      nextState.streak = {
+        current: 24,
+        longest: 35,
+        lastActivityDate: seededAt.toISOString().slice(0, 10),
+      };
+      for (const [offset, reviewCount] of [[6, 12], [5, 18], [4, 11], [3, 24], [2, 15], [1, 21], [0, 17]]) {
+        recordActivity(nextState, {
+          type: "showcase_review_activity",
+          deckId: decks[offset % decks.length].deck.id,
+          demo: true,
+          reviewCount,
+          at: new Date(seededAt.getTime() - offset * DAY_MS).toISOString(),
+        });
+      }
+      nextState.view.selectedDeckId = decks[0].deck.id;
+      return {
+        demo_state: true,
+        decks: summaries,
+        review_count: 118,
+        streak: 24,
+        visible_effect: { type: "showcase_demo_seeded", deck_id: decks[0].deck.id },
+      };
+    });
+  }
+
   // Only extend the existing challenge-demo workspace. This never grades a
   // learner answer, overwrites an installed deck, or restores a removed sample.
   function seedMasteredDemoDeck() {
@@ -2180,7 +2415,12 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
       if (!canSeed(nextState)) return { added: false };
       const seededAt = now();
       const installedAt = seededAt.toISOString();
-      const deck = personalDeckFromCatalog(catalogDeck, personalId, installedAt);
+      const deck = personalDeckFromCatalog(
+        catalogDeck,
+        personalId,
+        installedAt,
+        newDeckInstanceId(personalId, installedAt, "mastered-demo", nextState.revision),
+      );
       const lastReviewedAt = new Date(seededAt.getTime() - 3 * DAY_MS).toISOString();
       const dueAt = new Date(seededAt.getTime() + 177 * DAY_MS).toISOString();
       for (const card of Object.values(deck.cards)) {
@@ -2233,6 +2473,8 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     addLibraryDeck,
     listMyDecks,
     setDeckArchived,
+    getDeckDeletionImpact,
+    deleteDeck,
     inspectDeckGraph,
     focusDeckGraph,
     startStudySession,
@@ -2248,6 +2490,7 @@ export function createStudyStore({ catalog, retainedCatalogs = [], storage, cloc
     previewDeckChanges,
     applyDeckChanges,
     seedDemoState,
+    seedShowcaseDemo,
     seedMasteredDemoDeck,
     getSnapshot: () => {
       refreshStateFromStorage();
@@ -2314,7 +2557,8 @@ function indexStudyActivity(state) {
       if (cards.has(context)) issue("AMBIGUOUS_CARD_IDENTITY");
       const owner = {
         recorded: 0, repetitions: card.review?.repetitions,
-        seeded: card.review?.demoSeeded === true, currentDemo: card.review?.demoSeeded === true,
+        seeded: card.review?.demoSeeded === true || card.review?.showcaseSeeded === true,
+        currentDemo: card.review?.demoSeeded === true || card.review?.showcaseSeeded === true,
         lastReviewedAt: studyActivityTimestamp(card.review?.lastReviewedAt), lastReviewRecorded: false,
       };
       // Validity diagnostics count retained entries, not canonical owners: a
@@ -2417,7 +2661,13 @@ function indexStudyActivity(state) {
   }
   if (!Array.isArray(state.activity)) issue("INVALID_RECENT_ACTIVITY");
   else for (const event of state.activity) {
-    if (event?.type === "demo_review_activity") {
+    if (event?.type === "showcase_review_activity") {
+      const at = studyActivityTimestamp(event.at);
+      if (at === null || !Number.isSafeInteger(event.reviewCount) || event.reviewCount < 0) {
+        issue("INVALID_SHOWCASE_EVENT"); continue;
+      }
+      reviews.set(at, (reviews.get(at) ?? 0) + event.reviewCount);
+    } else if (event?.type === "demo_review_activity") {
       const at = studyActivityTimestamp(event.at);
       if (at === null || !Number.isSafeInteger(event.reviewCount) || event.reviewCount < 0
         || !Number.isSafeInteger(exampleTotal + event.reviewCount)) {
@@ -2435,6 +2685,35 @@ function indexStudyActivity(state) {
   }
   const times = (values) => [...values].map(([at, count]) => ({ at, count })).sort((a, b) => a.at - b.at);
   return { reviews: times(reviews), examples: times(examples), legacyTimestampCount, issues: [...issues] };
+}
+
+function resultBelongsToDeck(result, deckId, sessionIds) {
+  if (!isPlainObject(result)) return false;
+  const deckReferences = [
+    result.deck_id,
+    result.deleted_deck_id,
+    result.deck?.id,
+    result.session?.deck_id,
+    result.visible_effect?.deck_id,
+  ];
+  if (deckReferences.includes(deckId)) return true;
+  const sessionReferences = [
+    result.session_id,
+    result.active_session_id,
+    result.session?.id,
+    result.visible_effect?.session_id,
+  ];
+  return sessionReferences.some((sessionId) => sessionIds.has(sessionId));
+}
+
+function streakFromRetainedReviews(state, timeZone) {
+  let streak = { current: 0, longest: 0, lastActivityDate: null };
+  for (const review of indexStudyActivity(state).reviews) {
+    if (review.count > 0) {
+      streak = recordLocalStreak(streak, new Date(review.at), { timeZone });
+    }
+  }
+  return streak;
 }
 
 function studyActivityCardContext(state, deckId, cardId) {
@@ -2760,6 +3039,7 @@ function loadState(storage, catalogDecks, { migrateLegacyAttempt = false, deckCa
     fail("CORRUPT_STORAGE", "Stored study state is missing required collections");
   }
   const state = hydrateStateFromStorage(parsed, catalogDecks);
+  const migratedDeckInstances = ensureDeckInstanceIds(state);
   // Also guard dense/recovered states: immutable Library authority cannot be
   // reconstructed from mutable source labels or silently replaced on reload.
   for (const deck of Object.values(state.personalDecks)) {
@@ -2778,10 +3058,25 @@ function loadState(storage, catalogDecks, { migrateLegacyAttempt = false, deckCa
       });
     }
   }
-  if (migrateLegacyAttempt && resetLegacyCommittedAttempt(state)) {
+  if (migrateLegacyAttempt && (resetLegacyCommittedAttempt(state) || migratedDeckInstances)) {
     storage.setItem(STORAGE_KEY, JSON.stringify(serializeStateForStorage(state, catalogDecks)));
   }
   return jsonClone(state);
+}
+
+function ensureDeckInstanceIds(state) {
+  let changed = false;
+  for (const deck of Object.values(state.personalDecks ?? {})) {
+    if (typeof deck.deckInstanceId === "string" && deck.deckInstanceId.length > 0) continue;
+    deck.deckInstanceId = newDeckInstanceId(
+      deck.id,
+      deck.createdAt,
+      `legacy:${stableHash({ source: deck.source ?? null, createdAt: deck.createdAt })}`,
+      0,
+    );
+    changed = true;
+  }
+  return changed;
 }
 
 function resetLegacyCommittedAttempt(state) {
@@ -3130,7 +3425,7 @@ function compactEdgeId(from, to) {
   return `edge:${stableHash({ from, to })}:${stableHash({ to, from })}`;
 }
 
-function personalDeckFromCatalog(catalogDeck, personalId, installedAt) {
+function personalDeckFromCatalog(catalogDeck, personalId, installedAt, deckInstanceId = null) {
   const cards = {};
   const cardOrder = [];
   for (const sourceCard of catalogDeck.cards) {
@@ -3140,6 +3435,9 @@ function personalDeckFromCatalog(catalogDeck, personalId, installedAt) {
   }
   return {
     id: personalId,
+    deckInstanceId: deckInstanceId ?? newDeckInstanceId(
+      personalId, installedAt, `catalog:${catalogDeck.id}:${catalogDeck.version}`, 0,
+    ),
     title: catalogDeck.title,
     subject: catalogDeck.subject,
     domain: catalogDeck.domain,
@@ -3225,7 +3523,7 @@ function matchingLibraryInstallations(state, catalogId, expectedBase = null) {
     && (!expectedBase || sameLibraryBase(deck.libraryBase, expectedBase)));
 }
 
-function installSelectedLibraryDeck(state, root, installedAt) {
+function installSelectedLibraryDeck(state, root, installedAt, actionId) {
   const matches = matchingLibraryInstallations(state, root.id);
   if (matches.length > 1 || (matches.length && !sameLibraryBase(matches[0].libraryBase, root.libraryBase))) {
     fail("CATALOG_BASE_UNAVAILABLE", `Library course ${root.id} conflicts with an existing saved edition`);
@@ -3234,8 +3532,10 @@ function installSelectedLibraryDeck(state, root, installedAt) {
   if (existing?.archived) {
     fail("INVALID_ARGUMENT", `Library course ${root.id} is archived; restore it explicitly`);
   }
+  const personalId = existing?.id ?? uniqueDeckId(state, personalDeckIdBase(root));
   const deck = existing ?? personalDeckFromCatalog(
-    root, uniqueDeckId(state, personalDeckIdBase(root)), installedAt,
+    root, personalId, installedAt,
+    newDeckInstanceId(personalId, installedAt, actionId, state.revision),
   );
   if (!existing) state.personalDecks[deck.id] = deck;
   const record = {
@@ -4600,6 +4900,7 @@ function deckMetrics(deck, at) {
 function personalDeckSummary(deck, at) {
   return {
     id: deck.id,
+    deck_instance_id: deck.deckInstanceId,
     title: deck.title,
     subject: deck.subject,
     level: deck.level,
@@ -5130,6 +5431,7 @@ function normalizeDeckProposal(args, state, at) {
     const createdAt = at.toISOString();
     deck = {
       id,
+      deckInstanceId: newDeckInstanceId(id, createdAt, args.client_action_id, state.revision),
       title,
       subject: optionalString(target.subject, "target.subject", 100) ?? "General",
       level: optionalString(target.level, "target.level", 100) ?? "Unspecified",
@@ -5591,6 +5893,11 @@ function stableHash(value) {
     hash = Math.imul(hash, 16_777_619);
   }
   return (hash >>> 0).toString(36);
+}
+
+function newDeckInstanceId(deckId, createdAt, actionId, previousAppRevision) {
+  const seed = { deckId, createdAt, actionId, previousAppRevision };
+  return `deck-instance-${stableHash(seed)}-${stableHash({ seed, reverse: true })}`;
 }
 
 function stableStringify(value) {

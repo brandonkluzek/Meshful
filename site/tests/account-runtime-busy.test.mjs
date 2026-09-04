@@ -18,12 +18,16 @@ function accountData(revision, personalDecks = {}) {
 function json(data, status = 200) {
   return new Response(JSON.stringify(status < 400 ? { ok: true, data } : {
     ok: false,
-    error: { code: data.code, message: data.message ?? data.code },
+    error: {
+      code: data.code,
+      message: data.message ?? data.code,
+      retryable: data.retryable === true,
+    },
   }), { status, headers: { "content-type": "application/json" } });
 }
 
 function serviceBusy(label = "busy") {
-  return { code: "SERVICE_BUSY", message: label, status: 503 };
+  return { code: "SERVICE_BUSY", message: label, status: 503, retryable: true };
 }
 
 function createControllerFactory(log) {
@@ -99,13 +103,16 @@ function createControllerFactory(log) {
   };
 }
 
-async function setup({ wait = async () => {}, onReplay = () => {} } = {}) {
+async function setup({ wait = async () => {}, random = () => 0.5, onReplay = () => {},
+  initialStateQueue = [accountData(0)], autoConnect = true } = {}) {
   const log = [];
-  const stateQueue = [accountData(0)];
+  const stateQueue = initialStateQueue.map(clone);
   const queryCalls = [];
   const commands = [];
   const archives = [];
   let durableClients = 0;
+  let stateReads = 0;
+  let hydrationCalls = 0;
   let lastState = accountData(0);
   const client = {
     async load() { return clone(lastState); },
@@ -132,6 +139,7 @@ async function setup({ wait = async () => {}, onReplay = () => {} } = {}) {
     createSessionController: createControllerFactory(log),
     createDurableClient: () => { durableClients += 1; return client; },
     hydrateSnapshot: async (data, { check }) => {
+      hydrationCalls += 1;
       check();
       const parsed = data.state_json ? JSON.parse(data.state_json) : { personalDecks: {} };
       return { revision: data.durable_revision, personalDecks: parsed.personalDecks, sessions: {}, activity: [] };
@@ -139,6 +147,7 @@ async function setup({ wait = async () => {}, onReplay = () => {} } = {}) {
     fetchImpl: async (url, options = {}) => {
       const path = new URL(url, "https://meshful.test").pathname;
       if (path.endsWith("/state")) {
+        stateReads += 1;
         const next = stateQueue.shift();
         if (!next) throw new Error("unexpected state read");
         if (next.code) return json(next, next.status);
@@ -154,12 +163,14 @@ async function setup({ wait = async () => {}, onReplay = () => {} } = {}) {
     },
     storageOptions: {},
     wait,
+    random,
     onReplay,
   });
-  const session = await runtime.connect();
+  const session = autoConnect ? await runtime.connect() : null;
   return {
     runtime,
     session,
+    connect: (options) => runtime.connect(options),
     client,
     stateQueue,
     setLastState(value) { lastState = value; },
@@ -168,6 +179,8 @@ async function setup({ wait = async () => {}, onReplay = () => {} } = {}) {
     commands,
     archives,
     durableClientCount: () => durableClients,
+    stateReadCount: () => stateReads,
+    hydrationCount: () => hydrationCalls,
   };
 }
 
@@ -178,6 +191,107 @@ test("connect and reads remain lock-free and do not construct a durable writer c
   const result = await fixture.session.store.searchLibrary({ query: "algorithms" });
   assert.deepEqual(result, { operation: "search_library" });
   assert.deepEqual(fixture.queryCalls, [{ operation: "search_library", args: { query: "algorithms" } }]);
+  assert.equal(fixture.durableClientCount(), 0);
+});
+
+test("initial connect retries structured SERVICE_BUSY and hydrates exactly once without writes", async () => {
+  const waits = [];
+  const fixture = await setup({
+    autoConnect: false,
+    initialStateQueue: [
+      serviceBusy("first"),
+      serviceBusy("second"),
+      accountData(2, { deck: { id: "deck" } }),
+    ],
+    random: () => 0.75,
+    wait: async (delay) => { waits.push(delay); },
+  });
+
+  const session = await fixture.connect();
+
+  assert.deepEqual(waits, [83, 220]);
+  assert.equal(fixture.stateReadCount(), 3);
+  assert.equal(fixture.hydrationCount(), 1);
+  assert.equal(session.store.getSnapshot().personalDecks.deck.id, "deck");
+  assert.deepEqual(fixture.log, ["beginEpoch", "bindPrincipal", "browse"]);
+  assert.equal(fixture.durableClientCount(), 0);
+  assert.deepEqual(fixture.commands, []);
+  assert.deepEqual(fixture.archives, []);
+});
+
+test("initial connect stops after three structured SERVICE_BUSY responses", async () => {
+  const waits = [];
+  const fixture = await setup({
+    autoConnect: false,
+    initialStateQueue: [serviceBusy("one"), serviceBusy("two"), serviceBusy("three")],
+    wait: async (delay) => { waits.push(delay); },
+  });
+
+  await assert.rejects(fixture.connect(),
+    (error) => error?.code === "SERVICE_BUSY" && error.message === "three");
+  assert.deepEqual(waits, [75, 200]);
+  assert.equal(fixture.stateReadCount(), 3);
+  assert.equal(fixture.hydrationCount(), 0);
+  assert.deepEqual(fixture.log, ["beginEpoch"]);
+  assert.equal(fixture.durableClientCount(), 0);
+});
+
+test("initial connect does not retry another structured failure", async () => {
+  const waits = [];
+  const fixture = await setup({
+    autoConnect: false,
+    initialStateQueue: [{ code: "ACCOUNT_SYNC_DISABLED", message: "closed", status: 503 }],
+    wait: async (delay) => { waits.push(delay); },
+  });
+
+  await assert.rejects(fixture.connect(),
+    (error) => error?.code === "ACCOUNT_SYNC_DISABLED" && error.message === "closed");
+  assert.deepEqual(waits, []);
+  assert.equal(fixture.stateReadCount(), 1);
+  assert.equal(fixture.hydrationCount(), 0);
+  assert.equal(fixture.durableClientCount(), 0);
+});
+
+test("initial connect does not retry SERVICE_BUSY unless the response marks it retryable", async () => {
+  const waits = [];
+  const fixture = await setup({
+    autoConnect: false,
+    initialStateQueue: [{
+      code: "SERVICE_BUSY", message: "do not retry", status: 503, retryable: false,
+    }],
+    wait: async (delay) => { waits.push(delay); },
+  });
+
+  await assert.rejects(fixture.connect(),
+    (error) => error?.code === "SERVICE_BUSY" && error?.retryable === false && error?.status === 503);
+  assert.deepEqual(waits, []);
+  assert.equal(fixture.stateReadCount(), 1);
+  assert.equal(fixture.hydrationCount(), 0);
+  assert.equal(fixture.durableClientCount(), 0);
+});
+
+test("an account epoch change cancels initial SERVICE_BUSY retry before another state read", async () => {
+  let enterWait;
+  const waiting = new Promise((resolve) => { enterWait = resolve; });
+  let releaseWait;
+  const fixture = await setup({
+    autoConnect: false,
+    initialStateQueue: [serviceBusy(), accountData(1, { stale: { id: "stale" } })],
+    wait: async () => {
+      enterWait();
+      await new Promise((resolve) => { releaseWait = resolve; });
+    },
+  });
+
+  const connection = fixture.connect();
+  await waiting;
+  fixture.runtime.invalidate();
+  releaseWait();
+
+  await assert.rejects(connection, (error) => error?.code === "ACCOUNT_CHANGED");
+  assert.equal(fixture.stateReadCount(), 1);
+  assert.equal(fixture.hydrationCount(), 0);
+  assert.deepEqual(fixture.log, ["beginEpoch", "beginEpoch"]);
   assert.equal(fixture.durableClientCount(), 0);
 });
 

@@ -57,6 +57,273 @@ export function createD1Repository(db) {
     return row?.current === 1;
   }
 
+  async function getDestructiveReceipt(principalId, requestId) {
+    nonempty(principalId, "principalId", 128);
+    nonempty(requestId, "requestId", 128);
+    const row = await statement(`
+      SELECT kind, fingerprint, response_json, resulting_revision, created_at
+      FROM meshful_destructive_deletion_receipts
+      WHERE principal_id = ? AND request_id = ?
+    `, principalId, requestId).first();
+    if (!row) return null;
+    corrupt(["deck", "account"].includes(row.kind));
+    digest(row.fingerprint);
+    validRevision(row.resulting_revision);
+    corrupt(row.resulting_revision > 0 && typeof row.response_json === "string"
+      && typeof row.created_at === "string" && row.created_at.length > 0);
+    return { kind: row.kind, fingerprint: row.fingerprint, responseJson: row.response_json,
+      revision: row.resulting_revision, createdAt: row.created_at };
+  }
+
+  async function getDeletionStorageImpact(principalId) {
+    nonempty(principalId, "principalId", 128);
+    const row = await statement(`
+      SELECT
+        (SELECT count(*) FROM meshful_request_receipts WHERE principal_id = ?) AS v1_receipts,
+        (SELECT count(*) FROM meshful_review_events WHERE principal_id = ?) AS v1_reviews,
+        (SELECT count(*) FROM meshful_import_archives WHERE principal_id = ?) AS v1_imports,
+        (SELECT count(*) FROM meshful_v2_receipts WHERE principal_id = ?) AS v2_receipts,
+        (SELECT count(*) FROM meshful_v2_documents WHERE principal_id = ?) AS v2_documents,
+        (SELECT count(*) FROM meshful_v2_review_events WHERE principal_id = ?) AS v2_reviews,
+        (SELECT count(*) FROM meshful_v2_import_archives WHERE principal_id = ?) AS v2_imports,
+        (SELECT count(*) FROM meshful_study_writer_receipts WHERE principal_id = ?) AS writer_receipts,
+        (SELECT count(*) FROM meshful_destructive_deletion_receipts WHERE principal_id = ?) AS deletion_receipts
+    `, principalId, principalId, principalId, principalId, principalId, principalId,
+    principalId, principalId, principalId).first();
+    corrupt(row && Object.values(row).every((value) => Number.isSafeInteger(value) && value >= 0));
+    return {
+      savedActionCount: row.v1_receipts + row.v2_receipts,
+      reviewEventCount: row.v1_reviews + row.v2_reviews,
+      importArchiveCount: row.v1_imports + row.v2_imports,
+      recoveryDocumentCount: row.v2_documents,
+      writerReceiptCount: row.writer_receipts,
+      deletionReceiptCount: row.deletion_receipts,
+    };
+  }
+
+  async function createDestructiveConfirmation({ principalId, tokenDigest, kind,
+    expectedRevision, bindingDigest, expiresAt, now }) {
+    nonempty(principalId, "principalId", 128);
+    digest(tokenDigest); digest(bindingDigest);
+    if (!["deck", "account"].includes(kind)) throw new TypeError("Invalid deletion kind");
+    validRevision(expectedRevision);
+    nonempty(expiresAt, "expiresAt", 128); nonempty(now, "now", 128);
+    const outcomes = await db.batch([statement(`
+      DELETE FROM meshful_destructive_confirmations
+      WHERE principal_id = ? AND kind = ?
+    `, principalId, kind), statement(`
+      INSERT INTO meshful_destructive_confirmations
+        (principal_id, token_digest, kind, expected_revision, binding_digest,
+          expires_at, consumed_at, created_at)
+      SELECT principal_id, ?, ?, ?, ?, ?, NULL, ? FROM meshful_principals
+      WHERE principal_id = ?
+    `, tokenDigest, kind, expectedRevision, bindingDigest, expiresAt, now, principalId)]);
+    const outcome = outcomes[1];
+    if (outcome.meta.changes !== 1) throw new Error("Cannot confirm an unprovisioned principal");
+  }
+
+  async function destructiveDeckCommit({ principalId, expectedRevision, requestId, fingerprint,
+    tokenDigest, bindingDigest, instanceDigest, catalogRef, documents, stateDocumentId,
+    responseDocumentId, responseJson, now }) {
+    nonempty(principalId, "principalId", 128); nonempty(requestId, "requestId", 128);
+    digest(fingerprint); digest(tokenDigest); digest(bindingDigest); digest(instanceDigest);
+    nonempty(catalogRef?.version, "catalogRef.version", 512);
+    nonempty(catalogRef?.digest, "catalogRef.digest", 512);
+    nonempty(responseJson, "responseJson", 512_000); nonempty(now, "now", 128);
+    validRevision(expectedRevision);
+    if (expectedRevision === Number.MAX_SAFE_INTEGER) throw new RangeError("Revision limit reached");
+    const revision = expectedRevision + 1;
+    const { objects, documentRows, partRows } = prepareDocuments({
+      documents, stateDocumentId, responseDocumentId, events: [], importArchive: undefined,
+      requestId, revision,
+    });
+    const attemptToken = crypto.randomUUID();
+    const authorized = `EXISTS (SELECT 1 FROM meshful_data_deletion_authorizations a
+      WHERE a.principal_id = ? AND a.request_id = ? AND a.kind = 'deck')`;
+    const batch = [statement(`
+      INSERT INTO meshful_data_deletion_authorizations
+        (principal_id, request_id, kind, created_at)
+      SELECT c.principal_id, ?, 'deck', ? FROM meshful_destructive_confirmations c
+      WHERE c.principal_id = ? AND c.token_digest = ? AND c.kind = 'deck'
+        AND c.expected_revision = ? AND c.binding_digest = ?
+        AND c.consumed_at IS NULL AND c.expires_at >= ? AND (
+          EXISTS (SELECT 1 FROM meshful_v2_heads h
+            WHERE h.principal_id = c.principal_id AND h.revision = ?)
+          OR EXISTS (SELECT 1 FROM meshful_learner_state s
+            WHERE s.principal_id = c.principal_id AND s.revision = ?
+              AND NOT EXISTS (SELECT 1 FROM meshful_v2_heads h
+                WHERE h.principal_id = c.principal_id))
+        )
+    `, requestId, now, principalId, tokenDigest, expectedRevision, bindingDigest, now,
+    expectedRevision, expectedRevision)];
+    for (const [table, key] of [
+      ["meshful_v2_heads", "principal_id"],
+      ["meshful_v2_review_events", "principal_id"],
+      ["meshful_v2_import_archives", "principal_id"],
+      ["meshful_v2_parts", "principal_id"],
+      ["meshful_v2_documents", "principal_id"],
+      ["meshful_v2_receipts", "principal_id"],
+      ["meshful_v2_objects", "principal_id"],
+      ["meshful_review_events", "principal_id"],
+      ["meshful_import_archives", "principal_id"],
+      ["meshful_request_receipts", "principal_id"],
+      ["meshful_learner_state", "principal_id"],
+    ]) {
+      batch.push(statement(`DELETE FROM ${table} WHERE ${key} = ? AND ${authorized}`,
+        principalId, principalId, requestId));
+    }
+    batch.push(statement(`
+      INSERT INTO meshful_v2_receipts
+        (principal_id, request_id, revision, fingerprint, response_document_id, attempt_token, created_at)
+      SELECT principal_id, ?, ?, ?, ?, ?, ? FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'deck'
+    `, requestId, revision, fingerprint, responseDocumentId, attemptToken, now,
+    principalId, requestId));
+    for (const packed of packRows([...objects.values()])) {
+      batch.push(statement(`
+        INSERT INTO meshful_v2_objects (principal_id, digest, byte_length, body, created_at)
+        SELECT a.principal_id, json_extract(j.value, '$[0]'), json_extract(j.value, '$[1]'),
+          json_extract(j.value, '$[2]'), ?
+        FROM json_each(?) j CROSS JOIN meshful_data_deletion_authorizations a
+        WHERE a.principal_id = ? AND a.request_id = ? AND a.kind = 'deck'
+      `, now, packed, principalId, requestId));
+    }
+    for (const packed of packRows(documentRows)) {
+      batch.push(statement(`
+        INSERT INTO meshful_v2_documents
+          (principal_id, document_id, kind, revision, byte_length, digest, part_count, created_at)
+        SELECT a.principal_id, json_extract(j.value, '$[0]'), json_extract(j.value, '$[1]'), ?,
+          json_extract(j.value, '$[2]'), json_extract(j.value, '$[3]'), json_extract(j.value, '$[4]'), ?
+        FROM json_each(?) j CROSS JOIN meshful_data_deletion_authorizations a
+        WHERE a.principal_id = ? AND a.request_id = ? AND a.kind = 'deck'
+      `, revision, now, packed, principalId, requestId));
+    }
+    for (const packed of packRows(partRows)) {
+      batch.push(statement(`
+        INSERT INTO meshful_v2_parts (principal_id, document_id, ordinal, object_digest, byte_length)
+        SELECT a.principal_id, json_extract(j.value, '$[0]'), json_extract(j.value, '$[1]'),
+          json_extract(j.value, '$[2]'), json_extract(j.value, '$[3]')
+        FROM json_each(?) j CROSS JOIN meshful_data_deletion_authorizations a
+        WHERE a.principal_id = ? AND a.request_id = ? AND a.kind = 'deck'
+      `, packed, principalId, requestId));
+    }
+    batch.push(statement(`
+      INSERT INTO meshful_v2_heads
+        (principal_id, revision, state_document_id, catalog_version, catalog_digest, updated_at)
+      SELECT principal_id, ?, ?, ?, ?, ? FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'deck'
+    `, revision, stateDocumentId, catalogRef.version, catalogRef.digest, now,
+    principalId, requestId));
+    batch.push(statement(`
+      INSERT INTO meshful_destructive_deletion_receipts
+        (principal_id, request_id, kind, fingerprint, response_json, resulting_revision, created_at)
+      SELECT principal_id, ?, 'deck', ?, ?, ?, ? FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'deck'
+    `, requestId, fingerprint, responseJson, revision, now, principalId, requestId));
+    batch.push(statement(`
+      INSERT INTO meshful_retired_deck_instances
+        (principal_id, instance_digest, request_id, retired_at)
+      SELECT principal_id, ?, ?, ? FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'deck'
+    `, instanceDigest, requestId, now, principalId, requestId));
+    batch.push(statement(`
+      UPDATE meshful_destructive_confirmations SET consumed_at = ?
+      WHERE principal_id = ? AND token_digest = ? AND ${authorized}
+    `, now, principalId, tokenDigest, principalId, requestId));
+    batch.push(statement(`
+      DELETE FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'deck'
+    `, principalId, requestId));
+    batch.push(statement(`
+      SELECT EXISTS (SELECT 1 FROM meshful_destructive_deletion_receipts
+        WHERE principal_id = ? AND request_id = ? AND fingerprint = ?) AS committed,
+        coalesce((SELECT revision FROM meshful_v2_heads WHERE principal_id = ?), -1) AS revision
+    `, principalId, requestId, fingerprint, principalId));
+    if (batch.length > MAX_BATCH_STATEMENTS) {
+      throw new BackendError("COMMIT_TOO_LARGE",
+        "This atomic deletion exceeds the qualified storage transport budget; no write was made", 413);
+    }
+    const results = await db.batch(batch);
+    const row = results.at(-1)?.results?.[0];
+    if (!row || !Number.isSafeInteger(row.revision)) throw new Error("Deletion result is unavailable");
+    return { committed: row.committed === 1, revision: row.revision };
+  }
+
+  async function deleteAccountData({ principalId, expectedRevision, requestId, fingerprint,
+    tokenDigest, bindingDigest, responseJson, now }) {
+    nonempty(principalId, "principalId", 128); nonempty(requestId, "requestId", 128);
+    digest(fingerprint); digest(tokenDigest); digest(bindingDigest);
+    nonempty(responseJson, "responseJson", 512_000); nonempty(now, "now", 128);
+    validRevision(expectedRevision);
+    if (expectedRevision === Number.MAX_SAFE_INTEGER) throw new RangeError("Revision limit reached");
+    const revision = expectedRevision + 1;
+    const authorized = `EXISTS (SELECT 1 FROM meshful_data_deletion_authorizations a
+      WHERE a.principal_id = ? AND a.request_id = ? AND a.kind = 'account')`;
+    const batch = [statement(`
+      INSERT INTO meshful_data_deletion_authorizations
+        (principal_id, request_id, kind, created_at)
+      SELECT c.principal_id, ?, 'account', ? FROM meshful_destructive_confirmations c
+      WHERE c.principal_id = ? AND c.token_digest = ? AND c.kind = 'account'
+        AND c.expected_revision = ? AND c.binding_digest = ?
+        AND c.consumed_at IS NULL AND c.expires_at >= ? AND (
+          EXISTS (SELECT 1 FROM meshful_v2_heads h
+            WHERE h.principal_id = c.principal_id AND h.revision = ?)
+          OR EXISTS (SELECT 1 FROM meshful_learner_state s
+            WHERE s.principal_id = c.principal_id AND s.revision = ?
+              AND NOT EXISTS (SELECT 1 FROM meshful_v2_heads h
+                WHERE h.principal_id = c.principal_id))
+        )
+    `, requestId, now, principalId, tokenDigest, expectedRevision, bindingDigest, now,
+    expectedRevision, expectedRevision)];
+    for (const table of [
+      "meshful_v2_heads", "meshful_v2_review_events", "meshful_v2_import_archives",
+      "meshful_v2_parts", "meshful_v2_documents", "meshful_v2_receipts", "meshful_v2_objects",
+      "meshful_review_events", "meshful_import_archives", "meshful_request_receipts",
+      "meshful_learner_state", "meshful_study_writer_receipts", "meshful_study_writer_grants",
+      "meshful_retired_deck_instances", "meshful_destructive_deletion_receipts",
+    ]) {
+      batch.push(statement(`DELETE FROM ${table} WHERE principal_id = ? AND ${authorized}`,
+        principalId, principalId, requestId));
+    }
+    batch.push(statement(`
+      INSERT INTO meshful_learner_state
+        (principal_id, revision, state_json, catalog_version, catalog_digest, updated_at)
+      SELECT principal_id, ?, NULL, NULL, NULL, ? FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'account'
+    `, revision, now, principalId, requestId));
+    batch.push(statement(`
+      INSERT INTO meshful_destructive_deletion_receipts
+        (principal_id, request_id, kind, fingerprint, response_json, resulting_revision, created_at)
+      SELECT principal_id, ?, 'account', ?, ?, ?, ? FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'account'
+    `, requestId, fingerprint, responseJson, revision, now, principalId, requestId));
+    batch.push(statement(`
+      UPDATE meshful_destructive_confirmations SET consumed_at = ?
+      WHERE principal_id = ? AND token_digest = ? AND ${authorized}
+    `, now, principalId, tokenDigest, principalId, requestId));
+    batch.push(statement(`
+      DELETE FROM meshful_destructive_confirmations
+      WHERE principal_id = ? AND ${authorized}
+    `, principalId, principalId, requestId));
+    batch.push(statement(`
+      DELETE FROM meshful_data_deletion_authorizations
+      WHERE principal_id = ? AND request_id = ? AND kind = 'account'
+    `, principalId, requestId));
+    batch.push(statement(`
+      SELECT EXISTS (SELECT 1 FROM meshful_destructive_deletion_receipts
+        WHERE principal_id = ? AND request_id = ? AND fingerprint = ?) AS committed,
+        coalesce((SELECT revision FROM meshful_learner_state WHERE principal_id = ?), -1) AS revision
+    `, principalId, requestId, fingerprint, principalId));
+    if (batch.length > MAX_BATCH_STATEMENTS) {
+      throw new BackendError("COMMIT_TOO_LARGE",
+        "This account deletion exceeds the qualified storage transport budget; no write was made", 413);
+    }
+    const results = await db.batch(batch);
+    const row = results.at(-1)?.results?.[0];
+    if (!row || !Number.isSafeInteger(row.revision)) throw new Error("Account deletion result is unavailable");
+    return { committed: row.committed === 1, revision: row.revision };
+  }
+
   async function mutateWriterGrant({ principalId, requestId, action, expectedWriterEpoch,
     tokenDigest, fingerprint, responseJson, now }) {
     nonempty(principalId, "principalId", 128);
@@ -249,6 +516,11 @@ export function createD1Repository(db) {
 
   return Object.freeze({
     ...base,
+    getDestructiveReceipt,
+    getDeletionStorageImpact,
+    createDestructiveConfirmation,
+    destructiveDeckCommit,
+    deleteAccountData,
     getWriterGrant,
     getWriterReceipt,
     isWriterGrantCurrent,

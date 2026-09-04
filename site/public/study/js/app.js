@@ -1,18 +1,18 @@
-import { createWebsiteLocalStore, loadWebsiteLibrary } from "./library-loader.js";
+import { createWebsiteLocalStore, loadWebsiteLibrary } from "./library-loader.js?release=v59-study-session";
 import {
   presentLibrary,
   matchesLibraryQuery,
   graphForCatalog,
   graphForPersonal,
-} from "./library-view.js?release=v43-real-progress-graph";
+} from "./library-view.js?release=v47-graph-default-overview";
 import { captureSearchFieldState, restoreSearchFieldState } from "./search-field-state.js";
 import { prepareAccountStartupShell, showNeutralLoadingShell } from "./startup-view-state.js";
 import { renderDefinition } from "./definition-renderer.js";
-import { createBrowserWorkspace } from "./browser-workspace.js";
+import { createBrowserWorkspace } from "./browser-workspace.js?release=v47-demo-mode";
 import { createAccountRuntime } from "./account-runtime.js";
 import { calendarRelativeLabel, observeViewClock } from "./view-clock.js";
-import { mountGraphView } from "./graph-view.js?graph-revision-18";
-import { cardStatesForDeck } from "./graph-progress-state.js?release=v43-real-progress-graph";
+import { mountGraphView } from "./graph-view.js?graph-revision-19";
+import { cardStatesForDeck } from "./graph-progress-state.js?release=v47-graph-default-overview";
 import { isDeckFullyMastered } from "./mastery.js";
 import {
   createStudyStore,
@@ -20,7 +20,7 @@ import {
   fsrsFreshnessForReview,
   learnednessForReview,
   StudyStoreError,
-} from "./store.js";
+} from "./store.js?release=v59-study-session";
 import { registerWebMCPTools } from "./webmcp.js";
 
 const view = document.querySelector("[data-view]");
@@ -36,6 +36,7 @@ const trustedAccountDialogContent = accountDialog
 let trustedAccountBinding = null;
 const params = new URLSearchParams(location.search);
 const demoMode = params.get("demo");
+const showcaseDemo = demoMode === "showcase";
 let workspace = null;
 let store = null;
 let accountMode = false;
@@ -43,10 +44,15 @@ let accountRuntime = null;
 let accountSession = null;
 let accountHydrationPending = false;
 let claimPreview = null;
+let localClaimOfferChecked = false;
+let deckDeletionPreview = null;
+let accountDeletionPreview = null;
+let accountDeletionCommitted = false;
 let startupSequence = 0;
 let stopClock = null;
 let toolRegistration = Promise.resolve();
 let registeredToolNames = [];
+let agentStudyToolsReady = typeof document.modelContext?.registerTool === "function";
 let library = [];
 let catalogSettings = null;
 const loadedLibraryDecks = new Map();
@@ -80,7 +86,8 @@ const ui = {
   graphCleanup: null,
   graphPulse: null,
   archiveConfirmDeckId: null,
-  deleteUnavailableDeckId: null,
+  confirmedArchivePresentations: new Map(),
+  deleteConfirmDeckId: null,
   librarySearchTimer: null,
   renderTimer: null,
   revealTimer: null,
@@ -118,6 +125,9 @@ function invalidateAccountView() {
   store = null;
   workspace = null;
   claimPreview = null;
+  localClaimOfferChecked = false;
+  deckDeletionPreview = null;
+  accountDeletionPreview = null;
   ui.failed = !keepLoading;
   ui.mutationBusy = false;
   ui.studySuperseded = false;
@@ -125,7 +135,8 @@ function invalidateAccountView() {
   ui.revealingUntil = 0;
   ui.emptyStudyDeckId = null;
   ui.manualGrade = null;
-  ui.deleteUnavailableDeckId = null;
+  ui.confirmedArchivePresentations.clear();
+  ui.deleteConfirmDeckId = null;
   ui.studyNonAnswerAcknowledgedSessions.clear();
   clearTimeout(ui.renderTimer);
   clearTimeout(ui.librarySearchTimer);
@@ -154,7 +165,11 @@ function invalidateAccountView() {
   }
   loading.hidden = true;
   view.hidden = false;
-  view.innerHTML = emptyState({ title: "Account access paused", copy: "Reconnect to verify your account. Saved work and recovery data have not been reset.",
+  view.innerHTML = emptyState({
+    title: accountDeletionCommitted ? "Study data deleted" : "Account access paused",
+    copy: accountDeletionCommitted
+      ? "Your Meshful decks, reviews, sessions, progress, and account recovery copies were deleted. Your sign-in binding, agent conversations, and the Deck Library were not deleted. Reconnect to verify the empty account."
+      : "Reconnect to verify your account. Saved work and recovery data have not been reset.",
     action: '<button class="button button-primary" type="button" data-reconnect-account>Reconnect</button>' });
 }
 
@@ -195,13 +210,45 @@ function freezeStudyPresentation() {
 }
 
 function showRemoteStudyTakeover(deckId) {
-  const deck = store?.getSnapshot?.().personalDecks?.[deckId];
-  deckDialogContent.innerHTML = `<div class="deck-dialog-inner"><header class="dialog-header">
-    <div><p class="eyebrow">Study active elsewhere</p><h2 id="deck-dialog-title">Continue on this device?</h2></div>
+  deckDialogContent.innerHTML = `<div class="deck-dialog-inner study-takeover-dialog"><header class="dialog-header">
+    <div><h2 id="deck-dialog-title">Continue on this device?</h2></div>
     <button class="icon-button" type="button" data-close-dialog aria-label="Close">×</button></header>
-    <div class="deck-dialog-scroll"><p class="dialog-summary">${escapeHTML(deck?.title ?? "This deck")} is open in another browser or device. Continuing here will make that study view read-only.</p></div>
+    <div class="deck-dialog-scroll"><p class="dialog-summary">This ends study on the other device and continues it here.</p></div>
     <div class="dialog-actions"><button class="button button-quiet" type="button" data-close-dialog>Cancel</button>
     <button class="button button-primary" type="button" data-confirm-server-takeover="${escapeAttribute(deckId)}">Continue here</button></div></div>`;
+  if (!deckDialog.open) deckDialog.showModal();
+}
+
+function markAccountStorageSaved(status) {
+  if (!status) return;
+  status.classList?.remove("account-save-attention");
+  status.classList?.add("account-save-status");
+  const card = status.closest?.(".account-storage-card");
+  card?.classList?.remove("needs-account-save");
+  card?.classList?.add("is-account-saved");
+  status.innerHTML = '<span class="account-save-check" aria-hidden="true">✓</span>Saved to account';
+}
+
+function markAccountStorageNeedsAttention(status) {
+  if (!status) return;
+  status.classList?.remove("account-save-status");
+  status.classList?.add("account-save-attention");
+  const card = status.closest?.(".account-storage-card");
+  card?.classList?.remove("is-account-saved");
+  card?.classList?.add("needs-account-save");
+  status.innerHTML = '<span class="account-attention-dot" aria-hidden="true"></span>Needs attention';
+}
+
+function showStudyInterrupt(targetDeckId, activeSession) {
+  const snapshot = store?.getSnapshot?.();
+  const activeDeck = snapshot?.personalDecks?.[activeSession?.deckId];
+  const targetDeck = snapshot?.personalDecks?.[targetDeckId];
+  deckDialogContent.innerHTML = `<div class="deck-dialog-inner"><header class="dialog-header">
+    <div><p class="eyebrow">Another study session is active</p><h2 id="deck-dialog-title">Interrupt and switch decks?</h2></div>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close">×</button></header>
+    <div class="deck-dialog-scroll"><p class="dialog-summary">Your place in ${escapeHTML(activeDeck?.title ?? "the current deck")} will be saved before you start ${escapeHTML(targetDeck?.title ?? "this deck")}.</p></div>
+    <div class="dialog-actions"><button class="button button-quiet" type="button" data-close-dialog>Cancel</button>
+    <button class="button button-primary" type="button" data-confirm-study-interrupt="${escapeAttribute(targetDeckId)}" data-active-session-id="${escapeAttribute(activeSession.id)}">Interrupt and study this deck</button></div></div>`;
   if (!deckDialog.open) deckDialog.showModal();
 }
 
@@ -217,35 +264,84 @@ function restoreConnectedAccountDialog(accountBinding) {
   fallback.innerHTML = `<div class="account-panel"><div class="dialog-header-compact">
     <h2 id="account-title">Account</h2><button class="icon-button" type="button" data-close-account aria-label="Close account">×</button></div>
     <p class="account-auth-state"><span aria-hidden="true">✓</span> Signed in with ChatGPT</p>
-    <div class="account-storage-card"><div><strong>Study data</strong><span data-account-storage-state>Synced to your account</span></div>
-    <p data-account-storage-note>Your decks and progress are available when you sign in.</p></div>
+    <div class="account-storage-card is-account-saved"><div><strong>Study data</strong><span class="account-save-status" data-account-storage-state><span class="account-save-check" aria-hidden="true">✓</span>Saved to account</span></div>
+    <p data-account-storage-note>Your decks and progress are saved to your Meshful account.</p></div>
     <button class="account-menu-row" type="button" data-open-settings>Data &amp; privacy <span aria-hidden="true">→</span></button>
+    <a class="account-menu-row" href="/?demo=showcase#study" data-demo-enter aria-label="Open demo mode with artificial study history" aria-pressed="false">Demo mode <span aria-hidden="true">→</span></a>
     <a class="account-menu-row" data-account-signout href="/signout-with-chatgpt?return_to=%2F" target="_top">Sign out</a></div>`;
+  accountDialog.replaceChildren(fallback.content.cloneNode(true));
+}
+
+function showUnavailableAccountDialog() {
+  const fallback = document.createElement("template");
+  fallback.innerHTML = `<div class="account-panel"><div class="dialog-header-compact">
+    <h2 id="account-title">Account</h2><button class="icon-button" type="button" data-close-account aria-label="Close account">×</button></div>
+    <p class="account-note">Account details are temporarily unavailable. Retry to reconnect.</p>
+    <button class="button button-primary" type="button" data-retry-startup>Retry</button></div>`;
   accountDialog.replaceChildren(fallback.content.cloneNode(true));
 }
 
 function showAccountSettings() {
   if (!accountSession) return;
   const recovery = accountSession.getRecovery();
+  const needsAttention = Boolean(recovery.claim || recovery.command);
+  const hasBrowserData = Boolean(recovery.claim);
   const accountStorageState = accountDialog?.querySelector("[data-account-storage-state]");
   const accountStorageNote = accountDialog?.querySelector("[data-account-storage-note]");
-  if (accountStorageState) accountStorageState.textContent = "Synced to your account";
-  if (accountStorageNote) accountStorageNote.textContent = "Your decks and progress are available when you sign in.";
+  if (needsAttention) markAccountStorageNeedsAttention(accountStorageState);
+  else markAccountStorageSaved(accountStorageState);
+  if (accountStorageNote) accountStorageNote.textContent = needsAttention
+    ? "One saved change still needs confirmation."
+    : "Your decks and progress are saved to your Meshful account.";
   settingsDialog.innerHTML = `<div class="account-panel"><div class="dialog-header-compact"><h2 id="settings-title">Data &amp; privacy</h2><button class="icon-button" type="button" data-close-settings aria-label="Close settings">×</button></div>
     <section class="settings-section" aria-label="Study data">
-      <div class="settings-row"><span data-storage-label>Study data</span><span data-storage-state>Synced to your account</span></div>
-      <p class="account-note">Your decks and progress are available when you sign in. Your full chat is not copied into Meshful.</p>
-      <button class="button button-quiet" type="button" data-preview-local-claim>Copy browser data to account</button>
-      <p class="account-note">This optional one-time copy is available only while the account is empty. Your browser copy stays intact.</p>
-      ${recovery.command ? '<button class="button button-quiet" type="button" data-retry-account-write>Recover saved action</button>' : ""}
-      ${recovery.claim ? '<button class="button button-quiet" type="button" data-retry-account-claim>Recover browser-data copy</button>' : ""}
-      <div data-claim-confirmation></div>
+      ${needsAttention
+        ? `<button class="settings-row settings-row-account-attention" type="button" data-open-pending-account-action><span data-storage-label>${hasBrowserData ? "Browser data" : "Account change"}</span><span class="account-save-attention" data-storage-state><span class="account-attention-dot" aria-hidden="true"></span>${hasBrowserData ? "Add to account" : "Try saving again"} →</span></button>`
+        : '<div class="settings-row settings-row-account-saved"><span data-storage-label>Study data</span><span class="account-save-status" data-storage-state><span class="account-save-check" aria-hidden="true">✓</span>Saved to account</span></div>'}
+      <p class="account-note">${hasBrowserData ? "This browser has decks and progress that are not yet in your account." : recovery.command ? "One recent account change was not confirmed." : "Your decks and progress are saved to your Meshful account."} Your full chat is not copied into Meshful.</p>
+      ${recovery.browserCleanup ? '<button class="button button-quiet" type="button" data-retry-account-cleanup>Finish clearing this browser</button>' : ""}
     </section>
     <section class="settings-section" aria-label="Data deletion">
       <h3>Data deletion</h3>
-      <div class="settings-row"><span>Permanent deletion</span><span>Not available yet</span></div>
-      <p class="account-note">Archiving a deck keeps its cards and study history. Permanent deletion will be added after Meshful can safely remove a deck without affecting a later reinstall.</p>
+      <button class="button button-danger" type="button" data-request-delete-account>Delete my data</button>
+      <p class="account-note">This permanently removes your Meshful decks, reviews, sessions, progress, saved actions, and account recovery copies. It does not delete your ChatGPT account, agent conversations, sign-in binding, or the immutable Deck Library.</p>
+      <div data-delete-account-confirmation></div>
     </section></div>`;
+}
+
+function showLocalClaimOffer(preview) {
+  claimPreview = preview;
+  settingsDialog.innerHTML = `<div class="account-panel" data-account-claim-offer><div class="dialog-header-compact"><h2 id="settings-title">Browser study data found</h2><button class="icon-button" type="button" data-cancel-local-claim aria-label="Close">×</button></div>
+    <p class="settings-intro">You studied in this browser before signing in, so its decks and progress are not in your account. Add them without replacing anything or removing the browser copy.</p>
+    <div class="dialog-actions"><button class="button button-quiet" type="button" data-cancel-local-claim>Not now</button><button class="button button-primary" type="button" data-confirm-local-claim>Add to account</button></div></div>`;
+  if (!settingsDialog.open) settingsDialog.showModal();
+}
+
+function showPendingAccountAction(recovery = accountSession?.getRecovery()) {
+  if (!recovery?.claim && !recovery?.command) return false;
+  const isBrowserData = Boolean(recovery.claim);
+  settingsDialog.innerHTML = `<div class="account-panel" data-account-recovery-offer><div class="dialog-header-compact"><h2 id="settings-title">${isBrowserData ? "Finish adding browser study data" : "Account change needs confirmation"}</h2><button class="icon-button" type="button" data-cancel-account-recovery aria-label="Close">×</button></div>
+    <p class="settings-intro">${isBrowserData ? "Meshful could not confirm whether the decks and progress from this browser were added after you signed in. Try again safely; it will not duplicate data." : "Meshful could not confirm that your last account change was saved. Try again safely; it will not create the change twice."}</p>
+    <div class="dialog-actions"><button class="button button-quiet" type="button" data-cancel-account-recovery>Not now</button><button class="button button-primary" type="button" ${isBrowserData ? "data-retry-account-claim" : "data-retry-account-write"}>${isBrowserData ? "Add to account" : "Try saving again"}</button></div></div>`;
+  if (!settingsDialog.open) settingsDialog.showModal();
+  return true;
+}
+
+async function offerLocalClaimIfAvailable(context) {
+  if (localClaimOfferChecked || !isViewCurrent(context)) return;
+  localClaimOfferChecked = true;
+  const recovery = context.session.getRecovery();
+  // A retained recovery draft means a prior write was not confirmed; it does
+  // not prove that browser and account data differ. Keep that action in Data &
+  // privacy instead of interrupting every signed-in startup.
+  if (recovery.claim || recovery.command) return;
+  try {
+    const preview = await context.session.previewLocalClaim();
+    if (!isViewCurrent(context)) return;
+    showLocalClaimOffer(preview);
+  } catch {
+    // No prompt unless this browser has saved data and the account is empty.
+  }
 }
 
 function syncLocalStorageUI() {
@@ -254,10 +350,12 @@ function syncLocalStorageUI() {
   const storageNote = settingsDialog?.querySelector("[data-storage-note]");
   const accountStorageState = accountDialog?.querySelector("[data-account-storage-state]");
   const accountStorageNote = accountDialog?.querySelector("[data-account-storage-note]");
-  const state = workspace.ephemeral ? "Not saved after reload" : "Saved in this browser";
-  const summaryState = workspace.ephemeral ? "Temporary" : "Saved in this browser";
-  const summaryNote = workspace.ephemeral
-    ? "This example is temporary and is not saved after reload."
+  const state = workspace.showcase ? "Demo only" : workspace.ephemeral ? "Not saved after reload" : "Saved in this browser";
+  const summaryState = workspace.showcase ? "Artificial history" : workspace.ephemeral ? "Temporary" : "Saved in this browser";
+  const summaryNote = workspace.showcase
+    ? "Artificial progress is temporary. Your real study data is untouched."
+    : workspace.ephemeral
+      ? "This example is temporary and is not saved after reload."
     : workspace.recordingId
       ? "This isolated recording workspace stays in this browser."
       : "Decks, reviews, and progress stay in this browser. ChatGPT sign-in identifies you, but study data does not sync between devices yet.";
@@ -268,11 +366,60 @@ function syncLocalStorageUI() {
   if (accountStorageNote) accountStorageNote.textContent = summaryNote;
 }
 
-async function uiMutation(method, args, context) {
+function syncDemoModeUI() {
+  document.body.dataset.demoMode = showcaseDemo ? "true" : "false";
+  const hash = location.hash || "#study";
+  document.querySelectorAll("[data-demo-enter]").forEach((entry) => {
+    entry.hidden = showcaseDemo;
+    entry.setAttribute("href", `${location.pathname}?demo=showcase${hash}`);
+    entry.setAttribute("aria-pressed", "false");
+  });
+  document.querySelectorAll("[data-demo-status]").forEach((status) => {
+    status.hidden = !showcaseDemo;
+  });
+  document.querySelectorAll("[data-demo-exit]").forEach((exit) => {
+    exit.setAttribute("href", `${location.pathname}${hash}`);
+  });
+}
+
+function demoModeRouteStatusMarkup() {
+  return `<span class="demo-mode-status demo-mode-route-status" data-demo-route-status role="status" aria-label="Demo mode active"><a class="demo-mode-exit" href="${escapeAttribute(`${location.pathname}${location.hash || "#study"}`)}" data-demo-exit aria-label="Exit demo mode and return to your saved study data">Exit Demo</a></span>`;
+}
+
+function mountRouteDemoModeStatus() {
+  if (!showcaseDemo) return;
+  const graphTitle = view.querySelector(".graph-title");
+  if (graphTitle) {
+    let line = graphTitle.querySelector(".graph-title-line");
+    if (!line) {
+      const heading = graphTitle.querySelector("h1");
+      if (!heading) return;
+      line = document.createElement("div");
+      line.className = "graph-title-line";
+      heading.before(line);
+      line.append(heading);
+    }
+    if (!line.querySelector("[data-demo-route-status]")) line.insertAdjacentHTML("beforeend", demoModeRouteStatusMarkup());
+    return;
+  }
+  const sessionHeader = view.querySelector(".session-header");
+  const deckName = sessionHeader?.querySelector(".session-deck-name");
+  if (!sessionHeader || !deckName) return;
+  let line = sessionHeader.querySelector(".session-title-line");
+  if (!line) {
+    line = document.createElement("div");
+    line.className = "session-title-line";
+    deckName.before(line);
+    line.append(deckName);
+  }
+  if (!line.querySelector("[data-demo-route-status]")) line.insertAdjacentHTML("beforeend", demoModeRouteStatusMarkup());
+}
+
+async function uiMutation(method, args, context, { deferAccountRefresh = false } = {}) {
   if (!isViewCurrent(context)) return null;
   const result = await store[method](args);
   if (!isViewCurrent(context)) return null;
-  if (accountMode) {
+  if (accountMode && !deferAccountRefresh) {
     try { await context.session.refresh(context.ticket); }
     catch (error) {
       if (isViewCurrent(context)) {
@@ -283,6 +430,27 @@ async function uiMutation(method, args, context) {
     if (!isViewCurrent(context)) return null;
   }
   return result;
+}
+
+function presentConfirmedArchive(result, context) {
+  if (!accountMode || !result?.deck) return;
+  const deckId = result.deck.id;
+  const revision = result.deck.revision;
+  ui.confirmedArchivePresentations.set(deckId, {
+    archived: result.deck.archived,
+    revision,
+  });
+  context.session.refresh(context.ticket).then(() => {
+    if (!isViewCurrent(context)) return;
+    if (ui.confirmedArchivePresentations.get(deckId)?.revision === revision) {
+      ui.confirmedArchivePresentations.delete(deckId);
+    }
+    queueRender();
+  }).catch(() => {
+    if (isViewCurrent(context)) {
+      showFatal(new Error("Your archive was confirmed, but the updated view could not load. Retry to reconnect."));
+    }
+  });
 }
 
 function escapeHTML(value) {
@@ -317,17 +485,18 @@ function studySessionProgress(session) {
     const position = cursor + 1;
     return {
       phase: "due",
-      label: `${position} of ${dueTotal} due`,
+      label: `${position} / ${dueTotal} due`,
       percent: dueTotal ? Math.round((position / dueTotal) * 100) : 0,
       dueTotal,
       position,
     };
   }
   const position = cursor - dueTotal + 1;
+  const continuousTotal = Math.max(1, queueLength - dueTotal);
   return {
     phase: "continuous",
-    label: `Continuous · ${position}`,
-    percent: 100,
+    label: `${position} / ${continuousTotal} extra`,
+    percent: Math.round((position / continuousTotal) * 100),
     dueTotal,
     position,
   };
@@ -341,6 +510,10 @@ function studyNonAnswerSupported(action, snapshot = store?.getSnapshot?.()) {
   if (snapshot?.capabilities?.[capability] === true) return true;
   try { return store?.inspectAppState?.().capabilities?.[capability] === true; }
   catch { return false; }
+}
+
+function agentLedStudyActive() {
+  return agentStudyToolsReady;
 }
 
 function isMobileStudyViewport() {
@@ -364,7 +537,7 @@ function manualGradeChoicesMarkup() {
     const selected = pendingRating === rating;
     return `<button class="study-manual-grade study-manual-grade-${rating}${selected ? " is-pending" : ""}" type="button" data-submit-self-grade="${rating}"${pendingRating ? (selected ? "" : " disabled") : ""}><strong>${title}</strong><span>${selected ? "Try again" : description}</span></button>`;
   };
-  return `<div class="study-manual-grades" data-study-manual-grades role="group" aria-labelledby="study-manual-grade-title">
+  return `<div class="study-manual-grades" id="study-manual-grade-options" data-study-manual-grades role="group" aria-labelledby="study-manual-grade-title">
     <p id="study-manual-grade-title">How well did you remember it?</p>
     <div class="study-manual-grade-grid">
       ${gradeButton("again", "Again", "Forgot it")}
@@ -372,7 +545,6 @@ function manualGradeChoicesMarkup() {
       ${gradeButton("good", "Good", "Remembered")}
       ${gradeButton("easy", "Easy", "Effortless")}
     </div>
-    <button class="button button-sm button-quiet study-manual-grade-back" type="button" data-cancel-self-grade${pendingRating ? " disabled" : ""}>Back</button>
   </div>`;
 }
 
@@ -433,6 +605,10 @@ function armStudyHelpTimer() {
 }
 
 function syncStudyHelp(session, card, revealed = false) {
+  if (agentLedStudyActive()) {
+    clearStudyHelp();
+    return;
+  }
   const key = session.id;
   if (ui.studyHelpKey !== key) {
     clearStudyHelp();
@@ -605,7 +781,9 @@ function icon(name) {
     book: '<path d="M3.5 4.5a2 2 0 0 1 2-2H9v14H5.5a2 2 0 0 0-2 1.5V4.5ZM16.5 4.5a2 2 0 0 0-2-2H11v14h3.5a2 2 0 0 1 2 1.5V4.5Z" />',
     flame: '<path d="M10 17c3.2 0 5.5-2.2 5.5-5.4 0-2.7-1.6-4.8-4.4-7.7.1 2.4-.9 3.8-2 4.8-.3-1.4-1.2-2.4-2.1-3.2.1 2.8-2.5 3.7-2.5 6.4C4.5 15 6.8 17 10 17Z" />',
     graph: '<path d="M4 14 8 9l4 2 4-6" /><circle cx="4" cy="14" r="1.5" /><circle cx="8" cy="9" r="1.5" /><circle cx="12" cy="11" r="1.5" /><circle cx="16" cy="5" r="1.5" />',
+    deck: '<rect x="5" y="3.5" width="11" height="13" rx="2" /><path d="M3 6.5v8a2 2 0 0 0 2 2h8M8 7.5h5M8 10.5h5" />',
     search: '<circle cx="8.5" cy="8.5" r="5" /><path d="m12.3 12.3 3.7 3.7" />',
+    skip: '<circle cx="10" cy="10" r="6.5" /><path d="m5.4 5.4 9.2 9.2" />',
     stack: '<rect x="4" y="5" width="12" height="10" rx="2" /><path d="M6 3h8M6 17h8" />',
     restore: '<path d="M4 7V3m0 0h4M4 3l3 3a6 6 0 1 1-1.4 6" />',
     user: '<circle cx="10" cy="7" r="3" /><path d="M4.5 16c.8-3 2.7-4.5 5.5-4.5s4.7 1.5 5.5 4.5" />',
@@ -643,8 +821,15 @@ function graphRouteForDeck(deckId, snapshot) {
     : `library-graph/${deckId}`;
 }
 
+function presentedPersonalDecks(snapshot) {
+  return Object.values(snapshot.personalDecks ?? {}).map((deck) => {
+    const confirmed = ui.confirmedArchivePresentations.get(deck.id);
+    return confirmed ? { ...deck, archived: confirmed.archived, revision: confirmed.revision } : deck;
+  });
+}
+
 function personalDeckArray(snapshot, { archived = false, availability = null } = {}) {
-  return Object.values(snapshot.personalDecks ?? {})
+  return presentedPersonalDecks(snapshot)
     .filter((deck) => Boolean(deck.archived) === archived)
     .sort((a, b) => {
       const left = deckAvailability(availability, a.id);
@@ -738,10 +923,14 @@ function resumableSessionFor(snapshot, availability) {
     sessions.sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)) || b.id.localeCompare(a.id))[0] ?? null;
 }
 
-function activityDay(day) {
+function activityDay(day, weeklyReviewCount) {
   const dateLabel = formatDate(day.date, day.date);
   const reviewLabel = `${formatNumber(day.review_count)} recorded ${day.review_count === 1 ? "review" : "reviews"}`;
-  return `<div class="activity-day" data-activity-date="${escapeAttribute(day.date)}" data-level="${day.level}" role="img" aria-label="${escapeAttribute(dateLabel)}: ${reviewLabel}" data-activity-tooltip="${escapeAttribute(dateLabel)} · ${reviewLabel}" tabindex="0"><span class="activity-dot" aria-hidden="true"></span><span aria-hidden="true">${escapeHTML(day.label)}</span></div>`;
+  const weeklyShare = weeklyReviewCount > 0 ? day.review_count / weeklyReviewCount : 0;
+  const intensity = Math.min(1, Math.sqrt(weeklyShare * 4));
+  const fillLightness = Math.round(14 + intensity * 29);
+  const borderLightness = Math.round(20 + intensity * 38);
+  return `<div class="activity-day" data-activity-date="${escapeAttribute(day.date)}" data-level="${day.level}" data-week-share="${weeklyShare.toFixed(4)}" role="img" aria-label="${escapeAttribute(dateLabel)}: ${reviewLabel}" data-activity-tooltip="${escapeAttribute(dateLabel)} · ${reviewLabel}" tabindex="0"><span class="activity-dot" style="--activity-fill-lightness:${fillLightness}%;--activity-border-lightness:${borderLightness}%" aria-hidden="true"></span><span aria-hidden="true">${escapeHTML(day.label)}</span></div>`;
 }
 
 function renderStudyActivity(snapshot, activity) {
@@ -753,7 +942,7 @@ function renderStudyActivity(snapshot, activity) {
       <span class="activity-streak" aria-label="${formatNumber(streakCount)}-day study streak · ${escapeAttribute(streakBasisLabel(streak))}" title="${escapeAttribute(streakBasisLabel(streak))}">${icon("flame")}<strong>${formatNumber(streakCount)}</strong></span>
     </div>
     ${activity ? `
-      <div class="activity-strip" aria-label="Recorded reviews over the last seven days in ${escapeAttribute(activity.time_zone)}">${activity.days.map(activityDay).join("")}</div>
+      <div class="activity-strip" aria-label="Recorded reviews over the last seven days in ${escapeAttribute(activity.time_zone)}">${activity.days.map((day) => activityDay(day, activity.review_count)).join("")}</div>
     ` : '<p class="activity-unavailable">Activity is temporarily unavailable.</p>'}
   </div>`;
 }
@@ -772,10 +961,11 @@ function renderStudyHome(snapshot, availability) {
         <header class="study-home-heading"><h1>Study</h1></header>
         ${emptyState({
           title: hasArchived ? "No active decks" : "You have no decks yet",
-          copy: hasArchived ? "Restore a deck from My Decks or choose a new course from the Library." : "Choose a course from the Library and start studying when you are ready.",
+          copy: "Browse the Library or use your agent to create a deck.",
           action: hasArchived
             ? '<div class="empty-actions"><a class="button" href="#decks" data-deck-status="archived">View archived decks</a><a class="button button-primary" href="#library">Browse Library</a></div>'
             : '<a class="button button-primary" href="#library">Browse Library</a>',
+          iconName: "deck",
         })}
         ${activity?.review_count > 0 ? `<aside class="activity-history-panel" aria-label="Study activity">${renderStudyActivity(snapshot, activity)}</aside>` : ""}
       </section>`;
@@ -788,6 +978,7 @@ function renderStudyHome(snapshot, availability) {
   const activeExtraPracticeOnly = !resumableSession && isExtraPracticeOnly(activeAvailability);
   const activeMetrics = metricsForDeck(active);
   const activeMastered = isDeckFullyMastered(activeMetrics);
+  const activeSessionInProgress = resumableSession?.status === "active";
   const totalDue = (availability?.decks ?? []).reduce((sum, deck) => sum + deck.due_count, 0);
   const dueLabel = !availability ? "check availability" : totalDue === 1 ? "review due" : "reviews due";
   return `
@@ -809,7 +1000,7 @@ function renderStudyHome(snapshot, availability) {
             </div>
             ${resumableSession ? `<p>${resumableSession.cursor} of ${resumableSession.queue.length} complete</p>` : ""}
             <button class="button button-primary study-hero-action" type="button" data-start-deck="${escapeAttribute(active.id)}" ${resumableSession ? `data-resume-session="${escapeAttribute(resumableSession.id)}"` : ""}>
-              ${resumableSession ? "Resume studying" : activeExtraPracticeOnly ? "Practice anyway" : "Start studying"} ${icon("arrow")}
+              ${activeSessionInProgress ? "Return to study" : resumableSession ? "Resume studying" : activeExtraPracticeOnly ? "Practice anyway" : "Start studying"} ${icon("arrow")}
             </button>
           </div>
         </div>
@@ -842,7 +1033,7 @@ function queueRow(deck, available) {
 function renderMyDecks(snapshot, availability) {
   const archived = ui.deckStatus === "archived";
   const decks = personalDeckArray(snapshot, { archived, availability });
-  const hasArchived = Object.values(snapshot.personalDecks ?? {}).some((deck) => deck.archived);
+  const hasArchived = presentedPersonalDecks(snapshot).some((deck) => deck.archived);
   return `
     <section class="page">
       <header class="page-heading page-heading-simple">
@@ -868,8 +1059,15 @@ function personalDeckCard(deck, available) {
   const metrics = metricsForDeck(deck);
   const mastered = !deck.archived && isDeckFullyMastered(metrics);
   const confirmingArchive = ui.archiveConfirmDeckId === deck.id;
-  const showingDeleteUnavailable = ui.deleteUnavailableDeckId === deck.id;
-  const showingCardDialog = confirmingArchive || showingDeleteUnavailable;
+  const confirmingDelete = ui.deleteConfirmDeckId === deck.id;
+  const showingCardDialog = confirmingArchive || confirmingDelete;
+  const activeSession = Object.values(store.getSnapshot().sessions ?? {})
+    .find((session) => session.deckId === deck.id && session.status === "active") ?? null;
+  const deletionImpact = confirmingDelete
+    ? accountMode
+      ? deckDeletionPreview?.impact?.deck_id === deck.id ? deckDeletionPreview.impact : null
+      : store.getDeckDeletionImpact({ deck_id: deck.id })
+    : null;
   const status = deck.archived ? "Archived" : mastered ? "✓ Mastered" : !available ? ""
     : available.due_count ? `${available.due_count} due` : "";
   return `
@@ -889,24 +1087,36 @@ function personalDeckCard(deck, available) {
       <div class="card-actions"${showingCardDialog ? ' inert aria-hidden="true"' : ""}>
         ${deck.archived
           ? `<button class="button button-sm button-primary" type="button" data-archive-deck="${escapeAttribute(deck.id)}" data-archive="false" data-revision="${deck.revision}">${icon("restore")} Restore</button>
-             <a class="button button-sm" href="#graph/${escapeAttribute(deck.id)}">${icon("graph")} Graph</a>
-             <button class="button button-sm button-danger" type="button" data-delete-unavailable="${escapeAttribute(deck.id)}">Delete</button>`
+             <a class="button button-sm" href="#graph/${escapeAttribute(deck.id)}">${icon("graph")} Graph</a>`
           : `<button class="button button-sm button-primary" type="button" data-start-deck="${escapeAttribute(deck.id)}">Study</button>
              <a class="button button-sm" href="#graph/${escapeAttribute(deck.id)}">${icon("graph")} Graph</a>
              <button class="button button-sm" type="button" data-request-archive="${escapeAttribute(deck.id)}" aria-label="Archive ${escapeAttribute(deck.title)}">${icon("archive")} Archive</button>`}
       </div>
       ${confirmingArchive ? `
         <div class="archive-confirmation" role="alertdialog" aria-labelledby="archive-title-${escapeAttribute(deck.id)}" aria-describedby="archive-description-${escapeAttribute(deck.id)}">
-          <div><strong id="archive-title-${escapeAttribute(deck.id)}">Archive this deck?</strong><span id="archive-description-${escapeAttribute(deck.id)}">You can restore it anytime.</span></div>
+          <div><strong id="archive-title-${escapeAttribute(deck.id)}">Archive this deck?</strong><span id="archive-description-${escapeAttribute(deck.id)}">${activeSession
+            ? accountMode
+              ? "Its active study session will be paused. You can restore the deck anytime."
+              : "Pause or finish its active study session first. Nothing will be deleted."
+            : "You can restore it anytime."}</span></div>
           <div>
             <button class="button button-sm archive-cancel-button" type="button" data-cancel-archive>Cancel</button>
-            <button class="button button-sm archive-confirm-button" type="button" data-confirm-archive="${escapeAttribute(deck.id)}" data-revision="${deck.revision}">Archive</button>
+            ${activeSession && !accountMode ? "" : `<button class="button button-sm archive-confirm-button" type="button" data-confirm-archive="${escapeAttribute(deck.id)}" data-revision="${deck.revision}">Archive</button>`}
           </div>
         </div>` : ""}
-      ${showingDeleteUnavailable ? `
-        <div class="archive-confirmation delete-unavailable" role="alertdialog" aria-labelledby="delete-title-${escapeAttribute(deck.id)}" aria-describedby="delete-description-${escapeAttribute(deck.id)}">
-          <div><strong id="delete-title-${escapeAttribute(deck.id)}">Delete unavailable</strong><span id="delete-description-${escapeAttribute(deck.id)}">This deck stays archived. No data was deleted.</span></div>
-          <div><button class="button button-sm button-quiet" type="button" data-close-delete-unavailable>Cancel</button></div>
+      ${confirmingDelete ? `
+        <div class="archive-confirmation delete-confirmation" role="alertdialog" aria-labelledby="delete-title-${escapeAttribute(deck.id)}" aria-describedby="delete-description-${escapeAttribute(deck.id)}">
+          <div><strong id="delete-title-${escapeAttribute(deck.id)}">Delete permanently?</strong><span id="delete-description-${escapeAttribute(deck.id)}">${accountMode
+            ? deletionImpact
+              ? `${formatNumber(deletionImpact.card_count)} cards and ${formatNumber(deletionImpact.review_count)} reviews will be erased. The Library course stays available.`
+              : "Checking the latest saved data…"
+            : `${formatNumber(deletionImpact.card_count)} cards and ${formatNumber(deletionImpact.review_count)} reviews will be erased. The Library course stays available.`}</span></div>
+          <div>
+            <button class="button button-sm button-quiet" type="button" data-cancel-delete${ui.mutationBusy ? " disabled" : ""}>Cancel</button>
+            ${accountMode
+              ? deletionImpact ? `<button class="button button-sm button-danger" type="button" data-confirm-delete="${escapeAttribute(deck.id)}"${ui.mutationBusy ? " disabled" : ""}>${ui.mutationBusy ? "Deleting…" : "Delete"}</button>` : ""
+              : `<button class="button button-sm button-danger" type="button" data-confirm-delete="${escapeAttribute(deck.id)}" data-instance="${escapeAttribute(deletionImpact.deck_instance_id)}" data-revision="${deletionImpact.deck_revision}" data-app-revision="${deletionImpact.app_revision}" data-impact="${escapeAttribute(deletionImpact.impact_digest)}"${ui.mutationBusy ? " disabled" : ""}>${ui.mutationBusy ? "Deleting…" : "Delete"}</button>`}
+          </div>
         </div>` : ""}
     </article>`;
 }
@@ -1029,8 +1239,10 @@ function renderStudySession(snapshot, sessionId, availability) {
   const allowSkip = studyNonAnswerSupported("skip", snapshot);
   const pendingOutcome = pendingReveal ? STUDY_OUTCOME_LABELS[pendingReveal.rating] : null;
   const pendingAdvanceLabel = pendingReveal?.completionState === "completed" ? "Finish session" : "Next card";
+  const agentLedStudy = agentLedStudyActive();
+  const showStudyControls = pendingReveal || manualGrading || manualGradeAvailable() || !agentLedStudy;
   return `
-    <section class="session-shell" data-session-id="${escapeAttribute(session.id)}" data-study-help-key="${escapeAttribute(helpKey)}" data-queue-phase="${escapeAttribute(progress.phase)}" ${pendingReveal ? 'data-study-advance-pending="true"' : ""}>
+    <section class="session-shell" data-session-id="${escapeAttribute(session.id)}" data-study-help-key="${escapeAttribute(helpKey)}" data-study-mode="${agentLedStudy ? "agent" : "standalone"}" data-queue-phase="${escapeAttribute(progress.phase)}" ${pendingReveal ? 'data-study-advance-pending="true"' : ""}>
       <header class="session-header">
         <span class="session-deck-name" title="${escapeAttribute(deck.title)}">${escapeHTML(deck.title)}</span>
         <div class="session-progress session-progress-${escapeAttribute(progress.phase)}" aria-label="Study progress: ${escapeAttribute(progress.label)}">
@@ -1039,7 +1251,8 @@ function renderStudySession(snapshot, sessionId, availability) {
         </div>
         <button class="button button-sm button-quiet session-exit" type="button" data-pause-session="${escapeAttribute(session.id)}">Exit</button>
       </header>
-      <div class="study-stage">
+      <div class="study-session-body">
+        <div class="study-stage">
         <div class="study-card-stack" data-card-stack data-study-card-phase="${manualGrading ? "manual-grade" : revealed ? "revealed" : "prompt"}" ${pendingReveal ? `data-study-outcome="${escapeAttribute(pendingReveal.rating)}"` : ""}>
           <div class="stack-card" aria-hidden="true"></div>
           <div class="stack-card" aria-hidden="true"></div>
@@ -1055,16 +1268,17 @@ function renderStudySession(snapshot, sessionId, availability) {
           <div class="study-outcome-badge" data-study-outcome-badge aria-hidden="true" ${pendingReveal ? "" : "hidden"}>${pendingOutcome ? escapeHTML(pendingOutcome) : ""}</div>
         </div>
       </div>
-      <div class="study-controls">
-        <p class="sr-only" data-study-live-status aria-live="polite">${pendingReveal ? `${escapeHTML(pendingOutcome)}. Review the definition, then ${pendingReveal.completionState === "completed" ? "finish the session" : "continue to the next card"}.` : manualGrading ? "Answer revealed. Choose your grade." : revealed ? "Definition revealed. Grade saved." : "Card ready. Define the term in chat."}</p>
+      <p class="sr-only" data-study-live-status aria-live="polite">${pendingReveal ? `${escapeHTML(pendingOutcome)}. Review the definition, then ${pendingReveal.completionState === "completed" ? "finish the session" : "continue to the next card"}.` : manualGrading ? "Answer revealed. Choose your grade." : revealed ? "Definition revealed. Grade saved." : "Card ready. Define the term in chat."}</p>
+      ${showStudyControls ? `<div class="study-controls">
         <div class="study-control-actions${manualGrading ? " has-manual-grades" : pendingReveal ? " has-study-next" : ""}" role="group" aria-label="Study actions">
           ${pendingReveal ? `<button class="button button-sm button-primary study-next-action" type="button" data-advance-study-card="true">${pendingAdvanceLabel}</button>` : manualGrading ? manualGradeChoicesMarkup() : `
-            ${manualGradeAvailable() ? '<button class="button button-sm button-primary study-manual-grade-action" type="button" data-start-self-grade>Grade myself</button>' : ""}
-            ${allowReveal ? '<button class="button button-sm study-reveal-action" type="button" data-reveal-answer>Reveal answer</button>' : ""}
-            ${allowSkip ? '<button class="button button-sm button-quiet study-skip-action" type="button" data-skip-card>Skip card</button>' : ""}
-            <button class="study-help-button" type="button" data-show-study-help aria-label="How to answer" title="How to answer" aria-controls="study-agent-help" aria-expanded="${ui.studyHelpShown && !ui.studyHelpDismissed ? "true" : "false"}">?</button>
+            ${manualGradeAvailable() ? '<button class="button button-sm button-primary study-manual-grade-action" type="button" data-start-self-grade aria-expanded="false" aria-controls="study-manual-grade-options">Show grades</button>' : ""}
+            ${!agentLedStudy && allowReveal ? '<button class="button button-sm study-reveal-action" type="button" data-reveal-answer>Reveal answer</button>' : ""}
+            ${!agentLedStudy && allowSkip ? `<button class="button study-skip-action" type="button" data-skip-card aria-label="Skip card" title="Skip card" data-tooltip="Skip card">${icon("skip")}</button>` : ""}
+            ${!agentLedStudy ? `<button class="study-help-button" type="button" data-show-study-help aria-label="How to answer" title="How to answer" aria-controls="study-agent-help" aria-expanded="${ui.studyHelpShown && !ui.studyHelpDismissed ? "true" : "false"}">?</button>` : ""}
           `}
         </div>
+        </div>` : ""}
       </div>
     </section>`;
 }
@@ -1213,6 +1427,23 @@ function emptyState({ title, copy, action, iconName = "stack" }) {
         ${action}
       </div>
     </div>`;
+}
+
+function sessionShouldReturnToStudy(snapshot, sessionId, availability) {
+  const session = snapshot.sessions?.[sessionId];
+  const deck = snapshot.personalDecks?.[session?.deckId];
+  if (!session || !deck || deck.archived) return true;
+  if (session.status === "active") {
+    const card = session.currentCardId ? deck.cards?.[session.currentCardId] : null;
+    return !card || card.archived;
+  }
+  if (session.status === "paused") {
+    return deckAvailability(availability, deck.id)?.resumable_session?.can_resume !== true;
+  }
+  if (["completed", "finished", "abandoned"].includes(session.status)) {
+    return session.queue.length === 0 && session.reviewsApplied === 0;
+  }
+  return true;
 }
 
 function notFound(copy) {
@@ -1513,12 +1744,6 @@ async function submitManualGrade(control, context) {
   }
 }
 
-function cancelManualGrade() {
-  if (!ui.manualGrade || ui.manualGrade.rating || ui.mutationBusy) return;
-  ui.manualGrade = null;
-  queueRender();
-}
-
 function toast(message, { actionLabel = null, onAction = null, duration = 3200 } = {}) {
   const context = captureView();
   if (!isViewCurrent(context)) return;
@@ -1565,12 +1790,11 @@ function showFatal(error) {
       <div class="error-state">
         <div class="empty-state-inner">
           <div class="empty-icon">!</div>
-          <h2>The study workspace could not open.</h2>
-          <p>${escapeHTML(error?.message ?? "An unexpected error occurred.")}</p>
-          <p>Your saved data has not been reset. Retry after restoring storage access or the matching app version.</p>
+          <h2>Oops, something went wrong.</h2>
+          <p>Try again to open your study workspace.</p>
           <div class="card-actions">
             <button class="button button-primary" type="button" data-retry-startup>Retry</button>
-            ${accountMode ? '<button class="button" type="button" data-reconnect-account>Reconnect account</button>' : workspace && !workspace.ephemeral ? '<button class="button" type="button" data-download-saved>Download saved data</button>' : ""}
+            ${!accountMode && workspace && !workspace.ephemeral ? '<button class="button" type="button" data-download-saved>Download saved data</button>' : ""}
           </div>
         </div>
       </div>
@@ -1698,7 +1922,6 @@ async function render() {
         deck,
         cardStates: cardStatesForDeck({ cards: Object.fromEntries(deck.cards.map((card) => [card.id, card])) }),
         progressSource: "learner",
-        focusCardId: deck.rootCardIds[0] ?? null,
         storage: workspace.storage,
         pulseCardId: activePulse,
         canStudy: true,
@@ -1710,6 +1933,11 @@ async function render() {
       });
     }
   } else if (route.name === "session") {
+    if (sessionShouldReturnToStudy(snapshot, route.id, availability)) {
+      ui.emptyStudyDeckId = null;
+      location.replace("#study");
+      return;
+    }
     const markup = renderStudySession(snapshot, route.id, availability);
     if (!isViewCurrent(context)) return;
     view.innerHTML = markup;
@@ -1743,10 +1971,11 @@ async function render() {
   armAvailabilityRefresh(availability, route, snapshot);
   loading.hidden = true;
   view.hidden = false;
+  mountRouteDemoModeStatus();
   if (!restoreLibrarySearchSelection(librarySearchSelection)) view.focus?.({ preventScroll: true });
 }
 
-async function startSession(deckId) {
+async function startSession(deckId, { interruptActiveSessionId = null } = {}) {
   const context = captureView();
   if (!isViewCurrent(context) || ui.mutationBusy || ui.revealingUntil > Date.now()) return;
   ui.mutationBusy = true;
@@ -1763,7 +1992,13 @@ async function startSession(deckId) {
     if (!snapshot.personalDecks?.[deckId] || snapshot.personalDecks[deckId].archived) {
       throw new Error("That active deck is not available.");
     }
-    if (active?.status === "active") await pauseSession(active.id, context);
+    if (active?.status === "active") {
+      if (active.id !== interruptActiveSessionId) {
+        showStudyInterrupt(deckId, active);
+        return null;
+      }
+      await pauseSession(active.id, context);
+    }
     return isViewCurrent(context) ? store.getSnapshot() : null;
   }
   try {
@@ -1983,8 +2218,19 @@ async function presentStudyGradeCommit(value, context, studyIsCurrent = () => tr
   const definition = scene?.querySelector("[data-study-definition]");
   const status = view.querySelector("[data-study-live-status]");
   const shell = scene?.closest("[data-session-id]");
-  const actions = shell?.querySelector(".study-control-actions");
-  if (!scene || !definition || !actions || !card ||
+  let actions = shell?.querySelector(".study-control-actions");
+  if (scene && definition && shell && card && !actions && presentationAction !== "skip" &&
+      shell.dataset.sessionId === value.session_id && scene.dataset.cardId === card.id) {
+    const controls = document.createElement("div");
+    controls.className = "study-controls";
+    actions = document.createElement("div");
+    actions.className = "study-control-actions";
+    actions.setAttribute("role", "group");
+    actions.setAttribute("aria-label", "Study actions");
+    controls.append(actions);
+    (shell.querySelector(".study-session-body") ?? shell).append(controls);
+  }
+  if (!scene || !definition || (!actions && presentationAction !== "skip") || !card ||
       shell?.dataset.sessionId !== value.session_id ||
       scene.dataset.cardId !== card.id) {
     view.querySelector("[data-study-advance-pending]")?.removeAttribute("data-study-advance-pending");
@@ -2097,11 +2343,34 @@ async function handleVisibleEffect(effect, metadata = {}) {
   queueRender();
 }
 
-function bootstrap() {
-  if (!workspace.seedExamples || !catalogSettings?.seedExamples) return;
+async function bootstrap() {
+  if (!workspace.seedExamples) return;
+  if (showcaseDemo) {
+    const demoCatalogIds = [
+      "academic-reviewed-v1:applied-statistics-i",
+      "academic-reviewed-v1:linear-algebra-i",
+      "academic-reviewed-v1:algorithms-i",
+      "academic-reviewed-v1:mechanics-i",
+      "academic-reviewed-v1:analytical-chemistry",
+    ];
+    if (!Object.keys(store.getSnapshot().personalDecks).length) {
+      for (const catalogId of demoCatalogIds) {
+        const catalogDeck = getCatalogDeck(catalogId);
+        if (!catalogDeck) throw new Error("The demo course set is unavailable.");
+        await store.addLibraryDeck({
+          library_deck_id: catalogDeck.id,
+          expected_catalog_version: catalogDeck.version,
+          client_action_id: `showcase:add:${catalogId}`,
+        });
+      }
+      store.seedShowcaseDemo();
+    }
+    return;
+  }
+  if (!catalogSettings?.seedExamples) return;
   if (!Object.keys(store.getSnapshot().personalDecks).length) {
     const primary = getCatalogDeck("linear-algebra-i");
-    const added = store.addLibraryDeck({
+    const added = await store.addLibraryDeck({
       library_deck_id: primary.id,
       expected_catalog_version: primary.version,
       client_action_id: "first-run:add-linear-algebra-i",
@@ -2116,6 +2385,15 @@ document.addEventListener("click", async (event) => {
   if (target.closest("[data-reconnect-account]")) return reconnectAccount();
   if (target.closest("[data-account-signout]")) { accountRuntime?.invalidate(); return; }
   if (target.closest("[data-retry-startup]")) return location.reload();
+  if (target.closest("[data-action='open-account']")) {
+    if (ui.failed && accountMode) showUnavailableAccountDialog();
+    else if (accountMode) {
+      restoreConnectedAccountDialog(accountSession?.accountBinding);
+      showAccountSettings();
+    }
+    return accountDialog?.showModal();
+  }
+  if (target.closest("[data-close-account]")) return accountDialog?.close();
   if (target.closest("[data-download-saved]")) {
     try {
       const raw = workspace.savedData();
@@ -2162,10 +2440,6 @@ document.addEventListener("click", async (event) => {
   if (startSelfGrade) {
     const shell = startSelfGrade.closest("[data-session-id]");
     if (shell) startManualGrade(shell.dataset.sessionId);
-    return;
-  }
-  if (target.closest("[data-cancel-self-grade]")) {
-    cancelManualGrade();
     return;
   }
   const selfGrade = target.closest("[data-submit-self-grade]");
@@ -2226,45 +2500,61 @@ document.addEventListener("click", async (event) => {
     finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
     return;
   }
-  if (accountMode && target.closest("[data-preview-local-claim]")) {
-    try {
-      const preview = await context.session.previewLocalClaim();
-      if (!isViewCurrent(context)) return;
-      claimPreview = preview;
-      settingsDialog.querySelector("[data-claim-confirmation]").innerHTML = `<p class="account-note">Copy ${formatNumber(claimPreview.bytes)} bytes into this signed-in account? This is a one-time copy, including any existing example progress. The browser workspace and exact backup remain unchanged. This will not merge with existing account data.</p><button class="button button-primary" type="button" data-confirm-local-claim>Copy to this account</button><button class="button button-quiet" type="button" data-cancel-local-claim>Cancel</button>`;
-    } catch (error) { if (isViewCurrent(context)) toast(error.message); }
+  const confirmStudyInterrupt = target.closest("[data-confirm-study-interrupt]");
+  if (confirmStudyInterrupt) {
+    const deckId = confirmStudyInterrupt.dataset.confirmStudyInterrupt;
+    const activeSessionId = confirmStudyInterrupt.dataset.activeSessionId;
+    deckDialog.close();
+    return startSession(deckId, { interruptActiveSessionId: activeSessionId });
+  }
+  if (target.closest("[data-cancel-local-claim]")) {
+    claimPreview = null;
+    if (settingsDialog.open) settingsDialog.close();
+    showAccountSettings();
     return;
   }
-  if (target.closest("[data-cancel-local-claim]")) { claimPreview = null; settingsDialog.querySelector("[data-claim-confirmation]")?.replaceChildren(); return; }
+  if (target.closest("[data-cancel-account-recovery]")) {
+    if (settingsDialog.open) settingsDialog.close();
+    showAccountSettings();
+    return;
+  }
+  if (accountMode && target.closest("[data-open-pending-account-action]")) {
+    showPendingAccountAction(context.session.getRecovery());
+    return;
+  }
   if (accountMode && (target.closest("[data-confirm-local-claim]") || target.closest("[data-retry-account-claim]") || target.closest("[data-retry-account-write]"))) {
     if (ui.mutationBusy) return;
     ui.mutationBusy = true;
     try {
+      const confirmsBrowserData = Boolean(target.closest("[data-confirm-local-claim]") || target.closest("[data-retry-account-claim]"));
       if (target.closest("[data-confirm-local-claim]")) await context.session.confirmLocalClaim(claimPreview, claimPreview?.accountBinding);
       else if (target.closest("[data-retry-account-claim]")) await context.session.retryLocalClaim();
       else await context.session.retryPending();
       if (!isViewCurrent(context)) return;
       claimPreview = null;
       showAccountSettings();
-      toast("Saved account state loaded. Browser data and recovery backups were preserved.");
+      if (settingsDialog.open) settingsDialog.close();
+      toast(confirmsBrowserData ? "Study data saved to your account. This browser copy is unchanged." : "Your last change was saved.");
       queueRender();
     } catch (error) { if (isViewCurrent(context)) { showAccountSettings(); toast(error.message); } }
     finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
     return;
   }
-  if (target.closest("[data-action='open-account']")) {
-    if (accountMode) {
-      restoreConnectedAccountDialog(accountSession?.accountBinding);
-      showAccountSettings();
-    }
-    return accountDialog?.showModal();
+  if (accountMode && target.closest("[data-retry-account-cleanup]")) {
+    if (ui.mutationBusy) return;
+    ui.mutationBusy = true;
+    try {
+      await context.session.retryAccountBrowserCleanup();
+    } catch (error) {
+      if (isViewCurrent(context)) { showAccountSettings(); toast(error.message); }
+    } finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
+    return;
   }
   if (target.closest("[data-open-settings]")) {
     if (accountMode) showAccountSettings();
     accountDialog?.close();
     return settingsDialog?.showModal();
   }
-  if (target.closest("[data-close-account]")) return accountDialog?.close();
   if (target.closest("[data-close-settings]")) return settingsDialog?.close();
   const unarchiveRequest = target.closest("[data-request-unarchive]");
   if (unarchiveRequest) {
@@ -2334,7 +2624,8 @@ document.addEventListener("click", async (event) => {
   if (status) {
     ui.deckStatus = status;
     ui.archiveConfirmDeckId = null;
-    ui.deleteUnavailableDeckId = null;
+    ui.deleteConfirmDeckId = null;
+    deckDeletionPreview = null;
     return queueRender();
   }
   const add = target.closest("[data-add-deck]");
@@ -2361,25 +2652,65 @@ document.addEventListener("click", async (event) => {
       if (isViewCurrent(context)) return toast(error.message);
     } finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
   }
-  if (accountMode && target.closest("[data-reset-local]")) return;
-  const deleteUnavailable = target.closest("[data-delete-unavailable]");
-  if (deleteUnavailable) {
+  const deleteRequest = target.closest("[data-request-delete]");
+  if (deleteRequest) {
+    if (ui.mutationBusy) return;
     ui.archiveConfirmDeckId = null;
-    ui.deleteUnavailableDeckId = deleteUnavailable.dataset.deleteUnavailable;
-    return queueRender(0, () => view.querySelector("[data-close-delete-unavailable]")?.focus());
+    const deckId = deleteRequest.dataset.requestDelete;
+    ui.deleteConfirmDeckId = deckId;
+    deckDeletionPreview = null;
+    queueRender();
+    if (accountMode) {
+      ui.mutationBusy = true;
+      try {
+        deckDeletionPreview = await context.session.previewDeckDeletion(deckId);
+        if (!isViewCurrent(context)) return;
+      } catch (error) {
+        if (isViewCurrent(context)) toast(error.message);
+        return;
+      } finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
+    }
+    return queueRender(0, () => view.querySelector("[data-cancel-delete]")?.focus());
   }
-  if (target.closest("[data-close-delete-unavailable]")) {
-    const deckId = ui.deleteUnavailableDeckId;
-    ui.deleteUnavailableDeckId = null;
+  if (target.closest("[data-cancel-delete]")) {
+    const deckId = ui.deleteConfirmDeckId;
+    ui.deleteConfirmDeckId = null;
+    deckDeletionPreview = null;
     return queueRender(0, () => {
-      [...view.querySelectorAll("[data-delete-unavailable]")]
-        .find((button) => button.dataset.deleteUnavailable === deckId)
+      [...view.querySelectorAll("[data-request-delete]")]
+        .find((button) => button.dataset.requestDelete === deckId)
         ?.focus();
     });
   }
+  const deleteConfirm = target.closest("[data-confirm-delete]");
+  if (deleteConfirm) {
+    if (ui.mutationBusy) return;
+    ui.mutationBusy = true;
+    queueRender();
+    try {
+      const result = accountMode
+        ? await context.session.confirmDeckDeletion(deckDeletionPreview)
+        : await uiMutation("deleteDeck", {
+          deck_id: deleteConfirm.dataset.confirmDelete,
+          deck_instance_id: deleteConfirm.dataset.instance,
+          expected_revision: Number(deleteConfirm.dataset.revision),
+          expected_app_revision: Number(deleteConfirm.dataset.appRevision),
+          expected_impact_digest: deleteConfirm.dataset.impact,
+          confirm_permanent_deletion: true,
+          idempotency_key: actionId("delete-deck"),
+        }, context);
+      if (!result || !isViewCurrent(context)) return;
+      ui.deleteConfirmDeckId = null;
+      deckDeletionPreview = null;
+      toast("Deck and its saved study history deleted");
+      return queueRender();
+    } catch (error) {
+      if (isViewCurrent(context)) return toast(error.message);
+    } finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
+  }
   const archiveRequest = target.closest("[data-request-archive]");
   if (archiveRequest) {
-    ui.deleteUnavailableDeckId = null;
+    ui.deleteConfirmDeckId = null;
     ui.archiveConfirmDeckId = archiveRequest.dataset.requestArchive;
     return queueRender(0, () => view.querySelector("[data-cancel-archive]")?.focus());
   }
@@ -2396,14 +2727,19 @@ document.addEventListener("click", async (event) => {
   if (archiveConfirm) {
     if (ui.mutationBusy) return;
     ui.mutationBusy = true;
+    const cancelArchive = archiveConfirm.closest(".archive-confirmation")?.querySelector("[data-cancel-archive]");
+    archiveConfirm.disabled = true;
+    archiveConfirm.textContent = "Archiving…";
+    if (cancelArchive) cancelArchive.disabled = true;
     try {
       const result = await uiMutation("setDeckArchived", {
         deck_id: archiveConfirm.dataset.confirmArchive,
         archived: true,
         expected_revision: Number(archiveConfirm.dataset.revision),
         client_action_id: actionId("archive-deck"),
-      }, context);
+      }, context, { deferAccountRefresh: true });
       if (!result || !isViewCurrent(context)) return;
+      presentConfirmedArchive(result, context);
       ui.archiveConfirmDeckId = null;
       toast(`${result.deck.title} archived`, {
         actionLabel: "Undo",
@@ -2414,13 +2750,14 @@ document.addEventListener("click", async (event) => {
           if (!isViewCurrent(undoContext)) return;
           ui.mutationBusy = true;
           try {
-            await uiMutation("setDeckArchived", {
+            const undoResult = await uiMutation("setDeckArchived", {
               deck_id: result.deck.id,
               archived: false,
               expected_revision: result.deck.revision,
               client_action_id: actionId("undo-archive"),
-            }, undoContext);
+            }, undoContext, { deferAccountRefresh: true });
             if (!isViewCurrent(undoContext)) return;
+            presentConfirmedArchive(undoResult, undoContext);
             ui.deckStatus = "active";
             queueRender();
           } catch (error) {
@@ -2430,7 +2767,12 @@ document.addEventListener("click", async (event) => {
       });
       return queueRender();
     } catch (error) {
-      if (isViewCurrent(context)) return toast(error.message);
+      if (isViewCurrent(context)) {
+        archiveConfirm.disabled = false;
+        archiveConfirm.textContent = "Archive";
+        if (cancelArchive) cancelArchive.disabled = false;
+        return toast(error.message);
+      }
     } finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
   }
   const archive = target.closest("[data-archive-deck]");
@@ -2469,17 +2811,58 @@ document.addEventListener("click", async (event) => {
     queueRender();
     return;
   }
-  if (target.closest("[data-reset-local]")) {
-    const message = workspace.recordingId
-      ? `Reset this recording workspace ${workspace.recordingId}? This removes its decks, sessions, and review history in this browser.`
-      : "Reset study data in this browser? This removes locally saved personal decks, sessions, and review history. Graph layout settings are not cleared by this reset. It does not delete your ChatGPT account or agent conversations.";
-    if (confirm(message)) {
-      try {
-        clearPendingStudyReveal();
-        workspace.reset();
-        location.assign(`${location.pathname}${location.search}#study`);
-      } catch (error) { toast(error.message); }
-    }
+  if (target.closest("[data-request-delete-local]")) {
+    if (accountMode || !workspace || workspace.ephemeral) return;
+    const confirmation = settingsDialog.querySelector("[data-delete-local-confirmation]");
+    if (confirmation) confirmation.innerHTML = `<div class="account-note" role="alertdialog" aria-label="Confirm study data reset"><strong>Reset study data?</strong><p>Your decks, reviews, progress, and saved graph layouts will be cleared from this browser. This cannot be undone.</p><button class="button button-quiet" type="button" data-cancel-delete-local>Cancel</button> <button class="button button-danger" type="button" data-confirm-delete-local>Reset</button></div>`;
+    confirmation?.querySelector("[data-cancel-delete-local]")?.focus();
+    return;
+  }
+  if (target.closest("[data-cancel-delete-local]")) {
+    settingsDialog.querySelector("[data-delete-local-confirmation]")?.replaceChildren();
+    settingsDialog.querySelector("[data-request-delete-local]")?.focus();
+    return;
+  }
+  if (target.closest("[data-confirm-delete-local]")) {
+    if (accountMode || !workspace || ui.mutationBusy) return;
+    ui.mutationBusy = true;
+    try {
+      clearPendingStudyReveal();
+      workspace.deleteData();
+      settingsDialog.close();
+      location.assign(`${location.pathname}${location.search}#study`);
+    } catch (error) { toast(error.message); }
+    finally { ui.mutationBusy = false; }
+  }
+  if (accountMode && target.closest("[data-request-delete-account]")) {
+    if (ui.mutationBusy) return;
+    ui.mutationBusy = true;
+    try {
+      accountDeletionPreview = await context.session.previewAccountDataDeletion();
+      if (!isViewCurrent(context)) return;
+      const impact = accountDeletionPreview.impact;
+      const confirmation = settingsDialog.querySelector("[data-delete-account-confirmation]");
+      if (confirmation) confirmation.innerHTML = `<div class="account-note" role="alertdialog" aria-label="Confirm account data deletion"><strong>Permanently delete all Meshful study data?</strong><p>This removes ${formatNumber(impact.personal_deck_count)} personal decks, ${formatNumber(impact.retained_review_count)} retained reviews, ${formatNumber(impact.session_count)} sessions, ${formatNumber(impact.saved_action_count)} saved action receipts, and ${formatNumber(impact.recovery_document_count)} recovery documents. An active study, if present, ends. This cannot be undone. Your sign-in binding, ChatGPT account, agent conversations, and the Deck Library are not deleted.</p><button class="button button-quiet" type="button" data-cancel-delete-account>Cancel</button> <button class="button button-danger" type="button" data-confirm-delete-account>Delete my data</button></div>`;
+      confirmation?.querySelector("[data-cancel-delete-account]")?.focus();
+    } catch (error) { if (isViewCurrent(context)) toast(error.message); }
+    finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
+    return;
+  }
+  if (target.closest("[data-cancel-delete-account]")) {
+    accountDeletionPreview = null;
+    settingsDialog.querySelector("[data-delete-account-confirmation]")?.replaceChildren();
+    settingsDialog.querySelector("[data-request-delete-account]")?.focus();
+    return;
+  }
+  if (accountMode && target.closest("[data-confirm-delete-account]")) {
+    if (ui.mutationBusy) return;
+    ui.mutationBusy = true;
+    try {
+      await context.session.confirmAccountDataDeletion(accountDeletionPreview);
+    } catch (error) {
+      if (isViewCurrent(context)) { showAccountSettings(); toast(error.message); }
+    } finally { if (isViewCurrent(context)) ui.mutationBusy = false; }
+    return;
   }
 });
 
@@ -2546,6 +2929,16 @@ document.addEventListener("keydown", (event) => {
           .find((button) => button.dataset.requestArchive === deckId)
           ?.focus();
       });
+      return;
+    }
+    if (ui.deleteConfirmDeckId) {
+      const deckId = ui.deleteConfirmDeckId;
+      ui.deleteConfirmDeckId = null;
+      queueRender(0, () => {
+        [...view.querySelectorAll("[data-request-delete]")]
+          .find((button) => button.dataset.requestDelete === deckId)
+          ?.focus();
+      });
     }
   }
 });
@@ -2555,6 +2948,8 @@ window.addEventListener("hashchange", async () => {
   if (!isViewCurrent(context)) return;
   closeOverlayDialogs();
   ui.archiveConfirmDeckId = null;
+  ui.deleteConfirmDeckId = null;
+  deckDeletionPreview = null;
   if (accountMode && getRoute().name !== "session") {
     ui.studySuperseded = false;
     try { await context.session.releaseStudy({ clearBlock: true, cancelPending: true }); }
@@ -2610,10 +3005,14 @@ async function finishStartup() {
       ...(accountMode ? { executionGuard: context.session.executionGuard, requireStudyExecutionGuard: true } : {}) });
     registeredToolNames = webmcpRegistration.registered ?? [];
     if (!isViewCurrent(context)) return;
+    const nextAgentStudyToolsReady = !webmcpRegistration.failed && registeredToolNames.includes("submit_grade");
+    const agentStudyModeChanged = agentStudyToolsReady !== nextAgentStudyToolsReady;
+    agentStudyToolsReady = nextAgentStudyToolsReady;
     if (webmcpRegistration.failed) {
       console.warn("Site tools unavailable", webmcpRegistration.failed);
       toast("Site tools are unavailable; the website still works normally");
     }
+    if (agentStudyModeChanged && getRoute().name === "session") queueRender();
   });
   await toolRegistration;
   if (isViewCurrent(context)) startViewClock();
@@ -2635,6 +3034,8 @@ async function reconnectAccount() {
     ui.failed = false;
     showAccountSettings();
     await finishStartup();
+    await offerLocalClaimIfAvailable(captureView());
+    if (attempt === startupSequence && connected.isCurrent()) accountDeletionCommitted = false;
   } catch (error) {
     if (attempt === startupSequence) {
       accountHydrationPending = false;
@@ -2645,7 +3046,8 @@ async function reconnectAccount() {
 
 export async function initializeWebsite({ accountOptions = null, catalogOptions = null } = {}) {
   if (accountRuntime || store) throw new Error("The website already selected a persistence path.");
-  accountMode = accountOptions !== null;
+  accountMode = accountOptions !== null && !showcaseDemo;
+  syncDemoModeUI();
   if (prepareAccountStartupShell({ accountMode, loading, view })) {
     accountHydrationPending = true;
   }
@@ -2658,6 +3060,10 @@ export async function initializeWebsite({ accountOptions = null, catalogOptions 
     try {
       accountRuntime = createAccountRuntime({ ...accountOptions, onInvalidate: invalidateAccountView,
         onStudySuperseded: freezeStudyPresentation,
+        onAccountDataDeleted: () => {
+          clearPendingStudyReveal();
+          accountDeletionCommitted = true;
+        },
         onReplay: ({ execution_context }) => {
           if (accountSession?.isCurrent(execution_context)) queueRender();
         } });
@@ -2668,7 +3074,7 @@ export async function initializeWebsite({ accountOptions = null, catalogOptions 
   try {
   // Storage access and hydration can both fail. Neither belongs outside recovery.
   store = createWebsiteLocalStore({ catalogSettings, storage: workspace.storage });
-  bootstrap();
+  await bootstrap();
   syncLocalStorageUI();
   if (demoMode === "loading") setTimeout(() => finishStartup().catch(showFatal), 700);
   else await finishStartup();
